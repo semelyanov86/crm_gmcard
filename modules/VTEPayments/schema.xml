@@ -1,0 +1,43 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_payments</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_payments` (`paymentid` int(19) NOT NULL, `paymentno` varchar(100) default NULL, `reference` varchar(255) default NULL ,`invoice` varchar(100) default NULL ,`organization` varchar(100) default NULL ,`contact` varchar(100) default NULL ,`amount_paid` decimal(20,5) default NULL ,`payment_type` varchar(100) default NULL ,`payment_status` varchar(100) default NULL ,`date` date DEFAULT NULL, PRIMARY KEY (`paymentid`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_paymentscf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_paymentscf` (`paymentid` int(19) NOT NULL, PRIMARY KEY (`paymentid`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vtepayments_user_field</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vtepayments_user_field` ( `recordid` int(25) NOT NULL, `userid` int(25) NOT NULL, `starred` varchar(100) DEFAULT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vte_modules</name>
+			<sql><![CDATA[CREATE TABLE `vte_modules` (
+                `module`  varchar(50) NOT NULL ,
+                `valid`  int(1) NULL ,
+                PRIMARY KEY (`module`));]]></sql>
+		</table>
+		<table>
+			<name>vtiger_payments</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_payments` 
+		CHANGE `invoice` `invoice` INT(19) NULL DEFAULT NULL, 
+		CHANGE `organization` `organization` INT(19) NULL DEFAULT NULL, 
+		CHANGE `contact` `contact` INT(19) NULL DEFAULT NULL;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_payments</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_payments` ADD INDEX `invoice_index` (`invoice`) USING BTREE ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_payments</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_payments` ADD INDEX `organization_index` (`organization`) USING BTREE ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_payments</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_payments` ADD INDEX `contact_index` (`contact`) USING BTREE ;]]></sql>
+		</table>
+	</tables>
+</schema>

@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<ExtensionInfo>
+	<vte_modules>ModuleLinkCreator</vte_modules>
+
+	<!-- Fill all entities name. Eg: VTE_MODULE_NAME||VTE_MODULE_NAME1 -->
+	<vtiger_ws_entity>ModuleLinkCreator</vtiger_ws_entity>
+
+	<!-- Fill all linklabel::linkurl. Eg: linklabel1::linkurl1||linklabel2::linkurl2 -->
+	<vtiger_links><![CDATA[Custom Module Builder::layouts/v7/modules/ModuleLinkCreator/resources/ModuleLinkCreatorCSS.css||Custom Module Builder::layouts/v7/modules/ModuleLinkCreator/resources/ModuleLinkCreatorJS.js||Custom Module Builder::layouts/v7/modules/ModuleLinkCreator/resources/ModuleLinkCreatorUtils.js]]></vtiger_links>
+
+	<!-- Fill all values of name column in table vtiger_settings_field. Eg: name1||name2 -->
+	<vtiger_settings_field><![CDATA[Custom Module Builder]]></vtiger_settings_field>
+
+	<!-- Fill all event_name::handler_path::handler_class. Eg: event_name1::handler_path1::handler_class1||event_name2::handler_path2::handler_class2 -->
+	<!--<vtiger_eventhandlers>vtiger.entity.aftersave::modules/ModuleLinkCreator/ModuleLinkCreatorHandler.php::ModuleLinkCreatorHandler</vtiger_eventhandlers>-->
+
+	<!-- Fill all parent_module::child_module::label. Eg: Accounts::Contacts::Contacts||Accounts::Invoice::Invoices -->
+	<vtiger_relatedlists></vtiger_relatedlists>
+</ExtensionInfo>

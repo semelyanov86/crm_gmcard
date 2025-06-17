@@ -1,0 +1,103 @@
+h4.label-block{
+    font-weight: 700;
+}
+.control-label{
+    text-align: left !important;
+}
+
+.custom-header-info{
+    border: 1px solid rgb(217, 217, 217);
+    border-left: #52a9cd solid 4px;
+    max-height: 280px;
+    height: 280px;
+}
+
+.custom-header-info > .label-info{
+    color: #52a9cd;
+    background-color: white !important;
+}
+
+.custom-header-info > .content-info{
+    resize: none;
+    border: none;
+    width: 100%;
+    color: #9b9997;
+    max-height: 255px;
+    height: 255px;
+}
+#resolved_time{
+    display: inline-block;
+    width: 70%;
+}
+table#sla_actions,table#sla_actions th,table#sla_actions td{
+    border: none !important;
+    vertical-align: middle;
+}
+
+table#sla_actions tr > td:first-child,
+table#sla_actions tr > td:last-child,
+table#sla_actions tr > th:last-child,
+table#sla_actions tr > th:last-child {
+    width: 1% !important;
+    max-width: 1% !important;
+}
+table#sla_actions tr > td:nth-child(2),
+table#sla_actions tr > td:nth-child(3),
+table#sla_actions tr > td:nth-child(5),
+table#sla_actions tr > th:nth-child(5),
+table#sla_actions tr > th:nth-child(5),
+table#sla_actions tr > th:nth-child(5)
+{
+    width: 15% !important;
+    max-width: 15% !important;;
+}
+table#sla_actions tr > td:nth-child(4),
+table#sla_actions tr > th:nth-child(4) {
+    width: 30% !important;
+    max-width: 30% !important;;
+}
+
+table#sla_actions .sla_action_email_template,table#sla_actions .sla_action_workflow {
+    width: 135px !important;
+}
+
+table#sla_actions .selectWorkflow{
+    font-size:2em;
+}
+table#sla_actions input.inputElement{
+    padding-left: 5px;
+}
+
+table.sla-policy-listview-table thead tr th:nth-child(1),table.sla-policy-listview-table tbody tr td:nth-child(1){
+    width: 13% !important;
+}
+
+table.sla-policy-listview-table thead tr th:nth-child(2),table.sla-policy-listview-table tbody tr td:nth-child(2){
+    width: 5% !important;
+}
+
+table.sla-policy-listview-table thead tr th:nth-child(3),table.sla-policy-listview-table tbody tr td:nth-child(3){
+    width: 27% !important;
+}
+
+table.sla-policy-listview-table thead tr th:nth-child(4),table.sla-policy-listview-table tbody tr td:nth-child(4){
+    width: 20% !important;
+}
+
+table.sla-policy-listview-table thead tr th:nth-child(5),table.sla-policy-listview-table tbody tr td:nth-child(5){
+    width: 25% !important;
+}
+table.sla-policy-listview-table thead tr th:nth-child(6),table.sla-policy-listview-table tbody tr td:nth-child(6){
+    width: 10% !important;
+}
+
+.buttonSave{
+    font-size: 14px;
+    color: white;
+    padding: 7px 25px
+}
+
+.error-validate{
+    border: 1px solid #ba4a47 !important;
+    background: #fdeeee !important;
+}

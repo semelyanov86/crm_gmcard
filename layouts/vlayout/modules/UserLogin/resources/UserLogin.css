@@ -1,0 +1,204 @@
+/* * *******************************************************************************
+ * The content of this file is subject to the VTE Custom User Login Page ("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTExperts.com
+ * Portions created by VTExperts.com. are Copyright(C)VTExperts.com.
+ * All Rights Reserved.
+ * ****************************************************************************** */
+body {
+    background: none;
+    font-family: "Open Sans", sans-serif;
+}
+
+body .vte-login-container {
+    width: 100%;
+    min-height: 100vh !important;
+}
+
+.login-area {
+    margin: 0;
+    padding: 0 4% 0 0;
+    color: #868e97;
+    min-height: 100vh !important;
+    position: relative;
+}
+
+.slideshow {
+    min-height: 100vh !important;
+}
+
+.login-box {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+
+}
+
+.login-header {
+    font-size: 30px;
+    font-weight: 300;
+    color: #4e5a64;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 0;
+    border: none;
+}
+
+.login-box > .login-form {
+    color: #a4aab2;
+    font-size: 13px;
+    margin-top: 80px;
+}
+
+#forgotPasswordDiv form {
+    margin-top: 40px;
+}
+
+.login-box div.username input {
+    border-color: #a0a9b4 #a0a9b4 -moz-use-text-color;
+    border-image: none;
+    border-style: none none solid;
+    border-width: medium medium 1px;
+    color: #868e97;
+    font-size: 14px;
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 90%;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.login-box div.password input {
+    box-shadow: none;
+    border-radius: 0;
+    border-color: #a0a9b4 #a0a9b4 -moz-use-text-color;
+    border-image: none;
+    border-style: none none solid;
+    border-width: medium medium 1px;
+    color: #868e97;
+    font-size: 14px;
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 90%;
+    float: right;
+}
+
+.login-area a {
+    color: #868e97;
+}
+
+.signin-button .btn {
+    border: 1px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-image: none;
+    box-shadow: none !important;
+    outline: 0 none !important;
+    background-color: #3598dc;
+    border-color: #3598dc;
+    color: #fff;
+}
+
+h3.forgot-password {
+    color: #32c5d2 !important;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.login-area .btn-back {
+    background-color: #e5e5e5;
+    border-color: #e5e5e5;
+    color: #333;
+    box-shadow: none !important;
+}
+
+.carousal-container {
+    width: 100%;
+}
+
+.bx-wrapper {
+    margin: 0;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.bx-wrapper .bx-viewport {
+    height: 100vh !important;
+}
+
+.bx-wrapper .bx-viewport ul {
+    height: 100% !important;
+    padding: 0;
+}
+
+.bx-wrapper .bx-viewport .slide {
+    height: 100vh !important;
+    padding: 0;
+}
+
+.bx-wrapper li img {
+    height: 100%;
+    max-width: none;
+    min-width: 100%;
+}
+
+.login-more-info {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 10px;
+    width: 90% !important;
+}
+
+.login-more-info .social {
+    text-align: left;
+    display: inline-block;
+}
+
+.login-more-info .copy-right {
+    text-align: right;
+    display: inline-block;
+    float: right;
+}
+
+.login-more-info .copy-right small {
+    line-height: 40px;
+}
+
+.logo {
+    left: 2.5em;
+    position: absolute;
+    top: 2.5em;
+    z-index: 9999;
+    margin: 0;
+}
+
+.site-info {
+    margin-top: 30%;
+}
+
+/******************************************/
+
+@media (max-width: 1150px) {
+    .carousal-container {
+        display: inline-block;
+    }
+
+}
+
+@media (min-width: 1151px) {
+    .carousal-container {
+        display: inline-block;
+    }
+
+}

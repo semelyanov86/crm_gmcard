@@ -1,0 +1,110 @@
+.vte-advance-menu-container .vt-default-callout{
+    margin: -15px 0 15px 0 !important;
+}
+.vte-advance-menu-container .essentials-container{
+    border-right: 2px solid #ccc;
+}
+.vte-advance-menu-container .group-header{
+    /*border-bottom: 1px solid #ccc;*/
+}
+.vte-advance-menu-container .group-header>.row{
+    margin: 0;
+    padding: 5px 0;
+    position: relative;
+}
+.vte-advance-menu-container .group-header .addButton{
+    /*margin-right: -15px;*/
+}
+.vte-advance-menu-container .VTEAdvanceMenuModuleItem {
+    background: #2C3B49;
+    border-bottom: 1px solid #DDDDDD;
+    cursor: move;
+}
+.vte-advance-menu-container .VTEAdvanceMenuItem {
+    padding: 15px 5px;
+    text-align: center;
+    font-size: 1em;
+    color: #FFFFFF;
+    text-shadow: 0 0 1px #999999;
+    height: 50px;
+    width: 100%;
+    margin-right: 15px;
+}
+.vte-advance-menu-container .vte-menu-item{
+    margin-top: 5px;
+}
+.vte-advance-menu-container .other-container>.row{
+    margin-bottom: 30px;
+}
+.vte-advance-menu-container .group-header .col-lg-2 .fa ,
+.vte-advance-menu-container .group-header .col-lg-10 .group-name {
+    font-size: 1.5em;
+    color: #FFFFFF;
+    line-height: 30px;
+}
+.vte-advance-menu-container .essentials-container .group-header .col-lg-10 .group-name {
+    margin-left: -15px;
+}
+.vte-advance-menu-container .other-container .group-header .col-lg-10 .group-name {
+    margin-left: -40px;
+}
+.vte-advance-menu-container .group-header .fa-pencil{
+    display: none;
+    color: #FFFFFF;
+    font-size: 1em;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1000;
+}
+.vte-advance-menu-container .group-header:hover .fa-pencil{
+    display: inline-block;
+}
+.vte-advance-menu-container .group-menu>.row{
+    position: relative;
+}
+.vte-advance-menu-container .vte-menu-item-sort{
+    margin: 0 15px;
+}
+.vte-advance-menu-container .other-container .vte-menu-item-sort{
+    width: calc(100%/2 - 32px);
+    display: inline-block;
+}
+.ui-state-highlight {
+    height: 65px;
+    line-height: 65px;
+}
+.vte-advance-menu-container .other-container .ui-state-highlight {
+    height: 65px;
+    line-height: 65px;
+    width: calc(100%/2 - 32px);
+}
+.vte-advance-menu-container .add-button-container{
+    display: inline-block;
+}
+
+.addFilterContainer .select2-container{
+    width: 95%;
+}
+.editGroupContainer #icon-preview{
+    padding: 10px;
+    background-color: #596875;
+    color: #FFFFFF;
+    font-size: 1.5em;
+    margin-top: 15px;
+}
+.installationContents .padding1per{
+    padding: 10px;
+}
+.installationContents .form-horizontal .control-label{
+    text-align: left !important;
+}
+.settingsPageDiv{
+    padding-top: 0 !important;
+}
+.settingsPageDiv .crumbs li:after{
+    width: auto;
+}
+.settingsPageDiv .editContainer h3{
+    margin-top: 0;
+}

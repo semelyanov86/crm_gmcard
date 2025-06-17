@@ -1,0 +1,6 @@
+<Files template-blank-page.html>
+    Allow from all
+</Files>
+<Files lang-1.json>
+    Allow from all
+</Files>

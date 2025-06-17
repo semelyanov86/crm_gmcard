@@ -1,0 +1,23 @@
+/* ********************************************************************************
+ * The content of this file is subject to the ChecklistItems ("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTExperts.com
+ * Portions created by VTExperts.com. are Copyright(C) VTExperts.com.
+ * All Rights Reserved.
+ * ****************************************************************************** */
+#vte-primary-box span12{
+    margin: 0;
+}
+.checklist-item{
+    border: 1px solid #ccc;
+    padding: 20px 0;
+    display: block;
+    overflow: hidden;
+    margin: 10px 0;
+}
+.vte-checklist-items .actionImages{
+    opacity: 0;
+}
+.vte-checklist-items tr.listViewEntries:hover .actionImages{
+    opacity: 1;
+}

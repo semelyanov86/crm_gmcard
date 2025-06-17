@@ -1,0 +1,281 @@
+.dashBoardTabContainer, .grid-stack{
+    background: #fafafa !important;
+}
+
+.grid-stack-item-content {
+    box-shadow: 0 0 1.25rem rgba(108, 118, 134, .1) !important;
+}
+
+.dashBoardContainer .tabContainer .tab-content{
+    margin-top : 0px !important;
+}
+.dashBoardContainer .tab-pane{
+    padding: 0 !important;
+}
+.grid-stack{
+    margin-top: 20px !important;
+}
+
+.text-bold {
+    font-weight: bold;font-size: 15px;
+}
+.reference-display-value {
+    color: #15c !important
+}
+.js-reference-display-value {
+    color: #15c !important
+}
+.picklist-color {
+    padding: 2px 3px !important;
+    border-radius: 8px;
+    display: inline-block;
+    line-height: 15px;
+}
+.s-color-box,
+.color-box {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin: 3px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+.hideByStep {
+    display: none;
+}
+.selected-color-box {
+    float: left;
+    width: 13px;
+    height: 13px;
+    margin: 2px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+.div-inline {
+    float: left;
+    width: 100%;
+    display: inline-block;
+}
+.panel_header.sticky_header {
+    position: sticky;
+    top: 0;
+    margin: 0;
+}
+.minilist-table  .fake-body span.action:hover{
+    opacity: 1!important;
+}
+.minilist-table  .fake-body{
+    padding-left: 5px;
+    width: 25px;
+}
+.minilist-table  .fake-body span{
+    opacity: 0.7;
+}
+.fake-body span a.quickView.action{
+    padding-right: 5px;
+}
+.minilist-table  .fake-body{
+    padding-left: 3px;
+    width: 15px
+}
+.minilist-table  .fake-body .dropdown{
+    opacity: 0.7;
+}
+.minilist-table .fake-body .dropdown .dropdown-toggle{
+    cursor: pointer;
+    padding-right: 5px;
+}
+.minilist-table .fake-body .dropdown-menu{
+    top:auto;
+    width: auto;
+    height: auto;
+    position: absolute;
+}
+.minilist-table .fake-body .dropdown-menu>li>a.standard-btn{
+    padding: 3px 5px !important;
+}
+.minilist-table .fake-body .dropdown-menu>li>a.standard-btn:hover {
+    background-image: -webkit-linear-gradient(top, #8FB0CF 0, #8FB0CF 100%);
+}
+.minilist-table .fake-body .dropdown-menu li{
+    padding: 0px;
+    position: relative;
+    border: none
+}
+.minilist-table .fake-body .dropdown-menu a{
+    padding: 0px 6px;
+}
+.panel_footer.sticky_footer {
+    position: sticky;
+    margin: 0;
+}
+
+.italic_small_size {
+    font-style: italic;
+    size: 2px;
+    color: grey;
+}
+.picklist-color {
+    padding: 0.4px 3px !important;
+    /* margin-left: -4px; */
+    border-radius: 8px;
+}
+.panel_content{
+    height: 85%;
+    padding-top: 10px
+}
+.minilist-table{
+    width: 100%;
+    text-align: left;
+}
+.minilist-table-tr{
+    width: 90%;
+    height: 20px;
+    font-size: 11px;
+}
+.minilist-table-td{
+    padding-left: 10px;
+}
+.minilist-column{
+    padding-right: 5px;
+    padding-left: 10px;
+}
+.miniListContent:hover{
+    background: #efefef;
+}
+.miniListContent{
+    height: 18px;
+}
+.widget-header-vreport{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.widget-header-title{
+    font-size: 14px;
+    font-weight:bold
+}
+.widget-header-right{
+    float:right;
+    font-size: 14px
+}
+.page-number{
+    margin-left: -50px;
+}
+.panel_content {
+    height: 85%;
+    padding-top: 10px;
+    padding-right: 10px
+}
+.gauge {
+    white-space: nowrap;
+    height: 100%;
+    font-size: 50px;
+    text-align: center;
+    width: 100%;
+}
+div.table-addwidget-scroller {
+    overflow-y: auto;
+    overflow-x:hidden;
+    position: relative;
+    height: 500px
+}
+div#addWidgetContainer {
+    width: 60%;
+    background-color: #2b669a
+}
+td[name="tdMinilistTable"] {
+    padding-right: 5px;
+    padding-left: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+div#addWidgetContainer .modal-content .modal-header {
+    background: inherit;
+    color: inherit;
+    border-bottom-color: inherit;
+    text-transform: uppercase;
+}
+div#addWidgetContainer .modal-content .modal-header button.close {
+    color: #000;
+}
+.lists-header {
+    color: #000000;
+    font-size: 18px;
+    margin-left: 10px;
+}
+.chartReport {
+    list-style-type: none;
+    margin: 3px 10px;
+    white-space: nowrap;
+}
+h6.filterName {
+    margin-left: 10px;
+    text-transform: uppercase;
+    color: #000000;
+}
+a.filterName.listViewFilterElipsis {
+    padding: 3px 5px 5px 0;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 85%;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #666666;
+}
+ul.lists-menu {
+    list-style: none;
+    padding-left: 10px;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+table[name="listAddWidget"] > tbody > tr > td > hr {
+    margin: -10px -10px;
+}
+
+.gauge-popup-icons {
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+    width:100%;
+    height:100%;
+    display:none;
+}
+
+/* Popup inner div */
+.gauge-popup-icons-content {
+    width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 100px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,1);
+    border-radius: 3px;
+    background: #fff;
+    position: relative;
+}
+
+/* Popup close button */
+.close-box-icons-button {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.8);
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    text-decoration:none;
+}
+
+.close-box-icons-button:hover {
+    background: rgba(0,0,0,1);
+}
+
+@media screen and (max-width: 720px) {
+    .gauge-popup-icons-content {
+        width:90%;
+    }
+}

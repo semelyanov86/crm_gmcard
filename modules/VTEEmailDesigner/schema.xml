@@ -1,0 +1,44 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vte_modules</name>
+			<sql><![CDATA[CREATE TABLE `vte_modules` (
+				`module`  varchar(50) NOT NULL ,
+				`valid`  int(1) NULL ,
+				PRIMARY KEY (`module`));]]></sql>
+		</table>
+		<table>
+			<name>vteemaildesigner_block_category</name>
+			<sql><![CDATA[CREATE TABLE `vteemaildesigner_block_category` (
+				  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+				  `name` varchar(50) DEFAULT NULL,
+				  PRIMARY KEY (`id`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vteemaildesigner_blocks</name>
+			<sql><![CDATA[CREATE TABLE `vteemaildesigner_blocks` (
+				  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+				  `cat_id` int(11) DEFAULT NULL,
+				  `icon` varchar(20) DEFAULT NULL,
+				  `property` varchar(100) DEFAULT NULL,
+				  `name` varchar(70) DEFAULT NULL,
+				  `html` text,
+				  `used_count` int(11) DEFAULT '0',
+				  `is_active` bit(1) DEFAULT b'1',
+				  PRIMARY KEY (`id`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vteemaildesigner_template_blocks</name>
+			<sql><![CDATA[CREATE TABLE `vteemaildesigner_template_blocks` (
+				  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+				  `templateid` int(11) DEFAULT NULL,
+				  `blockid` int(11) DEFAULT NULL,
+				  `content` text,
+				  PRIMARY KEY (`id`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+	</tables>
+</schema>

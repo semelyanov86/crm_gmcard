@@ -1,0 +1,57 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vte_modules</name>
+			<sql><![CDATA[CREATE TABLE `vte_modules` (
+				`module`  varchar(50) NOT NULL ,
+				`valid`  int(1) NULL ,
+				PRIMARY KEY (`module`));]]></sql>
+		</table>
+		<table>
+			<name>vte_buttons_settings</name>
+			<sql><![CDATA[CREATE TABLE `vte_buttons_settings` (
+					  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+					  `module` varchar(100) DEFAULT NULL,
+					  `header` varchar(255) DEFAULT NULL,
+					  `icon` varchar(50) DEFAULT NULL,
+					  `color` varchar(50) DEFAULT NULL,
+					  `field_name` varchar(2000) DEFAULT NULL,
+					  `sequence` int(2) DEFAULT NULL,
+					  `active` int(1) DEFAULT '1',
+					  `conditions` text,
+					  `conditions_count` int(10) DEFAULT NULL,
+					  `show_in_mobile` int(1) DEFAULT NULL,
+					  PRIMARY KEY (`id`)
+					) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vte_buttons_settings</name>
+			<sql><![CDATA[ALTER TABLE `vte_buttons_settings`
+			ADD COLUMN `update_type`  varchar(50) NULL ;
+			]]></sql>
+		</table>
+		<table>
+			<name>vte_buttons_settings</name>
+			<sql><![CDATA[UPDATE `vte_buttons_settings` SET update_type = 'manual' WHERE update_type = '' OR update_type IS NULL;]]></sql>
+		</table>
+		<table>
+			<name>vte_buttons_settings</name>
+			<sql><![CDATA[ALTER TABLE `vte_buttons_settings`
+			ADD COLUMN `automated_update_field`  varchar(100) NULL,
+			ADD COLUMN `automated_update_value`  varchar(100) NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vte_buttons_settings</name>
+			<sql><![CDATA[ALTER TABLE `vte_buttons_settings`
+			ADD COLUMN `members`  varchar(2000) NULL;]]></sql>
+		</table>
+		<table>
+			<name>vte_buttons_customjs</name>
+			<sql><![CDATA[CREATE TABLE `vte_buttons_customjs` (
+					  `is_active` int(1) DEFAULT '0',
+					  `custom_script` text
+					  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+	</tables>
+</schema>

@@ -1,0 +1,20 @@
+<?php
+/*+***********************************************************************************
+ * The contents of this file are subject to the vtiger CRM Public License Version 1.0
+ * ("License"); You may not use this file except in compliance with the License
+ * The Original Code is:  vtiger CRM Open Source
+ * The Initial Developer of the Original Code is vtiger.
+ * Portions created by vtiger are Copyright (C) vtiger.
+ * All Rights Reserved.
+ *************************************************************************************/
+
+vimport ('includes.runtime.Globals');
+require_once 'modules/VReports/models/ScheduleReports.php';
+require_once("modules/VReports/models/VTELicense.php");
+$vTELicense = new VReports_VTELicense_Model('VReports');
+if ($vTELicense->validate()) {
+    VReports_ScheduleReports_Model::runScheduledVReports();
+}else{
+    echo 'You are required to validate the extension before it can be use.';
+}
+

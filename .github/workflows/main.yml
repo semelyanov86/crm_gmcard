@@ -1,0 +1,106 @@
+name: Continuous Integration and Deployment
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Setup Vtiger
+        run: |
+          cp .env.example .env
+
+      - name: Composer Lint
+        run: php phplint.phar
+
+      - name: Composer Validate
+        run: composer validate --no-check-all --strict
+
+  deploy:
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name: Install Dependencies
+        run: composer install -q --no-ansi --no-dev --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: Permission setup
+        run: |
+          chmod -R 777 cache test/vtlib
+          chmod a+rw config.inc.php
+          chmod 755 cron/vtiger_backup.sh
+
+      - name: Clear old build
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          port: 22
+          script: |
+            rm -rf /var/www/html_previous
+            mv /var/www/html_new /var/www/html_previous
+            rm /var/www/html
+            ln -snf /var/www/html_previous /var/www/html
+
+      - name: Copy files via SCP
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          key: ${{ secrets.DEPLOY_KEY }}
+          source: "./"
+          target: "/var/www/html_new"
+
+      - name: Run vtiger commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          port: 22
+          script: |
+            cp /var/www/html_previous/.env /var/www/html_new/.env
+            cd /var/www/html_new
+            mv /var/www/html_previous/storage /var/www/html_new/storage
+            mv /var/www/html_previous/logs /var/www/html_new/logs
+            mv /var/www/html_previous/user_privileges /var/www/html_new/user_privileges
+            cp /var/www/html_previous/tabdata.php /var/www/html_new/tabdata.php
+            cp /var/www/html_previous/parent_tabdata.php /var/www/html_new/parent_tabdata.php
+            mkdir /var/www/html_new/test/templates_c
+            mkdir /var/www/html_new/test/templates_c/v7
+            chmod -R 777 /var/www/html_new/test/templates_c
+            chown -R www-data /var/www/html_new
+            chgrp -R www-data /var/www/html_new
+            rm /var/www/html
+            ln -snf /var/www/html_new /var/www/html
+            rm -rf /var/www/html_previous
+            chmod -R 777 /var/www/html_new/user_privileges
+            chmod 777 /var/www/html_new/websocket/main
+            systemctl restart websocket
+            task migrate

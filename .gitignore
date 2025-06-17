@@ -1,0 +1,14 @@
+vendor/*
+!vendor/.htaccess
+.vscode/*
+.env
+tabdata.php
+parent_tabdata.php
+user_privileges
+storage
+logs
+test/templates_c
+var
+.idea
+!inst/*
+db/dump/vtiger.sql

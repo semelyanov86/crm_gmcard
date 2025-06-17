@@ -1,0 +1,63 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>kanban_view_settings</name>
+			<sql><![CDATA[CREATE TABLE `kanban_view_settings` (
+				`enable`  int(3) NULL DEFAULT NULL 
+				)]]></sql>
+		</table>
+		<table>
+			<name>kanbanview_setting</name>
+			<sql><![CDATA[CREATE TABLE `kanbanview_setting` (
+				  `module` varchar(100) NOT NULL,
+				  `primary_field` int(11) NOT NULL,
+				  `primary_value` varchar(255) NOT NULL,
+				  `other_field` text NOT NULL,
+				  PRIMARY KEY (`module`)
+				)]]></sql>
+		</table>
+		<table>
+			<name>kanban_sequence</name>
+			<sql><![CDATA[CREATE TABLE `kanban_sequence` (
+				  `crmid` int(11) NOT NULL,
+				  `module` varchar(50) NOT NULL,
+				  `sequence` int(11) NOT NULL,
+				  `primary_field_id` int(11) NOT NULL,
+				  `primary_field_value` varchar(255) NOT NULL,
+				  PRIMARY KEY (`crmid`)
+				)]]></sql>
+		</table>
+		<table>
+			<name>kanbanview_setting</name>
+			<sql><![CDATA[ALTER TABLE `kanbanview_setting`
+					MODIFY COLUMN `primary_value`  text NOT NULL AFTER `primary_field`;]]></sql>
+		</table>
+		<table>
+			<name>kanban_sequence</name>
+			<sql><![CDATA[ALTER TABLE `kanban_sequence`
+					ADD COLUMN `username`  varchar(50) NOT NULL,
+					DROP PRIMARY KEY,
+					ADD PRIMARY KEY (`crmid`, `username`);]]></sql>
+		</table>
+		<table>
+			<name>kanbanview_setting</name>
+			<sql><![CDATA[ALTER TABLE `kanbanview_setting`
+					ADD COLUMN `username`  varchar(50) NOT NULL ,
+					DROP PRIMARY KEY,
+					ADD PRIMARY KEY (`module`, `username`);]]></sql>
+		</table>
+		<table>
+			<name>kanbanview_setting</name>
+			<sql><![CDATA[ALTER TABLE kanbanview_setting 
+					ADD `is_default_page` tinyint(1) DEFAULT '0';]]></sql>
+		</table>
+		<table>
+			<name>vte_modules</name>
+			<sql><![CDATA[CREATE TABLE `vte_modules` (
+				`module`  varchar(50) NOT NULL ,
+				`valid`  int(1) NULL ,
+				PRIMARY KEY (`module`));]]></sql>
+		</table>
+	</tables>
+</schema>

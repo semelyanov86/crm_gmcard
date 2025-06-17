@@ -1,0 +1,45 @@
+version: '3'
+
+tasks:
+  console:
+    desc: "Run console application"
+    cmd: "php -f vtlib/tools/console.php"
+  create-migration:
+    desc: "Create migration file"
+    cmd: "vendor/bin/phinx create {{.MIGRATION_NAME}}"
+    vars:
+      MIGRATION_NAME:
+        sh: 'echo "${MIGRATION_NAME}"'
+  migrate:
+    desc: "Run migration"
+    cmd: "php phinx-bin.php migrate"
+  install:
+    desc: "Run migration, copy files and folders, and set up permissions"
+    cmds:
+      - composer install
+      - task migrate
+      - cp inst/tabdata.php tabdata.php
+      - cp -r inst/user_privileges user_privileges
+      - cp -r inst/logs logs
+      - cp -r inst/storage storage
+      - mkdir -p test/templates_c
+      - chmod 777 test/templates_c
+      - chmod 777 user_privileges
+      - chmod 777 logs
+      - chmod 777 storage
+  fix:
+    desc: "Fix code formatting using phpcs"
+    cmd: "vendor/bin/php-cs-fixer fix --diff --verbose"
+  check:
+    desc: "Run checker commands"
+    cmds:
+      - vendor/bin/phplint
+  decode:
+    desc: "Decode encoded its4you modules"
+    cmd: "php vtlib/tools/decode.php {{.CLI_ARGS}}"
+  test:
+    desc: "Run phpunit tests"
+    cmd: "composer test"
+  notstart:
+    desc: "Run websocket server"
+    cmd: "./websocket/main"

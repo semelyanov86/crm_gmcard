@@ -1,0 +1,100 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_checklistitems</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_checklistitems` (
+				  `checklistitemsid` int(11) DEFAULT NULL,
+				  `checklistitem_no` varchar(100) NOT NULL,
+				  `title` varchar(255) DEFAULT NULL,
+				  `allow_upload` varchar(100) DEFAULT NULL,
+				  `allow_note` varchar(100) DEFAULT NULL,
+				  `checklistname` varchar(100) DEFAULT NULL,
+				  `category` varchar(100) DEFAULT NULL,
+				  `checklistitem_status` varchar(100) DEFAULT NULL,
+				  `status_date` date DEFAULT NULL,
+				  `status_time` time DEFAULT NULL,
+				  `parent_id` int(11) DEFAULT NULL,
+				  `settings_item_id` int(19) DEFAULT 0
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_checklistitemscf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_checklistitemscf` (
+				  `checklistitemsid` int(11) NOT NULL,
+				  PRIMARY KEY (`checklistitemsid`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_checklistitems_settings</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_checklistitems_settings` (
+				  `checklistid` int(11) NOT NULL AUTO_INCREMENT,
+				  `checklistname` varchar(100) DEFAULT NULL,
+				  `modulename` varchar(255) DEFAULT NULL,
+				  `createddate` datetime DEFAULT NULL,
+				  `status` varchar(255) DEFAULT NULL,
+				  `ordering` int(11) DEFAULT '1',
+				  PRIMARY KEY (`checklistid`)
+				) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_checklistitems_settings_items</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_checklistitems_settings_items` (
+				  `itemid` int(11) NOT NULL AUTO_INCREMENT,
+				  `title` varchar(255) NOT NULL,
+				  `allow_upload` varchar(100) DEFAULT NULL,
+				  `allow_note` varchar(100) DEFAULT NULL,
+				  `description` text,
+				  `category` varchar(100) DEFAULT NULL,
+				  `createddate` date DEFAULT NULL,
+				  `checklistid` int(11) DEFAULT NULL,
+				  PRIMARY KEY (`itemid`)
+				) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_checklistitems_permissions</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_checklistitems_permissions` (
+				  `permissions` tinyint(1) DEFAULT '0'
+				) ENGINE=InnoDB DEFAULT CHARSET=latin1;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_checklistitems_user_field</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_checklistitems_user_field` (
+                      `recordid` int(25) NOT NULL,
+                      `userid` int(25) NOT NULL,
+                      `starred` varchar(100) DEFAULT NULL
+                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vte_modules</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vte_modules` (
+                `module`  varchar(50) NOT NULL ,
+                `valid`  int(1) NULL ,
+                PRIMARY KEY (`module`));]]></sql>
+		</table>
+		<table>
+			<name>vtiger_checklistitems</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_checklistitems` ADD INDEX `checklistitemsid_index` (`checklistitemsid`) USING BTREE ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_checklistitems</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_checklistitems` ADD INDEX `parent_id_index` (`parent_id`) USING BTREE ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_checklistitems</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_checklistitems` ADD PRIMARY KEY(`checklistitemsid`);]]></sql>
+		</table>
+		<table>
+			<name>vtiger_checklistitems_permissions</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_checklistitems_permissions` ADD INDEX `permissions_index` (`permissions`) USING BTREE ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_checklistitems_user_field</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_checklistitems_user_field` ADD INDEX `recordid_index` (`recordid`) USING BTREE ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_checklistitems_user_field</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_checklistitems_user_field` ADD INDEX `userid_index` (`userid`) USING BTREE ;]]></sql>
+		</table>
+	</tables>
+</schema>

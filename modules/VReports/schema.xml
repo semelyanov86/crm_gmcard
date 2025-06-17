@@ -1,0 +1,501 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_vreport</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreport` (
+              `reportid` int(19) NOT NULL,
+              `folderid` int(19) NOT NULL,
+              `reportname` text DEFAULT '',
+              `description` text DEFAULT '',
+              `reporttype` varchar(50) DEFAULT '',
+              `queryid` int(19) NOT NULL DEFAULT '0',
+              `state` varchar(50) DEFAULT 'SAVED',
+              `customizable` int(1) DEFAULT '1',
+              `category` int(11) DEFAULT '1',
+              `owner` int(11) DEFAULT '1',
+              `sharingtype` varchar(200) DEFAULT 'Private',
+              PRIMARY KEY (`reportid`),
+              KEY `report_queryid_idx` (`queryid`),
+              KEY `report_folderid_idx` (`folderid`)
+            ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreport ADD CONSTRAINT `fk_2_vtiger_vreport` FOREIGN KEY (`queryid`) REFERENCES `vtiger_selectquery` (`queryid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreport` ADD COLUMN `position` TEXT DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreport` ADD COLUMN `modifiedtime` datetime DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_sharegroups</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreport_sharegroups` (
+              `reportid` int(25) NOT NULL,
+              `groupid` int(25) NOT NULL,
+              KEY `vtiger_vreport_sharegroups_ibfk_1` (`reportid`),
+              KEY `vtiger_groups_groupid_ibfk_1` (`groupid`)
+            ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_sharegroups</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreport_sharegroups ADD CONSTRAINT `vtiger_groups_groupid_ibfk_2` FOREIGN KEY (`groupid`) REFERENCES `vtiger_groups` (`groupid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_sharegroups</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreport_sharegroups ADD CONSTRAINT `vtiger_vreport_reportid_ibfk_2` FOREIGN KEY (`reportid`) REFERENCES `vtiger_vreport` (`reportid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_sharerole</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreport_sharerole` (
+             `reportid` int(25) NOT NULL,
+              `roleid` varchar(255) NOT NULL,
+              KEY `vtiger_vreport_sharerole_ibfk_1` (`reportid`),
+              KEY `vtiger_role_roleid_ibfk_1` (`roleid`)
+            ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_sharerole</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreport_sharerole ADD CONSTRAINT `vtiger_vreport_reportid_ibfk_3` FOREIGN KEY (`reportid`) REFERENCES `vtiger_vreport` (`reportid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_sharerole</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreport_sharerole ADD CONSTRAINT `vtiger_role_roleid_ibfk_2` FOREIGN KEY (`roleid`) REFERENCES `vtiger_role` (`roleid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_sharers</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreport_sharers` (
+             `reportid` int(25) NOT NULL,
+              `rsid` varchar(255) NOT NULL,
+              KEY `vtiger_vreport_sharers_ibfk_1` (`reportid`),
+              KEY `vtiger_rolesd_rsid_ibfk_1` (`rsid`)
+            ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_sharers</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreport_sharers ADD CONSTRAINT `vtiger_vreport_reportid_ibfk_4` FOREIGN KEY (`reportid`) REFERENCES `vtiger_vreport` (`reportid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_sharers</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreport_sharers ADD CONSTRAINT `vtiger_rolesd_rsid_ibfk_2` FOREIGN KEY (`rsid`) REFERENCES `vtiger_role` (`roleid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_shareusers</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreport_shareusers` (
+             `reportid` int(25) NOT NULL,
+              `userid` int(25) NOT NULL,
+              KEY `vtiger_vreport_shareusers_ibfk_1` (`reportid`),
+              KEY `vtiger_users_userid_ibfk_1` (`userid`)
+            ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_shareusers</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreport_shareusers ADD CONSTRAINT `vtiger_vreports_reportid_ibfk_5` FOREIGN KEY (`reportid`) REFERENCES `vtiger_vreport` (`reportid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_shareusers</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreport_shareusers ADD CONSTRAINT `vtiger_users_userid_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `vtiger_users` (`id`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdatefilter</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreportdatefilter` (
+             `datefilterid` int(19) NOT NULL,
+              `datecolumnname` varchar(250) DEFAULT '',
+              `datefilter` varchar(250) DEFAULT '',
+              `startdate` date DEFAULT NULL,
+              `enddate` date DEFAULT NULL,
+              PRIMARY KEY (`datefilterid`),
+              KEY `reportdatefilter_datefilterid_idx` (`datefilterid`)
+            ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdatefilter</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreportdatefilter ADD CONSTRAINT `fk_1_vtiger_vreportdatefilter` FOREIGN KEY (`datefilterid`) REFERENCES `vtiger_vreport` (`reportid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportfilters</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreportfilters` (
+               `filterid` int(19) NOT NULL,
+              `name` varchar(200) NOT NULL
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportfolder</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreportfolder` (
+              `folderid` int(19) NOT NULL AUTO_INCREMENT,
+              `foldername` text NOT NULL DEFAULT '',
+              `description` text DEFAULT '',
+              `state` varchar(50) DEFAULT 'SAVED',
+              PRIMARY KEY (`folderid`)
+            ) ENGINE=InnoDB AUTO_INCREMENT=13;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportgroupbycolumn</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreportgroupbycolumn` (
+                `reportid` int(19) DEFAULT NULL,
+              `sortid` int(19) DEFAULT NULL,
+              `sortcolname` varchar(250) DEFAULT NULL,
+              `dategroupbycriteria` varchar(250) DEFAULT NULL,
+              KEY `fk_1_vtiger_vreportgroupbycolumn` (`reportid`)
+            ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportgroupbycolumn</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreportgroupbycolumn ADD CONSTRAINT `fk_1_vtiger_vreportgroupbycolumn` FOREIGN KEY (`reportid`) REFERENCES `vtiger_vreport` (`reportid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportmodules</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreportmodules` (
+                `reportmodulesid` int(19) NOT NULL,
+                  `primarymodule` varchar(100) DEFAULT NULL,
+                  `secondarymodules` varchar(250) DEFAULT '',
+                  PRIMARY KEY (`reportmodulesid`)
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportmodules</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreportmodules ADD CONSTRAINT `fk_1_vtiger_vreportmodules` FOREIGN KEY (`reportmodulesid`) REFERENCES `vtiger_vreport` (`reportid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportsharing</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreportsharing` (
+                 `reportid` int(19) NOT NULL,
+                  `shareid` int(19) NOT NULL,
+                  `setype` varchar(200) NOT NULL
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportsummary</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreportsummary` (
+                 `reportsummaryid` int(19) NOT NULL,
+                  `summarytype` int(19) NOT NULL,
+                  `columnname` varchar(250) NOT NULL DEFAULT '',
+                  PRIMARY KEY (`reportsummaryid`,`summarytype`,`columnname`),
+                  KEY `reportsummary_reportsummaryid_idx` (`reportsummaryid`)
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportsummary</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreportsummary ADD CONSTRAINT `fk_1_vtiger_vreportsummary` FOREIGN KEY (`reportsummaryid`) REFERENCES `vtiger_vreport` (`reportid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportsummary</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreportsummary` ADD COLUMN `column_rename` varchar(250) AFTER `columnname` ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportsummary</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreportsummary` ADD COLUMN `column_rename_status` varchar(10) AFTER `columnname` ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreporttype</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreporttype` (
+                 `reportid` int(10) NOT NULL,
+                  `data` text,
+                  PRIMARY KEY (`reportid`)
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreporttype</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreporttype ADD CONSTRAINT `fk_1_vtiger_vreporttype` FOREIGN KEY (`reportid`) REFERENCES `vtiger_vreport` (`reportid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreporttype</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreporttype` ADD COLUMN `rename_field`  TEXT DEFAULT NULL;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreporttype</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreporttype` ADD COLUMN `rename_field_chart` TEXT DEFAULT NULL;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreporttype</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreporttype` ADD COLUMN `sort_by` varchar(500);]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreporttype</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreporttype` ADD COLUMN `limit` int(11);]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreporttype</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreporttype` ADD COLUMN `order_by` varchar(10);]]></sql>
+		</table>
+		<table>
+			<name>vtiger_scheduled_vreports</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_scheduled_vreports` (
+                 `reportid` int(11) NOT NULL,
+                  `recipients` text,
+                  `schedule` text,
+                  `format` varchar(10) DEFAULT NULL,
+                  `next_trigger_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                  PRIMARY KEY (`reportid`)
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_schedulevreports</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_schedulevreports` (
+                  `reportid` int(10) DEFAULT NULL,
+                  `scheduleid` int(3) DEFAULT NULL,
+                  `recipients` text,
+                  `schdate` varchar(20) DEFAULT NULL,
+                  `schtime` time DEFAULT NULL,
+                  `from_address` varchar(255) DEFAULT NULL,
+                  `subject` varchar(255) DEFAULT NULL,
+                  `body` text DEFAULT NULL,
+                  `schdayoftheweek` varchar(100) DEFAULT NULL,
+                  `schdayofthemonth` varchar(100) DEFAULT NULL,
+                  `schannualdates` varchar(500) DEFAULT NULL,
+                  `specificemails` text DEFAULT NULL,
+                  `next_trigger_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                  `fileformat` varchar(10) DEFAULT 'CSV'
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_schedulevreports</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_schedulevreports` ADD COLUMN `signature` varchar(10) AFTER `body` ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_schedulevreports</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_schedulevreports` ADD COLUMN `signature_user` varchar(10) AFTER `signature` ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportsortcol</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreportsortcol` (
+                  `sortcolid` int(19) NOT NULL,
+                  `reportid` int(19) NOT NULL,
+                  `columnname` varchar(250) DEFAULT '',
+                  `sortorder` varchar(250) DEFAULT 'Asc',
+                  PRIMARY KEY (`sortcolid`,`reportid`),
+                  KEY `fk_1_vtiger_vreportsortcol` (`reportid`)
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportsortcol</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreportsortcol ADD CONSTRAINT `fk_1_vtiger_vreportsortcol`
+                  FOREIGN KEY (`reportid`) REFERENCES `vtiger_vreport` (`reportid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_shareall</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreport_shareall` (
+                  `reportid` int(19) NOT NULL,
+                  `is_shareall` varchar(100) DEFAULT NULL,
+                  PRIMARY KEY (`reportid`)
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_relcriteria_grouping</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreport_relcriteria_grouping` (
+                  `groupid` int(11) NOT NULL,
+                  `queryid` int(19) NOT NULL,
+                  `groupparentid` int(11) NOT NULL,
+                  `group_condition` varchar(256) DEFAULT NULL,
+                  `condition_expression` text,
+                  PRIMARY KEY (`groupid`,`queryid`,`groupparentid`)
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_relcriteria</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreport_relcriteria` (
+                  `queryid` int(19) NOT NULL,
+                  `columnindex` int(11) NOT NULL,
+                  `columnname` varchar(250) DEFAULT '',
+                  `comparator` varchar(20) DEFAULT NULL,
+                  `value` varchar(512) DEFAULT NULL,
+                  `groupid` int(11) DEFAULT '1',
+                  `column_condition` varchar(256) DEFAULT 'and',
+                  `groupparentid` int(11) NOT NULL,
+                  PRIMARY KEY (`queryid`,`columnindex`,`groupparentid`),
+                  KEY `vreport_relcriteria_queryid_idx` (`queryid`)
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_relcriteria</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreport_relcriteria ADD CONSTRAINT `fk_1_vtiger_vreport_relcriteria` FOREIGN KEY (`queryid`) REFERENCES `vtiger_selectquery` (`queryid`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreport_relcriteria_grouping_parent</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_vreport_relcriteria_grouping_parent` (
+                  `groupparentid` int(11) NOT NULL,
+                  `queryid` int(19) NOT NULL,
+                  `group_parent_condition` varchar(100),
+                  PRIMARY KEY (`groupparentid`,`queryid`)
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdashboard_tabs</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS vtiger_vreportdashboard_tabs (
+                    `id` int(19) NOT NULL AUTO_INCREMENT,
+                    `tabname` varchar(50) DEFAULT NULL,
+                    `isdefault` int(1) DEFAULT 0,
+                    `sequence` int(5) DEFAULT 2,
+                    `appname` varchar(20) DEFAULT NULL,
+                    `modulename` varchar(50) DEFAULT NULL,
+                    `userid` int(11) DEFAULT NULL,
+                    PRIMARY KEY (`id`),
+                    UNIQUE `tabname` USING BTREE (`tabname`, `userid`) ,
+                    INDEX `vtiger_vreportdashboard_tabs_ibfk_1` USING BTREE (`userid`)
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdashboard_tabs</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreportdashboard_tabs drop index `tabname`;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdashboard_tabs</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreportdashboard_tabs` ADD COLUMN `dynamic_filter_createdby` int(11) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_module_vreportdashboard_widgets</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_module_vreportdashboard_widgets` (
+                    `id` int(19) NOT NULL AUTO_INCREMENT,
+                    `linkid` int(19) DEFAULT NULL,
+                    `userid` int(19) DEFAULT NULL,
+                    `filterid` int(19) DEFAULT NULL,
+                    `title` varchar(100) DEFAULT NULL,
+                    `data` text DEFAULT NULL,
+                    `position` varchar(50) DEFAULT NULL,
+                    `reportid` int(19) DEFAULT NULL,
+                    `dashboardtabid` int(11) DEFAULT NULL,
+                    `sizeWidth` int(11) DEFAULT NULL,
+                    `sizeHeight` int(11) DEFAULT NULL,
+                    PRIMARY KEY (`id`),
+                    INDEX `dashboardtabid` USING BTREE (`dashboardtabid`)
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_module_vreportdashboard_widgets</name>
+			<sql><![CDATA[ALTER TABLE vtiger_module_vreportdashboard_widgets ADD CONSTRAINT `vtiger_module_vreportdashboard_widgets_ibfk_1` FOREIGN KEY (`dashboardtabid`) REFERENCES `vtiger_vreportdashboard_tabs` (`id`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_module_vreportdashboard_widgets</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_module_vreportdashboard_widgets` ADD COLUMN `refresh_time` varchar(100) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_module_vreportdashboard_widgets</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_module_vreportdashboard_widgets` ADD COLUMN `min_height` int(11) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_module_vreportdashboard_widgets</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_module_vreportdashboard_widgets` ADD COLUMN `max_height` int(11) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_module_vreportdashboard_widgets</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_module_vreportdashboard_widgets` ADD COLUMN `pick_color` varchar(100) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_module_vreportdashboard_widgets</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_module_vreportdashboard_widgets` ADD COLUMN `history_type` varchar(100) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_module_vreportdashboard_widgets</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_module_vreportdashboard_widgets` ADD COLUMN `history_type_radio` varchar(100) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_module_vreportdashboard_widgets</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_module_vreportdashboard_widgets` ADD COLUMN `km_show_empty_val` tinyint(1) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_module_vreportdashboard_widgets</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_module_vreportdashboard_widgets` ADD COLUMN `group_and_sort` tinyint(1) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_module_vreportdashboard_widgets</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_module_vreportdashboard_widgets` ADD COLUMN `widthPx` int(11) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportshistory</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_vreportshistory`(
+                    `id` INT(11) NOT NULL AUTO_INCREMENT ,
+                    `reportid` INT(11) ,
+                    `reportname` VARCHAR(250) ,
+                    `date_sent` DATETIME ,
+                    `from_email` VARCHAR(250) ,
+                    `to_email` TEXT ,
+                    `cc_email` VARCHAR(250) ,
+                    `bcc_email` VARCHAR(250) ,
+                    `email_subject` VARCHAR(250) ,
+                    `email_body` TEXT ,
+                    `result` VARCHAR(10) ,
+                    PRIMARY KEY(`id`)
+                ) ENGINE = INNODB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8;]]></sql>
+		</table>
+		<table>
+			<name>vtevreports_settings</name>
+			<sql><![CDATA[CREATE TABLE `vtevreports_settings` (
+				`enable`  int(3) NULL DEFAULT NULL
+				)]]></sql>
+		</table>
+		<table>
+			<name>vte_modules</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vte_modules` (
+				  `module` varchar(50) NOT NULL,
+				  `valid` int(1) DEFAULT NULL,
+				  PRIMARY KEY (`module`)
+				) ENGINE=InnoDB;
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdashboard_boards</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS vtiger_vreportdashboard_boards (
+                    `id` int(19) NOT NULL AUTO_INCREMENT,
+                    `boardname` varchar(50) DEFAULT NULL,
+                    `shared_to` text,
+                    `userid` int(11),
+                    PRIMARY KEY (`id`),
+                    UNIQUE `boardname` USING BTREE (`boardname`)
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdashboard_tabs</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreportdashboard_tabs` ADD COLUMN `boardid` int(11) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdashboard_tabs</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreportdashboard_tabs` ADD COLUMN `dynamic_filter_account` int(11) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdashboard_tabs</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreportdashboard_tabs` ADD COLUMN `dynamic_filter_assignedto` int(11) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdashboard_tabs</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreportdashboard_tabs` ADD COLUMN `dynamic_filter_date` date DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdashboard_tabs</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreportdashboard_tabs` ADD COLUMN `dynamic_filter_type_date` varchar(100) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdashboard_tabs</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_vreportdashboard_tabs` MODIFY  `dynamic_filter_date` varchar(100) DEFAULT NULL ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreportdashboard_tabs</name>
+			<sql><![CDATA[ALTER TABLE vtiger_vreportdashboard_tabs ADD CONSTRAINT `vtiger_vreportdashboard_tabs_ibfk_2` FOREIGN KEY (`boardid`) REFERENCES `vtiger_vreportdashboard_boards` (`id`) ON DELETE CASCADE;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vreports_css_defaults</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS vtiger_vreports_css_defaults (
+                    `widgetId` int(11) NOT NULL,
+                    `type` varchar(50) DEFAULT NULL,
+                    `description` text
+                ) ENGINE=InnoDB;]]></sql>
+		</table>
+		<table>
+			<name>vreports_autorefresh_logs</name>
+			<sql><![CDATA[CREATE TABLE `vreports_autorefresh_logs`  (
+                  `id` int(19) NULL AUTO_INCREMENT,
+                  `widget_id` int(19) NULL,
+                  `refreshed_time` datetime(0) NULL,
+                  `result` text NULL,
+                  PRIMARY KEY (`id`)
+                );]]></sql>
+		</table>
+		<table>
+			<name>vtiger_module_vreportdashboard_widgets</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_module_vreportdashboard_widgets` ADD COLUMN `last_refreshed_time` datetime(0) NULL AFTER `widthPx`;]]></sql>
+		</table>
+	</tables>
+</schema>

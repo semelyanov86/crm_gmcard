@@ -1,0 +1,12 @@
+Allow from index.php
+<Files index.php>
+    php_flag engine on
+    Allow from all
+</Files>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+Options All +Indexes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

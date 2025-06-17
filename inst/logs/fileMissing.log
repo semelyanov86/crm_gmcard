@@ -1,0 +1,152 @@
+Traced on 2024-07-01 08:25:44
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:26:10
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:26:11
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:26:23
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:26:26
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:29:31
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:30:02
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:32:06
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:33:03
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:33:04
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:33:34
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:34:52
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:35:42
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:36:56
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:37:03
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:37:10
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::15<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:37:30
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::14<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:39:14
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::14<br>
+/data/more/vtiger/index.php::include_once::25<br>
+
+Traced on 2024-07-01 08:44:47
+FileAccessForInclusion - 
+/data/more/vtiger/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/data/more/vtiger/includes/Loader.php::checkFileAccessForInclusion::65<br>
+/data/more/vtiger/includes/Loader.php::includeOnce::191<br>
+/data/more/vtiger/includes/main/WebUI.php::vimport::14<br>
+/data/more/vtiger/index.php::include_once::25<br>
+

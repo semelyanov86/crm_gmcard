@@ -1,0 +1,246 @@
+li.checklist-name{
+    cursor: pointer;
+}
+#vte-checklist-details{
+    width: 800px;
+    height: 600px;
+}
+#vte-checklist-details{
+    width: 1024px;
+    height: 600px;
+    padding: 10px 10px;
+    overflow-y: auto;
+}
+#vte-checklist-details h3{
+    text-align: center;
+    font-size: 26px;
+    color: #288ebe;
+    padding: 0;
+    margin-top: 15px;
+    overflow: hidden;
+    line-height: inherit;
+}
+#vte-checklist-details h3:before,
+#vte-checklist-details h3:after {
+    background-color: #288ebe;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+#vte-checklist-details h3:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+#vte-checklist-details h3:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+#vte-checklist-details .checklist-item{
+    display: block;
+    padding: 10px 0 0 0;
+}
+#vte-checklist-details .checklist-item-header,
+#vte-checklist-details .checklist-item-content{
+    display: block;
+    overflow: hidden;
+}
+#vte-checklist-details .checklist-item-title{
+    display: block;
+    width: 400px;
+    color: #40aad2;
+    font-size: 14px;
+}
+#vte-checklist-details .checklist-item-date{
+    display: block;
+    width: 300px;
+    color: #40aad2;
+    font-style: italic;
+}
+#vte-checklist-details .checklist-item-date input.input-small{
+    width: 90px;
+}
+#vte-checklist-details .checklist-item-date div.date,
+#vte-checklist-details .checklist-item-date div.time{
+    display: inline;
+    float: right;
+}
+#vte-checklist-details .checklist-item-status{
+    display: none;
+}
+#vte-checklist-details .checklist-item-status-btn{
+    width: 16px;
+    height: 16px;
+    display: block;
+    margin-top: 15px;
+}
+#vte-checklist-details .checklist-item-status-btn{
+    background: url('uncheck.png') no-repeat top left;
+    cursor: pointer;
+}
+#vte-checklist-details .checklist-item-status-iconChecked{
+    background: url('checked.png') no-repeat top left;
+}
+#vte-checklist-details .checklist-item-status-iconExcl{
+    background: url('exclamation.png') no-repeat top left;
+}
+#vte-checklist-details .checklist-item-status-iconQ{
+    background: url('question.png') no-repeat top left;
+}
+#vte-checklist-details .checklist-item-status-iconX{
+    background: url('cancel.png') no-repeat top left;
+}
+#vte-checklist-details .checklist-item-header{
+    padding-top: 15px;
+}
+#vte-checklist-details .checklist-item-date{
+    margin-top: -10px;
+}
+#vte-checklist-details .checklist-item-date input{
+    border-top: none;
+    box-shadow: none;
+    border-right: none;
+    border-left: none;
+}
+#vte-checklist-details .progress{
+    display: none;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    height: 18px;
+    background-color: #f7f7f7;
+    background-image: -moz-linear-gradient(top, #f5f5f5, #f9f9f9);
+    background-image: -ms-linear-gradient(top, #f5f5f5, #f9f9f9);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#f9f9f9));
+    background-image: -webkit-linear-gradient(top, #f5f5f5, #f9f9f9);
+    background-image: -o-linear-gradient(top, #f5f5f5, #f9f9f9);
+    background-image: linear-gradient(top, #f5f5f5, #f9f9f9);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#f9f9f9', GradientType=0);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border-color: #62c462;
+}
+#vte-checklist-details .progress .sr-only{
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: inherit;
+    border: 0;
+    color: #000;
+}
+#vte-checklist-details .progress .progress-bar{
+    background-color: #62c462;
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    -webkit-background-size: 40px 40px;
+    -moz-background-size: 40px 40px;
+    -o-background-size: 40px 40px;
+    background-size: 40px 40px;
+    -webkit-animation: progress-bar-stripes 2s linear infinite;
+    -moz-animation: progress-bar-stripes 2s linear infinite;
+    animation: progress-bar-stripes 2s linear infinite;
+}
+#vte-checklist-details .percent{
+    margin-top: -18px;
+}
+#vte-checklist-details .nav-tabs:first-child{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+#vte-checklist-details .item-note-add{
+    display: none;
+}
+#vte-checklist-details .upload-file,
+#vte-checklist-details .add-note,
+#vte-checklist-details .show-all-notes{
+    text-decoration: underline;
+}
+#vte-checklist-details .item-note-list{
+    margin-top: 5px;
+}
+#vte-checklist-details .item-note-list li{
+    display: none;
+    list-style: none;
+}
+#vte-checklist-details .item-note-list li:first-child{
+    display: block;
+}
+#vte-checklist-details .item-note-list p{
+    margin: 0;
+}
+#vte-checklist-details .commentContainer{
+    margin: 0;
+    padding: 0;
+}
+#vte-checklist-details .add-document{
+    margin: 0;
+    padding: 0;
+    height: 24px;
+    line-height: 24px;
+    display: none;
+}
+#vte-checklist-details .checklist-item-related{
+    display: block;
+    overflow: hidden;
+    margin-top: 10px;
+}
+#vte-checklist-details .document-related{
+    display: inline-block;
+    width: 30%;
+    float: left;
+}
+#vte-checklist-details .comment-related{
+    display: inline-block;
+    width: 65%;
+    float: right;
+}
+#vte-checklist-details .item-note-content{
+    width: 100%;
+}
+#vte-checklist-details a.upload-file,
+#vte-checklist-details a.add-note,
+#vte-checklist-details a.show-all-notes{
+    text-decoration: underline !important;
+    color: #40aad2;
+}
+
+#vte-checklist-details .nav-tabs{
+    border-bottom: 0 !important;
+}
+#vte-checklist-details .checklist-item-documents ul li{
+    margin: 0;
+}
+#vte-checklist-details .checklist-item-documents ul li a{
+    border: 1px solid #ddd;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+#vte-checklist-details .commentDetails {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    padding: 10px 10px 5px;
+    display: inline-block;
+    min-width: 400px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}

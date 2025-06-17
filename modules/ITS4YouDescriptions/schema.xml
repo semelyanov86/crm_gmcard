@@ -1,0 +1,50 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>its4you_descriptions</name>
+			<sql><![CDATA[
+                CREATE TABLE IF NOT EXISTS `its4you_descriptions` (
+`descriptionid` int(11) NOT NULL,
+`descriptionname` varchar(100) DEFAULT NULL,
+`description_no` varchar(30) NOT NULL,
+`desc4youmodule` varchar(255) DEFAULT NULL,
+`desc4youfield` varchar(255) DEFAULT NULL,
+`tags` varchar(1) DEFAULT NULL,
+PRIMARY KEY (`descriptionid`)
+) ENGINE=InnoDB
+            ]]></sql>
+		</table>
+		<table>
+			<name>its4you_descriptionscf</name>
+			<sql><![CDATA[
+                CREATE TABLE IF NOT EXISTS `its4you_descriptionscf` (
+`descriptionid` int(19) NOT NULL,
+PRIMARY KEY (`descriptionid`)
+) ENGINE=InnoDB
+            ]]></sql>
+		</table>
+		<table>
+			<name>its4you_descriptions_settings</name>
+			<sql><![CDATA[
+                CREATE TABLE IF NOT EXISTS `its4you_descriptions_settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `module_name` varchar(25) DEFAULT NULL,
+  `fields` text DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_its4youdescriptions_user_field</name>
+			<sql><![CDATA[
+                CREATE TABLE IF NOT EXISTS `vtiger_its4youdescriptions_user_field` (
+                `recordid` int(25) NOT NULL,
+                `userid` int(25) NOT NULL,
+                `starred` varchar(100) DEFAULT NULL,
+                KEY `recordid` (`recordid`)
+                ) ENGINE=InnoDB
+            ]]></sql>
+		</table>
+	</tables>
+</schema>

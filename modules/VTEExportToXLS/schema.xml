@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vte_modules</name>
+			<sql><![CDATA[CREATE TABLE `vte_modules` (
+				`module`  varchar(50) NOT NULL ,
+				`valid`  int(1) NULL ,
+				PRIMARY KEY (`module`));]]></sql>
+		</table>
+		<table>
+			<name>vteexport_to_xls_settings</name>
+			<sql><![CDATA[CREATE TABLE `vteexport_to_xls_settings` (
+				`enable`  int(3) NULL DEFAULT NULL
+				)]]></sql>
+		</table>
+		<table>
+			<name>vteexport_to_xls_settings</name>
+			<sql><![CDATA[ALTER TABLE `vteexport_to_xls_settings`
+				ADD COLUMN `custom_filename` int(3) NULL,
+				ADD COLUMN `file_name` text NULL;]]></sql>
+		</table>
+		<table>
+			<name>vteexport_to_xls_settings</name>
+			<sql><![CDATA[ALTER TABLE `vteexport_to_xls_settings`
+				ADD COLUMN `download_to_server` int(3) NULL;]]></sql>
+		</table>
+	</tables>
+</schema>

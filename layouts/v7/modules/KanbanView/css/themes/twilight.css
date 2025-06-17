@@ -1,0 +1,10 @@
+.kbContainer .kbBoxHeader{
+    background-color: #404952;
+    background-image: -moz-linear-gradient(top, #404952, #404952);
+    background-image: -ms-linear-gradient(top, #404952, #404952);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#404952), to(#404952));
+    background-image: -webkit-linear-gradient(top, #404952, #404952);
+    background-image: -o-linear-gradient(top, #404952, #404952);
+    background-image: linear-gradient(top, #404952, #404952);
+    background-repeat: repeat-x;;
+}

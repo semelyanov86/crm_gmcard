@@ -1,0 +1,32 @@
+/* ********************************************************************************
+ * The content of this file is subject to the Module & Link Creator ("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTExperts.com
+ * Portions created by VTExperts.com. are Copyright(C) VTExperts.com.
+ * All Rights Reserved.
+ * ****************************************************************************** */
+
+table#module-link-creator-list-table .listViewEntries td {
+    cursor: default;
+}
+
+table#module-link-creator-list-table .listViewEntries td .actionImages,
+table#module-link-creator-list-table .listViewEntries td .actions {
+    opacity: 1;
+    /*for IE*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+}
+
+table#module-link-creator-edit-table tbody th,
+table#module-link-creator-edit-table tbody td {
+    vertical-align: top;
+}
+.alert-warning{
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #3a87ad;
+}
+.alert-warning b{
+    color: #333333;
+}

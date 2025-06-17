@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vte_user_login</name>
+			<sql><![CDATA[CREATE TABLE `vte_user_login` (
+				  `id` int(11) NOT NULL AUTO_INCREMENT,
+				  `header` varchar(255) DEFAULT NULL,
+				  `description` text,
+				  `logo` varchar(255) DEFAULT NULL,
+				  `social_facebook` varchar(255) DEFAULT NULL,
+				  `social_twitter` varchar(255) DEFAULT NULL,
+				  `social_linkedin` varchar(255) DEFAULT NULL,
+				  `social_youtube` varchar(255) DEFAULT NULL,
+				  `copyright` text,
+				  `images` text,
+				  `slide_type` varchar(255) DEFAULT NULL,
+				  `slide_speed` int(11) DEFAULT '1500',
+				  `slide_easing` varchar(255) DEFAULT NULL,
+				  PRIMARY KEY (`id`)
+				) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vte_user_login_image_setting</name>
+			<sql><![CDATA[CREATE TABLE `vte_user_login_image_setting` (
+				  `method` varchar(255) DEFAULT NULL,
+				  `width` int(11) DEFAULT NULL,
+				  `height` int(11) DEFAULT NULL,
+				  `type` varchar(255) DEFAULT NULL
+				) ENGINE=InnoDB DEFAULT CHARSET=latin1;]]></sql>
+		</table>
+		<table>
+			<name>vte_modules</name>
+			<sql><![CDATA[CREATE TABLE `vte_modules` (
+                `module`  varchar(50) NOT NULL ,
+                `valid`  int(1) NULL ,
+                PRIMARY KEY (`module`));]]></sql>
+		</table>
+	</tables>
+</schema>

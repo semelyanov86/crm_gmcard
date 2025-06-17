@@ -1,0 +1,52 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vte_module_link_creator</name>
+			<sql><![CDATA[CREATE TABLE `vte_module_link_creator` (
+							`id` INT(19) NOT NULL AUTO_INCREMENT,
+							`status` TINYINT(2) NOT NULL DEFAULT '1' COMMENT '// 0: delete; 1: enable; 2 disable',
+							`created` DATETIME NOT NULL,
+							`updated` DATETIME NOT NULL,
+							`module_id` INT(19) NOT NULL DEFAULT '0' COMMENT '// FK: with entityname table',
+							`module_name` VARCHAR(100) NOT NULL,
+							`module_label` VARCHAR(255) NOT NULL,
+							`module_type` TINYINT(2) NOT NULL DEFAULT '1' COMMENT '// 1: entity; 2: extension',
+							`module_fields` TEXT NULL,
+							`module_list_view_filter_fields` TEXT NULL,
+							`module_summary_fields` TEXT NULL,
+							`module_quick_create_fields` TEXT NULL,
+							`module_links` TEXT NULL,
+							`description` TEXT NULL,
+							PRIMARY KEY (`id`)
+						) ENGINE=InnoDB  DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vte_module_link_creator</name>
+			<sql><![CDATA[
+				ALTER TABLE `vte_module_link_creator`
+				 ADD COLUMN `singular_module_label` varchar(255);
+			]]></sql>
+		</table>
+		<table>
+			<name>vte_module_link_creator_settings</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vte_module_link_creator_settings` (
+						  `id` int(19) unsigned NOT NULL AUTO_INCREMENT,
+						  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '// 0: delete; 1: enable; 2 disable',
+						  `created` datetime NOT NULL,
+						  `updated` datetime NOT NULL,
+						  `module_id` int(19) unsigned NOT NULL COMMENT '// FK - with entityname table',
+						  `description` text,
+						  PRIMARY KEY (`id`)
+						) ENGINE=InnoDB  DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vte_modules</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vte_modules` (
+						  `module`  varchar(50) NOT NULL ,
+						  `valid`  int(1) NULL ,
+						  PRIMARY KEY (`module`)
+						) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+	</tables>
+</schema>

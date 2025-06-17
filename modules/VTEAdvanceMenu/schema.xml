@@ -1,0 +1,61 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vte_advance_menu_settings_menu</name>
+			<sql><![CDATA[CREATE TABLE `vte_advance_menu_settings_menu` (
+				  `menuid` int(19) NOT NULL AUTO_INCREMENT,
+				  `creator` int(19) NOT NULL,
+				  `modified_by` int(19) NOT NULL,
+				  `active` int(1) NOT NULL DEFAULT '1',
+				  `last_module_id` int(19),
+				  PRIMARY KEY (`menuid`)
+				) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vte_advance_menu_settings_groups</name>
+			<sql><![CDATA[CREATE TABLE `vte_advance_menu_settings_groups` (
+				  `groupid` int(19) NOT NULL AUTO_INCREMENT,
+				  `creator` int(19) DEFAULT NULL,
+				  `modified_by` int(19) DEFAULT NULL,
+				  `active` int(1) DEFAULT '1',
+				  `group_name` varchar(255) NOT NULL,
+				  `label` varchar(255) DEFAULT NULL,
+				  `icon_class` varchar(255) DEFAULT NULL,
+				  PRIMARY KEY (`groupid`)
+				) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vte_advance_menu_settings_menu_groups_rel</name>
+			<sql><![CDATA[CREATE TABLE `vte_advance_menu_settings_menu_groups_rel` (
+				  `menuid` int(19) NOT NULL,
+				  `groupid` int(19) NOT NULL
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vte_advance_menu_settings_menu_items</name>
+			<sql><![CDATA[CREATE TABLE `vte_advance_menu_settings_menu_items` (
+				  `itemid` int(19) NOT NULL AUTO_INCREMENT,
+				  `creator` int(19) DEFAULT NULL,
+				  `modified_by` int(19) DEFAULT NULL,
+				  `active` int(1) DEFAULT '1',
+				  `groupid` int(19) NOT NULL,
+				  `menuid` int(19) NOT NULL,
+				  `type` varchar(255) NOT NULL,
+				  `module` varchar(255) NOT NULL,
+				  `link` text,
+				  `label` varchar(255) NOT NULL,
+				  `filter` int(19) DEFAULT NULL,
+				  `sequence` int(19) DEFAULT '0',
+				  PRIMARY KEY (`itemid`)
+				) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vte_modules</name>
+			<sql><![CDATA[CREATE TABLE `vte_modules` (
+                `module`  varchar(50) NOT NULL ,
+                `valid`  int(1) NULL ,
+                PRIMARY KEY (`module`));]]></sql>
+		</table>
+	</tables>
+</schema>

@@ -1,0 +1,48 @@
+.slimScrollDiv {
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+}
+
+div[name="massEditContent"] {
+    overflow: hidden;
+    width: auto;
+    height: auto;
+}
+
+.summaryWidgetContainer {
+    border: 1px solid #ccc;
+}
+
+.needHelp, .headerError {
+    text-align: center;
+    width: 100%;
+}
+
+.summaryWidgetContainer.inside {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ccc;
+    float: left;
+    font-size: 11px;
+    overflow: auto
+}
+
+.fixError, .showError {
+    text-decoration: underline !important;
+}
+
+.helpAndContact {
+    float: left;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    line-height: 24px;
+}
+
+.errorLabel {
+    width: 100%;
+    white-space: nowrap;
+    padding: 3px;
+}

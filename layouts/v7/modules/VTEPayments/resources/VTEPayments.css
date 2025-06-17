@@ -1,0 +1,34 @@
+/* ********************************************************************************
+* The content of this file is subject to the VTEAuthnet("License");
+* You may not use this file except in compliance with the License
+* The Initial Developer of the Original Code is VTExperts.com
+* Portions created by VTExperts.com. are Copyright(C) VTExperts.com.
+* All Rights Reserved.
+* ****************************************************************************** */
+
+button[id^="Invoice_detailView_basicAction_Payments"],button[id*="Invoice_detailView_basicAction_Payments"]:before {
+    background: #35aa47;
+    color: #ffffff;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-shadow: none;
+}
+button[id^="Invoice_detailView_basicAction_Payments"],button[id*="Invoice_detailView_basicAction_Payments"] {
+    background: #35aa47;
+    color: #ffffff;
+    background-repeat: no-repeat;
+}
+button[id^="Invoice_detailView_basicAction_Payments"],button[id*="Invoice_detailView_basicAction_Payments"]:hover {
+    background: #35aa47;
+    color: #ffffff;
+}
+button[id^="Invoice_detailView_basicAction_Payments"],button[id*="Invoice_detailView_basicAction_Payments"]:focus {
+    background: #35aa47;
+    color: #ffffff;
+}
+.vicon-vtepayments:before{
+    content: "\e64e";
+}
