@@ -1,4 +1,5 @@
 <?php
+
 /* * *******************************************************************************
  * The content of this file is subject to the VTE Advance Menu ("License");
  * You may not use this file except in compliance with the License
@@ -6,7 +7,7 @@
  * Portions created by VTExperts.com. are Copyright(C)VTExperts.com.
  * All Rights Reserved.
  * ****************************************************************************** */
-$languageStrings = array(
+$languageStrings = [
     'LBL_LINK_SETTINGS' => 'Settings',
     'LBL_LINK_UNINSTALL' => 'Uninstall',
     'LBL_ADD_BTN' => 'Add',
@@ -74,8 +75,8 @@ $languageStrings = array(
     'LBL_MORE_EXTENSIONS' => 'For more vTiger Extensions, please visit our website',
     /* For License page - End */
 
-);
-$jsLanguageStrings = array(
+];
+$jsLanguageStrings = [
     'JS_SELECT_AN_OPTION' => 'Select an Option',
     'JS_LABEL' => 'label',
     'JS_PLEASE_INSERT_MENU_NAME' => 'Please insert menu name',
@@ -85,4 +86,4 @@ $jsLanguageStrings = array(
     'JS_MENU_ITEM_DELETE_SUCCESS' => 'That menu item is removed',
     'JS_MENU_ADD_SUCCESS' => 'Add new Menu successfully',
     'JS_UPDATE_GROUP_SUCCESS' => 'Saved!',
-);
+];

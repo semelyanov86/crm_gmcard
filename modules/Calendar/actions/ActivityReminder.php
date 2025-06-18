@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,17 +7,19 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
+ */
 
-class Calendar_ActivityReminder_Action extends Vtiger_Action_Controller{
+class Calendar_ActivityReminder_Action extends Vtiger_Action_Controller
+{
+    public function __construct()
+    {
+        $this->exposeMethod('getReminders');
+        $this->exposeMethod('postpone');
+    }
 
-	function __construct() {
-		$this->exposeMethod('getReminders');
-		$this->exposeMethod('postpone');
-	}
-
-	public function requiresPermission(Vtiger_Request $request){
-		$permissions = parent::requiresPermission($request);
+    public function requiresPermission(Vtiger_Request $request)
+    {
+        $permissions = parent::requiresPermission($request);
 
         if (vtlib_isModuleActive($request->getModule())) {
             $mode = $request->getMode();
@@ -37,34 +40,38 @@ class Calendar_ActivityReminder_Action extends Vtiger_Action_Controller{
         }
 
         return $permissions;
-	}
+    }
 
-	public function process(Vtiger_Request $request) {
-		$mode = $request->getMode();
-		if(!empty($mode) && $this->isMethodExposed($mode)) {
-			$this->invokeExposedMethod($mode, $request);
-			return;
-		}
+    public function process(Vtiger_Request $request)
+    {
+        $mode = $request->getMode();
+        if (!empty($mode) && $this->isMethodExposed($mode)) {
+            $this->invokeExposedMethod($mode, $request);
 
-	}
+            return;
+        }
 
-	function getReminders(Vtiger_Request $request) {
-		$recordModels = Calendar_Module_Model::getCalendarReminder();
-		$records = array();
-		foreach($recordModels as $record) {
-			$records[] = $record->getDisplayableValues();
-			$record->updateReminderStatus();
-		}
+    }
 
-		$response = new Vtiger_Response();
-		$response->setResult($records);
-		$response->emit();
-	}
+    public function getReminders(Vtiger_Request $request)
+    {
+        $recordModels = Calendar_Module_Model::getCalendarReminder();
+        $records = [];
+        foreach ($recordModels as $record) {
+            $records[] = $record->getDisplayableValues();
+            $record->updateReminderStatus();
+        }
 
-	function postpone(Vtiger_Request $request) {
-			$recordId = $request->get('record');
-			$module = $request->getModule();
-			$recordModel = Vtiger_Record_Model::getInstanceById($recordId, $module);
-			$recordModel->updateReminderStatus(0);
-		}
-	}
+        $response = new Vtiger_Response();
+        $response->setResult($records);
+        $response->emit();
+    }
+
+    public function postpone(Vtiger_Request $request)
+    {
+        $recordId = $request->get('record');
+        $module = $request->getModule();
+        $recordModel = Vtiger_Record_Model::getInstanceById($recordId, $module);
+        $recordModel->updateReminderStatus(0);
+    }
+}

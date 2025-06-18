@@ -1,5 +1,6 @@
 <?php
-/*********************************************************************************
+
+/*
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
  * The Initial Developer of the Original Code is IT-Solutions4You s.r.o.
@@ -9,8 +10,7 @@
 
 class EMAILMaker_EditProductBlock_View extends Vtiger_Index_View
 {
-
-    public $cu_language = "";
+    public $cu_language = '';
 
     public function preProcess(Vtiger_Request $request, $display = true)
     {
@@ -21,7 +21,7 @@ class EMAILMaker_EditProductBlock_View extends Vtiger_Index_View
         Vtiger_Basic_View::preProcess($request, false);
         $viewer = $this->getViewer($request);
         $moduleName = $request->getModule();
-        $linkParams = array('MODULE' => $moduleName, 'ACTION' => $request->get('view'));
+        $linkParams = ['MODULE' => $moduleName, 'ACTION' => $request->get('view')];
         $linkModels = $EMAILMaker->getSideBarLinks($linkParams);
         $viewer->assign('QUICK_LINKS', $linkModels);
         $viewer->assign('CURRENT_USER_MODEL', Users_Record_Model::getCurrentUserModel());
@@ -36,27 +36,27 @@ class EMAILMaker_EditProductBlock_View extends Vtiger_Index_View
     {
         EMAILMaker_Debugger_Model::GetInstance()->Init();
         $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
-        if ($EMAILMaker->CheckPermissions("EDIT") == false) {
+        if ($EMAILMaker->CheckPermissions('EDIT') == false) {
             $EMAILMaker->DieDuePermission();
         }
 
         $viewer = $this->getViewer($request);
-        $emode = "";
-        $template = array();
+        $emode = '';
+        $template = [];
         $tplid = $request->get('tplid');
         $mode = $request->get('mode');
-        if (isset($tplid) && $tplid != "") {
+        if (isset($tplid) && $tplid != '') {
             $adb = PearDatabase::getInstance();
-            $result = $adb->pquery("SELECT * FROM vtiger_emakertemplates_productbloc_tpl WHERE id=?", array($tplid));
+            $result = $adb->pquery('SELECT * FROM vtiger_emakertemplates_productbloc_tpl WHERE id=?', [$tplid]);
             $row = $adb->fetchByAssoc($result);
-            if ($mode != "duplicate") {
-                $template["id"] = $row["id"];
+            if ($mode != 'duplicate') {
+                $template['id'] = $row['id'];
             }
-            $template["name"] = $row["name"];
-            $template["body"] = $row["body"];
-            $emode = "edit";
+            $template['name'] = $row['name'];
+            $template['body'] = $row['body'];
+            $emode = 'edit';
         }
-        $viewer->assign("EDIT_TEMPLATE", $template);
+        $viewer->assign('EDIT_TEMPLATE', $template);
         $ProductBlockFields = $EMAILMaker->GetProductBlockFields();
         foreach ($ProductBlockFields as $smarty_key => $pbFields) {
             $viewer->assign($smarty_key, $pbFields);
@@ -68,20 +68,20 @@ class EMAILMaker_EditProductBlock_View extends Vtiger_Index_View
         $global_lang_labels = array_flip($app_strings);
         $global_lang_labels = array_flip($global_lang_labels);
         asort($global_lang_labels);
-        $viewer->assign("GLOBAL_LANG_LABELS", $global_lang_labels);
-        list($custom_labels, $languages) = $EMAILMaker->GetCustomLabels();
-        $currLangId = "";
+        $viewer->assign('GLOBAL_LANG_LABELS', $global_lang_labels);
+        [$custom_labels, $languages] = $EMAILMaker->GetCustomLabels();
+        $currLangId = '';
         foreach ($languages as $langId => $langVal) {
-            if ($langVal["prefix"] == $current_language) {
+            if ($langVal['prefix'] == $current_language) {
                 $currLangId = $langId;
                 break;
             }
         }
-        $vcustom_labels = array();
+        $vcustom_labels = [];
         if (count($custom_labels) > 0) {
             foreach ($custom_labels as $oLbl) {
                 $currLangVal = $oLbl->GetLangValue($currLangId);
-                if ($currLangVal == "") {
+                if ($currLangVal == '') {
                     $currLangVal = $oLbl->GetFirstNonEmptyValue();
                 }
 
@@ -89,14 +89,14 @@ class EMAILMaker_EditProductBlock_View extends Vtiger_Index_View
             }
             asort($vcustom_labels);
         } else {
-            $vcustom_labels = $mod_strings["LBL_SELECT_MODULE_FIELD"];
+            $vcustom_labels = $mod_strings['LBL_SELECT_MODULE_FIELD'];
         }
-        $viewer->assign("CUSTOM_LANG_LABELS", $vcustom_labels);
-        $type = "professional";
+        $viewer->assign('CUSTOM_LANG_LABELS', $vcustom_labels);
+        $type = 'professional';
 
-        $viewer->assign("TYPE", $type);
-        $viewer->assign("EMODE", $emode);
-        $viewer->assign("MODE", $mode);
+        $viewer->assign('TYPE', $type);
+        $viewer->assign('EMODE', $emode);
+        $viewer->assign('MODE', $mode);
         $viewer->view('EditProductBlock.tpl', 'EMAILMaker');
     }
 
@@ -104,12 +104,12 @@ class EMAILMaker_EditProductBlock_View extends Vtiger_Index_View
     {
         $headerScriptInstances = parent::getHeaderScripts($request);
         $moduleName = $request->getModule();
-        $jsFileNames = array(
-            "modules.$moduleName.resources.ckeditor.ckeditor",
-            "libraries.jquery.ckeditor.adapters.jquery",
-            "libraries.jquery.jquery_windowmsg",
-            "layouts.v7.modules.$moduleName.resources.ProductBlocks"
-        );
+        $jsFileNames = [
+            "modules.{$moduleName}.resources.ckeditor.ckeditor",
+            'libraries.jquery.ckeditor.adapters.jquery',
+            'libraries.jquery.jquery_windowmsg',
+            "layouts.v7.modules.{$moduleName}.resources.ProductBlocks",
+        ];
 
         $jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
         $headerScriptInstances = array_merge($headerScriptInstances, $jsScriptInstances);

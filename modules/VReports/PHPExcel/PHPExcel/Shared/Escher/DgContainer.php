@@ -1,41 +1,74 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel_Shared_Escher_DgContainer.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Shared_Escher_DgContainer
+{
+    /**
+     * Drawing index, 1-based.
+     *
+     * @var int
+     */
+    private $dgId;
+
+    /**
+     * Last shape index in this drawing.
+     *
+     * @var int
+     */
+    private $lastSpId;
+
+    private $spgrContainer;
+
+    public function getDgId()
+    {
+        return $this->dgId;
+    }
+
+    public function setDgId($value)
+    {
+        $this->dgId = $value;
+    }
+
+    public function getLastSpId()
+    {
+        return $this->lastSpId;
+    }
+
+    public function setLastSpId($value)
+    {
+        $this->lastSpId = $value;
+    }
+
+    public function getSpgrContainer()
+    {
+        return $this->spgrContainer;
+    }
+
+    public function setSpgrContainer($spgrContainer)
+    {
+        return $this->spgrContainer = $spgrContainer;
+    }
+}

@@ -1,39 +1,62 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+
+
+/**
+ * PHPExcel_Writer_OpenDocument_Cell_Comment.
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @author     Alexander Pervakov <frost-nzcr4@jagmort.com>
+ */
+class PHPExcel_Writer_OpenDocument_Cell_Comment
+{
+    public static function write(PHPExcel_Shared_XMLWriter $objWriter, PHPExcel_Cell $cell)
+    {
+        $comments = $cell->getWorksheet()->getComments();
+        if (!isset($comments[$cell->getCoordinate()])) {
+            return;
+        }
+        $comment = $comments[$cell->getCoordinate()];
+
+        $objWriter->startElement('office:annotation');
+        // $objWriter->writeAttribute('draw:style-name', 'gr1');
+        // $objWriter->writeAttribute('draw:text-style-name', 'P1');
+        $objWriter->writeAttribute('svg:width', $comment->getWidth());
+        $objWriter->writeAttribute('svg:height', $comment->getHeight());
+        $objWriter->writeAttribute('svg:x', $comment->getMarginLeft());
+        $objWriter->writeAttribute('svg:y', $comment->getMarginTop());
+        // $objWriter->writeAttribute('draw:caption-point-x', $comment->getMarginLeft());
+        // $objWriter->writeAttribute('draw:caption-point-y', $comment->getMarginTop());
+        $objWriter->writeElement('dc:creator', $comment->getAuthor());
+        // TODO: Not realized in PHPExcel_Comment yet.
+        // $objWriter->writeElement('dc:date', $comment->getDate());
+        $objWriter->writeElement('text:p', $comment->getText()->getPlainText());
+        // $objWriter->writeAttribute('draw:text-style-name', 'P1');
+        $objWriter->endElement();
+    }
+}

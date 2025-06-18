@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.1
  * ("License"); You may not use this file except in compliance with the License
@@ -6,11 +7,10 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
+ */
 
 class EMAILMaker_Popup_View extends Vtiger_Popup_View
 {
-
     public function checkPermission(Vtiger_Request $request)
     {
         return true;
@@ -36,9 +36,9 @@ class EMAILMaker_Popup_View extends Vtiger_Popup_View
         $recordStructureInstance = Vtiger_RecordStructure_Model::getInstanceForModule($moduleModel);
 
         $listViewModel = EMAILMaker_ListView_Model::getInstance($moduleName, $cvId);
-        //add body to select clause so that we can retrive data after click in the popup
+        // add body to select clause so that we can retrive data after click in the popup
         $listViewModel->addColumnToSelectCaluse('body');
-        $linkParams = array('MODULE' => $moduleName, 'ACTION' => $request->get('view'), 'CVID' => $cvId);
+        $linkParams = ['MODULE' => $moduleName, 'ACTION' => $request->get('view'), 'CVID' => $cvId];
         $linkModels = $listViewModel->getListViewMassActions($linkParams);
         $pagingModel = new Vtiger_Paging_Model();
         $pagingModel->set('page', $pageNumber);
@@ -86,14 +86,14 @@ class EMAILMaker_Popup_View extends Vtiger_Popup_View
         }
 
         if (empty($sortOrder)) {
-            $sortOrder = "ASC";
+            $sortOrder = 'ASC';
         }
-        if ($sortOrder == "ASC") {
-            $nextSortOrder = "DESC";
-            $sortImage = "downArrowSmall.png";
+        if ($sortOrder == 'ASC') {
+            $nextSortOrder = 'DESC';
+            $sortImage = 'downArrowSmall.png';
         } else {
-            $nextSortOrder = "ASC";
-            $sortImage = "upArrowSmall.png";
+            $nextSortOrder = 'ASC';
+            $sortImage = 'upArrowSmall.png';
         }
         $viewer->assign('LISTVIEW_LINKS', $this->listViewLinks);
         $viewer->assign('LISTVIEW_MASSACTIONS', $linkModels['LISTVIEWMASSACTION']);
@@ -129,8 +129,7 @@ class EMAILMaker_Popup_View extends Vtiger_Popup_View
     }
 
     /**
-     * Function to get listView count
-     * @param Vtiger_Request $request
+     * Function to get listView count.
      */
     public function getListViewCount(Vtiger_Request $request)
     {
@@ -142,7 +141,7 @@ class EMAILMaker_Popup_View extends Vtiger_Popup_View
         $listViewModel->set('search_key', $searchKey);
         $listViewModel->set('search_value', $searchValue);
         $listViewModel->set('operator', $request->get('operator'));
+
         return $listViewModel->getListViewCount();
     }
-
 }

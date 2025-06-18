@@ -1,19 +1,16 @@
 <?php
 
-define("DS", DIRECTORY_SEPARATOR);
+define('DS', DIRECTORY_SEPARATOR);
 /**
- * Class ModuleLinkCreator_Uninstall_View
+ * Class ModuleLinkCreator_Uninstall_View.
  */
 class ModuleLinkCreator_Uninstall_View extends Settings_Vtiger_Index_View
 {
-    /**
-     * @param Vtiger_Request $request
-     */
     public function process(Vtiger_Request $request)
     {
         $moduleName = $request->getModule();
         $moduleLabel = vtranslate($moduleName, $moduleName);
-        echo "<div class=\"container-fluid\"><div class=\"widget_header row-fluid\"><h3>" . $moduleLabel . "</h3></div><hr>";
+        echo '<div class="container-fluid"><div class="widget_header row-fluid"><h3>' . $moduleLabel . '</h3></div><hr>';
         $module = Vtiger_Module::getInstance($moduleName);
         if ($module) {
             $module->delete();
@@ -21,53 +18,49 @@ class ModuleLinkCreator_Uninstall_View extends Settings_Vtiger_Index_View
         $this->removeData();
         $this->cleanFolder($moduleName);
         $this->cleanLanguage($moduleName);
-        echo "Module was Uninstalled.</div>";
+        echo 'Module was Uninstalled.</div>';
     }
-    /**
-     * @param $moduleName
-     */
+
     public function removeData()
     {
         global $adb;
-        $moduleName = "ModuleLinkCreator";
-        echo "&nbsp;&nbsp;- Delete vte_module_link_creator_settings table.";
-        $result = $adb->pquery("DROP TABLE vte_module_link_creator_settings");
-        echo $result ? " - DONE" : " - <b>ERROR</b>";
-        echo "<br>&nbsp;&nbsp;- Delete Custom Module Builder from vtiger_ws_entity table.";
-        $result = $adb->pquery("DELETE FROM `vtiger_crmentity` WHERE `setype`=?", array($moduleName));
-        echo $result ? " - DONE" : " - <b>ERROR</b>";
-        echo "<br>&nbsp;&nbsp;- Delete vte_module_link_creator table.";
-        $result = $adb->pquery("DROP TABLE vte_module_link_creator");
-        echo $result ? " - DONE" : " - <b>ERROR</b>";
-        echo "<br>&nbsp;&nbsp;- Delete Custom Module Builder from vtiger_ws_entity table.";
-        $result = $adb->pquery("DELETE FROM `vtiger_ws_entity` WHERE `name`=?", array($moduleName));
-        echo $result ? " - DONE" : " - <b>ERROR</b>";
-        echo "<br>&nbsp;&nbsp;- Delete Custom Module Builder from vtiger_settings_field table.";
-        $result = $adb->pquery("DELETE FROM `vtiger_settings_field` WHERE `name`=?", array("Custom Module Builder"));
-        echo $result ? " - DONE" : " - <b>ERROR</b>";
-        echo "<br>";
+        $moduleName = 'ModuleLinkCreator';
+        echo '&nbsp;&nbsp;- Delete vte_module_link_creator_settings table.';
+        $result = $adb->pquery('DROP TABLE vte_module_link_creator_settings');
+        echo $result ? ' - DONE' : ' - <b>ERROR</b>';
+        echo '<br>&nbsp;&nbsp;- Delete Custom Module Builder from vtiger_ws_entity table.';
+        $result = $adb->pquery('DELETE FROM `vtiger_crmentity` WHERE `setype`=?', [$moduleName]);
+        echo $result ? ' - DONE' : ' - <b>ERROR</b>';
+        echo '<br>&nbsp;&nbsp;- Delete vte_module_link_creator table.';
+        $result = $adb->pquery('DROP TABLE vte_module_link_creator');
+        echo $result ? ' - DONE' : ' - <b>ERROR</b>';
+        echo '<br>&nbsp;&nbsp;- Delete Custom Module Builder from vtiger_ws_entity table.';
+        $result = $adb->pquery('DELETE FROM `vtiger_ws_entity` WHERE `name`=?', [$moduleName]);
+        echo $result ? ' - DONE' : ' - <b>ERROR</b>';
+        echo '<br>&nbsp;&nbsp;- Delete Custom Module Builder from vtiger_settings_field table.';
+        $result = $adb->pquery('DELETE FROM `vtiger_settings_field` WHERE `name`=?', ['Custom Module Builder']);
+        echo $result ? ' - DONE' : ' - <b>ERROR</b>';
+        echo '<br>';
     }
-    /**
-     * @param $moduleName
-     */
+
     public function cleanFolder($moduleName)
     {
         global $adb;
         global $vtiger_current_version;
-        echo "&nbsp;&nbsp;- Remove " . $moduleName . " template folder";
-        $result = $this->removeFolder("layouts/vlayout/modules/" . $moduleName);
-        echo $result ? " - DONE" : " - <b>ERROR</b>";
-        echo "<br>";
-        echo "&nbsp;&nbsp;- Remove " . $moduleName . " module folder";
-        $result = $this->removeFolder("modules/" . $moduleName);
-        echo $result ? " - DONE" : " - <b>ERROR</b>";
-        echo "<br>";
-        if (version_compare($vtiger_current_version, "7.0.0", ">=")) {
-            $result = $this->removeFolder("layouts/v7/modules/" . $moduleName);
+        echo '&nbsp;&nbsp;- Remove ' . $moduleName . ' template folder';
+        $result = $this->removeFolder('layouts/vlayout/modules/' . $moduleName);
+        echo $result ? ' - DONE' : ' - <b>ERROR</b>';
+        echo '<br>';
+        echo '&nbsp;&nbsp;- Remove ' . $moduleName . ' module folder';
+        $result = $this->removeFolder('modules/' . $moduleName);
+        echo $result ? ' - DONE' : ' - <b>ERROR</b>';
+        echo '<br>';
+        if (version_compare($vtiger_current_version, '7.0.0', '>=')) {
+            $result = $this->removeFolder('layouts/v7/modules/' . $moduleName);
         }
     }
+
     /**
-     * @param $path
      * @return bool
      */
     public function removeFolder($path)
@@ -79,8 +72,9 @@ class ModuleLinkCreator_Uninstall_View extends Settings_Vtiger_Index_View
             chmod($path, 511);
         }
         $handle = opendir($path);
+
         while ($tmp = readdir($handle)) {
-            if ($tmp == ".." || $tmp == ".") {
+            if ($tmp == '..' || $tmp == '.') {
                 continue;
             }
             $tmpPath = $path . DS . $tmp;
@@ -100,49 +94,44 @@ class ModuleLinkCreator_Uninstall_View extends Settings_Vtiger_Index_View
         }
         closedir($handle);
         rmdir($path);
+
         return !is_dir($path);
     }
-    /**
-     * @param $moduleName
-     */
+
     public function cleanLanguage($moduleName)
     {
-        $files = glob("languages/*/" . $moduleName . ".php");
+        $files = glob('languages/*/' . $moduleName . '.php');
         foreach ($files as $file) {
             if (is_file($file)) {
                 unlink($file);
             }
         }
     }
-    /**
-     * @param $moduleName
-     */
+
     public function cleanLicense($moduleName)
     {
-        $file = "test/" . $moduleName . ".php";
+        $file = 'test/' . $moduleName . '.php';
         if (is_file($file)) {
             unlink($file);
         }
     }
-    /**
-     * @param $moduleName
-     */
+
     public function cleanStorage($moduleName)
     {
-        $dir = "storage/" . $moduleName;
+        $dir = 'storage/' . $moduleName;
         $this->rmdir_recursive($dir);
     }
+
     /**
-     * @link http://stackoverflow.com/questions/7288029/php-delete-directory-that-is-not-empty
-     * @param $dir
+     * @see http://stackoverflow.com/questions/7288029/php-delete-directory-that-is-not-empty
      */
     public function rmdir_recursive($dir)
     {
         foreach (scandir($dir) as $file) {
-            if ("." === $file || ".." === $file) {
+            if ($file === '.' || $file === '..') {
                 continue;
             }
-            $tmpFile = (string) $dir . "/" . $file;
+            $tmpFile = (string) $dir . '/' . $file;
             if (is_dir($tmpFile)) {
                 $this->rmdir_recursive($tmpFile);
             } else {
@@ -152,5 +141,3 @@ class ModuleLinkCreator_Uninstall_View extends Settings_Vtiger_Index_View
         rmdir($dir);
     }
 }
-
-?>

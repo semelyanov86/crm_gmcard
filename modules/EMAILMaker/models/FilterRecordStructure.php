@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,13 +7,12 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
+ */
 
 class EMAILMaker_FilterRecordStructure_Model extends EMAILMaker_RecordStructure_Model
 {
-
     /**
-     * Function to get the values in stuctured format
+     * Function to get the values in stuctured format.
      * @return <array> - values in structure array('block'=>array(fieldinfo));
      */
     public function getStructure()
@@ -24,17 +24,17 @@ class EMAILMaker_FilterRecordStructure_Model extends EMAILMaker_RecordStructure_
         $recordModel = $this->getEMAILMakerModel();
         $recordId = $recordModel->getId();
 
-        $values = array();
+        $values = [];
 
         $baseModuleModel = $moduleModel = $this->getModule();
         $blockModelList = $moduleModel->getBlocks();
         foreach ($blockModelList as $blockLabel => $blockModel) {
             $fieldModelList = $blockModel->getFields();
-            if (!empty ($fieldModelList)) {
-                $values[$blockLabel] = array();
+            if (!empty($fieldModelList)) {
+                $values[$blockLabel] = [];
                 foreach ($fieldModelList as $fieldName => $fieldModel) {
                     if ($fieldModel->isViewableInFilterView()) {
-                        if (in_array($moduleModel->getName(), array('Calendar', 'Events')) && $fieldModel->getDisplayType() == 3) {
+                        if (in_array($moduleModel->getName(), ['Calendar', 'Events']) && $fieldModel->getDisplayType() == 3) {
                             /* Restricting the following fields(Event module fields) for "Calendar" module
                              * time_start, time_end, eventstatus, activitytype,	visibility, duration_hours,
                              * duration_minutes, reminder_time, recurringtype, notime
@@ -42,7 +42,7 @@ class EMAILMaker_FilterRecordStructure_Model extends EMAILMaker_RecordStructure_
                             continue;
                         }
                         if (!empty($recordId)) {
-                            //Set the fieldModel with the valuetype for the client side.
+                            // Set the fieldModel with the valuetype for the client side.
                             $fieldValueType = $recordModel->getFieldFilterValueType($fieldName);
                             $fieldInfo = $fieldModel->getFieldInfo();
                             $fieldInfo['emailmaker_valuetype'] = $fieldValueType;
@@ -60,7 +60,7 @@ class EMAILMaker_FilterRecordStructure_Model extends EMAILMaker_RecordStructure_
 
         if ($moduleModel->isCommentEnabled()) {
             $commentFieldModel = EMAILMaker_Field_Model::getCommentFieldForFilterConditions($moduleModel);
-            $commentFieldModelsList = array($commentFieldModel->getName() => $commentFieldModel);
+            $commentFieldModelsList = [$commentFieldModel->getName() => $commentFieldModel];
 
             $labelName = vtranslate($moduleModel->getSingularLabelKey(), $moduleModel->getName()) . ' ' . vtranslate('LBL_COMMENTS', $moduleModel->getName());
             foreach ($commentFieldModelsList as $commentFieldName => $commentFieldModel) {
@@ -72,8 +72,8 @@ class EMAILMaker_FilterRecordStructure_Model extends EMAILMaker_RecordStructure_
             }
         }
 
-        //All the reference fields should also be sent
-        $fields = $moduleModel->getFieldsByType(array('reference', 'multireference'));
+        // All the reference fields should also be sent
+        $fields = $moduleModel->getFieldsByType(['reference', 'multireference']);
         foreach ($fields as $parentFieldName => $field) {
             $referenceModules = $field->getReferenceList();
             foreach ($referenceModules as $refModule) {
@@ -84,19 +84,19 @@ class EMAILMaker_FilterRecordStructure_Model extends EMAILMaker_RecordStructure_
                 $blockModelList = $moduleModel->getBlocks();
                 foreach ($blockModelList as $blockLabel => $blockModel) {
                     $fieldModelList = $blockModel->getFields();
-                    if (!empty ($fieldModelList)) {
+                    if (!empty($fieldModelList)) {
                         if (count($referenceModules) > 1) {
                             // block label format : reference field label (modulename) - block label. Eg: Related To (Organization) Address Details
-                            $newblockLabel = vtranslate($field->get('label'), $baseModuleModel->getName()) . ' (' . vtranslate($refModule, $refModule) . ') - ' .
-                                vtranslate($blockLabel, $refModule);
+                            $newblockLabel = vtranslate($field->get('label'), $baseModuleModel->getName()) . ' (' . vtranslate($refModule, $refModule) . ') - '
+                                . vtranslate($blockLabel, $refModule);
                         } else {
                             $newblockLabel = vtranslate($field->get('label'), $baseModuleModel->getName()) . '-' . vtranslate($blockLabel, $refModule);
                         }
-                        $values[$newblockLabel] = array();
+                        $values[$newblockLabel] = [];
                         $fieldModel = $fieldName = null;
                         foreach ($fieldModelList as $fieldName => $fieldModel) {
                             if ($fieldModel->isViewableInFilterView()) {
-                                $name = "($parentFieldName : ($refModule) $fieldName)";
+                                $name = "({$parentFieldName} : ({$refModule}) {$fieldName})";
                                 $label = vtranslate($field->get('label'), $baseModuleModel->getName()) . ' : (' . vtranslate($refModule, $refModule) . ') ' . vtranslate($fieldModel->get('label'), $refModule);
                                 $fieldModel->set('emailmaker_columnname', $name)->set('emailmaker_columnlabel', $label);
                                 if (!empty($recordId)) {
@@ -114,10 +114,11 @@ class EMAILMaker_FilterRecordStructure_Model extends EMAILMaker_RecordStructure_
                     }
                 }
 
-                $commentFieldModelsList = array();
+                $commentFieldModelsList = [];
             }
         }
         $this->structuredValues = $values;
+
         return $values;
     }
 }

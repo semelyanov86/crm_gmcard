@@ -1,4 +1,5 @@
 <?php
+
 /* ********************************************************************************
  * The content of this file is subject to the Custom Header ("License");
  * You may not use this file except in compliance with the License
@@ -7,11 +8,11 @@
  * All Rights Reserved.
  * ****************************************************************************** */
 
-$languageStrings = array(
+$languageStrings = [
     'VTEButtons' => 'Buttons',
     'LBL_ENABLE_MODULE' => 'Enable Buttons',
     'MODULE_LBL' => 'Buttons',
-	'Access Denied' =>'Access Denied',
+    'Access Denied' => 'Access Denied',
     'LBL_SHOW_IN_MOBILE' => 'Show in Mobile',
     'YES' => 'Yes',
     'NO' => 'No',
@@ -56,6 +57,6 @@ $languageStrings = array(
     'LBL_HAS_BEEN_SUCCESSFULLY' => 'has been installed & activated successfully!',
     'LBL_MORE_EXTENSIONS' => 'For more vTiger Extensions, please visit our website',
     /* For License page - End */
-);
+];
 
-$jsLanguageStrings = array();
+$jsLanguageStrings = [];

@@ -1,80 +1,181 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-PwiZdiVGXeZI6OHXAv4ZliN1Dce=
+<?php
+
+/**
+ * PHPExcel_Shared_File.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Shared_File
+{
+    /*
+     * Use Temp or File Upload Temp for temporary files
+     *
+     * @protected
+     * @var    boolean
+     */
+    protected static $useUploadTempDirectory = false;
+
+    /**
+     * Set the flag indicating whether the File Upload Temp directory should be used for temporary files.
+     *
+     * @param     bool    $useUploadTempDir        Use File Upload Temporary directory (true or false)
+     */
+    public static function setUseUploadTempDirectory($useUploadTempDir = false)
+    {
+        self::$useUploadTempDirectory = (bool) $useUploadTempDir;
+    }
+
+    /**
+     * Get the flag indicating whether the File Upload Temp directory should be used for temporary files.
+     *
+     * @return     bool    Use File Upload Temporary directory (true or false)
+     */
+    public static function getUseUploadTempDirectory()
+    {
+        return self::$useUploadTempDirectory;
+    }
+
+    /**
+     * Verify if a file exists.
+     *
+     * @param     string    $pFilename    Filename
+     * @return bool
+     */
+    public static function file_exists($pFilename)
+    {
+        // Sick construction, but it seems that
+        // file_exists returns strange values when
+        // doing the original file_exists on ZIP archives...
+        if (strtolower(substr($pFilename, 0, 3)) == 'zip') {
+            // Open ZIP file and verify if the file exists
+            $zipFile     = substr($pFilename, 6, strpos($pFilename, '#') - 6);
+            $archiveFile = substr($pFilename, strpos($pFilename, '#') + 1);
+
+            $zip = new ZipArchive();
+            if ($zip->open($zipFile) === true) {
+                $returnValue = ($zip->getFromName($archiveFile) !== false);
+                $zip->close();
+
+                return $returnValue;
+            }
+
+            return false;
+
+        }
+
+        // Regular file_exists
+        return file_exists($pFilename);
+
+    }
+
+    /**
+     * Returns canonicalized absolute pathname, also for ZIP archives.
+     *
+     * @param string $pFilename
+     * @return string
+     */
+    public static function realpath($pFilename)
+    {
+        // Returnvalue
+        $returnValue = '';
+
+        // Try using realpath()
+        if (file_exists($pFilename)) {
+            $returnValue = realpath($pFilename);
+        }
+
+        // Found something?
+        if ($returnValue == '' || ($returnValue === null)) {
+            $pathArray = explode('/', $pFilename);
+
+            while (in_array('..', $pathArray) && $pathArray[0] != '..') {
+                for ($i = 0; $i < count($pathArray); ++$i) {
+                    if ($pathArray[$i] == '..' && $i > 0) {
+                        unset($pathArray[$i], $pathArray[$i - 1]);
+
+                        break;
+                    }
+                }
+            }
+            $returnValue = implode('/', $pathArray);
+        }
+
+        // Return
+        return $returnValue;
+    }
+
+    /**
+     * Get the systems temporary directory.
+     *
+     * @return string
+     */
+    public static function sys_get_temp_dir()
+    {
+        if (self::$useUploadTempDirectory) {
+            //  use upload-directory when defined to allow running on environments having very restricted
+            //      open_basedir configs
+            if (ini_get('upload_tmp_dir') !== false) {
+                if ($temp = ini_get('upload_tmp_dir')) {
+                    if (file_exists($temp)) {
+                        return realpath($temp);
+                    }
+                }
+            }
+        }
+
+        // sys_get_temp_dir is only available since PHP 5.2.1
+        // http://php.net/manual/en/function.sys-get-temp-dir.php#94119
+        if (!function_exists('sys_get_temp_dir')) {
+            if ($temp = getenv('TMP')) {
+                if ((!empty($temp)) && file_exists($temp)) {
+                    return realpath($temp);
+                }
+            }
+            if ($temp = getenv('TEMP')) {
+                if ((!empty($temp)) && file_exists($temp)) {
+                    return realpath($temp);
+                }
+            }
+            if ($temp = getenv('TMPDIR')) {
+                if ((!empty($temp)) && file_exists($temp)) {
+                    return realpath($temp);
+                }
+            }
+
+            // trick for creating a file in system's temporary dir
+            // without knowing the path of the system's temporary dir
+            $temp = tempnam(__FILE__, '');
+            if (file_exists($temp)) {
+                unlink($temp);
+
+                return realpath(dirname($temp));
+            }
+
+            return null;
+        }
+
+        // use ordinary built-in PHP function
+        //    There should be no problem with the 5.2.4 Suhosin realpath() bug, because this line should only
+        //        be called if we're running 5.2.1 or earlier
+        return realpath(sys_get_temp_dir());
+    }
+}

@@ -1,4 +1,5 @@
 <?php
+
 /* +***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -8,42 +9,44 @@
  * All Rights Reserved.
  * *********************************************************************************** */
 
-class Settings_PickListDependency_AddDependency_View extends Settings_Vtiger_IndexAjax_View {
-	function __construct() {
-		parent::__construct();
-		$this->exposeMethod('GetPickListFields');
-	}
+class Settings_PickListDependency_AddDependency_View extends Settings_Vtiger_IndexAjax_View
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->exposeMethod('GetPickListFields');
+    }
 
-	function process(Vtiger_Request $request) {
-		$mode = $request->getMode();
-		if(!empty($mode) && method_exists($this, $mode)) {
-			$this->invokeExposedMethod($mode, $request);
-			return;
-		}
+    public function process(Vtiger_Request $request)
+    {
+        $mode = $request->getMode();
+        if (!empty($mode) && method_exists($this, $mode)) {
+            $this->invokeExposedMethod($mode, $request);
 
-		$qualifiedModule = $request->getModule(true);
-		$viewer = $this->getViewer($request);
-		$moduleModels = Vtiger_Module_Model::getEntityModules();
+            return;
+        }
 
-		$viewer->assign('MODULES', $moduleModels);
-		echo $viewer->view('AddDependency.tpl', $qualifiedModule);
-	}
+        $qualifiedModule = $request->getModule(true);
+        $viewer = $this->getViewer($request);
+        $moduleModels = Vtiger_Module_Model::getEntityModules();
 
-	/**
-	 * Function returns the picklist field for a module
-	 * @param Vtiger_Request $request
-	 */
-	function GetPickListFields(Vtiger_Request $request) {
-		$module = $request->get('sourceModule');
+        $viewer->assign('MODULES', $moduleModels);
+        echo $viewer->view('AddDependency.tpl', $qualifiedModule);
+    }
 
-		$fieldList = Settings_PickListDependency_Module_Model::getAvailablePicklists($module);
+    /**
+     * Function returns the picklist field for a module.
+     */
+    public function GetPickListFields(Vtiger_Request $request)
+    {
+        $module = $request->get('sourceModule');
 
-		$response = new Vtiger_Response();
-		$response->setResult($fieldList);
-		$response->emit();
-	}
+        $fieldList = Settings_PickListDependency_Module_Model::getAvailablePicklists($module);
 
-	function CheckCyclicDependency() {
+        $response = new Vtiger_Response();
+        $response->setResult($fieldList);
+        $response->emit();
+    }
 
-	}
+    public function CheckCyclicDependency() {}
 }

@@ -1,63 +1,194 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel_Shared_Escher_DggContainer.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Shared_Escher_DggContainer
+{
+    /**
+     * Maximum shape index of all shapes in all drawings increased by one.
+     *
+     * @var int
+     */
+    private $spIdMax;
+
+    /**
+     * Total number of drawings saved.
+     *
+     * @var int
+     */
+    private $cDgSaved;
+
+    /**
+     * Total number of shapes saved (including group shapes).
+     *
+     * @var int
+     */
+    private $cSpSaved;
+
+    /**
+     * BLIP Store Container.
+     *
+     * @var PHPExcel_Shared_Escher_DggContainer_BstoreContainer
+     */
+    private $bstoreContainer;
+
+    /**
+     * Array of options for the drawing group.
+     *
+     * @var array
+     */
+    private $OPT = [];
+
+    /**
+     * Array of identifier clusters containg information about the maximum shape identifiers.
+     *
+     * @var array
+     */
+    private $IDCLs = [];
+
+    /**
+     * Get maximum shape index of all shapes in all drawings (plus one).
+     *
+     * @return int
+     */
+    public function getSpIdMax()
+    {
+        return $this->spIdMax;
+    }
+
+    /**
+     * Set maximum shape index of all shapes in all drawings (plus one).
+     *
+     * @param int
+     */
+    public function setSpIdMax($value)
+    {
+        $this->spIdMax = $value;
+    }
+
+    /**
+     * Get total number of drawings saved.
+     *
+     * @return int
+     */
+    public function getCDgSaved()
+    {
+        return $this->cDgSaved;
+    }
+
+    /**
+     * Set total number of drawings saved.
+     *
+     * @param int
+     */
+    public function setCDgSaved($value)
+    {
+        $this->cDgSaved = $value;
+    }
+
+    /**
+     * Get total number of shapes saved (including group shapes).
+     *
+     * @return int
+     */
+    public function getCSpSaved()
+    {
+        return $this->cSpSaved;
+    }
+
+    /**
+     * Set total number of shapes saved (including group shapes).
+     *
+     * @param int
+     */
+    public function setCSpSaved($value)
+    {
+        $this->cSpSaved = $value;
+    }
+
+    /**
+     * Get BLIP Store Container.
+     *
+     * @return PHPExcel_Shared_Escher_DggContainer_BstoreContainer
+     */
+    public function getBstoreContainer()
+    {
+        return $this->bstoreContainer;
+    }
+
+    /**
+     * Set BLIP Store Container.
+     *
+     * @param PHPExcel_Shared_Escher_DggContainer_BstoreContainer $bstoreContainer
+     */
+    public function setBstoreContainer($bstoreContainer)
+    {
+        $this->bstoreContainer = $bstoreContainer;
+    }
+
+    /**
+     * Set an option for the drawing group.
+     *
+     * @param int $property The number specifies the option
+     */
+    public function setOPT($property, $value)
+    {
+        $this->OPT[$property] = $value;
+    }
+
+    /**
+     * Get an option for the drawing group.
+     *
+     * @param int $property The number specifies the option
+     */
+    public function getOPT($property)
+    {
+        if (isset($this->OPT[$property])) {
+            return $this->OPT[$property];
+        }
+
+        return null;
+    }
+
+    /**
+     * Get identifier clusters.
+     *
+     * @return array
+     */
+    public function getIDCLs()
+    {
+        return $this->IDCLs;
+    }
+
+    /**
+     * Set identifier clusters. array(<drawingId> => <max shape id>, ...).
+     *
+     * @param array $pValue
+     */
+    public function setIDCLs($pValue)
+    {
+        $this->IDCLs = $pValue;
+    }
+}

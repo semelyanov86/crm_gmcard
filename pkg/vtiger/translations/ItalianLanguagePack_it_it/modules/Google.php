@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
 * The contents of this file are subject to the vtiger CRM Public License Version 1.0
 * ("License"); You may not use this file except in compliance with the License
@@ -6,29 +7,29 @@
 * The Initial Developer of the Original Code is vtiger.
 * Portions created by vtiger are Copyright (C) vtiger.
 * All Rights Reserved.
-*************************************************************************************/
-$languageStrings = array(
-	'Map'	=>	"Mappa",
-	'EXTENTIONNAME'	=>	"Google",
-	'LBL_UPDATES_CRM'	=>	"Aggiornamenti CRM",
-	'LBL_UPDATES_GOOGLE'	=>	"Aggiornamenti Google",
-	'LBL_UPDATED'	=>	"Aggiornato",
-	'LBL_ADDED'	=>	"Aggiunto",
-	'LBL_DELETED'	=>	"Soppresso",
-	'LBL_SYNCRONIZED'	=>	"Sincronizzato",
-	'LBL_NOT_SYNCRONIZED'	=>	"Non hai ancora sincronizzato",
-	'LBL_SYNC_BUTTON'	=>	"Sincronizzare Ora",
-	'LBL_REMOVE_SYNC'	=>	"Rimuovere Sync",
-	'LBL_MORE_VTIGER'	=>	"Ci sono più record da sincronizzare in vtiger",
-	'LBL_MORE_GOOGLE'	=>	"Ci sono più record da sincronizzare con Google",
-	'Contact Name'	=>	"Nome del contatto",
-	'Email'	=>	"Email",
-	'Mobile Phone'	=>	"Cellulare",
-	'Address'	=>	"Indirizzo",
-	'Event Title'	=>	"Titolo dell'evento",
-	'Start Date'	=>	"Data di inizio",
-	'Until Date'	=>	"Fino alla data di",
-	'Description'	=>	"Descrizione",
+*/
+$languageStrings = [
+    'Map'	=>	'Mappa',
+    'EXTENTIONNAME'	=>	'Google',
+    'LBL_UPDATES_CRM'	=>	'Aggiornamenti CRM',
+    'LBL_UPDATES_GOOGLE'	=>	'Aggiornamenti Google',
+    'LBL_UPDATED'	=>	'Aggiornato',
+    'LBL_ADDED'	=>	'Aggiunto',
+    'LBL_DELETED'	=>	'Soppresso',
+    'LBL_SYNCRONIZED'	=>	'Sincronizzato',
+    'LBL_NOT_SYNCRONIZED'	=>	'Non hai ancora sincronizzato',
+    'LBL_SYNC_BUTTON'	=>	'Sincronizzare Ora',
+    'LBL_REMOVE_SYNC'	=>	'Rimuovere Sync',
+    'LBL_MORE_VTIGER'	=>	'Ci sono più record da sincronizzare in vtiger',
+    'LBL_MORE_GOOGLE'	=>	'Ci sono più record da sincronizzare con Google',
+    'Contact Name'	=>	'Nome del contatto',
+    'Email'	=>	'Email',
+    'Mobile Phone'	=>	'Cellulare',
+    'Address'	=>	'Indirizzo',
+    'Event Title'	=>	"Titolo dell'evento",
+    'Start Date'	=>	'Data di inizio',
+    'Until Date'	=>	'Fino alla data di',
+    'Description'	=>	'Descrizione',
     'Office Phone' => 'Telefono ufficio',
     'Work Phone' => 'Lavoro Telefono',
     'Home Phone' => 'Telefono di casa',
@@ -67,21 +68,21 @@ $languageStrings = array(
     'LBL_SAVE_AND_START_SYNC' => 'Salvare e Cominciare Sincronizzazione',
     'LBL_PRIMARY' => 'Primario',
     'LBL_SYNC_FROM_GOOGLE_TO_VTIGER' => 'Sincronizza da google a vtiger',
-	'LBL_SYNC_FROM_VTIGER_TO_GOOGLE' => 'Sincronizza da vtiger a google',
-	'LBL_GOOGLE_CONNECT_MSG' => 'Connettersi a un account Google per recuperare',
-	'LBL_SIGN_IN_WITH_GOOGLE' => 'Accedi con Google',
-	'LBL_GOOGLE_ACCOUNT_DETAILS' => 'Dettagli Account Google',
-	'LBL_GOOGLE_ACCOUNT_SYNCED_WITH' => 'Google Account sincronizzati con',
-	'LBL_CHANGE_USER' => 'Cambia utente',
+    'LBL_SYNC_FROM_VTIGER_TO_GOOGLE' => 'Sincronizza da vtiger a google',
+    'LBL_GOOGLE_CONNECT_MSG' => 'Connettersi a un account Google per recuperare',
+    'LBL_SIGN_IN_WITH_GOOGLE' => 'Accedi con Google',
+    'LBL_GOOGLE_ACCOUNT_DETAILS' => 'Dettagli Account Google',
+    'LBL_GOOGLE_ACCOUNT_SYNCED_WITH' => 'Google Account sincronizzati con',
+    'LBL_CHANGE_USER' => 'Cambia utente',
 
-  'LBL_SAVE_AND_IMPORT' => 'Salvare e Importare',
-  'LBL_IMPORT_RESULTS_GOOGLE' => 'Importazione risultati Google',
+    'LBL_SAVE_AND_IMPORT' => 'Salvare e Importare',
+    'LBL_IMPORT_RESULTS_GOOGLE' => 'Importazione risultati Google',
 
-	'LBL_REDIRECT_URL' => 'URL di reindirizzamento',
-	'LBL_REDIRECT_URL_MESSAGE' => 'Copiare il seguente URL di reindirizzamento e incollare nel vostro progetto di autenticazione di Google come mostra l\'immagine',
-);
-$jsLanguageStrings = array(
-	'LBL_SYNC_BUTTON'	=>	"Sincronizzare Ora",
-	'LBL_SYNCRONIZING'	=>	"Sincronizzazione ....",
-	'LBL_NOT_SYNCRONIZE'	=>	"Non hai ancora sincronizzato",
-);
+    'LBL_REDIRECT_URL' => 'URL di reindirizzamento',
+    'LBL_REDIRECT_URL_MESSAGE' => 'Copiare il seguente URL di reindirizzamento e incollare nel vostro progetto di autenticazione di Google come mostra l\'immagine',
+];
+$jsLanguageStrings = [
+    'LBL_SYNC_BUTTON'	=>	'Sincronizzare Ora',
+    'LBL_SYNCRONIZING'	=>	'Sincronizzazione ....',
+    'LBL_NOT_SYNCRONIZE'	=>	'Non hai ancora sincronizzato',
+];

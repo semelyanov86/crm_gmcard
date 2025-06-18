@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,128 +7,140 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
+ */
 require_once 'include/events/VTEntityData.inc';
 
-class VTEntityDelta extends VTEventHandler {
-	private static $oldEntity;
-	private static $newEntity;
-	private static $entityDelta;
+class VTEntityDelta extends VTEventHandler
+{
+    private static $oldEntity;
 
-	function  __construct() {
-		
-	}
+    private static $newEntity;
 
-	function handleEvent($eventName, $entityData) {
+    private static $entityDelta;
 
-		$adb = PearDatabase::getInstance();
-		$moduleName = $entityData->getModuleName();
-		$recordId = $entityData->getId();
+    public function __construct() {}
 
-		if($eventName == 'vtiger.entity.beforesave') {
-			if(!empty($recordId)) {
-				$entityData = VTEntityData::fromEntityId($adb, $recordId, $moduleName);
-				if($moduleName == 'HelpDesk') {
-					$entityData->set('comments', getTicketComments($recordId));
-				} elseif($moduleName == 'Invoice'){
-					$entityData->set('invoicestatus', getInvoiceStatus($recordId));
-				}
-				self::$oldEntity[$moduleName][$recordId] = $entityData;
-			}
-		}
+    public function handleEvent($eventName, $entityData)
+    {
 
-		if($eventName == 'vtiger.entity.aftersave'){
-			$this->fetchEntity($moduleName, $recordId);
-			$this->computeDelta($moduleName, $recordId);
-		}
-	}
+        $adb = PearDatabase::getInstance();
+        $moduleName = $entityData->getModuleName();
+        $recordId = $entityData->getId();
 
-	function fetchEntity($moduleName, $recordId) {
-		$adb = PearDatabase::getInstance();
-		$entityData = VTEntityData::fromEntityId($adb, $recordId, $moduleName);
-		if($moduleName == 'HelpDesk') {
-			$entityData->set('comments', getTicketComments($recordId));
-		} elseif($moduleName == 'Invoice') {
-			$entityData->set('invoicestatus', getInvoiceStatus($recordId));
-		}
-		self::$newEntity[$moduleName][$recordId] = $entityData;
-	}
+        if ($eventName == 'vtiger.entity.beforesave') {
+            if (!empty($recordId)) {
+                $entityData = VTEntityData::fromEntityId($adb, $recordId, $moduleName);
+                if ($moduleName == 'HelpDesk') {
+                    $entityData->set('comments', getTicketComments($recordId));
+                } elseif ($moduleName == 'Invoice') {
+                    $entityData->set('invoicestatus', getInvoiceStatus($recordId));
+                }
+                self::$oldEntity[$moduleName][$recordId] = $entityData;
+            }
+        }
 
-	function computeDelta($moduleName, $recordId) {
+        if ($eventName == 'vtiger.entity.aftersave') {
+            $this->fetchEntity($moduleName, $recordId);
+            $this->computeDelta($moduleName, $recordId);
+        }
+    }
 
-		$delta = array();
+    public function fetchEntity($moduleName, $recordId)
+    {
+        $adb = PearDatabase::getInstance();
+        $entityData = VTEntityData::fromEntityId($adb, $recordId, $moduleName);
+        if ($moduleName == 'HelpDesk') {
+            $entityData->set('comments', getTicketComments($recordId));
+        } elseif ($moduleName == 'Invoice') {
+            $entityData->set('invoicestatus', getInvoiceStatus($recordId));
+        }
+        self::$newEntity[$moduleName][$recordId] = $entityData;
+    }
 
-		$oldData = array();
-		if(!empty(self::$oldEntity[$moduleName][$recordId])) {
-			$oldEntity = self::$oldEntity[$moduleName][$recordId];
-			$oldData = $oldEntity->getData();
-		}
-		$newEntity = self::$newEntity[$moduleName][$recordId];
-		$newData = $newEntity->getData();
-		/** Detect field value changes **/
-		foreach($newData as $fieldName => $fieldValue) {
-			$isModified = false;
-			if(empty($oldData[$fieldName])) {
-				if(!empty($newData[$fieldName])) {
-					$isModified = true;
-				}
-			} elseif($oldData[$fieldName] != $newData[$fieldName]) {
-				$isModified = true;
-			}
-			if($isModified) {
-				$delta[$fieldName] = array('oldValue' => isset($oldData[$fieldName])? $oldData[$fieldName] : null,
-										'currentValue' => $newData[$fieldName] );
-			}
-		}
-		self::$entityDelta[$moduleName][$recordId] = $delta;
-	}
+    public function computeDelta($moduleName, $recordId)
+    {
 
-	function getEntityDelta($moduleName, $recordId, $forceFetch=false) {
-		if($forceFetch) {
-			$this->fetchEntity($moduleName, $recordId);
-			$this->computeDelta($moduleName, $recordId);
-		}
-		return self::$entityDelta[$moduleName][$recordId];
-	}
+        $delta = [];
 
-	function getOldValue($moduleName, $recordId, $fieldName) {
-		$entityDelta = self::$entityDelta[$moduleName][$recordId];
-		return isset($entityDelta[$fieldName]['oldValue']) ? $entityDelta[$fieldName]['oldValue'] : "";
-	}
+        $oldData = [];
+        if (!empty(self::$oldEntity[$moduleName][$recordId])) {
+            $oldEntity = self::$oldEntity[$moduleName][$recordId];
+            $oldData = $oldEntity->getData();
+        }
+        $newEntity = self::$newEntity[$moduleName][$recordId];
+        $newData = $newEntity->getData();
+        /** Detect field value changes */
+        foreach ($newData as $fieldName => $fieldValue) {
+            $isModified = false;
+            if (empty($oldData[$fieldName])) {
+                if (!empty($newData[$fieldName])) {
+                    $isModified = true;
+                }
+            } elseif ($oldData[$fieldName] != $newData[$fieldName]) {
+                $isModified = true;
+            }
+            if ($isModified) {
+                $delta[$fieldName] = ['oldValue' => $oldData[$fieldName] ?? null,
+                    'currentValue' => $newData[$fieldName]];
+            }
+        }
+        self::$entityDelta[$moduleName][$recordId] = $delta;
+    }
 
-	function getCurrentValue($moduleName, $recordId, $fieldName) {
-		$entityDelta = self::$entityDelta[$moduleName][$recordId];
-		return isset($entityDelta[$fieldName]['currentValue']) ? $entityDelta[$fieldName]['currentValue'] : "";
-	}
+    public function getEntityDelta($moduleName, $recordId, $forceFetch = false)
+    {
+        if ($forceFetch) {
+            $this->fetchEntity($moduleName, $recordId);
+            $this->computeDelta($moduleName, $recordId);
+        }
 
-	function getOldEntity($moduleName, $recordId) {
-		return self::$oldEntity[$moduleName][$recordId];
-	}
+        return self::$entityDelta[$moduleName][$recordId];
+    }
 
-	function getNewEntity($moduleName, $recordId) {
-		return self::$newEntity[$moduleName][$recordId];
-	}
-	
-	function hasChanged($moduleName, $recordId, $fieldName, $fieldValue = NULL) {
-		$result = false;
-		if(empty(self::$oldEntity[$moduleName][$recordId])) {
-			return false;
-		}
-		if (!array_key_exists($fieldName, self::$entityDelta[$moduleName][$recordId])) {
-			return false;
-		}
-		$fieldDelta = self::$entityDelta[$moduleName][$recordId][$fieldName];
-		if(is_array($fieldDelta)) {
-			$fieldDelta = array_map('decode_html', $fieldDelta);
-		}
-		if(isset($fieldDelta['oldValue']) && isset($fieldDelta['currentValue'])) {
-			$result = $fieldDelta['oldValue'] != $fieldDelta['currentValue'];
-		}
-		if ($fieldValue !== NULL) {
-			$result = $result && ($fieldDelta['currentValue'] === $fieldValue);
-		}
-		return $result;
-		}
-	
-	}
-?>
+    public function getOldValue($moduleName, $recordId, $fieldName)
+    {
+        $entityDelta = self::$entityDelta[$moduleName][$recordId];
+
+        return $entityDelta[$fieldName]['oldValue'] ?? '';
+    }
+
+    public function getCurrentValue($moduleName, $recordId, $fieldName)
+    {
+        $entityDelta = self::$entityDelta[$moduleName][$recordId];
+
+        return $entityDelta[$fieldName]['currentValue'] ?? '';
+    }
+
+    public function getOldEntity($moduleName, $recordId)
+    {
+        return self::$oldEntity[$moduleName][$recordId];
+    }
+
+    public function getNewEntity($moduleName, $recordId)
+    {
+        return self::$newEntity[$moduleName][$recordId];
+    }
+
+    public function hasChanged($moduleName, $recordId, $fieldName, $fieldValue = null)
+    {
+        $result = false;
+        if (empty(self::$oldEntity[$moduleName][$recordId])) {
+            return false;
+        }
+        if (!array_key_exists($fieldName, self::$entityDelta[$moduleName][$recordId])) {
+            return false;
+        }
+        $fieldDelta = self::$entityDelta[$moduleName][$recordId][$fieldName];
+        if (is_array($fieldDelta)) {
+            $fieldDelta = array_map('decode_html', $fieldDelta);
+        }
+        if (isset($fieldDelta['oldValue'], $fieldDelta['currentValue'])) {
+            $result = $fieldDelta['oldValue'] != $fieldDelta['currentValue'];
+        }
+        if ($fieldValue !== null) {
+            $result = $result && ($fieldDelta['currentValue'] === $fieldValue);
+        }
+
+        return $result;
+    }
+}

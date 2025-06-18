@@ -8,15 +8,15 @@
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
  * *********************************************************************************** */
-$languageStrings = array(
+$languageStrings = [
     'Invalid value given for old password.' => 'Eski parola için verilen değer geçersiz.',
     "New Password and confirm password don't match" => 'Yeni Parola ve onaylamak şifre eşleşmiyor',
     'Database error while performing requested operation' => 'Yazdırma şablonu',
     'Failed to change password' => 'Yazdırma şablonu',
 
-  'LBL_INVALID_OLD_PASSWORD' => 'Geçersiz değer eski şifre verildi.',
-  'LBL_NEW_PASSWORD_MISMATCH' => 'Yeni şifre uyuşmuyor Parola ve Onayla ',
-  'LBL_DATABASE_QUERY_ERROR' => 'İstenen işlemi yaparken veritabanı hatası ',
-  'LBL_CHANGE_PASSWORD_FAILURE' => 'Parola değiştirme başarısız ',
+    'LBL_INVALID_OLD_PASSWORD' => 'Geçersiz değer eski şifre verildi.',
+    'LBL_NEW_PASSWORD_MISMATCH' => 'Yeni şifre uyuşmuyor Parola ve Onayla ',
+    'LBL_DATABASE_QUERY_ERROR' => 'İstenen işlemi yaparken veritabanı hatası ',
+    'LBL_CHANGE_PASSWORD_FAILURE' => 'Parola değiştirme başarısız ',
 
-);
+];

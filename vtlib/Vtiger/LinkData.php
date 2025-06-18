@@ -15,52 +15,56 @@
  */
 
 /**
- * Description of LinkData
+ * Description of LinkData.
  *
  * @author MAK
  */
-class Vtiger_LinkData {
-	protected $input;
-	protected $link;
-	protected $user;
-	protected $module;
+class Vtiger_LinkData
+{
+    protected $input;
 
-	public function __construct($link, $user, $input = null) {
-		global $currentModule;
-		$this->link = $link;
-		$this->user = $user;
-		$this->module = $currentModule;
-		if(empty($input)) {
-			$this->input = $_REQUEST;
-		} else {
-			$this->input = $input;
-		}
-	}
+    protected $link;
 
-	public function getInputParameter($name) {
-		return $this->input[$name];
-	}
+    protected $user;
 
-	/**
-	 *
-	 * @return Vtiger_Link
-	 */
-	public function getLink() {
-		return $this->link;
-	}
+    protected $module;
 
-	/**
-	 *
-	 * @return Users 
-	 */
-	public function getUser() {
-		return $this->user;
-	}
+    public function __construct($link, $user, $input = null)
+    {
+        global $currentModule;
+        $this->link = $link;
+        $this->user = $user;
+        $this->module = $currentModule;
+        if (empty($input)) {
+            $this->input = $_REQUEST;
+        } else {
+            $this->input = $input;
+        }
+    }
 
-	public function getModule() {
-		return $this->module;
-	}
+    public function getInputParameter($name)
+    {
+        return $this->input[$name];
+    }
 
+    /**
+     * @return Vtiger_Link
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * @return Users
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function getModule()
+    {
+        return $this->module;
+    }
 }
-
-?>

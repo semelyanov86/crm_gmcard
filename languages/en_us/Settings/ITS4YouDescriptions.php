@@ -1,4 +1,5 @@
 <?php
+
 /* *********************************************************************************
  * The content of this file is subject to the ITS4YouDescriptions license.
  * ("License"); You may not use this file except in compliance with the License
@@ -7,29 +8,26 @@
  * All Rights Reserved.
  * ******************************************************************************* */
 
-$languageStrings = array(
-	'ITS4YouDescriptions' => ' Descriptions', 
-	'SINGLE_ITS4YouDescriptions' => ' Descriptions', 
-	'LBL_MODULE_NAME' => ' Descriptions', 
-	'LBL_UNINSTALL' => 'Uninstall', 
-	'LBL_UNINSTALL_DESC' => 'Remove Module completely from your vTiger.', 
-	'LBL_MODULE' => 'Module', 
-	'LBL_LICENSE_SETTINGS_INFO' => 'Manage your Module License Key', 
-	'LBL_LICENSE' => 'License settings', 
-	'LBL_LICENSE_DESC' => 'Manage all settings related to your license', 
-	'LBL_URL' => 'Your vtiger url', 
-	'LBL_LICENSE_ACTIVE' => 'Extension is active', 
-	'LBL_LICENSE_INACTIVE' => 'Extension is not active', 
-	'LBL_INSTALLER_NOT_ACTIVE' => 'Install or Activate ITS4YouInstaller module to manage your licenses.', 
-	'LBL_INSTALLER_UPDATE' => 'Update ITS4YouInstaller module for access to  Descriptions', 
-	'LBL_DOWNLOAD' => 'Download', 
-	'LBL_DOWNLOAD_INSTALLER' => 'Download Installer', 
-	'COPYRIGHT' => ':: IT-Solutions4You', 
-	'LBL_UPGRADE' => 'Upgrade', 
-);
+$languageStrings = [
+    'ITS4YouDescriptions' => ' Descriptions',
+    'SINGLE_ITS4YouDescriptions' => ' Descriptions',
+    'LBL_MODULE_NAME' => ' Descriptions',
+    'LBL_UNINSTALL' => 'Uninstall',
+    'LBL_UNINSTALL_DESC' => 'Remove Module completely from your vTiger.',
+    'LBL_MODULE' => 'Module',
+    'LBL_LICENSE_SETTINGS_INFO' => 'Manage your Module License Key',
+    'LBL_LICENSE' => 'License settings',
+    'LBL_LICENSE_DESC' => 'Manage all settings related to your license',
+    'LBL_URL' => 'Your vtiger url',
+    'LBL_LICENSE_ACTIVE' => 'Extension is active',
+    'LBL_LICENSE_INACTIVE' => 'Extension is not active',
+    'LBL_INSTALLER_NOT_ACTIVE' => 'Install or Activate ITS4YouInstaller module to manage your licenses.',
+    'LBL_INSTALLER_UPDATE' => 'Update ITS4YouInstaller module for access to  Descriptions',
+    'LBL_DOWNLOAD' => 'Download',
+    'LBL_DOWNLOAD_INSTALLER' => 'Download Installer',
+    'COPYRIGHT' => ':: IT-Solutions4You',
+    'LBL_UPGRADE' => 'Upgrade', ];
 
-$jsLanguageStrings = array(
-	'JS_UNINSTALL_CONFIRM' => 'Are you sure to completely remove module from your vTiger?', 
-	'LBL_DEACTIVATE_QUESTION' => 'Do you really want to deactivate your license key?', 
-); 
-
+$jsLanguageStrings = [
+    'JS_UNINSTALL_CONFIRM' => 'Are you sure to completely remove module from your vTiger?',
+    'LBL_DEACTIVATE_QUESTION' => 'Do you really want to deactivate your license key?', ];

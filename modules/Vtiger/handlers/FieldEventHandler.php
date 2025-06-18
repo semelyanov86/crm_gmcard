@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.1
  * ("License"); You may not use this file except in compliance with the License
@@ -6,129 +7,133 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
+ */
 
 require_once 'include/events/VTEventHandler.inc';
 
-class FieldEventHandler extends VTEventHandler {
+class FieldEventHandler extends VTEventHandler
+{
+    public function handleEvent($eventName, $fieldEntity)
+    {
+        global $log, $adb;
 
-	function handleEvent($eventName, $fieldEntity) {
-		global $log, $adb;
+        if ($eventName == 'vtiger.field.afterdelete') {
+            $this->triggerPostDeleteEvents($fieldEntity);
+        }
+    }
 
-		if ($eventName == 'vtiger.field.afterdelete') {
-			$this->triggerPostDeleteEvents($fieldEntity);
-		}
-	}
+    public function triggerPostDeleteEvents($fieldEntity)
+    {
+        $db = PearDatabase::getInstance();
 
-	function triggerPostDeleteEvents($fieldEntity) {
-		$db = PearDatabase::getInstance();
+        $fieldId		= $fieldEntity->id;
+        $fieldName		= $fieldEntity->name;
+        $columnName		= $fieldEntity->column;
+        $fieldLabel		= $fieldEntity->label;
+        $tableName		= $fieldEntity->table;
+        $typeOfData		= $fieldEntity->typeofdata;
+        $fieldModuleName = $fieldEntity->getModuleName();
+        $fieldType		= explode('~', $typeOfData);
 
-		$fieldId		= $fieldEntity->id;
-		$fieldName		= $fieldEntity->name;
-		$columnName		= $fieldEntity->column;
-		$fieldLabel		= $fieldEntity->label;
-		$tableName		= $fieldEntity->table;
-		$typeOfData		= $fieldEntity->typeofdata;
-		$fieldModuleName= $fieldEntity->getModuleName();
-		$fieldType		= explode('~', $typeOfData);
+        $deleteColumnName	= "{$tableName}:{$columnName}:" . $fieldName . ':' . $fieldModuleName . '_' . str_replace(' ', '_', $fieldLabel) . ':' . $fieldType[0];
+        $columnCvStdFilter	= "{$tableName}:{$columnName}:" . $fieldName . ':' . $fieldModuleName . '_' . str_replace(' ', '_', $fieldLabel);
+        $selectColumnName	= "{$tableName}:{$columnName}:" . $fieldModuleName . '_' . str_replace(' ', '_', $fieldLabel) . ':' . $fieldName . ':' . $fieldType[0];
+        $reportSummaryColumn = "{$tableName}:{$columnName}:" . str_replace(' ', '_', $fieldLabel);
 
-		$deleteColumnName	= "$tableName:$columnName:" . $fieldName . ':' . $fieldModuleName . '_' . str_replace(' ', '_', $fieldLabel) . ':' . $fieldType[0];
-		$columnCvStdFilter	= "$tableName:$columnName:" . $fieldName . ':' . $fieldModuleName . '_' . str_replace(' ', '_', $fieldLabel);
-		$selectColumnName	= "$tableName:$columnName:" . $fieldModuleName . '_' . str_replace(' ', '_', $fieldLabel) . ':' . $fieldName . ':' . $fieldType[0];
-		$reportSummaryColumn= "$tableName:$columnName:" . str_replace(' ', '_', $fieldLabel);
+        $query = 'ALTER TABLE ' . $db->sql_escape_string($tableName) . ' DROP COLUMN ' . $db->sql_escape_string($columnName);
+        $db->pquery($query, []);
 
-		$query = 'ALTER TABLE ' . $db->sql_escape_string($tableName) . ' DROP COLUMN ' . $db->sql_escape_string($columnName);
-		$db->pquery($query, array());
+        // we have to remove the entries in customview and report related tables which have this field ($colName)
+        $db->pquery('DELETE FROM vtiger_cvcolumnlist WHERE columnname = ?', [$deleteColumnName]);
+        $db->pquery('DELETE FROM vtiger_cvstdfilter WHERE columnname = ?', [$columnCvStdFilter]);
+        $db->pquery('DELETE FROM vtiger_cvadvfilter WHERE columnname = ?', [$deleteColumnName]);
+        $db->pquery('DELETE FROM vtiger_selectcolumn WHERE columnname = ?', [$selectColumnName]);
+        $db->pquery('DELETE FROM vtiger_relcriteria WHERE columnname = ?', [$selectColumnName]);
+        $db->pquery('DELETE FROM vtiger_reportsortcol WHERE columnname = ?', [$selectColumnName]);
+        $db->pquery('DELETE FROM vtiger_reportsummary WHERE columnname LIKE ?', ['%' . $reportSummaryColumn . '%']);
+        $db->pquery('DELETE FROM vtiger_reportdatefilter WHERE datecolumnname = ?', [$columnCvStdFilter]);
 
-		//we have to remove the entries in customview and report related tables which have this field ($colName)
-		$db->pquery('DELETE FROM vtiger_cvcolumnlist WHERE columnname = ?', array($deleteColumnName));
-		$db->pquery('DELETE FROM vtiger_cvstdfilter WHERE columnname = ?', array($columnCvStdFilter));
-		$db->pquery('DELETE FROM vtiger_cvadvfilter WHERE columnname = ?', array($deleteColumnName));
-		$db->pquery('DELETE FROM vtiger_selectcolumn WHERE columnname = ?', array($selectColumnName));
-		$db->pquery('DELETE FROM vtiger_relcriteria WHERE columnname = ?', array($selectColumnName));
-		$db->pquery('DELETE FROM vtiger_reportsortcol WHERE columnname = ?', array($selectColumnName));
-		$db->pquery('DELETE FROM vtiger_reportsummary WHERE columnname LIKE ?', array('%' . $reportSummaryColumn . '%'));
-		$db->pquery('DELETE FROM vtiger_reportdatefilter WHERE datecolumnname = ?', array($columnCvStdFilter));
+        if ($fieldModuleName == 'Leads') {
+            $db->pquery('DELETE FROM vtiger_convertleadmapping WHERE leadfid=?', [$fieldId]);
+        } elseif ($fieldModuleName == 'Accounts' || $fieldModuleName == 'Contacts' || $fieldModuleName == 'Potentials') {
+            $params = ['Accounts' => 'accountfid', 'Contacts' => 'contactfid', 'Potentials' => 'potentialfid'];
+            $query = 'UPDATE vtiger_convertleadmapping SET ' . $params[$fieldModuleName] . '=0 WHERE ' . $params[$fieldModuleName] . '=?';
+            $db->pquery($query, [$fieldId]);
+        }
 
-		if ($fieldModuleName == 'Leads') {
-			$db->pquery('DELETE FROM vtiger_convertleadmapping WHERE leadfid=?', array($fieldId));
-		} elseif ($fieldModuleName == 'Accounts' || $fieldModuleName == 'Contacts' || $fieldModuleName == 'Potentials') {
-			$params = array('Accounts' => 'accountfid', 'Contacts' => 'contactfid', 'Potentials' => 'potentialfid');
-			$query = 'UPDATE vtiger_convertleadmapping SET ' . $params[$fieldModuleName] . '=0 WHERE ' . $params[$fieldModuleName] . '=?';
-			$db->pquery($query, array($fieldId));
-		}
+        if (in_array($fieldEntity->uitype, [15, 33])) {
+            $db->pquery('DROP TABLE IF EXISTS vtiger_' . $db->sql_escape_string($columnName), []);
+            $db->pquery('DROP TABLE IF EXISTS vtiger_' . $db->sql_escape_string($columnName) . '_seq', []); // To Delete Sequence Table
+            $db->pquery('DELETE FROM vtiger_picklist_dependency WHERE sourcefield=? OR targetfield=?', [$columnName, $columnName]);
 
-		if (in_array($fieldEntity->uitype, array(15, 33))) {
-			$db->pquery('DROP TABLE IF EXISTS vtiger_' . $db->sql_escape_string($columnName), array());
-			$db->pquery('DROP TABLE IF EXISTS vtiger_' . $db->sql_escape_string($columnName) . '_seq', array()); //To Delete Sequence Table  
-			$db->pquery('DELETE FROM vtiger_picklist_dependency WHERE sourcefield=? OR targetfield=?', array($columnName, $columnName));
-
-            //delete from picklist tables
-            $picklistResult = $db->pquery('SELECT picklistid FROM vtiger_picklist WHERE name = ?', array($fieldName));
+            // delete from picklist tables
+            $picklistResult = $db->pquery('SELECT picklistid FROM vtiger_picklist WHERE name = ?', [$fieldName]);
             $picklistRow = $db->num_rows($picklistResult);
-            if($picklistRow) {
+            if ($picklistRow) {
                 $picklistId = $db->query_result($picklistResult, 0, 'picklistid');
-                $db->pquery('DELETE FROM vtiger_picklist WHERE name = ?', array($fieldName));
-                $db->pquery('DELETE FROM vtiger_role2picklist WHERE picklistid = ?', array($picklistId));
+                $db->pquery('DELETE FROM vtiger_picklist WHERE name = ?', [$fieldName]);
+                $db->pquery('DELETE FROM vtiger_role2picklist WHERE picklistid = ?', [$picklistId]);
             }
 
-			$rolesList = array_keys(getAllRoleDetails());
-			Vtiger_Cache::flushPicklistCache($fieldName, $rolesList);
-		}
+            $rolesList = array_keys(getAllRoleDetails());
+            Vtiger_Cache::flushPicklistCache($fieldName, $rolesList);
+        }
 
-		$this->triggerInventoryFieldPostDeleteEvents($fieldEntity);
-	}
+        $this->triggerInventoryFieldPostDeleteEvents($fieldEntity);
+    }
 
-	public function triggerInventoryFieldPostDeleteEvents($fieldEntity) {
-		$db = PearDatabase::getInstance();
-		$fieldId = $fieldEntity->id;
-		$fieldModuleName = $fieldEntity->getModuleName();
+    public function triggerInventoryFieldPostDeleteEvents($fieldEntity)
+    {
+        $db = PearDatabase::getInstance();
+        $fieldId = $fieldEntity->id;
+        $fieldModuleName = $fieldEntity->getModuleName();
 
-		if (in_array($fieldModuleName, getInventoryModules())) {
+        if (in_array($fieldModuleName, getInventoryModules())) {
 
-			$db->pquery('DELETE FROM vtiger_inventorycustomfield WHERE fieldid=?', array($fieldId));
+            $db->pquery('DELETE FROM vtiger_inventorycustomfield WHERE fieldid=?', [$fieldId]);
 
-		} else if (in_array($fieldModuleName, array('Products', 'Services'))) {
+        } elseif (in_array($fieldModuleName, ['Products', 'Services'])) {
 
-			$refFieldName			= ($fieldModuleName == 'Products') ? 'productfieldid'			: 'servicefieldid';
-			$refFieldDefaultValue	= ($fieldModuleName == 'Products') ? 'productFieldDefaultValue' : 'serviceFieldDefaultValue';
+            $refFieldName			= ($fieldModuleName == 'Products') ? 'productfieldid' : 'servicefieldid';
+            $refFieldDefaultValue	= ($fieldModuleName == 'Products') ? 'productFieldDefaultValue' : 'serviceFieldDefaultValue';
 
-			$query = "SELECT vtiger_inventorycustomfield.* FROM vtiger_inventorycustomfield
+            $query = "SELECT vtiger_inventorycustomfield.* FROM vtiger_inventorycustomfield
 							INNER JOIN vtiger_field ON vtiger_field.fieldid = vtiger_inventorycustomfield.fieldid
-							WHERE $refFieldName = ? AND defaultvalue LIKE ?";
-			$result = $db->pquery($query, array($fieldId, '%productFieldDefaultValue%serviceFieldDefaultValue%'));
+							WHERE {$refFieldName} = ? AND defaultvalue LIKE ?";
+            $result = $db->pquery($query, [$fieldId, '%productFieldDefaultValue%serviceFieldDefaultValue%']);
 
-			$removeCacheModules = array();
-			while($rowData = $db->fetch_row($result)) {
-				$lineItemFieldModel = Vtiger_Field_Model::getInstance($rowData['fieldid']);
-				if ($lineItemFieldModel) {
-					$defaultValue = $lineItemFieldModel->getDefaultFieldValue();
-					if (is_array($defaultValue)) {
-						$defaultValue[$refFieldDefaultValue] = '';
+            $removeCacheModules = [];
 
-						if ($defaultValue['productFieldDefaultValue'] === '' && $defaultValue['serviceFieldDefaultValue'] === '') {
-							$defaultValue = '';
-						} else {
-							$defaultValue = Zend_Json::encode($defaultValue);
-						}
+            while ($rowData = $db->fetch_row($result)) {
+                $lineItemFieldModel = Vtiger_Field_Model::getInstance($rowData['fieldid']);
+                if ($lineItemFieldModel) {
+                    $defaultValue = $lineItemFieldModel->getDefaultFieldValue();
+                    if (is_array($defaultValue)) {
+                        $defaultValue[$refFieldDefaultValue] = '';
 
-						$lineItemFieldModel->set('defaultvalue', $defaultValue);
-						$lineItemFieldModel->save();
-					}
+                        if ($defaultValue['productFieldDefaultValue'] === '' && $defaultValue['serviceFieldDefaultValue'] === '') {
+                            $defaultValue = '';
+                        } else {
+                            $defaultValue = Zend_Json::encode($defaultValue);
+                        }
 
-					$removeCacheModules[$rowData['tabid']][] = $lineItemFieldModel->get('block')->id;
-				}
-			}
+                        $lineItemFieldModel->set('defaultvalue', $defaultValue);
+                        $lineItemFieldModel->save();
+                    }
 
-			foreach ($removeCacheModules as $tabId => $blockIdsList) {
-				$moduleModel = Vtiger_Module_Model::getInstance($tabId);
-				foreach ($blockIdsList as $blockId) {
-					Vtiger_Cache::flushModuleandBlockFieldsCache($moduleModel, $blockId);
-				}
-			}
+                    $removeCacheModules[$rowData['tabid']][] = $lineItemFieldModel->get('block')->id;
+                }
+            }
 
-			$db->pquery("UPDATE vtiger_inventorycustomfield SET $refFieldName=? WHERE fieldid=?", array('0', $fieldId));
-		}
+            foreach ($removeCacheModules as $tabId => $blockIdsList) {
+                $moduleModel = Vtiger_Module_Model::getInstance($tabId);
+                foreach ($blockIdsList as $blockId) {
+                    Vtiger_Cache::flushModuleandBlockFieldsCache($moduleModel, $blockId);
+                }
+            }
 
-	}
+            $db->pquery("UPDATE vtiger_inventorycustomfield SET {$refFieldName}=? WHERE fieldid=?", ['0', $fieldId]);
+        }
+
+    }
 }

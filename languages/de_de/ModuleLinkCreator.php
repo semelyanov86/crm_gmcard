@@ -1,4 +1,5 @@
 <?php
+
 /* ********************************************************************************
  * The content of this file is subject to the Module & Link Creator ("License");
  * You may not use this file except in compliance with the License
@@ -7,7 +8,7 @@
  * All Rights Reserved.
  * ****************************************************************************** */
 
-$languageStrings = array(
+$languageStrings = [
     'ModuleLinkCreator' => 'Custom Module Builder',
     'Module & Link Creator' => 'Custom Module Builder',
     'LBL_MODULE_NAME' => 'Module Name',
@@ -105,7 +106,7 @@ $languageStrings = array(
     'add_new_related_field_1M' => 'Creating 1:M Relationship',
     'add_new_related_field_explain' => 'Please start by selecting the module. Then, you will need to choose the destination block and your field label.'
         . ' Finally choose the related module and whether you need a related list or not.',
-//    'module1'=>'Module where you will add the new field',
+    //    'module1'=>'Module where you will add the new field',
     'module1' => ' Child Module/Related List',
     'module111' => 'Module 1',
     'module211' => 'Module 2',
@@ -119,7 +120,7 @@ $languageStrings = array(
     'Place field in Block' => 'Place field in Block',
     'block' => 'Block',
     'fields_list_module1' => 'Field',
-//    'module2'=>'Related To Module',
+    //    'module2'=>'Related To Module',
     'module2' => ' Primary Module',
     'add_related_list' => ' "Add" + "Add Record" in the related list?',
     'allow_duplicates' => 'If a related list is already there. Create a new one?',
@@ -152,9 +153,9 @@ Use Case: if the module should be accessible by everyone right away, during conf
 Use Case: Set is as "Available to Administrator Only" if you understand how permissions work in Vtiger and you do not want the module to be visible for everyone right away, meaning that you will configure permissions shortly after.<br>
 --<br>
 If you do not know which option to pick, use "Available for Everyone".',
-);
+];
 
-$jsLanguageStrings = array(
+$jsLanguageStrings = [
     'LBL_INVALID_MODULE' => 'Invalid module',
     'LBL_SELECT' => '-- Select --',
     'LBL_ADD_NEW' => 'Add New',
@@ -168,4 +169,4 @@ $jsLanguageStrings = array(
     'JS_CONFIRM_DELETE' => 'YOU ARE ABOUT TO DELETE THIS MODULE. IF YOU DELETE IT - ALL THE DATA STORED IN THAT MODULE WILL BE DELETED. THERE IS NO WAY TO RESTORE IT - ONCE YOU DELETE IT - IT IS GONE',
     'JS_MODULE_NAME_CANNOT_CONTAIN_UNDERLINE' => 'Module name can not contain underline (`_`)',
     'JS_MODULE_NAME_CANNOT_EXCEED_25_CHARACTERS' => 'Module name can not exceed 25 characters',
-);
+];

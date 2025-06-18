@@ -1,125 +1,217 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+require_once PHPEXCEL_ROOT . 'PHPExcel/Shared/trend/bestFitClass.php';
+require_once PHPEXCEL_ROOT . 'PHPExcel/Shared/JAMA/Matrix.php';
+
+/**
+ * PHPExcel_Polynomial_Best_Fit.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Polynomial_Best_Fit extends PHPExcel_Best_Fit
+{
+    /**
+     * Algorithm type to use for best-fit
+     * (Name of this trend class).
+     *
+     * @var    string
+     */
+    protected $bestFitType = 'polynomial';
+
+    /**
+     * Polynomial order.
+     *
+     * @protected
+     * @var    int
+     */
+    protected $order = 0;
+
+    /**
+     * Return the order of this polynomial.
+     *
+     * @return     int
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+
+    /**
+     * Return the Y-Value for a specified value of X.
+     *
+     * @param     float        $xValue            X-Value
+     * @return     float                        Y-Value
+     */
+    public function getValueOfYForX($xValue)
+    {
+        $retVal = $this->getIntersect();
+        $slope = $this->getSlope();
+        foreach ($slope as $key => $value) {
+            if ($value != 0.0) {
+                $retVal += $value * pow($xValue, $key + 1);
+            }
+        }
+
+        return $retVal;
+    }
+
+    /**
+     * Return the X-Value for a specified value of Y.
+     *
+     * @param     float        $yValue            Y-Value
+     * @return     float                        X-Value
+     */
+    public function getValueOfXForY($yValue)
+    {
+        return ($yValue - $this->getIntersect()) / $this->getSlope();
+    }
+
+    /**
+     * Return the Equation of the best-fit line.
+     *
+     * @param     int        $dp        Number of places of decimal precision to display
+     * @return     string
+     */
+    public function getEquation($dp = 0)
+    {
+        $slope = $this->getSlope($dp);
+        $intersect = $this->getIntersect($dp);
+
+        $equation = 'Y = ' . $intersect;
+        foreach ($slope as $key => $value) {
+            if ($value != 0.0) {
+                $equation .= ' + ' . $value . ' * X';
+                if ($key > 0) {
+                    $equation .= '^' . ($key + 1);
+                }
+            }
+        }
+
+        return $equation;
+    }
+
+    /**
+     * Return the Slope of the line.
+     *
+     * @param     int        $dp        Number of places of decimal precision to display
+     * @return     string
+     */
+    public function getSlope($dp = 0)
+    {
+        if ($dp != 0) {
+            $coefficients = [];
+            foreach ($this->_slope as $coefficient) {
+                $coefficients[] = round($coefficient, $dp);
+            }
+
+            return $coefficients;
+        }
+
+        return $this->_slope;
+    }
+
+    public function getCoefficients($dp = 0)
+    {
+        return array_merge([$this->getIntersect($dp)], $this->getSlope($dp));
+    }
+
+    /**
+     * Execute the regression and calculate the goodness of fit for a set of X and Y data values.
+     *
+     * @param    int            $order        Order of Polynomial for this regression
+     * @param    float[]        $yValues    The set of Y-values for this regression
+     * @param    float[]        $xValues    The set of X-values for this regression
+     * @param    bool        $const
+     */
+    private function polynomialRegression($order, $yValues, $xValues, $const)
+    {
+        // calculate sums
+        $x_sum = array_sum($xValues);
+        $y_sum = array_sum($yValues);
+        $xx_sum = $xy_sum = 0;
+        for ($i = 0; $i < $this->valueCount; ++$i) {
+            $xy_sum += $xValues[$i] * $yValues[$i];
+            $xx_sum += $xValues[$i] * $xValues[$i];
+            $yy_sum += $yValues[$i] * $yValues[$i];
+        }
+        /*
+         *    This routine uses logic from the PHP port of polyfit version 0.1
+         *    written by Michael Bommarito and Paul Meagher
+         *
+         *    The function fits a polynomial function of order $order through
+         *    a series of x-y data points using least squares.
+         *
+         */
+        for ($i = 0; $i < $this->valueCount; ++$i) {
+            for ($j = 0; $j <= $order; ++$j) {
+                $A[$i][$j] = pow($xValues[$i], $j);
+            }
+        }
+        for ($i = 0; $i < $this->valueCount; ++$i) {
+            $B[$i] = [$yValues[$i]];
+        }
+        $matrixA = new Matrix($A);
+        $matrixB = new Matrix($B);
+        $C = $matrixA->solve($matrixB);
+
+        $coefficients = [];
+        for ($i = 0; $i < $C->m; ++$i) {
+            $r = $C->get($i, 0);
+            if (abs($r) <= pow(10, -9)) {
+                $r = 0;
+            }
+            $coefficients[] = $r;
+        }
+
+        $this->intersect = array_shift($coefficients);
+        $this->_slope = $coefficients;
+
+        $this->calculateGoodnessOfFit($x_sum, $y_sum, $xx_sum, $yy_sum, $xy_sum);
+        foreach ($this->xValues as $xKey => $xValue) {
+            $this->yBestFitValues[$xKey] = $this->getValueOfYForX($xValue);
+        }
+    }
+
+    /**
+     * Define the regression and calculate the goodness of fit for a set of X and Y data values.
+     *
+     * @param    int            $order        Order of Polynomial for this regression
+     * @param    float[]        $yValues    The set of Y-values for this regression
+     * @param    float[]        $xValues    The set of X-values for this regression
+     * @param    bool        $const
+     */
+    public function __construct($order, $yValues, $xValues = [], $const = true)
+    {
+        if (parent::__construct($yValues, $xValues) !== false) {
+            if ($order < $this->valueCount) {
+                $this->bestFitType .= '_' . $order;
+                $this->order = $order;
+                $this->polynomialRegression($order, $yValues, $xValues, $const);
+                if (($this->getGoodnessOfFit() < 0.0) || ($this->getGoodnessOfFit() > 1.0)) {
+                    $this->_error = true;
+                }
+            } else {
+                $this->_error = true;
+            }
+        }
+    }
+}

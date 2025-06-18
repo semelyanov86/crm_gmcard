@@ -1,0 +1,12 @@
+path: ./
+jobs: 10
+cache: var/cache/.phplint.json
+extensions:
+  - php
+exclude:
+  - vendor
+  - test
+  - cache
+  - pkg/vtiger/extensions/Webservices/third-party
+  - vendor-bin
+  - var

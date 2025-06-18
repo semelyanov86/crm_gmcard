@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,38 +7,42 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
+ */
 require_once 'modules/WSAPP/synclib/connectors/BaseConnector.php';
 
-abstract class WSAPP_TargetConnector extends WSAPP_BaseConnector{
+abstract class WSAPP_TargetConnector extends WSAPP_BaseConnector
+{
+    public function transformToTargetRecord($sourceRecords, $user = false)
+    {
+        $destinationRecordList = [];
+        foreach ($sourceRecords as $record) {
+            $destinationRecord = clone $record;
 
-	public function transformToTargetRecord($sourceRecords, $user = false){
-		$destinationRecordList = array();
-		foreach($sourceRecords as $record){
-			$destinationRecord = clone $record;
+            $destinationRecord->setId($record->getOtherAppId());
+            $destinationRecord->setOtherAppId($record->getId());
 
-			$destinationRecord->setId($record->getOtherAppId());
-			$destinationRecord->setOtherAppId($record->getId());
+            $destinationRecord->setModifiedTime($record->getOtherAppModifiedTime());
+            $destinationRecord->setOtherAppModifiedTIme($record->getModifiedTime());
+            $destinationRecordList[] = $destinationRecord;
+        }
 
-			$destinationRecord->setModifiedTime($record->getOtherAppModifiedTime());
-			$destinationRecord->setOtherAppModifiedTIme($record->getModifiedTime());
-			$destinationRecordList[] = $destinationRecord;
-		}
-		return $destinationRecordList;
-	}
-	public function transformToSourceRecord($targetRecords, $user = false){
-		$sourceRcordList = array();
-		foreach($targetRecords as $record){
-			$sourceRecord = clone $record;
+        return $destinationRecordList;
+    }
 
-			$sourceRecord->setId($record->getOtherAppId())
-						 ->setOtherAppId($record->getId())
-						 ->setModifiedTime($record->getOtherAppModifiedTime())
-						 ->setOtherAppModifiedTIme($record->getModifiedTime());
+    public function transformToSourceRecord($targetRecords, $user = false)
+    {
+        $sourceRcordList = [];
+        foreach ($targetRecords as $record) {
+            $sourceRecord = clone $record;
 
-			$sourceRcordList[] = $sourceRecord;
-		}
-		return $sourceRcordList;
-	}
+            $sourceRecord->setId($record->getOtherAppId())
+                         ->setOtherAppId($record->getId())
+                         ->setModifiedTime($record->getOtherAppModifiedTime())
+                         ->setOtherAppModifiedTIme($record->getModifiedTime());
+
+            $sourceRcordList[] = $sourceRecord;
+        }
+
+        return $sourceRcordList;
+    }
 }
-?>

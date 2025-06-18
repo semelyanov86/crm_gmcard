@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,105 +7,110 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
+ */
 
-class Campaigns_RelationAjax_Action extends Vtiger_RelationAjax_Action {
+class Campaigns_RelationAjax_Action extends Vtiger_RelationAjax_Action
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->exposeMethod('addRelationsFromRelatedModuleViewId');
+        $this->exposeMethod('updateStatus');
+    }
 
-	public function __construct() {
-		parent::__construct();
-		$this->exposeMethod('addRelationsFromRelatedModuleViewId');
-		$this->exposeMethod('updateStatus');
-	}
+    public function requiresPermission(Vtiger_Request $request)
+    {
+        $permissions = parent::requiresPermission($request);
+        $mode = $request->getMode();
+        if (!empty($mode)) {
+            switch ($mode) {
+                case 'addRelationsFromRelatedModuleViewId':
+                    $permissions[] = ['module_parameter' => 'relatedModule', 'action' => 'DetailView'];
+                    break;
+                case 'updateStatus':
+                    $permissions[] = ['module_parameter' => 'relatedModule', 'action' => 'DetailView'];
+                    $permissions[] = ['module_parameter' => 'module', 'action' => 'EditView'];
+                    break;
 
-	public function requiresPermission(Vtiger_Request $request){
-		$permissions = parent::requiresPermission($request);
-		$mode = $request->getMode();
-		if(!empty($mode)) {
-			switch ($mode) {
-				case 'addRelationsFromRelatedModuleViewId':
-					$permissions[] = array('module_parameter' => 'relatedModule', 'action' => 'DetailView');
-					break;
-				case 'updateStatus':
-					$permissions[] = array('module_parameter' => 'relatedModule', 'action' => 'DetailView');
-					$permissions[] = array('module_parameter' => 'module', 'action' => 'EditView');
-					break;
-				default:
-					break;
-			}
-		}
-		return $permissions;
-	}
-	
-	public function checkPermission(Vtiger_Request $request) {
-		return parent::checkPermission($request);
-	}
-	
-	/**
-	 * Function to add relations using related module viewid
-	 * @param Vtiger_Request $request
-	 */
-	public function addRelationsFromRelatedModuleViewId(Vtiger_Request $request) {
-		$sourceRecordId = $request->get('sourceRecord');
-		$relatedModuleName = $request->get('relatedModule');
+                default:
+                    break;
+            }
+        }
 
-		$viewId = $request->get('viewId');
-		if ($viewId) {
-			$sourceModuleModel = Vtiger_Module_Model::getInstance($request->getModule());
-			$relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModuleName);
+        return $permissions;
+    }
 
-			$relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
-			$emailEnabledModulesInfo = $relationModel->getEmailEnabledModulesInfoForDetailView();
+    public function checkPermission(Vtiger_Request $request)
+    {
+        return parent::checkPermission($request);
+    }
 
-			if (array_key_exists($relatedModuleName, $emailEnabledModulesInfo)) {
-				$fieldName = $emailEnabledModulesInfo[$relatedModuleName]['fieldName'];
+    /**
+     * Function to add relations using related module viewid.
+     */
+    public function addRelationsFromRelatedModuleViewId(Vtiger_Request $request)
+    {
+        $sourceRecordId = $request->get('sourceRecord');
+        $relatedModuleName = $request->get('relatedModule');
 
-				$db = PearDatabase::getInstance();
-				$currentUserModel = Users_Record_Model::getCurrentUserModel();
+        $viewId = $request->get('viewId');
+        if ($viewId) {
+            $sourceModuleModel = Vtiger_Module_Model::getInstance($request->getModule());
+            $relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModuleName);
 
-				$queryGenerator = new EnhancedQueryGenerator($relatedModuleName, $currentUserModel);
-				$queryGenerator->initForCustomViewById($viewId);
+            $relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
+            $emailEnabledModulesInfo = $relationModel->getEmailEnabledModulesInfoForDetailView();
 
-				$query = $queryGenerator->getQuery();
-				$result = $db->pquery($query, array());
+            if (array_key_exists($relatedModuleName, $emailEnabledModulesInfo)) {
+                $fieldName = $emailEnabledModulesInfo[$relatedModuleName]['fieldName'];
 
-				$numOfRows = $db->num_rows($result);
-				for ($i=0; $i<$numOfRows; $i++) {
-					$relatedRecordIdsList[] = $db->query_result($result, $i, $fieldName);
-				}
-				if(empty($relatedRecordIdsList)){
-					$response = new Vtiger_Response();
-					$response->setResult(array(false));
-					$response->emit();
-				} else{
-					foreach($relatedRecordIdsList as $relatedRecordId) {
-						$relationModel->addRelation($sourceRecordId, $relatedRecordId);
-					}
-				}
-			}
-		}
-	}
+                $db = PearDatabase::getInstance();
+                $currentUserModel = Users_Record_Model::getCurrentUserModel();
 
-	/**
-	 * Function to update Relation status
-	 * @param Vtiger_Request $request
-	 */
-	public function updateStatus(Vtiger_Request $request) {
-		$relatedModuleName = $request->get('relatedModule');
-		$relatedRecordId = $request->get('relatedRecord');
-		$status = $request->get('status');
-		$response = new Vtiger_Response();
+                $queryGenerator = new EnhancedQueryGenerator($relatedModuleName, $currentUserModel);
+                $queryGenerator->initForCustomViewById($viewId);
 
-		if ($relatedRecordId && $status && $status < 5) {
-			$sourceModuleModel = Vtiger_Module_Model::getInstance($request->getModule());
-			$relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModuleName);
+                $query = $queryGenerator->getQuery();
+                $result = $db->pquery($query, []);
 
-			$relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
-			$relationModel->updateStatus($request->get('sourceRecord'), array($relatedRecordId => $status));
+                $numOfRows = $db->num_rows($result);
+                for ($i = 0; $i < $numOfRows; ++$i) {
+                    $relatedRecordIdsList[] = $db->query_result($result, $i, $fieldName);
+                }
+                if (empty($relatedRecordIdsList)) {
+                    $response = new Vtiger_Response();
+                    $response->setResult([false]);
+                    $response->emit();
+                } else {
+                    foreach ($relatedRecordIdsList as $relatedRecordId) {
+                        $relationModel->addRelation($sourceRecordId, $relatedRecordId);
+                    }
+                }
+            }
+        }
+    }
 
-			$response->setResult(array(true));
-		} else {
-			$response->setError($code);
-		}
-		$response->emit();
-	}
+    /**
+     * Function to update Relation status.
+     */
+    public function updateStatus(Vtiger_Request $request)
+    {
+        $relatedModuleName = $request->get('relatedModule');
+        $relatedRecordId = $request->get('relatedRecord');
+        $status = $request->get('status');
+        $response = new Vtiger_Response();
+
+        if ($relatedRecordId && $status && $status < 5) {
+            $sourceModuleModel = Vtiger_Module_Model::getInstance($request->getModule());
+            $relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModuleName);
+
+            $relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
+            $relationModel->updateStatus($request->get('sourceRecord'), [$relatedRecordId => $status]);
+
+            $response->setResult([true]);
+        } else {
+            $response->setError($code);
+        }
+        $response->emit();
+    }
 }

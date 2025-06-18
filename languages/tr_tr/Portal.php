@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,8 +7,8 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
-$languageStrings = array(
+ */
+$languageStrings = [
     'Portal' => 'Bizim Siteleri',
     'LBL_ADD_BOOKMARK' => 'Ekle Bookmark',
     'LBL_BOOKMARK_NAME' => 'Yer işareti adı',
@@ -26,8 +27,8 @@ $languageStrings = array(
     'LBL_BOOKMARK' => 'Yer imi',
     'LBL_BOOKMARKS' => 'Bookmarks',
     'HTTP_ERROR' => 'Açmaya çalıştığınız web sitesi güvenli değildir ve belki açık değildi. Hala web sayfasını görmek istiyorsanız, o zaman adres çubuğuna içerik engelleyici tıklayın ve etkinleştirebilirsiniz.',
-);
+];
 
-$jsLanguageStrings = array(
+$jsLanguageStrings = [
     'JS_ENTER_MANDATORY_FIELDS' => 'Tüm zorunlu alanına girin',
-);
+];

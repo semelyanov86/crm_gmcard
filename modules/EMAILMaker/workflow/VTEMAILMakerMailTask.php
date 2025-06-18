@@ -1,43 +1,55 @@
 <?php
-require_once('modules/com_vtiger_workflow/VTTaskManager.inc');
-require_once('modules/com_vtiger_workflow/VTEntityCache.inc');
-require_once('modules/com_vtiger_workflow/VTWorkflowUtils.php');
-require_once('modules/com_vtiger_workflow/VTEmailRecipientsTemplate.inc');
-require_once('modules/Emails/mail.php');
-require_once('modules/EMAILMaker/EMAILMaker.php');
-require_once('modules/Emails/models/Mailer.php');
+
+require_once 'modules/com_vtiger_workflow/VTTaskManager.inc';
+require_once 'modules/com_vtiger_workflow/VTEntityCache.inc';
+require_once 'modules/com_vtiger_workflow/VTWorkflowUtils.php';
+require_once 'modules/com_vtiger_workflow/VTEmailRecipientsTemplate.inc';
+require_once 'modules/Emails/mail.php';
+require_once 'modules/EMAILMaker/EMAILMaker.php';
+require_once 'modules/Emails/models/Mailer.php';
 
 class VTEMAILMakerMailTask extends VTTask
 {
     public $executeImmediately = false;
+
     public $template;
+
     public $template_language;
+
     public $contents;
+
     public $recepient;
+
     public $emailcc;
+
     public $emailbcc;
+
     public $fromEmail;
+
     public $template_field;
+
     public $parent;
+
     public $cache;
+
     public $signature;
 
     public function getFieldNames()
     {
-        return array(
+        return [
             'recepient', 'emailcc', 'emailbcc', 'fromEmail', 'template', 'template_language', 'template_field',
-            'replyTo', 'signature'
-        );
+            'replyTo', 'signature',
+        ];
     }
 
     public function doTask($entity)
     {
         $EMAILMaker = Vtiger_Module_Model::getInstance('EMAILMaker');
-        
+
         $current_user = Users_Record_Model::getCurrentUserModel();
         $adb = PearDatabase::getInstance();
-        $sql0 = "select from_email_field from vtiger_systems where server_type=?";
-        $result0 = $adb->pquery($sql0, array('email'));
+        $sql0 = 'select from_email_field from vtiger_systems where server_type=?';
+        $result0 = $adb->pquery($sql0, ['email']);
         $from_email_field = $adb->query_result($result0, 0, 'from_email_field');
         $util = new VTWorkflowUtils();
         $admin = $util->adminUser();
@@ -60,30 +72,35 @@ class VTEMAILMakerMailTask extends VTTask
         $entityId = $entityIdDetails[1];
         $moduleName = 'Emails';
         $userId = $current_user->id;
-        list($id3, $id) = explode("x", $entity->getId());
+        [$id3, $id] = explode('x', $entity->getId());
         foreach ($To_Emails as $Email_data) {
-            $to_email = $Email_data["email"];
-            $rmodule = $Email_data["module"];
-            list($rid3, $rid) = explode("x", $Email_data["id"]);
+            $to_email = $Email_data['email'];
+            $rmodule = $Email_data['module'];
+            [$rid3, $rid] = explode('x', $Email_data['id']);
             if (!empty($to_email)) {
                 $emailFocus = CRMEntity::getInstance($moduleName);
-                if ($rid != "") {
+                if ($rid != '') {
                     $cid = $rid;
                 } else {
-                    $cid = "0";
+                    $cid = '0';
                 }
-                $cid .= "-".$luserid."-".$muserid;
+                $cid .= '-' . $luserid . '-' . $muserid;
                 if (!isset($EMAILContentModel[$cid])) {
-                    $EMAILContentModel[$cid] = EMAILMaker_EMAILContent_Model::getInstance($module, $id, $language, $rid,
-                        $rmodule);
+                    $EMAILContentModel[$cid] = EMAILMaker_EMAILContent_Model::getInstance(
+                        $module,
+                        $id,
+                        $language,
+                        $rid,
+                        $rmodule,
+                    );
                     $EMAILContentModel[$cid]->setSubject($load_subject);
                     $EMAILContentModel[$cid]->setBody($load_body);
-                    $EMAILContentModel[$cid]->set("luserid", $luserid);
-                    $EMAILContentModel[$cid]->set("muserid", $muserid);
+                    $EMAILContentModel[$cid]->set('luserid', $luserid);
+                    $EMAILContentModel[$cid]->set('muserid', $muserid);
                     $EMAILContentModel[$cid]->getContent();
                 }
                 $subject = $EMAILContentModel[$cid]->getSubject();
-                $d = "default_charset";
+                $d = 'default_charset';
                 $def_charset = vglobal($d);
                 $subject = html_entity_decode($subject, ENT_QUOTES, $def_charset);
                 $body = $EMAILContentModel[$cid]->getBody();
@@ -102,7 +119,7 @@ class VTEMAILMakerMailTask extends VTTask
                 $emailFocus->column_fields['saved_toid'] = $to_email;
                 $emailFocus->column_fields['ccmail'] = $cc_string;
                 $emailFocus->column_fields['bccmail'] = $bcc_string;
-                $emailFocus->column_fields['parent_id'] = $entityId."@$userId|";
+                $emailFocus->column_fields['parent_id'] = $entityId . "@{$userId}|";
                 $emailFocus->column_fields['email_flag'] = 'SENT';
                 $emailFocus->column_fields['activitytype'] = $moduleName;
                 $emailFocus->column_fields['date_start'] = date('Y-m-d');
@@ -113,13 +130,13 @@ class VTEMAILMakerMailTask extends VTTask
                 $emailId = $emailFocus->id;
                 if (count($Attachments) > 0) {
                     foreach ($Attachments as $document_id) {
-                        $adb->pquery('replace into vtiger_seattachmentsrel values(?,?)', array($emailId, $document_id));
+                        $adb->pquery('replace into vtiger_seattachmentsrel values(?,?)', [$emailId, $document_id]);
                     }
                 }
-                if ($rid != "") {
-                    $adb->pquery('replace into vtiger_seactivityrel values(?,?)', array($rid, $emailId));
+                if ($rid != '') {
+                    $adb->pquery('replace into vtiger_seactivityrel values(?,?)', [$rid, $emailId]);
                 }
-                if ($entityId != "") {
+                if ($entityId != '') {
                     $body .= $EMAILMaker->getTrackImageDetails($entityId, $emailId);
                 }
                 $replyToEmail = $from_email;
@@ -146,11 +163,11 @@ class VTEMAILMakerMailTask extends VTTask
                 $Email_Images = $EMAILContentModel[$cid]->getEmailImages();
                 if (count($Email_Images) > 0) {
                     foreach ($Email_Images as $cid => $cdata) {
-                        $mailerInstance->AddEmbeddedImage($cdata["path"], $cid, $cdata["name"]);
+                        $mailerInstance->AddEmbeddedImage($cdata['path'], $cid, $cdata['name']);
                     }
                 }
-                $ccs = empty($cc_string) ? array() : explode(',', $cc_string);
-                $bccs = empty($bcc_string) ? array() : explode(',', $bcc_string);
+                $ccs = empty($cc_string) ? [] : explode(',', $cc_string);
+                $bccs = empty($bcc_string) ? [] : explode(',', $bcc_string);
                 foreach ($ccs as $cc) {
                     $mailerInstance->AddCC($cc);
                 }
@@ -173,7 +190,7 @@ class VTEMAILMakerMailTask extends VTTask
     {
         if (!$this->contents) {
             global $adb;
-            $taskContents = array();
+            $taskContents = [];
             $entityId = $entity->getId();
             $utils = new VTWorkflowUtils();
             $adminUser = $utils->adminUser();
@@ -183,23 +200,25 @@ class VTEMAILMakerMailTask extends VTTask
             $fromUserId = Users::getActiveAdminId();
             $entityOwnerId = $entity->get('assigned_user_id');
             if ($entityOwnerId) {
-                list($moduleId, $fromUserId) = explode('x', $entityOwnerId);
+                [$moduleId, $fromUserId] = explode('x', $entityOwnerId);
             }
             $ownerEntity = $entityCache->forId($entityOwnerId);
             if ($ownerEntity->getModuleName() === 'Groups') {
-                list($moduleId, $recordId) = vtws_getIdComponents($entityId);
+                [$moduleId, $recordId] = vtws_getIdComponents($entityId);
                 $fromUserId = Vtiger_Util_Helper::getCreator($recordId);
             }
-            if ($this->fromEmail && !($ownerEntity->getModuleName() === 'Groups' && strpos($this->fromEmail,
-                        'assigned_user_id : (Users) ') !== false)) {
+            if ($this->fromEmail && !($ownerEntity->getModuleName() === 'Groups' && strpos(
+                $this->fromEmail,
+                'assigned_user_id : (Users) ',
+            ) !== false)) {
                 $et = new VTEmailRecipientsTemplate($this->fromEmail);
                 $fromEmailDetails = $et->render($entityCache, $entityId);
                 $fromEmailDecoded = html_entity_decode($fromEmailDetails);
                 if (strpos($fromEmailDecoded, '<') && strpos($fromEmailDecoded, '>')) {
-                    list($fromName, $fromEmail) = explode('<', $fromEmailDecoded);
-                    list($fromEmail, $rest) = explode('>', $fromEmail);
+                    [$fromName, $fromEmail] = explode('<', $fromEmailDecoded);
+                    [$fromEmail, $rest] = explode('>', $fromEmail);
                 } else {
-                    $fromName = "";
+                    $fromName = '';
                     $fromEmail = $fromEmailDetails;
                 }
             } else {
@@ -209,14 +228,17 @@ class VTEMAILMakerMailTask extends VTTask
                     $fromEmail = $userObj->email1;
                     $fromName = $userObj->user_name;
                 } else {
-                    $result = $adb->pquery('SELECT user_name, email1 FROM vtiger_users WHERE id = ?',
-                        array($fromUserId));
+                    $result = $adb->pquery(
+                        'SELECT user_name, email1 FROM vtiger_users WHERE id = ?',
+                        [$fromUserId],
+                    );
                     $fromEmail = $adb->query_result($result, 0, 'email1');
                     $fromName = $adb->query_result($result, 0, 'user_name');
                 }
             }
             if (!$fromEmail) {
                 $utils->revertUser();
+
                 return false;
             }
             $taskContents['fromEmail'] = $fromEmail;
@@ -225,14 +247,18 @@ class VTEMAILMakerMailTask extends VTTask
                 $contactId = $entity->get('contact_id');
                 if ($contactId) {
                     $contactIds = '';
-                    list($wsId, $recordId) = explode('x', $entityId);
+                    [$wsId, $recordId] = explode('x', $entityId);
                     $webserviceObject = VtigerWebserviceObject::fromName($adb, 'Contacts');
-                    $result = $adb->pquery('SELECT contactid FROM vtiger_cntactivityrel WHERE activityid = ?',
-                        array($recordId));
+                    $result = $adb->pquery(
+                        'SELECT contactid FROM vtiger_cntactivityrel WHERE activityid = ?',
+                        [$recordId],
+                    );
                     $numOfRows = $adb->num_rows($result);
-                    for ($i = 0; $i < $numOfRows; $i++) {
-                        $contactIds .= vtws_getId($webserviceObject->getEntityId(),
-                                $adb->query_result($result, $i, 'contactid')).',';
+                    for ($i = 0; $i < $numOfRows; ++$i) {
+                        $contactIds .= vtws_getId(
+                            $webserviceObject->getEntityId(),
+                            $adb->query_result($result, $i, 'contactid'),
+                        ) . ',';
                     }
                 }
                 $entity->set('contact_id', trim($contactIds, ','));
@@ -245,11 +271,12 @@ class VTEMAILMakerMailTask extends VTTask
             $ccEmail = $ecct->render($entityCache, $entityId);
             $ebcct = new VTEmailRecipientsTemplate($this->emailbcc);
             $bccEmail = $ebcct->render($entityCache, $entityId);
-            if (strlen(trim($toEmail, "     
-,")) == 0 && strlen(trim($ccEmail, "    
-,")) == 0 && strlen(trim($bccEmail, "   
-,")) == 0) {
+            if (strlen(trim($toEmail, '     
+,')) == 0 && strlen(trim($ccEmail, '    
+,')) == 0 && strlen(trim($bccEmail, '   
+,')) == 0) {
                 $utils->revertUser();
+
                 return false;
             }
             $taskContents['toEmail'] = $toEmail;
@@ -260,8 +287,10 @@ class VTEMAILMakerMailTask extends VTTask
             if ($email_maker_dynamic_template_wf === true) {
                 if (isset($this->template_field) && !empty($this->template_field)) {
                     $value = $entity->data[$this->template_field];
-                    $resultEmailMaker = $adb->pquery('SELECT * FROM vtiger_emakertemplates WHERE templatename = ? AND deleted = 0 ',
-                        array($value));
+                    $resultEmailMaker = $adb->pquery(
+                        'SELECT * FROM vtiger_emakertemplates WHERE templatename = ? AND deleted = 0 ',
+                        [$value],
+                    );
                     $resultTemplateId = $adb->query_result($resultEmailMaker, 0, 'templateid');
                     $this->template = $resultTemplateId;
                 }
@@ -270,18 +299,18 @@ class VTEMAILMakerMailTask extends VTTask
             $language = $this->template_language;
             $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
             $emailtemplateResult = $EMAILMaker->GetDetailViewData($templateid, true);
-            $taskContents['subject'] = $emailtemplateResult["subject"];
-            $taskContents['body'] = $emailtemplateResult["body"];
+            $taskContents['subject'] = $emailtemplateResult['subject'];
+            $taskContents['body'] = $emailtemplateResult['body'];
             $Attachments = $EMAILMaker->GetAttachmentsData($templateid);
             $taskContents['attachments'] = $Attachments;
             $taskContents['language'] = $language;
-            $luserid = "";
+            $luserid = '';
             if (isset($_SESSION['authenticated_user_id'])) {
                 $luserid = $_SESSION['authenticated_user_id'];
             }
             $taskContents['luserid'] = $luserid;
             $modifiedbyId = $entity->get('modifiedby');
-            list($moduleMuserId, $muserid) = explode('x', $modifiedbyId);
+            [$moduleMuserId, $muserid] = explode('x', $modifiedbyId);
             $taskContents['muserid'] = $muserid;
             $taskContents['signature'] = $this->signature;
             $this->contents = $taskContents;
@@ -290,6 +319,7 @@ class VTEMAILMakerMailTask extends VTTask
         if (is_array($this->contents)) {
             $this->contents = Zend_Json::encode($this->contents);
         }
+
         return $this->contents;
     }
 
@@ -297,16 +327,17 @@ class VTEMAILMakerMailTask extends VTTask
     {
         $this->cache = $entityCache;
         $this->parent = $this->cache->forId($entityId);
-        $Recipients = array();
-        $Emails = explode(",", $to_emails);
+        $Recipients = [];
+        $Emails = explode(',', $to_emails);
         foreach ($Emails as $email) {
-            if ($email != "") {
+            if ($email != '') {
                 $Recipients_data = $this->parseEmail($email, $entityCache, $entityId);
                 if ($Recipients_data) {
                     $Recipients = array_merge($Recipients_data, $Recipients);
                 }
             }
         }
+
         return $Recipients;
     }
 
@@ -314,8 +345,8 @@ class VTEMAILMakerMailTask extends VTTask
     {
         preg_match('/\((\w+) : \(([_\w]+)\) (\w+)\)/', $to_email, $matches);
         if (count($matches) == 0) {
-            $to_email_module = "";
-            $to_email_id = "";
+            $to_email_module = '';
+            $to_email_id = '';
             $data = $this->parent->getData();
             if (substr($to_email, 0, 1) == '$') {
                 $filename = substr($to_email, 1);
@@ -329,64 +360,69 @@ class VTEMAILMakerMailTask extends VTTask
                     $et = new VTEmailRecipientsTemplate($to_email);
                     if (method_exists($et, 'renderArray')) {
                         return $et->renderArray($entityCache, $entityId);
-                    } else {
-                        $to_email = $et->render($entityCache, $entityId);
                     }
+                    $to_email = $et->render($entityCache, $entityId);
+
                 }
             }
-            return array(array("id" => $to_email_id, "module" => $to_email_module, "email" => $to_email));
-        } else {
-            list($full, $referenceField, $referenceModule, $fieldname) = $matches;
-            $referenceId = $this->parent->get($referenceField);
-            if ($referenceId == null) {
-                return false;
-            } else {
-                if ($referenceField === 'contact_id') {
-                    $referenceIdsList = explode(',', $referenceId);
-                    $parts = array();
-                    foreach ($referenceIdsList as $referenceId) {
-                        $entity = $this->cache->forId($referenceId);
-                        $to_email_module = $entity->getModuleName();
-                        $data = $entity->getData();
-                        if ($this->useValue($data, $fieldname)) {
-                            $parts[] = array(
-                                "id" => $referenceId, "module" => $to_email_module, "email" => $data[$fieldname]
-                            );
-                        }
-                    }
-                    return $parts;
-                }
-                $entity = $this->cache->forId($referenceId);
-                if ($referenceModule === "Users" && $entity->getModuleName() == "Groups") {
-                    list($groupEntityId, $groupId) = vtws_getIdComponents($referenceId);
-                    require_once('include/utils/GetGroupUsers.php');
-                    $ggu = new GetGroupUsers();
-                    $ggu->getAllUsersInGroup($groupId);
-                    $users = $ggu->group_users;
-                    $parts = array();
-                    foreach ($users as $userId) {
-                        $refId = vtws_getWebserviceEntityId("Users", $userId);
-                        $entity = $this->cache->forId($refId);
-                        $data = $entity->getData();
-                        if ($this->useValue($data, $fieldname)) {
-                            $parts[] = array("id" => $userId, "module" => "Users", "email" => $data[$fieldname]);
-                        }
-                    }
-                    return $parts;
-                } elseif ($entity->getModuleName() === $referenceModule) {
-                    $data = $entity->getData();
-                    if ($this->useValue($data, $fieldname)) {
-                        return array(
-                            array(
-                                "id" => $referenceId, "module" => $referenceModule, "email" => $data[$fieldname]
-                            )
-                        );
-                    } else {
-                        return false;
-                    }
-                }
-            }
+
+            return [['id' => $to_email_id, 'module' => $to_email_module, 'email' => $to_email]];
         }
+        [$full, $referenceField, $referenceModule, $fieldname] = $matches;
+        $referenceId = $this->parent->get($referenceField);
+        if ($referenceId == null) {
+            return false;
+        }
+        if ($referenceField === 'contact_id') {
+            $referenceIdsList = explode(',', $referenceId);
+            $parts = [];
+            foreach ($referenceIdsList as $referenceId) {
+                $entity = $this->cache->forId($referenceId);
+                $to_email_module = $entity->getModuleName();
+                $data = $entity->getData();
+                if ($this->useValue($data, $fieldname)) {
+                    $parts[] = [
+                        'id' => $referenceId, 'module' => $to_email_module, 'email' => $data[$fieldname],
+                    ];
+                }
+            }
+
+            return $parts;
+        }
+        $entity = $this->cache->forId($referenceId);
+        if ($referenceModule === 'Users' && $entity->getModuleName() == 'Groups') {
+            [$groupEntityId, $groupId] = vtws_getIdComponents($referenceId);
+            require_once 'include/utils/GetGroupUsers.php';
+            $ggu = new GetGroupUsers();
+            $ggu->getAllUsersInGroup($groupId);
+            $users = $ggu->group_users;
+            $parts = [];
+            foreach ($users as $userId) {
+                $refId = vtws_getWebserviceEntityId('Users', $userId);
+                $entity = $this->cache->forId($refId);
+                $data = $entity->getData();
+                if ($this->useValue($data, $fieldname)) {
+                    $parts[] = ['id' => $userId, 'module' => 'Users', 'email' => $data[$fieldname]];
+                }
+            }
+
+            return $parts;
+        }
+        if ($entity->getModuleName() === $referenceModule) {
+            $data = $entity->getData();
+            if ($this->useValue($data, $fieldname)) {
+                return [
+                    [
+                        'id' => $referenceId, 'module' => $referenceModule, 'email' => $data[$fieldname],
+                    ],
+                ];
+            }
+
+            return false;
+
+        }
+
+
         return false;
     }
 
@@ -397,39 +433,42 @@ class VTEMAILMakerMailTask extends VTTask
 
     public function getTemplates($selected_module)
     {
-        $orderby = "templateid";
-        $dir = "asc";
+        $orderby = 'templateid';
+        $dir = 'asc';
         $c = "<div class='row-fluid'>";
         $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
         $request = new Vtiger_Request($_REQUEST, $_REQUEST);
         $templates_data = $EMAILMaker->GetListviewData($orderby, $dir, $selected_module, false, $request);
         foreach ($templates_data as $tdata) {
-            $templateid = $tdata["templateid"];
-            if (!empty($tdata["category"]) || isset($fieldvalue[$templateid])) {
-                $fieldvalue[$tdata["category"]][$templateid] = $tdata["name"];
+            $templateid = $tdata['templateid'];
+            if (!empty($tdata['category']) || isset($fieldvalue[$templateid])) {
+                $fieldvalue[$tdata['category']][$templateid] = $tdata['name'];
             } else {
-                $fieldvalue[$templateid] = $tdata["name"];
+                $fieldvalue[$templateid] = $tdata['name'];
             }
         }
+
         return $fieldvalue;
     }
 
     public function getLanguages()
     {
         global $current_language;
-        $langvalue = array();
-        $currlang = array();
+        $langvalue = [];
+        $currlang = [];
         $adb = PearDatabase::getInstance();
-        $temp_res = $adb->pquery("SELECT label, prefix FROM vtiger_language WHERE active = ?", array('1'));
+        $temp_res = $adb->pquery('SELECT label, prefix FROM vtiger_language WHERE active = ?', ['1']);
+
         while ($temp_row = $adb->fetchByAssoc($temp_res)) {
-            $template_languages[$temp_row["prefix"]] = $temp_row["label"];
-            if ($temp_row["prefix"] == $current_language) {
-                $currlang[$temp_row["prefix"]] = $temp_row["label"];
+            $template_languages[$temp_row['prefix']] = $temp_row['label'];
+            if ($temp_row['prefix'] == $current_language) {
+                $currlang[$temp_row['prefix']] = $temp_row['label'];
             } else {
-                $langvalue[$temp_row["prefix"]] = $temp_row["label"];
+                $langvalue[$temp_row['prefix']] = $temp_row['label'];
             }
         }
         $langvalue = (array) $currlang + (array) $langvalue;
+
         return $langvalue;
     }
 
@@ -442,7 +481,7 @@ class VTEMAILMakerMailTask extends VTTask
             require_once 'vtlib/Vtiger/Field.php';
             $moduleModel = Vtiger_Module_Model::getInstance($sourceModule);
             $fields = Vtiger_Field::getAllForModule($moduleModel);
-            $fieldsArray = array();
+            $fieldsArray = [];
             foreach ($fields as $field) {
                 if ($field->displaytype == 1) {
                     $name = $field->name;
@@ -452,6 +491,7 @@ class VTEMAILMakerMailTask extends VTTask
             }
             $return = $fieldsArray;
         }
+
         return $return;
     }
-} ?>
+}

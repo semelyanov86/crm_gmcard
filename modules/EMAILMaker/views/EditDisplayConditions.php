@@ -1,6 +1,6 @@
 <?php
 
-/*********************************************************************************
+/*
  * The content of this file is subject to the EMAIL Maker license.
  * ("License",array()); You may not use this file except in compliance with the License
  * The Initial Developer of the Original Code is IT-Solutions4You s.r.o.
@@ -10,14 +10,13 @@
 
 class EMAILMaker_EditDisplayConditions_View extends Vtiger_Index_View
 {
-
     public function process(Vtiger_Request $request)
     {
 
         $viewer = $this->getViewer($request);
         $moduleName = $request->getModule();
         $qualifiedModuleName = $request->getModule(false);
-        $templateid = "";
+        $templateid = '';
         $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
 
         $isFilterSavedInNew = false;
@@ -25,7 +24,7 @@ class EMAILMaker_EditDisplayConditions_View extends Vtiger_Index_View
         if ($request->has('record') && !$request->isEmpty('record')) {
             $templateid = $request->get('record');
             $emailtemplateResult = $EMAILMaker->GetEditViewData($templateid);
-            $select_module = $emailtemplateResult["module"];
+            $select_module = $emailtemplateResult['module'];
             $recordModel = EMAILMaker_Record_Model::getInstanceById($templateid, $moduleName);
         } else {
             $recordModel = EMAILMaker_Record_Model::getCleanInstance($moduleName);
@@ -39,7 +38,7 @@ class EMAILMaker_EditDisplayConditions_View extends Vtiger_Index_View
         $recordStructure = $recordStructureInstance->getStructure();
 
         if (in_array($selectedModuleName, getInventoryModules())) {
-            $itemsBlock = "LBL_ITEM_DETAILS";
+            $itemsBlock = 'LBL_ITEM_DETAILS';
             unset($recordStructure[$itemsBlock]);
         }
 
@@ -63,7 +62,7 @@ class EMAILMaker_EditDisplayConditions_View extends Vtiger_Index_View
         $viewer->assign('ADVANCED_FILTER_OPTIONS_BY_TYPE', EMAILMaker_Field_Model::getAdvancedFilterOpsByFieldType());
         $viewer->assign('FIELD_EXPRESSIONS', Settings_Workflows_Module_Model::getExpressions());
         $viewer->assign('META_VARIABLES', Settings_Workflows_Module_Model::getMetaVariables());
-        $viewer->assign('ADVANCE_CRITERIA', "");
+        $viewer->assign('ADVANCE_CRITERIA', '');
         $viewer->assign('MODULE', $moduleName);
         $viewer->assign('QUALIFIED_MODULE', $moduleName);
 
@@ -73,12 +72,12 @@ class EMAILMaker_EditDisplayConditions_View extends Vtiger_Index_View
         $viewer->assign('EMAIL_TEMPLATE_RESULT', $emailtemplateResult);
         if (!empty($templateid)) {
             $EMAILMaker_Display_Model = new EMAILMaker_Display_Model();
-            $is_old_contition_format = $EMAILMaker_Display_Model->isOldContitionFormat(decode_html($emailtemplateResult["conditions"]));
+            $is_old_contition_format = $EMAILMaker_Display_Model->isOldContitionFormat(decode_html($emailtemplateResult['conditions']));
 
             if (!$is_old_contition_format) {
-                $viewer->assign('ADVANCE_CRITERIA', $EMAILMaker_Display_Model->transformToAdvancedFilterCondition($emailtemplateResult["conditions"]));
+                $viewer->assign('ADVANCE_CRITERIA', $EMAILMaker_Display_Model->transformToAdvancedFilterCondition($emailtemplateResult['conditions']));
             } else {
-                $viewer->assign('OLD_CONDITIONS', "yes");
+                $viewer->assign('OLD_CONDITIONS', 'yes');
             }
         }
         $viewer->assign('IS_FILTER_SAVED_NEW', $isFilterSavedInNew);
@@ -93,16 +92,16 @@ class EMAILMaker_EditDisplayConditions_View extends Vtiger_Index_View
         $headerScriptInstances = parent::getHeaderScripts($request);
         $moduleName = $request->getModule();
 
-        $jsFileNames = array(
+        $jsFileNames = [
             'layouts.v7.modules.Vtiger.resources.Edit',
-            "layouts.v7.modules.$moduleName.resources.Edit",
-            "layouts.v7.modules.$moduleName.resources.EditDisplayConditions",
-            "layouts.v7.modules.Vtiger.resources.AdvanceFilter",
-            "layouts.v7.modules.$moduleName.resources.AdvanceFilter",
+            "layouts.v7.modules.{$moduleName}.resources.Edit",
+            "layouts.v7.modules.{$moduleName}.resources.EditDisplayConditions",
+            'layouts.v7.modules.Vtiger.resources.AdvanceFilter',
+            "layouts.v7.modules.{$moduleName}.resources.AdvanceFilter",
             '~libraries/jquery/ckeditor/ckeditor.js',
             '~/libraries/jquery/bootstrapswitch/js/bootstrap-switch.min.js',
             '~libraries/jquery/jquery.datepick.package-4.1.0/jquery.datepick.js',
-        );
+        ];
 
         $jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
         $headerScriptInstances = array_merge($headerScriptInstances, $jsScriptInstances);

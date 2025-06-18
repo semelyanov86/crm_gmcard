@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -14,51 +15,51 @@
  *  Author       : JPL TSolucio, S. L. Joe Bordes
  *  Last change  : 2013-05-03
  *  Author       : JPL TSolucio, S. L. Joe Bordes
- ************************************************************************************/
-$languageStrings = array(
-	'Accounts'                     => 'Cuentas',
-	'SINGLE_Accounts'              => 'Cuenta',
-	'LBL_ADD_RECORD'               => 'Añadir Cuenta',
-	'LBL_RECORDS_LIST'             => 'Lista de Cuentas',
-	'LBL_ACCOUNT_INFORMATION'      => 'Detalle de Cuenta',
-	'LBL_SHOW_ACCOUNT_HIERARCHY'   => 'Jerarquía de Cuenta',
-	'industry'                     => 'Industria',
-	'Account Name'                 => 'Nombre de Cuenta',
-	'Account No'                   => 'Número de Cuenta',
-	'Website'                      => 'Página web',
-	'Ticker Symbol'                => 'Símbolo de bolsa',
-	'Member Of'                    => 'Miembro de',
-	'Employees'                    => 'Empleados',
-	'Ownership'                    => 'Propietario',
-	'SIC Code'                     => 'CIF',
-	'Other Email'                  => 'Email (Alternativo)',
-	'Analyst'                      => 'Analista',
-	'Competitor'                   => 'Competencia',
-	'Customer'                     => 'Cliente',
-	'Integrator'                   => 'Integrador',
-	'Investor'                     => 'Inversor',
-	'Press'                        => 'Prensa',
-	'Prospect'                     => 'Prospecto',
-	'Reseller'                     => 'Revendedor',
-        'Type'                         => 'Tipo',
-	'LBL_START_DATE'               => 'Inicio',
-	'LBL_END_DATE'                 => 'Vencimiento',
-	'LBL_DUPLICATES_EXIST'         => 'Una cuenta con este nombre ya existe',
-	'LBL_COPY_SHIPPING_ADDRESS' => 'Copiar Dirección Envío',
-	'LBL_COPY_BILLING_ADDRESS' => 'Copiar Dirección Facturación',
+ */
+$languageStrings = [
+    'Accounts'                     => 'Cuentas',
+    'SINGLE_Accounts'              => 'Cuenta',
+    'LBL_ADD_RECORD'               => 'Añadir Cuenta',
+    'LBL_RECORDS_LIST'             => 'Lista de Cuentas',
+    'LBL_ACCOUNT_INFORMATION'      => 'Detalle de Cuenta',
+    'LBL_SHOW_ACCOUNT_HIERARCHY'   => 'Jerarquía de Cuenta',
+    'industry'                     => 'Industria',
+    'Account Name'                 => 'Nombre de Cuenta',
+    'Account No'                   => 'Número de Cuenta',
+    'Website'                      => 'Página web',
+    'Ticker Symbol'                => 'Símbolo de bolsa',
+    'Member Of'                    => 'Miembro de',
+    'Employees'                    => 'Empleados',
+    'Ownership'                    => 'Propietario',
+    'SIC Code'                     => 'CIF',
+    'Other Email'                  => 'Email (Alternativo)',
+    'Analyst'                      => 'Analista',
+    'Competitor'                   => 'Competencia',
+    'Customer'                     => 'Cliente',
+    'Integrator'                   => 'Integrador',
+    'Investor'                     => 'Inversor',
+    'Press'                        => 'Prensa',
+    'Prospect'                     => 'Prospecto',
+    'Reseller'                     => 'Revendedor',
+    'Type'                         => 'Tipo',
+    'LBL_START_DATE'               => 'Inicio',
+    'LBL_END_DATE'                 => 'Vencimiento',
+    'LBL_DUPLICATES_EXIST'         => 'Una cuenta con este nombre ya existe',
+    'LBL_COPY_SHIPPING_ADDRESS' => 'Copiar Dirección Envío',
+    'LBL_COPY_BILLING_ADDRESS' => 'Copiar Dirección Facturación',
     'LBL_IMAGE_INFORMATION' => 'Foto de Perfil',
     'Organization Image' => 'Organización de imagen',
 
-  'Other Phone' => 'Teléfono Secundario',
-  'Phone' => 'Teléfono Principal',
-  'Email' => 'De Correo Electrónico Principal',
+    'Other Phone' => 'Teléfono Secundario',
+    'Phone' => 'Teléfono Principal',
+    'Email' => 'De Correo Electrónico Principal',
 
-);
-$jsLanguageStrings = array(
-	'LBL_RELATED_RECORD_DELETE_CONFIRMATION'      => '¿Estás seguro que quieres eliminar?',
-	'LBL_DELETE_CONFIRMATION'      => 'Borrar esta cuenta eliminará sus relaciones con Oportunidades, Presupuestos, Ordenes de Venta y Facturas. ¿Quieres borrar la Cuenta?',
-	'LBL_MASS_DELETE_CONFIRMATION' => 'Borrar esta cuenta eliminará sus relaciones con Oportunidades, Presupuestos, Ordenes de Venta y Facturas. ¿Quieres borrar los registros seleccionados?',
+];
+$jsLanguageStrings = [
+    'LBL_RELATED_RECORD_DELETE_CONFIRMATION'      => '¿Estás seguro que quieres eliminar?',
+    'LBL_DELETE_CONFIRMATION'      => 'Borrar esta cuenta eliminará sus relaciones con Oportunidades, Presupuestos, Ordenes de Venta y Facturas. ¿Quieres borrar la Cuenta?',
+    'LBL_MASS_DELETE_CONFIRMATION' => 'Borrar esta cuenta eliminará sus relaciones con Oportunidades, Presupuestos, Ordenes de Venta y Facturas. ¿Quieres borrar los registros seleccionados?',
 
-  'JS_DUPLICATE_CREATION_CONFIRMATION' => 'Nombre de la organización que ya Existe.¿Desea crear un registro duplicado?',
+    'JS_DUPLICATE_CREATION_CONFIRMATION' => 'Nombre de la organización que ya Existe.¿Desea crear un registro duplicado?',
 
-);
+];

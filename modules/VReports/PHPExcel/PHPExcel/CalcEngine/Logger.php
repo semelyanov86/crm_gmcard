@@ -1,62 +1,148 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-HR+cPuzznBgZmF/GlRhEKPbsCcGOyXcoX6/vm8EumV+40of39DpxOM2bgb2HRJZ4282EMhMfEQfB
-aaKnhYvY05MwJ/sXDTDHQGcTmH2C3BHTVmncXoTArYLVZHUZbIS0H5LhoZGeyy2A70h36Z5F+khW
-itwMnzizeS3g6KiPyNIv8texqkRJkg0ZuAspI3RBzJtEJIulLbUKj0KWcNzLq8kcDAfmoGByLPN0
-p9lJ2YcbMLpOWeC9KnMBInOaAyAVwFD4YnenUEDnUKOYaxa9jQuKxeMMrSHcOY3Mc56tcYsPnQFB
-W2rb4nfH39kZecO+eq9a8Mvm+7r1tJ+5JIth1GJjzZ2J7/kxjGEF1SBRSWHxsoMaKfRKn9OYB/Fu
-9FAZfroGYIdUvb0bJ/TZ6XIOAUA0V87okH4TTQS2coneDFmu1i8/YazGpZvSPXRBacub/VHiWSYc
-FwZjnhB83RxNkPMR9kNFdrEvr5L1YdwjxyVxPhX+289f8rKSmXIi0t9cvxGrW9Y0tgs5lWxbJ2Kb
-nvWjLoxlufo2j9PAm0JIMoZJJEUacjnA6UmF226ZBDnKFHWFUeOuGKbhIDeCiihVsaLUONlbqkvm
-CSm+/blCWusqqrqkT6ykOsiP/osDRKHV07wolSvfBuEFRYE9WMMBR0xpxSm9s3jlNjSD5Bd1rhTz
-IeTi87CAcAkrXKOFx7SpZeJ0E8/MnhTVxEXdo7c1QgfMOGiJrI6aVfXzq3zbe0GDiHzKOPutHyqJ
-WL++pEypPsCDx08/VYqC6n3iYpH5hDntQg3wKn3ngmR4XRqHQkgthw8vIGMyT0UmMOabOCX1wXq+
-zUk3G0rrqNHcLIfFq7N/9HnAadwdoWL8Ax3d9Le7QKfvQSN32Jxcze72SBwa4F0vvlnlhUT92+Hv
-A5sRtJAXyMB+VUAwf96Cj9bSGcmezx9eEJKkb/P3fsfBIUbnTS6/JV68zGvIH60YdwvtIS6pYmDO
-E8WMoFuZzXLCTruYdKwG+n/GHTl4L0QBc4NqaUDfYrXr/ZIO/rWSSuPozsIMuITPp99XNW/h9NvE
-j1PdLycwidQglWIFleDttPU6166T9HAhgtmaT9X71OASVsIx3OWSDQ8EshnhsxDNbybuKd3FfXxh
-z2a3sOz5TFus4QaFRxbmiXx57OiJCIRU3c11iEXQ4rm5eOshP9LJ9d6Omob7WIitEQpXhPb/A4Q7
-EziiUryd3eaeGMTv8K2tK0gUKSMOPJbDuz/dPAQeo56xUJ3EC4+XoFPRBHzeNbSOcHEn5vIlB5XL
-gIsnQf0nxwzc/lLCe88xbfOT5TbaS8CT8rO/QevbJ4ywUhmB7IHlJA16SfXo9fgJg9p0nPBLmhX9
-FPJNbOMThLrAKbSlkFkln7u4Wu5TFgrUozSYaYfgs66lTlUfeAppIh0T/omOtexvGhA2X2OXCiWJ
-Lp0+M4BPIdr7DVhppb5eK2FISwee7Km+OcDLyXiRn/b2xdWcUQ4PS+ILupeSMq33ur6KxA+zOKbj
-brgqmkX7EXjvw2CpB6O9qRlAJXx259qP4MPF1UfDMprEWCDhVjhcWNwEUYLSwSZA38PHolVVyBvp
-rUVY26oiWNLDvL1Q5iZVP2XDPV1GUi5Slj3Yb1QfeMmLCxTa2d3jLGdg/0pjAZDFp+5ufIQpbvhM
-ZKYbTm9JgkmQ6QA5Fy1BmjS5fMj9uVOkW2FyVNETh/7/FtMt0EZF4XkBGPkjjdeMQnFaIzc+FN0L
-nxkc+1ChoBs0DQIk7zRb1/Sn7aqS2HrdfOx/eNxmqiYZ8BU5NOldVujQ1s2xYLXq0LXs4LTz43Yy
-liPFlhmVxKZ1hrnlNY7D7POpS2d1Nf23/6Xn69EWkbTe6qy3l8OgxqkHTU0bciTVUYj9Y9wfybe8
-Cw4IxdoeNgPdGFKxow+lbqtbUb5HeNXgUpgVEoQ5sqP/3An/FL1QiLfOYfWPlfD14d/yA1VHjdUB
-ScxcL36j46QTdp43AGAGaC5XY7QoATgrnv8siaOtID8oLE2Y+am7+fLCJLoiW7JaM7SadBNfTGnJ
-kVgtOFpOgsgL1WULmdJoHPpEqdSxoTA/OnnsmuRpe2qY9KtzzWbQ8X4+wzNBH5pvCZq3XKp4glwv
-i0p7EIvTIAIFvVwoghCMcYFppJy3y4ztCTKxkaGb9fI5etQUQ2dQ6xEStrng4N8FUPGL4YNaHxiF
-V5CxKvj3ALKMeL57UfuRKGm4mz8Jr4JgBA25I3VjJyXIPbqXLEa1A4COjtLF5PRSt5Tc3NdCEOm0
-9CREm14FTk6WgzVXbHo4vPsUgOkWYeF3U7SGguYwnlPb+67Ut/iwrx7YLYd0HQvl3CUfpI+oA908
-H/zpG+FpAAdb9jfzINOZ9ZL+xI0Y922j7CxrRjmsVNX/Q96fuejHpiQ6NdP6lLtJ7LhMJPQXZogX
-N/2LVn11egpio74zGjJoQd2lL/VEpj8vOZXRHTVrW6W+HuqcPixc3/jHhzz7mpIO2sjlcFv0WU0s
-O6EZMwiQcQp/bo+J8dVTpJk0Mj92I3tgk0Ou1YWias1bQF2ZnvdajwydbeDkVZ10BziCRjk4guDb
-YsqBLqn0A8efIIbM36ZjKaoydBv46wPtrHQx+WePKgDG6NKYn7rkWZPGTI1Fa6JK/EQGUL86Jlau
-DKdEVaGz8v67LDKLa/k7V+mS5KfqnuGEx+gKR00IWhwNCesU/xDj5RyuDUU3IgnlHD36ENRBk58n
-nOuKTm9ui0k2KmacUHIiZE+giIr/ArrRXMcOAo8wjkW13gS+dOlOe5wfEHF5dUlBVZEcDJU1pG1M
-1BrQIa3zbcuhrh8wqUFjjrzIdHwTjLjRkpVi11/oKpObxPsiK3QHwW7QuHkqoVQp+tqd4K/ogGxn
-A0DalhO/HBC5fd9N/FlthKqvzkRRDDSgBeld2NpyrV5OTxy/C04HMkdddaA+ctEWhH6eXzcuuN0z
-QwWD/d+vEHaFFICnXINl1vuqiO6q2Rljok0LgKBqDtKIy+oyEX9doIFWRcKu88rs5GTudqXU8BwA
-cYVdraSCbWd0WYKgtv8BM7mBoMsIEQ4Tzwbx1g6s5TxWYG0c425dMl/tPY0BKWgKZkTnU05KNZWI
-8Jv1wF6H8s2fkJlwS0ao+lZvh5SbC2YX409zgA7OPl3+7OGPNgbcHsFjivLxVT3N5LWxAkXym4oY
-+MULby9zDmIS6MS7Ji2mie3lHv95jjKJTaKWA4A+pRvktW5qQszAKCVBNoVStvrjH68M981nh1RX
-vY+7MtpErDGx0yuri6NTp8sSCqhoIryuVum2HervD3CT2E1AVUliFLoZMSP1SJjg2ooK2fcWQMaS
-6S3Sg1fbgOCnUbX8wbjQQiA61bten/I0FsBQrjntkKswuUQR+9JIfnYUJV0go/ULfF+edJT7P6Js
-kIx+OIeZXhq5uXOZisCSJDYucLB88XhtTwUdmnaoiguOke8W9j4fneV/w1jHrBPKzCrO1iLDvp2i
-962kE0+csQjdpbbZl4QDV2EpSuePTFt1GWkDeO+Aqs/RRVUd6reV0WfGIy6W9bTcyLFiZHPQ4XcU
-2Wcqipfjb2P3ojSUie6RqHpvsNmGsY46YdkyONxGzu6Con4mHIR9xrEz+UCDt73DBFCMwng5WPKC
-WtiqPV4aIvxGgLnLUgBWsH9gEvk6Wq8BImQYKtuzLYj8ZJirfmm6yo7yJBBFMcn1xzE+J0HfbPoF
-8OowYnX+GUL5TjJXfrjeYN3kfiDh7bdOnWfb5i0ZelO5OpTGI0fUw8yuINDoZZAYW7cJ59XFOboO
-2jOpH7zPyL3sy8AFZDDqI5plN465D8MRUbW967OBJhv/wWsId5+4HRiosa7Ub7LA9JNgpxvGiULW
-GW4NblfbueaYPQmPu5dBZaLcSvdBJuqkBtlqowxOlXheRiVDIWPBfsy/Z+Yzaq5a9uJ+TobiUjhh
-2UjsbbZ3hX+F1MdbpJJDuR6Mx1ovKkrGJuPEo4AT7OHfJYD0JpHl5jUP9R1unyDaNv11Gylw2w3L
-v0Fg7cvzwtKDSM9OAOvoS420B50TmR48+IWVfpQtY6vHs+o/Crjg6fNRvO4X8YM9JmynXlQJlNYu
-LuL1egxZJy041FjzGnJx1tLfyY4FYPXO2C7lTnRDvE57L6Gz3DQQTmpMM0Ra1bN1Pnfdrs31r+Cz
-xgHFd1eEOoZa/LIj7u8zBNSq+dHWSbSxKczxJoaNs6l2MKcHxK+bGsg5ZAcu0Itkxsxehrh+1pEy
-qRx+klcQUOqH+Tc9NRbp+JGc66WPyb7fHSpAhkPlfVPhGT5/Yz2TQm5TXsTeXmu4WwDUJDk57/Vp
-WpuxtvDfOSfNIN7hwZlbRWUFhdj/0+c4G22EGUlH4Uky0emzDCenWFtxvTVdSugXh73AlS8=
+<?php
+
+/**
+ * PHPExcel_CalcEngine_Logger.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_CalcEngine_Logger
+{
+    /**
+     * Flag to determine whether a debug log should be generated by the calculation engine
+     *        If true, then a debug log will be generated
+     *        If false, then a debug log will not be generated.
+     *
+     * @var bool
+     */
+    private $writeDebugLog = false;
+
+    /**
+     * Flag to determine whether a debug log should be echoed by the calculation engine
+     *        If true, then a debug log will be echoed
+     *        If false, then a debug log will not be echoed
+     * A debug log can only be echoed if it is generated.
+     *
+     * @var bool
+     */
+    private $echoDebugLog = false;
+
+    /**
+     * The debug log generated by the calculation engine.
+     *
+     * @var string[]
+     */
+    private $debugLog = [];
+
+    /**
+     * The calculation engine cell reference stack.
+     *
+     * @var PHPExcel_CalcEngine_CyclicReferenceStack
+     */
+    private $cellStack;
+
+    /**
+     * Instantiate a Calculation engine logger.
+     */
+    public function __construct(PHPExcel_CalcEngine_CyclicReferenceStack $stack)
+    {
+        $this->cellStack = $stack;
+    }
+
+    /**
+     * Enable/Disable Calculation engine logging.
+     *
+     * @param  bool $pValue
+     */
+    public function setWriteDebugLog($pValue = false)
+    {
+        $this->writeDebugLog = $pValue;
+    }
+
+    /**
+     * Return whether calculation engine logging is enabled or disabled.
+     *
+     * @return  bool
+     */
+    public function getWriteDebugLog()
+    {
+        return $this->writeDebugLog;
+    }
+
+    /**
+     * Enable/Disable echoing of debug log information.
+     *
+     * @param  bool $pValue
+     */
+    public function setEchoDebugLog($pValue = false)
+    {
+        $this->echoDebugLog = $pValue;
+    }
+
+    /**
+     * Return whether echoing of debug log information is enabled or disabled.
+     *
+     * @return  bool
+     */
+    public function getEchoDebugLog()
+    {
+        return $this->echoDebugLog;
+    }
+
+    /**
+     * Write an entry to the calculation engine debug log.
+     */
+    public function writeDebugLog()
+    {
+        //    Only write the debug log if logging is enabled
+        if ($this->writeDebugLog) {
+            $message = implode(func_get_args());
+            $cellReference = implode(' -> ', $this->cellStack->showStack());
+            if ($this->echoDebugLog) {
+                echo $cellReference,
+                $this->cellStack->count() > 0 ? ' => ' : '',
+                $message,
+                PHP_EOL;
+            }
+            $this->debugLog[] = $cellReference
+                . ($this->cellStack->count() > 0 ? ' => ' : '')
+                . $message;
+        }
+    }
+
+    /**
+     * Clear the calculation engine debug log.
+     */
+    public function clearLog()
+    {
+        $this->debugLog = [];
+    }
+
+    /**
+     * Return the calculation engine debug log.
+     *
+     * @return  string[]
+     */
+    public function getLog()
+    {
+        return $this->debugLog;
+    }
+}

@@ -1,95 +1,209 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-HR+cPqO04pVvn+SuXCk65939n+vVUuPkz2PnWgUuGpqQZgbU9mD51T3Hhx+uUWppmbOMCnTsXUWO
-+HzpgMQzNs8cE3X1P5l/qzAvh1R/svrxayr8YgIJlBY6V69pwlvhP2nS34lQaLt/N7jrfn9+JNlw
-mUGcxehPKqHqGnkUC3vLF/FJD8+8m8C6AlZNHeZmyZdWOYjFSpZYIqMB9LHszXe7/KRg0rXvjfGt
-5y9wg1U7D9oHDZt4W/D/qO2I/rsoHeRIxrbsUEDnUKOYaxa9jQuKxeMMrJDf6UOTmubSQd30BQFR
-stTy/pAMZkU5+TjZi+EgO3YTIFBg6yNhfABEKK7TpE+3FYOGxTMDhRkrhZDrej2w3eXBNvpDWt+Z
-E1Sl5brV0dpa1fP2A1aDd5rO1FXizSV/Wjx3UlX8vE2b6Gu6f8czHPE/rt/4vKU9MovlaEBFAaEq
-XX6pOxVMIUmU3v2rHzTAeKDPkWOWaGMe+H4Mv4riv00LyMHe3/MmbBfgaAK+uaO9wRa/O9c8dHdg
-FTh8jz7U+ZSKV1/Vj9akwI2vpdHheVyekuWiTcrZUluf1LE/2iXnv9yYjUUoQEBlIXsfWlEmyKLo
-tonQ0NnBw+tvqgIwFYbdzXaObDDoiWvmwdOqpFo1l6PlenIwBfSSghVquDco8c9OQCF9Mcs4Ax3P
-OLU3/ilGdVJaWFqc4l7CSKQxB7qb05m5GL+A2Uws2DY301CmODgcPJOis8xu8eQ/4khpKY6aVjSl
-miXLuk39bgg5a5/ZAzd/mMvKAuTX16+WaePNV6PCXjnEKP/a3x1xOQ1j46tnZKZGcZbw1V/b61ms
-zgkAsRhCuab7HoGNHRg+p2O/7hJ8DhCcPTlv/G7FjYvIOrmW+/TOJkGvXAKapT1KMoA/IEWdMZ/o
-GuvRKJqgmD43rhlODvYnTSqBkfhXQLJkRuloh4y4wP5toQFTL9Yoz8IzP+iZK/h+fWaY42PYVAo4
-6kpRtTgggmHAPDBSJsyLL0t71gMND04tgdfQ70bYASgglIMnc0ZUdgXRcx3TkEPnYkrodnrDBl8J
-QPw6RXZak/NTaXTSSKb5I0Uo87yxC85oWxs0Hh4uiNSkG4G1BVjaZN7+fN4BL8tQgD7GOMce9Rxk
-YsRIkQvBZh3Knhr4p2/m/me+udEJ7ozM6KaYeqGSCqTCXAjlDbIU118n+Ppapa+ZSNVVfZ4g+neZ
-I9UJmi6sr2lAldnoWbnpeyrXgIH2LYalnQ8GsxaZnjyF9aB7PlZZOSdk0gMyKcvbuLM4UtyigUZz
-gAavHKJdThSsIO78LHukjElSsPr0UGr/+iE0Em3fe1drMypVdX4kPt5zM23Y5f/BMG7WDClirWIC
-dh/R0vVSi4+/FcJV1m5Z8xE0vVjZMpYKe2cSlyzmp8MghO+adULqItR+Jx3bGJw4hMpVKrUnARrQ
-80AFfOfyt4jS5KCoGKkDJUoTp4yjlEjvdwT3rqyiojZIfceDAxzmyvvx+fAocKprablzRZEdQR/A
-28GfC9jVFq61ZwzFU3f9s+1YCAI1Xo/U37tnJnQDtq0kK1AYZFfMWIBatJCpD/DEzWApY7DS+0P5
-/vmfhUddBn5ZOc1k7TBYyZGUiu4CeNrBa0QKvDk8vTwK1CSnvEQ246jzIWpeKQdh4TgCXh3oOxrB
-FM5T/0bCQV0rqLGZNlbUJ++zSoS5UdzNOV67K5Vvr532OWjt9laoRpCaFpLd+1nlkI9p9qGaKhfa
-zyZzjNMJtEHmM1jIfaNOC69Jc3SLTZJNJg9ykmL/dVVBcAH2Vo2FrBEDExsmXl4PttZXof8HKfEA
-CxUMTnV0bw2NER2M7hrmJZ/Iw4MWs9wLftbRoFOH+fDkSeNt6IUHRs5nICQnwtpwczZL4hC2xaRW
-/4un26CAZiZCNI8UmXTP5UIhYEsUNWW9has+KMjMmfqHpo1aQlm0d3bhAPYD2HNJ8TXSvynuPh7G
-Tmqcl1QH6lASTY/f1yOonK8d4Cyvi9JXK1ILkkAx+kFaeSErRc1yXLaFnJ9dw53WSojNT/yv1mBB
-KsdqpgWS0keRQRYu+KmHxhSSeJwyGq6lmnqLEjAdYH9fujnrA1niI4ZgD1CwoQVCyhRNHcI26JJy
-OybaXRrQbCWXxKe7GsF4kKoaNLmpGixphvM/ZOiEgWF5X8OPPFmvd4++XP09yDbnRLXKSWURPM01
-0VBiV12OS6N2WTjqg/tQXNtaRb5DKL38clQzwEhAh++wgShOFdD4FcodxP3LLX5eCuzH1TXPksF4
-QOiz3MNQsi6YDVtjMjEPnRvswuDKBNsgHWrNZV3LSoYk4jqPqr2pjgubu1YgVd+sAugRlXd+ER+p
-Oijtm3/xKn7pncHab3bn7EeTPmpVgrOcG55JGGmkBaKBr+sGwDTjP93F9rqljKGM/IPGbc2fIhY5
-XLrQTh5gOu1VnQe7d7urXBEeks7fq3+NhJ2YGOCb44U6zsU+UUPaRBIV15bht77nfwaeoMfqD+nh
-74ZbjpBAh6KuOWrVZZrrtoFGzAxZUMXs0x/4ibLwVOXNbO47pN4izCM9fdAGGivu5hVfsHZhPP3z
-6/3UGb1FiLqHprQpJ/ib3TmQ4Cd1Xkc3/N52+wEaPST2B3KSJH9KTXB/5BUDAmZS9fsYGOYlf1DM
-fwP15bKd9/CwBVQ2wjjtGXI635EGhCPhWasN9MRUy7h05gfCu3uR3uBclH5F5fOT1NIkrlMaCcX6
-bQrPojML99uzCrUHlusLk0LWisfz6MLX6TvS4rjS23iFt5woQJacLyX6LfGPCNJop0VupxKjmPCC
-+TPOgwtaKnFlsY4vzOWvAXjNE8TydiYvMjvfP4PPtswtggGdcIinl1IzaZgAxokSz6Gbd+vfVuFH
-oIlsYjy1L52K1lvdS3Y+GDnFsTmJ/J9WjN2hOumRDKVaPpTKf+hwW9VLvGCshJjwylQW4IAOq0Tf
-ePMLbw0H/HzkuEr+UeN3D+XfPmvIhfw1ggU9xEduKeDCEs7iS+7zsPXEXIYTSvGgswesolNoxKFb
-Q6/WxlKeYfR/Dl48tuRkj2kjh3IQBCFiu/aND/Fym4YS4Q+0XqcQI2SlIqTEENigWMrTGVYWHZs9
-jErHUSH1Yl1MDOV8wbxT1jJOhdF/qAVkAXoysswLl55HktjMYFVypo8eKl98FIOHwu3SbhWv1ADY
-Oiv/WLhjcSc6bRVSE/eTfy7jlQF2X/WYe8M61PmtmcS0LzcygQ7LwPzz/Hc2v4p/+YmTFHrqNBoE
-27u669NDHGO2uh6ThVHO40UWSfh7P1Fu/Th2AFF17SA95A2TbRbZaPK3JzTOMZA+bXSMRcf0e2SE
-QFjCSv+dAhpPBpP4x7vsFiQgQZX+bkJRaT4vlrFC0UtXJcPRjdYIHvGuJH+SXNHCkb5LGNszujGJ
-9+8ARRAQkfSq3EPmWyxH1EHusmE9R9GbSr5Pi76lzuxW4o3bX9Ix7AlmS23vrlIAoPxsa9rKssxA
-FoOMzPSUoxtcX48j6VUJD44AMzZ8myxWpu2MTJH3TvDDuE/qZnMONJuSuogRHG1xrooJUa2W8HNJ
-9RigyeNo9+98VDgEmaDEAKCal8EaDQEzneEo3TPVqTVnpr8ukp9g3gqf8kLuleFLyAFzI6zP6mQc
-hUlBE82/xXkVNI9fIK6tVQXHfe36g9gGnpDOfuiiJpidGdD/V9jNMZHUalcYr8/xfvue1Sir33wn
-tvfmp/x4VyONHDK9f7Cck31w5tew9dFMjFQL7gHSD2acCA1XcAlopPVS2bp/wsv8+uxCHto8ngN6
-+t5HeFLc9LYwwWpQXk+8a44kqUCAGmj4yUfH2hXSSXPbTHyWwaRFB+h1g3Fcz/Jimu+WyUj8JsBG
-GYRXMF6v8opmWXecH19fm5slKt7xvUiU/HVXEkhvu2aWUU9okeTX1pGzkHZyU1Dhl9UBcYcpk3fv
-utCoA707mtnRDfppU3yXfkivESOIuP3BdzNmLQ2HFc31nNF/tIkpVgeG2cskGKG5HjnCVmfgy87p
-qqxfQromO/Sd/q1TeaJn5iauQhFVC6T+bu6MDO9AYNXfXG4FDZNdHQVz1ZEs0APZvV5lIxWIelfE
-eb7TkInEeIfvKrIxqf2GDyzW0MIC7l/KPPyT8GzAw0AjIzpz7cZEnoaRTlxhQVGlraLRXuYKMmpa
-9SWWpw0T8kb43t4XmnE90Eg5b+QO1auwzmGe/oHpfT1R/0llYL2B5lS8SWINwwAA5bG2oMzeAPiv
-c9rdobV5Rs1ew8mF3tSSKLuOWdylTUAEcuoiPIeaPO7Ob1MJEOzcMHas6SDsMxMGSicbSAqZ11rI
-s4Woa26jbzyXJBfZTXuTlGopFL9ZTA/v7tAPp9kiAmjJ/v26cJOprs/C9/ihjVmlf5zwG66N90qY
-FP0dPvQmmmzwFxeVvzMQJR3zfx4h6GAs3HdXm4QJynnICOtYAmmOoVUScXdDONcQYyCW/rhCxZDm
-RmpXmLs70cJ4/5AS3YKNFdv6q59Xc01lQBu5LPMlW399FQLxZDvDrKC1k12sn8tzshfpkIYYKUU7
-eTjHCXih302g8QmrEseUpKuKJImd1msHBmqT8WlJSVWgQcJqbW/z2R0TA4bRzk3OZ5CRHQ7KtPcy
-tM0UXgNnOyPOamyHPmhpl02zc6QIKl7ZlHTbRG6KknXIT0K1mQYNoKZdbIOza7qOXHJlZwoUZ8bB
-t/Iq1grzhpHO5IFCbodZmLSQ0p0OhIJfl+uXjZ7L8g748ytABUN9HO+zStvXgDpPyzzHScJZi1VZ
-MVsYW4gHaahwKhpn80+cWbpOoEQTqKMid0ZHPnVFDrc7hQOz8c2/l0VepCAft/GmJ9g3EKDGWSV4
-kylCJ/CvBGkKGggqnEzKlIccmJQ5yc8HpaUbPGKiyJMekAAw7pTAkKtNtPf7siqgIitwVaxcpaQp
-yBXWcvTgyTvH+e7SLOHEfk5cBw8HSrLiaWk2SaAxIYaHwqezQCBFiSrFslbO7XGha55g+j/Mrj7d
-yCsOjFwGkDsWGIPyrAMXTx84owWvuWrjduN1LbAHn/SihIsN009YByn7I9EtL9x9WrqxvdCoK7Bb
-Ui8rP9zUcpNfxwrbN59O9FChsLqTtw4QYcTgZLjSLe575gNHXC6VkXCBtMDrzilLohUG7lP6Nl+P
-dcYdrYK6fGi1GaW7sxYYKZhF2vwx2y7tumePcjTQFpwVrrU1GyLGVkPRFhzkZ1HdNXmzbMMJ6Ueg
-mSi+dtwssbtJE9+/1Mg8eiKdqC28Zrk+j6iitUP3xtYEmb2rux4uJpByWUUpBWH1Io8U9uxcrgD8
-G8B5s4kVMWeWiaBxm/J8BplFSVtPoilWBJhyVQZn2yVKQKL6IcMKZyMIuIRMK9PKry5f3FhC3YWx
-ny8nLLCsWv5E0L9sxFjgO+QeuRl/7PkmNl0PgXlFCGSSL5i+pru7JUbsPvbM1UDHl1mn8lxJouco
-9ZJY9Qhtfqt3yf24rb7SGwvGGJxOOPIqQRGn0cEYaVPx/AjPaggDkyqAc7AC/KH1ieTX+Fyp/3RN
-1fr97PAdliQHurduiu4CuuqM6iiaIlpvg0luNDUtdhBV4A1LPVi6CHdrcWdlGY7aNzxrgVTpyazz
-wnhtvUTEX4OhQXIxm8o+pwkcEPPR7mVkN4ruXgUNACWgOa3u5joGe4czJl85K3WIRKJ5548zOwb0
-Ul2cn7JGg0vmDa3KwUCKFSOuTsCvXMLZ4iO7yNUFlt/vFGFW2IxX6Zz3kxG8+jC0/lEjX683A4Ja
-wFYr/KDM7/l6ihqhPZ1NYVtw/5IG1twUVceRQRaAp1VFjdU61cd9FsZbnivAdP3d+ddkX499xO6Y
-wHibpasQIFLJG1EWaIGAe/SBUjqSVsu41dUX2fZ42U/6NF7PNwyTk9jFPxCt7RMem2xR+L2PlHi4
-BFBx1x9plYQTwe2x015QX0ews62RuG5WASDaeS4tYDV1mWzPq7SJVogV7L6n2fUul1q5RZ71NogD
-ev1yN7dNXbSdVv1+k1ECFzZA8CJO0sotOm4+vbZvvbV2OT1kz9w9eSM7IcKF1Uwp/jKm38SDSnbZ
-6f/f0z3K+BlIc8K8UajLGNV3TQxSt6YaGDTdgfX8BHTurD6pR2rnhDOZPjh38M2cmKKOneSC7oLP
-mmBc10uzUJxG0BLuRCYUsvNE0SbsCEcE4QedB/aNeqFnFzYL2l+OTIanNj9Y7Am6okFbAnbDsZvZ
-Tn7yl8oCHDXRFy3rsoVepuH0zxx/xFdTdnWlywJclI/i4nAsXr/agOV8MeiAdE47hdkg5YNdlC8x
-SrvXuYpjrS62zIY8biPYfBdJKz0wExANYWOY1i9NJ6RD1n7a8S9shhnKhPJoadAR2AFmYqKEAKmo
-Hy/LsW1TSBNPijnYOuOsQHnUEHH4A7/vJra3VmyQk5CBOpOaWvwIWn8k2QzvBYbmAuiCWAaoqI15
-iebFSKJdrRin/MK0Ei4jpnqO1mnCVj28TC2mhJxLPBGJJ6L6DdaeUaPJMiZ/mZ+JVntX/n3NW3kl
-7u/CHTRW+/zD0gRNZMmvt1UXwp+BYxteVnQqASqNYS2ueYYdsp4XkLP/7QbrGKSC7OcCcIhIeIsU
-Cj3iThpktx3BInCEAjAb6JVcBmy9vQ3hWzlZVCSIv5Nm7cpp6lgJtNGViGPMIBLjOgYiVb9tn4Z6
-1zi4Z7/j3hlmq5eEvwL4UgyGCX8LWEYajSeGNuy1Qc771fXLnAN24ohCAAiPdg9ylkaPb1LwoD9V
-feObXP692WqSm2L3gdCJpvhWujdMw1MHVjFqNxSwAbgHsBapzUjY2MNWQNq61OiCIh0amclAPrvW
-baLcLVso9sgpHPeoJG==
+<?php
+
+/**
+ * PHPExcel_Style_Protection.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Style_Protection extends PHPExcel_Style_Supervisor implements PHPExcel_IComparable
+{
+    /** Protection styles */
+    public const PROTECTION_INHERIT      = 'inherit';
+    public const PROTECTION_PROTECTED    = 'protected';
+    public const PROTECTION_UNPROTECTED  = 'unprotected';
+
+    /**
+     * Locked.
+     *
+     * @var string
+     */
+    protected $locked;
+
+    /**
+     * Hidden.
+     *
+     * @var string
+     */
+    protected $hidden;
+
+    /**
+     * Create a new PHPExcel_Style_Protection.
+     *
+     * @param    bool    $isSupervisor    Flag indicating if this is a supervisor or not
+     *                                    Leave this value at default unless you understand exactly what
+     *                                        its ramifications are
+     * @param    bool    $isConditional    Flag indicating if this is a conditional style or not
+     *                                    Leave this value at default unless you understand exactly what
+     *                                        its ramifications are
+     */
+    public function __construct($isSupervisor = false, $isConditional = false)
+    {
+        // Supervisor?
+        parent::__construct($isSupervisor);
+
+        // Initialise values
+        if (!$isConditional) {
+            $this->locked = self::PROTECTION_INHERIT;
+            $this->hidden = self::PROTECTION_INHERIT;
+        }
+    }
+
+    /**
+     * Get the shared style component for the currently active cell in currently active sheet.
+     * Only used for style supervisor.
+     *
+     * @return PHPExcel_Style_Protection
+     */
+    public function getSharedComponent()
+    {
+        return $this->parent->getSharedComponent()->getProtection();
+    }
+
+    /**
+     * Build style array from subcomponents.
+     *
+     * @param array $array
+     * @return array
+     */
+    public function getStyleArray($array)
+    {
+        return ['protection' => $array];
+    }
+
+    /**
+     * Apply styles from array.
+     *
+     * <code>
+     * $objPHPExcel->getActiveSheet()->getStyle('B2')->getLocked()->applyFromArray(
+     *        array(
+     *            'locked' => TRUE,
+     *            'hidden' => FALSE
+     *        )
+     * );
+     * </code>
+     *
+     * @param    array    $pStyles    Array containing style information
+     * @return PHPExcel_Style_Protection
+     * @throws    PHPExcel_Exception
+     */
+    public function applyFromArray($pStyles = null)
+    {
+        if (is_array($pStyles)) {
+            if ($this->isSupervisor) {
+                $this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($this->getStyleArray($pStyles));
+            } else {
+                if (isset($pStyles['locked'])) {
+                    $this->setLocked($pStyles['locked']);
+                }
+                if (isset($pStyles['hidden'])) {
+                    $this->setHidden($pStyles['hidden']);
+                }
+            }
+        } else {
+            throw new PHPExcel_Exception('Invalid style array passed.');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get locked.
+     *
+     * @return string
+     */
+    public function getLocked()
+    {
+        if ($this->isSupervisor) {
+            return $this->getSharedComponent()->getLocked();
+        }
+
+        return $this->locked;
+    }
+
+    /**
+     * Set locked.
+     *
+     * @param string $pValue
+     * @return PHPExcel_Style_Protection
+     */
+    public function setLocked($pValue = self::PROTECTION_INHERIT)
+    {
+        if ($this->isSupervisor) {
+            $styleArray = $this->getStyleArray(['locked' => $pValue]);
+            $this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
+        } else {
+            $this->locked = $pValue;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get hidden.
+     *
+     * @return string
+     */
+    public function getHidden()
+    {
+        if ($this->isSupervisor) {
+            return $this->getSharedComponent()->getHidden();
+        }
+
+        return $this->hidden;
+    }
+
+    /**
+     * Set hidden.
+     *
+     * @param string $pValue
+     * @return PHPExcel_Style_Protection
+     */
+    public function setHidden($pValue = self::PROTECTION_INHERIT)
+    {
+        if ($this->isSupervisor) {
+            $styleArray = $this->getStyleArray(['hidden' => $pValue]);
+            $this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
+        } else {
+            $this->hidden = $pValue;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get hash code.
+     *
+     * @return string    Hash code
+     */
+    public function getHashCode()
+    {
+        if ($this->isSupervisor) {
+            return $this->getSharedComponent()->getHashCode();
+        }
+
+        return md5(
+            $this->locked
+            . $this->hidden
+            . __CLASS__,
+        );
+    }
+}

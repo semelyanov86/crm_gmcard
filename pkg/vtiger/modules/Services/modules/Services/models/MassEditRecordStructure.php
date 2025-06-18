@@ -7,11 +7,9 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
+ */
 
 /**
- * Mass Edit Record Structure Model
+ * Mass Edit Record Structure Model.
  */
 class Services_MassEditRecordStructure_Model extends Products_MassEditRecordStructure_Model {}
-
-?>

@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.1
  * ("License"); You may not use this file except in compliance with the License
@@ -6,116 +7,128 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
+ */
 
 vimport('~~/vtlib/Vtiger/Net/Client.php');
-class Users_Login_View extends Vtiger_View_Controller {
+class Users_Login_View extends Vtiger_View_Controller
+{
+    public function loginRequired()
+    {
+        return false;
+    }
 
-	function loginRequired() {
-		return false;
-	}
-	
-	function checkPermission(Vtiger_Request $request) {
-		return true;
-	}
-	
-	function preProcess(Vtiger_Request $request, $display = true) {
-		global $current_user;
+    public function checkPermission(Vtiger_Request $request)
+    {
+        return true;
+    }
 
-		$viewer = $this->getViewer($request);
-		$viewer->assign('PAGETITLE', $this->getPageTitle($request));
-		$viewer->assign('SCRIPTS', $this->getHeaderScripts($request));
-		$viewer->assign('STYLES', $this->getHeaderCss($request));
-		$viewer->assign('MODULE', $request->getModule());
-		$viewer->assign('VIEW', $request->get('view'));
-		$viewer->assign('LANGUAGE_STRINGS', array());
+    public function preProcess(Vtiger_Request $request, $display = true)
+    {
+        global $current_user;
 
-		$viewer->assign('INVENTORY_MODULES', array());
-		$viewer->assign('SELECTED_MENU_CATEGORY', '');
-		$viewer->assign('QUALIFIED_MODULE', '');
-		$viewer->assign('PARENT_MODULE', '');
-		$viewer->assign('NOTIFIER_URL', '');
-		$viewer->assign('EXTENSION_MODULE', '');
-		$viewer->assign('CURRENT_USER_MODEL', $current_user);
-		$viewer->assign('LANGUAGE', '');
+        $viewer = $this->getViewer($request);
+        $viewer->assign('PAGETITLE', $this->getPageTitle($request));
+        $viewer->assign('SCRIPTS', $this->getHeaderScripts($request));
+        $viewer->assign('STYLES', $this->getHeaderCss($request));
+        $viewer->assign('MODULE', $request->getModule());
+        $viewer->assign('VIEW', $request->get('view'));
+        $viewer->assign('LANGUAGE_STRINGS', []);
 
-		if ($display) {
-			$this->preProcessDisplay($request);
-		}
-	}
+        $viewer->assign('INVENTORY_MODULES', []);
+        $viewer->assign('SELECTED_MENU_CATEGORY', '');
+        $viewer->assign('QUALIFIED_MODULE', '');
+        $viewer->assign('PARENT_MODULE', '');
+        $viewer->assign('NOTIFIER_URL', '');
+        $viewer->assign('EXTENSION_MODULE', '');
+        $viewer->assign('CURRENT_USER_MODEL', $current_user);
+        $viewer->assign('LANGUAGE', '');
 
-	function process (Vtiger_Request $request) {
-		$finalJsonData = array();
+        if ($display) {
+            $this->preProcessDisplay($request);
+        }
+    }
 
-		$modelInstance = Settings_ExtensionStore_Extension_Model::getInstance();
-		$news = $modelInstance->getNews();
-		$jsonData = array();
+    public function process(Vtiger_Request $request)
+    {
+        $finalJsonData = [];
 
-		if ($news && isset($news['result'])) {
-			$jsonData = $news['result'];
-			$oldTextLength = vglobal('listview_max_textlength');
-			foreach ($jsonData as $blockData) {
-				if ($blockData['type'] === 'feature') {
-					$blockData['heading'] = "What's new in Vtiger Cloud";
-				} else if ($blockData['type'] === 'news') {
-					$blockData['heading'] = "Latest News";
-					$blockData['image'] = '';
-				}
+        $modelInstance = Settings_ExtensionStore_Extension_Model::getInstance();
+        $news = $modelInstance->getNews();
+        $jsonData = [];
 
-				vglobal('listview_max_textlength', 80);
-				$blockData['displayTitle'] = textlength_check($blockData['title']);
+        if ($news && isset($news['result'])) {
+            $jsonData = $news['result'];
+            $oldTextLength = vglobal('listview_max_textlength');
+            foreach ($jsonData as $blockData) {
+                if ($blockData['type'] === 'feature') {
+                    $blockData['heading'] = "What's new in Vtiger Cloud";
+                } elseif ($blockData['type'] === 'news') {
+                    $blockData['heading'] = 'Latest News';
+                    $blockData['image'] = '';
+                }
 
-				vglobal('listview_max_textlength', 200);
-				$blockData['displaySummary'] = textlength_check($blockData['summary']);
-				$finalJsonData[$blockData['type']][] = $blockData;
-			}
-			vglobal('listview_max_textlength', $oldTextLength);
-		}
+                vglobal('listview_max_textlength', 80);
+                $blockData['displayTitle'] = textlength_check($blockData['title']);
 
-		$viewer = $this->getViewer($request);
-		$viewer->assign('DATA_COUNT', php7_count($jsonData));
-		$viewer->assign('JSON_DATA', $finalJsonData);
+                vglobal('listview_max_textlength', 200);
+                $blockData['displaySummary'] = textlength_check($blockData['summary']);
+                $finalJsonData[$blockData['type']][] = $blockData;
+            }
+            vglobal('listview_max_textlength', $oldTextLength);
+        }
 
-		$mailStatus = $request->get('mailStatus');
-		$error = $request->get('error');
-		$message = '';
-		if ($error) {
-			switch ($error) {
-				case 'login'		:	$message = 'Invalid credentials';						break;
-				case 'fpError'		:	$message = 'Invalid Username or Email address';			break;
-				case 'statusError'	:	$message = 'Outgoing mail server was not configured';	break;
-			}
-		} else if ($mailStatus) {
-			$message = 'Mail has been sent to your inbox, please check your e-mail';
-		}
+        $viewer = $this->getViewer($request);
+        $viewer->assign('DATA_COUNT', php7_count($jsonData));
+        $viewer->assign('JSON_DATA', $finalJsonData);
 
-		$viewer->assign('ERROR', $error);
-		$viewer->assign('MESSAGE', $message);
-		$viewer->assign('MAIL_STATUS', $mailStatus);
-		$viewer->view('Login.tpl', 'Users');
-	}
+        $mailStatus = $request->get('mailStatus');
+        $error = $request->get('error');
+        $message = '';
+        if ($error) {
+            switch ($error) {
+                case 'login':	$message = 'Invalid credentials';
+                    break;
+                case 'fpError':	$message = 'Invalid Username or Email address';
+                    break;
+                case 'statusError':	$message = 'Outgoing mail server was not configured';
+                    break;
+            }
+        } elseif ($mailStatus) {
+            $message = 'Mail has been sent to your inbox, please check your e-mail';
+        }
 
-	function postProcess(Vtiger_Request $request) {
-		$moduleName = $request->getModule();
-		$viewer = $this->getViewer($request);
-		$viewer->view('Footer.tpl', $moduleName);
-	}
+        $viewer->assign('ERROR', $error);
+        $viewer->assign('MESSAGE', $message);
+        $viewer->assign('MAIL_STATUS', $mailStatus);
+        $viewer->view('Login.tpl', 'Users');
+    }
 
-	function getPageTitle(Vtiger_Request $request) {
-		$companyDetails = Vtiger_CompanyDetails_Model::getInstanceById();
-		return $companyDetails->get('organizationname');
-	}
+    public function postProcess(Vtiger_Request $request)
+    {
+        $moduleName = $request->getModule();
+        $viewer = $this->getViewer($request);
+        $viewer->view('Footer.tpl', $moduleName);
+    }
 
-	function getHeaderScripts(Vtiger_Request $request){
-		$headerScriptInstances = parent::getHeaderScripts($request);
+    public function getPageTitle(Vtiger_Request $request)
+    {
+        $companyDetails = Vtiger_CompanyDetails_Model::getInstanceById();
 
-		$jsFileNames = array(
-							'~libraries/jquery/boxslider/jquery.bxslider.min.js',
-							'modules.Vtiger.resources.List',
-							'modules.Vtiger.resources.Popup',
-							);
-		$jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
-		$headerScriptInstances = array_merge($jsScriptInstances,$headerScriptInstances);
-		return $headerScriptInstances;
-	}
+        return $companyDetails->get('organizationname');
+    }
+
+    public function getHeaderScripts(Vtiger_Request $request)
+    {
+        $headerScriptInstances = parent::getHeaderScripts($request);
+
+        $jsFileNames = [
+            '~libraries/jquery/boxslider/jquery.bxslider.min.js',
+            'modules.Vtiger.resources.List',
+            'modules.Vtiger.resources.Popup',
+        ];
+        $jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
+        $headerScriptInstances = array_merge($jsScriptInstances, $headerScriptInstances);
+
+        return $headerScriptInstances;
+    }
 }

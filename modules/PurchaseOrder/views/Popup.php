@@ -8,5 +8,4 @@
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
  * *********************************************************************************** */
-class PurchaseOrder_Popup_View extends Inventory_Popup_View {
-}
+class PurchaseOrder_Popup_View extends Inventory_Popup_View {}

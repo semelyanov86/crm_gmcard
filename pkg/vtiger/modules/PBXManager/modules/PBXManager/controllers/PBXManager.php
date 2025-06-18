@@ -9,36 +9,38 @@
  * All Rights Reserved.
  * *********************************************************************************** */
 
-class PBXManager_PBXManager_Controller {
-
-    function getConnector() {
-        return new PBXManager_PBXManager_Connector;
+class PBXManager_PBXManager_Controller
+{
+    public function getConnector()
+    {
+        return new PBXManager_PBXManager_Connector();
     }
 
     /**
-     * Function to process the request
+     * Function to process the request.
      * @params <array> call details
      * return Response object
      */
-    function process($request) {
+    public function process($request)
+    {
         $mode = $request->get('callstatus');
 
         switch ($mode) {
-            case "StartApp" :
+            case 'StartApp':
                 $this->processStartupCall($request);
                 break;
-            case "DialAnswer" :
+            case 'DialAnswer':
                 $this->processDialCall($request);
                 break;
-            case "Record" :
+            case 'Record':
                 $this->processRecording($request);
                 break;
-            case "EndCall" :
+            case 'EndCall':
                 $this->processEndCall($request);
                 break;
-            case "Hangup" :
+            case 'Hangup':
                 $callCause = $request->get('causetxt');
-                if ($callCause == "null") {
+                if ($callCause == 'null') {
                     break;
                 }
                 $this->processHangupCall($request);
@@ -47,16 +49,17 @@ class PBXManager_PBXManager_Controller {
     }
 
     /**
-     * Function to process Incoming call request
+     * Function to process Incoming call request.
      * @params <array> incoming call details
      * return Response object
      */
-    function processStartupCall($request) {
+    public function processStartupCall($request)
+    {
         $connector = $this->getConnector();
 
         $temp = $request->get('channel');
-        $temp = explode("-", $temp);
-        $temp = explode("/", $temp[0]);
+        $temp = explode('-', $temp);
+        $temp = explode('/', $temp[0]);
 
         $callerNumber = $request->get('callerIdNumber');
         $userInfo = PBXManager_Record_Model::getUserInfoWithNumber($callerNumber);
@@ -74,9 +77,9 @@ class PBXManager_PBXManager_Controller {
 
             if ($request->get('callerIdNumber') == $temp[1]) {
                 $to = $request->get('callerIdName');
-            } else if ($request->get('callerIdNumber')) {
+            } elseif ($request->get('callerIdNumber')) {
                 $to = $request->get('callerIdNumber');
-            } else if ($request->get('callerId')) {
+            } elseif ($request->get('callerId')) {
                 $to = $request->get('callerId');
             }
 
@@ -93,43 +96,46 @@ class PBXManager_PBXManager_Controller {
     }
 
     /**
-     * Function to process Dial call request
+     * Function to process Dial call request.
      * @params <array> Dial call details
      * return Response object
      */
-    function processDialCall($request) {
+    public function processDialCall($request)
+    {
         $connector = $this->getConnector();
         $connector->handleDialCall($request);
     }
 
     /**
-     * Function to process EndCall event
+     * Function to process EndCall event.
      * @params <array> Dial call details
      * return Response object
      */
-    function processEndCall($request) {
+    public function processEndCall($request)
+    {
         $connector = $this->getConnector();
         $connector->handleEndCall($request);
     }
 
     /**
-     * Function to process Hangup call request
+     * Function to process Hangup call request.
      * @params <array> Hangup call details
      * return Response object
      */
-    function processHangupCall($request) {
+    public function processHangupCall($request)
+    {
         $connector = $this->getConnector();
         $connector->handleHangupCall($request);
     }
 
     /**
-     * Function to process recording
+     * Function to process recording.
      * @params <array> recording details
      * return Response object
      */
-    function processRecording($request) {
+    public function processRecording($request)
+    {
         $connector = $this->getConnector();
         $connector->handleRecording($request);
     }
-
 }

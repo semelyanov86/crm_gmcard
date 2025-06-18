@@ -1,46 +1,111 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-CNTfOFmN6sdhbkSnq2CSL22+h5GLz1lceKCn9Pe=
+<?php
+
+/**
+ * PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE
+{
+    public const BLIPTYPE_ERROR    = 0x00;
+    public const BLIPTYPE_UNKNOWN  = 0x01;
+    public const BLIPTYPE_EMF      = 0x02;
+    public const BLIPTYPE_WMF      = 0x03;
+    public const BLIPTYPE_PICT     = 0x04;
+    public const BLIPTYPE_JPEG     = 0x05;
+    public const BLIPTYPE_PNG      = 0x06;
+    public const BLIPTYPE_DIB      = 0x07;
+    public const BLIPTYPE_TIFF     = 0x11;
+    public const BLIPTYPE_CMYKJPEG = 0x12;
+
+    /**
+     * The parent BLIP Store Entry Container.
+     *
+     * @var PHPExcel_Shared_Escher_DggContainer_BstoreContainer
+     */
+    private $parent;
+
+    /**
+     * The BLIP (Big Large Image or Picture).
+     *
+     * @var PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip
+     */
+    private $blip;
+
+    /**
+     * The BLIP type.
+     *
+     * @var int
+     */
+    private $blipType;
+
+    /**
+     * Set parent BLIP Store Entry Container.
+     *
+     * @param PHPExcel_Shared_Escher_DggContainer_BstoreContainer $parent
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
+
+    /**
+     * Get the BLIP.
+     *
+     * @return PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip
+     */
+    public function getBlip()
+    {
+        return $this->blip;
+    }
+
+    /**
+     * Set the BLIP.
+     *
+     * @param PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip $blip
+     */
+    public function setBlip($blip)
+    {
+        $this->blip = $blip;
+        $blip->setParent($this);
+    }
+
+    /**
+     * Get the BLIP type.
+     *
+     * @return int
+     */
+    public function getBlipType()
+    {
+        return $this->blipType;
+    }
+
+    /**
+     * Set the BLIP type.
+     *
+     * @param int
+     */
+    public function setBlipType($blipType)
+    {
+        $this->blipType = $blipType;
+    }
+}

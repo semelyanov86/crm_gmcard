@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,8 +7,8 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
-$languageStrings = array(
+ */
+$languageStrings = [
     'Portal' => 'Site-urile noastre',
     'LBL_ADD_BOOKMARK' => 'Adauga semn de carte',
     'LBL_BOOKMARK_NAME' => 'Nume marcaj',
@@ -26,8 +27,8 @@ $languageStrings = array(
     'LBL_BOOKMARK' => 'Semn de carte',
     'LBL_BOOKMARKS' => 'Semne de carte',
     'HTTP_ERROR' => 'Site-ul pe care încercați să deschideți nu este sigură și nu s-ar putea deschide. Dacă totuși doriți să vizualizați pagina de web, atunci puteți să faceți clic pe de blocare a conținutului în bara de adrese și permite o.',
-);
+];
 
-$jsLanguageStrings = array(
+$jsLanguageStrings = [
     'JS_ENTER_MANDATORY_FIELDS' => 'Va rugam sa introduceti toate câmp obligatoriu',
-);
+];

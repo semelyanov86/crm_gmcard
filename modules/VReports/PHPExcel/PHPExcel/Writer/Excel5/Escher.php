@@ -1,197 +1,520 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+
+
+/**
+ * PHPExcel_Shared_Escher_DggContainer_BstoreContainer.
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Writer_Excel5_Escher
+{
+    /**
+     * The object we are writing.
+     */
+    private $object;
+
+    /**
+     * The written binary data.
+     */
+    private $data;
+
+    /**
+     * Shape offsets. Positions in binary stream where a new shape record begins.
+     *
+     * @var array
+     */
+    private $spOffsets;
+
+    /**
+     * Shape types.
+     *
+     * @var array
+     */
+    private $spTypes;
+
+    /**
+     * Constructor.
+     */
+    public function __construct($object)
+    {
+        $this->object = $object;
+    }
+
+    /**
+     * Process the object to be written.
+     */
+    public function close()
+    {
+        // initialize
+        $this->data = '';
+
+        switch (get_class($this->object)) {
+            case 'PHPExcel_Shared_Escher':
+                if ($dggContainer = $this->object->getDggContainer()) {
+                    $writer = new PHPExcel_Writer_Excel5_Escher($dggContainer);
+                    $this->data = $writer->close();
+                } elseif ($dgContainer = $this->object->getDgContainer()) {
+                    $writer = new PHPExcel_Writer_Excel5_Escher($dgContainer);
+                    $this->data = $writer->close();
+                    $this->spOffsets = $writer->getSpOffsets();
+                    $this->spTypes = $writer->getSpTypes();
+                }
+                break;
+            case 'PHPExcel_Shared_Escher_DggContainer':
+                // this is a container record
+
+                // initialize
+                $innerData = '';
+
+                // write the dgg
+                $recVer            = 0x0;
+                $recInstance    = 0x00_00;
+                $recType        = 0xF0_06;
+
+                $recVerInstance  = $recVer;
+                $recVerInstance |= $recInstance << 4;
+
+                // dgg data
+                $dggData
+                    = pack(
+                        'VVVV',
+                        $this->object->getSpIdMax(), // maximum shape identifier increased by one
+                        $this->object->getCDgSaved() + 1, // number of file identifier clusters increased by one
+                        $this->object->getCSpSaved(),
+                        $this->object->getCDgSaved(), // count total number of drawings saved
+                    );
+
+                // add file identifier clusters (one per drawing)
+                $IDCLs = $this->object->getIDCLs();
+
+                foreach ($IDCLs as $dgId => $maxReducedSpId) {
+                    $dggData .= pack('VV', $dgId, $maxReducedSpId + 1);
+                }
+
+                $header = pack('vvV', $recVerInstance, $recType, strlen($dggData));
+                $innerData .= $header . $dggData;
+
+                // write the bstoreContainer
+                if ($bstoreContainer = $this->object->getBstoreContainer()) {
+                    $writer = new PHPExcel_Writer_Excel5_Escher($bstoreContainer);
+                    $innerData .= $writer->close();
+                }
+
+                // write the record
+                $recVer            = 0xF;
+                $recInstance    = 0x00_00;
+                $recType        = 0xF0_00;
+                $length            = strlen($innerData);
+
+                $recVerInstance  = $recVer;
+                $recVerInstance |= $recInstance << 4;
+
+                $header = pack('vvV', $recVerInstance, $recType, $length);
+
+                $this->data = $header . $innerData;
+                break;
+            case 'PHPExcel_Shared_Escher_DggContainer_BstoreContainer':
+                // this is a container record
+
+                // initialize
+                $innerData = '';
+
+                // treat the inner data
+                if ($BSECollection = $this->object->getBSECollection()) {
+                    foreach ($BSECollection as $BSE) {
+                        $writer = new PHPExcel_Writer_Excel5_Escher($BSE);
+                        $innerData .= $writer->close();
+                    }
+                }
+
+                // write the record
+                $recVer            = 0xF;
+                $recInstance    = count($this->object->getBSECollection());
+                $recType        = 0xF0_01;
+                $length            = strlen($innerData);
+
+                $recVerInstance  = $recVer;
+                $recVerInstance |= $recInstance << 4;
+
+                $header = pack('vvV', $recVerInstance, $recType, $length);
+
+                $this->data = $header . $innerData;
+                break;
+            case 'PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE':
+                // this is a semi-container record
+
+                // initialize
+                $innerData = '';
+
+                // here we treat the inner data
+                if ($blip = $this->object->getBlip()) {
+                    $writer = new PHPExcel_Writer_Excel5_Escher($blip);
+                    $innerData .= $writer->close();
+                }
+
+                // initialize
+                $data = '';
+
+                $btWin32 = $this->object->getBlipType();
+                $btMacOS = $this->object->getBlipType();
+                $data .= pack('CC', $btWin32, $btMacOS);
+
+                $rgbUid = pack('VVVV', 0, 0, 0, 0); // todo
+                $data .= $rgbUid;
+
+                $tag = 0;
+                $size = strlen($innerData);
+                $cRef = 1;
+                $foDelay = 0; // todo
+                $unused1 = 0x0;
+                $cbName = 0x0;
+                $unused2 = 0x0;
+                $unused3 = 0x0;
+                $data .= pack('vVVVCCCC', $tag, $size, $cRef, $foDelay, $unused1, $cbName, $unused2, $unused3);
+
+                $data .= $innerData;
+
+                // write the record
+                $recVer            = 0x2;
+                $recInstance    = $this->object->getBlipType();
+                $recType        = 0xF0_07;
+                $length            = strlen($data);
+
+                $recVerInstance  = $recVer;
+                $recVerInstance |=    $recInstance << 4;
+
+                $header = pack('vvV', $recVerInstance, $recType, $length);
+
+                $this->data = $header;
+
+                $this->data .= $data;
+                break;
+            case 'PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip':
+                // this is an atom record
+
+                // write the record
+                switch ($this->object->getParent()->getBlipType()) {
+                    case PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE::BLIPTYPE_JPEG:
+                        // initialize
+                        $innerData = '';
+
+                        $rgbUid1 = pack('VVVV', 0, 0, 0, 0); // todo
+                        $innerData .= $rgbUid1;
+
+                        $tag = 0xFF; // todo
+                        $innerData .= pack('C', $tag);
+
+                        $innerData .= $this->object->getData();
+
+                        $recVer            = 0x0;
+                        $recInstance    = 0x4_6A;
+                        $recType        = 0xF0_1D;
+                        $length            = strlen($innerData);
+
+                        $recVerInstance  = $recVer;
+                        $recVerInstance |=    $recInstance << 4;
+
+                        $header = pack('vvV', $recVerInstance, $recType, $length);
+
+                        $this->data = $header;
+
+                        $this->data .= $innerData;
+                        break;
+
+                    case PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE::BLIPTYPE_PNG:
+                        // initialize
+                        $innerData = '';
+
+                        $rgbUid1 = pack('VVVV', 0, 0, 0, 0); // todo
+                        $innerData .= $rgbUid1;
+
+                        $tag = 0xFF; // todo
+                        $innerData .= pack('C', $tag);
+
+                        $innerData .= $this->object->getData();
+
+                        $recVer            = 0x0;
+                        $recInstance    = 0x6_E0;
+                        $recType        = 0xF0_1E;
+                        $length            = strlen($innerData);
+
+                        $recVerInstance  = $recVer;
+                        $recVerInstance |=    $recInstance << 4;
+
+                        $header = pack('vvV', $recVerInstance, $recType, $length);
+
+                        $this->data = $header;
+
+                        $this->data .= $innerData;
+                        break;
+                }
+                break;
+            case 'PHPExcel_Shared_Escher_DgContainer':
+                // this is a container record
+
+                // initialize
+                $innerData = '';
+
+                // write the dg
+                $recVer            = 0x0;
+                $recInstance    = $this->object->getDgId();
+                $recType        = 0xF0_08;
+                $length            = 8;
+
+                $recVerInstance  = $recVer;
+                $recVerInstance |= $recInstance << 4;
+
+                $header = pack('vvV', $recVerInstance, $recType, $length);
+
+                // number of shapes in this drawing (including group shape)
+                $countShapes = count($this->object->getSpgrContainer()->getChildren());
+                $innerData .= $header . pack('VV', $countShapes, $this->object->getLastSpId());
+                // $innerData .= $header . pack('VV', 0, 0);
+
+                // write the spgrContainer
+                if ($spgrContainer = $this->object->getSpgrContainer()) {
+                    $writer = new PHPExcel_Writer_Excel5_Escher($spgrContainer);
+                    $innerData .= $writer->close();
+
+                    // get the shape offsets relative to the spgrContainer record
+                    $spOffsets = $writer->getSpOffsets();
+                    $spTypes   = $writer->getSpTypes();
+
+                    // save the shape offsets relative to dgContainer
+                    foreach ($spOffsets as & $spOffset) {
+                        $spOffset += 24; // add length of dgContainer header data (8 bytes) plus dg data (16 bytes)
+                    }
+
+                    $this->spOffsets = $spOffsets;
+                    $this->spTypes = $spTypes;
+                }
+
+                // write the record
+                $recVer            = 0xF;
+                $recInstance    = 0x00_00;
+                $recType        = 0xF0_02;
+                $length            = strlen($innerData);
+
+                $recVerInstance  = $recVer;
+                $recVerInstance |= $recInstance << 4;
+
+                $header = pack('vvV', $recVerInstance, $recType, $length);
+
+                $this->data = $header . $innerData;
+                break;
+            case 'PHPExcel_Shared_Escher_DgContainer_SpgrContainer':
+                // this is a container record
+
+                // initialize
+                $innerData = '';
+
+                // initialize spape offsets
+                $totalSize = 8;
+                $spOffsets = [];
+                $spTypes   = [];
+
+                // treat the inner data
+                foreach ($this->object->getChildren() as $spContainer) {
+                    $writer = new PHPExcel_Writer_Excel5_Escher($spContainer);
+                    $spData = $writer->close();
+                    $innerData .= $spData;
+
+                    // save the shape offsets (where new shape records begin)
+                    $totalSize += strlen($spData);
+                    $spOffsets[] = $totalSize;
+
+                    $spTypes = array_merge($spTypes, $writer->getSpTypes());
+                }
+
+                // write the record
+                $recVer            = 0xF;
+                $recInstance    = 0x00_00;
+                $recType        = 0xF0_03;
+                $length            = strlen($innerData);
+
+                $recVerInstance  = $recVer;
+                $recVerInstance |= $recInstance << 4;
+
+                $header = pack('vvV', $recVerInstance, $recType, $length);
+
+                $this->data = $header . $innerData;
+                $this->spOffsets = $spOffsets;
+                $this->spTypes = $spTypes;
+                break;
+            case 'PHPExcel_Shared_Escher_DgContainer_SpgrContainer_SpContainer':
+                // initialize
+                $data = '';
+
+                // build the data
+
+                // write group shape record, if necessary?
+                if ($this->object->getSpgr()) {
+                    $recVer            = 0x1;
+                    $recInstance    = 0x00_00;
+                    $recType        = 0xF0_09;
+                    $length            = 0x00_00_00_10;
+
+                    $recVerInstance  = $recVer;
+                    $recVerInstance |= $recInstance << 4;
+
+                    $header = pack('vvV', $recVerInstance, $recType, $length);
+
+                    $data .= $header . pack('VVVV', 0, 0, 0, 0);
+                }
+                $this->spTypes[] = $this->object->getSpType();
+
+                // write the shape record
+                $recVer            = 0x2;
+                $recInstance    = $this->object->getSpType(); // shape type
+                $recType        = 0xF0_0A;
+                $length            = 0x00_00_00_08;
+
+                $recVerInstance  = $recVer;
+                $recVerInstance |= $recInstance << 4;
+
+                $header = pack('vvV', $recVerInstance, $recType, $length);
+
+                $data .= $header . pack('VV', $this->object->getSpId(), $this->object->getSpgr() ? 0x00_05 : 0x0A_00);
+
+
+                // the options
+                if ($this->object->getOPTCollection()) {
+                    $optData = '';
+
+                    $recVer            = 0x3;
+                    $recInstance    = count($this->object->getOPTCollection());
+                    $recType        = 0xF0_0B;
+                    foreach ($this->object->getOPTCollection() as $property => $value) {
+                        $optData .= pack('vV', $property, $value);
+                    }
+                    $length            = strlen($optData);
+
+                    $recVerInstance  = $recVer;
+                    $recVerInstance |= $recInstance << 4;
+
+                    $header = pack('vvV', $recVerInstance, $recType, $length);
+                    $data .= $header . $optData;
+                }
+
+                // the client anchor
+                if ($this->object->getStartCoordinates()) {
+                    $clientAnchorData = '';
+
+                    $recVer            = 0x0;
+                    $recInstance    = 0x0;
+                    $recType        = 0xF0_10;
+
+                    // start coordinates
+                    [$column, $row] = PHPExcel_Cell::coordinateFromString($this->object->getStartCoordinates());
+                    $c1 = PHPExcel_Cell::columnIndexFromString($column) - 1;
+                    $r1 = $row - 1;
+
+                    // start offsetX
+                    $startOffsetX = $this->object->getStartOffsetX();
+
+                    // start offsetY
+                    $startOffsetY = $this->object->getStartOffsetY();
+
+                    // end coordinates
+                    [$column, $row] = PHPExcel_Cell::coordinateFromString($this->object->getEndCoordinates());
+                    $c2 = PHPExcel_Cell::columnIndexFromString($column) - 1;
+                    $r2 = $row - 1;
+
+                    // end offsetX
+                    $endOffsetX = $this->object->getEndOffsetX();
+
+                    // end offsetY
+                    $endOffsetY = $this->object->getEndOffsetY();
+
+                    $clientAnchorData = pack('vvvvvvvvv', $this->object->getSpFlag(), $c1, $startOffsetX, $r1, $startOffsetY, $c2, $endOffsetX, $r2, $endOffsetY);
+
+                    $length            = strlen($clientAnchorData);
+
+                    $recVerInstance  = $recVer;
+                    $recVerInstance |= $recInstance << 4;
+
+                    $header = pack('vvV', $recVerInstance, $recType, $length);
+                    $data .= $header . $clientAnchorData;
+                }
+
+                // the client data, just empty for now
+                if (!$this->object->getSpgr()) {
+                    $clientDataData = '';
+
+                    $recVer            = 0x0;
+                    $recInstance    = 0x0;
+                    $recType        = 0xF0_11;
+
+                    $length = strlen($clientDataData);
+
+                    $recVerInstance  = $recVer;
+                    $recVerInstance |= $recInstance << 4;
+
+                    $header = pack('vvV', $recVerInstance, $recType, $length);
+                    $data .= $header . $clientDataData;
+                }
+
+                // write the record
+                $recVer            = 0xF;
+                $recInstance    = 0x00_00;
+                $recType        = 0xF0_04;
+                $length            = strlen($data);
+
+                $recVerInstance  = $recVer;
+                $recVerInstance |= $recInstance << 4;
+
+                $header = pack('vvV', $recVerInstance, $recType, $length);
+
+                $this->data = $header . $data;
+                break;
+        }
+
+        return $this->data;
+    }
+
+    /**
+     * Gets the shape offsets.
+     *
+     * @return array
+     */
+    public function getSpOffsets()
+    {
+        return $this->spOffsets;
+    }
+
+    /**
+     * Gets the shape types.
+     *
+     * @return array
+     */
+    public function getSpTypes()
+    {
+        return $this->spTypes;
+    }
+}

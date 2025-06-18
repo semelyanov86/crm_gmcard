@@ -1,40 +1,84 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel_Chart_Title.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category    PHPExcel
+ * @copyright    Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license        http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version        ##VERSION##, ##DATE##
+ */
+class PHPExcel_Chart_Title
+{
+    /**
+     * Title Caption.
+     *
+     * @var string
+     */
+    private $caption;
+
+    /**
+     * Title Layout.
+     *
+     * @var PHPExcel_Chart_Layout
+     */
+    private $layout;
+
+    /**
+     * Create a new PHPExcel_Chart_Title.
+     */
+    public function __construct($caption = null, ?PHPExcel_Chart_Layout $layout = null)
+    {
+        $this->caption = $caption;
+        $this->layout = $layout;
+    }
+
+    /**
+     * Get caption.
+     *
+     * @return string
+     */
+    public function getCaption()
+    {
+        return $this->caption;
+    }
+
+    /**
+     * Set caption.
+     *
+     * @param string $caption
+     * @return PHPExcel_Chart_Title
+     */
+    public function setCaption($caption = null)
+    {
+        $this->caption = $caption;
+
+        return $this;
+    }
+
+    /**
+     * Get Layout.
+     *
+     * @return PHPExcel_Chart_Layout
+     */
+    public function getLayout()
+    {
+        return $this->layout;
+    }
+}

@@ -1,95 +1,229 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-/UVRvc7Ku4EgXvm/OW==
+<?php
+
+/* vim: set expandtab tabstop=4 shiftwidth=4: */
+// +----------------------------------------------------------------------+
+// | PHP Version 4                                                        |
+// +----------------------------------------------------------------------+
+// | Copyright (c) 1997-2002 The PHP Group                                |
+// +----------------------------------------------------------------------+
+// | This source file is subject to version 2.02 of the PHP license,      |
+// | that is bundled with this package in the file LICENSE, and is        |
+// | available at through the world-wide-web at                           |
+// | http://www.php.net/license/2_02.txt.                                 |
+// | If you did not receive a copy of the PHP license and are unable to   |
+// | obtain it through the world-wide-web, please send a note to          |
+// | license@php.net so we can mail you a copy immediately.               |
+// +----------------------------------------------------------------------+
+// | Author: Xavier Noguer <xnoguer@php.net>                              |
+// | Based on OLE::Storage_Lite by Kawai, Takanori                        |
+// +----------------------------------------------------------------------+
+//
+// $Id: PPS.php,v 1.7 2007/02/13 21:00:42 schmidt Exp $
+
+
+/**
+ * Class for creating PPS's for OLE containers.
+ *
+ * @author   Xavier Noguer <xnoguer@php.net>
+ * @category PHPExcel
+ */
+class PHPExcel_Shared_OLE_PPS
+{
+    /**
+     * The PPS index.
+     * @var int
+     */
+    public $No;
+
+    /**
+     * The PPS name (in Unicode).
+     * @var string
+     */
+    public $Name;
+
+    /**
+     * The PPS type. Dir, Root or File.
+     * @var int
+     */
+    public $Type;
+
+    /**
+     * The index of the previous PPS.
+     * @var int
+     */
+    public $PrevPps;
+
+    /**
+     * The index of the next PPS.
+     * @var int
+     */
+    public $NextPps;
+
+    /**
+     * The index of it's first child if this is a Dir or Root PPS.
+     * @var int
+     */
+    public $DirPps;
+
+    /**
+     * A timestamp.
+     * @var int
+     */
+    public $Time1st;
+
+    /**
+     * A timestamp.
+     * @var int
+     */
+    public $Time2nd;
+
+    /**
+     * Starting block (small or big) for this PPS's data  inside the container.
+     * @var int
+     */
+    public $_StartBlock;
+
+    /**
+     * The size of the PPS's data (in bytes).
+     * @var int
+     */
+    public $Size;
+
+    /**
+     * The PPS's data (only used if it's not using a temporary file).
+     * @var string
+     */
+    public $_data;
+
+    /**
+     * Array of child PPS's (only used by Root and Dir PPS's).
+     * @var array
+     */
+    public $children = [];
+
+    /**
+     * Pointer to OLE container.
+     * @var OLE
+     */
+    public $ole;
+
+    /**
+     * The constructor.
+     *
+     * @param int $No   The PPS index
+     * @param string  $name The PPS name
+     * @param int $type The PPS type. Dir, Root or File
+     * @param int $prev The index of the previous PPS
+     * @param int $next The index of the next PPS
+     * @param int $dir  The index of it's first child if this is a Dir or Root PPS
+     * @param int $time_1st A timestamp
+     * @param int $time_2nd A timestamp
+     * @param string  $data  The (usually binary) source data of the PPS
+     * @param array   $children Array containing children PPS for this PPS
+     */
+    public function __construct($No, $name, $type, $prev, $next, $dir, $time_1st, $time_2nd, $data, $children)
+    {
+        $this->No      = $No;
+        $this->Name    = $name;
+        $this->Type    = $type;
+        $this->PrevPps = $prev;
+        $this->NextPps = $next;
+        $this->DirPps  = $dir;
+        $this->Time1st = $time_1st;
+        $this->Time2nd = $time_2nd;
+        $this->_data      = $data;
+        $this->children   = $children;
+        if ($data != '') {
+            $this->Size = strlen($data);
+        } else {
+            $this->Size = 0;
+        }
+    }
+
+    /**
+     * Returns the amount of data saved for this PPS.
+     *
+     * @return int The amount of data (in bytes)
+     */
+    public function _DataLen()
+    {
+        if (!isset($this->_data)) {
+            return 0;
+        }
+
+        // if (isset($this->_PPS_FILE)) {
+        //    fseek($this->_PPS_FILE, 0);
+        //    $stats = fstat($this->_PPS_FILE);
+        //    return $stats[7];
+        // } else {
+        return strlen($this->_data);
+        // }
+    }
+
+    /**
+     * Returns a string with the PPS's WK (What is a WK?).
+     *
+     * @return string The binary string
+     */
+    public function _getPpsWk()
+    {
+        $ret = str_pad($this->Name, 64, "\x00");
+
+        $ret .= pack('v', strlen($this->Name) + 2)  // 66
+              . pack('c', $this->Type)              // 67
+              . pack('c', 0x00) // UK                // 68
+              . pack('V', $this->PrevPps) // Prev    // 72
+              . pack('V', $this->NextPps) // Next    // 76
+              . pack('V', $this->DirPps)  // Dir     // 80
+              . "\x00\x09\x02\x00"                  // 84
+              . "\x00\x00\x00\x00"                  // 88
+              . "\xc0\x00\x00\x00"                  // 92
+              . "\x00\x00\x00\x46"                  // 96 // Seems to be ok only for Root
+              . "\x00\x00\x00\x00"                  // 100
+              . PHPExcel_Shared_OLE::LocalDate2OLE($this->Time1st)       // 108
+              . PHPExcel_Shared_OLE::LocalDate2OLE($this->Time2nd)       // 116
+              . pack('V', $this->_StartBlock ?? 0)        // 120
+              . pack('V', $this->Size)               // 124
+              . pack('V', 0);                        // 128
+
+        return $ret;
+    }
+
+    /**
+     * Updates index and pointers to previous, next and children PPS's for this
+     * PPS. I don't think it'll work with Dir PPS's.
+     *
+     * @param array &$raList Reference to the array of PPS's for the whole OLE
+     *                          container
+     * @return int          The index for this PPS
+     */
+    public static function _savePpsSetPnt(&$raList, $to_save, $depth = 0)
+    {
+        if (!is_array($to_save) || (empty($to_save))) {
+            return 0xFF_FF_FF_FF;
+        }
+        if (count($to_save) == 1) {
+            $cnt = count($raList);
+            // If the first entry, it's the root... Don't clone it!
+            $raList[$cnt] = ($depth == 0) ? $to_save[0] : clone $to_save[0];
+            $raList[$cnt]->No = $cnt;
+            $raList[$cnt]->PrevPps = 0xFF_FF_FF_FF;
+            $raList[$cnt]->NextPps = 0xFF_FF_FF_FF;
+            $raList[$cnt]->DirPps  = self::_savePpsSetPnt($raList, @$raList[$cnt]->children, $depth++);
+        } else {
+            $iPos  = floor(count($to_save) / 2);
+            $aPrev = array_slice($to_save, 0, $iPos);
+            $aNext = array_slice($to_save, $iPos + 1);
+            $cnt   = count($raList);
+            // If the first entry, it's the root... Don't clone it!
+            $raList[$cnt] = ($depth == 0) ? $to_save[$iPos] : clone $to_save[$iPos];
+            $raList[$cnt]->No = $cnt;
+            $raList[$cnt]->PrevPps = self::_savePpsSetPnt($raList, $aPrev, $depth++);
+            $raList[$cnt]->NextPps = self::_savePpsSetPnt($raList, $aNext, $depth++);
+            $raList[$cnt]->DirPps  = self::_savePpsSetPnt($raList, @$raList[$cnt]->children, $depth++);
+
+        }
+
+        return $cnt;
+    }
+}

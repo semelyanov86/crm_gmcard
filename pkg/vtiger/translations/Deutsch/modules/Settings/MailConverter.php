@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,9 +7,9 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
-$languageStrings = array(
-	'MailConverter'   =>   'Mail Converter',
+ */
+$languageStrings = [
+    'MailConverter'   =>   'Mail Converter',
     'MailConverter_Description'   =>   'Rechnen Sie E-Mails mit entsprechenden Aufzeichnungen',
     'MAILBOX'   =>   'Mailbox',
     'RULE'   =>   'Geschäftsordnung',
@@ -162,15 +163,15 @@ $languageStrings = array(
     'LBL_DUPLICATE_USERNAME_ERROR' => 'Es gibt bereits eine Mail Converter mit dieser E-Mail-Adresse konfiguriert. Sie können keine doppelte Mail Converter mit derselben E-Mail-Adresse ein.',
     'LBL_DUPLICATE_SCANNERNAME_ERROR' => 'Es gibt bereits eine Mail Converter mit diesem Namen konfiguriert. Sie können keine Mail Converter mit doppelten Namen.',
 
-  'LBL_MAILCONVERTER_DESCRIPTION' => 'E-Mail-Konverter ermöglicht die Konfiguration Ihrer mailbox zu Scannen Ihre E-Mails und erstellen Sie die entsprechenden Entitäten in Vtiger CRM.<br />Sie müssen auch Regeln definieren, die festlegen, welche Aktionen durchgeführt werden sollte, Ihre E-Mails.<br />Ihre E-Mails werden automatisch gescannt, es sei denn, Sie haben Behinderte Mail-Scanner task-Planer. <br /><br /><br />',
-  'LBL_NOTE' => 'Hinweis',
-  'LBL_MAILCONVERTER_DISABLE_MESSAGE' => 'E-Mail-Converter entfernt werden, am 31. Juli. Poststelle bietet eine einfachere Möglichkeit zu Scannen Ihre E-Mails. Aktivieren Poststelle, bitte ',
-  'LBL_CLICK_HERE' => 'klicken Sie hier',
-  'LBL_CONNECTION_ERROR' => 'Die Verbindung zur Mailbox ist fehlgeschlagen. Überprüfen der Netzwerkverbindung und versuchen Sie es erneut.',
+    'LBL_MAILCONVERTER_DESCRIPTION' => 'E-Mail-Konverter ermöglicht die Konfiguration Ihrer mailbox zu Scannen Ihre E-Mails und erstellen Sie die entsprechenden Entitäten in Vtiger CRM.<br />Sie müssen auch Regeln definieren, die festlegen, welche Aktionen durchgeführt werden sollte, Ihre E-Mails.<br />Ihre E-Mails werden automatisch gescannt, es sei denn, Sie haben Behinderte Mail-Scanner task-Planer. <br /><br /><br />',
+    'LBL_NOTE' => 'Hinweis',
+    'LBL_MAILCONVERTER_DISABLE_MESSAGE' => 'E-Mail-Converter entfernt werden, am 31. Juli. Poststelle bietet eine einfachere Möglichkeit zu Scannen Ihre E-Mails. Aktivieren Poststelle, bitte ',
+    'LBL_CLICK_HERE' => 'klicken Sie hier',
+    'LBL_CONNECTION_ERROR' => 'Die Verbindung zur Mailbox ist fehlgeschlagen. Überprüfen der Netzwerkverbindung und versuchen Sie es erneut.',
 
-);
-$jsLanguageStrings = array(
-	'JS_MAILBOX_DELETED_SUCCESSFULLY'   =>   'Postfach gelöscht erfolgreich',
+];
+$jsLanguageStrings = [
+    'JS_MAILBOX_DELETED_SUCCESSFULLY'   =>   'Postfach gelöscht erfolgreich',
     'JS_MAILBOX_LOADED_SUCCESSFULLY'   =>   'Mailbox erfolgreich geladen',
     'JS_SELECT_ATLEAST_ONE' => 'Bitte Karte atleast ein Feld',
     'JS_SERVER_NAME' => 'Geben Sie den Servernamen',
@@ -179,4 +180,4 @@ $jsLanguageStrings = array(
     'JS_TIMEZONE_INFO' => 'Bitte wählen Sie Ihre Zeitzone in dem Mail-Server befindet. Auswählen falsche Zeitzone könnte einige Mails von Scan zu überspringen.',
     'JS_SCAN_FROM_INFO' => 'Dieses Feld entscheidet, ob alle E-Mails in der Mailbox gescannt werden sollen oder Mails, die in der Mailbox gelandet ist gestern oder später gescannt werden sollen. Dieses Feld gilt nur für die erste Zeit-Konfiguration, oder wenn Sie einen neuen Ordner zu scannen auswählen.',
     'JS_SELECT_ONE_FOLDER' => 'Sie müssen atleast ein Ordner auszuwählen.',
-);
+];

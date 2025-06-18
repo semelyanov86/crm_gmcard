@@ -8,17 +8,20 @@
  * All Rights Reserved.
  * ****************************************************************************** */
 
-class Settings_EMAILMaker_Record_Model extends Settings_Vtiger_Record_Model {
+class Settings_EMAILMaker_Record_Model extends Settings_Vtiger_Record_Model
+{
+    public function getId()
+    {
+        return $this->get('templateid');
+    }
 
-	function getId() {
-		return $this->get('templateid');
-	}
+    public function getName()
+    {
+        return $this->get('templatename');
+    }
 
-	function getName() {
-		return $this->get('templatename');
-	}
-
-	public static function getInstance() {
-		return new self();
-	}
+    public static function getInstance()
+    {
+        return new self();
+    }
 }

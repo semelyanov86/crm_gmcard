@@ -1,130 +1,333 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-hXo84Pa=
+<?php
+
+/**
+ * PHPExcel_Chart_DataSeriesValues.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category    PHPExcel
+ * @copyright    Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license        http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version        ##VERSION##, ##DATE##
+ */
+class PHPExcel_Chart_DataSeriesValues
+{
+    public const DATASERIES_TYPE_STRING    = 'String';
+    public const DATASERIES_TYPE_NUMBER    = 'Number';
+
+    private static $dataTypeValues = [
+        self::DATASERIES_TYPE_STRING,
+        self::DATASERIES_TYPE_NUMBER,
+    ];
+
+    /**
+     * Series Data Type.
+     *
+     * @var    string
+     */
+    private $dataType;
+
+    /**
+     * Series Data Source.
+     *
+     * @var    string
+     */
+    private $dataSource;
+
+    /**
+     * Format Code.
+     *
+     * @var    string
+     */
+    private $formatCode;
+
+    /**
+     * Series Point Marker.
+     *
+     * @var    string
+     */
+    private $pointMarker;
+
+    /**
+     * Point Count (The number of datapoints in the dataseries).
+     *
+     * @var    int
+     */
+    private $pointCount = 0;
+
+    /**
+     * Data Values.
+     *
+     * @var    array of mixed
+     */
+    private $dataValues = [];
+
+    /**
+     * Create a new PHPExcel_Chart_DataSeriesValues object.
+     */
+    public function __construct($dataType = self::DATASERIES_TYPE_NUMBER, $dataSource = null, $formatCode = null, $pointCount = 0, $dataValues = [], $marker = null)
+    {
+        $this->setDataType($dataType);
+        $this->dataSource = $dataSource;
+        $this->formatCode = $formatCode;
+        $this->pointCount = $pointCount;
+        $this->dataValues = $dataValues;
+        $this->pointMarker = $marker;
+    }
+
+    /**
+     * Get Series Data Type.
+     *
+     * @return    string
+     */
+    public function getDataType()
+    {
+        return $this->dataType;
+    }
+
+    /**
+     * Set Series Data Type.
+     *
+     * @param    string    $dataType    Datatype of this data series
+     *                                Typical values are:
+     *                                    PHPExcel_Chart_DataSeriesValues::DATASERIES_TYPE_STRING
+     *                                        Normally used for axis point values
+     *                                    PHPExcel_Chart_DataSeriesValues::DATASERIES_TYPE_NUMBER
+     *                                        Normally used for chart data values
+     * @return    PHPExcel_Chart_DataSeriesValues
+     */
+    public function setDataType($dataType = self::DATASERIES_TYPE_NUMBER)
+    {
+        if (!in_array($dataType, self::$dataTypeValues)) {
+            throw new PHPExcel_Chart_Exception('Invalid datatype for chart data series values');
+        }
+        $this->dataType = $dataType;
+
+        return $this;
+    }
+
+    /**
+     * Get Series Data Source (formula).
+     *
+     * @return    string
+     */
+    public function getDataSource()
+    {
+        return $this->dataSource;
+    }
+
+    /**
+     * Set Series Data Source (formula).
+     *
+     * @param    string    $dataSource
+     * @return    PHPExcel_Chart_DataSeriesValues
+     */
+    public function setDataSource($dataSource = null, $refreshDataValues = true)
+    {
+        $this->dataSource = $dataSource;
+
+        if ($refreshDataValues) {
+            //    TO DO
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get Point Marker.
+     *
+     * @return string
+     */
+    public function getPointMarker()
+    {
+        return $this->pointMarker;
+    }
+
+    /**
+     * Set Point Marker.
+     *
+     * @param    string    $marker
+     * @return    PHPExcel_Chart_DataSeriesValues
+     */
+    public function setPointMarker($marker = null)
+    {
+        $this->pointMarker = $marker;
+
+        return $this;
+    }
+
+    /**
+     * Get Series Format Code.
+     *
+     * @return    string
+     */
+    public function getFormatCode()
+    {
+        return $this->formatCode;
+    }
+
+    /**
+     * Set Series Format Code.
+     *
+     * @param    string    $formatCode
+     * @return    PHPExcel_Chart_DataSeriesValues
+     */
+    public function setFormatCode($formatCode = null)
+    {
+        $this->formatCode = $formatCode;
+
+        return $this;
+    }
+
+    /**
+     * Get Series Point Count.
+     *
+     * @return    int
+     */
+    public function getPointCount()
+    {
+        return $this->pointCount;
+    }
+
+    /**
+     * Identify if the Data Series is a multi-level or a simple series.
+     *
+     * @return    bool
+     */
+    public function isMultiLevelSeries()
+    {
+        if (count($this->dataValues) > 0) {
+            return is_array($this->dataValues[0]);
+        }
+
+        return null;
+    }
+
+    /**
+     * Return the level count of a multi-level Data Series.
+     *
+     * @return    bool
+     */
+    public function multiLevelCount()
+    {
+        $levelCount = 0;
+        foreach ($this->dataValues as $dataValueSet) {
+            $levelCount = max($levelCount, count($dataValueSet));
+        }
+
+        return $levelCount;
+    }
+
+    /**
+     * Get Series Data Values.
+     *
+     * @return    array of mixed
+     */
+    public function getDataValues()
+    {
+        return $this->dataValues;
+    }
+
+    /**
+     * Get the first Series Data value.
+     */
+    public function getDataValue()
+    {
+        $count = count($this->dataValues);
+        if ($count == 0) {
+            return null;
+        }
+        if ($count == 1) {
+            return $this->dataValues[0];
+        }
+
+        return $this->dataValues;
+    }
+
+    /**
+     * Set Series Data Values.
+     *
+     * @param    array    $dataValues
+     * @param    bool    $refreshDataSource
+     *                    TRUE - refresh the value of dataSource based on the values of $dataValues
+     *                    FALSE - don't change the value of dataSource
+     * @return    PHPExcel_Chart_DataSeriesValues
+     */
+    public function setDataValues($dataValues = [], $refreshDataSource = true)
+    {
+        $this->dataValues = PHPExcel_Calculation_Functions::flattenArray($dataValues);
+        $this->pointCount = count($dataValues);
+
+        if ($refreshDataSource) {
+            //    TO DO
+        }
+
+        return $this;
+    }
+
+    private function stripNulls($var)
+    {
+        return $var !== null;
+    }
+
+    public function refresh(PHPExcel_Worksheet $worksheet, $flatten = true)
+    {
+        if ($this->dataSource !== null) {
+            $calcEngine = PHPExcel_Calculation::getInstance($worksheet->getParent());
+            $newDataValues = PHPExcel_Calculation::unwrapResult(
+                $calcEngine->_calculateFormulaValue(
+                    '=' . $this->dataSource,
+                    null,
+                    $worksheet->getCell('A1'),
+                ),
+            );
+            if ($flatten) {
+                $this->dataValues = PHPExcel_Calculation_Functions::flattenArray($newDataValues);
+                foreach ($this->dataValues as &$dataValue) {
+                    if ((!empty($dataValue)) && ($dataValue[0] == '#')) {
+                        $dataValue = 0.0;
+                    }
+                }
+                unset($dataValue);
+            } else {
+                $cellRange = explode('!', $this->dataSource);
+                if (count($cellRange) > 1) {
+                    [, $cellRange] = $cellRange;
+                }
+
+                $dimensions = PHPExcel_Cell::rangeDimension(str_replace('$', '', $cellRange));
+                if (($dimensions[0] == 1) || ($dimensions[1] == 1)) {
+                    $this->dataValues = PHPExcel_Calculation_Functions::flattenArray($newDataValues);
+                } else {
+                    $newArray = array_values(array_shift($newDataValues));
+                    foreach ($newArray as $i => $newDataSet) {
+                        $newArray[$i] = [$newDataSet];
+                    }
+
+                    foreach ($newDataValues as $newDataSet) {
+                        $i = 0;
+                        foreach ($newDataSet as $newDataVal) {
+                            array_unshift($newArray[$i++], $newDataVal);
+                        }
+                    }
+                    $this->dataValues = $newArray;
+                }
+            }
+            $this->pointCount = count($this->dataValues);
+        }
+    }
+}

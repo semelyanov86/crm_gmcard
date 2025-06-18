@@ -1,95 +1,497 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category    PHPExcel
+ * @copyright    Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license        http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version        ##VERSION##, ##DATE##
+ */
+
+
+/**
+ * PHPExcel_Chart_Layout.
+ *
+ * @category    PHPExcel
+ * @copyright    Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Chart_Layout
+{
+    /**
+     * layoutTarget.
+     *
+     * @var string
+     */
+    private $layoutTarget;
+
+    /**
+     * X Mode.
+     *
+     * @var string
+     */
+    private $xMode;
+
+    /**
+     * Y Mode.
+     *
+     * @var string
+     */
+    private $yMode;
+
+    /**
+     * X-Position.
+     *
+     * @var float
+     */
+    private $xPos;
+
+    /**
+     * Y-Position.
+     *
+     * @var float
+     */
+    private $yPos;
+
+    /**
+     * width.
+     *
+     * @var float
+     */
+    private $width;
+
+    /**
+     * height.
+     *
+     * @var float
+     */
+    private $height;
+
+    /**
+     * show legend key
+     * Specifies that legend keys should be shown in data labels.
+     *
+     * @var bool
+     */
+    private $showLegendKey;
+
+    /**
+     * show value
+     * Specifies that the value should be shown in a data label.
+     *
+     * @var bool
+     */
+    private $showVal;
+
+    /**
+     * show category name
+     * Specifies that the category name should be shown in the data label.
+     *
+     * @var bool
+     */
+    private $showCatName;
+
+    /**
+     * show data series name
+     * Specifies that the series name should be shown in the data label.
+     *
+     * @var bool
+     */
+    private $showSerName;
+
+    /**
+     * show percentage
+     * Specifies that the percentage should be shown in the data label.
+     *
+     * @var bool
+     */
+    private $showPercent;
+
+    /**
+     * show bubble size.
+     *
+     * @var bool
+     */
+    private $showBubbleSize;
+
+    /**
+     * show leader lines
+     * Specifies that leader lines should be shown for the data label.
+     *
+     * @var bool
+     */
+    private $showLeaderLines;
+
+    /**
+     * Create a new PHPExcel_Chart_Layout.
+     */
+    public function __construct($layout = [])
+    {
+        if (isset($layout['layoutTarget'])) {
+            $this->layoutTarget = $layout['layoutTarget'];
+        }
+        if (isset($layout['xMode'])) {
+            $this->xMode = $layout['xMode'];
+        }
+        if (isset($layout['yMode'])) {
+            $this->yMode = $layout['yMode'];
+        }
+        if (isset($layout['x'])) {
+            $this->xPos = (float) $layout['x'];
+        }
+        if (isset($layout['y'])) {
+            $this->yPos = (float) $layout['y'];
+        }
+        if (isset($layout['w'])) {
+            $this->width = (float) $layout['w'];
+        }
+        if (isset($layout['h'])) {
+            $this->height = (float) $layout['h'];
+        }
+    }
+
+    /**
+     * Get Layout Target.
+     *
+     * @return string
+     */
+    public function getLayoutTarget()
+    {
+        return $this->layoutTarget;
+    }
+
+    /**
+     * Set Layout Target.
+     *
+     * @param Layout Target $value
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setLayoutTarget($value)
+    {
+        $this->layoutTarget = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get X-Mode.
+     *
+     * @return string
+     */
+    public function getXMode()
+    {
+        return $this->xMode;
+    }
+
+    /**
+     * Set X-Mode.
+     *
+     * @param X-Mode $value
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setXMode($value)
+    {
+        $this->xMode = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Y-Mode.
+     *
+     * @return string
+     */
+    public function getYMode()
+    {
+        return $this->yMode;
+    }
+
+    /**
+     * Set Y-Mode.
+     *
+     * @param Y-Mode $value
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setYMode($value)
+    {
+        $this->yMode = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get X-Position.
+     *
+     * @return number
+     */
+    public function getXPosition()
+    {
+        return $this->xPos;
+    }
+
+    /**
+     * Set X-Position.
+     *
+     * @param X-Position $value
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setXPosition($value)
+    {
+        $this->xPos = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Y-Position.
+     *
+     * @return number
+     */
+    public function getYPosition()
+    {
+        return $this->yPos;
+    }
+
+    /**
+     * Set Y-Position.
+     *
+     * @param Y-Position $value
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setYPosition($value)
+    {
+        $this->yPos = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Width.
+     *
+     * @return number
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * Set Width.
+     *
+     * @param Width $value
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setWidth($value)
+    {
+        $this->width = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Height.
+     *
+     * @return number
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * Set Height.
+     *
+     * @param Height $value
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setHeight($value)
+    {
+        $this->height = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get show legend key.
+     *
+     * @return bool
+     */
+    public function getShowLegendKey()
+    {
+        return $this->showLegendKey;
+    }
+
+    /**
+     * Set show legend key
+     * Specifies that legend keys should be shown in data labels.
+     *
+     * @param bool $value        Show legend key
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setShowLegendKey($value)
+    {
+        $this->showLegendKey = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get show value.
+     *
+     * @return bool
+     */
+    public function getShowVal()
+    {
+        return $this->showVal;
+    }
+
+    /**
+     * Set show val
+     * Specifies that the value should be shown in data labels.
+     *
+     * @param bool $value        Show val
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setShowVal($value)
+    {
+        $this->showVal = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get show category name.
+     *
+     * @return bool
+     */
+    public function getShowCatName()
+    {
+        return $this->showCatName;
+    }
+
+    /**
+     * Set show cat name
+     * Specifies that the category name should be shown in data labels.
+     *
+     * @param bool $value        Show cat name
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setShowCatName($value)
+    {
+        $this->showCatName = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get show data series name.
+     *
+     * @return bool
+     */
+    public function getShowSerName()
+    {
+        return $this->showSerName;
+    }
+
+    /**
+     * Set show ser name
+     * Specifies that the series name should be shown in data labels.
+     *
+     * @param bool $value        Show series name
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setShowSerName($value)
+    {
+        $this->showSerName = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get show percentage.
+     *
+     * @return bool
+     */
+    public function getShowPercent()
+    {
+        return $this->showPercent;
+    }
+
+    /**
+     * Set show percentage
+     * Specifies that the percentage should be shown in data labels.
+     *
+     * @param bool $value        Show percentage
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setShowPercent($value)
+    {
+        $this->showPercent = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get show bubble size.
+     *
+     * @return bool
+     */
+    public function getShowBubbleSize()
+    {
+        return $this->showBubbleSize;
+    }
+
+    /**
+     * Set show bubble size
+     * Specifies that the bubble size should be shown in data labels.
+     *
+     * @param bool $value        Show bubble size
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setShowBubbleSize($value)
+    {
+        $this->showBubbleSize = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get show leader lines.
+     *
+     * @return bool
+     */
+    public function getShowLeaderLines()
+    {
+        return $this->showLeaderLines;
+    }
+
+    /**
+     * Set show leader lines
+     * Specifies that leader lines should be shown in data labels.
+     *
+     * @param bool $value        Show leader lines
+     * @return PHPExcel_Chart_Layout
+     */
+    public function setShowLeaderLines($value)
+    {
+        $this->showLeaderLines = $value;
+
+        return $this;
+    }
+}

@@ -7,15 +7,17 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
+ */
 
-class Settings_Tags_ListView_Model extends Settings_Vtiger_ListView_Model {
-    
-    public function getBasicListQuery() {
+class Settings_Tags_ListView_Model extends Settings_Vtiger_ListView_Model
+{
+    public function getBasicListQuery()
+    {
         $currentUser = Users_Record_Model::getCurrentUserModel();
-        
+
         $query = parent::getBasicListQuery();
-        $query .=' WHERE owner = '.$currentUser->getId();
+        $query .= ' WHERE owner = ' . $currentUser->getId();
+
         return $query;
     }
 }

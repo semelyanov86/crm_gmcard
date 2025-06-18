@@ -14,12 +14,8 @@ class ITS4YouDescriptions_Data_Action extends Vtiger_BasicAjax_Action
         $this->isInstalled = true;
     }
 
-    
-    public function checkPermission(Vtiger_Request $request)
-    {
-    }
+    public function checkPermission(Vtiger_Request $request) {}
 
-    
     public function process(Vtiger_Request $request)
     {
         $mode = $request->get('mode');
@@ -34,19 +30,17 @@ class ITS4YouDescriptions_Data_Action extends Vtiger_BasicAjax_Action
         $response->emit();
     }
 
-    
     public function getContent(Vtiger_Request $request)
     {
         $return = ITS4YouDescriptions_Record_Model::getTemplateDescription($request->get('descriptionid'));
 
-        return array(
+        return [
             'result' => $return,
             'modulename' => $request->get('formodule'),
-            'fieldname' => $request->get('affected_textarea')
-        );
+            'fieldname' => $request->get('affected_textarea'),
+        ];
     }
 
-    
     public function getFields(Vtiger_Request $request)
     {
         $textAreas = false;
@@ -59,18 +53,16 @@ class ITS4YouDescriptions_Data_Action extends Vtiger_BasicAjax_Action
         return $textAreas;
     }
 
-    
     public function isAllowedModule($module)
     {
         return ITS4YouDescriptions_AllowedModules_Model::isAllowed($module);
     }
 
-    
     public function getInventory(Vtiger_Request $request)
     {
-        return array(
+        return [
             'Products' => $this->isAllowedModule('Products'),
             'Services' => $this->isAllowedModule('Services'),
-        );
+        ];
     }
-} ?>
+}

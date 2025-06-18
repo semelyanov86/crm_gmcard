@@ -1,4 +1,5 @@
 <?php
+
 /* ********************************************************************************
  * The content of this file is subject to the Export To XLS ("License");
  * You may not use this file except in compliance with the License
@@ -7,7 +8,7 @@
  * All Rights Reserved.
  * ****************************************************************************** */
 
-$languageStrings = array(
+$languageStrings = [
     'VTEExportToXLS' => 'Export To XLS',
     'LBL_ENABLE_MODULE' => 'Enable Export To XLS',
     'MODULE_LBL' => 'Export To XLS',
@@ -52,23 +53,23 @@ $languageStrings = array(
     'LBL_HAS_BEEN_SUCCESSFULLY' => 'has been installed & activated successfully!',
     'LBL_MORE_EXTENSIONS' => 'For more vTiger Extensions, please visit our website',
     /* For License page - End */
-    'LBL_THIS_MODULE_HAS_NOT_ACTIVED_YET'=>'This module has not actived yet or missing license key.',
-    'LBL_CLICK_HERE_TO_ACTIVE'=>'Click here to active it',
-    'LBL_EXPORT_TO_EXCEL'=>'Export To Excel',
-	'Export To Excel'=>'Export To Excel',
-    'LBL_INFO_BLOCK'=>'Info',
-    'LBL_INFO_BLOCK_ON_SETTING_PAGE'=>'Export to XLS option has been added to every list in the system. Open the list of records, select records > click More > Export to XLS.',
-    'LBL_CUSTOM_FILE_NAME'=>'Custom File Name',
-    'LBL_FILE_NAME'=>'File Name',
-    'LBL_MODULE_NAME'=>'Module Name',
-    'LBL_PRIMARY_EMAIL'=>'Primary Email',
-    'LBL_CURRENT_DATE'=>'Current Date',
-    'LBL_DOWNLOAD_TO_SERVER'=>'Download to Server',
-    'LBL_NO_CREATE_FOLDER_PERMISSION'=>'No Permissions to create folder "/vtigercrm/storage/export_excel/". Please create the folder and try again',
-    'LBL_DOWNLOAD_TOOLTIP'=>'When turned on, it downloads the same copy of the selected records as excel to the path \'/vtigercrm/storage/export_excel/\'. Please turn it off if not required as it can fill up server space',
-    'LBL_UPDATED' => 'Updated!'
-);
+    'LBL_THIS_MODULE_HAS_NOT_ACTIVED_YET' => 'This module has not actived yet or missing license key.',
+    'LBL_CLICK_HERE_TO_ACTIVE' => 'Click here to active it',
+    'LBL_EXPORT_TO_EXCEL' => 'Export To Excel',
+    'Export To Excel' => 'Export To Excel',
+    'LBL_INFO_BLOCK' => 'Info',
+    'LBL_INFO_BLOCK_ON_SETTING_PAGE' => 'Export to XLS option has been added to every list in the system. Open the list of records, select records > click More > Export to XLS.',
+    'LBL_CUSTOM_FILE_NAME' => 'Custom File Name',
+    'LBL_FILE_NAME' => 'File Name',
+    'LBL_MODULE_NAME' => 'Module Name',
+    'LBL_PRIMARY_EMAIL' => 'Primary Email',
+    'LBL_CURRENT_DATE' => 'Current Date',
+    'LBL_DOWNLOAD_TO_SERVER' => 'Download to Server',
+    'LBL_NO_CREATE_FOLDER_PERMISSION' => 'No Permissions to create folder "/vtigercrm/storage/export_excel/". Please create the folder and try again',
+    'LBL_DOWNLOAD_TOOLTIP' => 'When turned on, it downloads the same copy of the selected records as excel to the path \'/vtigercrm/storage/export_excel/\'. Please turn it off if not required as it can fill up server space',
+    'LBL_UPDATED' => 'Updated!',
+];
 
-$jsLanguageStrings = array(
-    'JS_LBL_UPDATED' => 'Updated'
-);
+$jsLanguageStrings = [
+    'JS_LBL_UPDATED' => 'Updated',
+];

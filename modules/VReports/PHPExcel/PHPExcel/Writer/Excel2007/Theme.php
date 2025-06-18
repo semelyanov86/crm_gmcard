@@ -1,346 +1,864 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+
+
+/**
+ * PHPExcel_Writer_Excel2007_Theme.
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Writer_Excel2007_Theme extends PHPExcel_Writer_Excel2007_WriterPart
+{
+    /**
+     * Map of Major fonts to write.
+     * @static    array of string
+     */
+    private static $majorFonts = [
+        'Jpan' => 'ＭＳ Ｐゴシック',
+        'Hang' => '맑은 고딕',
+        'Hans' => '宋体',
+        'Hant' => '新細明體',
+        'Arab' => 'Times New Roman',
+        'Hebr' => 'Times New Roman',
+        'Thai' => 'Tahoma',
+        'Ethi' => 'Nyala',
+        'Beng' => 'Vrinda',
+        'Gujr' => 'Shruti',
+        'Khmr' => 'MoolBoran',
+        'Knda' => 'Tunga',
+        'Guru' => 'Raavi',
+        'Cans' => 'Euphemia',
+        'Cher' => 'Plantagenet Cherokee',
+        'Yiii' => 'Microsoft Yi Baiti',
+        'Tibt' => 'Microsoft Himalaya',
+        'Thaa' => 'MV Boli',
+        'Deva' => 'Mangal',
+        'Telu' => 'Gautami',
+        'Taml' => 'Latha',
+        'Syrc' => 'Estrangelo Edessa',
+        'Orya' => 'Kalinga',
+        'Mlym' => 'Kartika',
+        'Laoo' => 'DokChampa',
+        'Sinh' => 'Iskoola Pota',
+        'Mong' => 'Mongolian Baiti',
+        'Viet' => 'Times New Roman',
+        'Uigh' => 'Microsoft Uighur',
+        'Geor' => 'Sylfaen',
+    ];
+
+    /**
+     * Map of Minor fonts to write.
+     * @static    array of string
+     */
+    private static $minorFonts = [
+        'Jpan' => 'ＭＳ Ｐゴシック',
+        'Hang' => '맑은 고딕',
+        'Hans' => '宋体',
+        'Hant' => '新細明體',
+        'Arab' => 'Arial',
+        'Hebr' => 'Arial',
+        'Thai' => 'Tahoma',
+        'Ethi' => 'Nyala',
+        'Beng' => 'Vrinda',
+        'Gujr' => 'Shruti',
+        'Khmr' => 'DaunPenh',
+        'Knda' => 'Tunga',
+        'Guru' => 'Raavi',
+        'Cans' => 'Euphemia',
+        'Cher' => 'Plantagenet Cherokee',
+        'Yiii' => 'Microsoft Yi Baiti',
+        'Tibt' => 'Microsoft Himalaya',
+        'Thaa' => 'MV Boli',
+        'Deva' => 'Mangal',
+        'Telu' => 'Gautami',
+        'Taml' => 'Latha',
+        'Syrc' => 'Estrangelo Edessa',
+        'Orya' => 'Kalinga',
+        'Mlym' => 'Kartika',
+        'Laoo' => 'DokChampa',
+        'Sinh' => 'Iskoola Pota',
+        'Mong' => 'Mongolian Baiti',
+        'Viet' => 'Arial',
+        'Uigh' => 'Microsoft Uighur',
+        'Geor' => 'Sylfaen',
+    ];
+
+    /**
+     * Map of core colours.
+     * @static    array of string
+     */
+    private static $colourScheme = [
+        'dk2'        => '1F497D',
+        'lt2'        => 'EEECE1',
+        'accent1'    => '4F81BD',
+        'accent2'    => 'C0504D',
+        'accent3'    => '9BBB59',
+        'accent4'    => '8064A2',
+        'accent5'    => '4BACC6',
+        'accent6'    => 'F79646',
+        'hlink'        => '0000FF',
+        'folHlink'    => '800080',
+    ];
+
+    /**
+     * Write theme to XML format.
+     *
+     * @return     string         XML Output
+     * @throws     PHPExcel_Writer_Exception
+     */
+    public function writeTheme(?PHPExcel $pPHPExcel = null)
+    {
+        // Create XML writer
+        $objWriter = null;
+        if ($this->getParentWriter()->getUseDiskCaching()) {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_DISK, $this->getParentWriter()->getDiskCachingDirectory());
+        } else {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_MEMORY);
+        }
+
+        // XML header
+        $objWriter->startDocument('1.0', 'UTF-8', 'yes');
+
+        // a:theme
+        $objWriter->startElement('a:theme');
+        $objWriter->writeAttribute('xmlns:a', 'http://schemas.openxmlformats.org/drawingml/2006/main');
+        $objWriter->writeAttribute('name', 'Office Theme');
+
+        // a:themeElements
+        $objWriter->startElement('a:themeElements');
+
+        // a:clrScheme
+        $objWriter->startElement('a:clrScheme');
+        $objWriter->writeAttribute('name', 'Office');
+
+        // a:dk1
+        $objWriter->startElement('a:dk1');
+
+        // a:sysClr
+        $objWriter->startElement('a:sysClr');
+        $objWriter->writeAttribute('val', 'windowText');
+        $objWriter->writeAttribute('lastClr', '000000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:lt1
+        $objWriter->startElement('a:lt1');
+
+        // a:sysClr
+        $objWriter->startElement('a:sysClr');
+        $objWriter->writeAttribute('val', 'window');
+        $objWriter->writeAttribute('lastClr', 'FFFFFF');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:dk2
+        $this->writeColourScheme($objWriter);
+
+        $objWriter->endElement();
+
+        // a:fontScheme
+        $objWriter->startElement('a:fontScheme');
+        $objWriter->writeAttribute('name', 'Office');
+
+        // a:majorFont
+        $objWriter->startElement('a:majorFont');
+        $this->writeFonts($objWriter, 'Cambria', self::$majorFonts);
+        $objWriter->endElement();
+
+        // a:minorFont
+        $objWriter->startElement('a:minorFont');
+        $this->writeFonts($objWriter, 'Calibri', self::$minorFonts);
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:fmtScheme
+        $objWriter->startElement('a:fmtScheme');
+        $objWriter->writeAttribute('name', 'Office');
+
+        // a:fillStyleLst
+        $objWriter->startElement('a:fillStyleLst');
+
+        // a:solidFill
+        $objWriter->startElement('a:solidFill');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:gradFill
+        $objWriter->startElement('a:gradFill');
+        $objWriter->writeAttribute('rotWithShape', '1');
+
+        // a:gsLst
+        $objWriter->startElement('a:gsLst');
+
+        // a:gs
+        $objWriter->startElement('a:gs');
+        $objWriter->writeAttribute('pos', '0');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+
+        // a:tint
+        $objWriter->startElement('a:tint');
+        $objWriter->writeAttribute('val', '50000');
+        $objWriter->endElement();
+
+        // a:satMod
+        $objWriter->startElement('a:satMod');
+        $objWriter->writeAttribute('val', '300000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:gs
+        $objWriter->startElement('a:gs');
+        $objWriter->writeAttribute('pos', '35000');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+
+        // a:tint
+        $objWriter->startElement('a:tint');
+        $objWriter->writeAttribute('val', '37000');
+        $objWriter->endElement();
+
+        // a:satMod
+        $objWriter->startElement('a:satMod');
+        $objWriter->writeAttribute('val', '300000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:gs
+        $objWriter->startElement('a:gs');
+        $objWriter->writeAttribute('pos', '100000');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+
+        // a:tint
+        $objWriter->startElement('a:tint');
+        $objWriter->writeAttribute('val', '15000');
+        $objWriter->endElement();
+
+        // a:satMod
+        $objWriter->startElement('a:satMod');
+        $objWriter->writeAttribute('val', '350000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:lin
+        $objWriter->startElement('a:lin');
+        $objWriter->writeAttribute('ang', '16200000');
+        $objWriter->writeAttribute('scaled', '1');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:gradFill
+        $objWriter->startElement('a:gradFill');
+        $objWriter->writeAttribute('rotWithShape', '1');
+
+        // a:gsLst
+        $objWriter->startElement('a:gsLst');
+
+        // a:gs
+        $objWriter->startElement('a:gs');
+        $objWriter->writeAttribute('pos', '0');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+
+        // a:shade
+        $objWriter->startElement('a:shade');
+        $objWriter->writeAttribute('val', '51000');
+        $objWriter->endElement();
+
+        // a:satMod
+        $objWriter->startElement('a:satMod');
+        $objWriter->writeAttribute('val', '130000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:gs
+        $objWriter->startElement('a:gs');
+        $objWriter->writeAttribute('pos', '80000');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+
+        // a:shade
+        $objWriter->startElement('a:shade');
+        $objWriter->writeAttribute('val', '93000');
+        $objWriter->endElement();
+
+        // a:satMod
+        $objWriter->startElement('a:satMod');
+        $objWriter->writeAttribute('val', '130000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:gs
+        $objWriter->startElement('a:gs');
+        $objWriter->writeAttribute('pos', '100000');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+
+        // a:shade
+        $objWriter->startElement('a:shade');
+        $objWriter->writeAttribute('val', '94000');
+        $objWriter->endElement();
+
+        // a:satMod
+        $objWriter->startElement('a:satMod');
+        $objWriter->writeAttribute('val', '135000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:lin
+        $objWriter->startElement('a:lin');
+        $objWriter->writeAttribute('ang', '16200000');
+        $objWriter->writeAttribute('scaled', '0');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:lnStyleLst
+        $objWriter->startElement('a:lnStyleLst');
+
+        // a:ln
+        $objWriter->startElement('a:ln');
+        $objWriter->writeAttribute('w', '9525');
+        $objWriter->writeAttribute('cap', 'flat');
+        $objWriter->writeAttribute('cmpd', 'sng');
+        $objWriter->writeAttribute('algn', 'ctr');
+
+        // a:solidFill
+        $objWriter->startElement('a:solidFill');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+
+        // a:shade
+        $objWriter->startElement('a:shade');
+        $objWriter->writeAttribute('val', '95000');
+        $objWriter->endElement();
+
+        // a:satMod
+        $objWriter->startElement('a:satMod');
+        $objWriter->writeAttribute('val', '105000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:prstDash
+        $objWriter->startElement('a:prstDash');
+        $objWriter->writeAttribute('val', 'solid');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:ln
+        $objWriter->startElement('a:ln');
+        $objWriter->writeAttribute('w', '25400');
+        $objWriter->writeAttribute('cap', 'flat');
+        $objWriter->writeAttribute('cmpd', 'sng');
+        $objWriter->writeAttribute('algn', 'ctr');
+
+        // a:solidFill
+        $objWriter->startElement('a:solidFill');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:prstDash
+        $objWriter->startElement('a:prstDash');
+        $objWriter->writeAttribute('val', 'solid');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:ln
+        $objWriter->startElement('a:ln');
+        $objWriter->writeAttribute('w', '38100');
+        $objWriter->writeAttribute('cap', 'flat');
+        $objWriter->writeAttribute('cmpd', 'sng');
+        $objWriter->writeAttribute('algn', 'ctr');
+
+        // a:solidFill
+        $objWriter->startElement('a:solidFill');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:prstDash
+        $objWriter->startElement('a:prstDash');
+        $objWriter->writeAttribute('val', 'solid');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+
+
+        // a:effectStyleLst
+        $objWriter->startElement('a:effectStyleLst');
+
+        // a:effectStyle
+        $objWriter->startElement('a:effectStyle');
+
+        // a:effectLst
+        $objWriter->startElement('a:effectLst');
+
+        // a:outerShdw
+        $objWriter->startElement('a:outerShdw');
+        $objWriter->writeAttribute('blurRad', '40000');
+        $objWriter->writeAttribute('dist', '20000');
+        $objWriter->writeAttribute('dir', '5400000');
+        $objWriter->writeAttribute('rotWithShape', '0');
+
+        // a:srgbClr
+        $objWriter->startElement('a:srgbClr');
+        $objWriter->writeAttribute('val', '000000');
+
+        // a:alpha
+        $objWriter->startElement('a:alpha');
+        $objWriter->writeAttribute('val', '38000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:effectStyle
+        $objWriter->startElement('a:effectStyle');
+
+        // a:effectLst
+        $objWriter->startElement('a:effectLst');
+
+        // a:outerShdw
+        $objWriter->startElement('a:outerShdw');
+        $objWriter->writeAttribute('blurRad', '40000');
+        $objWriter->writeAttribute('dist', '23000');
+        $objWriter->writeAttribute('dir', '5400000');
+        $objWriter->writeAttribute('rotWithShape', '0');
+
+        // a:srgbClr
+        $objWriter->startElement('a:srgbClr');
+        $objWriter->writeAttribute('val', '000000');
+
+        // a:alpha
+        $objWriter->startElement('a:alpha');
+        $objWriter->writeAttribute('val', '35000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:effectStyle
+        $objWriter->startElement('a:effectStyle');
+
+        // a:effectLst
+        $objWriter->startElement('a:effectLst');
+
+        // a:outerShdw
+        $objWriter->startElement('a:outerShdw');
+        $objWriter->writeAttribute('blurRad', '40000');
+        $objWriter->writeAttribute('dist', '23000');
+        $objWriter->writeAttribute('dir', '5400000');
+        $objWriter->writeAttribute('rotWithShape', '0');
+
+        // a:srgbClr
+        $objWriter->startElement('a:srgbClr');
+        $objWriter->writeAttribute('val', '000000');
+
+        // a:alpha
+        $objWriter->startElement('a:alpha');
+        $objWriter->writeAttribute('val', '35000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:scene3d
+        $objWriter->startElement('a:scene3d');
+
+        // a:camera
+        $objWriter->startElement('a:camera');
+        $objWriter->writeAttribute('prst', 'orthographicFront');
+
+        // a:rot
+        $objWriter->startElement('a:rot');
+        $objWriter->writeAttribute('lat', '0');
+        $objWriter->writeAttribute('lon', '0');
+        $objWriter->writeAttribute('rev', '0');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:lightRig
+        $objWriter->startElement('a:lightRig');
+        $objWriter->writeAttribute('rig', 'threePt');
+        $objWriter->writeAttribute('dir', 't');
+
+        // a:rot
+        $objWriter->startElement('a:rot');
+        $objWriter->writeAttribute('lat', '0');
+        $objWriter->writeAttribute('lon', '0');
+        $objWriter->writeAttribute('rev', '1200000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:sp3d
+        $objWriter->startElement('a:sp3d');
+
+        // a:bevelT
+        $objWriter->startElement('a:bevelT');
+        $objWriter->writeAttribute('w', '63500');
+        $objWriter->writeAttribute('h', '25400');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:bgFillStyleLst
+        $objWriter->startElement('a:bgFillStyleLst');
+
+        // a:solidFill
+        $objWriter->startElement('a:solidFill');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:gradFill
+        $objWriter->startElement('a:gradFill');
+        $objWriter->writeAttribute('rotWithShape', '1');
+
+        // a:gsLst
+        $objWriter->startElement('a:gsLst');
+
+        // a:gs
+        $objWriter->startElement('a:gs');
+        $objWriter->writeAttribute('pos', '0');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+
+        // a:tint
+        $objWriter->startElement('a:tint');
+        $objWriter->writeAttribute('val', '40000');
+        $objWriter->endElement();
+
+        // a:satMod
+        $objWriter->startElement('a:satMod');
+        $objWriter->writeAttribute('val', '350000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:gs
+        $objWriter->startElement('a:gs');
+        $objWriter->writeAttribute('pos', '40000');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+
+        // a:tint
+        $objWriter->startElement('a:tint');
+        $objWriter->writeAttribute('val', '45000');
+        $objWriter->endElement();
+
+        // a:shade
+        $objWriter->startElement('a:shade');
+        $objWriter->writeAttribute('val', '99000');
+        $objWriter->endElement();
+
+        // a:satMod
+        $objWriter->startElement('a:satMod');
+        $objWriter->writeAttribute('val', '350000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:gs
+        $objWriter->startElement('a:gs');
+        $objWriter->writeAttribute('pos', '100000');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+
+        // a:shade
+        $objWriter->startElement('a:shade');
+        $objWriter->writeAttribute('val', '20000');
+        $objWriter->endElement();
+
+        // a:satMod
+        $objWriter->startElement('a:satMod');
+        $objWriter->writeAttribute('val', '255000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:path
+        $objWriter->startElement('a:path');
+        $objWriter->writeAttribute('path', 'circle');
+
+        // a:fillToRect
+        $objWriter->startElement('a:fillToRect');
+        $objWriter->writeAttribute('l', '50000');
+        $objWriter->writeAttribute('t', '-80000');
+        $objWriter->writeAttribute('r', '50000');
+        $objWriter->writeAttribute('b', '180000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:gradFill
+        $objWriter->startElement('a:gradFill');
+        $objWriter->writeAttribute('rotWithShape', '1');
+
+        // a:gsLst
+        $objWriter->startElement('a:gsLst');
+
+        // a:gs
+        $objWriter->startElement('a:gs');
+        $objWriter->writeAttribute('pos', '0');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+
+        // a:tint
+        $objWriter->startElement('a:tint');
+        $objWriter->writeAttribute('val', '80000');
+        $objWriter->endElement();
+
+        // a:satMod
+        $objWriter->startElement('a:satMod');
+        $objWriter->writeAttribute('val', '300000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:gs
+        $objWriter->startElement('a:gs');
+        $objWriter->writeAttribute('pos', '100000');
+
+        // a:schemeClr
+        $objWriter->startElement('a:schemeClr');
+        $objWriter->writeAttribute('val', 'phClr');
+
+        // a:shade
+        $objWriter->startElement('a:shade');
+        $objWriter->writeAttribute('val', '30000');
+        $objWriter->endElement();
+
+        // a:satMod
+        $objWriter->startElement('a:satMod');
+        $objWriter->writeAttribute('val', '200000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:path
+        $objWriter->startElement('a:path');
+        $objWriter->writeAttribute('path', 'circle');
+
+        // a:fillToRect
+        $objWriter->startElement('a:fillToRect');
+        $objWriter->writeAttribute('l', '50000');
+        $objWriter->writeAttribute('t', '50000');
+        $objWriter->writeAttribute('r', '50000');
+        $objWriter->writeAttribute('b', '50000');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // a:objectDefaults
+        $objWriter->writeElement('a:objectDefaults', null);
+
+        // a:extraClrSchemeLst
+        $objWriter->writeElement('a:extraClrSchemeLst', null);
+
+        $objWriter->endElement();
+
+        // Return
+        return $objWriter->getData();
+    }
+
+    /**
+     * Write fonts to XML format.
+     *
+     * @param     PHPExcel_Shared_XMLWriter    $objWriter
+     * @param     string                        $latinFont
+     * @param     array of string                $fontSet
+     * @return     string                         XML Output
+     * @throws     PHPExcel_Writer_Exception
+     */
+    private function writeFonts($objWriter, $latinFont, $fontSet)
+    {
+        // a:latin
+        $objWriter->startElement('a:latin');
+        $objWriter->writeAttribute('typeface', $latinFont);
+        $objWriter->endElement();
+
+        // a:ea
+        $objWriter->startElement('a:ea');
+        $objWriter->writeAttribute('typeface', '');
+        $objWriter->endElement();
+
+        // a:cs
+        $objWriter->startElement('a:cs');
+        $objWriter->writeAttribute('typeface', '');
+        $objWriter->endElement();
+
+        foreach ($fontSet as $fontScript => $typeface) {
+            $objWriter->startElement('a:font');
+            $objWriter->writeAttribute('script', $fontScript);
+            $objWriter->writeAttribute('typeface', $typeface);
+            $objWriter->endElement();
+        }
+    }
+
+    /**
+     * Write colour scheme to XML format.
+     *
+     * @param     PHPExcel_Shared_XMLWriter    $objWriter
+     * @return     string                         XML Output
+     * @throws     PHPExcel_Writer_Exception
+     */
+    private function writeColourScheme($objWriter)
+    {
+        foreach (self::$colourScheme as $colourName => $colourValue) {
+            $objWriter->startElement('a:' . $colourName);
+
+            $objWriter->startElement('a:srgbClr');
+            $objWriter->writeAttribute('val', $colourValue);
+            $objWriter->endElement();
+
+            $objWriter->endElement();
+        }
+    }
+}

@@ -1,35 +1,36 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
  * The Original Code is:  vtiger CRM Open Source
  * The Initial Developer of the Original Code is vtiger.
- * Portions created by vtiger are Copyright (C) vtiger. 
+ * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved. Contributor(s): Valmir C. Trindade - Brazilian Portuguese Translation - www.ttcasolucoes.com.br
- *************************************************************************************/
+ */
 
-$languageStrings = array(
-	'LBL_PUBLISHER' => 'Editor',
-	'LBL_LICENSE' => 'Licença',
-	'LBL_PUBLISHED_ON' => 'Publicado em',
-	'LBL_INSTALL' => 'Instalar',
-	'LBL_UPGRADE' => 'Atualizar',
-	'LBL_VERSION' => 'Versão',
-	'LBL_DECLINE' => 'Declinar',
-	'LBL_ACCEPT_AND_INSTALL' => 'Aceitar e Instalar',
-	'LBL_OK' => 'OK',
-	'LBL_EXTENSION_NOT_COMPATABLE' => 'A Extensão não é Compatível',
-	'LBL_INVALID_FILE' => 'Arquivo Inválido',
-	'LBL_NO_LICENSE_PROVIDED' => 'Nenhuma Licença Fornecida',
-	'LBL_INSTALLATION' => 'Instalação',
-	'LBL_FAILED' => 'Falha',
-	'LBL_SUCCESSFULL' => 'Sucesso',
-	'LBL_INSTALLATION_LOG' => 'Log de Instalação',
-	'LBL_UPDATED_MODULE' => ' O Módulo foi atualizado com sucesso.',
-	'LBL_UPDATING_MODULE' => 'Módulo Atualização',
+$languageStrings = [
+    'LBL_PUBLISHER' => 'Editor',
+    'LBL_LICENSE' => 'Licença',
+    'LBL_PUBLISHED_ON' => 'Publicado em',
+    'LBL_INSTALL' => 'Instalar',
+    'LBL_UPGRADE' => 'Atualizar',
+    'LBL_VERSION' => 'Versão',
+    'LBL_DECLINE' => 'Declinar',
+    'LBL_ACCEPT_AND_INSTALL' => 'Aceitar e Instalar',
+    'LBL_OK' => 'OK',
+    'LBL_EXTENSION_NOT_COMPATABLE' => 'A Extensão não é Compatível',
+    'LBL_INVALID_FILE' => 'Arquivo Inválido',
+    'LBL_NO_LICENSE_PROVIDED' => 'Nenhuma Licença Fornecida',
+    'LBL_INSTALLATION' => 'Instalação',
+    'LBL_FAILED' => 'Falha',
+    'LBL_SUCCESSFULL' => 'Sucesso',
+    'LBL_INSTALLATION_LOG' => 'Log de Instalação',
+    'LBL_UPDATED_MODULE' => ' O Módulo foi atualizado com sucesso.',
+    'LBL_UPDATING_MODULE' => 'Módulo Atualização',
     'LBL_MARKET_PLACE' => 'Loja',
-    
-    //Extension Store translations
+
+    // Extension Store translations
     'LBL_VTIGER_EXTENSION_STORE' => 'Loja de Extensões Vtiger',
     'LBL_SEARCH_FOR_AN_EXTENSION'  => 'Pesquisar por uma Extensão..',
     'LBL_DOWNLOADS' => 'Downloads',
@@ -99,8 +100,8 @@ $languageStrings = array(
     'LBL_SIGNUP_FOR_MARKET_PLACE' => 'Cadastre-se na Loja',
     'LBL_UNAUTHORIZED' => 'Não Autorizado',
     'LBL_EXPIRY_DATE'  => 'Data Validade',
-	'LBL_LOGOUT' => 'Desconectar',
-    
+    'LBL_LOGOUT' => 'Desconectar',
+
     'firstname' => 'Nome',
     'lastname' => 'Sobrenome',
     'email' => 'Email',
@@ -111,13 +112,13 @@ $languageStrings = array(
     'LBL_WHAT_IS_SECURITY_CODE' => 'Qual é o Código de Segurança?',
     'LBL_CARD_NUMBER_PLACEHOLDER' => 'Número com 16 dígitos do seu Cartão',
     'LBL_SECURITY_CODE_HELP_CONTENT' => 'O Número CVV (Card Verification Value) no seu Cartão de Crédito/Débito é um número de 3 dígitos nas bandeiras VISA®, MasterCard® etc.',
-	'LBL_ENTER_REGISTERED_EMAIL' => 'Digite seu email registrado',
-	'LBL_RESET_PASSWORD_LINK_EMAILED' => 'Link para redefinir Senha foi enviado para você!',
-	'LBL_FORGOT_PASSWORD' => 'Esqueceu a Senha',
-	'LBL_ALREADY_INSTALLED_MODULE_BUILDER' => 'Já foi criado pelo construtor de módulos',
-	'LBL_REVIEW_RESTRICTED' => 'Revisão restrita',
-);
-$jsLanguageStrings = array(
+    'LBL_ENTER_REGISTERED_EMAIL' => 'Digite seu email registrado',
+    'LBL_RESET_PASSWORD_LINK_EMAILED' => 'Link para redefinir Senha foi enviado para você!',
+    'LBL_FORGOT_PASSWORD' => 'Esqueceu a Senha',
+    'LBL_ALREADY_INSTALLED_MODULE_BUILDER' => 'Já foi criado pelo construtor de módulos',
+    'LBL_REVIEW_RESTRICTED' => 'Revisão restrita',
+];
+$jsLanguageStrings = [
     'JS_PLEASE_SETUP_CARD_DETAILS_TO_INSTALL_THIS_EXTENSION'  => 'Por favor, configure os detalhes do Cartão para instalar esta extensão',
     'JS_UPDATE_CARD_DETAILS' => 'Atualizar Detalhes do Cartão',
     'JS_ON' => 'em',
@@ -128,10 +129,10 @@ $jsLanguageStrings = array(
     'JS_PLEASE_LOGIN_TO_MARKETPLACE_FOR_INSTALLING_EXTENSION' => 'Acesse a Loja para instalação da extensão',
     'JS_PLEASE_SETUP_CARD_DETAILS_TO_INSTALL_EXTENSION' => 'Configure os detalhes do Cartão para instalar a extensão',
     'JS_PLEASE_LOGIN_TO_MARKETPLACE_FOR_UNINSTALLING_EXTENSION' => 'Acesse a Loja para desinstalar a extensão',
-	'JS_LBL_ARE_YOU_SURE_YOU_WANT_TO_INSTALL_THIS_EXTENSION' => 'Você tem certeza que deseja instalar esta Extensão?',
-    'JS_CARD_DETAILS_UPDATED' => 'Detalhes do Cartão atualizado!', 
-	'JS_LBL_ARE_YOU_SURE_YOU_WANT_TO_LOGOUT_FROM_EXTENSION' => 'Você tem certeza que deseja desconectar da extensão?',
-    'JS_PASSWORDS_MISMATCH' => "As Senhas não combinam!",
+    'JS_LBL_ARE_YOU_SURE_YOU_WANT_TO_INSTALL_THIS_EXTENSION' => 'Você tem certeza que deseja instalar esta Extensão?',
+    'JS_CARD_DETAILS_UPDATED' => 'Detalhes do Cartão atualizado!',
+    'JS_LBL_ARE_YOU_SURE_YOU_WANT_TO_LOGOUT_FROM_EXTENSION' => 'Você tem certeza que deseja desconectar da extensão?',
+    'JS_PASSWORDS_MISMATCH' => 'As Senhas não combinam!',
     'JS_ARE_YOU_SURE_UNINSTALL' => 'Você tem certeza que deseja desinstalar esta Extensão',
     'JS_ARE_YOU_SURE_INSTALL' => 'Você tem certeza que deseja instalar esta Extensão',
-);
+];

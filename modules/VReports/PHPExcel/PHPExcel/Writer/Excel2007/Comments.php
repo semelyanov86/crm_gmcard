@@ -1,165 +1,257 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-LOe=
+<?php
+
+/**
+ * PHPExcel_Writer_Excel2007_Comments.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Writer_Excel2007_Comments extends PHPExcel_Writer_Excel2007_WriterPart
+{
+    /**
+     * Write comments to XML format.
+     *
+     * @return     string                                 XML Output
+     * @throws     PHPExcel_Writer_Exception
+     */
+    public function writeComments(?PHPExcel_Worksheet $pWorksheet = null)
+    {
+        // Create XML writer
+        $objWriter = null;
+        if ($this->getParentWriter()->getUseDiskCaching()) {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_DISK, $this->getParentWriter()->getDiskCachingDirectory());
+        } else {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_MEMORY);
+        }
+
+        // XML header
+        $objWriter->startDocument('1.0', 'UTF-8', 'yes');
+
+        // Comments cache
+        $comments    = $pWorksheet->getComments();
+
+        // Authors cache
+        $authors    = [];
+        $authorId    = 0;
+        foreach ($comments as $comment) {
+            if (!isset($authors[$comment->getAuthor()])) {
+                $authors[$comment->getAuthor()] = $authorId++;
+            }
+        }
+
+        // comments
+        $objWriter->startElement('comments');
+        $objWriter->writeAttribute('xmlns', 'http://schemas.openxmlformats.org/spreadsheetml/2006/main');
+
+        // Loop through authors
+        $objWriter->startElement('authors');
+        foreach ($authors as $author => $index) {
+            $objWriter->writeElement('author', $author);
+        }
+        $objWriter->endElement();
+
+        // Loop through comments
+        $objWriter->startElement('commentList');
+        foreach ($comments as $key => $value) {
+            $this->writeComment($objWriter, $key, $value, $authors);
+        }
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // Return
+        return $objWriter->getData();
+    }
+
+    /**
+     * Write comment to XML format.
+     *
+     * @param     PHPExcel_Shared_XMLWriter        $objWriter             XML Writer
+     * @param    string                            $pCellReference        Cell reference
+     * @param     PHPExcel_Comment                $pComment            Comment
+     * @param    array                            $pAuthors            Array of authors
+     * @throws     PHPExcel_Writer_Exception
+     */
+    private function writeComment(?PHPExcel_Shared_XMLWriter $objWriter = null, $pCellReference = 'A1', ?PHPExcel_Comment $pComment = null, $pAuthors = null)
+    {
+        // comment
+        $objWriter->startElement('comment');
+        $objWriter->writeAttribute('ref', $pCellReference);
+        $objWriter->writeAttribute('authorId', $pAuthors[$pComment->getAuthor()]);
+
+        // text
+        $objWriter->startElement('text');
+        $this->getParentWriter()->getWriterPart('stringtable')->writeRichText($objWriter, $pComment->getText());
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+    }
+
+    /**
+     * Write VML comments to XML format.
+     *
+     * @return     string                                 XML Output
+     * @throws     PHPExcel_Writer_Exception
+     */
+    public function writeVMLComments(?PHPExcel_Worksheet $pWorksheet = null)
+    {
+        // Create XML writer
+        $objWriter = null;
+        if ($this->getParentWriter()->getUseDiskCaching()) {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_DISK, $this->getParentWriter()->getDiskCachingDirectory());
+        } else {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_MEMORY);
+        }
+
+        // XML header
+        $objWriter->startDocument('1.0', 'UTF-8', 'yes');
+
+        // Comments cache
+        $comments    = $pWorksheet->getComments();
+
+        // xml
+        $objWriter->startElement('xml');
+        $objWriter->writeAttribute('xmlns:v', 'urn:schemas-microsoft-com:vml');
+        $objWriter->writeAttribute('xmlns:o', 'urn:schemas-microsoft-com:office:office');
+        $objWriter->writeAttribute('xmlns:x', 'urn:schemas-microsoft-com:office:excel');
+
+        // o:shapelayout
+        $objWriter->startElement('o:shapelayout');
+        $objWriter->writeAttribute('v:ext', 'edit');
+
+        // o:idmap
+        $objWriter->startElement('o:idmap');
+        $objWriter->writeAttribute('v:ext', 'edit');
+        $objWriter->writeAttribute('data', '1');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // v:shapetype
+        $objWriter->startElement('v:shapetype');
+        $objWriter->writeAttribute('id', '_x0000_t202');
+        $objWriter->writeAttribute('coordsize', '21600,21600');
+        $objWriter->writeAttribute('o:spt', '202');
+        $objWriter->writeAttribute('path', 'm,l,21600r21600,l21600,xe');
+
+        // v:stroke
+        $objWriter->startElement('v:stroke');
+        $objWriter->writeAttribute('joinstyle', 'miter');
+        $objWriter->endElement();
+
+        // v:path
+        $objWriter->startElement('v:path');
+        $objWriter->writeAttribute('gradientshapeok', 't');
+        $objWriter->writeAttribute('o:connecttype', 'rect');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // Loop through comments
+        foreach ($comments as $key => $value) {
+            $this->writeVMLComment($objWriter, $key, $value);
+        }
+
+        $objWriter->endElement();
+
+        // Return
+        return $objWriter->getData();
+    }
+
+    /**
+     * Write VML comment to XML format.
+     *
+     * @param     PHPExcel_Shared_XMLWriter        $objWriter             XML Writer
+     * @param    string                            $pCellReference        Cell reference
+     * @param     PHPExcel_Comment                $pComment            Comment
+     * @throws     PHPExcel_Writer_Exception
+     */
+    private function writeVMLComment(?PHPExcel_Shared_XMLWriter $objWriter = null, $pCellReference = 'A1', ?PHPExcel_Comment $pComment = null)
+    {
+        // Metadata
+        [$column, $row] = PHPExcel_Cell::coordinateFromString($pCellReference);
+        $column = PHPExcel_Cell::columnIndexFromString($column);
+        $id = 1_024 + $column + $row;
+        $id = substr($id, 0, 4);
+
+        // v:shape
+        $objWriter->startElement('v:shape');
+        $objWriter->writeAttribute('id', '_x0000_s' . $id);
+        $objWriter->writeAttribute('type', '#_x0000_t202');
+        $objWriter->writeAttribute('style', 'position:absolute;margin-left:' . $pComment->getMarginLeft() . ';margin-top:' . $pComment->getMarginTop() . ';width:' . $pComment->getWidth() . ';height:' . $pComment->getHeight() . ';z-index:1;visibility:' . ($pComment->getVisible() ? 'visible' : 'hidden'));
+        $objWriter->writeAttribute('fillcolor', '#' . $pComment->getFillColor()->getRGB());
+        $objWriter->writeAttribute('o:insetmode', 'auto');
+
+        // v:fill
+        $objWriter->startElement('v:fill');
+        $objWriter->writeAttribute('color2', '#' . $pComment->getFillColor()->getRGB());
+        $objWriter->endElement();
+
+        // v:shadow
+        $objWriter->startElement('v:shadow');
+        $objWriter->writeAttribute('on', 't');
+        $objWriter->writeAttribute('color', 'black');
+        $objWriter->writeAttribute('obscured', 't');
+        $objWriter->endElement();
+
+        // v:path
+        $objWriter->startElement('v:path');
+        $objWriter->writeAttribute('o:connecttype', 'none');
+        $objWriter->endElement();
+
+        // v:textbox
+        $objWriter->startElement('v:textbox');
+        $objWriter->writeAttribute('style', 'mso-direction-alt:auto');
+
+        // div
+        $objWriter->startElement('div');
+        $objWriter->writeAttribute('style', 'text-align:left');
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+
+        // x:ClientData
+        $objWriter->startElement('x:ClientData');
+        $objWriter->writeAttribute('ObjectType', 'Note');
+
+        // x:MoveWithCells
+        $objWriter->writeElement('x:MoveWithCells', '');
+
+        // x:SizeWithCells
+        $objWriter->writeElement('x:SizeWithCells', '');
+
+        // x:Anchor
+        // $objWriter->writeElement('x:Anchor', $column . ', 15, ' . ($row - 2) . ', 10, ' . ($column + 4) . ', 15, ' . ($row + 5) . ', 18');
+
+        // x:AutoFill
+        $objWriter->writeElement('x:AutoFill', 'False');
+
+        // x:Row
+        $objWriter->writeElement('x:Row', $row - 1);
+
+        // x:Column
+        $objWriter->writeElement('x:Column', $column - 1);
+
+        $objWriter->endElement();
+
+        $objWriter->endElement();
+    }
+}

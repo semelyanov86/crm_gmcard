@@ -1,5 +1,6 @@
 <?php
-/*********************************************************************************
+
+/*
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
  * The Initial Developer of the Original Code is IT-Solutions4You s.r.o.
@@ -9,7 +10,6 @@
 
 class EMAILMaker_CustomLabels_View extends Vtiger_Index_View
 {
-
     public function checkPermission(Vtiger_Request $request)
     {
         $currentUserModel = Users_Record_Model::getCurrentUserModel();
@@ -30,7 +30,7 @@ class EMAILMaker_CustomLabels_View extends Vtiger_Index_View
 
         $moduleName = $request->getModule();
 
-        $linkParams = array('MODULE' => $moduleName, 'ACTION' => $request->get('view'));
+        $linkParams = ['MODULE' => $moduleName, 'ACTION' => $request->get('view')];
         $linkModels = $EMAILMaker->getSideBarLinks($linkParams);
         $viewer->assign('QUICK_LINKS', $linkModels);
 
@@ -49,27 +49,27 @@ class EMAILMaker_CustomLabels_View extends Vtiger_Index_View
         $viewer = $this->getViewer($request);
         $currentLanguage = Vtiger_Language_Handler::getLanguage();
 
-        list($oLabels, $languages) = $EMAILMaker->GetCustomLabels();
-        $currLang = array();
+        [$oLabels, $languages] = $EMAILMaker->GetCustomLabels();
+        $currLang = [];
         foreach ($languages as $langId => $langVal) {
-            if ($langVal["prefix"] == $currentLanguage) {
-                $currLang["id"] = $langId;
-                $currLang["name"] = $langVal["name"];
-                $currLang["label"] = $langVal["label"];
-                $currLang["prefix"] = $langVal["prefix"];
+            if ($langVal['prefix'] == $currentLanguage) {
+                $currLang['id'] = $langId;
+                $currLang['name'] = $langVal['name'];
+                $currLang['label'] = $langVal['label'];
+                $currLang['prefix'] = $langVal['prefix'];
                 break;
             }
         }
 
-        $viewLabels = array();
+        $viewLabels = [];
         foreach ($oLabels as $lblId => $oLabel) {
-            $viewLabels[$lblId]["key"] = $oLabel->GetKey();
-            $viewLabels[$lblId]["lang_values"] = $oLabel->GetLangValsArr();
+            $viewLabels[$lblId]['key'] = $oLabel->GetKey();
+            $viewLabels[$lblId]['lang_values'] = $oLabel->GetLangValsArr();
         }
 
-        $viewer->assign("LABELS", $viewLabels);
-        $viewer->assign("LANGUAGES", $languages);
-        $viewer->assign("CURR_LANG", $currLang);
+        $viewer->assign('LABELS', $viewLabels);
+        $viewer->assign('LANGUAGES', $languages);
+        $viewer->assign('CURR_LANG', $currLang);
         $viewer->view('CustomLabels.tpl', 'EMAILMaker');
     }
 
@@ -77,12 +77,13 @@ class EMAILMaker_CustomLabels_View extends Vtiger_Index_View
     {
         $headerScriptInstances = parent::getHeaderScripts($request);
 
-        $jsFileNames = array(
-            'layouts.v7.modules.EMAILMaker.resources.CustomLabels'
-        );
+        $jsFileNames = [
+            'layouts.v7.modules.EMAILMaker.resources.CustomLabels',
+        ];
 
         $jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
         $headerScriptInstances = array_merge($headerScriptInstances, $jsScriptInstances);
+
         return $headerScriptInstances;
     }
 }

@@ -1,56 +1,126 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel_Chart_PlotArea.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category    PHPExcel
+ * @copyright    Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license        http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version        ##VERSION##, ##DATE##
+ */
+class PHPExcel_Chart_PlotArea
+{
+    /**
+     * PlotArea Layout.
+     *
+     * @var PHPExcel_Chart_Layout
+     */
+    private $layout;
+
+    /**
+     * Plot Series.
+     *
+     * @var array of PHPExcel_Chart_DataSeries
+     */
+    private $plotSeries = [];
+
+    /**
+     * Create a new PHPExcel_Chart_PlotArea.
+     */
+    public function __construct(?PHPExcel_Chart_Layout $layout = null, $plotSeries = [])
+    {
+        $this->layout = $layout;
+        $this->plotSeries = $plotSeries;
+    }
+
+    /**
+     * Get Layout.
+     *
+     * @return PHPExcel_Chart_Layout
+     */
+    public function getLayout()
+    {
+        return $this->layout;
+    }
+
+    /**
+     * Get Number of Plot Groups.
+     *
+     * @return array of PHPExcel_Chart_DataSeries
+     */
+    public function getPlotGroupCount()
+    {
+        return count($this->plotSeries);
+    }
+
+    /**
+     * Get Number of Plot Series.
+     *
+     * @return int
+     */
+    public function getPlotSeriesCount()
+    {
+        $seriesCount = 0;
+        foreach ($this->plotSeries as $plot) {
+            $seriesCount += $plot->getPlotSeriesCount();
+        }
+
+        return $seriesCount;
+    }
+
+    /**
+     * Get Plot Series.
+     *
+     * @return array of PHPExcel_Chart_DataSeries
+     */
+    public function getPlotGroup()
+    {
+        return $this->plotSeries;
+    }
+
+    /**
+     * Get Plot Series by Index.
+     *
+     * @return PHPExcel_Chart_DataSeries
+     */
+    public function getPlotGroupByIndex($index)
+    {
+        return $this->plotSeries[$index];
+    }
+
+    /**
+     * Set Plot Series.
+     *
+     * @param [PHPExcel_Chart_DataSeries]
+     * @return PHPExcel_Chart_PlotArea
+     */
+    public function setPlotSeries($plotSeries = [])
+    {
+        $this->plotSeries = $plotSeries;
+
+        return $this;
+    }
+
+    public function refresh(PHPExcel_Worksheet $worksheet)
+    {
+        foreach ($this->plotSeries as $plotSeries) {
+            $plotSeries->refresh($worksheet);
+        }
+    }
+}

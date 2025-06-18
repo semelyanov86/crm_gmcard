@@ -6,6 +6,7 @@ class Settings_ChecklistItems_EditViewAjax_View extends Settings_Vtiger_Index_Vi
     {
         parent::__construct();
     }
+
     public function checkPermission(Vtiger_Request $request)
     {
         $currentUserModel = Users_Record_Model::getCurrentUserModel();
@@ -15,7 +16,7 @@ class Settings_ChecklistItems_EditViewAjax_View extends Settings_Vtiger_Index_Vi
             return true;
         }
         if (!$currentUserModel->isAdminUser()) {
-            throw new AppException(vtranslate("LBL_PERMISSION_DENIED", "Vtiger"));
+            throw new AppException(vtranslate('LBL_PERMISSION_DENIED', 'Vtiger'));
         }
     }
 
@@ -23,21 +24,19 @@ class Settings_ChecklistItems_EditViewAjax_View extends Settings_Vtiger_Index_Vi
     {
         $moduleName = $request->getModule();
         $qualifiedModuleName = $request->getModule(false);
-        $record = $request->get("record", 0);
+        $record = $request->get('record', 0);
         $viewer = $this->getViewer($request);
         $settingModel = new Settings_ChecklistItems_EditViewAjax_Model();
         $entity = $settingModel->getData($record);
-        $active_module = $entity["modulename"];
+        $active_module = $entity['modulename'];
         $listModules = $settingModel->getEntityModules();
-        $viewer->assign("QUALIFIED_MODULE", $qualifiedModuleName);
-        $viewer->assign("MODULE_NAME", $moduleName);
-        $viewer->assign("ENTITY", $entity);
-        $viewer->assign("LIST_MODULES", $listModules);
-        $viewer->assign("RECORD_ID", $record);
-        $viewer->assign("ACTIVE_MODULE", $active_module);
-        $viewer->assign("USER_MODEL", Users_Record_Model::getCurrentUserModel());
-        $viewer->view("EditViewAjax.tpl", $qualifiedModuleName);
+        $viewer->assign('QUALIFIED_MODULE', $qualifiedModuleName);
+        $viewer->assign('MODULE_NAME', $moduleName);
+        $viewer->assign('ENTITY', $entity);
+        $viewer->assign('LIST_MODULES', $listModules);
+        $viewer->assign('RECORD_ID', $record);
+        $viewer->assign('ACTIVE_MODULE', $active_module);
+        $viewer->assign('USER_MODEL', Users_Record_Model::getCurrentUserModel());
+        $viewer->view('EditViewAjax.tpl', $qualifiedModuleName);
     }
 }
-
-?>

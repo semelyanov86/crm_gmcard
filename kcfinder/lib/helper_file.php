@@ -1,20 +1,18 @@
 <?php
 
-/** This file is part of KCFinder project
-  *
-  *      @desc File helper class
-  *   @package KCFinder
-  *   @version 2.21
-  *    @author Pavel Tzonkov <pavelc@users.sourceforge.net>
-  * @copyright 2010 KCFinder Project
-  *   @license http://www.opensource.org/licenses/gpl-2.0.php GPLv2
-  *   @license http://www.opensource.org/licenses/lgpl-2.1.php LGPLv2
-  *      @link http://kcfinder.sunhater.com
-  */
-
-class file {
-
-    static $MIME = array(
+/** This file is part of KCFinder project.
+ *
+ *      @desc File helper class
+ *   @version 2.21
+ *    @author Pavel Tzonkov <pavelc@users.sourceforge.net>
+ * @copyright 2010 KCFinder Project
+ *   @license http://www.opensource.org/licenses/gpl-2.0.php GPLv2
+ *   @license http://www.opensource.org/licenses/lgpl-2.1.php LGPLv2
+ *      @see http://kcfinder.sunhater.com
+ */
+class file
+{
+    public static $MIME = [
         'ai'    => 'application/postscript',
         'aif'   => 'audio/x-aiff',
         'aifc'  => 'audio/x-aiff',
@@ -97,116 +95,124 @@ class file {
         'xlsx'  => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
         'xml'   => 'text/xml',
         'xsl'   => 'text/xml',
-        'zip'   => 'application/x-zip'
-    );
+        'zip'   => 'application/x-zip',
+    ];
 
-  /** Checks if the given file is really writable. The standard PHP function
-    * is_writable() does not work properly on Windows servers.
-    * @param string $dir
-    * @return bool */
-
-    static function isWritable($filename) {
+    /** Checks if the given file is really writable. The standard PHP function
+     * is_writable() does not work properly on Windows servers.
+     * @return bool */
+    public static function isWritable($filename)
+    {
         $filename = path::normalize($filename);
-        if (!is_file($filename) || (false === ($fp = @fopen($filename, 'a+'))))
+        if (!is_file($filename) || (false === ($fp = @fopen($filename, 'a+')))) {
             return false;
+        }
         fclose($fp);
+
         return true;
     }
 
-  /** Get the extension from filename
-    * @param string $file
-    * @param bool $toLower
-    * @return string */
-
-    static function getExtension($filename, $toLower=true) {
+    /** Get the extension from filename.
+     * @param bool $toLower
+     * @return string */
+    public static function getExtension($filename, $toLower = true)
+    {
         return preg_match('/^.*\.([^\.]*)$/s', $filename, $patt)
-            ? ($toLower ? strtolower($patt[1]) : $patt[1]) : "";
+            ? ($toLower ? strtolower($patt[1]) : $patt[1]) : '';
     }
 
-  /** Get MIME type of the given filename. If Fileinfo PHP extension is
-    * available the MIME type will be fetched by the file's content. The
-    * second parameter is optional and defines the magic file path. If you
-    * skip it, the default one will be loaded.
-    * If Fileinfo PHP extension is not available the MIME type will be fetched
-    * by filename extension regarding $MIME property. If the file extension
-    * does not exist there, returned type will be application/octet-stream
-    * @param string $filename
-    * @param string $magic
-    * @return string */
-
-    static function getMimeType($filename, $magic=null) {
-        if (class_exists("finfo")) {
+    /** Get MIME type of the given filename. If Fileinfo PHP extension is
+     * available the MIME type will be fetched by the file's content. The
+     * second parameter is optional and defines the magic file path. If you
+     * skip it, the default one will be loaded.
+     * If Fileinfo PHP extension is not available the MIME type will be fetched
+     * by filename extension regarding $MIME property. If the file extension
+     * does not exist there, returned type will be application/octet-stream.
+     * @param string $filename
+     * @param string $magic
+     * @return string */
+    public static function getMimeType($filename, $magic = null)
+    {
+        if (class_exists('finfo')) {
             $finfo = ($magic === null)
                 ? new finfo(FILEINFO_MIME)
                 : new finfo(FILEINFO_MIME, $magic);
             if ($finfo) {
                 $mime = $finfo->file($filename);
-                $mime = substr($mime, 0, strrpos($mime, ";"));
+                $mime = substr($mime, 0, strrpos($mime, ';'));
+
                 return $mime;
             }
         }
         $ext = self::getExtension($filename, true);
-        return isset(self::$MIME[$ext]) ? self::$MIME[$ext] : "application/octet-stream";
+
+        return self::$MIME[$ext] ?? 'application/octet-stream';
     }
 
-  /** Get inexistant filename based on the given filename. If you skip $dir
-    * parameter the directory will be fetched from $filename and returned
-    * value will be full filename path. The third parameter is optional and
-    * defines the template, the filename will be renamed to. Default template
-    * is {name}({sufix}){ext}. Examples:
-    *
-    *   file::getInexistantFilename("/my/directory/myfile.txt");
-    *   If myfile.txt does not exist - returns the same path to the file
-    *   otherwise returns "/my/directory/myfile(1).txt"
-    *
-    *   file::getInexistantFilename("myfile.txt", "/my/directory");
-    *   returns "myfile.txt" or "myfile(1).txt" or "myfile(2).txt" etc...
-    *
-    *   file::getInexistantFilename("myfile.txt", "/dir", "{name}[{sufix}]{ext}");
-    *   returns "myfile.txt" or "myfile[1].txt" or "myfile[2].txt" etc...
-    *
-    * @param string $filename
-    * @param string $dir
-    * @param string $tpl
-    * @return string */
-
-    static function getInexistantFilename($filename, $dir=null, $tpl=null) {
-        if ($tpl === null)  $tpl = "{name}({sufix}){ext}";
+    /** Get inexistant filename based on the given filename. If you skip $dir
+     * parameter the directory will be fetched from $filename and returned
+     * value will be full filename path. The third parameter is optional and
+     * defines the template, the filename will be renamed to. Default template
+     * is {name}({sufix}){ext}. Examples:
+     *
+     *   file::getInexistantFilename("/my/directory/myfile.txt");
+     *   If myfile.txt does not exist - returns the same path to the file
+     *   otherwise returns "/my/directory/myfile(1).txt"
+     *
+     *   file::getInexistantFilename("myfile.txt", "/my/directory");
+     *   returns "myfile.txt" or "myfile(1).txt" or "myfile(2).txt" etc...
+     *
+     *   file::getInexistantFilename("myfile.txt", "/dir", "{name}[{sufix}]{ext}");
+     *   returns "myfile.txt" or "myfile[1].txt" or "myfile[2].txt" etc...
+     *
+     * @param string $filename
+     * @param string $dir
+     * @param string $tpl
+     * @return string */
+    public static function getInexistantFilename($filename, $dir = null, $tpl = null)
+    {
+        if ($tpl === null) {
+            $tpl = '{name}({sufix}){ext}';
+        }
         $fullPath = ($dir === null);
-        if ($fullPath)
+        if ($fullPath) {
             $dir = path::normalize(dirname($filename));
-        else {
+        } else {
             $fdir = dirname($filename);
             $dir = strlen($fdir)
-                ? path::normalize("$dir/$fdir")
+                ? path::normalize("{$dir}/{$fdir}")
                 : path::normalize($dir);
         }
         $filename = basename($filename);
         $ext = self::getExtension($filename, false);
         $name = strlen($ext) ? substr($filename, 0, -strlen($ext) - 1) : $filename;
         $tpl = str_replace('{name}', $name, $tpl);
-        $tpl = str_replace('{ext}', (strlen($ext) ? ".$ext" : ""), $tpl);
-        $i = 1; $file = "$dir/$filename";
-        while (file_exists($file))
-            $file = "$dir/" . str_replace('{sufix}', $i++, $tpl);
+        $tpl = str_replace('{ext}', strlen($ext) ? ".{$ext}" : '', $tpl);
+        $i = 1;
+        $file = "{$dir}/{$filename}";
+
+        while (file_exists($file)) {
+            $file = "{$dir}/" . str_replace('{sufix}', $i++, $tpl);
+        }
 
         return $fullPath
             ? $file
             : (strlen($fdir)
-                ? "$fdir/" . basename($file)
+                ? "{$fdir}/" . basename($file)
                 : basename($file));
     }
-    
-    static function sanitizeFileName($filename){
+
+    public static function sanitizeFileName($filename)
+    {
         $sanitizedFilename = vtlib_purify($filename);
-        $sanitizedFilename = str_replace('/', "", $sanitizedFilename);
-        $sanitizedFilename = str_replace('"', "", $sanitizedFilename);
-        $sanitizedFilename = str_replace("'", "", $sanitizedFilename);
-        $sanitizedFilename = str_replace(' ', "", $sanitizedFilename);
-        $sanitizedFilename = str_replace('=', "", $sanitizedFilename);
-        $sanitizedFilename = str_replace('<', "", $sanitizedFilename);
-        $sanitizedFilename = str_replace('>', "", $sanitizedFilename);
+        $sanitizedFilename = str_replace('/', '', $sanitizedFilename);
+        $sanitizedFilename = str_replace('"', '', $sanitizedFilename);
+        $sanitizedFilename = str_replace("'", '', $sanitizedFilename);
+        $sanitizedFilename = str_replace(' ', '', $sanitizedFilename);
+        $sanitizedFilename = str_replace('=', '', $sanitizedFilename);
+        $sanitizedFilename = str_replace('<', '', $sanitizedFilename);
+        $sanitizedFilename = str_replace('>', '', $sanitizedFilename);
+
         return $sanitizedFilename;
     }
 }
-?>

@@ -1,5 +1,6 @@
 <?php
-/*********************************************************************************
+
+/*
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
  * The Initial Developer of the Original Code is IT-Solutions4You s.r.o.
@@ -9,7 +10,6 @@
 
 class EMAILMaker_ProfilesPrivilegies_View extends Vtiger_Index_View
 {
-
     public function checkPermission(Vtiger_Request $request)
     {
         $currentUserModel = Users_Record_Model::getCurrentUserModel();
@@ -27,7 +27,7 @@ class EMAILMaker_ProfilesPrivilegies_View extends Vtiger_Index_View
         Vtiger_Basic_View::preProcess($request, false);
         $viewer = $this->getViewer($request);
         $moduleName = $request->getModule();
-        $linkParams = array('MODULE' => $moduleName, 'ACTION' => $request->get('view'));
+        $linkParams = ['MODULE' => $moduleName, 'ACTION' => $request->get('view')];
         $linkModels = $EMAILMaker->getSideBarLinks($linkParams);
         $viewer->assign('QUICK_LINKS', $linkModels);
         $viewer->assign('CURRENT_USER_MODEL', Users_Record_Model::getCurrentUserModel());
@@ -44,47 +44,48 @@ class EMAILMaker_ProfilesPrivilegies_View extends Vtiger_Index_View
         $viewer = $this->getViewer($request);
         $permissions = $EMAILMaker->GetProfilesPermissions();
         $profilesActions = $EMAILMaker->GetProfilesActions();
-        $actionEDIT = getActionid($profilesActions["EDIT"]);
-        $actionDETAIL = getActionid($profilesActions["DETAIL"]);
-        $actionDELETE = getActionid($profilesActions["DELETE"]);
-        $actionEXPORT_RTF = getActionid($profilesActions["EXPORT_RTF"]);
+        $actionEDIT = getActionid($profilesActions['EDIT']);
+        $actionDETAIL = getActionid($profilesActions['DETAIL']);
+        $actionDELETE = getActionid($profilesActions['DELETE']);
+        $actionEXPORT_RTF = getActionid($profilesActions['EXPORT_RTF']);
         $mode = $request->get('mode');
-        $viewer->assign("MODE", $mode);
-        $permissionNames = array();
+        $viewer->assign('MODE', $mode);
+        $permissionNames = [];
         foreach ($permissions as $profileid => $subArr) {
-            $permissionNames[$profileid] = array();
+            $permissionNames[$profileid] = [];
             $profileName = $this->getProfileName($profileid);
             foreach ($subArr as $actionid => $perm) {
-                $permStr = ($perm == "0" ? 'checked="checked"' : "");
+                $permStr = ($perm == '0' ? 'checked="checked"' : '');
                 switch ($actionid) {
                     case $actionEDIT:
-                        $permissionNames[$profileid][$profileName]["EDIT"]["name"] = 'priv_chk_' . $profileid . '_' . $actionEDIT;
-                        $permissionNames[$profileid][$profileName]["EDIT"]["checked"] = $permStr;
+                        $permissionNames[$profileid][$profileName]['EDIT']['name'] = 'priv_chk_' . $profileid . '_' . $actionEDIT;
+                        $permissionNames[$profileid][$profileName]['EDIT']['checked'] = $permStr;
                         break;
                     case $actionDETAIL:
-                        $permissionNames[$profileid][$profileName]["DETAIL"]["name"] = 'priv_chk_' . $profileid . '_' . $actionDETAIL;
-                        $permissionNames[$profileid][$profileName]["DETAIL"]["checked"] = $permStr;
+                        $permissionNames[$profileid][$profileName]['DETAIL']['name'] = 'priv_chk_' . $profileid . '_' . $actionDETAIL;
+                        $permissionNames[$profileid][$profileName]['DETAIL']['checked'] = $permStr;
                         break;
                     case $actionDELETE:
-                        $permissionNames[$profileid][$profileName]["DELETE"]["name"] = 'priv_chk_' . $profileid . '_' . $actionDELETE;
-                        $permissionNames[$profileid][$profileName]["DELETE"]["checked"] = $permStr;
+                        $permissionNames[$profileid][$profileName]['DELETE']['name'] = 'priv_chk_' . $profileid . '_' . $actionDELETE;
+                        $permissionNames[$profileid][$profileName]['DELETE']['checked'] = $permStr;
                         break;
                     case $actionEXPORT_RTF:
-                        $permissionNames[$profileid][$profileName]["EXPORT_RTF"]["name"] = 'priv_chk_' . $profileid . '_' . $actionEXPORT_RTF;
-                        $permissionNames[$profileid][$profileName]["EXPORT_RTF"]["checked"] = $permStr;
+                        $permissionNames[$profileid][$profileName]['EXPORT_RTF']['name'] = 'priv_chk_' . $profileid . '_' . $actionEXPORT_RTF;
+                        $permissionNames[$profileid][$profileName]['EXPORT_RTF']['checked'] = $permStr;
                         break;
                 }
             }
         }
-        $viewer->assign("PERMISSIONS", $permissionNames);
+        $viewer->assign('PERMISSIONS', $permissionNames);
         $viewer->view('ProfilesPrivilegies.tpl', 'EMAILMaker');
     }
 
     public function getProfileName($profileid)
     {
         $adb = PearDatabase::getInstance();
-        $result = $adb->pquery("select * from vtiger_profile where profileid=?", array($profileid));
-        $profilename = $adb->query_result($result, 0, "profilename");
+        $result = $adb->pquery('select * from vtiger_profile where profileid=?', [$profileid]);
+        $profilename = $adb->query_result($result, 0, 'profilename');
+
         return $profilename;
     }
 }

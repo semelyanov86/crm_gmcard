@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Zend Framework
+ * Zend Framework.
  *
  * LICENSE
  *
@@ -13,7 +14,6 @@
  * to license@zend.com so we can send you a copy immediately.
  *
  * @category   Zend
- * @package    Zend_Oauth
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id: Hmac.php 24593 2012-01-05 20:35:02Z matthew $
@@ -27,18 +27,14 @@ require_once 'Zend/Crypt/Hmac.php';
 
 /**
  * @category   Zend
- * @package    Zend_Oauth
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Oauth_Signature_Hmac extends Zend_Oauth_Signature_SignatureAbstract
 {
     /**
-     * Sign a request
+     * Sign a request.
      *
-     * @param  array $params
-     * @param  mixed $method
-     * @param  mixed $url
      * @return string
      */
     public function sign(array $params, $method = null, $url = null)
@@ -47,8 +43,9 @@ class Zend_Oauth_Signature_Hmac extends Zend_Oauth_Signature_SignatureAbstract
             $this->_key,
             $this->_hashAlgorithm,
             $this->_getBaseSignatureString($params, $method, $url),
-            Zend_Crypt_Hmac::BINARY
+            Zend_Crypt_Hmac::BINARY,
         );
+
         return base64_encode($binaryHash);
     }
 }

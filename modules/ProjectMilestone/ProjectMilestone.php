@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,436 +7,460 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
-class ProjectMilestone extends CRMEntity {
-	var $db, $log; // Used in class functions of CRMEntity
+ */
+class ProjectMilestone extends CRMEntity
+{
+    public $db;
 
-	var $table_name = 'vtiger_projectmilestone';
-	var $table_index= 'projectmilestoneid';
-	var $column_fields = Array();
+    public $log; // Used in class functions of CRMEntity
 
-	/** Indicator if this is a custom module or standard module */
-	var $IsCustomModule = true;
+    public $table_name = 'vtiger_projectmilestone';
 
-	/**
-	 * Mandatory table for supporting custom fields.
-	 */
-	var $customFieldTable = Array('vtiger_projectmilestonecf', 'projectmilestoneid');
+    public $table_index = 'projectmilestoneid';
 
-	/**
-	 * Mandatory for Saving, Include tables related to this module.
-	 */
-	var $tab_name = Array('vtiger_crmentity', 'vtiger_projectmilestone', 'vtiger_projectmilestonecf');
+    public $column_fields = [];
 
-	/**
-	 * Mandatory for Saving, Include tablename and tablekey columnname here.
-	 */
-	var $tab_name_index = Array(
-		'vtiger_crmentity' => 'crmid',
-		'vtiger_projectmilestone'   => 'projectmilestoneid',
-		'vtiger_projectmilestonecf' => 'projectmilestoneid');
+    /** Indicator if this is a custom module or standard module */
+    public $IsCustomModule = true;
 
-	/**
-	 * Mandatory for Listing (Related listview)
-	 */
-	var $list_fields = Array (
-		/* Format: Field Label => Array(tablename, columnname) */
-		// tablename should not have prefix 'vtiger_'
-		'Project Milestone Name'=> Array('projectmilestone', 'projectmilestonename'),
-		'Milestone Date' => Array ('projectmilestone', 'projectmilestonedate'),
-		'Type' =>Array ('projectmilestone', 'projectmilestonetype'),
-		//'Assigned To' => Array('crmentity','smownerid')
-	);
-	var $list_fields_name = Array(
-		/* Format: Field Label => fieldname */
-		'Project Milestone Name'=> 'projectmilestonename',
-		'Milestone Date' => 'projectmilestonedate',
-		'Type' => 'projectmilestonetype',
-		//'Assigned To' => 'assigned_user_id'
-	);
+    /**
+     * Mandatory table for supporting custom fields.
+     */
+    public $customFieldTable = ['vtiger_projectmilestonecf', 'projectmilestoneid'];
 
-	// Make the field link to detail view from list view (Fieldname)
-	var $list_link_field = 'projectmilestonename';
+    /**
+     * Mandatory for Saving, Include tables related to this module.
+     */
+    public $tab_name = ['vtiger_crmentity', 'vtiger_projectmilestone', 'vtiger_projectmilestonecf'];
 
-	// For Popup listview and UI type support
-	var $search_fields = Array(
-		/* Format: Field Label => Array(tablename, columnname) */
-		// tablename should not have prefix 'vtiger_'
-		'Project Milestone Name'=> Array('projectmilestone', 'projectmilestonename'),
-		'Milestone Date' => Array ('projectmilestone', 'projectmilestonedate'),
-		'Type' =>Array ('projectmilestone', 'projectmilestonetype'),
-	);
-	var $search_fields_name = Array(
-		/* Format: Field Label => fieldname */
-		'Project Milestone Namee'=> 'projectmilestonename',
-		'Milestone Date' => 'projectmilestonedate',
-		'Type' => 'projectmilestonetype',
-	);
+    /**
+     * Mandatory for Saving, Include tablename and tablekey columnname here.
+     */
+    public $tab_name_index = [
+        'vtiger_crmentity' => 'crmid',
+        'vtiger_projectmilestone'   => 'projectmilestoneid',
+        'vtiger_projectmilestonecf' => 'projectmilestoneid'];
 
-	// For Popup window record selection
-	var $popup_fields = Array('projectmilestonename');
+    /**
+     * Mandatory for Listing (Related listview).
+     */
+    public $list_fields =  [
+        /* Format: Field Label => Array(tablename, columnname) */
+        // tablename should not have prefix 'vtiger_'
+        'Project Milestone Name' => ['projectmilestone', 'projectmilestonename'],
+        'Milestone Date' =>  ['projectmilestone', 'projectmilestonedate'],
+        'Type' => ['projectmilestone', 'projectmilestonetype'],
+        // 'Assigned To' => Array('crmentity','smownerid')
+    ];
 
-	// Placeholder for sort fields - All the fields will be initialized for Sorting through initSortFields
-	var $sortby_fields = Array();
+    public $list_fields_name = [
+        /* Format: Field Label => fieldname */
+        'Project Milestone Name' => 'projectmilestonename',
+        'Milestone Date' => 'projectmilestonedate',
+        'Type' => 'projectmilestonetype',
+        // 'Assigned To' => 'assigned_user_id'
+    ];
 
-	// For Alphabetical search
-	var $def_basicsearch_col = 'projectmilestonename';
+    // Make the field link to detail view from list view (Fieldname)
+    public $list_link_field = 'projectmilestonename';
 
-	// Column value to use on detail view record text display
-	var $def_detailview_recname = 'projectmilestonename';
+    // For Popup listview and UI type support
+    public $search_fields = [
+        /* Format: Field Label => Array(tablename, columnname) */
+        // tablename should not have prefix 'vtiger_'
+        'Project Milestone Name' => ['projectmilestone', 'projectmilestonename'],
+        'Milestone Date' =>  ['projectmilestone', 'projectmilestonedate'],
+        'Type' => ['projectmilestone', 'projectmilestonetype'],
+    ];
 
-	// Required Information for enabling Import feature
-	var $required_fields = Array('projectmilestonename'=>1);
+    public $search_fields_name = [
+        /* Format: Field Label => fieldname */
+        'Project Milestone Namee' => 'projectmilestonename',
+        'Milestone Date' => 'projectmilestonedate',
+        'Type' => 'projectmilestonetype',
+    ];
 
-	// Callback function list during Importing
-	var $special_functions = Array('set_import_assigned_user');
+    // For Popup window record selection
+    public $popup_fields = ['projectmilestonename'];
 
-	var $default_order_by = 'projectmilestonedate';
-	var $default_sort_order='ASC';
-	// Used when enabling/disabling the mandatory fields for the module.
-	// Refers to vtiger_field.fieldname values.
-	var $mandatory_fields = Array('createdtime', 'modifiedtime', 'projectmilestonename', 'projectid', 'assigned_user_id');
+    // Placeholder for sort fields - All the fields will be initialized for Sorting through initSortFields
+    public $sortby_fields = [];
 
-	function __construct() {
-		global $log, $currentModule;
-		$this->column_fields = getColumnFields(get_class($this));
-		$this->db = PearDatabase::getInstance();
-		$this->log = $log;
-	}
+    // For Alphabetical search
+    public $def_basicsearch_col = 'projectmilestonename';
 
-	function save_module($module) {
-	}
+    // Column value to use on detail view record text display
+    public $def_detailview_recname = 'projectmilestonename';
 
-	/**
-	 * Return query to use based on given modulename, fieldname
-	 * Useful to handle specific case handling for Popup
-	 */
-	function getQueryByModuleField($module, $fieldname, $srcrecord) {
-		// $srcrecord could be empty
-	}
+    // Required Information for enabling Import feature
+    public $required_fields = ['projectmilestonename' => 1];
 
-	/**
-	 * Get list view query (send more WHERE clause condition if required)
-	 */
-	function getListQuery($module, $where='') {
-		$query = "SELECT vtiger_crmentity.*, $this->table_name.*";
+    // Callback function list during Importing
+    public $special_functions = ['set_import_assigned_user'];
 
-		// Keep track of tables joined to avoid duplicates
-		$joinedTables = array();
+    public $default_order_by = 'projectmilestonedate';
 
-		// Select Custom Field Table Columns if present
-		if(!empty($this->customFieldTable)) $query .= ", " . $this->customFieldTable[0] . ".* ";
+    public $default_sort_order = 'ASC';
 
-		$query .= " FROM $this->table_name";
+    // Used when enabling/disabling the mandatory fields for the module.
+    // Refers to vtiger_field.fieldname values.
+    public $mandatory_fields = ['createdtime', 'modifiedtime', 'projectmilestonename', 'projectid', 'assigned_user_id'];
 
-		$query .= "	INNER JOIN vtiger_crmentity ON vtiger_crmentity.crmid = $this->table_name.$this->table_index";
+    public function __construct()
+    {
+        global $log, $currentModule;
+        $this->column_fields = getColumnFields(get_class($this));
+        $this->db = PearDatabase::getInstance();
+        $this->log = $log;
+    }
 
-		$joinedTables[] = $this->table_name;
-		$joinedTables[] = 'vtiger_crmentity';
+    public function save_module($module) {}
 
-		// Consider custom table join as well.
-		if(!empty($this->customFieldTable)) {
-			$query .= " INNER JOIN ".$this->customFieldTable[0]." ON ".$this->customFieldTable[0].'.'.$this->customFieldTable[1] .
-					  " = $this->table_name.$this->table_index";
-			$joinedTables[] = $this->customFieldTable[0];
-		}
-		$query .= " LEFT JOIN vtiger_users ON vtiger_users.id = vtiger_crmentity.smownerid";
-		$query .= " LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid";
+    /**
+     * Return query to use based on given modulename, fieldname
+     * Useful to handle specific case handling for Popup.
+     */
+    public function getQueryByModuleField($module, $fieldname, $srcrecord)
+    {
+        // $srcrecord could be empty
+    }
 
-		$joinedTables[] = 'vtiger_users';
-		$joinedTables[] = 'vtiger_groups';
+    /**
+     * Get list view query (send more WHERE clause condition if required).
+     */
+    public function getListQuery($module, $where = '')
+    {
+        $query = "SELECT vtiger_crmentity.*, {$this->table_name}.*";
 
-		$linkedModulesQuery = $this->db->pquery("SELECT distinct fieldname, columnname, relmodule FROM vtiger_field" .
-				" INNER JOIN vtiger_fieldmodulerel ON vtiger_fieldmodulerel.fieldid = vtiger_field.fieldid" .
-				" WHERE uitype='10' AND vtiger_fieldmodulerel.module=?", array($module));
-		$linkedFieldsCount = $this->db->num_rows($linkedModulesQuery);
+        // Keep track of tables joined to avoid duplicates
+        $joinedTables = [];
 
-		for($i=0; $i<$linkedFieldsCount; $i++) {
-			$related_module = $this->db->query_result($linkedModulesQuery, $i, 'relmodule');
-			$fieldname = $this->db->query_result($linkedModulesQuery, $i, 'fieldname');
-			$columnname = $this->db->query_result($linkedModulesQuery, $i, 'columnname');
+        // Select Custom Field Table Columns if present
+        if (!empty($this->customFieldTable)) {
+            $query .= ', ' . $this->customFieldTable[0] . '.* ';
+        }
 
-			$other =  CRMEntity::getInstance($related_module);
-			vtlib_setup_modulevars($related_module, $other);
+        $query .= " FROM {$this->table_name}";
 
-			if(!in_array($other->table_name, $joinedTables)) {
-				$query .= " LEFT JOIN $other->table_name ON $other->table_name.$other->table_index = $this->table_name.$columnname";
-				$joinedTables[] = $other->table_name;
-			}
-		}
+        $query .= "	INNER JOIN vtiger_crmentity ON vtiger_crmentity.crmid = {$this->table_name}.{$this->table_index}";
 
-		global $current_user;
-		$query .= $this->getNonAdminAccessControlQuery($module,$current_user);
-		$query .= "	WHERE vtiger_crmentity.deleted = 0 ".$usewhere;
-		return $query;
-	}
+        $joinedTables[] = $this->table_name;
+        $joinedTables[] = 'vtiger_crmentity';
 
-	/**
-	 * Apply security restriction (sharing privilege) query part for List view.
-	 */
-	function getListViewSecurityParameter($module) {
-		global $current_user;
-		require('user_privileges/user_privileges_'.$current_user->id.'.php');
-		require('user_privileges/sharing_privileges_'.$current_user->id.'.php');
+        // Consider custom table join as well.
+        if (!empty($this->customFieldTable)) {
+            $query .= ' INNER JOIN ' . $this->customFieldTable[0] . ' ON ' . $this->customFieldTable[0] . '.' . $this->customFieldTable[1]
+                      . " = {$this->table_name}.{$this->table_index}";
+            $joinedTables[] = $this->customFieldTable[0];
+        }
+        $query .= ' LEFT JOIN vtiger_users ON vtiger_users.id = vtiger_crmentity.smownerid';
+        $query .= ' LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid';
 
-		$sec_query = '';
-		$tabid = getTabid($module);
+        $joinedTables[] = 'vtiger_users';
+        $joinedTables[] = 'vtiger_groups';
 
-		if($is_admin==false && $profileGlobalPermission[1] == 1 && $profileGlobalPermission[2] == 1
-			&& $defaultOrgSharingPermission[$tabid] == 3) {
+        $linkedModulesQuery = $this->db->pquery('SELECT distinct fieldname, columnname, relmodule FROM vtiger_field'
+                . ' INNER JOIN vtiger_fieldmodulerel ON vtiger_fieldmodulerel.fieldid = vtiger_field.fieldid'
+                . " WHERE uitype='10' AND vtiger_fieldmodulerel.module=?", [$module]);
+        $linkedFieldsCount = $this->db->num_rows($linkedModulesQuery);
 
-				$sec_query .= " AND (vtiger_crmentity.smownerid in($current_user->id) OR vtiger_crmentity.smownerid IN
+        for ($i = 0; $i < $linkedFieldsCount; ++$i) {
+            $related_module = $this->db->query_result($linkedModulesQuery, $i, 'relmodule');
+            $fieldname = $this->db->query_result($linkedModulesQuery, $i, 'fieldname');
+            $columnname = $this->db->query_result($linkedModulesQuery, $i, 'columnname');
+
+            $other =  CRMEntity::getInstance($related_module);
+            vtlib_setup_modulevars($related_module, $other);
+
+            if (!in_array($other->table_name, $joinedTables)) {
+                $query .= " LEFT JOIN {$other->table_name} ON {$other->table_name}.{$other->table_index} = {$this->table_name}.{$columnname}";
+                $joinedTables[] = $other->table_name;
+            }
+        }
+
+        global $current_user;
+        $query .= $this->getNonAdminAccessControlQuery($module, $current_user);
+        $query .= '	WHERE vtiger_crmentity.deleted = 0 ' . $usewhere;
+
+        return $query;
+    }
+
+    /**
+     * Apply security restriction (sharing privilege) query part for List view.
+     */
+    public function getListViewSecurityParameter($module)
+    {
+        global $current_user;
+        require 'user_privileges/user_privileges_' . $current_user->id . '.php';
+        require 'user_privileges/sharing_privileges_' . $current_user->id . '.php';
+
+        $sec_query = '';
+        $tabid = getTabid($module);
+
+        if ($is_admin == false && $profileGlobalPermission[1] == 1 && $profileGlobalPermission[2] == 1
+            && $defaultOrgSharingPermission[$tabid] == 3) {
+
+            $sec_query .= " AND (vtiger_crmentity.smownerid in({$current_user->id}) OR vtiger_crmentity.smownerid IN
 					(
 						SELECT vtiger_user2role.userid FROM vtiger_user2role
 						INNER JOIN vtiger_users ON vtiger_users.id=vtiger_user2role.userid
 						INNER JOIN vtiger_role ON vtiger_role.roleid=vtiger_user2role.roleid
-						WHERE vtiger_role.parentrole LIKE '".$current_user_parent_role_seq."::%'
+						WHERE vtiger_role.parentrole LIKE '" . $current_user_parent_role_seq . "::%'
 					)
 					OR vtiger_crmentity.smownerid IN
 					(
 						SELECT shareduserid FROM vtiger_tmp_read_user_sharing_per
-						WHERE userid=".$current_user->id." AND tabid=".$tabid."
+						WHERE userid=" . $current_user->id . ' AND tabid=' . $tabid . '
 					)
 					OR
-						(";
+						(';
 
-					// Build the query based on the group association of current user.
-					if(php7_sizeof($current_user_groups) > 0) {
-						$sec_query .= " vtiger_groups.groupid IN (". implode(",", $current_user_groups) .") OR ";
-					}
-					$sec_query .= " vtiger_groups.groupid IN
+            // Build the query based on the group association of current user.
+            if (php7_sizeof($current_user_groups) > 0) {
+                $sec_query .= ' vtiger_groups.groupid IN (' . implode(',', $current_user_groups) . ') OR ';
+            }
+            $sec_query .= ' vtiger_groups.groupid IN
 						(
 							SELECT vtiger_tmp_read_group_sharing_per.sharedgroupid
 							FROM vtiger_tmp_read_group_sharing_per
-							WHERE userid=".$current_user->id." and tabid=".$tabid."
-						)";
-				$sec_query .= ")
-				)";
-		}
-		return $sec_query;
-	}
+							WHERE userid=' . $current_user->id . ' and tabid=' . $tabid . '
+						)';
+            $sec_query .= ')
+				)';
+        }
 
-	/**
-	 * Create query to export the records.
-	 */
-	function create_export_query($where)
-	{
-		global $current_user;
+        return $sec_query;
+    }
 
-		include("include/utils/ExportUtils.php");
+    /**
+     * Create query to export the records.
+     */
+    public function create_export_query($where)
+    {
+        global $current_user;
 
-		//To get the Permitted fields query and the permitted fields list
-		$sql = getPermittedFieldsQuery('ProjectMilestone', "detail_view");
+        include 'include/utils/ExportUtils.php';
 
-		$fields_list = getFieldsListFromQuery($sql);
+        // To get the Permitted fields query and the permitted fields list
+        $sql = getPermittedFieldsQuery('ProjectMilestone', 'detail_view');
 
-		$query = "SELECT $fields_list, vtiger_users.user_name AS user_name
-					FROM vtiger_crmentity INNER JOIN $this->table_name ON vtiger_crmentity.crmid=$this->table_name.$this->table_index";
+        $fields_list = getFieldsListFromQuery($sql);
 
-		if(!empty($this->customFieldTable)) {
-			$query .= " INNER JOIN ".$this->customFieldTable[0]." ON ".$this->customFieldTable[0].'.'.$this->customFieldTable[1] .
-					  " = $this->table_name.$this->table_index";
-		}
+        $query = "SELECT {$fields_list}, vtiger_users.user_name AS user_name
+					FROM vtiger_crmentity INNER JOIN {$this->table_name} ON vtiger_crmentity.crmid={$this->table_name}.{$this->table_index}";
 
-		$query .= " LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid";
-		$query .= " LEFT JOIN vtiger_users ON vtiger_crmentity.smownerid = vtiger_users.id and vtiger_users.status='Active'";
+        if (!empty($this->customFieldTable)) {
+            $query .= ' INNER JOIN ' . $this->customFieldTable[0] . ' ON ' . $this->customFieldTable[0] . '.' . $this->customFieldTable[1]
+                      . " = {$this->table_name}.{$this->table_index}";
+        }
 
-		$linkedModulesQuery = $this->db->pquery("SELECT distinct fieldname, columnname, relmodule FROM vtiger_field" .
-				" INNER JOIN vtiger_fieldmodulerel ON vtiger_fieldmodulerel.fieldid = vtiger_field.fieldid" .
-				" WHERE uitype='10' AND vtiger_fieldmodulerel.module=?", array($thismodule));
-		$linkedFieldsCount = $this->db->num_rows($linkedModulesQuery);
+        $query .= ' LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid';
+        $query .= " LEFT JOIN vtiger_users ON vtiger_crmentity.smownerid = vtiger_users.id and vtiger_users.status='Active'";
 
-		for($i=0; $i<$linkedFieldsCount; $i++) {
-			$related_module = $this->db->query_result($linkedModulesQuery, $i, 'relmodule');
-			$fieldname = $this->db->query_result($linkedModulesQuery, $i, 'fieldname');
-			$columnname = $this->db->query_result($linkedModulesQuery, $i, 'columnname');
+        $linkedModulesQuery = $this->db->pquery('SELECT distinct fieldname, columnname, relmodule FROM vtiger_field'
+                . ' INNER JOIN vtiger_fieldmodulerel ON vtiger_fieldmodulerel.fieldid = vtiger_field.fieldid'
+                . " WHERE uitype='10' AND vtiger_fieldmodulerel.module=?", [$thismodule]);
+        $linkedFieldsCount = $this->db->num_rows($linkedModulesQuery);
 
-			$other = CRMEntity::getInstance($related_module);
-			vtlib_setup_modulevars($related_module, $other);
+        for ($i = 0; $i < $linkedFieldsCount; ++$i) {
+            $related_module = $this->db->query_result($linkedModulesQuery, $i, 'relmodule');
+            $fieldname = $this->db->query_result($linkedModulesQuery, $i, 'fieldname');
+            $columnname = $this->db->query_result($linkedModulesQuery, $i, 'columnname');
 
-			$query .= " LEFT JOIN $other->table_name ON $other->table_name.$other->table_index = $this->table_name.$columnname";
-		}
+            $other = CRMEntity::getInstance($related_module);
+            vtlib_setup_modulevars($related_module, $other);
 
-		$query .= $this->getNonAdminAccessControlQuery($thismodule,$current_user);
-		$where_auto = " vtiger_crmentity.deleted=0";
+            $query .= " LEFT JOIN {$other->table_name} ON {$other->table_name}.{$other->table_index} = {$this->table_name}.{$columnname}";
+        }
 
-		if($where != '') $query .= " WHERE ($where) AND $where_auto";
-		else $query .= " WHERE $where_auto";
+        $query .= $this->getNonAdminAccessControlQuery($thismodule, $current_user);
+        $where_auto = ' vtiger_crmentity.deleted=0';
 
-		return $query;
-	}
+        if ($where != '') {
+            $query .= " WHERE ({$where}) AND {$where_auto}";
+        } else {
+            $query .= " WHERE {$where_auto}";
+        }
 
-	/**
-	 * Transform the value while exporting
-	 */
-	function transform_export_value($key, $value) {
-		return parent::transform_export_value($key, $value);
-	}
+        return $query;
+    }
 
-	/**
-	 * Function which will give the basic query to find duplicates
-	 */
-	function getDuplicatesQuery($module,$table_cols,$field_values,$ui_type_arr,$select_cols='') {
-		$select_clause = "SELECT ". $this->table_name .".".$this->table_index ." AS recordid, vtiger_users_last_import.deleted,".$table_cols;
+    /**
+     * Transform the value while exporting.
+     */
+    public function transform_export_value($key, $value)
+    {
+        return parent::transform_export_value($key, $value);
+    }
 
-		// Select Custom Field Table Columns if present
-		if(isset($this->customFieldTable)) $query .= ", " . $this->customFieldTable[0] . ".* ";
+    /**
+     * Function which will give the basic query to find duplicates.
+     */
+    public function getDuplicatesQuery($module, $table_cols, $field_values, $ui_type_arr, $select_cols = '')
+    {
+        $select_clause = 'SELECT ' . $this->table_name . '.' . $this->table_index . ' AS recordid, vtiger_users_last_import.deleted,' . $table_cols;
 
-		$from_clause = " FROM $this->table_name";
+        // Select Custom Field Table Columns if present
+        if (isset($this->customFieldTable)) {
+            $query .= ', ' . $this->customFieldTable[0] . '.* ';
+        }
 
-		$from_clause .= "	INNER JOIN vtiger_crmentity ON vtiger_crmentity.crmid = $this->table_name.$this->table_index";
+        $from_clause = " FROM {$this->table_name}";
 
-		// Consider custom table join as well.
-		if(isset($this->customFieldTable)) {
-			$from_clause .= " INNER JOIN ".$this->customFieldTable[0]." ON ".$this->customFieldTable[0].'.'.$this->customFieldTable[1] .
-					  " = $this->table_name.$this->table_index";
-		}
-		$from_clause .= " LEFT JOIN vtiger_users ON vtiger_users.id = vtiger_crmentity.smownerid
-						LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid";
+        $from_clause .= "	INNER JOIN vtiger_crmentity ON vtiger_crmentity.crmid = {$this->table_name}.{$this->table_index}";
 
-		$where_clause = "	WHERE vtiger_crmentity.deleted = 0";
-		$where_clause .= $this->getListViewSecurityParameter($module);
+        // Consider custom table join as well.
+        if (isset($this->customFieldTable)) {
+            $from_clause .= ' INNER JOIN ' . $this->customFieldTable[0] . ' ON ' . $this->customFieldTable[0] . '.' . $this->customFieldTable[1]
+                      . " = {$this->table_name}.{$this->table_index}";
+        }
+        $from_clause .= ' LEFT JOIN vtiger_users ON vtiger_users.id = vtiger_crmentity.smownerid
+						LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid';
 
-		if (isset($select_cols) && trim($select_cols) != '') {
-			$sub_query = "SELECT $select_cols FROM  $this->table_name AS t " .
-				" INNER JOIN vtiger_crmentity AS crm ON crm.crmid = t.".$this->table_index;
-			// Consider custom table join as well.
-			if(isset($this->customFieldTable)) {
-				$sub_query .= " LEFT JOIN ".$this->customFieldTable[0]." tcf ON tcf.".$this->customFieldTable[1]." = t.$this->table_index";
-			}
-			$sub_query .= " WHERE crm.deleted=0 GROUP BY $select_cols HAVING COUNT(*)>1";
-		} else {
-			$sub_query = "SELECT $table_cols $from_clause $where_clause GROUP BY $table_cols HAVING COUNT(*)>1";
-		}
+        $where_clause = '	WHERE vtiger_crmentity.deleted = 0';
+        $where_clause .= $this->getListViewSecurityParameter($module);
+
+        if (isset($select_cols) && trim($select_cols) != '') {
+            $sub_query = "SELECT {$select_cols} FROM  {$this->table_name} AS t "
+                . ' INNER JOIN vtiger_crmentity AS crm ON crm.crmid = t.' . $this->table_index;
+            // Consider custom table join as well.
+            if (isset($this->customFieldTable)) {
+                $sub_query .= ' LEFT JOIN ' . $this->customFieldTable[0] . ' tcf ON tcf.' . $this->customFieldTable[1] . " = t.{$this->table_index}";
+            }
+            $sub_query .= " WHERE crm.deleted=0 GROUP BY {$select_cols} HAVING COUNT(*)>1";
+        } else {
+            $sub_query = "SELECT {$table_cols} {$from_clause} {$where_clause} GROUP BY {$table_cols} HAVING COUNT(*)>1";
+        }
 
 
-		$query = $select_clause . $from_clause .
-					" LEFT JOIN vtiger_users_last_import ON vtiger_users_last_import.bean_id=" . $this->table_name .".".$this->table_index .
-					" INNER JOIN (" . $sub_query . ") AS temp ON ".get_on_clause($field_values,$ui_type_arr,$module) .
-					$where_clause .
-					" ORDER BY $table_cols,". $this->table_name .".".$this->table_index ." ASC";
+        $query = $select_clause . $from_clause
+                    . ' LEFT JOIN vtiger_users_last_import ON vtiger_users_last_import.bean_id=' . $this->table_name . '.' . $this->table_index
+                    . ' INNER JOIN (' . $sub_query . ') AS temp ON ' . get_on_clause($field_values, $ui_type_arr, $module)
+                    . $where_clause
+                    . " ORDER BY {$table_cols}," . $this->table_name . '.' . $this->table_index . ' ASC';
 
-		return $query;
-	}
+        return $query;
+    }
 
-	/**
-	 * Invoked when special actions are performed on the module.
-	 * @param String Module name
-	 * @param String Event Type (module.postinstall, module.disabled, module.enabled, module.preuninstall)
-	 */
-	function vtlib_handler($modulename, $event_type) {
-		global $adb;
-		if($event_type == 'module.postinstall') {
+    /**
+     * Invoked when special actions are performed on the module.
+     * @param string Module name
+     * @param string Event Type (module.postinstall, module.disabled, module.enabled, module.preuninstall)
+     */
+    public function vtlib_handler($modulename, $event_type)
+    {
+        global $adb;
+        if ($event_type == 'module.postinstall') {
 
-			$projectMilestoneResult = $adb->pquery('SELECT tabid FROM vtiger_tab WHERE name=?', array('ProjectMilestone'));
-			$projectmilestoneTabid = $adb->query_result($projectMilestoneResult, 0, 'tabid');
+            $projectMilestoneResult = $adb->pquery('SELECT tabid FROM vtiger_tab WHERE name=?', ['ProjectMilestone']);
+            $projectmilestoneTabid = $adb->query_result($projectMilestoneResult, 0, 'tabid');
 
-			// Mark the module as Standard module
-			$adb->pquery('UPDATE vtiger_tab SET customized=0 WHERE name=?', array($modulename));
+            // Mark the module as Standard module
+            $adb->pquery('UPDATE vtiger_tab SET customized=0 WHERE name=?', [$modulename]);
 
-			if(getTabid('CustomerPortal')) {
-				$checkAlreadyExists = $adb->pquery('SELECT 1 FROM vtiger_customerportal_tabs WHERE tabid=?', array($projectmilestoneTabid));
-				if($checkAlreadyExists && $adb->num_rows($checkAlreadyExists) < 1) {
-					$maxSequenceQuery = $adb->pquery("SELECT max(sequence) as maxsequence FROM vtiger_customerportal_tabs", array());
-					$maxSequence = $adb->query_result($maxSequenceQuery, 0, 'maxsequence');
-					$nextSequence = $maxSequence+1;
-					$adb->pquery("INSERT INTO vtiger_customerportal_tabs(tabid,visible,sequence) VALUES (?,?,?)", array($projectmilestoneTabid,1,$nextSequence));
-					$adb->pquery("INSERT INTO vtiger_customerportal_prefs(tabid,prefkey,prefvalue) VALUES (?,?,?)", array($projectmilestoneTabid,'showrelatedinfo',1));
-				}
-			}
+            if (getTabid('CustomerPortal')) {
+                $checkAlreadyExists = $adb->pquery('SELECT 1 FROM vtiger_customerportal_tabs WHERE tabid=?', [$projectmilestoneTabid]);
+                if ($checkAlreadyExists && $adb->num_rows($checkAlreadyExists) < 1) {
+                    $maxSequenceQuery = $adb->pquery('SELECT max(sequence) as maxsequence FROM vtiger_customerportal_tabs', []);
+                    $maxSequence = $adb->query_result($maxSequenceQuery, 0, 'maxsequence');
+                    $nextSequence = $maxSequence + 1;
+                    $adb->pquery('INSERT INTO vtiger_customerportal_tabs(tabid,visible,sequence) VALUES (?,?,?)', [$projectmilestoneTabid, 1, $nextSequence]);
+                    $adb->pquery('INSERT INTO vtiger_customerportal_prefs(tabid,prefkey,prefvalue) VALUES (?,?,?)', [$projectmilestoneTabid, 'showrelatedinfo', 1]);
+                }
+            }
 
-			$result = $adb->pquery("SELECT 1 FROM vtiger_modentity_num WHERE semodule = ? AND active = 1", array($modulename));
-			if (!($adb->num_rows($result))) {
-				//Initialize module sequence for the module
-				$adb->pquery("INSERT INTO vtiger_modentity_num values(?,?,?,?,?,?)", array($adb->getUniqueId("vtiger_modentity_num"), $modulename, 'PM', 1, 1, 1));
-			}
+            $result = $adb->pquery('SELECT 1 FROM vtiger_modentity_num WHERE semodule = ? AND active = 1', [$modulename]);
+            if (!$adb->num_rows($result)) {
+                // Initialize module sequence for the module
+                $adb->pquery('INSERT INTO vtiger_modentity_num values(?,?,?,?,?,?)', [$adb->getUniqueId('vtiger_modentity_num'), $modulename, 'PM', 1, 1, 1]);
+            }
 
-		} else if($event_type == 'module.disabled') {
-			// TODO Handle actions when this module is disabled.
-		} else if($event_type == 'module.enabled') {
-			// TODO Handle actions when this module is enabled.
-		} else if($event_type == 'module.preuninstall') {
-			// TODO Handle actions when this module is about to be deleted.
-		} else if($event_type == 'module.preupdate') {
-			// TODO Handle actions before this module is updated.
-		} else if($event_type == 'module.postupdate') {
-			// TODO Handle actions after this module is updated.
+        } elseif ($event_type == 'module.disabled') {
+            // TODO Handle actions when this module is disabled.
+        } elseif ($event_type == 'module.enabled') {
+            // TODO Handle actions when this module is enabled.
+        } elseif ($event_type == 'module.preuninstall') {
+            // TODO Handle actions when this module is about to be deleted.
+        } elseif ($event_type == 'module.preupdate') {
+            // TODO Handle actions before this module is updated.
+        } elseif ($event_type == 'module.postupdate') {
+            // TODO Handle actions after this module is updated.
 
-			$result = $adb->pquery("SELECT 1 FROM vtiger_modentity_num WHERE semodule = ? AND active = 1", array($modulename));
-			if (!($adb->num_rows($result))) {
-				//Initialize module sequence for the module
-				$adb->pquery("INSERT INTO vtiger_modentity_num values(?,?,?,?,?,?)", array($adb->getUniqueId("vtiger_modentity_num"), $modulename, 'PM', 1, 1, 1));
-			}
-		}
-	}
+            $result = $adb->pquery('SELECT 1 FROM vtiger_modentity_num WHERE semodule = ? AND active = 1', [$modulename]);
+            if (!$adb->num_rows($result)) {
+                // Initialize module sequence for the module
+                $adb->pquery('INSERT INTO vtiger_modentity_num values(?,?,?,?,?,?)', [$adb->getUniqueId('vtiger_modentity_num'), $modulename, 'PM', 1, 1, 1]);
+            }
+        }
+    }
 
-	/**
-	 * Handle saving related module information.
-	 * NOTE: This function has been added to CRMEntity (base class).
-	 * You can override the behavior by re-defining it here.
-	 */
-	// function save_related_module($module, $crmid, $with_module, $with_crmid) { }
+    /**
+     * Handle saving related module information.
+     * NOTE: This function has been added to CRMEntity (base class).
+     * You can override the behavior by re-defining it here.
+     */
+    // function save_related_module($module, $crmid, $with_module, $with_crmid) { }
 
-	/**
-	 * Handle deleting related module information.
-	 * NOTE: This function has been added to CRMEntity (base class).
-	 * You can override the behavior by re-defining it here.
-	 */
-	//function delete_related_module($module, $crmid, $with_module, $with_crmid) { }
+    /**
+     * Handle deleting related module information.
+     * NOTE: This function has been added to CRMEntity (base class).
+     * You can override the behavior by re-defining it here.
+     */
+    // function delete_related_module($module, $crmid, $with_module, $with_crmid) { }
 
-	/**
-	 * Handle getting related list information.
-	 * NOTE: This function has been added to CRMEntity (base class).
-	 * You can override the behavior by re-defining it here.
-	 */
-	//function get_related_list($id, $cur_tab_id, $rel_tab_id, $actions=false) { }
+    /**
+     * Handle getting related list information.
+     * NOTE: This function has been added to CRMEntity (base class).
+     * You can override the behavior by re-defining it here.
+     */
+    // function get_related_list($id, $cur_tab_id, $rel_tab_id, $actions=false) { }
 
-	/**
-	 * Handle getting dependents list information.
-	 * NOTE: This function has been added to CRMEntity (base class).
-	 * You can override the behavior by re-defining it here.
-	 */
-	//function get_dependents_list($id, $cur_tab_id, $rel_tab_id, $actions=false) { }
+    /**
+     * Handle getting dependents list information.
+     * NOTE: This function has been added to CRMEntity (base class).
+     * You can override the behavior by re-defining it here.
+     */
+    // function get_dependents_list($id, $cur_tab_id, $rel_tab_id, $actions=false) { }
 
-	 /*
-	 * Function to get the secondary query part of a report
-	 * @param - $module primary module name
-	 * @param - $secmodule secondary module name
-	 * returns the query string formed on fetching the related data for report for secondary module
-	 */
-	function generateReportsSecQuery($module, $secmodule, $queryPlanner) {
-		$matrix = $queryPlanner->newDependencyMatrix();
-		$matrix->setDependency('vtiger_crmentityProjectMilestone', array('vtiger_groupsProjectMilestone', 'vtiger_usersProjectMilestone', 'vtiger_lastModifiedByProjectMilestone'));
+    /*
+    * Function to get the secondary query part of a report
+    * @param - $module primary module name
+    * @param - $secmodule secondary module name
+    * returns the query string formed on fetching the related data for report for secondary module
+    */
+    public function generateReportsSecQuery($module, $secmodule, $queryPlanner)
+    {
+        $matrix = $queryPlanner->newDependencyMatrix();
+        $matrix->setDependency('vtiger_crmentityProjectMilestone', ['vtiger_groupsProjectMilestone', 'vtiger_usersProjectMilestone', 'vtiger_lastModifiedByProjectMilestone']);
 
-		if (!$queryPlanner->requireTable('vtiger_projectmilestone', $matrix)) {
-			return '';
-		}
-		$matrix->setDependency('vtiger_projectmilestone', array('vtiger_crmentityProjectMilestone'));
+        if (!$queryPlanner->requireTable('vtiger_projectmilestone', $matrix)) {
+            return '';
+        }
+        $matrix->setDependency('vtiger_projectmilestone', ['vtiger_crmentityProjectMilestone']);
 
-		$query .= $this->getRelationQuery($module,$secmodule,"vtiger_projectmilestone","projectmilestoneid", $queryPlanner);
+        $query .= $this->getRelationQuery($module, $secmodule, 'vtiger_projectmilestone', 'projectmilestoneid', $queryPlanner);
 
-		if ($queryPlanner->requireTable('vtiger_crmentityProjectMilestone', $matrix)) {
-			$query .= " LEFT JOIN vtiger_crmentity AS vtiger_crmentityProjectMilestone ON vtiger_crmentityProjectMilestone.crmid=vtiger_projectmilestone.projectmilestoneid and vtiger_crmentityProjectMilestone.deleted=0";
-		}
-		if ($queryPlanner->requireTable('vtiger_projectmilestonecf')) {
-			$query .= " LEFT JOIN vtiger_projectmilestonecf ON vtiger_projectmilestone.projectmilestoneid = vtiger_projectmilestonecf.projectmilestoneid";
-		}
-		if ($queryPlanner->requireTable('vtiger_groupsProjectMilestone')) {
-			$query .= "	left join vtiger_groups AS vtiger_groupsProjectMilestone ON vtiger_groupsProjectMilestone.groupid = vtiger_crmentityProjectMilestone.smownerid";
-		}
-		if ($queryPlanner->requireTable('vtiger_usersProjectMilestone')) {
-			$query .= " LEFT JOIN vtiger_users AS vtiger_usersProjectMilestone ON vtiger_usersProjectMilestone.id = vtiger_crmentityProjectMilestone.smownerid";
-		}
-		if ($queryPlanner->requireTable('vtiger_lastModifiedByProjectMilestone')) {
-			$query .= " LEFT JOIN vtiger_users AS vtiger_lastModifiedByProjectMilestone ON vtiger_lastModifiedByProjectMilestone.id = vtiger_crmentityProjectMilestone.modifiedby ";
-		}
-		if ($queryPlanner->requireTable("vtiger_createdbyProjectMilestone")){
-			$query .= " LEFT JOIN vtiger_users AS vtiger_createdbyProjectMilestone ON vtiger_createdbyProjectMilestone.id = vtiger_crmentityProjectMilestone.smcreatorid ";
-		}
-		//if secondary modules custom reference field is selected
+        if ($queryPlanner->requireTable('vtiger_crmentityProjectMilestone', $matrix)) {
+            $query .= ' LEFT JOIN vtiger_crmentity AS vtiger_crmentityProjectMilestone ON vtiger_crmentityProjectMilestone.crmid=vtiger_projectmilestone.projectmilestoneid and vtiger_crmentityProjectMilestone.deleted=0';
+        }
+        if ($queryPlanner->requireTable('vtiger_projectmilestonecf')) {
+            $query .= ' LEFT JOIN vtiger_projectmilestonecf ON vtiger_projectmilestone.projectmilestoneid = vtiger_projectmilestonecf.projectmilestoneid';
+        }
+        if ($queryPlanner->requireTable('vtiger_groupsProjectMilestone')) {
+            $query .= '	left join vtiger_groups AS vtiger_groupsProjectMilestone ON vtiger_groupsProjectMilestone.groupid = vtiger_crmentityProjectMilestone.smownerid';
+        }
+        if ($queryPlanner->requireTable('vtiger_usersProjectMilestone')) {
+            $query .= ' LEFT JOIN vtiger_users AS vtiger_usersProjectMilestone ON vtiger_usersProjectMilestone.id = vtiger_crmentityProjectMilestone.smownerid';
+        }
+        if ($queryPlanner->requireTable('vtiger_lastModifiedByProjectMilestone')) {
+            $query .= ' LEFT JOIN vtiger_users AS vtiger_lastModifiedByProjectMilestone ON vtiger_lastModifiedByProjectMilestone.id = vtiger_crmentityProjectMilestone.modifiedby ';
+        }
+        if ($queryPlanner->requireTable('vtiger_createdbyProjectMilestone')) {
+            $query .= ' LEFT JOIN vtiger_users AS vtiger_createdbyProjectMilestone ON vtiger_createdbyProjectMilestone.id = vtiger_crmentityProjectMilestone.smcreatorid ';
+        }
+        // if secondary modules custom reference field is selected
         $query .= parent::getReportsUiType10Query($secmodule, $queryPlanner);
 
-		return $query;
-	}
+        return $query;
+    }
 }
-?>

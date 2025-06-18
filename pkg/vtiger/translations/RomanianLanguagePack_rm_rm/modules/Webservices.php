@@ -8,16 +8,15 @@
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
  * *********************************************************************************** */
-$languageStrings = array(
+$languageStrings = [
     'Invalid value given for old password.' => 'Adauga şablon de imprimare',
     "New Password and confirm password don't match" => 'Şabloane de imprimare',
     'Database error while performing requested operation' => 'Şablon de imprimare',
     'Failed to change password' => 'Şablon de imprimare',
 
-  'LBL_INVALID_OLD_PASSWORD' => 'O valoare nevalidă este dat pentru vechea parola.',
-  'LBL_NEW_PASSWORD_MISMATCH' => 'O parolă nouă și confirmare parolă nu se potrivesc',
-  'LBL_DATABASE_QUERY_ERROR' => 'Baza de date de eroare atunci când efectuați operațiunea solicitată',
-  'LBL_CHANGE_PASSWORD_FAILURE' => 'Nu se poate schimba parola',
+    'LBL_INVALID_OLD_PASSWORD' => 'O valoare nevalidă este dat pentru vechea parola.',
+    'LBL_NEW_PASSWORD_MISMATCH' => 'O parolă nouă și confirmare parolă nu se potrivesc',
+    'LBL_DATABASE_QUERY_ERROR' => 'Baza de date de eroare atunci când efectuați operațiunea solicitată',
+    'LBL_CHANGE_PASSWORD_FAILURE' => 'Nu se poate schimba parola',
 
-);
-
+];

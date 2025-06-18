@@ -8,25 +8,25 @@
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
  * *********************************************************************************** */
-$languageStrings = array(
+$languageStrings = [
     'LBL_SELECT_ONE' => 'Selezionare',
-    'LBL_PBXMANAGER' =>'PBXManager',
+    'LBL_PBXMANAGER' => 'PBXManager',
     'LBL_PBXMANAGER_CONFIG' => 'Dettagli del Server Asterisk',
     'LBL_NOTE' => 'Note:',
-    'LBL_INFO_WEBAPP_URL' => 'Configura il tuo URL Asterisk App nel formato', 
+    'LBL_INFO_WEBAPP_URL' => 'Configura il tuo URL Asterisk App nel formato',
     'LBL_FORMAT_WEBAPP_URL' => '(Protocollo) :/ / (asterisk_ip): (port)',
     'LBL_FORMAT_INFO_WEBAPP_URL' => 'es: http://0.0.0.0:5000',
     'LBL_INFO_CONTEXT' => 'Vtiger contesto specifico configurato nel server Asterisk (extensions.conf)',
     'LBL_PBXMANAGER_INFO' => "Configurare Asterisk Server dettagli dopo l'installazione di  connettore Vtiger Asterisk ",
-    
-    'webappurl'=>'Vtiger Askterisk URL Web',
-    'vtigersecretkey'=>'Vtiger chiave segreta',
+
+    'webappurl' => 'Vtiger Askterisk URL Web',
+    'vtigersecretkey' => 'Vtiger chiave segreta',
     'outboundcontext' => 'Contesto in uscita',
     'outboundtrunk' => 'Outbound Trunk',
-    
-);
 
-$jsLanguageStrings = array(
-    
-);
+];
+
+$jsLanguageStrings = [
+
+];
 ?>  

@@ -1,4 +1,5 @@
 <?php
+
 /* * *******************************************************************************
  * The content of this file is subject to the Descriptions license.
  * ("License"); You may not use this file except in compliance with the License
@@ -7,10 +8,10 @@
  * All Rights Reserved.
  * ****************************************************************************** */
 
-$languageStrings = array(
-    
-);
+$languageStrings = [
 
-$jsLanguageStrings = array(
-    "LBL_DEACTIVATE_QUESTION" => "Deseja realmente desativar sua chave da licença?",
-);
+];
+
+$jsLanguageStrings = [
+    'LBL_DEACTIVATE_QUESTION' => 'Deseja realmente desativar sua chave da licença?',
+];

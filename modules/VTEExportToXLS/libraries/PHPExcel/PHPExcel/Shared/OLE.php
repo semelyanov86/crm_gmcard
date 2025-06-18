@@ -442,8 +442,8 @@ class PHPExcel_Shared_OLE
     public static function Asc2Ucs($ascii)
     {
         $rawname = '';
-        for ($i = 0; $i < strlen($ascii); ++$i) {
-            $rawname .= $ascii{$i} . "\x00";
+        for ($i = 0, $iMax = strlen($ascii); $i < $iMax; ++$i) {
+            $rawname .= $ascii[$i]. "\x00";
         }
         return $rawname;
     }

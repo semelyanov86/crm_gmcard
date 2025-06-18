@@ -1,88 +1,204 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-8TFZ+pVh/Yae/3jQGwJLhFCk
+<?php
+
+/**
+ * PHPExcel_Shared_ZipStreamWrapper.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Shared_ZipStreamWrapper
+{
+    /**
+     * Internal ZipAcrhive.
+     *
+     * @var ZipArchive
+     */
+    private $archive;
+
+    /**
+     * Filename in ZipAcrhive.
+     *
+     * @var string
+     */
+    private $fileNameInArchive = '';
+
+    /**
+     * Position in file.
+     *
+     * @var int
+     */
+    private $position = 0;
+
+    /**
+     * Data.
+     */
+    private $data = '';
+
+    /**
+     * Register wrapper.
+     */
+    public static function register()
+    {
+        @stream_wrapper_unregister('zip');
+        @stream_wrapper_register('zip', __CLASS__);
+    }
+
+    /**
+     * Implements support for fopen().
+     *
+     * @param    string    $path            resource name including scheme, e.g.
+     * @param    string    $mode            only "r" is supported
+     * @param    int        $options        mask of STREAM_REPORT_ERRORS and STREAM_USE_PATH
+     * @return    bool    true on success
+     */
+    public function stream_open($path, $mode, $options, &$opened_path)
+    {
+        // Check for mode
+        if ($mode[0] != 'r') {
+            throw new PHPExcel_Reader_Exception('Mode ' . $mode . ' is not supported. Only read mode is supported.');
+        }
+
+        $pos = strrpos($path, '#');
+        $url['host'] = substr($path, 6, $pos - 6); // 6: strlen('zip://')
+        $url['fragment'] = substr($path, $pos + 1);
+
+        // Open archive
+        $this->archive = new ZipArchive();
+        $this->archive->open($url['host']);
+
+        $this->fileNameInArchive = $url['fragment'];
+        $this->position = 0;
+        $this->data = $this->archive->getFromName($this->fileNameInArchive);
+
+        return true;
+    }
+
+    /**
+     * Implements support for fstat().
+     *
+     * @return  bool
+     */
+    public function statName()
+    {
+        return $this->fileNameInArchive;
+    }
+
+    /**
+     * Implements support for fstat().
+     *
+     * @return  bool
+     */
+    public function url_stat()
+    {
+        return $this->statName($this->fileNameInArchive);
+    }
+
+    /**
+     * Implements support for fstat().
+     *
+     * @return  bool
+     */
+    public function stream_stat()
+    {
+        return $this->archive->statName($this->fileNameInArchive);
+    }
+
+    /**
+     * Implements support for fread(), fgets() etc.
+     *
+     * @param   int        $count    maximum number of bytes to read
+     * @return  string
+     */
+    public function stream_read($count)
+    {
+        $ret = substr($this->data, $this->position, $count);
+        $this->position += strlen($ret);
+
+        return $ret;
+    }
+
+    /**
+     * Returns the position of the file pointer, i.e. its offset into the file
+     * stream. Implements support for ftell().
+     *
+     * @return  int
+     */
+    public function stream_tell()
+    {
+        return $this->position;
+    }
+
+    /**
+     * EOF stream.
+     *
+     * @return    bool
+     */
+    public function stream_eof()
+    {
+        return $this->position >= strlen($this->data);
+    }
+
+    /**
+     * Seek stream.
+     *
+     * @param    int        $offset    byte offset
+     * @param    int        $whence    SEEK_SET, SEEK_CUR or SEEK_END
+     * @return    bool
+     */
+    public function stream_seek($offset, $whence)
+    {
+        switch ($whence) {
+            case SEEK_SET:
+                if ($offset < strlen($this->data) && $offset >= 0) {
+                    $this->position = $offset;
+
+                    return true;
+                }
+
+                return false;
+
+                break;
+            case SEEK_CUR:
+                if ($offset >= 0) {
+                    $this->position += $offset;
+
+                    return true;
+                }
+
+                return false;
+
+                break;
+            case SEEK_END:
+                if (strlen($this->data) + $offset >= 0) {
+                    $this->position = strlen($this->data) + $offset;
+
+                    return true;
+                }
+
+                return false;
+
+                break;
+
+            default:
+                return false;
+        }
+    }
+}

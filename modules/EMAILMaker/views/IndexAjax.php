@@ -1,4 +1,5 @@
 <?php
+
 /* * *******************************************************************************
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
@@ -9,11 +10,10 @@
 
 class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
 {
-
     public function __construct()
     {
         parent::__construct();
-        $Methods = array('showSettingsList', 'editCustomLabel', 'showCustomLabelValues', 'editLicense', 'showComposeEmailForm', 'report', 'getModuleConditions', 'showMESummary');
+        $Methods = ['showSettingsList', 'editCustomLabel', 'showCustomLabelValues', 'editLicense', 'showComposeEmailForm', 'report', 'getModuleConditions', 'showMESummary'];
         foreach ($Methods as $method) {
             $this->exposeMethod($method);
         }
@@ -34,15 +34,14 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
         $mode = $request->get('mode');
         if (!empty($mode)) {
             $this->invokeExposedMethod($mode, $request);
+
             return;
         }
 
         $type = $request->get('type');
     }
 
-    public function report(Vtiger_Request $request)
-    {
-    }
+    public function report(Vtiger_Request $request) {}
 
     public function showSettingsList(Vtiger_Request $request)
     {
@@ -50,12 +49,12 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
         $viewer = $this->getViewer($request);
         $moduleName = $request->getModule();
         $viewer->assign('MODULE', $moduleName);
-        $linkParams = array('MODULE' => $moduleName, 'ACTION' => $request->get('view'), 'MODE' => $request->get('mode'));
+        $linkParams = ['MODULE' => $moduleName, 'ACTION' => $request->get('view'), 'MODE' => $request->get('mode')];
         $linkModels = $EMAILMaker->getSideBarLinks($linkParams);
         $viewer->assign('QUICK_LINKS', $linkModels);
         $parent_view = $request->get('pview');
-        if ($parent_view == "EditProductBlock") {
-            $parent_view = "ProductBlocks";
+        if ($parent_view == 'EditProductBlock') {
+            $parent_view = 'ProductBlocks';
         }
         $viewer->assign('CURRENT_PVIEW', $parent_view);
         echo $viewer->view('SettingsList.tpl', 'EMAILMaker', true);
@@ -71,35 +70,35 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
         $moduleName = $request->getModule();
         $viewer->assign('MODULE', $moduleName);
 
-        list($oLabels, $languages) = $EMAILMaker->GetCustomLabels();
-        $currLang = array();
+        [$oLabels, $languages] = $EMAILMaker->GetCustomLabels();
+        $currLang = [];
         foreach ($languages as $langId => $langVal) {
-            if (($langId == $slangid && $slangid != "") || ($slangid == "" && $langVal["prefix"] == $currentLanguage)) {
-                $currLang["id"] = $langId;
-                $currLang["name"] = $langVal["name"];
-                $currLang["label"] = $langVal["label"];
-                $currLang["prefix"] = $langVal["prefix"];
+            if (($langId == $slangid && $slangid != '') || ($slangid == '' && $langVal['prefix'] == $currentLanguage)) {
+                $currLang['id'] = $langId;
+                $currLang['name'] = $langVal['name'];
+                $currLang['label'] = $langVal['label'];
+                $currLang['prefix'] = $langVal['prefix'];
                 break;
             }
         }
-        if ($slangid == "") {
-            $slangid = $currLang["id"];
+        if ($slangid == '') {
+            $slangid = $currLang['id'];
         }
         $viewer->assign('LABELID', $slabelid);
         $viewer->assign('LANGID', $slangid);
 
-        $viewLabels = array();
+        $viewLabels = [];
         foreach ($oLabels as $lblId => $oLabel) {
             if ($slabelid == $lblId) {
                 $l_key = substr($oLabel->GetKey(), 2);
                 $l_values = $oLabel->GetLangValsArr();
 
-                $viewer->assign("CUSTOM_LABEL_KEY", $l_key);
-                $viewer->assign("CUSTOM_LABEL_VALUE", $l_values[$currLang["id"]]);
+                $viewer->assign('CUSTOM_LABEL_KEY', $l_key);
+                $viewer->assign('CUSTOM_LABEL_VALUE', $l_values[$currLang['id']]);
                 break;
             }
         }
-        $viewer->assign("CURR_LANG", $currLang);
+        $viewer->assign('CURR_LANG', $currLang);
         echo $viewer->view('ModalEditCustomLabelContent.tpl', 'EMAILMaker', true);
     }
 
@@ -107,7 +106,7 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
     {
         $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
 
-        list($labelObjects, $languages) = $EMAILMaker->GetCustomLabels();
+        [$labelObjects, $languages] = $EMAILMaker->GetCustomLabels();
 
         $labelId = $request->get('labelid');
         $currLangId = $request->get('langid');
@@ -120,7 +119,7 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
         $viewer->assign('LANGID', $currLangId);
 
         $languageValues = $labelObject->GetLangValsArr();
-        $newLanguageValues = array();
+        $newLanguageValues = [];
 
         foreach ($languageValues as $langId => $langVal) {
             if ($langId == $currLangId) {
@@ -128,11 +127,11 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
             }
 
             $label = $languages[$langId]['label'];
-            $newLanguageValues[] = array(
+            $newLanguageValues[] = [
                 'id' => $langId,
                 'value' => $langVal,
-                'label' => $label
-            );
+                'label' => $label,
+            ];
         }
 
         $viewer->assign('LANGVALSARR', $newLanguageValues);
@@ -146,10 +145,10 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
         $viewer = $this->getViewer($request);
         $moduleName = $request->getModule();
         $type = $request->get('type');
-        $viewer->assign("TYPE", $type);
+        $viewer->assign('TYPE', $type);
         $key = $request->get('key');
-        $viewer->assign("LICENSEKEY", $key);
-        $viewer->assign("MODULE", $moduleName);
+        $viewer->assign('LICENSEKEY', $key);
+        $viewer->assign('MODULE', $moduleName);
 
         echo $viewer->view('EditLicense.tpl', 'EMAILMaker', true);
     }
@@ -185,10 +184,10 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
 
         $viewer->assign('SEARCH_PARAMS', $request->get('search_params'));
 
-        $cid = "";
+        $cid = '';
         if ($request->has('cid') && !$request->isEmpty('cid')) {
             $parentRecord = $cid = $request->get('cid');
-            $parentModule = "Campaigns";
+            $parentModule = 'Campaigns';
 
             $viewer->assign('FOR_CAMPAIGN', $cid);
             if ($recordIds == 'all') {
@@ -199,7 +198,7 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
 
         $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
         $emailTypes = $EMAILMaker->getRecordsEmails($sourceModule, $recordIds, $basic);
-        $emailFieldsList = array();
+        $emailFieldsList = [];
         $i = 0;
         $totalEmailFieldListCount = 0;
         $totalEmailOptOut = 0;
@@ -217,16 +216,16 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
 
                         if (!empty($email_value) || !$single_record) {
                             if (!isset($emailFieldsList[$emailField['label']][$email_name])) {
-                                $emailFieldListCount++;
-                                $totalEmailFieldListCount++;
+                                ++$emailFieldListCount;
+                                ++$totalEmailFieldListCount;
 
                                 if ($emailOptOut && $single_record) {
-                                    $totalEmailOptOut++;
+                                    ++$totalEmailOptOut;
                                 }
 
                                 $entityName = getEntityName($emailField['module'], $emailField['crmid']);
                                 $crmName = $entityName[$emailField['crmid']];
-                                $emailDetails = array(
+                                $emailDetails = [
                                     'crmid' => $emailField['crmid'],
                                     'crmname' => $emailField['name'],
                                     'name' => $email_name,
@@ -236,7 +235,7 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
                                     'value' => $email_value,
                                     'fieldname' => $email_name,
                                     'emailoptout' => $emailOptOut,
-                                );
+                                ];
 
                                 $label = $emailField['label'];
 
@@ -259,7 +258,7 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
                         }
                     }
                 }
-                $i++;
+                ++$i;
             }
         }
         $viewer->assign('TOTAL_EMAILOPTOUT', $totalEmailOptOut);
@@ -301,10 +300,10 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
         if ($single_record) {
             $viewer->assign('SINGLE_RECORD', 'yes');
         }
-        if ($selecttemplates == "true") {
+        if ($selecttemplates == 'true') {
             $forListView = true;
             $pid = false;
-            if ($request->has('selected_ids') && !$request->isEmpty('selected_ids') && $forview == "Detail" && $single_record) {
+            if ($request->has('selected_ids') && !$request->isEmpty('selected_ids') && $forview == 'Detail' && $single_record) {
                 $selected_ids = $request->get('selected_ids');
                 if (is_numeric($selected_ids)) {
                     $pid = $selected_ids;
@@ -314,9 +313,9 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
 
             $templates = $EMAILMaker->GetAvailableTemplatesArray($sourceModule, $forListView, $pid, false, true);
 
-            if ($cid != "") {
+            if ($cid != '') {
 
-                $campaign_templates = $EMAILMaker->GetAvailableTemplatesArray("Campaigns", true);
+                $campaign_templates = $EMAILMaker->GetAvailableTemplatesArray('Campaigns', true);
 
                 if (count($campaign_templates[0]) > 0) {
                     if (count($templates[0]) > 0) {
@@ -345,16 +344,17 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
             $viewer->assign('CRM_TEMPLATES_EXIST', $no_templates_exist);
 
 
-            if (!isset($_SESSION["template_languages"]) || $_SESSION["template_languages"] == "") {
-                $temp_res = $adb->pquery("SELECT label, prefix FROM vtiger_language WHERE active = ?", array('1'));
-                while ($temp_row = $adb->fetchByAssoc($temp_res)) {
-                    $template_languages[$temp_row["prefix"]] = $temp_row["label"];
-                }
-                $_SESSION["template_languages"] = $template_languages;
-            }
-            $viewer->assign('TEMPLATE_LANGUAGES', $_SESSION["template_languages"]);
+            if (!isset($_SESSION['template_languages']) || $_SESSION['template_languages'] == '') {
+                $temp_res = $adb->pquery('SELECT label, prefix FROM vtiger_language WHERE active = ?', ['1']);
 
-            $def_templateid = $EMAILMaker->GetDefaultTemplateId($sourceModule, ($forview == "List" ? true : false));
+                while ($temp_row = $adb->fetchByAssoc($temp_res)) {
+                    $template_languages[$temp_row['prefix']] = $temp_row['label'];
+                }
+                $_SESSION['template_languages'] = $template_languages;
+            }
+            $viewer->assign('TEMPLATE_LANGUAGES', $_SESSION['template_languages']);
+
+            $def_templateid = $EMAILMaker->GetDefaultTemplateId($sourceModule, $forview == 'List' ? true : false);
             $viewer->assign('DEFAULT_TEMPLATE', $def_templateid);
         }
         $no_pdftemplates = true;
@@ -365,11 +365,11 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
                 $currentLanguage = $request->get('pdflanguage');
             }
 
-            if ($pdftemplateid != "") {
+            if ($pdftemplateid != '') {
                 $viewer->assign('PDFTEMPLATEID', $pdftemplateid);
 
                 if ($pdftemplateid) {
-                    $PDFTemplateIds = explode(";", $pdftemplateid);
+                    $PDFTemplateIds = explode(';', $pdftemplateid);
                 }
                 $viewer->assign('PDFTEMPLATEIDS', $PDFTemplateIds);
             }
@@ -384,10 +384,10 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
             }
         }
 
-        if ((!$no_templates_exist || !$no_pdftemplates) && $selecttemplates == "true") {
-            $for_list_view = "yes";
+        if ((!$no_templates_exist || !$no_pdftemplates) && $selecttemplates == 'true') {
+            $for_list_view = 'yes';
         } else {
-            $for_list_view = "no";
+            $for_list_view = 'no';
         }
 
         $viewer->assign('FORLISTVIEW', $for_list_view);
@@ -404,7 +404,7 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
         $qualifiedModuleName = $request->getModule(false);
         $viewer = $this->getViewer($request);
 
-        $selectedModuleName = $request->get("source_module");
+        $selectedModuleName = $request->get('source_module');
         $selectedModuleModel = Vtiger_Module_Model::getInstance($selectedModuleName);
         $recordStructureInstance = Vtiger_RecordStructure_Model::getInstanceForModule($selectedModuleModel);
 
@@ -412,7 +412,7 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
 
         $recordStructure = $recordStructureInstance->getStructure();
         if (in_array($selectedModuleName, getInventoryModules())) {
-            $itemsBlock = "LBL_ITEM_DETAILS";
+            $itemsBlock = 'LBL_ITEM_DETAILS';
             unset($recordStructure[$itemsBlock]);
         }
         $viewer->assign('RECORD_STRUCTURE', $recordStructure);
@@ -446,14 +446,14 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
         $RecordME_Model->setFromRequestData($Data);
         $RecordME_Model->setTemplateData();
 
-        $start_of = $RecordME_Model->get("start_of");
+        $start_of = $RecordME_Model->get('start_of');
 
-        if ($start_of != "") {
+        if ($start_of != '') {
 
 
             $hour_format = $currentUser->get('hour_format');
 
-            if ($hour_format == "12") {
+            if ($hour_format == '12') {
                 $time_format = 'h:i a';
             } else {
                 $time_format = 'H:i';
@@ -464,31 +464,31 @@ class EMAILMaker_IndexAjax_View extends Vtiger_IndexAjax_View
             $start_of_time = $convert_date_start->format('H:00');
             $formated_time = $convert_date_start->format($time_format);
         } else {
-            $start_of_date = date('Y-m-d', strtotime("+1 day"));
-            $start_of_time = "00:00";
-            $formated_time = "";
+            $start_of_date = date('Y-m-d', strtotime('+1 day'));
+            $start_of_time = '00:00';
+            $formated_time = '';
         }
         $user_start_of_date = DateTimeField::convertToUserFormat($start_of_date);
-        $start_of = trim($user_start_of_date . " " . $formated_time);
-        $RecordME_Model->set("start_of", $start_of);
+        $start_of = trim($user_start_of_date . ' ' . $formated_time);
+        $RecordME_Model->set('start_of', $start_of);
 
-        //$module_columns = EMAILMaker_RecordME_Model::getModuleColumns(, );
-        $for_module = $RecordME_Model->get("module_name");
-        $listid = $RecordME_Model->get("listid");
+        // $module_columns = EMAILMaker_RecordME_Model::getModuleColumns(, );
+        $for_module = $RecordME_Model->get('module_name');
+        $listid = $RecordME_Model->get('listid');
 
         $moduleModel = Vtiger_Module_Model::getInstance($for_module);
         $emailFieldModels = $moduleModel->getFieldsByType('email');
-        $emailFieldModel = $emailFieldModels[$Data["selected_email_fieldname"]];
+        $emailFieldModel = $emailFieldModels[$Data['selected_email_fieldname']];
 
         $email_fieldname_label = vtranslate($emailFieldModel->get('label'), $for_module);
-        $RecordME_Model->set("email_fieldname_label", $email_fieldname_label);
+        $RecordME_Model->set('email_fieldname_label', $email_fieldname_label);
 
         $viewer->assign('MASSEMAILRECORDMODEL', $RecordME_Model);
 
 
-        $recipients_count = $RecordME_Model->get("total_entries");
+        $recipients_count = $RecordME_Model->get('total_entries');
 
-        if ($recipients_count == "") {
+        if ($recipients_count == '') {
             $listViewModel = Vtiger_ListView_Model::getInstance($for_module, $listid);
             $recipients_count = $listViewModel->getListViewCount();
         }

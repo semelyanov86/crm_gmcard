@@ -9,6 +9,4 @@
  * All Rights Reserved.
  * *********************************************************************************** */
 
-class Leads_Detail_View extends Accounts_Detail_View {
-
-}
+class Leads_Detail_View extends Accounts_Detail_View {}

@@ -1,5 +1,5 @@
 <?php
- 
+
 
 class ITS4YouDescriptions_Edit_View extends Vtiger_Edit_View
 {
@@ -12,9 +12,8 @@ class ITS4YouDescriptions_Edit_View extends Vtiger_Edit_View
         $this->isInstalled = true;
     }
 
-    
     public function process(Vtiger_Request $request)
     {
         parent::process($request);
     }
-} ?>
+}

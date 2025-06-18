@@ -1,67 +1,83 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ *  PHPExcel_Writer_PDF.
+ *
+ *  Copyright (c) 2006 - 2015 PHPExcel
+ *
+ *  This library is free software; you can redistribute it and/or
+ *  modify it under the terms of the GNU Lesser General Public
+ *  License as published by the Free Software Foundation; either
+ *  version 2.1 of the License, or (at your option) any later version.
+ *
+ *  This library is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ *  Lesser General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Lesser General Public
+ *  License along with this library; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *  @category    PHPExcel
+ *  @copyright   Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ *  @license     http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ *  @version     ##VERSION##, ##DATE##
+ */
+class PHPExcel_Writer_PDF implements PHPExcel_Writer_IWriter
+{
+    /**
+     * The wrapper for the requested PDF rendering engine.
+     *
+     * @var PHPExcel_Writer_PDF_Core
+     */
+    private $renderer;
+
+    /**
+     *  Instantiate a new renderer of the configured type within this container class.
+     *
+     *  @param  PHPExcel   $phpExcel         PHPExcel object
+     *  @throws PHPExcel_Writer_Exception    when PDF library is not configured
+     */
+    public function __construct(PHPExcel $phpExcel)
+    {
+        $pdfLibraryName = PHPExcel_Settings::getPdfRendererName();
+        if (is_null($pdfLibraryName)) {
+            throw new PHPExcel_Writer_Exception('PDF Rendering library has not been defined.');
+        }
+
+        $pdfLibraryPath = PHPExcel_Settings::getPdfRendererPath();
+        if (is_null($pdfLibraryName)) {
+            throw new PHPExcel_Writer_Exception('PDF Rendering library path has not been defined.');
+        }
+        $includePath = str_replace('\\', '/', get_include_path());
+        $rendererPath = str_replace('\\', '/', $pdfLibraryPath);
+        if (strpos($rendererPath, $includePath) === false) {
+            set_include_path(get_include_path() . PATH_SEPARATOR . $pdfLibraryPath);
+        }
+
+        $rendererName = 'PHPExcel_Writer_PDF_' . $pdfLibraryName;
+        $this->renderer = new $rendererName($phpExcel);
+    }
+
+    /**
+     *  Magic method to handle direct calls to the configured PDF renderer wrapper class.
+     *
+     *  @param   string   $name        Renderer library method name
+     *  @param   mixed[]  $arguments   Array of arguments to pass to the renderer method
+     *  @return  mixed    Returned data from the PDF renderer wrapper method
+     */
+    public function __call($name, $arguments)
+    {
+        if ($this->renderer === null) {
+            throw new PHPExcel_Writer_Exception('PDF Rendering library has not been defined.');
+        }
+
+        return call_user_func_array([$this->renderer, $name], $arguments);
+    }
+
+    public function save($pFilename = null)
+    {
+        $this->renderer->save($pFilename);
+    }
+}

@@ -1,40 +1,39 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel.
+ *
+ * PHPExcel_Writer_OpenDocument_Mimetype
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Writer_OpenDocument_Mimetype extends PHPExcel_Writer_OpenDocument_WriterPart
+{
+    /**
+     * Write mimetype to plain text format.
+     *
+     * @return     string         XML Output
+     * @throws     PHPExcel_Writer_Exception
+     */
+    public function write(?PHPExcel $pPHPExcel = null)
+    {
+        return 'application/vnd.oasis.opendocument.spreadsheet';
+    }
+}

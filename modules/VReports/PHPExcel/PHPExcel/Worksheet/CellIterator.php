@@ -1,42 +1,85 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel_Worksheet_CellIterator.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+abstract class PHPExcel_Worksheet_CellIterator
+{
+    /**
+     * PHPExcel_Worksheet to iterate.
+     *
+     * @var PHPExcel_Worksheet
+     */
+    protected $subject;
+
+    /**
+     * Current iterator position.
+     */
+    protected $position;
+
+    /**
+     * Iterate only existing cells.
+     *
+     * @var bool
+     */
+    protected $onlyExistingCells = false;
+
+    /**
+     * Destructor.
+     */
+    public function __destruct()
+    {
+        unset($this->subject);
+    }
+
+    /**
+     * Get loop only existing cells.
+     *
+     * @return bool
+     */
+    public function getIterateOnlyExistingCells()
+    {
+        return $this->onlyExistingCells;
+    }
+
+    /**
+     * Validate start/end values for "IterateOnlyExistingCells" mode, and adjust if necessary.
+     *
+     * @throws PHPExcel_Exception
+     */
+    abstract protected function adjustForExistingOnlyRange();
+
+    /**
+     * Set the iterator to loop only existing cells.
+     *
+     * @param    bool        $value
+     * @throws PHPExcel_Exception
+     */
+    public function setIterateOnlyExistingCells($value = true)
+    {
+        $this->onlyExistingCells = (bool) $value;
+
+        $this->adjustForExistingOnlyRange();
+    }
+}

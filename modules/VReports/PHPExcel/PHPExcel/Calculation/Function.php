@@ -1,59 +1,147 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel_Calculation_Function.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Calculation_Function
+{
+    /* Function categories */
+    public const CATEGORY_CUBE                 = 'Cube';
+    public const CATEGORY_DATABASE             = 'Database';
+    public const CATEGORY_DATE_AND_TIME        = 'Date and Time';
+    public const CATEGORY_ENGINEERING          = 'Engineering';
+    public const CATEGORY_FINANCIAL            = 'Financial';
+    public const CATEGORY_INFORMATION          = 'Information';
+    public const CATEGORY_LOGICAL              = 'Logical';
+    public const CATEGORY_LOOKUP_AND_REFERENCE = 'Lookup and Reference';
+    public const CATEGORY_MATH_AND_TRIG        = 'Math and Trig';
+    public const CATEGORY_STATISTICAL          = 'Statistical';
+    public const CATEGORY_TEXT_AND_DATA        = 'Text and Data';
+
+    /**
+     * Category (represented by CATEGORY_*).
+     *
+     * @var string
+     */
+    private $category;
+
+    /**
+     * Excel name.
+     *
+     * @var string
+     */
+    private $excelName;
+
+    /**
+     * PHPExcel name.
+     *
+     * @var string
+     */
+    private $phpExcelName;
+
+    /**
+     * Create a new PHPExcel_Calculation_Function.
+     *
+     * @param     string        $pCategory         Category (represented by CATEGORY_*)
+     * @param     string        $pExcelName        Excel function name
+     * @param     string        $pPHPExcelName    PHPExcel function mapping
+     * @throws     PHPExcel_Calculation_Exception
+     */
+    public function __construct($pCategory = null, $pExcelName = null, $pPHPExcelName = null)
+    {
+        if (($pCategory !== null) && ($pExcelName !== null) && ($pPHPExcelName !== null)) {
+            // Initialise values
+            $this->category     = $pCategory;
+            $this->excelName    = $pExcelName;
+            $this->phpExcelName = $pPHPExcelName;
+        } else {
+            throw new PHPExcel_Calculation_Exception('Invalid parameters passed.');
+        }
+    }
+
+    /**
+     * Get Category (represented by CATEGORY_*).
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set Category (represented by CATEGORY_*).
+     *
+     * @param     string        $value
+     * @throws     PHPExcel_Calculation_Exception
+     */
+    public function setCategory($value = null)
+    {
+        if (!is_null($value)) {
+            $this->category = $value;
+        } else {
+            throw new PHPExcel_Calculation_Exception('Invalid parameter passed.');
+        }
+    }
+
+    /**
+     * Get Excel name.
+     *
+     * @return string
+     */
+    public function getExcelName()
+    {
+        return $this->excelName;
+    }
+
+    /**
+     * Set Excel name.
+     *
+     * @param string    $value
+     */
+    public function setExcelName($value)
+    {
+        $this->excelName = $value;
+    }
+
+    /**
+     * Get PHPExcel name.
+     *
+     * @return string
+     */
+    public function getPHPExcelName()
+    {
+        return $this->phpExcelName;
+    }
+
+    /**
+     * Set PHPExcel name.
+     *
+     * @param string    $value
+     */
+    public function setPHPExcelName($value)
+    {
+        $this->phpExcelName = $value;
+    }
+}

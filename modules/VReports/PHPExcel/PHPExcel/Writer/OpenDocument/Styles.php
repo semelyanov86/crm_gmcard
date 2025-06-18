@@ -1,90 +1,90 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-5i3XSODeneMfa1riXG==
+<?php
+
+/**
+ * PHPExcel_Writer_OpenDocument_Styles.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Writer_OpenDocument_Styles extends PHPExcel_Writer_OpenDocument_WriterPart
+{
+    /**
+     * Write styles.xml to XML format.
+     *
+     * @return  string                     XML Output
+     * @throws  PHPExcel_Writer_Exception
+     */
+    public function write(?PHPExcel $pPHPExcel = null)
+    {
+        if (!$pPHPExcel) {
+            $pPHPExcel = $this->getParentWriter()->getPHPExcel();
+        }
+
+        $objWriter = null;
+        if ($this->getParentWriter()->getUseDiskCaching()) {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_DISK, $this->getParentWriter()->getDiskCachingDirectory());
+        } else {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_MEMORY);
+        }
+
+        // XML header
+        $objWriter->startDocument('1.0', 'UTF-8');
+
+        // Content
+        $objWriter->startElement('office:document-styles');
+        $objWriter->writeAttribute('xmlns:office', 'urn:oasis:names:tc:opendocument:xmlns:office:1.0');
+        $objWriter->writeAttribute('xmlns:style', 'urn:oasis:names:tc:opendocument:xmlns:style:1.0');
+        $objWriter->writeAttribute('xmlns:text', 'urn:oasis:names:tc:opendocument:xmlns:text:1.0');
+        $objWriter->writeAttribute('xmlns:table', 'urn:oasis:names:tc:opendocument:xmlns:table:1.0');
+        $objWriter->writeAttribute('xmlns:draw', 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0');
+        $objWriter->writeAttribute('xmlns:fo', 'urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0');
+        $objWriter->writeAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+        $objWriter->writeAttribute('xmlns:dc', 'http://purl.org/dc/elements/1.1/');
+        $objWriter->writeAttribute('xmlns:meta', 'urn:oasis:names:tc:opendocument:xmlns:meta:1.0');
+        $objWriter->writeAttribute('xmlns:number', 'urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0');
+        $objWriter->writeAttribute('xmlns:presentation', 'urn:oasis:names:tc:opendocument:xmlns:presentation:1.0');
+        $objWriter->writeAttribute('xmlns:svg', 'urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0');
+        $objWriter->writeAttribute('xmlns:chart', 'urn:oasis:names:tc:opendocument:xmlns:chart:1.0');
+        $objWriter->writeAttribute('xmlns:dr3d', 'urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0');
+        $objWriter->writeAttribute('xmlns:math', 'http://www.w3.org/1998/Math/MathML');
+        $objWriter->writeAttribute('xmlns:form', 'urn:oasis:names:tc:opendocument:xmlns:form:1.0');
+        $objWriter->writeAttribute('xmlns:script', 'urn:oasis:names:tc:opendocument:xmlns:script:1.0');
+        $objWriter->writeAttribute('xmlns:ooo', 'http://openoffice.org/2004/office');
+        $objWriter->writeAttribute('xmlns:ooow', 'http://openoffice.org/2004/writer');
+        $objWriter->writeAttribute('xmlns:oooc', 'http://openoffice.org/2004/calc');
+        $objWriter->writeAttribute('xmlns:dom', 'http://www.w3.org/2001/xml-events');
+        $objWriter->writeAttribute('xmlns:rpt', 'http://openoffice.org/2005/report');
+        $objWriter->writeAttribute('xmlns:of', 'urn:oasis:names:tc:opendocument:xmlns:of:1.2');
+        $objWriter->writeAttribute('xmlns:xhtml', 'http://www.w3.org/1999/xhtml');
+        $objWriter->writeAttribute('xmlns:grddl', 'http://www.w3.org/2003/g/data-view#');
+        $objWriter->writeAttribute('xmlns:tableooo', 'http://openoffice.org/2009/table');
+        $objWriter->writeAttribute('xmlns:css3t', 'http://www.w3.org/TR/css3-text/');
+        $objWriter->writeAttribute('office:version', '1.2');
+
+        $objWriter->writeElement('office:font-face-decls');
+        $objWriter->writeElement('office:styles');
+        $objWriter->writeElement('office:automatic-styles');
+        $objWriter->writeElement('office:master-styles');
+        $objWriter->endElement();
+
+        return $objWriter->getData();
+    }
+}

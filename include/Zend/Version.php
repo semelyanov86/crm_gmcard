@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Zend Framework
+ * Zend Framework.
  *
  * LICENSE
  *
@@ -13,7 +14,6 @@
  * to license@zend.com so we can send you a copy immediately.
  *
  * @category   Zend
- * @package    Zend_Version
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id: Version.php 25038 2012-08-20 15:54:32Z matthew $
@@ -23,23 +23,22 @@
  * Class to store and retrieve the version of Zend Framework.
  *
  * @category   Zend
- * @package    Zend_Version
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 final class Zend_Version
 {
     /**
-     * Zend Framework version identification - see compareVersion()
+     * Zend Framework version identification - see compareVersion().
      */
-    const VERSION = '1.12.0rc4';
+    public const VERSION = '1.12.0rc4';
 
     /**
-     * The latest stable version Zend Framework available
+     * The latest stable version Zend Framework available.
      *
      * @var string
      */
-    protected static $_latestVersion;
+    private static $_latestVersion;
 
     /**
      * Compare the specified Zend Framework version string $version
@@ -48,29 +47,29 @@ final class Zend_Version
      * @param  string  $version  A version string (e.g. "0.7.1").
      * @return int           -1 if the $version is older,
      *                           0 if they are the same,
-     *                           and +1 if $version is newer.
-     *
+     *                           and +1 if $version is newer
      */
     public static function compareVersion($version)
     {
         $version = strtolower($version);
         $version = preg_replace('/(\d)pr(\d?)/', '$1a$2', $version);
+
         return version_compare($version, strtolower(self::VERSION));
     }
 
     /**
-     * Fetches the version of the latest stable release
+     * Fetches the version of the latest stable release.
      *
-     * @link http://framework.zend.com/download/latest
+     * @see http://framework.zend.com/download/latest
      * @return string
      */
     public static function getLatest()
     {
-        if (null === self::$_latestVersion) {
+        if (self::$_latestVersion === null) {
             self::$_latestVersion = 'not available';
 
             $handle = fopen('http://framework.zend.com/api/zf-version', 'r');
-            if (false !== $handle) {
+            if ($handle !== false) {
                 self::$_latestVersion = stream_get_contents($handle);
                 fclose($handle);
             }

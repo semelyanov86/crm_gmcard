@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,110 +7,120 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
+ */
 
-class Settings_Webforms_ModuleField_Model extends Vtiger_Field_Model {
+class Settings_Webforms_ModuleField_Model extends Vtiger_Field_Model
+{
+    public function getFieldName()
+    {
+        $fieldName = parent::getFieldName();
 
-	public function getFieldName() {
-		$fieldName = parent::getFieldName();
-		return 'selectedFieldsData['. $fieldName .'][defaultvalue]';
-	}
+        return 'selectedFieldsData[' . $fieldName . '][defaultvalue]';
+    }
 
-	public function isMandatory($forceCheck = false) {
-		if($forceCheck) {
-			return parent::isMandatory();
-		}
-		return false;
-	}
+    public function isMandatory($forceCheck = false)
+    {
+        if ($forceCheck) {
+            return parent::isMandatory();
+        }
 
-	/**
-	 * Function to get the field details
-	 * @return <Array> - array of field values
-	 */
-	public function getFieldInfo() {
-		$currentUser = Users_Record_Model::getCurrentUserModel();
-		$fieldInfo =  array(
-			'mandatory' => $this->isMandatory(),
-			'type' => $this->getFieldDataType(),
-			'name' => $this->getFieldName(),
-			'label' => vtranslate($this->get('label'), $this->getModuleName()),
-			'defaultValue' => $this->getEditViewDisplayValue($this->getDefaultFieldValue()),
-			'customField' => Settings_Webforms_Record_Model::isCustomField($this->get('name')),
-			'specialValidator' => $this->getValidator()
-		);
+        return false;
+    }
 
-		$pickListValues = $this->getPicklistValues();
-		if(!empty($pickListValues)) {
-			$fieldInfo['picklistvalues'] = $pickListValues;
+    /**
+     * Function to get the field details.
+     * @return <Array> - array of field values
+     */
+    public function getFieldInfo()
+    {
+        $currentUser = Users_Record_Model::getCurrentUserModel();
+        $fieldInfo =  [
+            'mandatory' => $this->isMandatory(),
+            'type' => $this->getFieldDataType(),
+            'name' => $this->getFieldName(),
+            'label' => vtranslate($this->get('label'), $this->getModuleName()),
+            'defaultValue' => $this->getEditViewDisplayValue($this->getDefaultFieldValue()),
+            'customField' => Settings_Webforms_Record_Model::isCustomField($this->get('name')),
+            'specialValidator' => $this->getValidator(),
+        ];
+
+        $pickListValues = $this->getPicklistValues();
+        if (!empty($pickListValues)) {
+            $fieldInfo['picklistvalues'] = $pickListValues;
             $fieldInfo['editablepicklistvalues'] = $pickListValues;
-		}
+        }
 
-		if($this->getFieldDataType() == 'date' || $this->getFieldDataType() == 'datetime'){
-			$currentUser = Users_Record_Model::getCurrentUserModel();
-			$fieldInfo['date-format'] = $currentUser->get('date_format');
-		}
+        if ($this->getFieldDataType() == 'date' || $this->getFieldDataType() == 'datetime') {
+            $currentUser = Users_Record_Model::getCurrentUserModel();
+            $fieldInfo['date-format'] = $currentUser->get('date_format');
+        }
 
-		if($this->getFieldDataType() == 'currency') {
-			$currentUser = Users_Record_Model::getCurrentUserModel();
-			$fieldInfo['currency_symbol'] = $currentUser->get('currency_symbol');
-			$fieldInfo['decimalSeparator'] = $currentUser->get('currency_decimal_separator');
-			$fieldInfo['groupSeparator'] = $currentUser->get('currency_grouping_separator');
-		}
+        if ($this->getFieldDataType() == 'currency') {
+            $currentUser = Users_Record_Model::getCurrentUserModel();
+            $fieldInfo['currency_symbol'] = $currentUser->get('currency_symbol');
+            $fieldInfo['decimalSeparator'] = $currentUser->get('currency_decimal_separator');
+            $fieldInfo['groupSeparator'] = $currentUser->get('currency_grouping_separator');
+        }
 
-		if($this->getFieldDataType() == 'owner') {
-			$userList = $currentUser->getAccessibleUsers();
-			$groupList = $currentUser->getAccessibleGroups();
-			$pickListValues = array();
-			$pickListValues[vtranslate('LBL_USERS', $this->getModuleName())] = $userList;
-			$pickListValues[vtranslate('LBL_GROUPS', $this->getModuleName())] = $groupList;
-			$fieldInfo['picklistvalues'] = $pickListValues;
-		}
+        if ($this->getFieldDataType() == 'owner') {
+            $userList = $currentUser->getAccessibleUsers();
+            $groupList = $currentUser->getAccessibleGroups();
+            $pickListValues = [];
+            $pickListValues[vtranslate('LBL_USERS', $this->getModuleName())] = $userList;
+            $pickListValues[vtranslate('LBL_GROUPS', $this->getModuleName())] = $groupList;
+            $fieldInfo['picklistvalues'] = $pickListValues;
+        }
 
-		if($this->getFieldDataType() == 'reference') {
-			$referenceList = $this->getReferenceList();
-			$fieldInfo['referencemodules']= $referenceList;
-		}
+        if ($this->getFieldDataType() == 'reference') {
+            $referenceList = $this->getReferenceList();
+            $fieldInfo['referencemodules'] = $referenceList;
+        }
 
-		if($this->getFieldDataType() == 'ownergroup') {
-			$groupList = $currentUser->getAccessibleGroups();
-			$pickListValues = array();
-			$fieldInfo['picklistvalues'] = $groupList;
-		}
+        if ($this->getFieldDataType() == 'ownergroup') {
+            $groupList = $currentUser->getAccessibleGroups();
+            $pickListValues = [];
+            $fieldInfo['picklistvalues'] = $groupList;
+        }
 
-		if($fieldInfo['type'] == 'boolean') {
-			$fieldInfo['type'] = 'picklist';
-			$fieldInfo['picklistvalues'] = array('' => vtranslate('LBL_SELECT_OPTION'), 'on' => vtranslate('LBL_YES'), 'off' => vtranslate('LBL_NO'));
-		}
+        if ($fieldInfo['type'] == 'boolean') {
+            $fieldInfo['type'] = 'picklist';
+            $fieldInfo['picklistvalues'] = ['' => vtranslate('LBL_SELECT_OPTION'), 'on' => vtranslate('LBL_YES'), 'off' => vtranslate('LBL_NO')];
+        }
 
-		return $fieldInfo;
-	}
+        return $fieldInfo;
+    }
 
-	public function getPicklistValues() {
-		$fieldDataType = $this->getFieldDataType();
+    public function getPicklistValues()
+    {
+        $fieldDataType = $this->getFieldDataType();
 
-		if ($fieldDataType != 'picklist') {
-			return parent::getPicklistValues();
-		}
-		$pickListValues = array();
-		$pickListValues[""] = vtranslate("LBL_SELECT_OPTION", 'Settings:Webforms');
+        if ($fieldDataType != 'picklist') {
+            return parent::getPicklistValues();
+        }
+        $pickListValues = [];
+        $pickListValues[''] = vtranslate('LBL_SELECT_OPTION', 'Settings:Webforms');
 
-		$editableValues = parent::getEditablePicklistValues();
-		return array_merge($pickListValues, $editableValues ? $editableValues : array());
-	}
+        $editableValues = parent::getEditablePicklistValues();
 
-	/**
-	 * Function which will check if empty piclist option should be given
-	 */
-	public function isEmptyPicklistOptionAllowed() {
-		return false;
-	}
+        return array_merge($pickListValues, $editableValues ? $editableValues : []);
+    }
 
-	public static function getInstanceFromFieldObject(Vtiger_Field $fieldObj) {
-		$objectProperties = get_object_vars($fieldObj);
-		$fieldModel = new self();
-		foreach($objectProperties as $properName=>$propertyValue) {
-			$fieldModel->$properName = $propertyValue;
-		}
-		return $fieldModel;
-	}
+    /**
+     * Function which will check if empty piclist option should be given.
+     */
+    public function isEmptyPicklistOptionAllowed()
+    {
+        return false;
+    }
+
+    public static function getInstanceFromFieldObject(Vtiger_Field $fieldObj)
+    {
+        $objectProperties = get_object_vars($fieldObj);
+        $fieldModel = new self();
+        foreach ($objectProperties as $properName => $propertyValue) {
+            $fieldModel->{$properName} = $propertyValue;
+        }
+
+        return $fieldModel;
+    }
 }

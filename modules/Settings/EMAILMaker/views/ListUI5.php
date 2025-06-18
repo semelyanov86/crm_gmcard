@@ -8,10 +8,10 @@
  * All Rights Reserved.
  * ****************************************************************************** */
 
-class Settings_EMAILMaker_ListUI5_View extends Settings_Vtiger_UI5Embed_View {
-	
-	protected function getUI5EmbedURL(Vtiger_Request $request) {
-		return '../index.php?module=Settings&action=listemailtemplates&parenttab=Settings';
-	}
-	
+class Settings_EMAILMaker_ListUI5_View extends Settings_Vtiger_UI5Embed_View
+{
+    protected function getUI5EmbedURL(Vtiger_Request $request)
+    {
+        return '../index.php?module=Settings&action=listemailtemplates&parenttab=Settings';
+    }
 }

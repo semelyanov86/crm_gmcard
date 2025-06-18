@@ -1,4 +1,5 @@
 <?php
+
 /* * *******************************************************************************
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
@@ -9,10 +10,7 @@
 
 class EMAILMaker_GetRelatedBlockColumns_Action extends Vtiger_Action_Controller
 {
-
-    public function checkPermission(Vtiger_Request $request)
-    {
-    }
+    public function checkPermission(Vtiger_Request $request) {}
 
     public function process(Vtiger_Request $request)
     {
@@ -22,12 +20,12 @@ class EMAILMaker_GetRelatedBlockColumns_Action extends Vtiger_Action_Controller
         $pri_module = $request->get('primodule');
         $mode = $request->get('mode');
         $module_list = $RelatedBlock->getModuleList($sec_module);
-        $content = "";
-        if ($mode == "stdcriteria") {
+        $content = '';
+        if ($mode == 'stdcriteria') {
             $options = $RelatedBlock->getStdCriteriaByModule($sec_module, $module_list, $current_user);
             if (count($options) > 0) {
                 foreach ($options as $value => $label) {
-                    $content .= "<option value='" . $value . "'>" . $label . "</option>";
+                    $content .= "<option value='" . $value . "'>" . $label . '</option>';
                 }
             }
         } else {
@@ -38,9 +36,9 @@ class EMAILMaker_GetRelatedBlockColumns_Action extends Vtiger_Action_Controller
                     $content .= "<optgroup label='" . $optgroup . "'>";
 
                     foreach ($options as $value => $label) {
-                        $content .= "<option value='" . $value . "'>" . $label . "</option>";
+                        $content .= "<option value='" . $value . "'>" . $label . '</option>';
                     }
-                    $content .= "</optgroup>";
+                    $content .= '</optgroup>';
                 }
             }
         }

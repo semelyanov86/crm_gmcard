@@ -1,45 +1,89 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-1WRZVWLxHSYWrWbOx0==
+<?php
+
+/**
+ * PHPExcel_CalcEngine_CyclicReferenceStack.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_CalcEngine_CyclicReferenceStack
+{
+    /**
+     *  The call stack for calculated cells.
+     *
+     *  @var mixed[]
+     */
+    private $stack = [];
+
+    /**
+     * Return the number of entries on the stack.
+     *
+     * @return  int
+     */
+    public function count()
+    {
+        return count($this->stack);
+    }
+
+    /**
+     * Push a new entry onto the stack.
+     */
+    public function push($value)
+    {
+        $this->stack[$value] = $value;
+    }
+
+    /**
+     * Pop the last entry from the stack.
+     */
+    public function pop()
+    {
+        return array_pop($this->stack);
+    }
+
+    /**
+     * Test to see if a specified entry exists on the stack.
+     *
+     * @param  mixed  $value  The value to test
+     */
+    public function onStack($value)
+    {
+        return isset($this->stack[$value]);
+    }
+
+    /**
+     * Clear the stack.
+     */
+    public function clear()
+    {
+        $this->stack = [];
+    }
+
+    /**
+     * Return an array of all entries on the stack.
+     *
+     * @return  mixed[]
+     */
+    public function showStack()
+    {
+        return $this->stack;
+    }
+}

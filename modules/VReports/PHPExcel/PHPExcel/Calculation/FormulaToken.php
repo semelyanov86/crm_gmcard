@@ -1,57 +1,173 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-hD8Y25ZtWvXr3Gt80pDvS+DG20ExIFEkPrv0j0==
+<?php
+
+/*
+PARTLY BASED ON:
+    Copyright (c) 2007 E. W. Bachtal, Inc.
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+    and associated documentation files (the "Software"), to deal in the Software without restriction,
+    including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+    and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be included in all copies or substantial
+      portions of the Software.
+
+    The software is provided "as is", without warranty of any kind, express or implied, including but not
+    limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In
+    no event shall the authors or copyright holders be liable for any claim, damages or other liability,
+    whether in an action of contract, tort or otherwise, arising from, out of or in connection with the
+    software or the use or other dealings in the software.
+
+    http://ewbi.blogs.com/develops/2007/03/excel_formula_p.html
+    http://ewbi.blogs.com/develops/2004/12/excel_formula_p.html
+*/
+
+/**
+ * PHPExcel_Calculation_FormulaToken.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Calculation_FormulaToken
+{
+    /* Token types */
+    public const TOKEN_TYPE_NOOP            = 'Noop';
+    public const TOKEN_TYPE_OPERAND         = 'Operand';
+    public const TOKEN_TYPE_FUNCTION        = 'Function';
+    public const TOKEN_TYPE_SUBEXPRESSION   = 'Subexpression';
+    public const TOKEN_TYPE_ARGUMENT        = 'Argument';
+    public const TOKEN_TYPE_OPERATORPREFIX  = 'OperatorPrefix';
+    public const TOKEN_TYPE_OPERATORINFIX   = 'OperatorInfix';
+    public const TOKEN_TYPE_OPERATORPOSTFIX = 'OperatorPostfix';
+    public const TOKEN_TYPE_WHITESPACE      = 'Whitespace';
+    public const TOKEN_TYPE_UNKNOWN         = 'Unknown';
+
+    /* Token subtypes */
+    public const TOKEN_SUBTYPE_NOTHING       = 'Nothing';
+    public const TOKEN_SUBTYPE_START         = 'Start';
+    public const TOKEN_SUBTYPE_STOP          = 'Stop';
+    public const TOKEN_SUBTYPE_TEXT          = 'Text';
+    public const TOKEN_SUBTYPE_NUMBER        = 'Number';
+    public const TOKEN_SUBTYPE_LOGICAL       = 'Logical';
+    public const TOKEN_SUBTYPE_ERROR         = 'Error';
+    public const TOKEN_SUBTYPE_RANGE         = 'Range';
+    public const TOKEN_SUBTYPE_MATH          = 'Math';
+    public const TOKEN_SUBTYPE_CONCATENATION = 'Concatenation';
+    public const TOKEN_SUBTYPE_INTERSECTION  = 'Intersection';
+    public const TOKEN_SUBTYPE_UNION         = 'Union';
+
+    /**
+     * Value.
+     *
+     * @var string
+     */
+    private $value;
+
+    /**
+     * Token Type (represented by TOKEN_TYPE_*).
+     *
+     * @var string
+     */
+    private $tokenType;
+
+    /**
+     * Token SubType (represented by TOKEN_SUBTYPE_*).
+     *
+     * @var string
+     */
+    private $tokenSubType;
+
+    /**
+     * Create a new PHPExcel_Calculation_FormulaToken.
+     *
+     * @param string    $pValue
+     * @param string    $pTokenType     Token type (represented by TOKEN_TYPE_*)
+     * @param string    $pTokenSubType     Token Subtype (represented by TOKEN_SUBTYPE_*)
+     */
+    public function __construct($pValue, $pTokenType = PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_UNKNOWN, $pTokenSubType = PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_NOTHING)
+    {
+        // Initialise values
+        $this->value       = $pValue;
+        $this->tokenType    = $pTokenType;
+        $this->tokenSubType = $pTokenSubType;
+    }
+
+    /**
+     * Get Value.
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * Set Value.
+     *
+     * @param string    $value
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+    }
+
+    /**
+     * Get Token Type (represented by TOKEN_TYPE_*).
+     *
+     * @return string
+     */
+    public function getTokenType()
+    {
+        return $this->tokenType;
+    }
+
+    /**
+     * Set Token Type.
+     *
+     * @param string    $value
+     */
+    public function setTokenType($value = PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_UNKNOWN)
+    {
+        $this->tokenType = $value;
+    }
+
+    /**
+     * Get Token SubType (represented by TOKEN_SUBTYPE_*).
+     *
+     * @return string
+     */
+    public function getTokenSubType()
+    {
+        return $this->tokenSubType;
+    }
+
+    /**
+     * Set Token SubType.
+     *
+     * @param string    $value
+     */
+    public function setTokenSubType($value = PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_NOTHING)
+    {
+        $this->tokenSubType = $value;
+    }
+}

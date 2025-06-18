@@ -1,5 +1,6 @@
 <?php
-/*********************************************************************************
+
+/*
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
  * The Initial Developer of the Original Code is IT-Solutions4You s.r.o.
@@ -10,6 +11,7 @@
 class EMAILMaker_CustomLabels_Model extends Vtiger_Base_Model
 {
     public $labelKey;
+
     public $labelId;
 
     /**
@@ -44,10 +46,10 @@ class EMAILMaker_CustomLabels_Model extends Vtiger_Base_Model
     {
         if (!empty($this->labelId)) {
             $sql = 'SELECT * FROM vtiger_emakertemplates_label_keys WHERE label_id=?';
-            $params = array($this->labelId);
+            $params = [$this->labelId];
         } else {
             $sql = 'SELECT * FROM vtiger_emakertemplates_label_keys WHERE label_key=?';
-            $params = array($this->labelKey);
+            $params = [$this->labelKey];
         }
 
         $result = $this->db->pquery($sql, $params);
@@ -86,16 +88,18 @@ class EMAILMaker_CustomLabels_Model extends Vtiger_Base_Model
      */
     public function saveLabelKey()
     {
-        $this->db->pquery('INSERT IGNORE INTO vtiger_emakertemplates_label_keys (label_key) VALUES (?)',
-            array($this->getLabelKey())
+        $this->db->pquery(
+            'INSERT IGNORE INTO vtiger_emakertemplates_label_keys (label_key) VALUES (?)',
+            [$this->getLabelKey()],
         );
         $this->retrieveInfo();
     }
 
     public function deleteLabelKeys()
     {
-        $this->db->pquery('DELETE FROM vtiger_emakertemplates_label_keys WHERE label_id=?',
-            array($this->getLabelId())
+        $this->db->pquery(
+            'DELETE FROM vtiger_emakertemplates_label_keys WHERE label_id=?',
+            [$this->getLabelId()],
         );
     }
 
@@ -118,7 +122,7 @@ class EMAILMaker_CustomLabels_Model extends Vtiger_Base_Model
 
     public function deleteLabelValues()
     {
-        $this->db->pquery('DELETE FROM vtiger_emakertemplates_label_vals WHERE label_id=?', array($this->getLabelId()));
+        $this->db->pquery('DELETE FROM vtiger_emakertemplates_label_vals WHERE label_id=?', [$this->getLabelId()]);
     }
 
     public function saveLabelValues(Vtiger_Request $request)
@@ -128,7 +132,7 @@ class EMAILMaker_CustomLabels_Model extends Vtiger_Base_Model
         foreach ($languageValues as $languageId => $languageValue) {
             $control = $request->get('LblVal' . $languageId);
 
-            if ('yes' === $control) {
+            if ($control === 'yes') {
                 $labelValue = $request->get('LblVal' . $languageId . 'Value');
                 $this->saveLabelValue($languageId, $labelValue);
             }
@@ -138,7 +142,7 @@ class EMAILMaker_CustomLabels_Model extends Vtiger_Base_Model
     public function getLanguageValues()
     {
         $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
-        list($objectLabels, $languages) = $EMAILMaker->GetCustomLabels();
+        [$objectLabels, $languages] = $EMAILMaker->GetCustomLabels();
 
         $objectLabel = $objectLabels[$this->getLabelId()];
 
@@ -148,18 +152,21 @@ class EMAILMaker_CustomLabels_Model extends Vtiger_Base_Model
     public function saveLabelValue($languageId, $labelValue)
     {
         $labelId = $this->getLabelId();
-        $result2 = $this->db->pquery('SELECT * FROM vtiger_emakertemplates_label_vals WHERE label_id=? AND lang_id=?',
-            array($labelId, $languageId)
+        $result2 = $this->db->pquery(
+            'SELECT * FROM vtiger_emakertemplates_label_vals WHERE label_id=? AND lang_id=?',
+            [$labelId, $languageId],
         );
-        $params = array($labelValue, $labelId, $languageId);
+        $params = [$labelValue, $labelId, $languageId];
 
         if ($this->db->num_rows($result2)) {
-            $this->db->pquery('UPDATE vtiger_emakertemplates_label_vals SET label_value=? WHERE label_id=? AND lang_id=?',
-                $params
+            $this->db->pquery(
+                'UPDATE vtiger_emakertemplates_label_vals SET label_value=? WHERE label_id=? AND lang_id=?',
+                $params,
             );
         } elseif (!empty($labelValue)) {
-            $this->db->pquery('INSERT INTO vtiger_emakertemplates_label_vals (label_value, label_id,lang_id) VALUES (?,?,?)',
-                $params
+            $this->db->pquery(
+                'INSERT INTO vtiger_emakertemplates_label_vals (label_value, label_id,lang_id) VALUES (?,?,?)',
+                $params,
             );
         }
     }

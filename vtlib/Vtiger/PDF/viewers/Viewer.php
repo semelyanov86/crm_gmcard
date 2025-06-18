@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,16 +7,19 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
-abstract class Vtiger_PDF_Viewer {
-	
-	protected $labelModel;
-	
-	function setLabelModel($m) {
-		$this->labelModel = $m;
-	}
-	
-	abstract function totalHeight($parent);
-	abstract function initDisplay($parent);
-	abstract function display($parent);
+ */
+abstract class Vtiger_PDF_Viewer
+{
+    protected $labelModel;
+
+    public function setLabelModel($m)
+    {
+        $this->labelModel = $m;
+    }
+
+    abstract public function totalHeight($parent);
+
+    abstract public function initDisplay($parent);
+
+    abstract public function display($parent);
 }

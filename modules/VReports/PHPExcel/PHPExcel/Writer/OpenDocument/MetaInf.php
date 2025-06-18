@@ -1,77 +1,85 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-H9xK129Xbu33l5X+4XW=
+<?php
+
+/**
+ * PHPExcel_Writer_OpenDocument_MetaInf.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Writer_OpenDocument_MetaInf extends PHPExcel_Writer_OpenDocument_WriterPart
+{
+    /**
+     * Write META-INF/manifest.xml to XML format.
+     *
+     * @return     string         XML Output
+     * @throws     PHPExcel_Writer_Exception
+     */
+    public function writeManifest(?PHPExcel $pPHPExcel = null)
+    {
+        if (!$pPHPExcel) {
+            $pPHPExcel = $this->getParentWriter()->getPHPExcel();
+        }
+
+        $objWriter = null;
+        if ($this->getParentWriter()->getUseDiskCaching()) {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_DISK, $this->getParentWriter()->getDiskCachingDirectory());
+        } else {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_MEMORY);
+        }
+
+        // XML header
+        $objWriter->startDocument('1.0', 'UTF-8');
+
+        // Manifest
+        $objWriter->startElement('manifest:manifest');
+        $objWriter->writeAttribute('xmlns:manifest', 'urn:oasis:names:tc:opendocument:xmlns:manifest:1.0');
+        $objWriter->writeAttribute('manifest:version', '1.2');
+
+        $objWriter->startElement('manifest:file-entry');
+        $objWriter->writeAttribute('manifest:full-path', '/');
+        $objWriter->writeAttribute('manifest:version', '1.2');
+        $objWriter->writeAttribute('manifest:media-type', 'application/vnd.oasis.opendocument.spreadsheet');
+        $objWriter->endElement();
+        $objWriter->startElement('manifest:file-entry');
+        $objWriter->writeAttribute('manifest:full-path', 'meta.xml');
+        $objWriter->writeAttribute('manifest:media-type', 'text/xml');
+        $objWriter->endElement();
+        $objWriter->startElement('manifest:file-entry');
+        $objWriter->writeAttribute('manifest:full-path', 'settings.xml');
+        $objWriter->writeAttribute('manifest:media-type', 'text/xml');
+        $objWriter->endElement();
+        $objWriter->startElement('manifest:file-entry');
+        $objWriter->writeAttribute('manifest:full-path', 'content.xml');
+        $objWriter->writeAttribute('manifest:media-type', 'text/xml');
+        $objWriter->endElement();
+        $objWriter->startElement('manifest:file-entry');
+        $objWriter->writeAttribute('manifest:full-path', 'Thumbnails/thumbnail.png');
+        $objWriter->writeAttribute('manifest:media-type', 'image/png');
+        $objWriter->endElement();
+        $objWriter->startElement('manifest:file-entry');
+        $objWriter->writeAttribute('manifest:full-path', 'styles.xml');
+        $objWriter->writeAttribute('manifest:media-type', 'text/xml');
+        $objWriter->endElement();
+        $objWriter->endElement();
+
+        return $objWriter->getData();
+    }
+}

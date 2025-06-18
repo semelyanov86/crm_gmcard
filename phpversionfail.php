@@ -6,7 +6,7 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ********************************************************************************/
+ */
 
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -38,12 +38,12 @@
 		<td class="small" bgcolor="#FFFFFF" align=center>
 			PHP 5.2.x or above is required. Your current PHP version is
 			<?php
-				if(isset($serverPhpVersion)) {
-					echo $serverPhpVersion;
-				} else  {
-					echo '???';
-				}
-			?> <br/>
+                if (isset($serverPhpVersion)) {
+                    echo $serverPhpVersion;
+                } else {
+                    echo '???';
+                }
+?> <br/>
 			Kindly upgrade the PHP installation, and try again! <br/>
 		</td>
 	</tr>

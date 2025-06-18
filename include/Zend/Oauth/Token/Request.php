@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Zend Framework
+ * Zend Framework.
  *
  * LICENSE
  *
@@ -13,7 +14,6 @@
  * to license@zend.com so we can send you a copy immediately.
  *
  * @category   Zend
- * @package    Zend_Oauth
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id: Request.php 24593 2012-01-05 20:35:02Z matthew $
@@ -24,21 +24,17 @@ require_once 'Zend/Oauth/Token.php';
 
 /**
  * @category   Zend
- * @package    Zend_Oauth
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Oauth_Token_Request extends Zend_Oauth_Token
 {
     /**
-     * Constructor
-     *
-     * @param null|Zend_Http_Response $response
-     * @param null|Zend_Oauth_Http_Utility $utility
+     * Constructor.
      */
     public function __construct(
-        Zend_Http_Response $response = null,
-        Zend_Oauth_Http_Utility $utility = null
+        ?Zend_Http_Response $response = null,
+        ?Zend_Oauth_Http_Utility $utility = null,
     ) {
         parent::__construct($response, $utility);
 

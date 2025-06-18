@@ -6,17 +6,16 @@ class VTEEmailDesigner_Block_Model extends Vtiger_Block_Model
     {
         if (empty($this->fields)) {
             $moduleFields = VTEEmailDesigner_Field_Model::getAllForModule($this->module);
-            $this->fields = array();
+            $this->fields = [];
             $fieldsList = $moduleFields[$this->id];
             if (!is_array($moduleFields[$this->id])) {
-                $moduleFields[$this->id] = array();
+                $moduleFields[$this->id] = [];
             }
             foreach ($moduleFields[$this->id] as $field) {
-                $this->fields[$field->get("name")] = $field;
+                $this->fields[$field->get('name')] = $field;
             }
         }
+
         return $this->fields;
     }
 }
-
-?>

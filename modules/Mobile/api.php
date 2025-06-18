@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,10 +7,10 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
+ */
 header('Content-Type: text/json');
 
-chdir (dirname(__FILE__) . '/../../');
+chdir(dirname(__FILE__) . '/../../');
 
 /**
  * URL Verfication - Required to overcome Apache mis-configuration and leading to shared setup mode.
@@ -32,28 +33,29 @@ include_once dirname(__FILE__) . '/api/ws/Controller.php';
 require_once 'includes/main/WebUI.php';
 
 /** Take care of stripping the slashes */
-function stripslashes_recursive($value) {
-       $value = is_array($value) ? array_map('stripslashes_recursive', $value) : stripslashes($value);
-       return $value;
+function stripslashes_recursive($value)
+{
+    $value = is_array($value) ? array_map('stripslashes_recursive', $value) : stripslashes($value);
+
+    return $value;
 }
-/** END **/
+/** END */
+if (!defined('MOBILE_API_CONTROLLER_AVOID_TRIGGER')) {
 
-if(!defined('MOBILE_API_CONTROLLER_AVOID_TRIGGER')) {
+    $clientRequestValues = null;
+    if (stripos($_SERVER['CONTENT_TYPE'], 'application/json') !== false) {
+        $clientRequestValues = json_decode(file_get_contents('php://input'), true);
+    } else {
+        $clientRequestValues = $_POST;
+    }
 
-	$clientRequestValues = null;
-	if(stripos($_SERVER['CONTENT_TYPE'], 'application/json')!==false) {
-		$clientRequestValues = json_decode(file_get_contents("php://input"), true);
-	} else {
-		$clientRequestValues = $_POST;
-	}
+    $clientRequestValuesRaw = [];
 
-	$clientRequestValuesRaw = array();
+    if (get_magic_quotes_gpc()) {
+        $clientRequestValues = stripslashes_recursive($clientRequestValues);
+    }
 
-	if (get_magic_quotes_gpc()) {
-	    $clientRequestValues = stripslashes_recursive($clientRequestValues);
-	}
-
-	require_once dirname(__FILE__) . '/api.v1.php';
-	$targetController = Mobile_APIV1_Controller::getInstance();
-	$targetController->process(new Mobile_API_Request($clientRequestValues, $clientRequestValuesRaw));
+    require_once dirname(__FILE__) . '/api.v1.php';
+    $targetController = Mobile_APIV1_Controller::getInstance();
+    $targetController->process(new Mobile_API_Request($clientRequestValues, $clientRequestValuesRaw));
 }

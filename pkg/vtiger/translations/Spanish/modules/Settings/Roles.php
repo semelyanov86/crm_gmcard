@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -14,35 +15,35 @@
  *  Author       : JPL TSolucio, S. L. Joe Bordes
  *  Last change  : 2013-05-11
  *  Author       : JPL TSolucio, S. L. Joe Bordes
- ************************************************************************************/
-$languageStrings = array(
-	'Roles'                        => 'Roles',
-	'SINGLE_Roles'                 => 'Rol',
-	'LBL_ADD_RECORD'               => 'Añadir Rol',
-	'LBL_DELETE_ROLE' => 'Eliminar Rol',
-	'LBL_TRANSFER_OWNERSHIP' => 'Cambiar Asignado a al Usuario',
-	'LBL_TO_OTHER_ROLE' => 'A otro Rol',
-	'LBL_CLICK_TO_EDIT_OR_DRAG_TO_MOVE' => 'Click para editar/Arrastrar para mover',
-	'LBL_ASSIGN_ROLE' => 'Asignar Rol',
-	'LBL_CHOOSE_PROFILES' => 'Selecciona perfiles',
-	'LBL_COPY_PRIVILEGES_FROM' => 'Copiar privilegios desde',
-    'LBL_TRANSFER_TO_OTHER_ROLE' =>'Transferir la propiedad a otra función',
+ */
+$languageStrings = [
+    'Roles'                        => 'Roles',
+    'SINGLE_Roles'                 => 'Rol',
+    'LBL_ADD_RECORD'               => 'Añadir Rol',
+    'LBL_DELETE_ROLE' => 'Eliminar Rol',
+    'LBL_TRANSFER_OWNERSHIP' => 'Cambiar Asignado a al Usuario',
+    'LBL_TO_OTHER_ROLE' => 'A otro Rol',
+    'LBL_CLICK_TO_EDIT_OR_DRAG_TO_MOVE' => 'Click para editar/Arrastrar para mover',
+    'LBL_ASSIGN_ROLE' => 'Asignar Rol',
+    'LBL_CHOOSE_PROFILES' => 'Selecciona perfiles',
+    'LBL_COPY_PRIVILEGES_FROM' => 'Copiar privilegios desde',
+    'LBL_TRANSFER_TO_OTHER_ROLE' => 'Transferir la propiedad a otra función',
 
-	//Edit View
-	'LBL_PROFILE' => 'Perfil',
-	'LBL_REPORTS_TO' => 'Informa a',
-	'LBL_NAME' => 'Nombre',
-	'LBL_ASSIGN_NEW_PRIVILEGES' => 'Asignar privilegios directamente al Rol',
-	'LBL_ASSIGN_EXISTING_PRIVILEGES' => 'Asignar privilegios a partir de perfiles existentes',
-	'LBL_PRIVILEGES' => 'Privilegios',
+    // Edit View
+    'LBL_PROFILE' => 'Perfil',
+    'LBL_REPORTS_TO' => 'Informa a',
+    'LBL_NAME' => 'Nombre',
+    'LBL_ASSIGN_NEW_PRIVILEGES' => 'Asignar privilegios directamente al Rol',
+    'LBL_ASSIGN_EXISTING_PRIVILEGES' => 'Asignar privilegios a partir de perfiles existentes',
+    'LBL_PRIVILEGES' => 'Privilegios',
 
 
-  'LBL_DUPLICATES_EXIST' => 'Función Duplicada Existe',
-  'LBL_CAN_ASSIGN_RECORDS_TO' => 'Puede Asignar Registros A',
-  'LBL_ALL_USERS' => 'Todos Los Usuarios',
-  'LBL_USERS_WITH_LOWER_LEVEL' => 'Usuarios que tienen el Rol Subordinado',
-  'LBL_USERS_WITH_SAME_OR_LOWER_LEVEL' => 'Usuarios que tienen el Mismo Rol o Papel Subordinado',
-  'LBL_EDIT_ROLE' => 'Edición Papel',
-  'LBL_CREATE_ROLE' => 'Crear Papel',
+    'LBL_DUPLICATES_EXIST' => 'Función Duplicada Existe',
+    'LBL_CAN_ASSIGN_RECORDS_TO' => 'Puede Asignar Registros A',
+    'LBL_ALL_USERS' => 'Todos Los Usuarios',
+    'LBL_USERS_WITH_LOWER_LEVEL' => 'Usuarios que tienen el Rol Subordinado',
+    'LBL_USERS_WITH_SAME_OR_LOWER_LEVEL' => 'Usuarios que tienen el Mismo Rol o Papel Subordinado',
+    'LBL_EDIT_ROLE' => 'Edición Papel',
+    'LBL_CREATE_ROLE' => 'Crear Papel',
 
-);
+];

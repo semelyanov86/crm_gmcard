@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
 * The contents of this file are subject to the vtiger CRM Public License Version 1.0
 * ("License"); You may not use this file except in compliance with the License
@@ -6,29 +7,29 @@
 * The Initial Developer of the Original Code is vtiger.
 * Portions created by vtiger are Copyright (C) vtiger.
 * All Rights Reserved.
-*************************************************************************************/
-$languageStrings = array(
-	'Map'	=>	"Harita",
-	'EXTENTIONNAME'	=>	"Google",
-	'LBL_UPDATES_CRM'	=>	"CRM Güncellemeler",
-	'LBL_UPDATES_GOOGLE'	=>	"Google Güncellemeler",
-	'LBL_UPDATED'	=>	"Güncelleme",
-	'LBL_ADDED'	=>	"Katma",
-	'LBL_DELETED'	=>	"Silindi",
-	'LBL_SYNCRONIZED'	=>	"Senkronize",
-	'LBL_NOT_SYNCRONIZED'	=>	"Henüz senkronize değil",
-	'LBL_SYNC_BUTTON'	=>	"Şimdi senkronize",
-	'LBL_REMOVE_SYNC'	=>	"Sync Kaldır",
-	'LBL_MORE_VTIGER'	=>	"VTiger senkronize olması daha kayıtlar vardır",
-	'LBL_MORE_GOOGLE'	=>	"Google senkronize olması daha kayıtlar vardır",
-	'Contact Name'	=>	"Kişi Adı",
-	'Email'	=>	"E-posta",
-	'Mobile Phone'	=>	"Cep Telefonu",
-	'Address'	=>	"Adres",
-	'Event Title'	=>	"Olay Başlığı",
-	'Start Date'	=>	"Başlangıç ​​Tarihi",
-	'Until Date'	=>	"Tarih kadar",
-	'Description'	=>	"Tanım",
+*/
+$languageStrings = [
+    'Map'	=>	'Harita',
+    'EXTENTIONNAME'	=>	'Google',
+    'LBL_UPDATES_CRM'	=>	'CRM Güncellemeler',
+    'LBL_UPDATES_GOOGLE'	=>	'Google Güncellemeler',
+    'LBL_UPDATED'	=>	'Güncelleme',
+    'LBL_ADDED'	=>	'Katma',
+    'LBL_DELETED'	=>	'Silindi',
+    'LBL_SYNCRONIZED'	=>	'Senkronize',
+    'LBL_NOT_SYNCRONIZED'	=>	'Henüz senkronize değil',
+    'LBL_SYNC_BUTTON'	=>	'Şimdi senkronize',
+    'LBL_REMOVE_SYNC'	=>	'Sync Kaldır',
+    'LBL_MORE_VTIGER'	=>	'VTiger senkronize olması daha kayıtlar vardır',
+    'LBL_MORE_GOOGLE'	=>	'Google senkronize olması daha kayıtlar vardır',
+    'Contact Name'	=>	'Kişi Adı',
+    'Email'	=>	'E-posta',
+    'Mobile Phone'	=>	'Cep Telefonu',
+    'Address'	=>	'Adres',
+    'Event Title'	=>	'Olay Başlığı',
+    'Start Date'	=>	'Başlangıç ​​Tarihi',
+    'Until Date'	=>	'Tarih kadar',
+    'Description'	=>	'Tanım',
     'Office Phone' => 'Ofis Telefon',
     'Work Phone' => 'İş Telefonu',
     'Home Phone' => 'Ev Telefonu',
@@ -67,21 +68,21 @@ $languageStrings = array(
     'LBL_SAVE_AND_START_SYNC' => 'Kaydet ve Sync Başlangıç',
     'LBL_PRIMARY' => 'Birincil',
     'LBL_SYNC_FROM_GOOGLE_TO_VTIGER' => 'Google vtiger Sync',
-	'LBL_SYNC_FROM_VTIGER_TO_GOOGLE' => 'Google vtiger eşitlemek',
-	'LBL_GOOGLE_CONNECT_MSG' => 'Almak için bir Google hesabına bağlan',
-	'LBL_SIGN_IN_WITH_GOOGLE' => 'Google ile giriş yap',
-	'LBL_GOOGLE_ACCOUNT_DETAILS' => 'Google Hesap Bilgileri',
-	'LBL_GOOGLE_ACCOUNT_SYNCED_WITH' => 'Google Hesabı ile Senkronize',
-	'LBL_CHANGE_USER' => 'Kullanıcı Değiştir',
+    'LBL_SYNC_FROM_VTIGER_TO_GOOGLE' => 'Google vtiger eşitlemek',
+    'LBL_GOOGLE_CONNECT_MSG' => 'Almak için bir Google hesabına bağlan',
+    'LBL_SIGN_IN_WITH_GOOGLE' => 'Google ile giriş yap',
+    'LBL_GOOGLE_ACCOUNT_DETAILS' => 'Google Hesap Bilgileri',
+    'LBL_GOOGLE_ACCOUNT_SYNCED_WITH' => 'Google Hesabı ile Senkronize',
+    'LBL_CHANGE_USER' => 'Kullanıcı Değiştir',
 
-  'LBL_SAVE_AND_IMPORT' => 'Kaydet ve İthalat',
-  'LBL_IMPORT_RESULTS_GOOGLE' => 'Google İthal sonuçlar',
+    'LBL_SAVE_AND_IMPORT' => 'Kaydet ve İthalat',
+    'LBL_IMPORT_RESULTS_GOOGLE' => 'Google İthal sonuçlar',
 
-	'LBL_REDIRECT_URL' => 'Yönlendirme bağlantısı',
-	'LBL_REDIRECT_URL_MESSAGE' => 'Aşağıdaki yönlendirme url kopyalayıp görüntü gösterildiği gibi google auth projesinde yapıştırın',
-);
-$jsLanguageStrings = array(
-	'LBL_SYNC_BUTTON'	=>	"Şimdi senkronize",
-	'LBL_SYNCRONIZING'	=>	"Senkronizasyon ....",
-	'LBL_NOT_SYNCRONIZE'	=>	"Henüz senkronize değil",
-);
+    'LBL_REDIRECT_URL' => 'Yönlendirme bağlantısı',
+    'LBL_REDIRECT_URL_MESSAGE' => 'Aşağıdaki yönlendirme url kopyalayıp görüntü gösterildiği gibi google auth projesinde yapıştırın',
+];
+$jsLanguageStrings = [
+    'LBL_SYNC_BUTTON'	=>	'Şimdi senkronize',
+    'LBL_SYNCRONIZING'	=>	'Senkronizasyon ....',
+    'LBL_NOT_SYNCRONIZE'	=>	'Henüz senkronize değil',
+];

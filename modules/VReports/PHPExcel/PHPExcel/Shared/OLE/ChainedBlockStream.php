@@ -1,106 +1,209 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-HR+cPvzM38Fa3/MqyPEPe8KSweV3lz5qUpiWFyCg+NkCMjMx9gr4YjJLJxVznJCgQxUTNDsJwin/
-bWffgaQCp+PuwBh5kqHxoqGZ+KdUsiSU50fuqgo1g/sys0bRCY/fXhv9xZEuUDATyAp417yGZnyF
-o+6tcnzsXcGieHMh+nc+SIz6c7defDA30Hld6ketJ1IGTjuKCIneHUpd4Fl9j6ExfMxqMk9enbLJ
-dUg1ObkZ3/4BUphm3BMn7+Gp9PjKxIxPtHRn+PaGUEDnUKOYaxa9jQuKxeMMrOrmo/XZOEZo7pyn
-ngETDtO+/yxU5A4+hIBwj5vNW+1ESmnA9H63LVsbYjbPsb/tBv5ND+T6mHvXMpsWnhJf/nd7pAJf
-3EvKlCCXujI3S1F5xAgDNMjXe3UDeo3dAX55toY1ABholmQm58IY6Tz5sclHu4EGSHsb7/AGgF3h
-1caZU77Tj8whi/hNV8HGzr2Tt+Ji3At4UkgfIvbNnq7sMz/APNqevfcMG3gknODlXffDQrKhVaIA
-sIiT7FGSVZbQNO4A9AW32bRML0IezSpU5dokfubnstl5M6mAqaubowPi/s8Uus68Xzfnar3jTO/B
-jmRH9kHk1Zk+2jY44KOdcBkubWgwltxPpxcu0Zq41PmKUNOn4MOIntPUavU9GY/Wuz+Rm/2oTHwl
-czuCtlb1imSYNxbIBmqE+/5x5RDsWFtmQPFbkPR6GitpHtHUJCGUTZj8XkLJr6QJ1qRNSx0khRbW
-q5uAf7DS0HdpJw/jBlnHsu1vc53jY0C7fqV94Bolu89mZetlzInsyGCBftmqeauC2iheOe7r1pGj
-aPeYJeBPLkkSUWtD4jVoMAOwhm9Il3b8q9CGsLrO1Vr3ljIjGPEiSDreuLWhlmExAUwaBPr6cWFU
-fPjb6Sc5aTlBTdlF9T7W4KIZpN+7iq/e9U+lxiVIaaG1m8G41nfe1aD23xwugCglaZ7pVkH9TQ3n
-ajkMjDfoj1FuPFz0xhjiQJfXj+UrnTEm8gzqoNwDaw+GxGNxeQ37xdupPmhdmSpObuIqppiNOZ1W
-jXk1p7CWgMlKKJdME6ASyKtNbm30rSMuYp1yOxuquotI6Fyudl3LrdTYIvQqBbSrFPfEs+5NNU2i
-UY9jtwt0S8ElcV/9FiVuNAtpsCcfex92CVNPrTKUhkGg4iqhTO1SjalFOF26gN8z5MHIAd+6MQkm
-t1QgbCKEoelOWw7FdDcAFXQn4ykN6pu9RgCZpClZN5wFImuFr9HwqEruHdG9gine2le1l6XSHLCQ
-wdc16lkhRcCeU55Va4Hw4zOC93aABrdH/vlQduSMKMugHsXoT7qndAFTZELPuEeQ8ciN8kQjUUmD
-yrG73M4Q1mEX/ihc/6axbGHfUy5jicPbyAxWcdoowMHxDnDQRmbWtabidWKnsByIqfNPX0Agzbh+
-tYE1dO10OeJh59Xkww9/zaqi31wojzPB7YHYOvBZH9Fhvxo83ZJs2hwZUcvgByHYjfvRei2vt/Xg
-z8HBqhGQ8pS2OKSGJYVBH3Iti/tY460eRf470HOCAc43RY86Jk34OuLNnSrrANbO6RqqWN165zKw
-mDoi4A1SNf/7rl1O/+ewZyNSVLiTXkwUxetkSZ4mhT1RDy4D5M/oTkGDxD2zNyxHJQivwXkp8x/l
-Xb6j5WZSQdYwyFcMXYpdqdzTRDLoEYzHJuZi340HfOTv6BCm2eLuTPtbC9wZ28Lye+fT1JRv8H/g
-0jhbRrLllU2L3jBeB9hhFbO1H76em+dWbq4Me2opMh58W7X9PlnT4F58sqK4JsnZ9RXpp7LXYvKg
-SmqOs18+dX7BcDQK/eckV2tA1zscW1gy3HaunKM1c5qJYicS2/mRcimRosNTkPxwLtYQZw4t2qPA
-T2zfmj7ueRo0PR2U/YhOfYmIXAXPse9lOf4B493gvbEHGsMKqWBzwqxpB+4di5Ei1D0w5L2Vas4f
-5wxEdmhIkJE1hk4uN4/X5CWGTiMjtbGqeDrqVpkQ+FbyH/GhIg7bpacMjwF/wKEZHk9vyvQLqQX2
-D/bY6z1e01Nn0UzMEOxGWXo0R3Mw2ckB1ZBnz27LeGQLf/H5Qg5CE84D4zTuETDJfvuou4SKkt22
-to6Zxa1Xpw+6W6kYNqNEiW/HfR/WaZ3lYwS5dYNb/dCFjZCV7kllXqMdpuc3IFuU9AkC3WvwUr/g
-lAfxwPzOK5roLN4CouEt45txMdKR+8n9pY5v2g05Q7U7BSboFVi7o7jdayJLmJDoiBl9JRmxdGWS
-3ZjMYmROXNZjzfaaUalivnRVNbL8HfbJsMviGs6MAnBwcHMoZzptWT8xJM9rxADz63x3de5hD08s
-gfIkAHQ4uKvdUYVwahV+EWYXYjFwcWdYVb99YTin2SSBT1tZJZHSgtb5zmN6d8vEPiElAOUK6YnF
-S1XHFu/Aq53vDTy6nMkb/ZjaURv/wHluW5t7teemzkb/BtMHwTsgZfEGgALu9WOPy71KxkhucNjk
-kOEXpFQlQ9wwR8CM1TFmCm+M7E5qurMESHo6Xt1OasumcN+NXu4Kh6xhxTCzj9WnckO7FLG1X3Xv
-5m4GKlIaAmVVzZWcD4/gPRn7Pv6W9yGDKj9nuNiaVM8Z0qYiMhJV6RCaFndSF+hhztKEd6mCduCB
-EcYzRY+MI+ae7sBoWv43ixdZlc2oqXJwjuW6fEZqtwxsicpUIS+SO+VomTw06SX2/QnRZIT6bAC8
-mws7UWsXxG7SBWGwXeyGHVylrX4UZKrEZd2PGNoyv3MZksMRvYF/9j3j+OwbKolorvKzgi/3Rvmp
-nosBki6WKoPBP9hcHMXMTNAdCP9kcZEBVmDlHQOeFXTWZTaIN/XQXigNS6trYwOwG1IH0E8B4/FT
-58WEqmVG2+N3QUP4zwR9e3dTNXgO7TgSvcqWCObbhxZG6GOfTc7HMve3dNjS/XtvTwVzqmchtarP
-HjtB4pbTAHPsQC5TM2OCT0oRzC4qNBYr6l51BUyuq32SPX57IBDwY9wZz5Du7YYS4KFwz0UJR/H2
-pURQfQbgufkPms9hYhPG3AfRXF/1raHcKceEcKJOCs8etzbJv0f/NgDiWkK3wGIE3RRb7RGSYrBT
-yiI4RjWkjzot4KBvqGOuGkqXFdC5A/Hyq5jCE1LUFLvP4Uq4/aqaPxaI0ov6dnfeuVeLfqHon9Fc
-gSe7doiQf4vxON0Cn8/TgaWmAfaABpF8J/jMJlLfq9n8A3/A6u6MvRG0rnMmAHf3OyNB8R3xoAVX
-nnoMqTwiBnzw3uO9POBvcspwRsknfBLxfynKvRIPF+6yq+3FmNp6IlAiCdEuUPEUiPhb2sJBvyJr
-YX0JQ0AOR0uRBLwMafFFncH9DUbA4XAlim6MBthC9qV9mrxlaxHsCcDO8SOjLeYt96RnWnny5U4r
-+ryw0UEJhWjwZvrTx26qBUgdnMJacouZIABO0DOhIXYESCsVWPuoJbZ+ExtuRIl5HfucXlR4f6A5
-qmF8DY1VnOjgO2+21At2tV1dQdgl3Yt3rGmsTmTdi28aoVQ9dfzbIh/VKEMRqR1lhQOjUioFXZg4
-Ynm/qGCd3pQisya/4FLxkdZ7hwAV9inusk9LFn0jt52xFqGm5sO9harZNjyCZtMwyj3CmbU85NKl
-V7LBNgJnUrAy7frbZjgxYdWr+FgLZ664pheRaRNV1RjxHl9tm32d5jCc4+4JcCIeyjiLO2D1+WuL
-hq0g+GZNihHe2vwquYuVmQpw+91bXBm86cepzp+bkhNalJjt1ei+0GwEBKSgWtEclD3kPVy421Ns
-AC9E/uHyiWdKYm7QAof4XIOUVm/G05vUh6enuuxRwiUR3F5/PVKMeHvdt2GrjJJ4wmkah9XaX6HH
-JOr8yiex2xhYS/t5rxDlMMeeby1PfQIewjL99PLu5eaGiBgji4b68CX5VdBBCtGXw2rwGw3FyqeB
-ke4oxDka+oibgY9+RAisxhKDKgi2UNP5mswU59yYowom7R8/YHF+a1f6G8H/pb7wlVt8SUGcSyjB
-7McfTONBDyd5gAQuIz/NmgofFdx412vjGTkzXfCaTZBeXgqz8LKolmbW54ec/zdfkeIdoaN7eE3G
-H7s0oQ5tyLEdt4qVTsrqwRqROdHHg8mA/z3eQKRYBPpctpa3cJLKbj0Tebgx8nGPWXdY2rBIrdWU
-/bI+jmGgP1aLm0sDuwdeqY7/knsw2mdXVnFO5aYcW/z6B7AWYGHHSYBpnC+N+cVpFL3gQDLCzy8D
-62fTH01Nnc6c6kJPW90uiJ64ksUlM2Hgdb4FMSaTNuwTzrOTsXhF3ZVPwpRVfEHhBsrBMhrVWHl2
-sVl/TLm5SfKLdM3G7nNQM5P7n/d4/vaiFwGtHHDYb7iT3pWeNfoyCNIMESqCpHZc0ElbXAIcQHm4
-0NaYyO2p+Q2fRwTLNi/YAdsyvTzVyl9kXS9NK44g+fjzYia0lxU142Csl+JweSIp7Su7v76Zbg4/
-XKJV4SNPW6r0tc2zK3aPWhhHklPvFxNpq4Y+bA43RNFGodEfEOe8JbGCRYTIEXAjOkuJYNK5j6Iz
-+/m0jDol+eEolrG0wU7Y/ybbSGAt2ngnAi2Cn3dLbp6eDUNEEl/zK6sMXaaQzjfuT5JVjWwCUi8J
-znL9lFlN85uczio2C/AV7uwuNH1SCyqmCuaMf8Us/mkcfGSiaXFrUN/bx8lqTv5tFLllikohSv+h
-NxOd4XjSltLliMF4aPBdZYLoeQfggYzsn0r+D5OUCpWBZahXDl9DwmQ6mT7/jM6rhjMZ1b3Fo3XS
-fRHzwHsav81T/HcYRDzuTWYrhxy5vdO6uOnl8/hzXRrgmbOYndXCg9coIbl8hTq+tp3EvCvPxhH5
-tR/iuLMS/fEq9CQpk5Zl17nGTjbhW5qkW60EAG0xseaQmoIWJIbg5RQc4UihcvcCdxfVc7GPpnTa
-4yw8E6qikpgSnQf32nHP1RhPXciUaL+uTbst7nJrQEnBTov+24mOsLE+8Ek2sJfMCeCxA1OvaMjw
-rNt2LyMkYwgPCv4ptbpCi45wPtnprTOgIrXcLj853huQDCb98qgUQr81oFbd2ssxMtZaYR4Hv+FV
-cMGRv9YvJapCcXWOuXek/M1rIza0HTe6MFFDfaomVKRIVAZ5QrwduCiq/Jtc8pxGPzb2WwOp13l1
-5rDx/u2c5h+zh2QNLbnK0YBRWVgjmqbULHN1RF0lZMnhlGJllWICJgPqg4b/TsYQb7KP7KTcAo/2
-iajEh0ISS9t49HJeEjUyfKMXAQT7Krl2q1MFKnjwaZC5vJLF8NiMUWTkDHZcu8h/3KnjkrsxbPzG
-YIqdS6YEIQVp40rvaPG7+mhJ2j1v1jRh4zUKq8AhdmvRof9CerLo92gtwjkryEJ8gMBTLgB9Iwoa
-Qbmc6MapOGmcklKG/FF7jxhtCamh6DyfjhyL6kLhoBS/V3DOeD7tsHLD85WTQU1DUKC6US/zyjNw
-RwYCzKvF8PjHb3hDwOLhWBZf3i4lwQsRJsX8DPswV1h/2+aNnNbPbfHb6LTin16YPQeLyfExUxe4
-t8WsWt6ifo8bN7IRFOyS/UgTtpa4hpSwnT24BuIfcxTGFJzJ+vOOWJqBipeYLhY/O+7w/5ah1W+n
-A7wAMCggDqm7cN3dGGMZmzyV0TEI3y0nE8O2GrWTAoNo79heWZS1/BVXxLEUrHlTuASoSMa86xR2
-j8/G3HhOOC+NqmkQ9unBs94CmTOOlp+ydIsQxZDq+Xilnpv7ocJ9qxPtEmtzbDQ/q3M5QtoyfMJ+
-cpTus6wR7dOmLhkEu1dQZNjktVgwkMkl3XaXICRuXXbQn5mhzjNZA89wPAcOvmORh1sXmMKUS3HN
-JlHkU1/SvLTQGtM/nEV58ssB2BMAq9/LEmApvWgGAEpkSeIxcFr9tpkTXDfFWhU03B2FqaFo8wui
-idI/lrzxnk47oS4qTuAZ1kfQXMX/OYdEo5bI3j3x6piErrctNlJgsXtym6JmNP9AtChn3RqryhoH
-EfikmBbWJbU/GMaK1pbN+xJdrsVRfmE0LidAv7BGnx130R4reFP0SSKY7N42LeFqN/mPvfbCN0OM
-sdZCIzwc0QqpjneZ8/L4oX9BkN1naOKSXMXrnJJBgyGvE97Tm74X5fiYKg+VjNhzyCyMOz2jxtRn
-XzydtyINyt52oY39H2bvlqNlTydl6M32XxaVaEI+zhsDAzrpQkGB5ztSWFeZ+afnRoOqY/+Y2v3x
-u3Ib6Ul7N2UbohMWD9J5l8uJUsioj5DDWULBLSyHmcC41ls50ACAh0bv9QyrvfnMg5JfIXvZhg4r
-xowbAVBNT7uK7zNhgPGT4le33VJ1YuV+fnqV1iMJ6dAKc1TAqnlLFI9yeB8KEISwsA1h0mzALR4w
-c94iNDFtQzUo/LmSITUwRBls6BP1dvf5Xru9jw8b9MnaO6q7P5ZvDPg/sha+wac0UsfezEcAojft
-m1r47W1wfJfFKk2iI1uKc7jqbnciOmzCiR5G6bwgryG8BwradVroqAR3a35Qu8cRelrvjTy8WTFO
-BtCRmyUf2KzNptd/G/Vk6uGgyMhZ6mrTFH8Zsrhcd+htQTGtYAOthOXaKXd1ifThZOqBSFz4Kx0m
-HPQwyh64jAZDojOJcBoFYRfBrbHF8f59iaUGJS6A0gFrxThJ+CecpMKJHDIlZ5hd1i+OoeygGOgl
-ctexhiaRbqGA9l3jaR/cMjGNke66OgCU+FPlavpMIdqtYrrg+zdztD9ji63fP5ThqNewpUp/1JEo
-riZN2XT5ibO1EagDczom+O3HFR+kslrz4WQwfBbm9bTqLTYbAQPtmSZv8pH7zlqFnJCIg9/pxOMp
-22BxaCPGpGCr+TzkZBPAthwgaye+A5IEuVyPBoecVngOnj5INa7pQqEMFwqM5bNuErlhNdbvt7hc
-DgRYIdDyo9VB68NcmqHiz/ndKe74Co/dCEHcNO84gGbV+hMcQ8J1WGJT5nMVzJHsNu/1YwPBkrDt
-eePplrEPcBgW87/W3+EGbJ9JsFwYMvgH4qIo7cKfy7rF9UMyFQJkhfBM0qb6VSTzZSRNWgB9kC50
-P87i9P+M9ozy1JlPanx0ghTOryZZ8YPG+FupR4io/otrTa4eGLv6TpxwuETHT+4T+ocBgnuMOkks
-RqTMCiWzJAXqUrxiCV+fGOwjRp+HzgkCkqjXk0v61oLH/94vnue5XPkyr/ajXCy80Osgzra0vytR
-DruPnW2byD77RtC/QEbmYWiumEU3WUHfHOGBbD6/R65CbV8TtlNGhW0v4fnzXFNXu1KGsBzVdG+z
-65V3GGGF+2sW17LBuIlHadxPeP8/CgicQ1647K214hDNhrF6JUDQ3SRDd0sGb0vznMax+mV0texh
-6Ifk9clgpWQAMicos8twnVA49AILhHr60tV74Cim35pxFRqnsa7zpf3Y7tH5g9LczvaORqjdzooe
-ClmtUq90L+LsHkITv0DLLGm6S5Qse/1tZ0Vc2uQaLWOlMKAU5xLkYAVgs2eXULdM9/k7NMa2hHk9
-Ev4qA+e1K6gOxKwm49QUzgjUEiEDtrlTrak0+xXLxzADO5pFRIqnAp03bVuZQKjhjAZ3OBC6Hf4u
-yPUAtkQ9MIXFezFjRCLkQz0pSzdKLmIjmQmC0i4nS4jZV96o79AU532Y+f45Z0QGy5eWaSssu+iX
-kBem5xu4JJWSRxA670ZBcE8edfMt1pdMTzL7i8pzQRPyU9HrsWkoxnoZwD/FNG==
+<?php
+
+/**
+ * PHPExcel_Shared_OLE_ChainedBlockStream.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2007 Christian Schmidt
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version ##VERSION##, ##DATE##
+ */
+class PHPExcel_Shared_OLE_ChainedBlockStream
+{
+    /**
+     * The OLE container of the file that is being read.
+     * @var OLE
+     */
+    public $ole;
+
+    /**
+     * Parameters specified by fopen().
+     * @var array
+     */
+    public $params;
+
+    /**
+     * The binary data of the file.
+     * @var  string
+     */
+    public $data;
+
+    /**
+     * The file pointer.
+     * @var  int  byte offset
+     */
+    public $pos;
+
+    /**
+     * Implements support for fopen().
+     * For creating streams using this wrapper, use OLE_PPS_File::getStream().
+     *
+     * @param    string    $path            resource name including scheme, e.g.
+     *                                    ole-chainedblockstream://oleInstanceId=1
+     * @param    string    $mode            only "r" is supported
+     * @param    int        $options        mask of STREAM_REPORT_ERRORS and STREAM_USE_PATH
+     * @param    string  &$openedPath    absolute path of the opened stream (out parameter)
+     * @return    bool    true on success
+     */
+    public function stream_open($path, $mode, $options, &$openedPath)
+    {
+        if ($mode != 'r') {
+            if ($options & STREAM_REPORT_ERRORS) {
+                trigger_error('Only reading is supported', E_USER_WARNING);
+            }
+
+            return false;
+        }
+
+        // 25 is length of "ole-chainedblockstream://"
+        parse_str(substr($path, 25), $this->params);
+        if (!isset($this->params['oleInstanceId'], $this->params['blockId'], $GLOBALS['_OLE_INSTANCES'][$this->params['oleInstanceId']])) {
+            if ($options & STREAM_REPORT_ERRORS) {
+                trigger_error('OLE stream not found', E_USER_WARNING);
+            }
+
+            return false;
+        }
+        $this->ole = $GLOBALS['_OLE_INSTANCES'][$this->params['oleInstanceId']];
+
+        $blockId = $this->params['blockId'];
+        $this->data = '';
+        if (isset($this->params['size']) && $this->params['size'] < $this->ole->bigBlockThreshold && $blockId != $this->ole->root->_StartBlock) {
+            // Block id refers to small blocks
+            $rootPos = $this->ole->_getBlockOffset($this->ole->root->_StartBlock);
+
+            while ($blockId != -2) {
+                $pos = $rootPos + $blockId * $this->ole->bigBlockSize;
+                $blockId = $this->ole->sbat[$blockId];
+                fseek($this->ole->_file_handle, $pos);
+                $this->data .= fread($this->ole->_file_handle, $this->ole->bigBlockSize);
+            }
+        } else {
+            // Block id refers to big blocks
+            while ($blockId != -2) {
+                $pos = $this->ole->_getBlockOffset($blockId);
+                fseek($this->ole->_file_handle, $pos);
+                $this->data .= fread($this->ole->_file_handle, $this->ole->bigBlockSize);
+                $blockId = $this->ole->bbat[$blockId];
+            }
+        }
+        if (isset($this->params['size'])) {
+            $this->data = substr($this->data, 0, $this->params['size']);
+        }
+
+        if ($options & STREAM_USE_PATH) {
+            $openedPath = $path;
+        }
+
+        return true;
+    }
+
+    /**
+     * Implements support for fclose().
+     */
+    public function stream_close()
+    {
+        $this->ole = null;
+        unset($GLOBALS['_OLE_INSTANCES']);
+    }
+
+    /**
+     * Implements support for fread(), fgets() etc.
+     *
+     * @param   int        $count    maximum number of bytes to read
+     * @return  string
+     */
+    public function stream_read($count)
+    {
+        if ($this->stream_eof()) {
+            return false;
+        }
+        $s = substr($this->data, $this->pos, $count);
+        $this->pos += $count;
+
+        return $s;
+    }
+
+    /**
+     * Implements support for feof().
+     *
+     * @return  bool  TRUE if the file pointer is at EOF; otherwise FALSE
+     */
+    public function stream_eof()
+    {
+        return $this->pos >= strlen($this->data);
+    }
+
+    /**
+     * Returns the position of the file pointer, i.e. its offset into the file
+     * stream. Implements support for ftell().
+     *
+     * @return  int
+     */
+    public function stream_tell()
+    {
+        return $this->pos;
+    }
+
+    /**
+     * Implements support for fseek().
+     *
+     * @param    int        $offset    byte offset
+     * @param    int        $whence    SEEK_SET, SEEK_CUR or SEEK_END
+     * @return    bool
+     */
+    public function stream_seek($offset, $whence)
+    {
+        if ($whence == SEEK_SET && $offset >= 0) {
+            $this->pos = $offset;
+        } elseif ($whence == SEEK_CUR && -$offset <= $this->pos) {
+            $this->pos += $offset;
+        } elseif ($whence == SEEK_END && -$offset <= sizeof($this->data)) {
+            $this->pos = strlen($this->data) + $offset;
+        } else {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Implements support for fstat(). Currently the only supported field is
+     * "size".
+     * @return  array
+     */
+    public function stream_stat()
+    {
+        return [
+            'size' => strlen($this->data),
+        ];
+    }
+
+    // Methods used by stream_wrapper_register() that are not implemented:
+    // bool stream_flush ( void )
+    // int stream_write ( string data )
+    // bool rename ( string path_from, string path_to )
+    // bool mkdir ( string path, int mode, int options )
+    // bool rmdir ( string path, int options )
+    // bool dir_opendir ( string path, int options )
+    // array url_stat ( string path, int flags )
+    // string dir_readdir ( void )
+    // bool dir_rewinddir ( void )
+    // bool dir_closedir ( void )
+}

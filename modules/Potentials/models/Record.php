@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,172 +7,193 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
+ */
 
-class Potentials_Record_Model extends Vtiger_Record_Model {
+class Potentials_Record_Model extends Vtiger_Record_Model
+{
+    public function getCreateInvoiceUrl()
+    {
+        $invoiceModuleModel = Vtiger_Module_Model::getInstance('Invoice');
 
-	function getCreateInvoiceUrl() {
-		$invoiceModuleModel = Vtiger_Module_Model::getInstance('Invoice');
-		return $invoiceModuleModel->getCreateRecordUrl().'&sourceRecord='.$this->getId().'&sourceModule='.$this->getModuleName().'&potential_id='.$this->getId().'&account_id='.$this->get('related_to').'&contact_id='.$this->get('contact_id');
-	}
+        return $invoiceModuleModel->getCreateRecordUrl() . '&sourceRecord=' . $this->getId() . '&sourceModule=' . $this->getModuleName() . '&potential_id=' . $this->getId() . '&account_id=' . $this->get('related_to') . '&contact_id=' . $this->get('contact_id');
+    }
 
-	/**
-	 * Function returns the url for create event
-	 * @return <String>
-	 */
-	function getCreateEventUrl() {
-		$calendarModuleModel = Vtiger_Module_Model::getInstance('Calendar');
-		return $calendarModuleModel->getCreateEventRecordUrl().'&parent_id='.$this->getId();
-	}
+    /**
+     * Function returns the url for create event.
+     * @return <String>
+     */
+    public function getCreateEventUrl()
+    {
+        $calendarModuleModel = Vtiger_Module_Model::getInstance('Calendar');
 
-	/**
-	 * Function returns the url for create todo
-	 * @return <String>
-	 */
-	function getCreateTaskUrl() {
-		$calendarModuleModel = Vtiger_Module_Model::getInstance('Calendar');
-		return $calendarModuleModel->getCreateTaskRecordUrl().'&parent_id='.$this->getId();
-	}
+        return $calendarModuleModel->getCreateEventRecordUrl() . '&parent_id=' . $this->getId();
+    }
 
-	/**
-	 * Function to get List of Fields which are related from Contacts to Inventyory Record
-	 * @return <array>
-	 */
-	public function getInventoryMappingFields() {
-		return array(
-				array('parentField'=>'related_to', 'inventoryField'=>'account_id', 'defaultValue'=>''),
-				array('parentField'=>'contact_id', 'inventoryField'=>'contact_id', 'defaultValue'=>''),
-		);
-	}
+    /**
+     * Function returns the url for create todo.
+     * @return <String>
+     */
+    public function getCreateTaskUrl()
+    {
+        $calendarModuleModel = Vtiger_Module_Model::getInstance('Calendar');
 
-	/**
-	 * Function returns the url for create quote
-	 * @return <String>
-	 */
-	public function getCreateQuoteUrl() {
-		$quoteModuleModel = Vtiger_Module_Model::getInstance('Quotes');
-		return $quoteModuleModel->getCreateRecordUrl().'&sourceRecord='.$this->getId().'&sourceModule='.$this->getModuleName().'&potential_id='.$this->getId().'&account_id='.$this->get('related_to').'&contact_id='.$this->get('contact_id').'&relationOperation=true';
-	}
+        return $calendarModuleModel->getCreateTaskRecordUrl() . '&parent_id=' . $this->getId();
+    }
 
-	/**
-	 * Function returns the url for create Sales Order
-	 * @return <String>
-	 */
-	public function getCreateSalesOrderUrl() {
-		$salesOrderModuleModel = Vtiger_Module_Model::getInstance('SalesOrder');
-		return $salesOrderModuleModel->getCreateRecordUrl().'&sourceRecord='.$this->getId().'&sourceModule='.$this->getModuleName().
-				'&potential_id='.$this->getId().'&account_id='.$this->get('related_to').'&contact_id='.$this->get('contact_id').
-				'&relationOperation=true';
-	}
+    /**
+     * Function to get List of Fields which are related from Contacts to Inventyory Record.
+     * @return <array>
+     */
+    public function getInventoryMappingFields()
+    {
+        return [
+            ['parentField' => 'related_to', 'inventoryField' => 'account_id', 'defaultValue' => ''],
+            ['parentField' => 'contact_id', 'inventoryField' => 'contact_id', 'defaultValue' => ''],
+        ];
+    }
 
-	/**
-	 * Function returns the url for converting potential
-	 */
-	function getConvertPotentialUrl() {
-		return 'index.php?module='.$this->getModuleName().'&view=ConvertPotential&record='.$this->getId();
-	}
+    /**
+     * Function returns the url for create quote.
+     * @return <String>
+     */
+    public function getCreateQuoteUrl()
+    {
+        $quoteModuleModel = Vtiger_Module_Model::getInstance('Quotes');
 
-	/**
-	 * Function returns the fields required for Potential Convert
-	 * @return <Array of Vtiger_Field_Model>
-	 */
-	function getConvertPotentialFields() {
-		$convertFields = array();
-		$projectFields = $this->getProjectFieldsForPotentialConvert();
-		if(!empty($projectFields)) {
-			$convertFields['Project'] = $projectFields;
-		}
+        return $quoteModuleModel->getCreateRecordUrl() . '&sourceRecord=' . $this->getId() . '&sourceModule=' . $this->getModuleName() . '&potential_id=' . $this->getId() . '&account_id=' . $this->get('related_to') . '&contact_id=' . $this->get('contact_id') . '&relationOperation=true';
+    }
 
-		return $convertFields;
-	}
+    /**
+     * Function returns the url for create Sales Order.
+     * @return <String>
+     */
+    public function getCreateSalesOrderUrl()
+    {
+        $salesOrderModuleModel = Vtiger_Module_Model::getInstance('SalesOrder');
 
-	/**
-	 * Function returns Project fields for Potential Convert
-	 * @return Array
-	 */
-	function getProjectFieldsForPotentialConvert() {
-		$projectFields = array();
-		$privilegeModel = Users_Privileges_Model::getCurrentUserPrivilegesModel();
-		$moduleName = 'Project';
+        return $salesOrderModuleModel->getCreateRecordUrl() . '&sourceRecord=' . $this->getId() . '&sourceModule=' . $this->getModuleName()
+                . '&potential_id=' . $this->getId() . '&account_id=' . $this->get('related_to') . '&contact_id=' . $this->get('contact_id')
+                . '&relationOperation=true';
+    }
 
-		if(!Users_Privileges_Model::isPermitted($moduleName, 'CreateView')) {
-			return;
-		}
+    /**
+     * Function returns the url for converting potential.
+     */
+    public function getConvertPotentialUrl()
+    {
+        return 'index.php?module=' . $this->getModuleName() . '&view=ConvertPotential&record=' . $this->getId();
+    }
 
-		$moduleModel = Vtiger_Module_Model::getInstance($moduleName);
-		if ($moduleModel && $moduleModel->isActive()) {
-			$fieldModels = $moduleModel->getFields();
-			foreach ($fieldModels as $fieldName => $fieldModel) {
-				if($fieldModel->isMandatory() && !in_array($fieldName, array('assigned_user_id', 'potentialid'))) {
-					$potentialMappedField = $this->getConvertPotentialMappedField($fieldName, $moduleName);
-					if($this->get($potentialMappedField)) {
-						$fieldModel->set('fieldvalue', $this->get($potentialMappedField));
-					} else {
-						$fieldModel->set('fieldvalue', $fieldModel->getDefaultFieldValue());
-					} 
-					$projectFields[] = $fieldModel;
-				}
-			}
-		}
-		return $projectFields;
-	}
+    /**
+     * Function returns the fields required for Potential Convert.
+     * @return <Array of Vtiger_Field_Model>
+     */
+    public function getConvertPotentialFields()
+    {
+        $convertFields = [];
+        $projectFields = $this->getProjectFieldsForPotentialConvert();
+        if (!empty($projectFields)) {
+            $convertFields['Project'] = $projectFields;
+        }
 
+        return $convertFields;
+    }
 
-	/**
-	 * Function returns field mapped to Potentials field, used in Potential Convert for settings the field values
-	 * @param <String> $fieldName
-	 * @return <String>
-	 */
-	function getConvertPotentialMappedField($fieldName, $moduleName) {
-		$mappingFields = $this->get('mappingFields');
+    /**
+     * Function returns Project fields for Potential Convert.
+     * @return array
+     */
+    public function getProjectFieldsForPotentialConvert()
+    {
+        $projectFields = [];
+        $privilegeModel = Users_Privileges_Model::getCurrentUserPrivilegesModel();
+        $moduleName = 'Project';
 
-		if (!$mappingFields) {
-			$db = PearDatabase::getInstance();
-			$mappingFields = array();
+        if (!Users_Privileges_Model::isPermitted($moduleName, 'CreateView')) {
+            return;
+        }
 
-			$result = $db->pquery('SELECT * FROM vtiger_convertpotentialmapping', array());
-			$numOfRows = $db->num_rows($result);
+        $moduleModel = Vtiger_Module_Model::getInstance($moduleName);
+        if ($moduleModel && $moduleModel->isActive()) {
+            $fieldModels = $moduleModel->getFields();
+            foreach ($fieldModels as $fieldName => $fieldModel) {
+                if ($fieldModel->isMandatory() && !in_array($fieldName, ['assigned_user_id', 'potentialid'])) {
+                    $potentialMappedField = $this->getConvertPotentialMappedField($fieldName, $moduleName);
+                    if ($this->get($potentialMappedField)) {
+                        $fieldModel->set('fieldvalue', $this->get($potentialMappedField));
+                    } else {
+                        $fieldModel->set('fieldvalue', $fieldModel->getDefaultFieldValue());
+                    }
+                    $projectFields[] = $fieldModel;
+                }
+            }
+        }
 
-			$projectInstance = Vtiger_Module_Model::getInstance('Project');
-			$projectFieldInstances = $projectInstance->getFieldsById();
+        return $projectFields;
+    }
 
-			$potentialInstance = Vtiger_Module_Model::getInstance('Potentials');
-			$potentialFieldInstances = $potentialInstance->getFieldsById();
+    /**
+     * Function returns field mapped to Potentials field, used in Potential Convert for settings the field values.
+     * @param <String> $fieldName
+     * @return <String>
+     */
+    public function getConvertPotentialMappedField($fieldName, $moduleName)
+    {
+        $mappingFields = $this->get('mappingFields');
 
-			for($i=0; $i<$numOfRows; $i++) {
-				$row = $db->query_result_rowdata($result,$i);
-				if(empty($row['potentialfid'])) continue;
+        if (!$mappingFields) {
+            $db = PearDatabase::getInstance();
+            $mappingFields = [];
 
-				$potentialFieldInstance = $potentialFieldInstances[$row['potentialfid']];
-				if(!$potentialFieldInstance) continue;
+            $result = $db->pquery('SELECT * FROM vtiger_convertpotentialmapping', []);
+            $numOfRows = $db->num_rows($result);
 
-				$potentialFieldName = $potentialFieldInstance->getName();
-				$projectFieldInstance = $projectFieldInstances[$row['projectfid']];
+            $projectInstance = Vtiger_Module_Model::getInstance('Project');
+            $projectFieldInstances = $projectInstance->getFieldsById();
 
-				if ($row['projectfid'] && $projectFieldInstance) {
-					$mappingFields['Project'][$projectFieldInstance->getName()] = $potentialFieldName;
-				}
-			}
+            $potentialInstance = Vtiger_Module_Model::getInstance('Potentials');
+            $potentialFieldInstances = $potentialInstance->getFieldsById();
 
-			$this->set('mappingFields', $mappingFields);
-		}
-		return $mappingFields[$moduleName][$fieldName];
-	}
+            for ($i = 0; $i < $numOfRows; ++$i) {
+                $row = $db->query_result_rowdata($result, $i);
+                if (empty($row['potentialfid'])) {
+                    continue;
+                }
 
-	/**
-	 * Function to check whether the Potential is converted or not
-	 * @return True if the Potential is Converted false otherwise.
-	 */
-	function isPotentialConverted() {
-		$db = PearDatabase::getInstance();
-		$id = $this->getId();
-		$sql = "select converted from  vtiger_potential where converted = 1 and potentialid=?";
-		$result = $db->pquery($sql,array($id));
-		$rowCount = $db->num_rows($result);
-		if($rowCount > 0){
-			return true;
-		}
-		return false;
-	}
+                $potentialFieldInstance = $potentialFieldInstances[$row['potentialfid']];
+                if (!$potentialFieldInstance) {
+                    continue;
+                }
 
+                $potentialFieldName = $potentialFieldInstance->getName();
+                $projectFieldInstance = $projectFieldInstances[$row['projectfid']];
+
+                if ($row['projectfid'] && $projectFieldInstance) {
+                    $mappingFields['Project'][$projectFieldInstance->getName()] = $potentialFieldName;
+                }
+            }
+
+            $this->set('mappingFields', $mappingFields);
+        }
+
+        return $mappingFields[$moduleName][$fieldName];
+    }
+
+    /**
+     * Function to check whether the Potential is converted or not.
+     * @return true if the Potential is Converted false otherwise
+     */
+    public function isPotentialConverted()
+    {
+        $db = PearDatabase::getInstance();
+        $id = $this->getId();
+        $sql = 'select converted from  vtiger_potential where converted = 1 and potentialid=?';
+        $result = $db->pquery($sql, [$id]);
+        $rowCount = $db->num_rows($result);
+        if ($rowCount > 0) {
+            return true;
+        }
+
+        return false;
+    }
 }

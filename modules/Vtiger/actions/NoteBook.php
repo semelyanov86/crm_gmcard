@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,76 +7,81 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
+ */
 
-class Vtiger_NoteBook_Action extends Vtiger_Action_Controller {
+class Vtiger_NoteBook_Action extends Vtiger_Action_Controller
+{
+    public function __construct()
+    {
+        $this->exposeMethod('NoteBookCreate');
+    }
 
-	function __construct() {
-		$this->exposeMethod('NoteBookCreate');
-	}
+    public function requiresPermission(Vtiger_Request $request)
+    {
+        $permissions = parent::requiresPermission($request);
+        if ($request->get('module') != 'Dashboard') {
+            $request->set('custom_module', 'Dashboard');
+            $permissions[] = ['module_parameter' => 'custom_module', 'action' => 'DetailView'];
+        } else {
+            $permissions[] = ['module_parameter' => 'module', 'action' => 'DetailView'];
+        }
 
-	public function requiresPermission(Vtiger_Request $request){
-		$permissions = parent::requiresPermission($request);
-		if($request->get('module') != 'Dashboard'){
-			$request->set('custom_module', 'Dashboard');
-			$permissions[] = array('module_parameter' => 'custom_module', 'action' => 'DetailView');
-		}else{
-			$permissions[] = array('module_parameter' => 'module', 'action' => 'DetailView');
-		}
-		
-		return $permissions;
-	}
-	
-	function process(Vtiger_Request $request) {
-		$mode = $request->getMode();
+        return $permissions;
+    }
 
-		if($mode){
-			$this->invokeExposedMethod($mode,$request);
-		}
-	}
+    public function process(Vtiger_Request $request)
+    {
+        $mode = $request->getMode();
 
-	function NoteBookCreate(Vtiger_Request $request){
-		$adb = PearDatabase::getInstance();
+        if ($mode) {
+            $this->invokeExposedMethod($mode, $request);
+        }
+    }
 
-		$moduleName = $request->getModule();
-		$userModel = Users_Record_Model::getCurrentUserModel();
-		$linkId = $request->get('linkId');
-		$noteBookName = $request->get('notePadName');
-		$noteBookContent = $request->get('notePadContent');
-		$tabId = $request->get("tab");
-		$userid = $userModel->getId();
+    public function NoteBookCreate(Vtiger_Request $request)
+    {
+        $adb = PearDatabase::getInstance();
 
-		// Added for Vtiger7
-		if(empty($tabId)){
-			$dasbBoardModel = Vtiger_DashBoard_Model::getInstance($moduleName);
-			$defaultTab = $dasbBoardModel->getUserDefaultTab($userModel->getId());
-			$tabId = $defaultTab['id'];
-		}
+        $moduleName = $request->getModule();
+        $userModel = Users_Record_Model::getCurrentUserModel();
+        $linkId = $request->get('linkId');
+        $noteBookName = $request->get('notePadName');
+        $noteBookContent = $request->get('notePadContent');
+        $tabId = $request->get('tab');
+        $userid = $userModel->getId();
 
-		$date_var = date("Y-m-d H:i:s");
-		$date = $adb->formatDate($date_var, true);
+        // Added for Vtiger7
+        if (empty($tabId)) {
+            $dasbBoardModel = Vtiger_DashBoard_Model::getInstance($moduleName);
+            $defaultTab = $dasbBoardModel->getUserDefaultTab($userModel->getId());
+            $tabId = $defaultTab['id'];
+        }
 
-		$dataValue = array();
-		$dataValue['contents'] = $noteBookContent;
-		$dataValue['lastSavedOn'] = $date;
+        $date_var = date('Y-m-d H:i:s');
+        $date = $adb->formatDate($date_var, true);
 
-		$data = Zend_Json::encode((object) $dataValue);
+        $dataValue = [];
+        $dataValue['contents'] = $noteBookContent;
+        $dataValue['lastSavedOn'] = $date;
 
-		$query="INSERT INTO vtiger_module_dashboard_widgets(linkid, userid, filterid, title, data,dashboardtabid) VALUES(?,?,?,?,?,?)";
-		$params= array($linkId,$userid,0,$noteBookName,$data,$tabId);
-		$adb->pquery($query, $params);
-		$id = $adb->getLastInsertID();
+        $data = Zend_Json::encode((object) $dataValue);
 
-		$result = array();
-		$result['success'] = TRUE;
-		$result['widgetId'] = $id;
-		$response = new Vtiger_Response();
-		$response->setResult($result);
-		$response->emit();
+        $query = 'INSERT INTO vtiger_module_dashboard_widgets(linkid, userid, filterid, title, data,dashboardtabid) VALUES(?,?,?,?,?,?)';
+        $params = [$linkId, $userid, 0, $noteBookName, $data, $tabId];
+        $adb->pquery($query, $params);
+        $id = $adb->getLastInsertID();
 
-	}
+        $result = [];
+        $result['success'] = true;
+        $result['widgetId'] = $id;
+        $response = new Vtiger_Response();
+        $response->setResult($result);
+        $response->emit();
 
-	public function validateRequest(Vtiger_Request $request) {
-		$request->validateWriteAccess();
-	}
+    }
+
+    public function validateRequest(Vtiger_Request $request)
+    {
+        $request->validateWriteAccess();
+    }
 }

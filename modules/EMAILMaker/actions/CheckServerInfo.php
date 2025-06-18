@@ -1,4 +1,5 @@
 <?php
+
 /* * *******************************************************************************
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
@@ -25,12 +26,13 @@ class EMAILMaker_CheckServerInfo_Action extends Vtiger_Action_Controller
         $db = PearDatabase::getInstance();
         $response = new Vtiger_Response();
 
-        $result = $db->pquery('SELECT 1 FROM vtiger_systems WHERE server_type = ?', array('email'));
+        $result = $db->pquery('SELECT 1 FROM vtiger_systems WHERE server_type = ?', ['email']);
         if ($db->num_rows($result)) {
             $response->setResult(true);
         } else {
             $response->setResult(false);
         }
+
         return $response;
     }
 }

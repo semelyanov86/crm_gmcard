@@ -1,5 +1,6 @@
 <?php
-/*********************************************************************************
+
+/*
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
  * The Initial Developer of the Original Code is IT-Solutions4You s.r.o.
@@ -9,10 +10,7 @@
 
 class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
 {
-
-    public function checkPermission(Vtiger_Request $request)
-    {
-    }
+    public function checkPermission(Vtiger_Request $request) {}
 
     /**
      * @throws Exception
@@ -21,10 +19,10 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
     {
         $adb = PearDatabase::getInstance();
         $record = $request->get('record');
-        $result = $adb->pquery('SELECT module FROM vtiger_emakertemplates_relblocks WHERE relblockid = ?', array($record));
+        $result = $adb->pquery('SELECT module FROM vtiger_emakertemplates_relblocks WHERE relblockid = ?', [$record]);
         $relationModule = $adb->query_result($result, 0, 'module');
 
-        $adb->pquery('DELETE FROM vtiger_emakertemplates_relblocks WHERE relblockid = ?', array($record));
+        $adb->pquery('DELETE FROM vtiger_emakertemplates_relblocks WHERE relblockid = ?', [$record]);
 
         header('location:index.php?module=EMAILMaker&action=EMAILMakerAjax&file=ListRelatedBlocks&parenttab=Tools&emailmodule=' . $relationModule);
     }
@@ -34,7 +32,7 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
         $record = $request->get('record');
         $body = EMAILMaker_RelatedBlock_Model::getBlockBody($record);
 
-        echo "<div id='block' style='display:none;'>" . $body . "</div>";
+        echo "<div id='block' style='display:none;'>" . $body . '</div>';
         echo "<script> 
                 var oEditor = window.opener.CKEDITOR.instances.body; 
                 content = document.getElementById('block').innerHTML;
@@ -61,12 +59,12 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
             $step = 1;
         }
 
-        if ('Delete' === $mode) {
+        if ($mode === 'Delete') {
             $this->delete($request);
             exit;
         }
 
-        if ('add' === $mode) {
+        if ($mode === 'add') {
             $this->add($request);
             exit;
         }
@@ -89,11 +87,11 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
                 $startDate = $blockDateFilter['startdate'];
                 $endDate = $blockDateFilter['enddate'];
 
-                if (!empty($startDate) && '0000-00-00' !== $startDate) {
+                if (!empty($startDate) && $startDate !== '0000-00-00') {
                     $viewer->assign('STARTDATE_STD', getValidDisplayDate($startDate));
                 }
 
-                if (!empty($endDate) && '0000-00-00' !== $startDate) {
+                if (!empty($endDate) && $startDate !== '0000-00-00') {
                     $viewer->assign('ENDDATE_STD', getValidDisplayDate($endDate));
                 }
             }
@@ -144,7 +142,7 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
 
         $relatedModules = EMAILMaker_RelatedBlock_Model::getRelatedModulesList($rel_module);
 
-        if(empty($sec_module)) {
+        if (empty($sec_module)) {
             $sec_module = $relatedModules[0];
         }
 
@@ -166,10 +164,11 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
         $options = '';
 
         foreach ($values as $value => $label) {
-            $options .= sprintf('<option value="%s" %s>%s</option>',
+            $options .= sprintf(
+                '<option value="%s" %s>%s</option>',
                 $value,
                 $value == $selected ? 'selected' : '',
-                $label
+                $label,
             );
         }
 
@@ -181,94 +180,98 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
         $adb = PearDatabase::getInstance();
         global $modules;
 
-        $ssql = "select vtiger_emakertemplates_relblockcol.* from vtiger_emakertemplates_relblocks";
-        $ssql .= " left join vtiger_emakertemplates_relblockcol on vtiger_emakertemplates_relblockcol.relblockid = vtiger_emakertemplates_relblocks.relblockid";
-        $ssql .= " where vtiger_emakertemplates_relblocks.relblockid = ?";
-        $ssql .= " order by vtiger_emakertemplates_relblockcol.colid";
-        $result = $adb->pquery($ssql, array($relblockid));
-        $permitted_fields = array();
-        $selected_mod = split(":", $secmodule);
+        $ssql = 'select vtiger_emakertemplates_relblockcol.* from vtiger_emakertemplates_relblocks';
+        $ssql .= ' left join vtiger_emakertemplates_relblockcol on vtiger_emakertemplates_relblockcol.relblockid = vtiger_emakertemplates_relblocks.relblockid';
+        $ssql .= ' where vtiger_emakertemplates_relblocks.relblockid = ?';
+        $ssql .= ' order by vtiger_emakertemplates_relblockcol.colid';
+        $result = $adb->pquery($ssql, [$relblockid]);
+        $permitted_fields = [];
+        $selected_mod = split(':', $secmodule);
         array_push($selected_mod, $primodule);
 
         while ($columnslistrow = $adb->fetch_array($result)) {
-            $fieldname = "";
-            $fieldcolname = $columnslistrow["columnname"];
+            $fieldname = '';
+            $fieldcolname = $columnslistrow['columnname'];
             $selmod_field_disabled = true;
             foreach ($selected_mod as $smod) {
-                if ((stripos($fieldcolname, ":" . $smod . "_") > -1) && vtlib_isModuleActive($smod)) {
+                if ((stripos($fieldcolname, ':' . $smod . '_') > -1) && vtlib_isModuleActive($smod)) {
                     $selmod_field_disabled = false;
                     break;
                 }
             }
             if ($selmod_field_disabled == false) {
-                list($tablename, $colname, $module_field, $fieldname, $single) = split(":", $fieldcolname);
-                require('user_privileges/user_privileges_' . $current_user->getId() . '.php');
-                list($module, $field) = split("_", $module_field);
+                [$tablename, $colname, $module_field, $fieldname, $single] = split(':', $fieldcolname);
+                require 'user_privileges/user_privileges_' . $current_user->getId() . '.php';
+                [$module, $field] = split('_', $module_field);
                 if (sizeof($permitted_fields) == 0 && $is_admin == false && $profileGlobalPermission[1] == 1 && $profileGlobalPermission[2] == 1) {
                     $permitted_fields = $this->getaccesfield($module, $primodule, $secmodule);
                 }
                 $querycolumns = $this->getEscapedColumns($selectedfields, $primodule, $secmodule);
-                $fieldlabel = trim(str_replace($module, " ", $module_field));
+                $fieldlabel = trim(str_replace($module, ' ', $module_field));
                 $mod_arr = explode('_', $fieldlabel);
                 $mod = ($mod_arr[0] == '') ? $module : $mod_arr[0];
-                $fieldlabel = trim(str_replace("_", " ", $fieldlabel));
+                $fieldlabel = trim(str_replace('_', ' ', $fieldlabel));
                 $fieldlabel = getTranslatedString($fieldlabel, $module);
-                if (CheckFieldPermission($fieldname, $mod) != 'true' && $colname != "crmid") {
-                    $shtml .= "<option permission='no' value=\"" . $fieldcolname . "\" disabled = 'true'>" . $fieldlabel . "</option>";
+                if (CheckFieldPermission($fieldname, $mod) != 'true' && $colname != 'crmid') {
+                    $shtml .= "<option permission='no' value=\"" . $fieldcolname . "\" disabled = 'true'>" . $fieldlabel . '</option>';
                 } else {
-                    $shtml .= "<option permission='yes' value=\"" . $fieldcolname . "\">" . $fieldlabel . "</option>";
+                    $shtml .= "<option permission='yes' value=\"" . $fieldcolname . '">' . $fieldlabel . '</option>';
                 }
             }
         }
+
         return $shtml;
     }
 
     private function getaccesfield($module, $primodule, $secmodule)
     {
         $adb = PearDatabase::getInstance();
-        $access_fields = array();
+        $access_fields = [];
         $profileList = getCurrentUserProfileList();
-        $query = "select vtiger_field.fieldname from vtiger_field inner join vtiger_profile2field on vtiger_profile2field.fieldid=vtiger_field.fieldid inner join vtiger_def_org_field on vtiger_def_org_field.fieldid=vtiger_field.fieldid where";
-        $params = array();
-        if ($module == "Calendar") {
-            $query .= " vtiger_field.tabid in (9,16) and vtiger_field.displaytype in (1,2,3) and vtiger_profile2field.visible=0 and vtiger_def_org_field.visible=0 and vtiger_field.presence in (0,2)";
+        $query = 'select vtiger_field.fieldname from vtiger_field inner join vtiger_profile2field on vtiger_profile2field.fieldid=vtiger_field.fieldid inner join vtiger_def_org_field on vtiger_def_org_field.fieldid=vtiger_field.fieldid where';
+        $params = [];
+        if ($module == 'Calendar') {
+            $query .= ' vtiger_field.tabid in (9,16) and vtiger_field.displaytype in (1,2,3) and vtiger_profile2field.visible=0 and vtiger_def_org_field.visible=0 and vtiger_field.presence in (0,2)';
             if (count($profileList) > 0) {
-                $query .= " and vtiger_profile2field.profileid in (" . generateQuestionMarks($profileList) . ")";
+                $query .= ' and vtiger_profile2field.profileid in (' . generateQuestionMarks($profileList) . ')';
                 array_push($params, $profileList);
             }
-            $query .= " group by vtiger_field.fieldid order by block,sequence";
+            $query .= ' group by vtiger_field.fieldid order by block,sequence';
         } else {
             array_push($params, $primodule, $secmodule);
-            $query .= " vtiger_field.tabid in (select tabid from vtiger_tab where vtiger_tab.name in (?,?)) and vtiger_field.displaytype in (1,2,3) and vtiger_profile2field.visible=0 and vtiger_def_org_field.visible=0 and vtiger_field.presence in (0,2)";
+            $query .= ' vtiger_field.tabid in (select tabid from vtiger_tab where vtiger_tab.name in (?,?)) and vtiger_field.displaytype in (1,2,3) and vtiger_profile2field.visible=0 and vtiger_def_org_field.visible=0 and vtiger_field.presence in (0,2)';
             if (count($profileList) > 0) {
-                $query .= " and vtiger_profile2field.profileid in (" . generateQuestionMarks($profileList) . ")";
+                $query .= ' and vtiger_profile2field.profileid in (' . generateQuestionMarks($profileList) . ')';
                 array_push($params, $profileList);
             }
-            $query .= " group by vtiger_field.fieldid order by block,sequence";
+            $query .= ' group by vtiger_field.fieldid order by block,sequence';
         }
         $result = $adb->pquery($query, $params);
 
         while ($collistrow = $adb->fetch_array($result)) {
-            $access_fields[] = $collistrow["fieldname"];
+            $access_fields[] = $collistrow['fieldname'];
         }
+
         return $access_fields;
     }
 
     private function getEscapedColumns($selectedfields, $primarymodule, $secondarymodule)
     {
         $fieldname = $selectedfields[3];
-        if ($fieldname == "parent_id") {
-            if ($primarymodule == "HelpDesk" && $selectedfields[0] == "vtiger_crmentityRelHelpDesk") {
-                $querycolumn = "case vtiger_crmentityRelHelpDesk.setype when 'Accounts' then vtiger_accountRelHelpDesk.accountname when 'Contacts' then vtiger_contactdetailsRelHelpDesk.lastname End" . " '" . $selectedfields[2] . "', vtiger_crmentityRelHelpDesk.setype 'Entity_type'";
+        if ($fieldname == 'parent_id') {
+            if ($primarymodule == 'HelpDesk' && $selectedfields[0] == 'vtiger_crmentityRelHelpDesk') {
+                $querycolumn = "case vtiger_crmentityRelHelpDesk.setype when 'Accounts' then vtiger_accountRelHelpDesk.accountname when 'Contacts' then vtiger_contactdetailsRelHelpDesk.lastname End '" . $selectedfields[2] . "', vtiger_crmentityRelHelpDesk.setype 'Entity_type'";
+
                 return $querycolumn;
             }
-            if ($primarymodule == "Products" || $secondarymodule == "Products") {
-                $querycolumn = "case vtiger_crmentityRelProducts.setype when 'Accounts' then vtiger_accountRelProducts.accountname when 'Leads' then vtiger_leaddetailsRelProducts.lastname when 'Potentials' then vtiger_potentialRelProducts.potentialname End" . " '" . $selectedfields[2] . "', vtiger_crmentityRelProducts.setype 'Entity_type'";
+            if ($primarymodule == 'Products' || $secondarymodule == 'Products') {
+                $querycolumn = "case vtiger_crmentityRelProducts.setype when 'Accounts' then vtiger_accountRelProducts.accountname when 'Leads' then vtiger_leaddetailsRelProducts.lastname when 'Potentials' then vtiger_potentialRelProducts.potentialname End '" . $selectedfields[2] . "', vtiger_crmentityRelProducts.setype 'Entity_type'";
             }
-            if ($primarymodule == "Calendar" || $secondarymodule == "Calendar") {
-                $querycolumn = "case vtiger_crmentityRelCalendar.setype when 'Accounts' then vtiger_accountRelCalendar.accountname when 'Leads' then vtiger_leaddetailsRelCalendar.lastname when 'Potentials' then vtiger_potentialRelCalendar.potentialname when 'Quotes' then vtiger_quotesRelCalendar.subject when 'PurchaseOrder' then vtiger_purchaseorderRelCalendar.subject when 'Invoice' then vtiger_invoiceRelCalendar.subject End" . " '" . $selectedfields[2] . "', vtiger_crmentityRelCalendar.setype 'Entity_type'";
+            if ($primarymodule == 'Calendar' || $secondarymodule == 'Calendar') {
+                $querycolumn = "case vtiger_crmentityRelCalendar.setype when 'Accounts' then vtiger_accountRelCalendar.accountname when 'Leads' then vtiger_leaddetailsRelCalendar.lastname when 'Potentials' then vtiger_potentialRelCalendar.potentialname when 'Quotes' then vtiger_quotesRelCalendar.subject when 'PurchaseOrder' then vtiger_purchaseorderRelCalendar.subject when 'Invoice' then vtiger_invoiceRelCalendar.subject End '" . $selectedfields[2] . "', vtiger_crmentityRelCalendar.setype 'Entity_type'";
             }
         }
+
         return $querycolumn;
     }
 
@@ -280,27 +283,28 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
             FROM vtiger_emakertemplates_relblockcol
             WHERE relblockid=? AND sortorder != ''
             ORDER BY sortsequence";
-        $result = $adb->pquery($sql, array($relblockid));
-        $outputsArr = array();
-        $sortOrder = array();
+        $result = $adb->pquery($sql, [$relblockid]);
+        $outputsArr = [];
+        $sortOrder = [];
 
-        $selected_columns = '<option value="0">' . vtranslate("LBL_NONE") . '</option>' . $selected_columns;
+        $selected_columns = '<option value="0">' . vtranslate('LBL_NONE') . '</option>' . $selected_columns;
         $idx = 1;
+
         while ($row = $adb->fetchByAssoc($result)) {
-            $search = 'value="' . $row["columnname"] . '"';
-            $replace = 'value="' . $row["columnname"] . '" selected="selected"';
+            $search = 'value="' . $row['columnname'] . '"';
+            $replace = 'value="' . $row['columnname'] . '" selected="selected"';
             $outputsArr[$idx] = str_replace($search, $replace, $selected_columns);
 
-            if ($row["sortorder"] == "Descending") {
-                $sortOrder[$idx] = '<option value="Ascending">' . vtranslate("LBL_ASC", 'EMAILMaker') . '</option>
-                                <option value="Descending" selected="selected">' . vtranslate("LBL_DESC", 'EMAILMaker') . '</option>';
+            if ($row['sortorder'] == 'Descending') {
+                $sortOrder[$idx] = '<option value="Ascending">' . vtranslate('LBL_ASC', 'EMAILMaker') . '</option>
+                                <option value="Descending" selected="selected">' . vtranslate('LBL_DESC', 'EMAILMaker') . '</option>';
             } else {
-                $sortOrder[$idx] = '<option value="Ascending" selected="selected">' . vtranslate("LBL_ASC", 'EMAILMaker') . '</option>
-                                <option value="Descending">' . vtranslate("LBL_DESC", 'EMAILMaker') . '</option>';
+                $sortOrder[$idx] = '<option value="Ascending" selected="selected">' . vtranslate('LBL_ASC', 'EMAILMaker') . '</option>
+                                <option value="Descending">' . vtranslate('LBL_DESC', 'EMAILMaker') . '</option>';
             }
-            $idx++;
-            $tmpArr = explode("</option>", $selected_columns);
-            $selected_columns = "";
+            ++$idx;
+            $tmpArr = explode('</option>', $selected_columns);
+            $selected_columns = '';
             foreach ($tmpArr as $option) {
                 if (strpos($option, $search) === false) {
                     $selected_columns .= $option . '</option>';
@@ -308,10 +312,10 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
             }
         }
         $outputsArr[$idx] = $selected_columns;
-        $sortOrder[$idx] = '<option value="Ascending">' . vtranslate("LBL_ASC", 'EMAILMaker') . '</option>
-                        <option value="Descending">' . vtranslate("LBL_DESC", 'EMAILMaker') . '</option>';
+        $sortOrder[$idx] = '<option value="Ascending">' . vtranslate('LBL_ASC', 'EMAILMaker') . '</option>
+                        <option value="Descending">' . vtranslate('LBL_DESC', 'EMAILMaker') . '</option>';
 
-        return array($outputsArr, $sortOrder);
+        return [$outputsArr, $sortOrder];
     }
 
     public function getHeaderScripts(Vtiger_Request $request)
@@ -319,7 +323,7 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
         $headerScriptInstances = parent::getHeaderScripts($request);
         $moduleName = $request->getModule();
 
-        $jsFileNames = array(
+        $jsFileNames = [
             'modules.Vtiger.resources.Edit',
             'modules.EMAILMaker.resources.Edit',
             'modules.EMAILMaker.resources.RelatedBlock',
@@ -337,7 +341,7 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
             'libraries.jquery.ckeditor.adapters.jquery',
             'modules.Vtiger.resources.CkEditor',
             'modules.EMAILMaker.resources.CkEditor',
-        );
+        ];
 
         $jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
 
@@ -346,69 +350,69 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
 
     private function getRBlockCriteriaJS()
     {
-        $today = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d"), date("Y")));
-        $tomorrow = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") + 1, date("Y")));
-        $yesterday = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") - 1, date("Y")));
-        $currentmonth0 = date("Y-m-d", mktime(0, 0, 0, date("m"), "01", date("Y")));
-        $currentmonth1 = date("Y-m-t");
-        $lastmonth0 = date("Y-m-d", mktime(0, 0, 0, date("m") - 1, "01", date("Y")));
-        $lastmonth1 = date("Y-m-t", strtotime("-1 Month"));
-        $nextmonth0 = date("Y-m-d", mktime(0, 0, 0, date("m") + 1, "01", date("Y")));
-        $nextmonth1 = date("Y-m-t", strtotime("+1 Month"));
-        $lastweek0 = date("Y-m-d", strtotime("-2 week Sunday"));
-        $lastweek1 = date("Y-m-d", strtotime("-1 week Saturday"));
-        $thisweek0 = date("Y-m-d", strtotime("-1 week Sunday"));
-        $thisweek1 = date("Y-m-d", strtotime("this Saturday"));
-        $nextweek0 = date("Y-m-d", strtotime("this Sunday"));
-        $nextweek1 = date("Y-m-d", strtotime("+1 week Saturday"));
-        $next7days = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") + 6, date("Y")));
-        $next30days = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") + 29, date("Y")));
-        $next60days = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") + 59, date("Y")));
-        $next90days = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") + 89, date("Y")));
-        $next120days = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") + 119, date("Y")));
-        $last7days = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") - 6, date("Y")));
-        $last30days = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") - 29, date("Y")));
-        $last60days = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") - 59, date("Y")));
-        $last90days = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") - 89, date("Y")));
-        $last120days = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") - 119, date("Y")));
-        $currentFY0 = date("Y-m-d", mktime(0, 0, 0, "01", "01", date("Y")));
-        $currentFY1 = date("Y-m-t", mktime(0, 0, 0, "12", date("d"), date("Y")));
-        $lastFY0 = date("Y-m-d", mktime(0, 0, 0, "01", "01", date("Y") - 1));
-        $lastFY1 = date("Y-m-t", mktime(0, 0, 0, "12", date("d"), date("Y") - 1));
-        $nextFY0 = date("Y-m-d", mktime(0, 0, 0, "01", "01", date("Y") + 1));
-        $nextFY1 = date("Y-m-t", mktime(0, 0, 0, "12", date("d"), date("Y") + 1));
+        $today = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d'), date('Y')));
+        $tomorrow = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') + 1, date('Y')));
+        $yesterday = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') - 1, date('Y')));
+        $currentmonth0 = date('Y-m-d', mktime(0, 0, 0, date('m'), '01', date('Y')));
+        $currentmonth1 = date('Y-m-t');
+        $lastmonth0 = date('Y-m-d', mktime(0, 0, 0, date('m') - 1, '01', date('Y')));
+        $lastmonth1 = date('Y-m-t', strtotime('-1 Month'));
+        $nextmonth0 = date('Y-m-d', mktime(0, 0, 0, date('m') + 1, '01', date('Y')));
+        $nextmonth1 = date('Y-m-t', strtotime('+1 Month'));
+        $lastweek0 = date('Y-m-d', strtotime('-2 week Sunday'));
+        $lastweek1 = date('Y-m-d', strtotime('-1 week Saturday'));
+        $thisweek0 = date('Y-m-d', strtotime('-1 week Sunday'));
+        $thisweek1 = date('Y-m-d', strtotime('this Saturday'));
+        $nextweek0 = date('Y-m-d', strtotime('this Sunday'));
+        $nextweek1 = date('Y-m-d', strtotime('+1 week Saturday'));
+        $next7days = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') + 6, date('Y')));
+        $next30days = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') + 29, date('Y')));
+        $next60days = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') + 59, date('Y')));
+        $next90days = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') + 89, date('Y')));
+        $next120days = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') + 119, date('Y')));
+        $last7days = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') - 6, date('Y')));
+        $last30days = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') - 29, date('Y')));
+        $last60days = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') - 59, date('Y')));
+        $last90days = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') - 89, date('Y')));
+        $last120days = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') - 119, date('Y')));
+        $currentFY0 = date('Y-m-d', mktime(0, 0, 0, '01', '01', date('Y')));
+        $currentFY1 = date('Y-m-t', mktime(0, 0, 0, '12', date('d'), date('Y')));
+        $lastFY0 = date('Y-m-d', mktime(0, 0, 0, '01', '01', date('Y') - 1));
+        $lastFY1 = date('Y-m-t', mktime(0, 0, 0, '12', date('d'), date('Y') - 1));
+        $nextFY0 = date('Y-m-d', mktime(0, 0, 0, '01', '01', date('Y') + 1));
+        $nextFY1 = date('Y-m-t', mktime(0, 0, 0, '12', date('d'), date('Y') + 1));
 
-        if (date("m") <= 3) {
-            $cFq = date("Y-m-d", mktime(0, 0, 0, "01", "01", date("Y")));
-            $cFq1 = date("Y-m-d", mktime(0, 0, 0, "03", "31", date("Y")));
-            $nFq = date("Y-m-d", mktime(0, 0, 0, "04", "01", date("Y")));
-            $nFq1 = date("Y-m-d", mktime(0, 0, 0, "06", "30", date("Y")));
-            $pFq = date("Y-m-d", mktime(0, 0, 0, "10", "01", date("Y") - 1));
-            $pFq1 = date("Y-m-d", mktime(0, 0, 0, "12", "31", date("Y") - 1));
+        if (date('m') <= 3) {
+            $cFq = date('Y-m-d', mktime(0, 0, 0, '01', '01', date('Y')));
+            $cFq1 = date('Y-m-d', mktime(0, 0, 0, '03', '31', date('Y')));
+            $nFq = date('Y-m-d', mktime(0, 0, 0, '04', '01', date('Y')));
+            $nFq1 = date('Y-m-d', mktime(0, 0, 0, '06', '30', date('Y')));
+            $pFq = date('Y-m-d', mktime(0, 0, 0, '10', '01', date('Y') - 1));
+            $pFq1 = date('Y-m-d', mktime(0, 0, 0, '12', '31', date('Y') - 1));
         } else {
-            if (date("m") > 3 and date("m") <= 6) {
-                $pFq = date("Y-m-d", mktime(0, 0, 0, "01", "01", date("Y")));
-                $pFq1 = date("Y-m-d", mktime(0, 0, 0, "03", "31", date("Y")));
-                $cFq = date("Y-m-d", mktime(0, 0, 0, "04", "01", date("Y")));
-                $cFq1 = date("Y-m-d", mktime(0, 0, 0, "06", "30", date("Y")));
-                $nFq = date("Y-m-d", mktime(0, 0, 0, "07", "01", date("Y")));
-                $nFq1 = date("Y-m-d", mktime(0, 0, 0, "09", "30", date("Y")));
+            if (date('m') > 3 and date('m') <= 6) {
+                $pFq = date('Y-m-d', mktime(0, 0, 0, '01', '01', date('Y')));
+                $pFq1 = date('Y-m-d', mktime(0, 0, 0, '03', '31', date('Y')));
+                $cFq = date('Y-m-d', mktime(0, 0, 0, '04', '01', date('Y')));
+                $cFq1 = date('Y-m-d', mktime(0, 0, 0, '06', '30', date('Y')));
+                $nFq = date('Y-m-d', mktime(0, 0, 0, '07', '01', date('Y')));
+                $nFq1 = date('Y-m-d', mktime(0, 0, 0, '09', '30', date('Y')));
             } else {
-                if (date("m") > 6 and date("m") <= 9) {
-                    $nFq = date("Y-m-d", mktime(0, 0, 0, "10", "01", date("Y")));
-                    $nFq1 = date("Y-m-d", mktime(0, 0, 0, "12", "31", date("Y")));
-                    $pFq = date("Y-m-d", mktime(0, 0, 0, "04", "01", date("Y")));
-                    $pFq1 = date("Y-m-d", mktime(0, 0, 0, "06", "30", date("Y")));
-                    $cFq = date("Y-m-d", mktime(0, 0, 0, "07", "01", date("Y")));
-                    $cFq1 = date("Y-m-d", mktime(0, 0, 0, "09", "30", date("Y")));
+                if (date('m') > 6 and date('m') <= 9) {
+                    $nFq = date('Y-m-d', mktime(0, 0, 0, '10', '01', date('Y')));
+                    $nFq1 = date('Y-m-d', mktime(0, 0, 0, '12', '31', date('Y')));
+                    $pFq = date('Y-m-d', mktime(0, 0, 0, '04', '01', date('Y')));
+                    $pFq1 = date('Y-m-d', mktime(0, 0, 0, '06', '30', date('Y')));
+                    $cFq = date('Y-m-d', mktime(0, 0, 0, '07', '01', date('Y')));
+                    $cFq1 = date('Y-m-d', mktime(0, 0, 0, '09', '30', date('Y')));
                 } else {
-                    if (date("m") > 9 and date("m") <= 12) {
-                        $nFq = date("Y-m-d", mktime(0, 0, 0, "01", "01", date("Y") + 1));
-                        $nFq1 = date("Y-m-d", mktime(0, 0, 0, "03", "31", date("Y") + 1));
-                        $pFq = date("Y-m-d", mktime(0, 0, 0, "07", "01", date("Y")));
-                        $pFq1 = date("Y-m-d", mktime(0, 0, 0, "09", "30", date("Y")));
-                        $cFq = date("Y-m-d", mktime(0, 0, 0, "10", "01", date("Y")));
-                        $cFq1 = date("Y-m-d", mktime(0, 0, 0, "12", "31", date("Y")));
+                    if (date('m') > 9 and date('m') <= 12) {
+                        $nFq = date('Y-m-d', mktime(0, 0, 0, '01', '01', date('Y') + 1));
+                        $nFq1 = date('Y-m-d', mktime(0, 0, 0, '03', '31', date('Y') + 1));
+                        $pFq = date('Y-m-d', mktime(0, 0, 0, '07', '01', date('Y')));
+                        $pFq1 = date('Y-m-d', mktime(0, 0, 0, '09', '30', date('Y')));
+                        $cFq = date('Y-m-d', mktime(0, 0, 0, '10', '01', date('Y')));
+                        $cFq1 = date('Y-m-d', mktime(0, 0, 0, '12', '31', date('Y')));
                     }
                 }
             }
@@ -508,88 +512,91 @@ class EMAILMaker_EditRelatedBlock_View extends Vtiger_Footer_View
 				}        
 			}        
 		</script>';
+
         return $sjsStr;
     }
 
-    private function getRBlockSelectedStdFilterCriteria($selecteddatefilter = "")
+    private function getRBlockSelectedStdFilterCriteria($selecteddatefilter = '')
     {
         global $rep_mod_strings;
-        $datefiltervalue = array(
-            "custom",
-            "prevfy",
-            "thisfy",
-            "nextfy",
-            "prevfq",
-            "thisfq",
-            "nextfq",
-            "yesterday",
-            "today",
-            "tomorrow",
-            "lastweek",
-            "thisweek",
-            "nextweek",
-            "lastmonth",
-            "thismonth",
-            "nextmonth",
-            "last7days",
-            "last30days",
-            "last60days",
-            "last90days",
-            "last120days",
-            "next30days",
-            "next60days",
-            "next90days",
-            "next120days"
-        );
-        $datefilterdisplay = array(
-            "Custom",
-            "Previous FY",
-            "Current FY",
-            "Next FY",
-            "Previous FQ",
-            "Current FQ",
-            "Next FQ",
-            "Yesterday",
-            "Today",
-            "Tomorrow",
-            "Last Week",
-            "Current Week",
-            "Next Week",
-            "Last Month",
-            "Current Month",
-            "Next Month",
-            "Last 7 Days",
-            "Last 30 Days",
-            "Last 60 Days",
-            "Last 90 Days",
-            "Last 120 Days",
-            "Next 7 Days",
-            "Next 30 Days",
-            "Next 60 Days",
-            "Next 90 Days",
-            "Next 120 Days"
-        );
-        for ($i = 0; $i < count($datefiltervalue); $i++) {
+        $datefiltervalue = [
+            'custom',
+            'prevfy',
+            'thisfy',
+            'nextfy',
+            'prevfq',
+            'thisfq',
+            'nextfq',
+            'yesterday',
+            'today',
+            'tomorrow',
+            'lastweek',
+            'thisweek',
+            'nextweek',
+            'lastmonth',
+            'thismonth',
+            'nextmonth',
+            'last7days',
+            'last30days',
+            'last60days',
+            'last90days',
+            'last120days',
+            'next30days',
+            'next60days',
+            'next90days',
+            'next120days',
+        ];
+        $datefilterdisplay = [
+            'Custom',
+            'Previous FY',
+            'Current FY',
+            'Next FY',
+            'Previous FQ',
+            'Current FQ',
+            'Next FQ',
+            'Yesterday',
+            'Today',
+            'Tomorrow',
+            'Last Week',
+            'Current Week',
+            'Next Week',
+            'Last Month',
+            'Current Month',
+            'Next Month',
+            'Last 7 Days',
+            'Last 30 Days',
+            'Last 60 Days',
+            'Last 90 Days',
+            'Last 120 Days',
+            'Next 7 Days',
+            'Next 30 Days',
+            'Next 60 Days',
+            'Next 90 Days',
+            'Next 120 Days',
+        ];
+        for ($i = 0; $i < count($datefiltervalue); ++$i) {
             if ($selecteddatefilter == $datefiltervalue[$i]) {
-                $sshtml .= "<option selected value='" . $datefiltervalue[$i] . "'>" . $rep_mod_strings[$datefilterdisplay[$i]] . "</option>";
+                $sshtml .= "<option selected value='" . $datefiltervalue[$i] . "'>" . $rep_mod_strings[$datefilterdisplay[$i]] . '</option>';
             } else {
-                $sshtml .= "<option value='" . $datefiltervalue[$i] . "'>" . $rep_mod_strings[$datefilterdisplay[$i]] . "</option>";
+                $sshtml .= "<option value='" . $datefiltervalue[$i] . "'>" . $rep_mod_strings[$datefilterdisplay[$i]] . '</option>';
             }
         }
+
         return $sshtml;
     }
 
-    private function getAdvCriteriaHTML($selected = "")
+    private function getAdvCriteriaHTML($selected = '')
     {
         global $adv_filter_options;
 
         foreach ($adv_filter_options as $key => $value) {
             if ($selected == $key) {
-                $shtml .= "<option selected value=\"" . $key . "\">" . $value . "</option>";
+                $shtml .= '<option selected value="' . $key . '">' . $value . '</option>';
             } else {
-                $shtml .= "<option value=\"" . $key . "\">" . $value . "</option>";
+                $shtml .= '<option value="' . $key . '">' . $value . '</option>';
             }
         }
+
         return $shtml;
     }
 }

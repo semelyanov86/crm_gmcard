@@ -1,4 +1,5 @@
 <?php
+
 /* +**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 2.0
  * ("License.txt"); You may not use this file except in compliance with the License
@@ -6,38 +7,39 @@
  * The Initial Developer of the Original Code is Vtiger.
  * Portions created by Vtiger are Copyright (C) Vtiger.
  * All Rights Reserved.
- * ***********************************************************************************/
+ * */
 
-class Vtiger_SaveWidgetSize_Action extends Vtiger_IndexAjax_View {
+class Vtiger_SaveWidgetSize_Action extends Vtiger_IndexAjax_View
+{
+    public function requiresPermission(Vtiger_Request $request)
+    {
+        if ($request->get('module') != 'Dashboard') {
+            $request->set('custom_module', 'Dashboard');
+            $permissions[] = ['module_parameter' => 'custom_module', 'action' => 'DetailView'];
+        } else {
+            $permissions[] = ['module_parameter' => 'module', 'action' => 'DetailView'];
+        }
 
-	public function requiresPermission(Vtiger_Request $request){
-		if($request->get('module') != 'Dashboard'){
-			$request->set('custom_module', 'Dashboard');
-			$permissions[] = array('module_parameter' => 'custom_module', 'action' => 'DetailView');
-		}else{
-			$permissions[] = array('module_parameter' => 'module', 'action' => 'DetailView');
-		}
-		
-		return $permissions;
-	}
-	
-	public function process(Vtiger_Request $request) {
-		$currentUser = Users_Record_Model::getCurrentUserModel();
+        return $permissions;
+    }
 
-		$id = $request->get('id');
-		$tabId = $request->get('tabid');
-		$size = Zend_Json::encode($request->get('size'));
-		list ($linkid, $widgetid) = explode('-', $id);
+    public function process(Vtiger_Request $request)
+    {
+        $currentUser = Users_Record_Model::getCurrentUserModel();
 
-		if ($widgetid) {
-			Vtiger_Widget_Model::updateWidgetSize($size, NULL, $widgetid, $currentUser->getId(), $tabId);
-		} else {
-			Vtiger_Widget_Model::updateWidgetSize($size, $linkid, NULL, $currentUser->getId(), $tabId);
-		}
+        $id = $request->get('id');
+        $tabId = $request->get('tabid');
+        $size = Zend_Json::encode($request->get('size'));
+        [$linkid, $widgetid] = explode('-', $id);
 
-		$response = new Vtiger_Response();
-		$response->setResult(array('Save' => 'OK'));
-		$response->emit();
-	}
+        if ($widgetid) {
+            Vtiger_Widget_Model::updateWidgetSize($size, null, $widgetid, $currentUser->getId(), $tabId);
+        } else {
+            Vtiger_Widget_Model::updateWidgetSize($size, $linkid, null, $currentUser->getId(), $tabId);
+        }
 
+        $response = new Vtiger_Response();
+        $response->setResult(['Save' => 'OK']);
+        $response->emit();
+    }
 }

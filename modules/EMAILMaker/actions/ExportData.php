@@ -1,4 +1,5 @@
 <?php
+
 /* * *******************************************************************************
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
@@ -9,13 +10,11 @@
 
 class EMAILMaker_ExportData_Action extends Vtiger_Mass_Action
 {
-
     private $moduleInstance;
+
     private $focus;
 
-    public function checkPermission(Vtiger_Request $request)
-    {
-    }
+    public function checkPermission(Vtiger_Request $request) {}
 
     public function process(Vtiger_Request $request)
     {
@@ -37,20 +36,20 @@ class EMAILMaker_ExportData_Action extends Vtiger_Mass_Action
         $EMAILMakerModel = Vtiger_Module_Model::getInstance('EMAILMaker');
         $mode = $request->getMode();
 
-        if ($mode == "ExportAllData") {
+        if ($mode == 'ExportAllData') {
             $result = $EMAILMakerModel->GetListviewResult($orderby, $sortOrder, false);
-        } elseif ($mode == "ExportCurrentPage") {
+        } elseif ($mode == 'ExportCurrentPage') {
             $result = $EMAILMakerModel->GetListviewResult($orderby, $sortOrder, $request);
         } else {
             $sql = $this->getExportQuery($request);
 
             if (!empty($orderby)) {
-                $sql .= " ORDER BY vtiger_emakertemplates." . $orderBy . " " . $sortOrder;
+                $sql .= ' ORDER BY vtiger_emakertemplates.' . $orderBy . ' ' . $sortOrder;
             }
 
-            $result = $adb->pquery($sql, array());
+            $result = $adb->pquery($sql, []);
         }
-        $entries = array();
+        $entries = [];
         $num_rows = $adb->num_rows($result);
 
         while ($row = $adb->fetchByAssoc($result)) {
@@ -59,7 +58,7 @@ class EMAILMaker_ExportData_Action extends Vtiger_Mass_Action
             $templateid = $row['templateid'];
 
             $Template_Permissions_Data = $EMAILMakerModel->returnTemplatePermissionsData($currModule, $templateid);
-            if ($Template_Permissions_Data["detail"] === false) {
+            if ($Template_Permissions_Data['detail'] === false) {
                 continue;
             }
 
@@ -73,7 +72,7 @@ class EMAILMaker_ExportData_Action extends Vtiger_Mass_Action
     public function getExportQuery(Vtiger_Request $request)
     {
 
-        $query = "SELECT vtiger_emakertemplates.* FROM vtiger_emakertemplates LEFT JOIN vtiger_emakertemplates_displayed USING(templateid)";
+        $query = 'SELECT vtiger_emakertemplates.* FROM vtiger_emakertemplates LEFT JOIN vtiger_emakertemplates_displayed USING(templateid)';
         $idList = $this->getRecordsListFromRequest($request);
 
         $query .= "WHERE vtiger_emakertemplates.deleted = '0'";
@@ -81,62 +80,64 @@ class EMAILMaker_ExportData_Action extends Vtiger_Mass_Action
             $idList = implode(',', $idList);
             $query .= 'AND vtiger_emakertemplates.templateid IN (' . $idList . ')';
         }
+
         return $query;
     }
 
     public function output($entries)
     {
         foreach ($entries as $templateResult) {
-            $templatename = $templateResult["templatename"];
-            $subject = $templateResult["subject"];
-            $description = $templateResult["description"];
-            $module = $templateResult["module"];
-            $is_listview = $templateResult["is_listview"];
-            $is_theme = $templateResult["is_theme"];
-            $body = decode_html($templateResult["body"]);
-            $c .= "<template>";
-            $c .= "<type>EMAILMaker</type>";
-            $c .= "<templatename>" . $this->cdataEncode($templatename, true) . "</templatename>";
-            $c .= "<subject>" . $this->cdataEncode($subject, true) . "</subject>";
-            $c .= "<description>" . $this->cdataEncode($description, true) . "</description>";
-            $c .= "<module>" . $this->cdataEncode($module) . "</module>";
-            $c .= "<is_listview>" . $this->cdataEncode($is_listview) . "</is_listview>";
-            $c .= "<is_theme>" . $this->cdataEncode($is_theme) . "</is_theme>";
-            $c .= "<body>";
+            $templatename = $templateResult['templatename'];
+            $subject = $templateResult['subject'];
+            $description = $templateResult['description'];
+            $module = $templateResult['module'];
+            $is_listview = $templateResult['is_listview'];
+            $is_theme = $templateResult['is_theme'];
+            $body = decode_html($templateResult['body']);
+            $c .= '<template>';
+            $c .= '<type>EMAILMaker</type>';
+            $c .= '<templatename>' . $this->cdataEncode($templatename, true) . '</templatename>';
+            $c .= '<subject>' . $this->cdataEncode($subject, true) . '</subject>';
+            $c .= '<description>' . $this->cdataEncode($description, true) . '</description>';
+            $c .= '<module>' . $this->cdataEncode($module) . '</module>';
+            $c .= '<is_listview>' . $this->cdataEncode($is_listview) . '</is_listview>';
+            $c .= '<is_theme>' . $this->cdataEncode($is_theme) . '</is_theme>';
+            $c .= '<body>';
             $c .= $this->cdataEncode($body, true);
-            $c .= "</body>";
-            $c .= "</template>";
+            $c .= '</body>';
+            $c .= '</template>';
         }
 
         header('Content-Type: application/xhtml+xml');
-        header("Content-Disposition: attachment; filename=export.xml");
+        header('Content-Disposition: attachment; filename=export.xml');
 
-        echo "<?xml version='1.0'?" . ">";
-        echo "<export>";
+        echo "<?xml version='1.0'?" . '>';
+        echo '<export>';
         echo $c;
-        echo "</export>";
+        echo '</export>';
         exit;
     }
 
     private function cdataEncode($text, $encode = false)
     {
-        $From = array("<![CDATA[", "]]>");
-        $To = array("<|!|[%|CDATA|[%|", "|%]|]|>");
+        $From = ['<![CDATA[', ']]>'];
+        $To = ['<|!|[%|CDATA|[%|', '|%]|]|>'];
 
-        if ($text != "") {
-            $pos1 = strpos("<![CDATA[", $text);
-            $pos2 = strpos("]]>", $text);
+        if ($text != '') {
+            $pos1 = strpos('<![CDATA[', $text);
+            $pos2 = strpos(']]>', $text);
 
             if ($pos1 === false && $pos2 === false && $encode == false) {
                 $content = $text;
             } else {
                 $text = decode_html($text);
                 $encode_text = str_replace($From, $To, $text);
-                $content = "<![CDATA[" . $encode_text . "]]>";
+                $content = '<![CDATA[' . $encode_text . ']]>';
             }
         } else {
-            $content = "";
+            $content = '';
         }
+
         return $content;
     }
 }

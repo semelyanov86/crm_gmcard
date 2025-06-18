@@ -7,13 +7,15 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
+ */
 
-class Settings_Profiles_ListView_Model extends Settings_Vtiger_ListView_Model {
-    
-    public function getBasicListQuery() {
+class Settings_Profiles_ListView_Model extends Settings_Vtiger_ListView_Model
+{
+    public function getBasicListQuery()
+    {
         $query = parent::getBasicListQuery();
         $query .= ' WHERE directly_related_to_role=0 ';
+
         return $query;
     }
 }

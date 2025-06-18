@@ -1,109 +1,194 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel_CachedObjectStorage_PHPTemp.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_CachedObjectStorage_PHPTemp extends PHPExcel_CachedObjectStorage_CacheBase implements PHPExcel_CachedObjectStorage_ICache
+{
+    /**
+     * Name of the file for this cache.
+     *
+     * @var string
+     */
+    private $fileHandle;
+
+    /**
+     * Memory limit to use before reverting to file cache.
+     *
+     * @var int
+     */
+    private $memoryCacheSize;
+
+    /**
+     * Store cell data in cache for the current cell object if it's "dirty",
+     *     and the 'nullify' the current cell object.
+     *
+     * @throws    PHPExcel_Exception
+     */
+    protected function storeData()
+    {
+        if ($this->currentCellIsDirty && !empty($this->currentObjectID)) {
+            $this->currentObject->detach();
+
+            fseek($this->fileHandle, 0, SEEK_END);
+
+            $this->cellCache[$this->currentObjectID] = [
+                'ptr' => ftell($this->fileHandle),
+                'sz'  => fwrite($this->fileHandle, serialize($this->currentObject)),
+            ];
+            $this->currentCellIsDirty = false;
+        }
+        $this->currentObjectID = $this->currentObject = null;
+    }
+
+    /**
+     * Add or Update a cell in cache identified by coordinate address.
+     *
+     * @param    string            $pCoord        Coordinate address of the cell to update
+     * @param    PHPExcel_Cell    $cell        Cell to update
+     * @return    PHPExcel_Cell
+     * @throws    PHPExcel_Exception
+     */
+    public function addCacheData($pCoord, PHPExcel_Cell $cell)
+    {
+        if (($pCoord !== $this->currentObjectID) && ($this->currentObjectID !== null)) {
+            $this->storeData();
+        }
+
+        $this->currentObjectID = $pCoord;
+        $this->currentObject = $cell;
+        $this->currentCellIsDirty = true;
+
+        return $cell;
+    }
+
+    /**
+     * Get cell at a specific coordinate.
+     *
+     * @param     string             $pCoord        Coordinate of the cell
+     * @return     PHPExcel_Cell     Cell that was found, or null if not found
+     * @throws     PHPExcel_Exception
+     */
+    public function getCacheData($pCoord)
+    {
+        if ($pCoord === $this->currentObjectID) {
+            return $this->currentObject;
+        }
+        $this->storeData();
+
+        //    Check if the entry that has been requested actually exists
+        if (!isset($this->cellCache[$pCoord])) {
+            //    Return null if requested entry doesn't exist in cache
+            return null;
+        }
+
+        //    Set current entry to the requested entry
+        $this->currentObjectID = $pCoord;
+        fseek($this->fileHandle, $this->cellCache[$pCoord]['ptr']);
+        $this->currentObject = unserialize(fread($this->fileHandle, $this->cellCache[$pCoord]['sz']));
+        //    Re-attach this as the cell's parent
+        $this->currentObject->attach($this);
+
+        //    Return requested entry
+        return $this->currentObject;
+    }
+
+    /**
+     * Get a list of all cell addresses currently held in cache.
+     *
+     * @return  string[]
+     */
+    public function getCellList()
+    {
+        if ($this->currentObjectID !== null) {
+            $this->storeData();
+        }
+
+        return parent::getCellList();
+    }
+
+    /**
+     * Clone the cell collection.
+     *
+     * @param    PHPExcel_Worksheet    $parent        The new worksheet
+     */
+    public function copyCellCollection(PHPExcel_Worksheet $parent)
+    {
+        parent::copyCellCollection($parent);
+        //    Open a new stream for the cell cache data
+        $newFileHandle = fopen('php://temp/maxmemory:' . $this->memoryCacheSize, 'a+');
+        //    Copy the existing cell cache data to the new stream
+        fseek($this->fileHandle, 0);
+
+        while (!feof($this->fileHandle)) {
+            fwrite($newFileHandle, fread($this->fileHandle, 1_024));
+        }
+        $this->fileHandle = $newFileHandle;
+    }
+
+    /**
+     * Clear the cell collection and disconnect from our parent.
+     */
+    public function unsetWorksheetCells()
+    {
+        if (!is_null($this->currentObject)) {
+            $this->currentObject->detach();
+            $this->currentObject = $this->currentObjectID = null;
+        }
+        $this->cellCache = [];
+
+        //    detach ourself from the worksheet, so that it can then delete this object successfully
+        $this->parent = null;
+
+        //    Close down the php://temp file
+        $this->__destruct();
+    }
+
+    /**
+     * Initialise this new cell collection.
+     *
+     * @param    PHPExcel_Worksheet    $parent        The worksheet for this cell collection
+     * @param    array of mixed        $arguments    Additional initialisation arguments
+     */
+    public function __construct(PHPExcel_Worksheet $parent, $arguments)
+    {
+        $this->memoryCacheSize = (isset($arguments['memoryCacheSize'])) ? $arguments['memoryCacheSize'] : '1MB';
+
+        parent::__construct($parent);
+        if (is_null($this->fileHandle)) {
+            $this->fileHandle = fopen('php://temp/maxmemory:' . $this->memoryCacheSize, 'a+');
+        }
+    }
+
+    /**
+     * Destroy this cell collection.
+     */
+    public function __destruct()
+    {
+        if (!is_null($this->fileHandle)) {
+            fclose($this->fileHandle);
+        }
+        $this->fileHandle = null;
+    }
+}

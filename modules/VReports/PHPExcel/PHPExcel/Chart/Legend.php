@@ -1,65 +1,170 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel_Chart_Legend.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category    PHPExcel
+ * @copyright    Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license        http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version        ##VERSION##, ##DATE##
+ */
+class PHPExcel_Chart_Legend
+{
+    /** Legend positions */
+    public const xlLegendPositionBottom = -4_107;    //    Below the chart.
+    public const xlLegendPositionCorner = 2;        //    In the upper right-hand corner of the chart border.
+    public const xlLegendPositionCustom = -4_161;    //    A custom position.
+    public const xlLegendPositionLeft   = -4_131;    //    Left of the chart.
+    public const xlLegendPositionRight  = -4_152;    //    Right of the chart.
+    public const xlLegendPositionTop    = -4_160;    //    Above the chart.
+    public const POSITION_RIGHT    = 'r';
+    public const POSITION_LEFT     = 'l';
+    public const POSITION_BOTTOM   = 'b';
+    public const POSITION_TOP      = 't';
+    public const POSITION_TOPRIGHT = 'tr';
+
+    private static $positionXLref = [
+        self::xlLegendPositionBottom => self::POSITION_BOTTOM,
+        self::xlLegendPositionCorner => self::POSITION_TOPRIGHT,
+        self::xlLegendPositionCustom => '??',
+        self::xlLegendPositionLeft   => self::POSITION_LEFT,
+        self::xlLegendPositionRight  => self::POSITION_RIGHT,
+        self::xlLegendPositionTop    => self::POSITION_TOP,
+    ];
+
+    /**
+     * Legend position.
+     *
+     * @var    string
+     */
+    private $position = self::POSITION_RIGHT;
+
+    /**
+     * Allow overlay of other elements?
+     *
+     * @var    bool
+     */
+    private $overlay = true;
+
+    /**
+     * Legend Layout.
+     *
+     * @var    PHPExcel_Chart_Layout
+     */
+    private $layout;
+
+    /**
+     *    Create a new PHPExcel_Chart_Legend.
+     */
+    public function __construct($position = self::POSITION_RIGHT, ?PHPExcel_Chart_Layout $layout = null, $overlay = false)
+    {
+        $this->setPosition($position);
+        $this->layout = $layout;
+        $this->setOverlay($overlay);
+    }
+
+    /**
+     * Get legend position as an excel string value.
+     *
+     * @return    string
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * Get legend position using an excel string value.
+     *
+     * @param    string    $position
+     */
+    public function setPosition($position = self::POSITION_RIGHT)
+    {
+        if (!in_array($position, self::$positionXLref)) {
+            return false;
+        }
+
+        $this->position = $position;
+
+        return true;
+    }
+
+    /**
+     * Get legend position as an Excel internal numeric value.
+     *
+     * @return    number
+     */
+    public function getPositionXL()
+    {
+        return array_search($this->position, self::$positionXLref);
+    }
+
+    /**
+     * Set legend position using an Excel internal numeric value.
+     *
+     * @param    number    $positionXL
+     */
+    public function setPositionXL($positionXL = self::xlLegendPositionRight)
+    {
+        if (!array_key_exists($positionXL, self::$positionXLref)) {
+            return false;
+        }
+
+        $this->position = self::$positionXLref[$positionXL];
+
+        return true;
+    }
+
+    /**
+     * Get allow overlay of other elements?
+     *
+     * @return    bool
+     */
+    public function getOverlay()
+    {
+        return $this->overlay;
+    }
+
+    /**
+     * Set allow overlay of other elements?
+     *
+     * @param    bool    $overlay
+     * @return    bool
+     */
+    public function setOverlay($overlay = false)
+    {
+        if (!is_bool($overlay)) {
+            return false;
+        }
+
+        $this->overlay = $overlay;
+
+        return true;
+    }
+
+    /**
+     * Get Layout.
+     *
+     * @return PHPExcel_Chart_Layout
+     */
+    public function getLayout()
+    {
+        return $this->layout;
+    }
+}

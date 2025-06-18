@@ -9,29 +9,32 @@
  * All Rights Reserved.
  * *********************************************************************************** */
 
-abstract class Vtiger_Footer_View extends Vtiger_Header_View {
+abstract class Vtiger_Footer_View extends Vtiger_Header_View
+{
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
-	function __construct() {
-		parent::__construct();
-	}
+    // Note: To get the right hook for immediate parent in PHP,
+    // specially in case of deep hierarchy
+    /*function preProcessParentTplName(Vtiger_Request $request) {
+        return parent::preProcessTplName($request);
+    }*/
 
-	//Note: To get the right hook for immediate parent in PHP,
-	// specially in case of deep hierarchy
-	/*function preProcessParentTplName(Vtiger_Request $request) {
-		return parent::preProcessTplName($request);
-	}*/
+    /*function postProcess(Vtiger_Request $request) {
+        parent::postProcess($request);
+    }*/
+    public function getHeaderCss(Vtiger_Request $request)
+    {
+        $headerCssInstances = parent::getHeaderCss($request);
+        $cssFileNames = [
+            '~layouts/' . Vtiger_Viewer::getDefaultLayoutName() . '/lib/jquery/timepicker/jquery.timepicker.css',
+            '~/libraries/jquery/lazyYT/lazyYT.min.css',
+        ];
+        $cssInstances = $this->checkAndConvertCssStyles($cssFileNames);
+        $headerCssInstances = array_merge($headerCssInstances, $cssInstances);
 
-	/*function postProcess(Vtiger_Request $request) {
-		parent::postProcess($request);
-	}*/
-       public function getHeaderCss(Vtiger_Request $request) {
-		$headerCssInstances = parent::getHeaderCss($request);
-		$cssFileNames = array(
-            '~layouts/'.Vtiger_Viewer::getDefaultLayoutName().'/lib/jquery/timepicker/jquery.timepicker.css',
-            '~/libraries/jquery/lazyYT/lazyYT.min.css'
-		);
-		$cssInstances = $this->checkAndConvertCssStyles($cssFileNames);
-		$headerCssInstances = array_merge($headerCssInstances, $cssInstances);
-		return $headerCssInstances;
-	}
+        return $headerCssInstances;
+    }
 }

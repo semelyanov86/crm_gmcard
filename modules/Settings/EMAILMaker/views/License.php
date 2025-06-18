@@ -6,16 +6,18 @@ class Settings_EMAILMaker_License_View extends Settings_Vtiger_Index_View
     {
         $moduleName = $request->getModule();
         $moduleModel = Vtiger_Module_Model::getInstance($moduleName);
-        $settingLinks = array();
+        $settingLinks = [];
         foreach ($moduleModel->getSettingLinks() as $settingsLink) {
-            $settingsLink['linklabel'] = sprintf(vtranslate($settingsLink['linklabel'], $moduleName),
-                vtranslate($moduleName, $moduleName));
+            $settingsLink['linklabel'] = sprintf(
+                vtranslate($settingsLink['linklabel'], $moduleName),
+                vtranslate($moduleName, $moduleName),
+            );
             $settingLinks['LISTVIEWSETTING'][] = Vtiger_Link_Model::getInstanceFromValues($settingsLink);
         }
         $viewer = $this->getViewer($request);
         $viewer->assign('LISTVIEW_LINKS', $settingLinks);
         parent::preProcess($request, false);
-        if (6 !== (int) Vtiger_Version::current() && $display) {
+        if ((int) Vtiger_Version::current() !== 6 && $display) {
             $this->preProcessDisplay($request);
         }
     }
@@ -38,15 +40,15 @@ class Settings_EMAILMaker_License_View extends Settings_Vtiger_Index_View
         $viewer = $this->getViewer($request);
         $viewer->assign('MODULE', $moduleName);
         $viewer->assign('QUALIFIED_MODULE', $qualifiedModule);
-        $viewer->assign("URL", vglobal("site_URL"));
-        $viewer->assign("DEFAULT_VIEW_URL", $moduleModel->getDefaultUrl());
+        $viewer->assign('URL', vglobal('site_URL'));
+        $viewer->assign('DEFAULT_VIEW_URL', $moduleModel->getDefaultUrl());
         $viewer->assign('IS_ALLOWED', $permission);
         $viewer->assign('MODULE_MODEL', $moduleModel);
         if (isset($reportData['errors'])) {
-            $viewer->assign("ERRORS", $reportData['errors']);
+            $viewer->assign('ERRORS', $reportData['errors']);
         }
         if (isset($reportData['info'])) {
-            $viewer->assign("INFO", $reportData['info']);
+            $viewer->assign('INFO', $reportData['info']);
         }
         if ($installerModel && $installerModel->isActive()) {
             $viewer->assign('IS_INSTALLER_ACTIVE', $installerModel->isActive());
@@ -59,12 +61,13 @@ class Settings_EMAILMaker_License_View extends Settings_Vtiger_Index_View
     {
         $headerScriptInstances = parent::getHeaderScripts($request);
         $moduleName = $request->getModule();
-        unset($headerScriptInstances['modules.Vtiger.resources.Edit']);
-        unset($headerScriptInstances["modules.Settings.Vtiger.resources.Edit"]);
-        unset($headerScriptInstances['modules.Inventory.resources.Edit']);
-        unset($headerScriptInstances["modules.$moduleName.resources.Edit"]);
-        unset($headerScriptInstances["modules.Settings.$moduleName.resources.Edit"]);
-        $jsFileNames = array("modules.Settings.$moduleName.resources.License",);
+        unset($headerScriptInstances['modules.Vtiger.resources.Edit'], $headerScriptInstances['modules.Settings.Vtiger.resources.Edit'], $headerScriptInstances['modules.Inventory.resources.Edit'], $headerScriptInstances["modules.{$moduleName}.resources.Edit"], $headerScriptInstances["modules.Settings.{$moduleName}.resources.Edit"]);
+
+
+
+
+        $jsFileNames = ["modules.Settings.{$moduleName}.resources.License"];
+
         return array_merge($headerScriptInstances, $this->checkAndConvertJsScripts($jsFileNames));
     }
 
@@ -72,7 +75,8 @@ class Settings_EMAILMaker_License_View extends Settings_Vtiger_Index_View
     {
         $headerCssInstances = parent::getHeaderCss($request);
         $layout = Vtiger_Viewer::getDefaultLayoutName();
-        $cssFileNames = array('~/layouts/'.$layout.'/skins/marketing/style.css',);
+        $cssFileNames = ['~/layouts/' . $layout . '/skins/marketing/style.css'];
+
         return array_merge($headerCssInstances, $this->checkAndConvertCssStyles($cssFileNames));
     }
-} ?>
+}

@@ -1,4 +1,5 @@
 <?php
+
 /* ********************************************************************************
  * The content of this file is subject to the ChecklistItems ("License");
  * You may not use this file except in compliance with the License
@@ -7,7 +8,7 @@
  * All Rights Reserved.
  * ****************************************************************************** */
 
-$languageStrings = array(
+$languageStrings = [
     // Basic Strings
     'INPUT_TIME' => 'Time',
     'INPUT_DATE' => 'Date',
@@ -61,11 +62,11 @@ $languageStrings = array(
     'LBL_HAS_BEEN_SUCCESSFULLY' => 'has been installed & activated successfully!',
     'LBL_MORE_EXTENSIONS' => 'For more vTiger Extensions, please visit our website',
     /* For License page - End */
-);
+];
 
-$jsLanguageStrings = array(
+$jsLanguageStrings = [
     'COMMENT_CONTENT_EMPTY' => 'Please input comment',
     'LBL_DELETE_CONFIRMATION' => 'Are you sure?',
     'SHOW_ALL_NOTES' => 'Show All Notes',
     'SHOW_LESS_NOTE' => 'Show LESS Note',
-);
+];

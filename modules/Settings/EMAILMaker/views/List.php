@@ -8,43 +8,46 @@
  * All Rights Reserved.
  * ****************************************************************************** */
 
-class Settings_EMAILMaker_List_View extends Vtiger_Footer_View {
-    
-    function checkPermission(Vtiger_Request $request) {
-		//Return true as WebUI.php is already checking for module permission
-		return true;
-	}
-	
-	public function process(Vtiger_Request $request) {
-		$viewer = $this->getViewer($request);
-		$moduleName = $request->getModule();
-		$qualifiedModuleName = $request->getModule(false);
-		$formodule = $request->get('formodule');
-		$EMAILMaker = Settings_EMAILMaker_Module_Model::getAll($formodule);
+class Settings_EMAILMaker_List_View extends Vtiger_Footer_View
+{
+    public function checkPermission(Vtiger_Request $request)
+    {
+        // Return true as WebUI.php is already checking for module permission
+        return true;
+    }
 
-		$viewer->assign('MODULE', $moduleName);
-		$viewer->assign('QUALIFIED_MODULE', $qualifiedModuleName);
-		$viewer->assign('EMAIL_TEMPLATES', $EMAILMaker);
-		
-		echo $viewer->view('ListContents.tpl', $qualifiedModuleName, true);
-	}
-	
-	/**
-	 * Function to get the list of Script models to be included
-	 * @param Vtiger_Request $request
-	 * @return <Array> - List of Vtiger_JsScript_Model instances
-	 */
-	function getHeaderScripts(Vtiger_Request $request) {
-		$headerScriptInstances = parent::getHeaderScripts($request);
-		$moduleName = $request->getModule();
+    public function process(Vtiger_Request $request)
+    {
+        $viewer = $this->getViewer($request);
+        $moduleName = $request->getModule();
+        $qualifiedModuleName = $request->getModule(false);
+        $formodule = $request->get('formodule');
+        $EMAILMaker = Settings_EMAILMaker_Module_Model::getAll($formodule);
 
-		$jsFileNames = array(
-			'modules.Vtiger.resources.Popup',
-			'libraries.jquery.jquery_windowmsg'
-		);
+        $viewer->assign('MODULE', $moduleName);
+        $viewer->assign('QUALIFIED_MODULE', $qualifiedModuleName);
+        $viewer->assign('EMAIL_TEMPLATES', $EMAILMaker);
 
-		$jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
-		$headerScriptInstances = array_merge($headerScriptInstances, $jsScriptInstances);
-		return $headerScriptInstances;
-	}
+        echo $viewer->view('ListContents.tpl', $qualifiedModuleName, true);
+    }
+
+    /**
+     * Function to get the list of Script models to be included.
+     * @return <Array> - List of Vtiger_JsScript_Model instances
+     */
+    public function getHeaderScripts(Vtiger_Request $request)
+    {
+        $headerScriptInstances = parent::getHeaderScripts($request);
+        $moduleName = $request->getModule();
+
+        $jsFileNames = [
+            'modules.Vtiger.resources.Popup',
+            'libraries.jquery.jquery_windowmsg',
+        ];
+
+        $jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
+        $headerScriptInstances = array_merge($headerScriptInstances, $jsScriptInstances);
+
+        return $headerScriptInstances;
+    }
 }

@@ -10,10 +10,9 @@
 
 class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
 {
-
-    const RECORD_STRUCTURE_MODE_DEFAULT = '';
-    const RECORD_STRUCTURE_MODE_FILTER = 'Filter';
-    const RECORD_STRUCTURE_MODE_EDITTASK = 'EditTask';
+    public const RECORD_STRUCTURE_MODE_DEFAULT = '';
+    public const RECORD_STRUCTURE_MODE_FILTER = 'Filter';
+    public const RECORD_STRUCTURE_MODE_EDITTASK = 'EditTask';
 
     public $EMAILMakerModel = false;
 
@@ -24,6 +23,7 @@ class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
         $instance->setEMAILMakerModel($EMAILMakerModel);
 
         $instance->setModule($EMAILMakerModel->getModule());
+
         return $instance;
     }
 
@@ -34,14 +34,14 @@ class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
 
     public function getFieldsByType($fieldTypes)
     {
-        $fieldTypesArray = array();
+        $fieldTypesArray = [];
         if (gettype($fieldTypes) == 'string') {
             array_push($fieldTypesArray, $fieldTypes);
         } else {
             $fieldTypesArray = $fieldTypes;
         }
         $structure = $this->getStructure();
-        $fieldsBasedOnType = array();
+        $fieldsBasedOnType = [];
         if (!empty($structure)) {
             foreach ($structure as $block => $fields) {
                 foreach ($fields as $metaKey => $field) {
@@ -52,6 +52,7 @@ class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
                 }
             }
         }
+
         return $fieldsBasedOnType;
     }
 
@@ -66,17 +67,17 @@ class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
             $recordId = $recordModel->getId();
         }
 
-        $values = array();
+        $values = [];
         $baseModuleModel = $moduleModel = $this->getModule();
         $blockModelList = $moduleModel->getBlocks();
 
         foreach ($blockModelList as $blockLabel => $blockModel) {
             $fieldModelList = $blockModel->getFields();
-            if (!empty ($fieldModelList)) {
-                $values[$blockLabel] = array();
+            if (!empty($fieldModelList)) {
+                $values[$blockLabel] = [];
                 foreach ($fieldModelList as $fieldName => $fieldModel) {
                     if ($fieldModel->isViewable()) {
-                        if (in_array($moduleModel->getName(), array('Calendar', 'Events')) && $fieldName != 'modifiedby' && $fieldModel->getDisplayType() == 3) {
+                        if (in_array($moduleModel->getName(), ['Calendar', 'Events']) && $fieldName != 'modifiedby' && $fieldModel->getDisplayType() == 3) {
 
                             continue;
                         }
@@ -84,7 +85,7 @@ class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
                             continue;
                         }
                         if (!empty($recordId)) {
-                            //Set the fieldModel with the valuetype for the client side.
+                            // Set the fieldModel with the valuetype for the client side.
                             $fieldValueType = $recordModel->getFieldFilterValueType($fieldName);
                             $fieldInfo = $fieldModel->getFieldInfo();
                             $fieldInfo['emailmaker_valuetype'] = $fieldValueType;
@@ -102,27 +103,27 @@ class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
             }
         }
 
-        //All the reference fields should also be sent
-        $fields = $moduleModel->getFieldsByType(array('reference', 'owner', 'multireference'));
+        // All the reference fields should also be sent
+        $fields = $moduleModel->getFieldsByType(['reference', 'owner', 'multireference']);
         foreach ($fields as $parentFieldName => $field) {
             $type = $field->getFieldDataType();
             $referenceModules = $field->getReferenceList();
             if ($type == 'owner') {
-                $referenceModules = array('Users');
+                $referenceModules = ['Users'];
             }
             foreach ($referenceModules as $refModule) {
                 $moduleModel = Vtiger_Module_Model::getInstance($refModule);
                 $blockModelList = $moduleModel->getBlocks();
                 foreach ($blockModelList as $blockLabel => $blockModel) {
                     $fieldModelList = $blockModel->getFields();
-                    if (!empty ($fieldModelList)) {
+                    if (!empty($fieldModelList)) {
                         foreach ($fieldModelList as $fieldName => $fieldModel) {
                             if ($fieldModel->isViewable()) {
-                                //Should not show starred and tag fields in edit task view
+                                // Should not show starred and tag fields in edit task view
                                 if ($fieldModel->getDisplayType() == '6') {
                                     continue;
                                 }
-                                $name = "($parentFieldName : ($refModule) $fieldName)";
+                                $name = "({$parentFieldName} : ({$refModule}) {$fieldName})";
                                 $label = vtranslate($field->get('label'), $baseModuleModel->getName()) . ' : (' . vtranslate($refModule, $refModule) . ') ' . vtranslate($fieldModel->get('label'), $refModule);
                                 $fieldModel->set('emailmaker_columnname', $name)->set('emailmaker_columnlabel', $label);
                                 if (!empty($recordId)) {
@@ -133,10 +134,10 @@ class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
                                     $fieldModel->setFieldInfo($fieldInfo);
                                 }
                                 $fieldModel->set('emailmaker_fieldEditable', $fieldModel->isEditable());
-                                //if field is not editable all the field of that reference field should also shd be not editable
-                                //eg : created by is not editable . so all user field refered by created by field shd also be non editable
+                                // if field is not editable all the field of that reference field should also shd be not editable
+                                // eg : created by is not editable . so all user field refered by created by field shd also be non editable
                                 // owner fields should also be non editable
-                                if (!$field->isEditable() || $type == "owner") {
+                                if (!$field->isEditable() || $type == 'owner') {
                                     $fieldModel->set('emailmaker_fieldEditable', false);
 
                                 }
@@ -148,6 +149,7 @@ class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
             }
         }
         $this->structuredValues = $values;
+
         return $values;
     }
 
@@ -163,7 +165,8 @@ class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
 
     public function getAllDateTimeFields()
     {
-        $fieldTypes = array('date', 'datetime');
+        $fieldTypes = ['date', 'datetime'];
+
         return $this->getFieldsByType($fieldTypes);
     }
 
@@ -172,12 +175,12 @@ class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
         $moduleModel = $this->getModule();
         $nameFieldsList[$moduleModel->getName()] = $moduleModel->getNameFields();
 
-        $fields = $moduleModel->getFieldsByType(array('reference', 'owner', 'multireference'));
+        $fields = $moduleModel->getFieldsByType(['reference', 'owner', 'multireference']);
         foreach ($fields as $parentFieldName => $field) {
             $type = $field->getFieldDataType();
             $referenceModules = $field->getReferenceList();
             if ($type == 'owner') {
-                $referenceModules = array('Users');
+                $referenceModules = ['Users'];
             }
             foreach ($referenceModules as $refModule) {
                 $moduleModel = Vtiger_Module_Model::getInstance($refModule);
@@ -185,7 +188,7 @@ class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
             }
         }
 
-        $nameFields = array();
+        $nameFields = [];
         $recordStructure = $this->getStructure();
         foreach ($nameFieldsList as $moduleName => $fieldNamesList) {
             foreach ($fieldNamesList as $fieldName) {
@@ -198,6 +201,7 @@ class EMAILMaker_RecordStructure_Model extends Vtiger_RecordStructure_Model
                 }
             }
         }
+
         return $nameFields;
     }
 }

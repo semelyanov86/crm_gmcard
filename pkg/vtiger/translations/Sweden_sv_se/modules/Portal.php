@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,8 +7,8 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
-$languageStrings = array(
+ */
+$languageStrings = [
     'Portal' => 'Våra webbplatser',
     'LBL_ADD_BOOKMARK' => 'Lägg till bokmärke',
     'LBL_BOOKMARK_NAME' => 'Bokmärk Namn',
@@ -26,8 +27,8 @@ $languageStrings = array(
     'LBL_BOOKMARK' => 'Mark',
     'LBL_BOOKMARKS' => 'Bokmärken',
     'HTTP_ERROR' => 'Den webbplats som du försöker öppna är inte säker och kanske inte öppna. Om du fortfarande vill visa webbsidan så kan du klicka på innehållet blockerare i adressfältet och aktivera den.',
-);
+];
 
-$jsLanguageStrings = array(
+$jsLanguageStrings = [
     'JS_ENTER_MANDATORY_FIELDS' => 'Ange alla obligatoriska fält',
-);
+];

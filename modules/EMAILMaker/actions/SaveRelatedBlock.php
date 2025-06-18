@@ -1,4 +1,5 @@
 <?php
+
 /* * *******************************************************************************
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
@@ -9,8 +10,7 @@
 
 class EMAILMaker_SaveRelatedBlock_Action extends Vtiger_Action_Controller
 {
-
-    public $relblockid = "";
+    public $relblockid = '';
 
     public function checkPermission(Vtiger_Request $request)
     {
@@ -41,11 +41,11 @@ class EMAILMaker_SaveRelatedBlock_Action extends Vtiger_Action_Controller
         $advancedFilter = $request->get('advanced_filter');
         $advancedGroupFilterConditions = $request->get('advanced_group_condition');
         $sortFields = $request->get('selected_sort_fields');
-        if ($this->relblockid != "") {
-            $adb->pquery("UPDATE vtiger_emakertemplates_relblocks SET name=?, block=? WHERE relblockid=?", array($name, $block, $this->relblockid));
+        if ($this->relblockid != '') {
+            $adb->pquery('UPDATE vtiger_emakertemplates_relblocks SET name=?, block=? WHERE relblockid=?', [$name, $block, $this->relblockid]);
         } else {
             $this->relblockid = $adb->getUniqueID('vtiger_emakertemplates_relblocks');
-            $adb->pquery("INSERT INTO vtiger_emakertemplates_relblocks (relblockid, name, module, secmodule, block) VALUES (?,?,?,?,?)", array($this->relblockid, $name, $module, $secmodule, $block));
+            $adb->pquery('INSERT INTO vtiger_emakertemplates_relblocks (relblockid, name, module, secmodule, block) VALUES (?,?,?,?,?)', [$this->relblockid, $name, $module, $secmodule, $block]);
             $selectedFields = $request->get('selected_fields');
             $this->saveSelectedFields($selectedFields);
         }
@@ -59,10 +59,12 @@ class EMAILMaker_SaveRelatedBlock_Action extends Vtiger_Action_Controller
     public function saveSelectedFields($selectedFields)
     {
         $adb = PearDatabase::getInstance();
-        for ($i = 0; $i < count($selectedFields); $i++) {
+        for ($i = 0; $i < count($selectedFields); ++$i) {
             if (!empty($selectedFields[$i])) {
-                $adb->pquery("INSERT INTO vtiger_emakertemplates_relblockcol (relblockid, colid, columnname) VALUES (?,?,?)",
-                    array($this->relblockid, $i, decode_html($selectedFields[$i])));
+                $adb->pquery(
+                    'INSERT INTO vtiger_emakertemplates_relblockcol (relblockid, colid, columnname) VALUES (?,?,?)',
+                    [$this->relblockid, $i, decode_html($selectedFields[$i])],
+                );
             }
         }
     }
@@ -71,8 +73,8 @@ class EMAILMaker_SaveRelatedBlock_Action extends Vtiger_Action_Controller
     {
         $adb = PearDatabase::getInstance();
         if (!empty($advancedFilter)) {
-            $adb->pquery('DELETE FROM vtiger_emakertemplates_relblockcriteria WHERE relblockid = ?', array($this->relblockid));
-            $adb->pquery('DELETE FROM vtiger_emakertemplates_relblockcriteria_g WHERE relblockid = ?', array($this->relblockid));
+            $adb->pquery('DELETE FROM vtiger_emakertemplates_relblockcriteria WHERE relblockid = ?', [$this->relblockid]);
+            $adb->pquery('DELETE FROM vtiger_emakertemplates_relblockcriteria_g WHERE relblockid = ?', [$this->relblockid]);
             foreach ($advancedFilter as $groupIndex => $groupInfo) {
                 if (empty($groupInfo)) {
                     continue;
@@ -83,15 +85,15 @@ class EMAILMaker_SaveRelatedBlock_Action extends Vtiger_Action_Controller
                     if (empty($columnCondition)) {
                         continue;
                     }
-                    $advFilterColumn = $columnCondition["columnname"];
-                    $advFilterComparator = $columnCondition["comparator"];
-                    $advFilterValue = $columnCondition["value"];
-                    $advFilterColumnCondition = $columnCondition["column_condition"];
-                    $columnInfo = explode(":", $advFilterColumn);
+                    $advFilterColumn = $columnCondition['columnname'];
+                    $advFilterComparator = $columnCondition['comparator'];
+                    $advFilterValue = $columnCondition['value'];
+                    $advFilterColumnCondition = $columnCondition['column_condition'];
+                    $columnInfo = explode(':', $advFilterColumn);
                     $moduleFieldLabel = $columnInfo[2];
-                    list($module, $fieldLabel) = explode('_', $moduleFieldLabel, 2);
+                    [$module, $fieldLabel] = explode('_', $moduleFieldLabel, 2);
                     $fieldInfo = vtranslate($fieldLabel, $module);
-                    if ($fieldInfo == "") {
+                    if ($fieldInfo == '') {
                         $fieldInfo = $fieldLabel;
                     }
                     $fieldType = null;
@@ -106,11 +108,11 @@ class EMAILMaker_SaveRelatedBlock_Action extends Vtiger_Action_Controller
                             $advFilterValue = Vtiger_Currency_UIType::convertToDBFormat($advFilterValue);
                         }
                     }
-                    $tempVal = explode(",", $advFilterValue);
-                    if (($columnInfo[4] == 'D' || ($columnInfo[4] == 'T' && $columnInfo[1] != 'time_start' && $columnInfo[1] != 'time_end') ||
-                            ($columnInfo[4] == 'DT')) && ($columnInfo[4] != '' && $advFilterValue != '')) {
-                        $val = array();
-                        for ($i = 0; $i < count($tempVal); $i++) {
+                    $tempVal = explode(',', $advFilterValue);
+                    if (($columnInfo[4] == 'D' || ($columnInfo[4] == 'T' && $columnInfo[1] != 'time_start' && $columnInfo[1] != 'time_end')
+                            || ($columnInfo[4] == 'DT')) && ($columnInfo[4] != '' && $advFilterValue != '')) {
+                        $val = [];
+                        for ($i = 0; $i < count($tempVal); ++$i) {
                             if (trim($tempVal[$i]) != '') {
                                 $date = new DateTimeField(trim($tempVal[$i]));
                                 if ($columnInfo[4] == 'D') {
@@ -122,32 +124,34 @@ class EMAILMaker_SaveRelatedBlock_Action extends Vtiger_Action_Controller
                                 }
                             }
                         }
-                        $advFilterValue = implode(",", $val);
+                        $advFilterValue = implode(',', $val);
                     }
                     $adb->pquery('INSERT INTO vtiger_emakertemplates_relblockcriteria (relblockid, colid, columnname, comparator, value,
-                                       groupid, column_condition) VALUES (?,?,?,?,?,?,?)', array(
+                                       groupid, column_condition) VALUES (?,?,?,?,?,?,?)', [
                         $this->relblockid,
                         $columnIndex,
                         $advFilterColumn,
                         $advFilterComparator,
                         $advFilterValue,
                         $groupIndex,
-                        $advFilterColumnCondition
-                    ));
+                        $advFilterColumnCondition,
+                    ]);
                     // Update the condition expression for the group to which the condition column belongs
                     $groupConditionExpression = '';
-                    if (!empty($advancedFilter[$groupIndex]["conditionexpression"])) {
-                        $groupConditionExpression = $advancedFilter[$groupIndex]["conditionexpression"];
+                    if (!empty($advancedFilter[$groupIndex]['conditionexpression'])) {
+                        $groupConditionExpression = $advancedFilter[$groupIndex]['conditionexpression'];
                     }
                     $groupConditionExpression = $groupConditionExpression . ' ' . $columnIndex . ' ' . $advFilterColumnCondition;
-                    $advancedFilter[$groupIndex]["conditionexpression"] = $groupConditionExpression;
+                    $advancedFilter[$groupIndex]['conditionexpression'] = $groupConditionExpression;
                 }
-                $groupConditionExpression = $advancedFilter[$groupIndex]["conditionexpression"];
+                $groupConditionExpression = $advancedFilter[$groupIndex]['conditionexpression'];
                 if (empty($groupConditionExpression)) {
                     continue;
                 } // Case when the group doesn't have any column criteria
-                $adb->pquery("INSERT INTO vtiger_emakertemplates_relblockcriteria_g (groupid, relblockid, group_condition, condition_expression) VALUES (?,?,?,?)",
-                    array($groupIndex, $this->relblockid, $groupCondition, $groupConditionExpression));
+                $adb->pquery(
+                    'INSERT INTO vtiger_emakertemplates_relblockcriteria_g (groupid, relblockid, group_condition, condition_expression) VALUES (?,?,?,?)',
+                    [$groupIndex, $this->relblockid, $groupCondition, $groupConditionExpression],
+                );
             }
         }
     }
@@ -155,34 +159,37 @@ class EMAILMaker_SaveRelatedBlock_Action extends Vtiger_Action_Controller
     public function saveSortFields($sortFields)
     {
         $adb = PearDatabase::getInstance();
-        $adb->pquery('DELETE FROM vtiger_emakertemplates_relblocksortcol WHERE relblockid = ?', array($this->relblockid));
+        $adb->pquery('DELETE FROM vtiger_emakertemplates_relblocksortcol WHERE relblockid = ?', [$this->relblockid]);
         $i = 0;
         foreach ($sortFields as $fieldInfo) {
-            $adb->pquery('INSERT INTO vtiger_emakertemplates_relblocksortcol (sortcolid, relblockid, columnname, sortorder) VALUES (?,?,?,?)',
-                array($i, $this->relblockid, $fieldInfo[0], $fieldInfo[1]));
-            $i++;
+            $adb->pquery(
+                'INSERT INTO vtiger_emakertemplates_relblocksortcol (sortcolid, relblockid, columnname, sortorder) VALUES (?,?,?,?)',
+                [$i, $this->relblockid, $fieldInfo[0], $fieldInfo[1]],
+            );
+            ++$i;
         }
     }
 
     public function getSortCols($selectedcolumns)
     {
-        $sortCols = array();
-        for ($i = 0; $i < count($selectedcolumns); $i++) {
-            $sortCols[$i]["order"] = "";
-            $sortCols[$i]["sequence"] = "";
+        $sortCols = [];
+        for ($i = 0; $i < count($selectedcolumns); ++$i) {
+            $sortCols[$i]['order'] = '';
+            $sortCols[$i]['sequence'] = '';
         }
-        if (isset($_REQUEST["sortColCount"]) && $_REQUEST["sortColCount"] > 0) {
+        if (isset($_REQUEST['sortColCount']) && $_REQUEST['sortColCount'] > 0) {
             $seqCounter = 1;
-            for ($i = 1; $i <= $_REQUEST["sortColCount"]; $i++) {
-                if (isset($_REQUEST["sortCol" . $i]) && isset($_REQUEST["sortDir" . $i])) {
-                    $colIdx = array_search($_REQUEST["sortCol" . $i], $selectedcolumns);
+            for ($i = 1; $i <= $_REQUEST['sortColCount']; ++$i) {
+                if (isset($_REQUEST['sortCol' . $i], $_REQUEST['sortDir' . $i])) {
+                    $colIdx = array_search($_REQUEST['sortCol' . $i], $selectedcolumns);
                     if ($colIdx !== false) {
-                        $sortCols[$colIdx]["order"] = $_REQUEST["sortDir" . $i];
-                        $sortCols[$colIdx]["sequence"] = $seqCounter++;
+                        $sortCols[$colIdx]['order'] = $_REQUEST['sortDir' . $i];
+                        $sortCols[$colIdx]['sequence'] = $seqCounter++;
                     }
                 }
             }
         }
+
         return $sortCols;
     }
 }

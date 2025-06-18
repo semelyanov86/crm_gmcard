@@ -2,10 +2,13 @@
 
 class EMAILMaker_Edit_View extends Vtiger_Index_View
 {
-    public $cu_language = "";
+    public $cu_language = '';
+
     protected $isInstalled = true;
-    private $ModuleFields = array();
-    private $All_Related_Modules = array();
+
+    private $ModuleFields = [];
+
+    private $All_Related_Modules = [];
 
     public function __construct()
     {
@@ -23,8 +26,9 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
     public function getProcess(Vtiger_Request $request)
     {
         $mode = $request->getMode();
-        if (!empty($mode) && 'EditTheme' !== $mode) {
+        if (!empty($mode) && $mode !== 'EditTheme') {
             $this->invokeExposedMethod($mode, $request);
+
             return;
         }
         $this->showModuleEditView($request);
@@ -38,7 +42,7 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
         $moduleName = $request->getModule();
         EMAILMaker_Debugger_Model::GetInstance()->Init();
         $mode = $request->get('mode');
-        $theme_mode = ('EditTheme' === $mode);
+        $theme_mode = ($mode === 'EditTheme');
         $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
         $viewer = $this->getViewer($request);
         $current_user = Users_Record_Model::getCurrentUserModel();
@@ -75,7 +79,7 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
             $sharingType = $emailTemplateResult['sharingtype'];
             $sharingMemberArray = $EMAILMaker->GetSharingMemberArray($templateId);
         } else {
-            $emailTemplateResult = array();
+            $emailTemplateResult = [];
             $emailTemplateResult['permissions'] = $EMAILMaker->returnTemplatePermissionsData();
             $templateId = $select_module = $email_category = '';
             $is_listview = $is_default = '0';
@@ -86,18 +90,18 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
                 if ($companyData) {
                     $sharingType = 'share';
                     $companyId = $companyData->getId();
-                    $sharingMemberArray['Companies'] = array('Companies:'.$companyId => $companyId);
+                    $sharingMemberArray['Companies'] = ['Companies:' . $companyId => $companyId];
                 } else {
                     $sharingType = 'private';
                 }
             } else {
                 $sharingType = 'public';
             }
-            $sharingMemberArray = array();
+            $sharingMemberArray = [];
             if ($request->has('theme') && !$request->isEmpty('theme')) {
                 $theme = $request->get('theme');
-                if ('new' !== $theme) {
-                    $theme_path = getcwd().'/modules/EMAILMaker/templates/'.$theme.'/index.html';
+                if ($theme !== 'new') {
+                    $theme_path = getcwd() . '/modules/EMAILMaker/templates/' . $theme . '/index.html';
                     $theme_content = file_get_contents($theme_path);
                     if (file_exists($theme_path)) {
                         $emailTemplateResult['body'] = str_replace('[site_URL]', $site_URL, $theme_content);
@@ -115,13 +119,13 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
         if (!$emailTemplateResult['permissions']['edit']) {
             $EMAILMaker->DieDuePermission();
         }
-        if ($request->has('isDuplicate') && 'true' === $request->get('isDuplicate')) {
+        if ($request->has('isDuplicate') && $request->get('isDuplicate') === 'true') {
             $viewer->assign('TEMPLATENAME', '');
             $viewer->assign('DUPLICATE_TEMPLATENAME', $emailTemplateResult['templatename']);
         } else {
             $viewer->assign('TEMPLATENAME', $emailTemplateResult['templatename']);
         }
-        if (!$request->has('isDuplicate') or ($request->has('isDuplicate') && 'true' !== $request->get('isDuplicate'))) {
+        if (!$request->has('isDuplicate') or ($request->has('isDuplicate') && $request->get('isDuplicate') !== 'true')) {
             $viewer->assign('SAVETEMPLATEID', $templateId);
         }
         if (!empty($templateId)) {
@@ -153,14 +157,16 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
             $viewer->assign('LBL_MULTICOMPANY', vtranslate('MultiCompany', EMAILMaker_EMAILMaker_Model::MULTI_COMPANY));
         }
         $viewer->assign('USERINFORMATIONS', EMAILMaker_Fields_Model::getUserOptions());
-        $viewer->assign('INVENTORYTERMSANDCONDITIONS',
-            EMAILMaker_Fields_Model::getInventoryTermsAndConditionsOptions());
+        $viewer->assign(
+            'INVENTORYTERMSANDCONDITIONS',
+            EMAILMaker_Fields_Model::getInventoryTermsAndConditionsOptions(),
+        );
         $viewer->assign('CUSTOM_FUNCTIONS', $this->getCustomFunctionsList());
         $global_lang_labels = @array_flip($app_strings);
         $global_lang_labels = @array_flip($global_lang_labels);
         asort($global_lang_labels);
         $viewer->assign('GLOBAL_LANG_LABELS', $global_lang_labels);
-        $module_lang_labels = array();
+        $module_lang_labels = [];
         if (!empty($select_module)) {
             $mod_lang = EMAILMaker_EMAILMaker_Model::getModuleLanguageArray($select_module);
             $module_lang_labels = @array_flip($mod_lang);
@@ -170,7 +176,7 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
             $module_lang_labels[''] = vtranslate('LBL_SELECT_MODULE_FIELD', 'EMAILMaker');
         }
         $viewer->assign('MODULE_LANG_LABELS', $module_lang_labels);
-        list($custom_labels, $languages) = $EMAILMaker->GetCustomLabels();
+        [$custom_labels, $languages] = $EMAILMaker->GetCustomLabels();
         $currLangId = '';
         foreach ($languages as $langId => $langVal) {
             if ($langVal['prefix'] == $current_language) {
@@ -178,7 +184,7 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
                 break;
             }
         }
-        $vcustom_labels = array();
+        $vcustom_labels = [];
         if (count($custom_labels) > 0) {
             foreach ($custom_labels as $oLbl) {
                 $currLangVal = $oLbl->GetLangValue($currLangId);
@@ -198,22 +204,22 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
         $viewer->assign('DEFAULT_FROM_OPTIONS', EMAILMaker_Fields_Model::getDefaultFromOptions());
         $viewer->assign('STATUS', EMAILMaker_Fields_Model::getStatusOptions());
         $viewer->assign('IS_ACTIVE', $is_active);
-        if ('0' == $is_active) {
+        if ($is_active == '0') {
             $viewer->assign('IS_DEFAULT_DV_CHECKED', 'disabled="disabled"');
             $viewer->assign('IS_DEFAULT_LV_CHECKED', 'disabled="disabled"');
         } elseif ($is_default > 0) {
-            $is_default_bin = str_pad(base_convert($is_default, 10, 2), 2, "0", STR_PAD_LEFT);
+            $is_default_bin = str_pad(base_convert($is_default, 10, 2), 2, '0', STR_PAD_LEFT);
             $is_default_lv = substr($is_default_bin, 0, 1);
             $is_default_dv = substr($is_default_bin, 1, 1);
-            if ('1' == $is_default_lv) {
+            if ($is_default_lv == '1') {
                 $viewer->assign('IS_DEFAULT_LV_CHECKED', 'checked="checked"');
             }
-            if ('1' == $is_default_dv) {
+            if ($is_default_dv == '1') {
                 $viewer->assign('IS_DEFAULT_DV_CHECKED', 'checked="checked"');
             }
         }
         $viewer->assign('ORDER', $order);
-        if ('1' == $is_listview) {
+        if ($is_listview == '1') {
             $viewer->assign('IS_LISTVIEW_CHECKED', 'checked="checked"');
         }
         $template_owners = get_user_array(false);
@@ -226,8 +232,8 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
         $viewer->assign('MEMBER_GROUPS', Settings_Groups_Member_Model::getAll());
         $viewer->assign('DECIMALS', EMAILMaker_Record_Model::getDecimalSettings());
         $viewer->assign('IGNORE_PICKLIST_VALUES', EMAILMaker_Record_Model::getIgnorePicklistValues());
-        foreach (array('VAT', 'CHARGES') as $blockType) {
-            $viewer->assign($blockType.'BLOCK_TABLE', EMAILMaker_Fields_Model::getBlockTable($blockType, $app_strings));
+        foreach (['VAT', 'CHARGES'] as $blockType) {
+            $viewer->assign($blockType . 'BLOCK_TABLE', EMAILMaker_Fields_Model::getBlockTable($blockType, $app_strings));
         }
         $viewer->assign('LISTVIEW_BLOCK_TPL', EMAILMaker_Fields_Model::getListViewBlockOptions());
         $viewer->assign('PRODUCT_BLOC_TPL', EMAILMaker_Fields_Model::getProductBlockTemplates());
@@ -244,7 +250,7 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
             $viewer->assign('SELECT_MODULE_FIELD', $SelectModuleFields);
             if (in_array($select_module, [
                 'Invoice', 'Quotes', 'SalesOrder', 'PurchaseOrder', 'Issuecards', 'Receiptcards', 'Creditnote',
-                'StornoInvoice'
+                'StornoInvoice',
             ])) {
                 unset($SelectModuleFields['Details']);
             }
@@ -272,9 +278,11 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
             }
             $viewer->assign('DATE_FILTERS', $dateFilters);
             $viewer->assign('ADVANCED_FILTER_OPTIONS', EMAILMaker_Field_Model::getAdvancedFilterOptions());
-            $viewer->assign('ADVANCED_FILTER_OPTIONS_BY_TYPE',
-                EMAILMaker_Field_Model::getAdvancedFilterOpsByFieldType());
-            $viewer->assign('ADVANCE_CRITERIA', Zend_Json::decode(decode_html($emailTemplateResult["conditions"])));
+            $viewer->assign(
+                'ADVANCED_FILTER_OPTIONS_BY_TYPE',
+                EMAILMaker_Field_Model::getAdvancedFilterOpsByFieldType(),
+            );
+            $viewer->assign('ADVANCE_CRITERIA', Zend_Json::decode(decode_html($emailTemplateResult['conditions'])));
             $viewer->assign('SELECTED_MODULE_NAME', $selectedModuleName);
             $viewer->assign('SOURCE_MODULE', $selectedModuleName);
         }
@@ -285,38 +293,39 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
     public function getCustomFunctionsList()
     {
         $ready = false;
-        $function_name = "";
-        $function_params = $functions = array();
+        $function_name = '';
+        $function_params = $functions = [];
         $files = glob('modules/EMAILMaker/resources/functions/*.php');
         foreach ($files as $file) {
             $filename = $file;
-            $source = fread(fopen($filename, "r"), filesize($filename));
+            $source = fread(fopen($filename, 'r'), filesize($filename));
             $tokens = token_get_all($source);
             foreach ($tokens as $token) {
                 if (is_array($token)) {
                     if ($token[0] == T_FUNCTION) {
                         $ready = true;
                     } elseif ($ready) {
-                        if ($token[0] == T_STRING && $function_name == "") {
+                        if ($token[0] == T_STRING && $function_name == '') {
                             $function_name = $token[1];
                         } elseif ($token[0] == T_VARIABLE) {
                             $function_params[] = $token[1];
                         }
                     }
-                } elseif ($ready && $token == "{") {
+                } elseif ($ready && $token == '{') {
                     $ready = false;
                     $functions[$function_name] = $function_params;
-                    $function_name = "";
-                    $function_params = array();
+                    $function_name = '';
+                    $function_params = [];
                 }
             }
         }
-        $customFunctions[""] = vtranslate("LBL_PLS_SELECT", 'EMAILMaker');
+        $customFunctions[''] = vtranslate('LBL_PLS_SELECT', 'EMAILMaker');
         foreach ($functions as $funName => $params) {
-            $parString = implode("|", $params);
-            $custFun = trim($funName."|".str_replace("$", "", $parString), "|");
+            $parString = implode('|', $params);
+            $custFun = trim($funName . '|' . str_replace('$', '', $parString), '|');
             $customFunctions[$custFun] = $funName;
         }
+
         return $customFunctions;
     }
 
@@ -339,7 +348,7 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
                 $viewer->view('OperationNotPermitted.tpl', $moduleName);
                 exit;
             }
-            $linkParams = array('MODULE' => $moduleName, 'ACTION' => $request->get('view'));
+            $linkParams = ['MODULE' => $moduleName, 'ACTION' => $request->get('view')];
             $linkModels = $moduleModel->getSideBarLinks($linkParams);
             $viewer->assign('QUICK_LINKS', $linkModels);
         }
@@ -354,29 +363,31 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
     {
         $headerScriptInstances = parent::getHeaderScripts($request);
         $moduleName = $request->getModule();
-        $jsFileNames = array(
-            "modules.EMAILMaker.resources.ckeditor.ckeditor", "libraries.jquery.ckeditor.adapters.jquery",
-            "libraries.jquery.jquery_windowmsg", "modules.$moduleName.resources.AdvanceFilter"
-        );
-        if (vtlib_isModuleActive("ITS4YouStyles")) {
-            $jsFileNames[] = "modules.ITS4YouStyles.resources.CodeMirror.lib.codemirror";
-            $jsFileNames[] = "modules.ITS4YouStyles.resources.CodeMirror.mode.javascript.javascript";
-            $jsFileNames[] = "modules.ITS4YouStyles.resources.CodeMirror.addon.selection.active-line";
-            $jsFileNames[] = "modules.ITS4YouStyles.resources.CodeMirror.addon.edit.matchbrackets";
+        $jsFileNames = [
+            'modules.EMAILMaker.resources.ckeditor.ckeditor', 'libraries.jquery.ckeditor.adapters.jquery',
+            'libraries.jquery.jquery_windowmsg', "modules.{$moduleName}.resources.AdvanceFilter",
+        ];
+        if (vtlib_isModuleActive('ITS4YouStyles')) {
+            $jsFileNames[] = 'modules.ITS4YouStyles.resources.CodeMirror.lib.codemirror';
+            $jsFileNames[] = 'modules.ITS4YouStyles.resources.CodeMirror.mode.javascript.javascript';
+            $jsFileNames[] = 'modules.ITS4YouStyles.resources.CodeMirror.addon.selection.active-line';
+            $jsFileNames[] = 'modules.ITS4YouStyles.resources.CodeMirror.addon.edit.matchbrackets';
         }
         $jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
         $headerScriptInstances = array_merge($headerScriptInstances, $jsScriptInstances);
+
         return $headerScriptInstances;
     }
 
     public function getHeaderCss(Vtiger_Request $request)
     {
         $headerCssInstances = parent::getHeaderCss($request);
-        if (vtlib_isModuleActive("ITS4YouStyles")) {
-            $cssFileNames = array('~/modules/ITS4YouStyles/resources/CodeMirror/lib/codemirror.css',);
+        if (vtlib_isModuleActive('ITS4YouStyles')) {
+            $cssFileNames = ['~/modules/ITS4YouStyles/resources/CodeMirror/lib/codemirror.css'];
             $cssInstances = $this->checkAndConvertCssStyles($cssFileNames);
             $headerCssInstances = array_merge($headerCssInstances, $cssInstances);
         }
+
         return $headerCssInstances;
     }
 
@@ -384,31 +395,31 @@ class EMAILMaker_Edit_View extends Vtiger_Index_View
     {
         EMAILMaker_Debugger_Model::GetInstance()->Init();
         $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
-        if ($EMAILMaker->CheckPermissions("EDIT") == false) {
+        if ($EMAILMaker->CheckPermissions('EDIT') == false) {
             $EMAILMaker->DieDuePermission();
         }
         $viewer = $this->getViewer($request);
-        $viewer->assign("VERSION", EMAILMaker_Version_Helper::$version);
-        $source_path = getcwd()."/modules/EMAILMaker/templates";
+        $viewer->assign('VERSION', EMAILMaker_Version_Helper::$version);
+        $source_path = getcwd() . '/modules/EMAILMaker/templates';
         $dir_iterator = new RecursiveDirectoryIterator($source_path);
         $iterator = new RecursiveIteratorIterator($dir_iterator, RecursiveIteratorIterator::SELF_FIRST);
         $i = 0;
         foreach ($iterator as $folder) {
             $folder_name = substr($folder, strlen($source_path) + 1);
             if ($folder->isDir()) {
-                $other_folder = strpos($folder_name, "/");
-                if ($other_folder === false && file_exists($folder."/index.html") && file_exists($folder."/image.png")) {
+                $other_folder = strpos($folder_name, '/');
+                if ($other_folder === false && file_exists($folder . '/index.html') && file_exists($folder . '/image.png')) {
                     $EmailTemplates[] = $folder_name;
                 }
             }
-            $i++;
+            ++$i;
         }
         asort($EmailTemplates);
-        $viewer->assign("EMAILTEMPLATESPATH", $source_path);
-        $viewer->assign("EMAILTEMPLATES", $EmailTemplates);
+        $viewer->assign('EMAILTEMPLATESPATH', $source_path);
+        $viewer->assign('EMAILTEMPLATES', $EmailTemplates);
         $Themes_Data = $EMAILMaker->GetThemesData();
-        $viewer->assign("EMAILTHEMES", $Themes_Data);
-        $viewer->assign("CATEGORY", getParentTab());
+        $viewer->assign('EMAILTHEMES', $Themes_Data);
+        $viewer->assign('CATEGORY', getParentTab());
         $viewer->view('EditSelectContent.tpl', 'EMAILMaker');
     }
-} ?>
+}

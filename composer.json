@@ -2,7 +2,7 @@
   "name": "vtiger/vtigercrm",
   "description": "Vtiger CRM",
   "type": "project",
-  "license": "VPL",
+  "license": "GPL-2.0-only",
   "authors": [
     {
       "name": "Vtiger",
@@ -16,7 +16,7 @@
   },
   "minimum-stability": "stable",
   "require": {
-    "php": ">=8.4",
+    "php": ">=8.3",
     "ext-mysqli": "*",
     "ext-imap": "*",
     "ext-curl": "*",
@@ -34,9 +34,22 @@
     "vlucas/phpdotenv": "^5.6"
   },
   "require-dev": {
+    "roave/security-advisories": "dev-latest",
     "friendsofphp/php-cs-fixer": "^3.75",
     "phpyh/coding-standard": "^2.6",
     "bamarni/composer-bin-plugin": "^1.8"
+  },
+  "autoload-dev": {
+    "files": ["includes/Loader.php"],
+    "psr-4": {
+      "Test\\": "tests/"
+    }
+  },
+  "extra": {
+    "bamarni-bin": {
+      "bin-links": false,
+      "forward-command": false
+    }
   },
   "config": {
     "allow-plugins": {

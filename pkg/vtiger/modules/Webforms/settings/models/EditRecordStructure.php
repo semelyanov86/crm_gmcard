@@ -10,48 +10,53 @@
  * *********************************************************************************** */
 
 /**
- * Vtiger Edit View Record Structure Model
+ * Vtiger Edit View Record Structure Model.
  */
-class Settings_Webforms_EditRecordStructure_Model extends Vtiger_EditRecordStructure_Model {
+class Settings_Webforms_EditRecordStructure_Model extends Vtiger_EditRecordStructure_Model
+{
+    /**
+     * Function to get the values in stuctured format.
+     * @return <array> - values in structure array('block'=>array(fieldinfo));
+     */
+    public function getStructure()
+    {
+        if (!empty($this->structuredValues)) {
+            return $this->structuredValues;
+        }
 
-	/**
-	 * Function to get the values in stuctured format
-	 * @return <array> - values in structure array('block'=>array(fieldinfo));
-	 */
-	public function getStructure() {
-		if (!empty($this->structuredValues)) {
-			return $this->structuredValues;
-		}
+        $values = [];
+        $recordModel = $this->getRecord();
+        $recordId = $recordModel->getId();
+        $moduleModel = $this->getModule();
+        $blockModelList = $moduleModel->getBlocks();
+        foreach ($blockModelList as $blockLabel => $blockModel) {
+            $fieldModelList = $blockModel->getFields();
+            if (!empty($fieldModelList)) {
+                $values[$blockLabel] = [];
+                foreach ($fieldModelList as $fieldName => $fieldModel) {
+                    if ($fieldModel->isEditable()) {
+                        if ($recordModel->get($fieldName) != '') {
+                            $fieldModel->set('fieldvalue', $recordModel->get($fieldName));
+                        } else {
+                            $defaultValue = $fieldModel->getDefaultFieldValue();
+                            if (!empty($defaultValue) && !$recordId) {
+                                $fieldModel->set('fieldvalue', $defaultValue);
+                            }
+                        }
+                        if ($fieldName === 'name') {
+                            if ($recordId) {
+                                $fieldModel->set('readonly', true);
+                            } else {
+                                $fieldModel->set('readonly', false);
+                            }
+                        }
+                        $values[$blockLabel][$fieldName] = $fieldModel;
+                    }
+                }
+            }
+        }
+        $this->structuredValues = $values;
 
-		$values = array();
-		$recordModel = $this->getRecord();
-		$recordId = $recordModel->getId();
-		$moduleModel = $this->getModule();
-		$blockModelList = $moduleModel->getBlocks();
-		foreach ($blockModelList as $blockLabel => $blockModel) {
-			$fieldModelList = $blockModel->getFields();
-			if (!empty($fieldModelList)) {
-				$values[$blockLabel] = array();
-				foreach ($fieldModelList as $fieldName => $fieldModel) {
-					if ($fieldModel->isEditable()) {
-						if ($recordModel->get($fieldName) != '') {
-							$fieldModel->set('fieldvalue', $recordModel->get($fieldName));
-						} else {
-							$defaultValue = $fieldModel->getDefaultFieldValue();
-							if (!empty($defaultValue) && !$recordId)
-								$fieldModel->set('fieldvalue', $defaultValue);
-						}
-						if ($fieldName === 'name') {
-							if ($recordId) $fieldModel->set('readonly', true);
-							else $fieldModel->set('readonly', false);
-						}
-						$values[$blockLabel][$fieldName] = $fieldModel;
-					}
-				}
-			}
-		}
-		$this->structuredValues = $values;
-		return $values;
-	}
-
+        return $values;
+    }
 }

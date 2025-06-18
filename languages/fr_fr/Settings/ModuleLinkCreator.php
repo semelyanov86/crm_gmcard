@@ -1,4 +1,5 @@
 <?php
+
 /* ********************************************************************************
  * The content of this file is subject to the Module & Link Creator ("License");
  * You may not use this file except in compliance with the License
@@ -7,7 +8,7 @@
  * All Rights Reserved.
  * ****************************************************************************** */
 
-$languageStrings = array(
+$languageStrings = [
     'ModuleLinkCreator' => 'VTE Custom Module Builder',
     'Module & Link Creator' => 'VTE Custom Module Builder',
     'LBL_MODULE_NAME' => 'Module Name',
@@ -112,12 +113,12 @@ $languageStrings = array(
     'duplicated-error' => '<p><b>Error:</b> There is already a related list between these two modules with this name. Please change the label.</p>',
     'field-already-there' => '<p><b>Error:</b> There is already a related field between these two modules. You can not create another one</p>',
     'related_list_label' => 'Related List Label (unique)',
-    'LBL_SELECT' => '-- Select --'
+    'LBL_SELECT' => '-- Select --',
     /* For Related Field Creator - End */
 
-);
+];
 
-$jsLanguageStrings = array(
+$jsLanguageStrings = [
     'LBL_INVALID_MODULE' => 'Invalid module',
     'LBL_SELECT' => '-- Select --',
     'LBL_ADD_NEW' => 'Add New',
@@ -130,5 +131,5 @@ $jsLanguageStrings = array(
     'JS_SUCCESS_MM' => 'M:M Relationship Success',
     'JS_FAILED_MM' => 'M:M Relationship Failed',
     'JS_LBL_DELETE_ONE_NONE' => "To delete the relationship \n go to \"Module Management > Module Layouts & Fields\" and DEACTIVATE the field. \n
-We do not recommend deleting relationship fields."
-);
+We do not recommend deleting relationship fields.",
+];

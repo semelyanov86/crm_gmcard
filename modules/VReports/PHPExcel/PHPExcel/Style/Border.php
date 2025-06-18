@@ -1,139 +1,287 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-Jp8=
+<?php
+
+/**
+ * PHPExcel_Style_Border.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Style_Border extends PHPExcel_Style_Supervisor implements PHPExcel_IComparable
+{
+    /* Border style */
+    public const BORDER_NONE             = 'none';
+    public const BORDER_DASHDOT          = 'dashDot';
+    public const BORDER_DASHDOTDOT       = 'dashDotDot';
+    public const BORDER_DASHED           = 'dashed';
+    public const BORDER_DOTTED           = 'dotted';
+    public const BORDER_DOUBLE           = 'double';
+    public const BORDER_HAIR             = 'hair';
+    public const BORDER_MEDIUM           = 'medium';
+    public const BORDER_MEDIUMDASHDOT    = 'mediumDashDot';
+    public const BORDER_MEDIUMDASHDOTDOT = 'mediumDashDotDot';
+    public const BORDER_MEDIUMDASHED     = 'mediumDashed';
+    public const BORDER_SLANTDASHDOT     = 'slantDashDot';
+    public const BORDER_THICK            = 'thick';
+    public const BORDER_THIN             = 'thin';
+
+    /**
+     * Border style.
+     *
+     * @var string
+     */
+    protected $borderStyle = PHPExcel_Style_Border::BORDER_NONE;
+
+    /**
+     * Border color.
+     *
+     * @var PHPExcel_Style_Color
+     */
+    protected $color;
+
+    /**
+     * Parent property name.
+     *
+     * @var string
+     */
+    protected $parentPropertyName;
+
+    /**
+     * Create a new PHPExcel_Style_Border.
+     *
+     * @param    bool    $isSupervisor    Flag indicating if this is a supervisor or not
+     *                                    Leave this value at default unless you understand exactly what
+     *                                        its ramifications are
+     * @param    bool    $isConditional    Flag indicating if this is a conditional style or not
+     *                                    Leave this value at default unless you understand exactly what
+     *                                        its ramifications are
+     */
+    public function __construct($isSupervisor = false, $isConditional = false)
+    {
+        // Supervisor?
+        parent::__construct($isSupervisor);
+
+        // Initialise values
+        $this->color    = new PHPExcel_Style_Color(PHPExcel_Style_Color::COLOR_BLACK, $isSupervisor);
+
+        // bind parent if we are a supervisor
+        if ($isSupervisor) {
+            $this->color->bindParent($this, 'color');
+        }
+    }
+
+    /**
+     * Bind parent. Only used for supervisor.
+     *
+     * @param PHPExcel_Style_Borders $parent
+     * @param string $parentPropertyName
+     * @return PHPExcel_Style_Border
+     */
+    public function bindParent($parent, $parentPropertyName = null)
+    {
+        $this->parent = $parent;
+        $this->parentPropertyName = $parentPropertyName;
+
+        return $this;
+    }
+
+    /**
+     * Get the shared style component for the currently active cell in currently active sheet.
+     * Only used for style supervisor.
+     *
+     * @return PHPExcel_Style_Border
+     * @throws PHPExcel_Exception
+     */
+    public function getSharedComponent()
+    {
+        switch ($this->parentPropertyName) {
+            case 'allBorders':
+            case 'horizontal':
+            case 'inside':
+            case 'outline':
+            case 'vertical':
+                throw new PHPExcel_Exception('Cannot get shared component for a pseudo-border.');
+                break;
+            case 'bottom':
+                return $this->parent->getSharedComponent()->getBottom();
+            case 'diagonal':
+                return $this->parent->getSharedComponent()->getDiagonal();
+            case 'left':
+                return $this->parent->getSharedComponent()->getLeft();
+            case 'right':
+                return $this->parent->getSharedComponent()->getRight();
+            case 'top':
+                return $this->parent->getSharedComponent()->getTop();
+        }
+    }
+
+    /**
+     * Build style array from subcomponents.
+     *
+     * @param array $array
+     * @return array
+     */
+    public function getStyleArray($array)
+    {
+        switch ($this->parentPropertyName) {
+            case 'allBorders':
+            case 'bottom':
+            case 'diagonal':
+            case 'horizontal':
+            case 'inside':
+            case 'left':
+            case 'outline':
+            case 'right':
+            case 'top':
+            case 'vertical':
+                $key = strtolower('vertical');
+                break;
+        }
+
+        return $this->parent->getStyleArray([$key => $array]);
+    }
+
+    /**
+     * Apply styles from array.
+     *
+     * <code>
+     * $objPHPExcel->getActiveSheet()->getStyle('B2')->getBorders()->getTop()->applyFromArray(
+     *        array(
+     *            'style' => PHPExcel_Style_Border::BORDER_DASHDOT,
+     *            'color' => array(
+     *                'rgb' => '808080'
+     *            )
+     *        )
+     * );
+     * </code>
+     *
+     * @param    array    $pStyles    Array containing style information
+     * @return PHPExcel_Style_Border
+     * @throws    PHPExcel_Exception
+     */
+    public function applyFromArray($pStyles = null)
+    {
+        if (is_array($pStyles)) {
+            if ($this->isSupervisor) {
+                $this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($this->getStyleArray($pStyles));
+            } else {
+                if (isset($pStyles['style'])) {
+                    $this->setBorderStyle($pStyles['style']);
+                }
+                if (isset($pStyles['color'])) {
+                    $this->getColor()->applyFromArray($pStyles['color']);
+                }
+            }
+        } else {
+            throw new PHPExcel_Exception('Invalid style array passed.');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get Border style.
+     *
+     * @return string
+     */
+    public function getBorderStyle()
+    {
+        if ($this->isSupervisor) {
+            return $this->getSharedComponent()->getBorderStyle();
+        }
+
+        return $this->borderStyle;
+    }
+
+    /**
+     * Set Border style.
+     *
+     * @param string|bool    $pValue
+     *                            When passing a boolean, FALSE equates PHPExcel_Style_Border::BORDER_NONE
+     *                                and TRUE to PHPExcel_Style_Border::BORDER_MEDIUM
+     * @return PHPExcel_Style_Border
+     */
+    public function setBorderStyle($pValue = PHPExcel_Style_Border::BORDER_NONE)
+    {
+
+        if (empty($pValue)) {
+            $pValue = PHPExcel_Style_Border::BORDER_NONE;
+        } elseif (is_bool($pValue) && $pValue) {
+            $pValue = PHPExcel_Style_Border::BORDER_MEDIUM;
+        }
+        if ($this->isSupervisor) {
+            $styleArray = $this->getStyleArray(['style' => $pValue]);
+            $this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
+        } else {
+            $this->borderStyle = $pValue;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get Border Color.
+     *
+     * @return PHPExcel_Style_Color
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * Set Border Color.
+     *
+     * @return PHPExcel_Style_Border
+     * @throws    PHPExcel_Exception
+     */
+    public function setColor(?PHPExcel_Style_Color $pValue = null)
+    {
+        // make sure parameter is a real color and not a supervisor
+        $color = $pValue->getIsSupervisor() ? $pValue->getSharedComponent() : $pValue;
+
+        if ($this->isSupervisor) {
+            $styleArray = $this->getColor()->getStyleArray(['argb' => $color->getARGB()]);
+            $this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
+        } else {
+            $this->color = $color;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get hash code.
+     *
+     * @return string    Hash code
+     */
+    public function getHashCode()
+    {
+        if ($this->isSupervisor) {
+            return $this->getSharedComponent()->getHashCode();
+        }
+
+        return md5(
+            $this->borderStyle
+            . $this->color->getHashCode()
+            . __CLASS__,
+        );
+    }
+}

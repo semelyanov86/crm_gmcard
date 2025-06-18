@@ -6,27 +6,27 @@ class VTEEmailDesigner_Delete_Action extends Vtiger_Delete_Action
     {
         return true;
     }
+
     public function process(Vtiger_Request $request)
     {
         $moduleName = $request->getModule();
-        $recordId = $request->get("record");
-        $ajaxDelete = $request->get("ajaxDelete");
+        $recordId = $request->get('record');
+        $ajaxDelete = $request->get('ajaxDelete');
         $recordModel = EmailTemplates_Record_Model::getInstanceById($recordId);
         $moduleModel = $recordModel->getModule();
         $recordModel->delete($recordId);
-        $listViewUrl = "index.php?module=VTEEmailDesigner&view=List";
+        $listViewUrl = 'index.php?module=VTEEmailDesigner&view=List';
         $response = new Vtiger_Response();
         if ($recordModel->isSystemTemplate()) {
-            $response->setError("502", vtranslate("LBL_NO_PERMISSIONS_TO_DELETE_SYSTEM_TEMPLATE", $moduleName));
+            $response->setError('502', vtranslate('LBL_NO_PERMISSIONS_TO_DELETE_SYSTEM_TEMPLATE', $moduleName));
         } else {
             if ($ajaxDelete) {
                 $response->setResult($listViewUrl);
             } else {
-                header("Location: " . $listViewUrl);
+                header('Location: ' . $listViewUrl);
             }
         }
+
         return $response;
     }
 }
-
-?>

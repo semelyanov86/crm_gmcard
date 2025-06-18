@@ -6,6 +6,7 @@ class Settings_UserLogin_SaveImageSettings_Action extends Vtiger_Action_Controll
     {
         return true;
     }
+
     public function process(Vtiger_Request $request)
     {
         $settingModel = new Settings_UserLogin_Settings_Model();
@@ -15,5 +16,3 @@ class Settings_UserLogin_SaveImageSettings_Action extends Vtiger_Action_Controll
         $response->emit();
     }
 }
-
-?>

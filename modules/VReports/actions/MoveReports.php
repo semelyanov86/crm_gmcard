@@ -8,15 +8,16 @@ class VReports_MoveReports_Action extends Vtiger_Mass_Action
         $moduleModel = VReports_Module_Model::getInstance($moduleName);
         $currentUserPriviligesModel = Users_Privileges_Model::getCurrentUserPrivilegesModel();
         if (!$currentUserPriviligesModel->hasModulePermission($moduleModel->getId())) {
-            throw new AppException(vtranslate("LBL_PERMISSION_DENIED"));
+            throw new AppException(vtranslate('LBL_PERMISSION_DENIED'));
         }
     }
+
     public function process(Vtiger_Request $request)
     {
-        $parentModule = "VReports";
+        $parentModule = 'VReports';
         $reportIdsList = VReports_Record_Model::getRecordsListFromRequest($request);
-        $folderId = $request->get("folderid");
-        $viewname = $request->get("viewname");
+        $folderId = $request->get('folderid');
+        $viewname = $request->get('viewname');
         if ($folderId == $viewname) {
             $sameTargetFolder = 1;
         }
@@ -32,17 +33,15 @@ class VReports_MoveReports_Action extends Vtiger_Mass_Action
         }
         $response = new Vtiger_Response();
         if ($sameTargetFolder) {
-            $result = array("success" => false, "message" => vtranslate("LBL_SAME_SOURCE_AND_TARGET_FOLDER", $parentModule));
+            $result = ['success' => false, 'message' => vtranslate('LBL_SAME_SOURCE_AND_TARGET_FOLDER', $parentModule)];
         } else {
             if (empty($reportsMoveDenied)) {
-                $result = array("success" => true, "message" => vtranslate("LBL_REPORTS_MOVED_SUCCESSFULLY", $parentModule));
+                $result = ['success' => true, 'message' => vtranslate('LBL_REPORTS_MOVED_SUCCESSFULLY', $parentModule)];
             } else {
-                $result = array("success" => false, "message" => vtranslate("LBL_DENIED_REPORTS", $parentModule), "denied" => $reportsMoveDenied);
+                $result = ['success' => false, 'message' => vtranslate('LBL_DENIED_REPORTS', $parentModule), 'denied' => $reportsMoveDenied];
             }
         }
         $response->setResult($result);
         $response->emit();
     }
 }
-
-?>

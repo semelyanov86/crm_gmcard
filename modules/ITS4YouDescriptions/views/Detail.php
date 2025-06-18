@@ -1,5 +1,5 @@
 <?php
- 
+
 
 class ITS4YouDescriptions_Detail_View extends Vtiger_Detail_View
 {
@@ -12,15 +12,13 @@ class ITS4YouDescriptions_Detail_View extends Vtiger_Detail_View
         $this->isInstalled = true;
     }
 
-    
     public function process(Vtiger_Request $request)
     {
         parent::process($request);
     }
 
-    
     public function preProcessTplName(Vtiger_Request $request)
     {
         return ($this->isInstalled) ? parent::preProcessTplName($request) : 'IndexViewPreProcess.tpl';
     }
-} ?>
+}

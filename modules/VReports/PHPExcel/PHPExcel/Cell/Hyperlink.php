@@ -1,51 +1,125 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel_Cell_Hyperlink.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Cell_Hyperlink
+{
+    /**
+     * URL to link the cell to.
+     *
+     * @var string
+     */
+    private $url;
+
+    /**
+     * Tooltip to display on the hyperlink.
+     *
+     * @var string
+     */
+    private $tooltip;
+
+    /**
+     * Create a new PHPExcel_Cell_Hyperlink.
+     *
+     * @param  string  $pUrl      Url to link the cell to
+     * @param  string  $pTooltip  Tooltip to display on the hyperlink
+     */
+    public function __construct($pUrl = '', $pTooltip = '')
+    {
+        // Initialise member variables
+        $this->url     = $pUrl;
+        $this->tooltip = $pTooltip;
+    }
+
+    /**
+     * Get URL.
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Set URL.
+     *
+     * @param  string    $value
+     * @return PHPExcel_Cell_Hyperlink
+     */
+    public function setUrl($value = '')
+    {
+        $this->url = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get tooltip.
+     *
+     * @return string
+     */
+    public function getTooltip()
+    {
+        return $this->tooltip;
+    }
+
+    /**
+     * Set tooltip.
+     *
+     * @param  string    $value
+     * @return PHPExcel_Cell_Hyperlink
+     */
+    public function setTooltip($value = '')
+    {
+        $this->tooltip = $value;
+
+        return $this;
+    }
+
+    /**
+     * Is this hyperlink internal? (to another worksheet).
+     *
+     * @return bool
+     */
+    public function isInternal()
+    {
+        return strpos($this->url, 'sheet://') !== false;
+    }
+
+    /**
+     * Get hash code.
+     *
+     * @return string    Hash code
+     */
+    public function getHashCode()
+    {
+        return md5(
+            $this->url
+            . $this->tooltip
+            . __CLASS__,
+        );
+    }
+}

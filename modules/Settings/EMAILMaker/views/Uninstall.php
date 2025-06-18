@@ -1,5 +1,6 @@
 <?php
-/*******************************************************************************
+
+/*
  * The content of this file is subject to the EMAILMaker license.
  * ("License"); You may not use this file except in compliance with the License
  * The Initial Developer of the Original Code is IT-Solutions4You s.r.o.
@@ -9,16 +10,14 @@
 
 class Settings_EMAILMaker_Uninstall_View extends Settings_Vtiger_Index_View
 {
-
     /**
-     * @param Vtiger_Request $request
      * @param bool $display
      */
     public function preProcess(Vtiger_Request $request, $display = true)
     {
         $moduleName = $request->getModule();
         $moduleModel = Vtiger_Module_Model::getInstance($moduleName);
-        $settingLinks = array();
+        $settingLinks = [];
 
         foreach ($moduleModel->getSettingLinks() as $settingsLink) {
             $settingsLink['linklabel'] = sprintf(vtranslate($settingsLink['linklabel'], $moduleName), vtranslate($moduleName, $moduleName));
@@ -30,7 +29,7 @@ class Settings_EMAILMaker_Uninstall_View extends Settings_Vtiger_Index_View
 
         parent::preProcess($request, false);
 
-        if (6 !== (int)Vtiger_Version::current() && $display) {
+        if ((int) Vtiger_Version::current() !== 6 && $display) {
             $this->preProcessDisplay($request);
         }
     }
@@ -52,30 +51,29 @@ class Settings_EMAILMaker_Uninstall_View extends Settings_Vtiger_Index_View
         $headerScriptInstances = parent::getHeaderScripts($request);
         $moduleName = $request->getModule();
 
-        unset($headerScriptInstances['modules.Vtiger.resources.Edit']);
-        unset($headerScriptInstances["modules.Settings.Vtiger.resources.Edit"]);
-        unset($headerScriptInstances['modules.Inventory.resources.Edit']);
-        unset($headerScriptInstances["modules.$moduleName.resources.Edit"]);
-        unset($headerScriptInstances["modules.Settings.$moduleName.resources.Edit"]);
+        unset($headerScriptInstances['modules.Vtiger.resources.Edit'], $headerScriptInstances['modules.Settings.Vtiger.resources.Edit'], $headerScriptInstances['modules.Inventory.resources.Edit'], $headerScriptInstances["modules.{$moduleName}.resources.Edit"], $headerScriptInstances["modules.Settings.{$moduleName}.resources.Edit"]);
 
-        $jsFileNames = array(
+
+
+
+
+        $jsFileNames = [
             'modules.Settings.' . $moduleName . '.resources.Uninstall',
-        );
+        ];
 
         return array_merge($headerScriptInstances, $this->checkAndConvertJsScripts($jsFileNames));
     }
 
     /**
-     * @param Vtiger_Request $request
      * @return array
      */
     public function getHeaderCss(Vtiger_Request $request)
     {
         $headerCssInstances = parent::getHeaderCss($request);
         $layout = Vtiger_Viewer::getDefaultLayoutName();
-        $cssFileNames = array(
-            '~/layouts/'.$layout.'/skins/marketing/style.css',
-        );
+        $cssFileNames = [
+            '~/layouts/' . $layout . '/skins/marketing/style.css',
+        ];
 
         return array_merge($headerCssInstances, $this->checkAndConvertCssStyles($cssFileNames));
     }

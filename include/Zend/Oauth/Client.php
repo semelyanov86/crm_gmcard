@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Zend Framework
+ * Zend Framework.
  *
  * LICENSE
  *
@@ -13,7 +14,6 @@
  * to license@zend.com so we can send you a copy immediately.
  *
  * @category   Zend
- * @package    Zend_Oauth
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id: Client.php 24593 2012-01-05 20:35:02Z matthew $
@@ -33,7 +33,6 @@ require_once 'Zend/Oauth/Config.php';
 
 /**
  * @category   Zend
- * @package    Zend_Oauth
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
@@ -41,7 +40,7 @@ class Zend_Oauth_Client extends Zend_Http_Client
 {
     /**
      * Flag to indicate that the client has detected the server as supporting
-     * OAuth 1.0a
+     * OAuth 1.0a.
      */
     public static $supportsRevisionA = false;
 
@@ -53,7 +52,7 @@ class Zend_Oauth_Client extends Zend_Http_Client
      *
      * @var Zend_Oauth_Config
      */
-    protected $_config = null;
+    protected $_config;
 
     /**
      * True if this request is being made with data supplied by
@@ -61,7 +60,7 @@ class Zend_Oauth_Client extends Zend_Http_Client
      *
      * @var bool
      */
-    protected $_streamingRequest = null;
+    protected $_streamingRequest;
 
     /**
      * Constructor; creates a new HTTP Client instance which itself is
@@ -72,19 +71,18 @@ class Zend_Oauth_Client extends Zend_Http_Client
      * @param  array|Zend_Config $oauthOptions
      * @param  string            $uri
      * @param  array|Zend_Config $config
-     * @return void
      */
     public function __construct($oauthOptions, $uri = null, $config = null)
     {
         if ($config instanceof Zend_Config && !isset($config->rfc3986_strict)) {
             $config                   = $config->toArray();
             $config['rfc3986_strict'] = true;
-        } else if (null === $config ||
-                   (is_array($config) && !isset($config['rfc3986_strict']))) {
+        } elseif ($config === null
+                   || (is_array($config) && !isset($config['rfc3986_strict']))) {
             $config['rfc3986_strict'] = true;
         }
         parent::__construct($uri, $config);
-        $this->_config = new Zend_Oauth_Config;
+        $this->_config = new Zend_Oauth_Config();
         if ($oauthOptions !== null) {
             if ($oauthOptions instanceof Zend_Config) {
                 $oauthOptions = $oauthOptions->toArray();
@@ -93,18 +91,17 @@ class Zend_Oauth_Client extends Zend_Http_Client
         }
     }
 
-   /**
-     * Load the connection adapter
+    /**
+     * Load the connection adapter.
      *
      * @param Zend_Http_Client_Adapter_Interface $adapter
-     * @return void
      */
     public function setAdapter($adapter)
     {
         if ($adapter == null) {
             $this->adapter = $adapter;
         } else {
-              parent::setAdapter($adapter);
+            parent::setAdapter($adapter);
         }
     }
 
@@ -112,8 +109,7 @@ class Zend_Oauth_Client extends Zend_Http_Client
      * Set the streamingRequest variable which controls whether we are
      * sending the raw (already encoded) POST data from a stream source.
      *
-     * @param boolean $value The value to set.
-     * @return void
+     * @param bool $value the value to set
      */
     public function setStreamingRequest($value)
     {
@@ -123,33 +119,37 @@ class Zend_Oauth_Client extends Zend_Http_Client
     /**
      * Check whether the client is set to perform streaming requests.
      *
-     * @return boolean True if yes, false otherwise.
+     * @return bool true if yes, false otherwise
      */
     public function getStreamingRequest()
     {
         if ($this->_streamingRequest) {
             return true;
-        } else {
-            return false;
         }
+
+        return false;
+
     }
 
     /**
-     * Prepare the request body (for POST and PUT requests)
+     * Prepare the request body (for POST and PUT requests).
      *
      * @return string
      * @throws Zend_Http_Client_Exception
      */
     protected function _prepareBody()
     {
-        if($this->_streamingRequest) {
-            $this->setHeaders(self::CONTENT_LENGTH,
-                $this->raw_post_data->getTotalSize());
+        if ($this->_streamingRequest) {
+            $this->setHeaders(
+                self::CONTENT_LENGTH,
+                $this->raw_post_data->getTotalSize(),
+            );
+
             return $this->raw_post_data;
         }
-        else {
-            return parent::_prepareBody();
-        }
+
+        return parent::_prepareBody();
+
     }
 
     /**
@@ -160,6 +160,7 @@ class Zend_Oauth_Client extends Zend_Http_Client
     public function resetParameters($clearAll = false)
     {
         $this->_streamingRequest = false;
+
         return parent::resetParameters($clearAll);
     }
 
@@ -177,6 +178,7 @@ class Zend_Oauth_Client extends Zend_Http_Client
     public function setRawDataStream($data, $enctype = null)
     {
         $this->_streamingRequest = true;
+
         return $this->setRawData($data, $enctype);
     }
 
@@ -192,15 +194,16 @@ class Zend_Oauth_Client extends Zend_Http_Client
     {
         if ($method == self::GET) {
             $this->setRequestMethod(self::GET);
-        } elseif($method == self::POST) {
+        } elseif ($method == self::POST) {
             $this->setRequestMethod(self::POST);
-        } elseif($method == self::PUT) {
+        } elseif ($method == self::PUT) {
             $this->setRequestMethod(self::PUT);
-        }  elseif($method == self::DELETE) {
+        } elseif ($method == self::DELETE) {
             $this->setRequestMethod(self::DELETE);
-        }   elseif($method == self::HEAD) {
+        } elseif ($method == self::HEAD) {
             $this->setRequestMethod(self::HEAD);
         }
+
         return parent::setMethod($method);
     }
 
@@ -218,6 +221,7 @@ class Zend_Oauth_Client extends Zend_Http_Client
             $this->setMethod($method);
         }
         $this->prepareOauth();
+
         return parent::request();
     }
 
@@ -228,7 +232,6 @@ class Zend_Oauth_Client extends Zend_Http_Client
      * all parameters, and applying the correct OAuth scheme to the method
      * being used.
      *
-     * @return void
      * @throws Zend_Oauth_Exception If POSTBODY scheme requested, but GET request method used; or if invalid request scheme provided
      */
     public function prepareOauth()
@@ -241,49 +244,55 @@ class Zend_Oauth_Client extends Zend_Http_Client
                 $this->getUri(true),
                 $this->_config,
                 $this->_getSignableParametersAsQueryString(),
-                $this->getRealm()
+                $this->getRealm(),
             );
             $this->setHeaders('Authorization', $oauthHeaderValue);
         } elseif ($requestScheme == Zend_Oauth::REQUEST_SCHEME_POSTBODY) {
             if ($requestMethod == self::GET) {
                 require_once 'Zend/Oauth/Exception.php';
+
                 throw new Zend_Oauth_Exception(
                     'The client is configured to'
                     . ' pass OAuth parameters through a POST body but request method'
-                    . ' is set to GET'
+                    . ' is set to GET',
                 );
             }
             $raw = $this->getToken()->toQueryString(
                 $this->getUri(true),
                 $this->_config,
-                $this->_getSignableParametersAsQueryString()
+                $this->_getSignableParametersAsQueryString(),
             );
             $this->setRawData($raw, 'application/x-www-form-urlencoded');
-            $this->paramsPost = array();
+            $this->paramsPost = [];
         } elseif ($requestScheme == Zend_Oauth::REQUEST_SCHEME_QUERYSTRING) {
-            $params = $this->paramsGet;            
+            $params = $this->paramsGet;
             $query = $this->getUri()->getQuery();
             if ($query) {
                 $queryParts = explode('&', $this->getUri()->getQuery());
                 foreach ($queryParts as $queryPart) {
                     $kvTuple = explode('=', $queryPart);
-                    $params[urldecode($kvTuple[0])] =
-                        (array_key_exists(1, $kvTuple) ? urldecode($kvTuple[1]) : null);
+                    $params[urldecode($kvTuple[0])]
+                        = (array_key_exists(1, $kvTuple) ? urldecode($kvTuple[1]) : null);
                 }
             }
             if (!empty($this->paramsPost)) {
                 $params = array_merge($params, $this->paramsPost);
                 $query  = $this->getToken()->toQueryString(
-                    $this->getUri(true), $this->_config, $params
+                    $this->getUri(true),
+                    $this->_config,
+                    $params,
                 );
             }
             $query = $this->getToken()->toQueryString(
-                $this->getUri(true), $this->_config, $params
+                $this->getUri(true),
+                $this->_config,
+                $params,
             );
             $this->getUri()->setQuery($query);
-            $this->paramsGet = array();
+            $this->paramsGet = [];
         } else {
             require_once 'Zend/Oauth/Exception.php';
+
             throw new Zend_Oauth_Exception('Invalid request scheme: ' . $requestScheme);
         }
     }
@@ -297,20 +306,25 @@ class Zend_Oauth_Client extends Zend_Http_Client
      */
     protected function _getSignableParametersAsQueryString()
     {
-        $params = array();
-            if (!empty($this->paramsGet)) {
-                $params = array_merge($params, $this->paramsGet);
-                $query  = $this->getToken()->toQueryString(
-                    $this->getUri(true), $this->_config, $params
-                );
-            }
-            if (!empty($this->paramsPost)) {
-                $params = array_merge($params, $this->paramsPost);
-                $query  = $this->getToken()->toQueryString(
-                    $this->getUri(true), $this->_config, $params
-                );
-            }
-            return $params;
+        $params = [];
+        if (!empty($this->paramsGet)) {
+            $params = array_merge($params, $this->paramsGet);
+            $query  = $this->getToken()->toQueryString(
+                $this->getUri(true),
+                $this->_config,
+                $params,
+            );
+        }
+        if (!empty($this->paramsPost)) {
+            $params = array_merge($params, $this->paramsPost);
+            $query  = $this->getToken()->toQueryString(
+                $this->getUri(true),
+                $this->_config,
+                $params,
+            );
+        }
+
+        return $params;
     }
 
     /**
@@ -319,16 +333,16 @@ class Zend_Oauth_Client extends Zend_Http_Client
      * as it's API.
      *
      * @param  string $method
-     * @param  array $args
-     * @return mixed
      * @throws Zend_Oauth_Exception if method does not exist in config object
      */
     public function __call($method, array $args)
     {
         if (!method_exists($this->_config, $method)) {
             require_once 'Zend/Oauth/Exception.php';
+
             throw new Zend_Oauth_Exception('Method does not exist: ' . $method);
         }
-        return call_user_func_array(array($this->_config,$method), $args);
+
+        return call_user_func_array([$this->_config, $method], $args);
     }
 }

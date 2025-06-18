@@ -7,21 +7,22 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
+ */
 
-class Calendar_Picklist_UIType extends Vtiger_Picklist_UIType {
-    
-    
-    public function getListSearchTemplateName() {
-        
+class Calendar_Picklist_UIType extends Vtiger_Picklist_UIType
+{
+    public function getListSearchTemplateName()
+    {
+
         $fieldName = $this->get('field')->get('name');
-        
-        if($fieldName == 'taskstatus') {
+
+        if ($fieldName == 'taskstatus') {
             return 'uitypes/StatusPickListFieldSearchView.tpl';
         }
-        else if ($fieldName == 'activitytype') {
+        if ($fieldName == 'activitytype') {
             return 'uitypes/ActivityPicklistFieldSearchView.tpl';
         }
-            return parent::getListSearchTemplateName();
+
+        return parent::getListSearchTemplateName();
     }
 }

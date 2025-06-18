@@ -9,30 +9,32 @@
  * All Rights Reserved.
  * *********************************************************************************** */
 
-class Settings_PBXManager_SaveAjax_Action extends Vtiger_SaveAjax_Action {
-
+class Settings_PBXManager_SaveAjax_Action extends Vtiger_SaveAjax_Action
+{
     // To save Mapping of user from mapping popup
-    public function process(Vtiger_Request $request) {
+    public function process(Vtiger_Request $request)
+    {
         $id = $request->get('id');
         $qualifiedModuleName = 'PBXManager';
-        
+
         $recordModel = Settings_PBXManager_Record_Model::getCleanInstance();
-        $recordModel->set('gateway',$qualifiedModuleName);
-        if($id) {
-            $recordModel->set('id',$id);
+        $recordModel->set('gateway', $qualifiedModuleName);
+        if ($id) {
+            $recordModel->set('id', $id);
         }
-        
-        $connector = new PBXManager_PBXManager_Connector;
+
+        $connector = new PBXManager_PBXManager_Connector();
         foreach (PBXManager_PBXManager_Connector::getSettingsParameters() as $field => $type) {
-                $recordModel->set($field, $request->get($field));
+            $recordModel->set($field, $request->get($field));
         }
-        
+
         $response = new Vtiger_Response();
+
         try {
-                $recordModel->save();
-                $response->setResult(true);
+            $recordModel->save();
+            $response->setResult(true);
         } catch (Exception $e) {
-                $response->setError($e->getMessage());
+            $response->setError($e->getMessage());
         }
         $response->emit();
     }

@@ -7,18 +7,22 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
+ */
 
-class Settings_Tags_Module_Model extends Settings_Vtiger_Module_Model {
+class Settings_Tags_Module_Model extends Settings_Vtiger_Module_Model
+{
+    public $baseTable = 'vtiger_freetags';
 
-	var $baseTable = 'vtiger_freetags';
-	var $baseIndex = 'id';
-	var $listFields = array('tag' => 'Tags', 'visibility' => 'Private/Public');
-	var $nameFields = array('tag');
-	var $name = 'Tags';
+    public $baseIndex = 'id';
 
-	public function getCreateRecordUrl() {
-		return "javascript:Settings_Tags_List_Js.triggerAdd(event)";
-	}
+    public $listFields = ['tag' => 'Tags', 'visibility' => 'Private/Public'];
 
+    public $nameFields = ['tag'];
+
+    public $name = 'Tags';
+
+    public function getCreateRecordUrl()
+    {
+        return 'javascript:Settings_Tags_List_Js.triggerAdd(event)';
+    }
 }

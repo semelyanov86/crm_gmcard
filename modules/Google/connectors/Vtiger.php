@@ -14,34 +14,37 @@ include_once 'include/Webservices/Query.php';
 include_once 'include/Webservices/Create.php';
 include_once 'include/Webservices/Retrieve.php';
 
-class Google_Vtiger_Connector extends WSAPP_VtigerConnector {
+class Google_Vtiger_Connector extends WSAPP_VtigerConnector
+{
+    /**
+     * function to push data to vtiger.
+     * @param type $recordList
+     * @param type $syncStateModel
+     * @return type
+     */
+    public function push($recordList, $syncStateModel)
+    {
+        return parent::push($recordList, $syncStateModel);
+    }
 
-	/**
-	 * function to push data to vtiger
-	 * @param type $recordList
-	 * @param type $syncStateModel
-	 * @return type
-	 */
-	public function push($recordList, $syncStateModel) {
-		return parent::push($recordList, $syncStateModel);
-	}
+    /**
+     * function to get data from vtiger.
+     * @param type $syncStateModel
+     * @return type
+     */
+    public function pull($syncStateModel)
+    {
+        $records = parent::pull($syncStateModel);
 
-	/**
-	 * function to get data from vtiger
-	 * @param type $syncStateModel
-	 * @return type
-	 */
-	public function pull($syncStateModel) {
-		$records = parent::pull($syncStateModel);
-		return $records;
-	}
+        return $records;
+    }
 
-	/**
-	 * function that returns syncTrackerhandler name
-	 * @return string
-	 */
-	public function getSyncTrackerHandlerName() {
-		return 'Google_vtigerSyncHandler';
-	}
-	
+    /**
+     * function that returns syncTrackerhandler name.
+     * @return string
+     */
+    public function getSyncTrackerHandlerName()
+    {
+        return 'Google_vtigerSyncHandler';
+    }
 }

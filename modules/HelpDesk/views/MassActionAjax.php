@@ -9,5 +9,4 @@
  * All Rights Reserved.
  * *********************************************************************************** */
 
-class HelpDesk_MassActionAjax_View extends Project_MassActionAjax_View {
-}
+class HelpDesk_MassActionAjax_View extends Project_MassActionAjax_View {}

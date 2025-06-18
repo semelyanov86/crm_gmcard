@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,42 +7,42 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
-$languageStrings = array(
-    'HelpDesk'                     => 'Tickets'                     , 
-    'SINGLE_HelpDesk'              => 'Ticket'                      , 
-    'LBL_ADD_RECORD'               => 'Ajouter un Ticket'                  , 
-    'LBL_RECORDS_LIST'             => 'Liste des Tickets'                 , 
-    'LBL_TICKET_INFORMATION'       => 'Détail du Ticket'              , 
-    'LBL_TICKET_RESOLUTION'        => 'Détail de la Solution'            , 
-    'Ticket No'                    => 'Ticket N°'                  , 
-    'Severity'                     => 'Engagement'                  , 
-    'Update History'               => 'Mise à jour historique'     , 
-    'Hours'                        => 'Heures'                      , 
-    'Days'                         => 'Jours'                       , 
-    'Title'                        => 'Titre'                       , 
-    'Solution'                     => 'Solution'                    , 
-    'From Portal'                  => 'Depuis le portail'           , 
-    'Big Problem'                  => 'Gros problème'              , 
-    'Small Problem'                => 'Petit problème'             , 
-    'Other Problem'                => 'Autre problème'             , 
-    'Normal'                       => 'Normale'                     , 
-    'High'                         => 'Haute'                       , 
-    'Urgent'                       => 'Urgente'                     , 
-    'Minor'                        => 'Mineur'                      , 
-    'Major'                        => 'Majeur'                      , 
-    'Feature'                      => 'Fonctionnel'                 , 
-    'Critical'                     => 'Critique'                    , 
-    'Open'                         => 'Ouvert'                      , 
-    'Wait For Response'            => 'Attente réponse'            , 
-    'Closed'                       => 'Fermé'                      , 
-    'LBL_STATUS'                   => 'Statut'                      , 
-    'LBL_SEVERITY'                 => 'Engagement'                  , 
-    'LBL_CONVERT_FAQ'              => 'Convert to FAQ'              , 
-    'LBL_RELATED_TO'               => 'Relatif à'                  ,
-    'Related To'                   => 'Relatif à la'                ,
+ */
+$languageStrings = [
+    'HelpDesk'                     => 'Tickets',
+    'SINGLE_HelpDesk'              => 'Ticket',
+    'LBL_ADD_RECORD'               => 'Ajouter un Ticket',
+    'LBL_RECORDS_LIST'             => 'Liste des Tickets',
+    'LBL_TICKET_INFORMATION'       => 'Détail du Ticket',
+    'LBL_TICKET_RESOLUTION'        => 'Détail de la Solution',
+    'Ticket No'                    => 'Ticket N°',
+    'Severity'                     => 'Engagement',
+    'Update History'               => 'Mise à jour historique',
+    'Hours'                        => 'Heures',
+    'Days'                         => 'Jours',
+    'Title'                        => 'Titre',
+    'Solution'                     => 'Solution',
+    'From Portal'                  => 'Depuis le portail',
+    'Big Problem'                  => 'Gros problème',
+    'Small Problem'                => 'Petit problème',
+    'Other Problem'                => 'Autre problème',
+    'Normal'                       => 'Normale',
+    'High'                         => 'Haute',
+    'Urgent'                       => 'Urgente',
+    'Minor'                        => 'Mineur',
+    'Major'                        => 'Majeur',
+    'Feature'                      => 'Fonctionnel',
+    'Critical'                     => 'Critique',
+    'Open'                         => 'Ouvert',
+    'Wait For Response'            => 'Attente réponse',
+    'Closed'                       => 'Fermé',
+    'LBL_STATUS'                   => 'Statut',
+    'LBL_SEVERITY'                 => 'Engagement',
+    'LBL_CONVERT_FAQ'              => 'Convert to FAQ',
+    'LBL_RELATED_TO'               => 'Relatif à',
+    'Related To'                   => 'Relatif à la',
 
-    //added to support i18n in ticket mails
+    // added to support i18n in ticket mails
     'Hi' => 'Bonjour',
     'Dear' => 'Cher',
     'LBL_PORTAL_BODY_MAILINFO' => 'Le ticket est',
@@ -57,8 +58,8 @@ $languageStrings = array(
     'Thanks' => 'Cordialement,',
     'Support_team' => 'L\'équipe support',
 
-    //This label for customerportal.
-    'LBL_STATUS_CLOSED' => 'Closed',//Do not convert this label. This is used to check the status. If the status 'Closed' is changed in vtigerCRM server side then you have to change in customerportal language file also.
+    // This label for customerportal.
+    'LBL_STATUS_CLOSED' => 'Closed', // Do not convert this label. This is used to check the status. If the status 'Closed' is changed in vtigerCRM server side then you have to change in customerportal language file also.
     'LBL_STATUS_UPDATE' => 'Le statut du ticket a été changé pour ',
     'LBL_COULDNOT_CLOSED' => 'Le ticket ne peut ',
     'LBL_CUSTOMER_COMMENTS' => 'Le client a fourni les informations complémentaires suivantes :',
@@ -90,4 +91,4 @@ $languageStrings = array(
     'LBL_OPEN_TICKETS' => 'Les Tickets Ouverts',
     'LBL_CREATE_TICKET' => 'Créer Un Ticket',
 
-);
+];

@@ -3,6 +3,7 @@
 class EMAILMaker_List_View extends Vtiger_Index_View
 {
     protected $listViewLinks = false;
+
     protected $isInstalled = false;
 
     public function __construct()
@@ -32,7 +33,7 @@ class EMAILMaker_List_View extends Vtiger_Index_View
                 $viewer->view('OperationNotPermitted.tpl', $moduleName);
                 exit;
             }
-            $linkParams = array('MODULE' => $moduleName, 'ACTION' => $request->get('view'));
+            $linkParams = ['MODULE' => $moduleName, 'ACTION' => $request->get('view')];
             $viewer->assign('QUICK_LINKS', $moduleModel->getSideBarLinks($linkParams));
         }
         $viewer->assign('CURRENT_USER_MODEL', Users_Record_Model::getCurrentUserModel());
@@ -72,7 +73,7 @@ class EMAILMaker_List_View extends Vtiger_Index_View
         }
         $orderby = 'templateid';
         $dir = $request->get('sortorder', 'asc');
-        if (isset($_REQUEST['dir']) && 'desc' === $_REQUEST['dir']) {
+        if (isset($_REQUEST['dir']) && $_REQUEST['dir'] === 'desc') {
             $dir = 'desc';
         }
         if (isset($_REQUEST['orderby'])) {
@@ -80,6 +81,7 @@ class EMAILMaker_List_View extends Vtiger_Index_View
                 case 'name':
                     $orderby = 'templatename';
                     break;
+
                 default:
                     $orderby = $_REQUEST['orderby'];
                     break;
@@ -107,22 +109,22 @@ class EMAILMaker_List_View extends Vtiger_Index_View
         $viewer->assign('SEARCHSELECTBOXDATA', $moduleModel->getSearchSelectboxData());
         $viewer->assign('CATEGORY', getParentTab());
         $current_user = Users_Record_Model::getCurrentUserModel();
-        $linkParams = array('MODULE' => $moduleName, 'ACTION' => $request->get('view'));
+        $linkParams = ['MODULE' => $moduleName, 'ACTION' => $request->get('view')];
         $linkModels = $moduleModel->getListViewLinks($linkParams);
         $viewer->assign('LISTVIEW_MASSACTIONS', $linkModels['LISTVIEWMASSACTION']);
         $viewer->assign('LISTVIEW_LINKS', $linkModels);
         if (is_admin($current_user)) {
             $viewer->assign('IS_ADMIN', '1');
         }
-        $WTemplateIds = array();
+        $WTemplateIds = [];
         $workflows_query = $moduleModel->geEmailWorkflowsQuery();
-        $workflows_result = $adb->pquery($workflows_query, array());
+        $workflows_result = $adb->pquery($workflows_query, []);
         $workflows_num_rows = $adb->num_rows($workflows_result);
         if ($workflows_num_rows > 0) {
-            require_once('modules/EMAILMaker/workflow/VTEMAILMakerMailTask.php');
-            for ($i = 0; $i < $workflows_num_rows; $i++) {
+            require_once 'modules/EMAILMaker/workflow/VTEMAILMakerMailTask.php';
+            for ($i = 0; $i < $workflows_num_rows; ++$i) {
                 $data = $adb->raw_query_result_rowdata($workflows_result, $i);
-                $task = $data["task"];
+                $task = $data['task'];
                 $taskObject = unserialize($task);
                 $wtemplateid = $taskObject->template;
                 if (!in_array($wtemplateid, $WTemplateIds)) {
@@ -131,11 +133,11 @@ class EMAILMaker_List_View extends Vtiger_Index_View
             }
         }
         $viewer->assign('WTEMPLATESIDS', $WTemplateIds);
-        $emailTemplates = $moduleModel->GetListviewData($orderby, $dir, "", false, $request);
+        $emailTemplates = $moduleModel->GetListviewData($orderby, $dir, '', false, $request);
         if (!$request->isEmpty('search_workflow')) {
             $search_workflow = $request->get('search_workflow');
             foreach ($emailTemplates as $templateKey => $templateData) {
-                if ('wf_0' === $search_workflow) {
+                if ($search_workflow === 'wf_0') {
                     if (in_array($templateData['templateid'], $WTemplateIds)) {
                         echo sprintf(' unset %s<br>', $templateData['templateid']);
                         unset($emailTemplates[$templateKey]);
@@ -152,7 +154,7 @@ class EMAILMaker_List_View extends Vtiger_Index_View
         $viewer->assign('STATUSOPTIONS', EMAILMaker_Field_Model::getStatusOptions());
         $viewer->assign('WFOPTIONS', EMAILMaker_Field_Model::getWorkflowOptions());
         $searchTypes = EMAILMaker_Field_Model::getSearchTypes();
-        $searchDetails = array();
+        $searchDetails = [];
         if (!$request->isEmpty('search_params')) {
             $searchParams = $request->get('search_params');
             foreach ($searchParams as $groupInfo) {
@@ -160,8 +162,8 @@ class EMAILMaker_List_View extends Vtiger_Index_View
                     continue;
                 }
                 foreach ($groupInfo as $fieldSearchInfo) {
-                    list($fieldName, $operator, $searchValue) = $fieldSearchInfo;
-                    $viewer->assign('SEARCH_'.strtoupper($fieldName).'VAL', $searchValue);
+                    [$fieldName, $operator, $searchValue] = $fieldSearchInfo;
+                    $viewer->assign('SEARCH_' . strtoupper($fieldName) . 'VAL', $searchValue);
                     $searchDetails[$fieldName] = $fieldSearchInfo;
                 }
             }
@@ -177,8 +179,9 @@ class EMAILMaker_List_View extends Vtiger_Index_View
     {
         $headerScriptInstances = parent::getHeaderScripts($request);
         $moduleName = $request->getModule();
-        $jsFileNames = array('modules.Vtiger.resources.List', "modules.$moduleName.resources.List",);
+        $jsFileNames = ['modules.Vtiger.resources.List', "modules.{$moduleName}.resources.List"];
         $jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
+
         return array_merge($headerScriptInstances, $jsScriptInstances);
     }
-} ?>
+}

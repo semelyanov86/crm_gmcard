@@ -1,114 +1,278 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**    PHPExcel root directory */
+if (!defined('PHPEXCEL_ROOT')) {
+    /**
+     * @ignore
+     */
+    define('PHPEXCEL_ROOT', dirname(__FILE__) . '/../');
+    require PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php';
+}
+
+/**
+ * PHPExcel_IOFactory.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_IOFactory
+{
+    /**
+     * Search locations.
+     *
+     * @var    array
+     * @static
+     */
+    private static $searchLocations = [
+        ['type' => 'IWriter', 'path' => 'PHPExcel/Writer/{0}.php', 'class' => 'PHPExcel_Writer_{0}'],
+        ['type' => 'IReader', 'path' => 'PHPExcel/Reader/{0}.php', 'class' => 'PHPExcel_Reader_{0}'],
+    ];
+
+    /**
+     * Autoresolve classes.
+     *
+     * @var    array
+     * @static
+     */
+    private static $autoResolveClasses = [
+        'Excel2007',
+        'Excel5',
+        'Excel2003XML',
+        'OOCalc',
+        'SYLK',
+        'Gnumeric',
+        'HTML',
+        'CSV',
+    ];
+
+    /**
+     *    Private constructor for PHPExcel_IOFactory.
+     */
+    private function __construct() {}
+
+    /**
+     * Get search locations.
+     *
+     * @static
+     * @return    array
+     */
+    public static function getSearchLocations()
+    {
+        return self::$searchLocations;
+    }
+
+    /**
+     * Set search locations.
+     *
+     * @static
+     * @param    array $value
+     * @throws    PHPExcel_Reader_Exception
+     */
+    public static function setSearchLocations($value)
+    {
+        if (is_array($value)) {
+            self::$searchLocations = $value;
+        } else {
+            throw new PHPExcel_Reader_Exception('Invalid parameter passed.');
+        }
+    }
+
+    /**
+     * Add search location.
+     *
+     * @static
+     * @param    string $type        Example: IWriter
+     * @param    string $location    Example: PHPExcel/Writer/{0}.php
+     * @param    string $classname     Example: PHPExcel_Writer_{0}
+     */
+    public static function addSearchLocation($type = '', $location = '', $classname = '')
+    {
+        self::$searchLocations[] = ['type' => $type, 'path' => $location, 'class' => $classname];
+    }
+
+    /**
+     * Create PHPExcel_Writer_IWriter.
+     *
+     * @static
+     * @param    string  $writerType    Example: Excel2007
+     * @return    PHPExcel_Writer_IWriter
+     * @throws    PHPExcel_Reader_Exception
+     */
+    public static function createWriter(PHPExcel $phpExcel, $writerType = '')
+    {
+        // Search type
+        $searchType = 'IWriter';
+
+        // Include class
+        foreach (self::$searchLocations as $searchLocation) {
+            if ($searchLocation['type'] == $searchType) {
+                $className = str_replace('{0}', $writerType, $searchLocation['class']);
+
+                $instance = new $className($phpExcel);
+                if ($instance !== null) {
+                    return $instance;
+                }
+            }
+        }
+
+        // Nothing found...
+        throw new PHPExcel_Reader_Exception("No {$searchType} found for type {$writerType}");
+    }
+
+    /**
+     * Create PHPExcel_Reader_IReader.
+     *
+     * @static
+     * @param    string $readerType    Example: Excel2007
+     * @return    PHPExcel_Reader_IReader
+     * @throws    PHPExcel_Reader_Exception
+     */
+    public static function createReader($readerType = '')
+    {
+        // Search type
+        $searchType = 'IReader';
+
+        // Include class
+        foreach (self::$searchLocations as $searchLocation) {
+            if ($searchLocation['type'] == $searchType) {
+                $className = str_replace('{0}', $readerType, $searchLocation['class']);
+
+                $instance = new $className();
+                if ($instance !== null) {
+                    return $instance;
+                }
+            }
+        }
+
+        // Nothing found...
+        throw new PHPExcel_Reader_Exception("No {$searchType} found for type {$readerType}");
+    }
+
+    /**
+     * Loads PHPExcel from file using automatic PHPExcel_Reader_IReader resolution.
+     *
+     * @static
+     * @param     string         $pFilename        The name of the spreadsheet file
+     * @return    PHPExcel
+     * @throws    PHPExcel_Reader_Exception
+     */
+    public static function load($pFilename)
+    {
+        $reader = self::createReaderForFile($pFilename);
+
+        return $reader->load($pFilename);
+    }
+
+    /**
+     * Identify file type using automatic PHPExcel_Reader_IReader resolution.
+     *
+     * @static
+     * @param     string         $pFilename        The name of the spreadsheet file to identify
+     * @return    string
+     * @throws    PHPExcel_Reader_Exception
+     */
+    public static function identify($pFilename)
+    {
+        $reader = self::createReaderForFile($pFilename);
+        $className = get_class($reader);
+        $classType = explode('_', $className);
+        unset($reader);
+
+        return array_pop($classType);
+    }
+
+    /**
+     * Create PHPExcel_Reader_IReader for file using automatic PHPExcel_Reader_IReader resolution.
+     *
+     * @static
+     * @param     string         $pFilename        The name of the spreadsheet file
+     * @return    PHPExcel_Reader_IReader
+     * @throws    PHPExcel_Reader_Exception
+     */
+    public static function createReaderForFile($pFilename)
+    {
+        // First, lucky guess by inspecting file extension
+        $pathinfo = pathinfo($pFilename);
+
+        $extensionType = null;
+        if (isset($pathinfo['extension'])) {
+            switch (strtolower($pathinfo['extension'])) {
+                case 'xlsx':            //    Excel (OfficeOpenXML) Spreadsheet
+                case 'xlsm':            //    Excel (OfficeOpenXML) Macro Spreadsheet (macros will be discarded)
+                case 'xltx':            //    Excel (OfficeOpenXML) Template
+                case 'xltm':            //    Excel (OfficeOpenXML) Macro Template (macros will be discarded)
+                    $extensionType = 'Excel2007';
+                    break;
+                case 'xls':                //    Excel (BIFF) Spreadsheet
+                case 'xlt':                //    Excel (BIFF) Template
+                    $extensionType = 'Excel5';
+                    break;
+                case 'ods':                //    Open/Libre Offic Calc
+                case 'ots':                //    Open/Libre Offic Calc Template
+                    $extensionType = 'OOCalc';
+                    break;
+                case 'slk':
+                    $extensionType = 'SYLK';
+                    break;
+                case 'xml':                //    Excel 2003 SpreadSheetML
+                    $extensionType = 'Excel2003XML';
+                    break;
+                case 'gnumeric':
+                    $extensionType = 'Gnumeric';
+                    break;
+                case 'htm':
+                case 'html':
+                    $extensionType = 'HTML';
+                    break;
+                case 'csv':
+                    // Do nothing
+                    // We must not try to use CSV reader since it loads
+                    // all files including Excel files etc.
+                    break;
+
+                default:
+                    break;
+            }
+
+            if ($extensionType !== null) {
+                $reader = self::createReader($extensionType);
+                // Let's see if we are lucky
+                if (isset($reader) && $reader->canRead($pFilename)) {
+                    return $reader;
+                }
+            }
+        }
+
+        // If we reach here then "lucky guess" didn't give any result
+        // Try walking through all the options in self::$autoResolveClasses
+        foreach (self::$autoResolveClasses as $autoResolveClass) {
+            //    Ignore our original guess, we know that won't work
+            if ($autoResolveClass !== $extensionType) {
+                $reader = self::createReader($autoResolveClass);
+                if ($reader->canRead($pFilename)) {
+                    return $reader;
+                }
+            }
+        }
+
+        throw new PHPExcel_Reader_Exception('Unable to identify a reader for this file');
+    }
+}

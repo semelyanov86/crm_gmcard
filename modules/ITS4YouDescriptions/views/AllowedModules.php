@@ -1,5 +1,5 @@
 <?php
- 
+
 
 class ITS4YouDescriptions_AllowedModules_View extends Vtiger_Index_View
 {
@@ -25,7 +25,6 @@ class ITS4YouDescriptions_AllowedModules_View extends Vtiger_Index_View
         $this->getProcess($request);
     }
 
-    
     public function getProcess(Vtiger_Request $request)
     {
         $viewer = $this->getViewer($request);
@@ -39,27 +38,25 @@ class ITS4YouDescriptions_AllowedModules_View extends Vtiger_Index_View
         $viewer->view('AllowedModules.tpl', $moduleName);
     }
 
-    
     public function getHeaderScripts(Vtiger_Request $request)
     {
         $moduleName = $request->getModule();
-        $jsFileNames = array(
+        $jsFileNames = [
             '~/libraries/jquery/bootstrapswitch/js/bootstrap-switch.min.js',
-            "modules.$moduleName.resources.AllowedModules",
-        );
+            "modules.{$moduleName}.resources.AllowedModules",
+        ];
 
         return array_merge(parent::getHeaderScripts($request), $this->checkAndConvertJsScripts($jsFileNames));
     }
 
-    
     public function getHeaderCss(Vtiger_Request $request)
     {
         $module = $request->getModule();
-        $cssFileNames = array(
+        $cssFileNames = [
             '~/libraries/jquery/bootstrapswitch/css/bootstrap3/bootstrap-switch.min.css',
             '~layouts/' . Vtiger_Viewer::getDefaultLayoutName() . '/modules/' . $module . '/resources/AllowedModules.css',
-        );
+        ];
 
         return array_merge(parent::getHeaderCss($request), $this->checkAndConvertCssStyles($cssFileNames));
     }
-} ?>
+}

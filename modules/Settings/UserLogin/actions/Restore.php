@@ -6,6 +6,7 @@ class Settings_UserLogin_Restore_Action extends Vtiger_Action_Controller
     {
         return true;
     }
+
     public function process(Vtiger_Request $request)
     {
         $settingModel = new Settings_UserLogin_Settings_Model();
@@ -15,5 +16,3 @@ class Settings_UserLogin_Restore_Action extends Vtiger_Action_Controller
         $response->emit();
     }
 }
-
-?>

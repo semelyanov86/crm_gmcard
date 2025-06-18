@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,224 +7,245 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
-include_once('vtlib/Vtiger/Package.php');
+ */
+include_once 'vtlib/Vtiger/Package.php';
 
 /**
  * Provides API to package vtiger CRM language files.
- * @package vtlib
  */
-class Vtiger_LanguageExport extends Vtiger_Package {
+class Vtiger_LanguageExport extends Vtiger_Package
+{
+    public const TABLENAME = 'vtiger_language';
 
-	const TABLENAME = 'vtiger_language';
+    /**
+     * Constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
-	/**
-	 * Constructor
-	 */
-	function __construct() {
-		parent::__construct();
-	}
+    /**
+     * Generate unique id for insertion.
+     */
+    public static function __getUniqueId()
+    {
+        global $adb;
 
-	/**
-	 * Generate unique id for insertion
-	 * @access private
-	 */
-	static function __getUniqueId() {
-		global $adb;
-		return $adb->getUniqueID(self::TABLENAME);
-	}
-	
-	/**
-	 * Initialize Export
-	 * @access private
-	 */
-	function __initExport($languageCode, $moduleInstance = null) {
-		// Security check to ensure file is withing the web folder.
-		Vtiger_Utils::checkFileAccessForInclusion("languages/$languageCode/Vtiger.php");
-		
-		$this->_export_modulexml_file = fopen($this->__getManifestFilePath(), 'w');
-		$this->__write("<?xml version='1.0'?>\n");
-	}
-	
-	/**
-	 * Export Module as a zip file.
-	 * @param Vtiger_Module Instance of module
-	 * @param Path Output directory path
-	 * @param String Zipfilename to use
-	 * @param Boolean True for sending the output as download
-	 */
-	function export($languageCode, $todir='', $zipfilename='', $directDownload=false, $extra=false) {
+        return $adb->getUniqueID(self::TABLENAME);
+    }
 
-		$this->__initExport($languageCode);
-		
-		// Call language export function
-		$this->export_Language($languageCode);
+    /**
+     * Initialize Export.
+     */
+    public function __initExport($languageCode, $moduleInstance = null)
+    {
+        // Security check to ensure file is withing the web folder.
+        Vtiger_Utils::checkFileAccessForInclusion("languages/{$languageCode}/Vtiger.php");
 
-		$this->__finishExport();
-		
-		// Export as Zip
-		if($zipfilename == '') $zipfilename = "$languageCode-" . date('YmdHis') . ".zip";
-		$zipfilename = "$this->_export_tmpdir/$zipfilename";
+        $this->_export_modulexml_file = fopen($this->__getManifestFilePath(), 'w');
+        $this->__write("<?xml version='1.0'?>\n");
+    }
 
-		$zip = new Vtiger_Zip($zipfilename);
+    /**
+     * Export Module as a zip file.
+     * @param Vtiger_Module Instance of module
+     * @param Path Output directory path
+     * @param string Zipfilename to use
+     * @param bool True for sending the output as download
+     */
+    public function export($languageCode, $todir = '', $zipfilename = '', $directDownload = false, $extra = false)
+    {
 
-		// Add manifest file
-		$zip->addFile($this->__getManifestFilePath(), "manifest.xml");
+        $this->__initExport($languageCode);
 
-		// Copy module directory
-		$zip->copyDirectoryFromDisk("languages/$languageCode", "modules");
+        // Call language export function
+        $this->export_Language($languageCode);
 
-		$zip->save();
+        $this->__finishExport();
 
-		if($todir) {
-			copy($zipfilename, $todir);
-		}
+        // Export as Zip
+        if ($zipfilename == '') {
+            $zipfilename = "{$languageCode}-" . date('YmdHis') . '.zip';
+        }
+        $zipfilename = "{$this->_export_tmpdir}/{$zipfilename}";
 
-		if($directDownload) {
-			$zip->forceDownload($zipfilename);
-			unlink($zipfilename);
-		}
-		$this->__cleanupExport();
-	}
-	
-	/**
-	 * Export Language Handler
-	 * @access private
-	 */
-	function export_Language($prefix) {
-		global $adb;
+        $zip = new Vtiger_Zip($zipfilename);
 
-		$sqlresult = $adb->pquery("SELECT * FROM vtiger_language WHERE prefix = ?", array($prefix));
-		$languageresultrow = $adb->fetch_array($sqlresult);
+        // Add manifest file
+        $zip->addFile($this->__getManifestFilePath(), 'manifest.xml');
 
-		$langname  = decode_html($languageresultrow['name']);
-		$langlabel = decode_html($languageresultrow['label']);
+        // Copy module directory
+        $zip->copyDirectoryFromDisk("languages/{$languageCode}", 'modules');
 
-		$this->openNode('module');
-		$this->outputNode(date('Y-m-d H:i:s'),'exporttime');
-		$this->outputNode($langname, 'name');
-		$this->outputNode($langlabel, 'label');
-		$this->outputNode($prefix, 'prefix');
+        $zip->save();
 
-		$this->outputNode('language', 'type');
+        if ($todir) {
+            copy($zipfilename, $todir);
+        }
 
-		// Export dependency information
-		$this->export_Dependencies($moduleInstance);
+        if ($directDownload) {
+            $zip->forceDownload($zipfilename);
+            unlink($zipfilename);
+        }
+        $this->__cleanupExport();
+    }
+
+    /**
+     * Export Language Handler.
+     */
+    public function export_Language($prefix)
+    {
+        global $adb;
+
+        $sqlresult = $adb->pquery('SELECT * FROM vtiger_language WHERE prefix = ?', [$prefix]);
+        $languageresultrow = $adb->fetch_array($sqlresult);
+
+        $langname  = decode_html($languageresultrow['name']);
+        $langlabel = decode_html($languageresultrow['label']);
+
+        $this->openNode('module');
+        $this->outputNode(date('Y-m-d H:i:s'), 'exporttime');
+        $this->outputNode($langname, 'name');
+        $this->outputNode($langlabel, 'label');
+        $this->outputNode($prefix, 'prefix');
+
+        $this->outputNode('language', 'type');
+
+        // Export dependency information
+        $this->export_Dependencies($moduleInstance);
 
         $this->closeNode('module');
-	}
-	
-	/**
-	 * Export vtiger dependencies
-	 * @access private
-	 */
-	function export_Dependencies($moduleInstance) {
-		global $vtiger_current_version, $adb;
+    }
 
-		$vtigerMinVersion = $vtiger_current_version;
-		$vtigerMaxVersion = false;
+    /**
+     * Export vtiger dependencies.
+     */
+    public function export_Dependencies($moduleInstance)
+    {
+        global $vtiger_current_version, $adb;
 
-		$this->openNode('dependencies');
-		$this->outputNode($vtigerMinVersion, 'vtiger_version');
-		if($vtigerMaxVersion !== false)	$this->outputNode($vtigerMaxVersion, 'vtiger_max_version');
-		$this->closeNode('dependencies');
-	}
+        $vtigerMinVersion = $vtiger_current_version;
+        $vtigerMaxVersion = false;
 
+        $this->openNode('dependencies');
+        $this->outputNode($vtigerMinVersion, 'vtiger_version');
+        if ($vtigerMaxVersion !== false) {
+            $this->outputNode($vtigerMaxVersion, 'vtiger_max_version');
+        }
+        $this->closeNode('dependencies');
+    }
 
-	/**
-	 * Initialize Language Schema
-	 * @access private
-	 */
-	static function __initSchema() {
-		$hastable = Vtiger_Utils::CheckTable(self::TABLENAME);
-		if(!$hastable) {
-			Vtiger_Utils::CreateTable(
-				self::TABLENAME,
-				'(id INT NOT NULL PRIMARY KEY,
+    /**
+     * Initialize Language Schema.
+     */
+    public static function __initSchema()
+    {
+        $hastable = Vtiger_Utils::CheckTable(self::TABLENAME);
+        if (!$hastable) {
+            Vtiger_Utils::CreateTable(
+                self::TABLENAME,
+                '(id INT NOT NULL PRIMARY KEY,
 				name VARCHAR(50), prefix VARCHAR(10), label VARCHAR(30), lastupdated DATETIME, sequence INT, isdefault INT(1), active INT(1))',
-				true
-			);
-			global $languages, $adb;
-			foreach($languages as $langkey=>$langlabel) {
-				$uniqueid = self::__getUniqueId();
-				$adb->pquery('INSERT INTO '.self::TABLENAME.'(id,name,prefix,label,lastupdated,active) VALUES(?,?,?,?,?,?)',
-					Array($uniqueid, $langlabel,$langkey,$langlabel,date('Y-m-d H:i:s',time()), 1));
-			}
-		}
-	}
+                true,
+            );
+            global $languages, $adb;
+            foreach ($languages as $langkey => $langlabel) {
+                $uniqueid = self::__getUniqueId();
+                $adb->pquery(
+                    'INSERT INTO ' . self::TABLENAME . '(id,name,prefix,label,lastupdated,active) VALUES(?,?,?,?,?,?)',
+                    [$uniqueid, $langlabel, $langkey, $langlabel, date('Y-m-d H:i:s', time()), 1],
+                );
+            }
+        }
+    }
 
-	/**
-	 * Register language pack information.
-	 */
-	static function register($prefix, $label, $name='', $isdefault=false, $isactive=true, $overrideCore=false) {
-		self::__initSchema();
+    /**
+     * Register language pack information.
+     */
+    public static function register($prefix, $label, $name = '', $isdefault = false, $isactive = true, $overrideCore = false)
+    {
+        self::__initSchema();
 
-		$prefix = trim($prefix);
-		// We will not allow registering core language unless forced
-		if(strtolower($prefix) == 'en_us' && $overrideCore == false) return;
+        $prefix = trim($prefix);
+        // We will not allow registering core language unless forced
+        if (strtolower($prefix) == 'en_us' && $overrideCore == false) {
+            return;
+        }
 
-		$useisdefault = ($isdefault)? 1 : 0;
-		$useisactive  = ($isactive)?  1 : 0;
+        $useisdefault = ($isdefault) ? 1 : 0;
+        $useisactive  = ($isactive) ? 1 : 0;
 
-		global $adb;
-		$checkres = $adb->pquery('SELECT * FROM '.self::TABLENAME.' WHERE prefix=?', Array($prefix));
-		$datetime = date('Y-m-d H:i:s');
-		if($adb->num_rows($checkres)) {
-			$id = $adb->query_result($checkres, 0, 'id');
-			$adb->pquery('UPDATE '.self::TABLENAME.' set label=?, name=?, lastupdated=?, isdefault=?, active=? WHERE id=?',
-				Array($label, $name, $datetime, $useisdefault, $useisactive, $id));
-		} else {
-			$uniqueid = self::__getUniqueId();
-			$adb->pquery('INSERT INTO '.self::TABLENAME.' (id,name,prefix,label,lastupdated,isdefault,active) VALUES(?,?,?,?,?,?,?)',
-				Array($uniqueid, $name, $prefix, $label, $datetime, $useisdefault, $useisactive));
-		}
-		self::log("Registering Language $label [$prefix] ... DONE");		
-	}
+        global $adb;
+        $checkres = $adb->pquery('SELECT * FROM ' . self::TABLENAME . ' WHERE prefix=?', [$prefix]);
+        $datetime = date('Y-m-d H:i:s');
+        if ($adb->num_rows($checkres)) {
+            $id = $adb->query_result($checkres, 0, 'id');
+            $adb->pquery(
+                'UPDATE ' . self::TABLENAME . ' set label=?, name=?, lastupdated=?, isdefault=?, active=? WHERE id=?',
+                [$label, $name, $datetime, $useisdefault, $useisactive, $id],
+            );
+        } else {
+            $uniqueid = self::__getUniqueId();
+            $adb->pquery(
+                'INSERT INTO ' . self::TABLENAME . ' (id,name,prefix,label,lastupdated,isdefault,active) VALUES(?,?,?,?,?,?,?)',
+                [$uniqueid, $name, $prefix, $label, $datetime, $useisdefault, $useisactive],
+            );
+        }
+        self::log("Registering Language {$label} [{$prefix}] ... DONE");
+    }
 
-	/**
-	 * De-Register language pack information
-	 * @param String Language prefix like (de_de) etc
-	 */
-	static function deregister($prefix) {
-		$prefix = trim($prefix);
-		// We will not allow deregistering core language
-		if(strtolower($prefix) == 'en_us') return;
+    /**
+     * De-Register language pack information.
+     * @param string Language prefix like (de_de) etc
+     */
+    public static function deregister($prefix)
+    {
+        $prefix = trim($prefix);
+        // We will not allow deregistering core language
+        if (strtolower($prefix) == 'en_us') {
+            return;
+        }
 
-		self::__initSchema();
+        self::__initSchema();
 
-		global $adb;
-		$checkres = $adb->pquery('DELETE FROM '.self::TABLENAME.' WHERE prefix=?', Array($prefix));
-		self::log("Deregistering Language $prefix ... DONE");
-	}
+        global $adb;
+        $checkres = $adb->pquery('DELETE FROM ' . self::TABLENAME . ' WHERE prefix=?', [$prefix]);
+        self::log("Deregistering Language {$prefix} ... DONE");
+    }
 
-	/**
-	 * Get all the language information
-	 * @param Boolean true to include in-active languages also, false (default)
-	 */
-	static function getAll($includeInActive=false) {
-		global $adb;
-		$hastable = Vtiger_Utils::CheckTable(self::TABLENAME);
+    /**
+     * Get all the language information.
+     * @param bool true to include in-active languages also, false (default)
+     */
+    public static function getAll($includeInActive = false)
+    {
+        global $adb;
+        $hastable = Vtiger_Utils::CheckTable(self::TABLENAME);
 
-		$languageinfo = Array();
+        $languageinfo = [];
 
-		if($hastable) {
-			if($includeInActive) $result = $adb->pquery('SELECT * FROM '.self::TABLENAME, array());
-			else $result = $adb->pquery('SELECT * FROM '.self::TABLENAME . ' WHERE active=?', array(1));
+        if ($hastable) {
+            if ($includeInActive) {
+                $result = $adb->pquery('SELECT * FROM ' . self::TABLENAME, []);
+            } else {
+                $result = $adb->pquery('SELECT * FROM ' . self::TABLENAME . ' WHERE active=?', [1]);
+            }
 
-			for($index = 0; $index < $adb->num_rows($result); ++$index) {
-				$resultrow = $adb->fetch_array($result);
-				$prefix = $resultrow['prefix'];
-				$label  = $resultrow['label'];
-				$languageinfo[$prefix] = $label;
-			}
-		} else {
-			global $languages;
-			foreach($languages as $prefix=>$label) {
-				$languageinfo[$prefix] = $label;
-			}
-		}
-		asort($languageinfo);
-		return $languageinfo;
-	}
+            for ($index = 0; $index < $adb->num_rows($result); ++$index) {
+                $resultrow = $adb->fetch_array($result);
+                $prefix = $resultrow['prefix'];
+                $label  = $resultrow['label'];
+                $languageinfo[$prefix] = $label;
+            }
+        } else {
+            global $languages;
+            foreach ($languages as $prefix => $label) {
+                $languageinfo[$prefix] = $label;
+            }
+        }
+        asort($languageinfo);
+
+        return $languageinfo;
+    }
 }
-?>

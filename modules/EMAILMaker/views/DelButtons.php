@@ -1,5 +1,6 @@
 <?php
-/*********************************************************************************
+
+/*
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
  * The Initial Developer of the Original Code is IT-Solutions4You s.r.o.
@@ -9,7 +10,6 @@
 
 class EMAILMaker_Buttons_View extends Vtiger_Index_View
 {
-
     public function preProcess(Vtiger_Request $request, $display = true)
     {
         $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
@@ -21,7 +21,7 @@ class EMAILMaker_Buttons_View extends Vtiger_Index_View
 
         $moduleName = $request->getModule();
 
-        $linkParams = array('MODULE' => $moduleName, 'ACTION' => $request->get('view'));
+        $linkParams = ['MODULE' => $moduleName, 'ACTION' => $request->get('view')];
         $linkModels = $EMAILMaker->getSideBarLinks($linkParams);
         $viewer->assign('QUICK_LINKS', $linkModels);
 
@@ -41,67 +41,68 @@ class EMAILMaker_Buttons_View extends Vtiger_Index_View
         $viewer = $this->getViewer($request);
         $currentLanguage = Vtiger_Language_Handler::getLanguage();
 
-        list($oLabels, $languages) = $EMAILMaker->GetCustomLabels();
-        $currLang = array();
+        [$oLabels, $languages] = $EMAILMaker->GetCustomLabels();
+        $currLang = [];
         foreach ($languages as $langId => $langVal) {
-            if ($langVal["prefix"] == $currentLanguage) {
-                $currLang["id"] = $langId;
-                $currLang["name"] = $langVal["name"];
-                $currLang["label"] = $langVal["label"];
-                $currLang["prefix"] = $langVal["prefix"];
+            if ($langVal['prefix'] == $currentLanguage) {
+                $currLang['id'] = $langId;
+                $currLang['name'] = $langVal['name'];
+                $currLang['label'] = $langVal['label'];
+                $currLang['prefix'] = $langVal['prefix'];
                 break;
             }
         }
 
-        $viewLabels = array();
+        $viewLabels = [];
         foreach ($oLabels as $lblId => $oLabel) {
-            $viewLabels[$lblId]["key"] = $oLabel->GetKey();
-            $viewLabels[$lblId]["lang_values"] = $oLabel->GetLangValsArr();
+            $viewLabels[$lblId]['key'] = $oLabel->GetKey();
+            $viewLabels[$lblId]['lang_values'] = $oLabel->GetLangValsArr();
         }
 
-        $viewer->assign("LABELS", $viewLabels);
-        $viewer->assign("LANGUAGES", $languages);
-        $viewer->assign("CURR_LANG", $currLang);
+        $viewer->assign('LABELS', $viewLabels);
+        $viewer->assign('LANGUAGES', $languages);
+        $viewer->assign('CURR_LANG', $currLang);
 
         $Modules_List = $this->getModulesList();
-        $viewer->assign("MODULES_LIST", $Modules_List);
+        $viewer->assign('MODULES_LIST', $Modules_List);
         $viewer->view('Buttons.tpl', 'EMAILMaker');
     }
 
     public function getModulesList()
     {
-        $Modules_List = array();
+        $Modules_List = [];
         $adb = PearDatabase::getInstance();
-        $result = $adb->pquery("SELECT * FROM vtiger_tab WHERE isentitytype=1 AND tabid NOT IN (9, 10, 16, 28) AND name != ?", array('EMAILMaker'));
+        $result = $adb->pquery('SELECT * FROM vtiger_tab WHERE isentitytype=1 AND tabid NOT IN (9, 10, 16, 28) AND name != ?', ['EMAILMaker']);
+
         while ($row = $adb->fetchByAssoc($result)) {
-            $links_a = "";
-            $links_b = "";
+            $links_a = '';
+            $links_b = '';
             $tabid = $row['tabid'];
             $tablabel = getTranslatedString($row['tablabel'], $row['name']);
-            if ($tablabel == "") {
+            if ($tablabel == '') {
                 $tablabel = $row['tablabel'];
             }
-            $result2 = $adb->pquery("SELECT * FROM vtiger_links WHERE tabid = ? AND linktype = ? AND linkurl LIKE ?", array($tabid, 'DETAILVIEWSIDEBARWIDGET', 'module=EMAILMaker&view=GetEMAILActions&record=%'));
+            $result2 = $adb->pquery('SELECT * FROM vtiger_links WHERE tabid = ? AND linktype = ? AND linkurl LIKE ?', [$tabid, 'DETAILVIEWSIDEBARWIDGET', 'module=EMAILMaker&view=GetEMAILActions&record=%']);
             $num_rows2 = $adb->num_rows($result2);
 
             if ($num_rows2 > 0) {
-                $links_a = "checked";
+                $links_a = 'checked';
             }
 
-            $result3 = $adb->pquery("SELECT * FROM vtiger_links WHERE tabid = ? AND linktype = ? AND linkurl LIKE ?", array($tabid, 'LISTVIEWMASSACTION', 'javascript:EMAILMaker_Actions_Js.getListViewPopup(this,%'));
+            $result3 = $adb->pquery('SELECT * FROM vtiger_links WHERE tabid = ? AND linktype = ? AND linkurl LIKE ?', [$tabid, 'LISTVIEWMASSACTION', 'javascript:EMAILMaker_Actions_Js.getListViewPopup(this,%']);
             $num_rows3 = $adb->num_rows($result3);
 
             if ($num_rows3 != 0) {
-                $links_b = "checked";
+                $links_b = 'checked';
             }
 
-            $Modules_List[] = array(
-                "name" => $row['name'],
-                "tabid" => $tabid,
-                "tablabel" => $tablabel,
-                "link_type_a" => $links_a,
-                "link_type_b" => $links_b
-            );
+            $Modules_List[] = [
+                'name' => $row['name'],
+                'tabid' => $tabid,
+                'tablabel' => $tablabel,
+                'link_type_a' => $links_a,
+                'link_type_b' => $links_b,
+            ];
         }
 
         return $Modules_List;
@@ -112,11 +113,12 @@ class EMAILMaker_Buttons_View extends Vtiger_Index_View
         $headerScriptInstances = parent::getHeaderScripts($request);
         $moduleName = $request->getModule();
 
-        $jsFileNames = array(
-            "layouts.vlayout.modules.EMAILMaker.resources.Buttons"
-        );
+        $jsFileNames = [
+            'layouts.vlayout.modules.EMAILMaker.resources.Buttons',
+        ];
         $jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
         $headerScriptInstances = array_merge($headerScriptInstances, $jsScriptInstances);
+
         return $headerScriptInstances;
     }
 }

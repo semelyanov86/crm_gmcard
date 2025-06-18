@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Vtiger Edit View Record Structure Model
+ * Vtiger Edit View Record Structure Model.
  */
 class VReports_RecordStructure_Model extends Vtiger_RecordStructure_Model
 {
     /**
-     * Function to get the values in stuctured format
+     * Function to get the values in stuctured format.
      * @return <array> - values in structure array('block'=>array(fieldinfo));
      */
     public function getStructure($moduleName = false)
@@ -15,30 +15,30 @@ class VReports_RecordStructure_Model extends Vtiger_RecordStructure_Model
             return $this->structuredValues[$moduleName];
         }
         $moduleModel = Vtiger_Module_Model::getInstance($moduleName);
-        if ($moduleName === "Emails") {
-            $restrictedTablesList = array("vtiger_attachments");
-            $moduleRecordStructure = array();
+        if ($moduleName === 'Emails') {
+            $restrictedTablesList = ['vtiger_attachments'];
+            $moduleRecordStructure = [];
             $blockModelList = $moduleModel->getBlocks();
             foreach ($blockModelList as $blockLabel => $blockModel) {
                 $fieldModelList = $blockModel->getFields();
                 if (!empty($fieldModelList)) {
-                    $moduleRecordStructure[$blockLabel] = array();
+                    $moduleRecordStructure[$blockLabel] = [];
                     foreach ($fieldModelList as $fieldName => $fieldModel) {
-                        if ($fieldModel->get("table") == "vtiger_activity" && $this->getRecord()->getPrimaryModule() != "Emails") {
-                            $fieldModel->set("table", "vtiger_activityEmails");
+                        if ($fieldModel->get('table') == 'vtiger_activity' && $this->getRecord()->getPrimaryModule() != 'Emails') {
+                            $fieldModel->set('table', 'vtiger_activityEmails');
                         }
-                        if (!in_array($fieldModel->get("table"), $restrictedTablesList) && $fieldModel->isViewable()) {
+                        if (!in_array($fieldModel->get('table'), $restrictedTablesList) && $fieldModel->isViewable()) {
                             $moduleRecordStructure[$blockLabel][$fieldName] = $fieldModel;
                         }
                     }
                 }
             }
         } else {
-            if ($moduleName === "Calendar") {
+            if ($moduleName === 'Calendar') {
                 $recordStructureInstance = Vtiger_RecordStructure_Model::getInstanceForModule($moduleModel);
-                $moduleRecordStructure = array();
+                $moduleRecordStructure = [];
                 $calendarRecordStructure = $recordStructureInstance->getStructure();
-                $eventsModel = Vtiger_Module_Model::getInstance("Events");
+                $eventsModel = Vtiger_Module_Model::getInstance('Events');
                 $recordStructureInstance = Vtiger_RecordStructure_Model::getInstanceForModule($eventsModel);
                 $eventRecordStructure = $recordStructureInstance->getStructure();
                 foreach ($eventRecordStructure as $blockLabel => $blockFields) {
@@ -48,7 +48,7 @@ class VReports_RecordStructure_Model extends Vtiger_RecordStructure_Model
                         }
                     }
                 }
-                $blockLabel = "LBL_CUSTOM_INFORMATION";
+                $blockLabel = 'LBL_CUSTOM_INFORMATION';
                 if ($eventCustomFields) {
                     if ($calendarRecordStructure[$blockLabel]) {
                         $calendarRecordStructure[$blockLabel] = array_merge($calendarRecordStructure[$blockLabel], $eventCustomFields);
@@ -64,42 +64,45 @@ class VReports_RecordStructure_Model extends Vtiger_RecordStructure_Model
         }
         foreach ($moduleRecordStructure as $blockLabel => $blockFields) {
             foreach ($blockFields as $fieldName => $fieldModel) {
-                if ($fieldModel->getDisplayType() == "6") {
+                if ($fieldModel->getDisplayType() == '6') {
                     unset($moduleRecordStructure[$blockLabel][$fieldName]);
                 }
             }
         }
         $this->structuredValues[$moduleName] = $moduleRecordStructure;
+
         return $moduleRecordStructure;
     }
+
     /**
-     * Function returns the Primary Module Record Structure
+     * Function returns the Primary Module Record Structure.
      * @return <Vtiger_RecordStructure_Model>
      */
     public function getPrimaryModuleRecordStructure()
     {
         $primaryModule = $this->getRecord()->getPrimaryModule();
         $primaryModuleRecordStructure = $this->getStructure($primaryModule);
+
         return $primaryModuleRecordStructure;
     }
+
     /**
-     * Function returns the Secondary Modules Record Structure
+     * Function returns the Secondary Modules Record Structure.
      * @return <Array of Vtiger_RecordSructure_Models>
      */
     public function getSecondaryModuleRecordStructure()
     {
-        $recordStructureInstances = array();
+        $recordStructureInstances = [];
         $secondaryModule = $this->getRecord()->getSecondaryModules();
         if (!empty($secondaryModule)) {
-            $moduleList = explode(":", $secondaryModule);
+            $moduleList = explode(':', $secondaryModule);
             foreach ($moduleList as $moduleName) {
                 if (!empty($moduleName)) {
                     $recordStructureInstances[$moduleName] = $this->getStructure($moduleName);
                 }
             }
         }
+
         return $recordStructureInstances;
     }
 }
-
-?>

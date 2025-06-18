@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,106 +7,113 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
-include_once('vtlib/Vtiger/ThemeExport.php');
+ */
+include_once 'vtlib/Vtiger/ThemeExport.php';
 
 /**
- * Provides API to import language into vtiger CRM
- * @package vtlib
+ * Provides API to import language into vtiger CRM.
  */
-class Vtiger_ThemeImport extends Vtiger_ThemeExport {
-    
-	/**
-	 * Constructor
-	 */
-	function __construct() {
-		parent::__construct();
-		$this->_export_tmpdir;
-	}
-        
-	/**
-	 * Initialize Import
-	 * @access private
-	 */
-	function initImport($zipfile, $overwrite=true) {
-		$this->__initSchema();
-		$name = $this->getModuleNameFromZip($zipfile);
-                return $name;
-	}
+class Vtiger_ThemeImport extends Vtiger_ThemeExport
+{
+    /**
+     * Constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->_export_tmpdir;
+    }
 
-	/**
-	 * Import Module from zip file
-	 * @param String Zip file name
-	 * @param Boolean True for overwriting existing module
-	 */
-	function import($zipfile, $overwrite=false) {
-		$this->initImport($zipfile, $overwrite);
+    /**
+     * Initialize Import.
+     */
+    public function initImport($zipfile, $overwrite = true)
+    {
+        $this->__initSchema();
+        $name = $this->getModuleNameFromZip($zipfile);
 
-		// Call module import function
-		$this->import_Theme($zipfile);
-	}
+        return $name;
+    }
 
-	/**
-	 * Update Module from zip file
-	 * @param Object Instance of Language (to keep Module update API consistent)
-	 * @param String Zip file name
-	 * @param Boolean True for overwriting existing module
-	 */
-	function update($instance, $zipfile, $overwrite=true) {
-		$this->import($zipfile, $overwrite);
-	}
+    /**
+     * Import Module from zip file.
+     * @param string Zip file name
+     * @param bool True for overwriting existing module
+     */
+    public function import($zipfile, $overwrite = false)
+    {
+        $this->initImport($zipfile, $overwrite);
 
-	/**
-	 * Import Module
-	 * @access private
-	 */
-	function import_Theme($zipfile) {
-		$name = $this->_modulexml->name;
-		$label = $this->_modulexml->label;
-                $parent = $this->_modulexml->parent;
+        // Call module import function
+        $this->import_Theme($zipfile);
+    }
 
-		self::log("Importing $label ... STARTED");
-		$unzip = new Vtiger_Unzip($zipfile);
-		$filelist = $unzip->getList();
-		$vtiger6format = false;
-                
-		foreach($filelist as $filename=>$fileinfo) {
-			if(!$unzip->isdir($filename)) {
+    /**
+     * Update Module from zip file.
+     * @param object Instance of Language (to keep Module update API consistent)
+     * @param string Zip file name
+     * @param bool True for overwriting existing module
+     */
+    public function update($instance, $zipfile, $overwrite = true)
+    {
+        $this->import($zipfile, $overwrite);
+    }
 
-				if(strpos($filename, '/') === false) continue;
+    /**
+     * Import Module.
+     */
+    public function import_Theme($zipfile)
+    {
+        $name = $this->_modulexml->name;
+        $label = $this->_modulexml->label;
+        $parent = $this->_modulexml->parent;
+
+        self::log("Importing {$label} ... STARTED");
+        $unzip = new Vtiger_Unzip($zipfile);
+        $filelist = $unzip->getList();
+        $vtiger6format = false;
+
+        foreach ($filelist as $filename => $fileinfo) {
+            if (!$unzip->isdir($filename)) {
+
+                if (strpos($filename, '/') === false) {
+                    continue;
+                }
 
 
-				$targetdir  = substr($filename, 0, strripos($filename,'/'));
-				$targetfile = basename($filename);
-                                $dounzip = false;
-                                // Case handling for jscalendar
-                                if(stripos($targetdir, "layouts/$parent/skins/$label") === 0) {
-                                    $dounzip = true;
-                                    $vtiger6format = true;
-                                }
-				if($dounzip) {
-					// vtiger6 format
-					if ($vtiger6format) {
-                                               $targetdir = "layouts/$parent/skins/" . str_replace("layouts/$parent/skins", "", $targetdir);
-						@mkdir($targetdir, 0777, true);
-					}
+                $targetdir  = substr($filename, 0, strripos($filename, '/'));
+                $targetfile = basename($filename);
+                $dounzip = false;
+                // Case handling for jscalendar
+                if (stripos($targetdir, "layouts/{$parent}/skins/{$label}") === 0) {
+                    $dounzip = true;
+                    $vtiger6format = true;
+                }
+                if ($dounzip) {
+                    // vtiger6 format
+                    if ($vtiger6format) {
+                        $targetdir = "layouts/{$parent}/skins/" . str_replace("layouts/{$parent}/skins", '', $targetdir);
+                        @mkdir($targetdir, 0o777, true);
+                    }
 
-					if($unzip->unzip($filename, "$targetdir/$targetfile") !== false) {
-						self::log("Copying file $filename ... DONE");
-					} else {
-						self::log("Copying file $filename ... FAILED");
-					}
-				} else {
-					self::log("Copying file $filename ... SKIPPED");
-				}
-			}
-		}
-		if($unzip) $unzip->close();
+                    if ($unzip->unzip($filename, "{$targetdir}/{$targetfile}") !== false) {
+                        self::log("Copying file {$filename} ... DONE");
+                    } else {
+                        self::log("Copying file {$filename} ... FAILED");
+                    }
+                } else {
+                    self::log("Copying file {$filename} ... SKIPPED");
+                }
+            }
+        }
+        if ($unzip) {
+            $unzip->close();
+        }
 
-		self::register($label, $name, $parent);
+        self::register($label, $name, $parent);
 
-		self::log("Importing $label [$prefix] ... DONE");
+        self::log("Importing {$label} [{$prefix}] ... DONE");
 
-		return;
-	}    
+
+    }
 }

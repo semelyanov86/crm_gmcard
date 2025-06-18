@@ -1,136 +1,358 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-LyZb0Q285IbBIVTfW4WQULikZXIvihi+7P6b
+<?php
+
+/**
+ * PHPExcel_Writer_CSV.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Writer_CSV extends PHPExcel_Writer_Abstract implements PHPExcel_Writer_IWriter
+{
+    /**
+     * PHPExcel object.
+     *
+     * @var PHPExcel
+     */
+    private $phpExcel;
+
+    /**
+     * Delimiter.
+     *
+     * @var string
+     */
+    private $delimiter    = ',';
+
+    /**
+     * Enclosure.
+     *
+     * @var string
+     */
+    private $enclosure    = '"';
+
+    /**
+     * Line ending.
+     *
+     * @var string
+     */
+    private $lineEnding    = PHP_EOL;
+
+    /**
+     * Sheet index to write.
+     *
+     * @var int
+     */
+    private $sheetIndex    = 0;
+
+    /**
+     * Whether to write a BOM (for UTF8).
+     *
+     * @var bool
+     */
+    private $useBOM = false;
+
+    /**
+     * Whether to write a Separator line as the first line of the file
+     *     sep=x.
+     *
+     * @var bool
+     */
+    private $includeSeparatorLine = false;
+
+    /**
+     * Whether to write a fully Excel compatible CSV file.
+     *
+     * @var bool
+     */
+    private $excelCompatibility = false;
+
+    /**
+     * Create a new PHPExcel_Writer_CSV.
+     *
+     * @param    PHPExcel    $phpExcel    PHPExcel object
+     */
+    public function __construct(PHPExcel $phpExcel)
+    {
+        $this->phpExcel    = $phpExcel;
+    }
+
+    /**
+     * Save PHPExcel to file.
+     *
+     * @param    string        $pFilename
+     * @throws    PHPExcel_Writer_Exception
+     */
+    public function save($pFilename = null)
+    {
+        // Fetch sheet
+        $sheet = $this->phpExcel->getSheet($this->sheetIndex);
+
+        $saveDebugLog = PHPExcel_Calculation::getInstance($this->phpExcel)->getDebugLog()->getWriteDebugLog();
+        PHPExcel_Calculation::getInstance($this->phpExcel)->getDebugLog()->setWriteDebugLog(false);
+        $saveArrayReturnType = PHPExcel_Calculation::getArrayReturnType();
+        PHPExcel_Calculation::setArrayReturnType(PHPExcel_Calculation::RETURN_ARRAY_AS_VALUE);
+
+        // Open file
+        $fileHandle = fopen($pFilename, 'wb+');
+        if ($fileHandle === false) {
+            throw new PHPExcel_Writer_Exception("Could not open file {$pFilename} for writing.");
+        }
+
+        if ($this->excelCompatibility) {
+            $this->setUseBOM(true);                //  Enforce UTF-8 BOM Header
+            $this->setIncludeSeparatorLine(true);  //  Set separator line
+            $this->setEnclosure('"');              //  Set enclosure to "
+            $this->setDelimiter(';');              //  Set delimiter to a semi-colon
+            $this->setLineEnding("\r\n");
+        }
+        if ($this->useBOM) {
+            // Write the UTF-8 BOM code if required
+            fwrite($fileHandle, "\xEF\xBB\xBF");
+        }
+        if ($this->includeSeparatorLine) {
+            // Write the separator line if required
+            fwrite($fileHandle, 'sep=' . $this->getDelimiter() . $this->lineEnding);
+        }
+
+        //    Identify the range that we need to extract from the worksheet
+        $maxCol = $sheet->getHighestDataColumn();
+        $maxRow = $sheet->getHighestDataRow();
+
+        // Write rows to file
+        for ($row = 1; $row <= $maxRow; ++$row) {
+            // Convert the row to an array...
+            $cellsArray = $sheet->rangeToArray('A' . $row . ':' . $maxCol . $row, '', $this->preCalculateFormulas);
+            // ... and write to the file
+            $this->writeLine($fileHandle, $cellsArray[0]);
+        }
+
+        // Close file
+        fclose($fileHandle);
+
+        PHPExcel_Calculation::setArrayReturnType($saveArrayReturnType);
+        PHPExcel_Calculation::getInstance($this->phpExcel)->getDebugLog()->setWriteDebugLog($saveDebugLog);
+    }
+
+    /**
+     * Get delimiter.
+     *
+     * @return string
+     */
+    public function getDelimiter()
+    {
+        return $this->delimiter;
+    }
+
+    /**
+     * Set delimiter.
+     *
+     * @param    string    $pValue        Delimiter, defaults to ,
+     * @return PHPExcel_Writer_CSV
+     */
+    public function setDelimiter($pValue = ',')
+    {
+        $this->delimiter = $pValue;
+
+        return $this;
+    }
+
+    /**
+     * Get enclosure.
+     *
+     * @return string
+     */
+    public function getEnclosure()
+    {
+        return $this->enclosure;
+    }
+
+    /**
+     * Set enclosure.
+     *
+     * @param    string    $pValue        Enclosure, defaults to "
+     * @return PHPExcel_Writer_CSV
+     */
+    public function setEnclosure($pValue = '"')
+    {
+        if ($pValue == '') {
+            $pValue = null;
+        }
+        $this->enclosure = $pValue;
+
+        return $this;
+    }
+
+    /**
+     * Get line ending.
+     *
+     * @return string
+     */
+    public function getLineEnding()
+    {
+        return $this->lineEnding;
+    }
+
+    /**
+     * Set line ending.
+     *
+     * @param    string    $pValue        Line ending, defaults to OS line ending (PHP_EOL)
+     * @return PHPExcel_Writer_CSV
+     */
+    public function setLineEnding($pValue = PHP_EOL)
+    {
+        $this->lineEnding = $pValue;
+
+        return $this;
+    }
+
+    /**
+     * Get whether BOM should be used.
+     *
+     * @return bool
+     */
+    public function getUseBOM()
+    {
+        return $this->useBOM;
+    }
+
+    /**
+     * Set whether BOM should be used.
+     *
+     * @param    bool    $pValue        Use UTF-8 byte-order mark? Defaults to false
+     * @return PHPExcel_Writer_CSV
+     */
+    public function setUseBOM($pValue = false)
+    {
+        $this->useBOM = $pValue;
+
+        return $this;
+    }
+
+    /**
+     * Get whether a separator line should be included.
+     *
+     * @return bool
+     */
+    public function getIncludeSeparatorLine()
+    {
+        return $this->includeSeparatorLine;
+    }
+
+    /**
+     * Set whether a separator line should be included as the first line of the file.
+     *
+     * @param    bool    $pValue        Use separator line? Defaults to false
+     * @return PHPExcel_Writer_CSV
+     */
+    public function setIncludeSeparatorLine($pValue = false)
+    {
+        $this->includeSeparatorLine = $pValue;
+
+        return $this;
+    }
+
+    /**
+     * Get whether the file should be saved with full Excel Compatibility.
+     *
+     * @return bool
+     */
+    public function getExcelCompatibility()
+    {
+        return $this->excelCompatibility;
+    }
+
+    /**
+     * Set whether the file should be saved with full Excel Compatibility.
+     *
+     * @param    bool    $pValue        Set the file to be written as a fully Excel compatible csv file
+     *                                Note that this overrides other settings such as useBOM, enclosure and delimiter
+     * @return PHPExcel_Writer_CSV
+     */
+    public function setExcelCompatibility($pValue = false)
+    {
+        $this->excelCompatibility = $pValue;
+
+        return $this;
+    }
+
+    /**
+     * Get sheet index.
+     *
+     * @return int
+     */
+    public function getSheetIndex()
+    {
+        return $this->sheetIndex;
+    }
+
+    /**
+     * Set sheet index.
+     *
+     * @param    int        $pValue        Sheet index
+     * @return PHPExcel_Writer_CSV
+     */
+    public function setSheetIndex($pValue = 0)
+    {
+        $this->sheetIndex = $pValue;
+
+        return $this;
+    }
+
+    /**
+     * Write line to CSV file.
+     *
+     * @param    mixed    $pFileHandle    PHP filehandle
+     * @param    array    $pValues        Array containing values in a row
+     * @throws    PHPExcel_Writer_Exception
+     */
+    private function writeLine($pFileHandle = null, $pValues = null)
+    {
+        if (is_array($pValues)) {
+            // No leading delimiter
+            $writeDelimiter = false;
+
+            // Build the line
+            $line = '';
+
+            foreach ($pValues as $element) {
+                // Escape enclosures
+                $element = str_replace($this->enclosure, $this->enclosure . $this->enclosure, $element);
+
+                // Add delimiter
+                if ($writeDelimiter) {
+                    $line .= $this->delimiter;
+                } else {
+                    $writeDelimiter = true;
+                }
+
+                // Add enclosed string
+                $line .= $this->enclosure . $element . $this->enclosure;
+            }
+
+            // Add line ending
+            $line .= $this->lineEnding;
+
+            // Write to file
+            fwrite($pFileHandle, $line);
+        } else {
+            throw new PHPExcel_Writer_Exception('Invalid data row passed to CSV writer.');
+        }
+    }
+}

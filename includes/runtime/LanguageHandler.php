@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.1
  * ("License"); You may not use this file except in compliance with the License
@@ -6,260 +7,281 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
+ */
 
 /**
- * Class to handler language translations
+ * Class to handler language translations.
  */
-class Vtiger_Language_Handler {
+class Vtiger_Language_Handler
+{
+    // Contains module language translations
+    protected static $languageContainer;
 
-	//Contains module language translations
-	protected static $languageContainer;
-	protected static $fileExists = array();
-	protected static $userLanguage;
+    protected static $fileExists = [];
 
-	/**
-	 * Functions that gets translated string
-	 * @param <String> $key - string which need to be translated
-	 * @param <String> $module - module scope in which the translation need to be check
-	 * @return <String> - translated string
-	 */
-	public static function getTranslatedString($key, $module = '', $currentLanguage = '') {
-		if (empty($currentLanguage)) {
-			$currentLanguage = self::$userLanguage ? self::$userLanguage : self::getLanguage();
-		}
-		//decoding for Start Date & Time and End Date & Time 
-		if (!is_array($key))
-			$key = decode_html($key);
-		$translatedString = self::getLanguageTranslatedString($currentLanguage, $key, $module);
+    protected static $userLanguage;
 
-		// label not found in users language pack, then check in the default language pack(config.inc.php)
-		if ($translatedString === null) {
-			$defaultLanguage = vglobal('default_language');
-			if (!empty($defaultLanguage) && strcasecmp($defaultLanguage, $currentLanguage) !== 0) {
-				$translatedString = self::getLanguageTranslatedString($defaultLanguage, $key, $module);
-			}
-		}
+    /**
+     * Functions that gets translated string.
+     * @param <String> $key - string which need to be translated
+     * @param <String> $module - module scope in which the translation need to be check
+     * @return <String> - translated string
+     */
+    public static function getTranslatedString($key, $module = '', $currentLanguage = '')
+    {
+        if (empty($currentLanguage)) {
+            $currentLanguage = self::$userLanguage ? self::$userLanguage : self::getLanguage();
+        }
+        // decoding for Start Date & Time and End Date & Time
+        if (!is_array($key)) {
+            $key = decode_html($key);
+        }
+        $translatedString = self::getLanguageTranslatedString($currentLanguage, $key, $module);
 
-		// If translation is not found then return label
-		if ($translatedString === null) {
-			$translatedString = $key;
-		}
-		return $translatedString;
-	}
+        // label not found in users language pack, then check in the default language pack(config.inc.php)
+        if ($translatedString === null) {
+            $defaultLanguage = vglobal('default_language');
+            if (!empty($defaultLanguage) && strcasecmp($defaultLanguage, $currentLanguage) !== 0) {
+                $translatedString = self::getLanguageTranslatedString($defaultLanguage, $key, $module);
+            }
+        }
 
-	/**
-	 * Function returns language specific translated string
-	 * @param <String> $language - en_us etc
-	 * @param <String> $key - label
-	 * @param <String> $module - module name
-	 * @return <String> translated string or null if translation not found
-	 */
-	public static function getLanguageTranslatedString($language, $key, $module = '') {
-		$moduleStrings = array();
+        // If translation is not found then return label
+        if ($translatedString === null) {
+            $translatedString = $key;
+        }
 
-		if ($module !== null) {
-			$module = str_replace(':', '.', $module);
-		}
-		if (is_array($module))
-			return null;
-		$moduleStrings = self::getModuleStringsFromFile($language, $module);
-		if (!empty($moduleStrings['languageStrings'][$key])) {
-			return $moduleStrings['languageStrings'][$key];
-		}
-		// Lookup for the translation in base module, in case of sub modules, before ending up with common strings
-		if ($module != null && strpos($module, '.') > 0) {
-			$baseModule = substr($module, 0, strpos($module, '.'));
-			if ($baseModule == 'Settings') {
-				$baseModule = 'Settings.Vtiger';
-			}
-			$moduleStrings = self::getModuleStringsFromFile($language, $baseModule);
-			if (!empty($moduleStrings['languageStrings'][$key])) {
-				return $moduleStrings['languageStrings'][$key];
-			}
-		}
+        return $translatedString;
+    }
 
-		$commonStrings = self::getModuleStringsFromFile($language);
-		if (!empty($commonStrings['languageStrings'][$key]))
-			return $commonStrings['languageStrings'][$key];
+    /**
+     * Function returns language specific translated string.
+     * @param <String> $language - en_us etc
+     * @param <String> $key - label
+     * @param <String> $module - module name
+     * @return <String> translated string or null if translation not found
+     */
+    public static function getLanguageTranslatedString($language, $key, $module = '')
+    {
+        $moduleStrings = [];
 
-		return null;
-	}
+        if ($module !== null) {
+            $module = str_replace(':', '.', $module);
+        }
+        if (is_array($module)) {
+            return null;
+        }
+        $moduleStrings = self::getModuleStringsFromFile($language, $module);
+        if (!empty($moduleStrings['languageStrings'][$key])) {
+            return $moduleStrings['languageStrings'][$key];
+        }
+        // Lookup for the translation in base module, in case of sub modules, before ending up with common strings
+        if ($module != null && strpos($module, '.') > 0) {
+            $baseModule = substr($module, 0, strpos($module, '.'));
+            if ($baseModule == 'Settings') {
+                $baseModule = 'Settings.Vtiger';
+            }
+            $moduleStrings = self::getModuleStringsFromFile($language, $baseModule);
+            if (!empty($moduleStrings['languageStrings'][$key])) {
+                return $moduleStrings['languageStrings'][$key];
+            }
+        }
 
-	/**
-	 * Functions that gets translated string for Client side
-	 * @param <String> $key - string which need to be translated
-	 * @param <String> $module - module scope in which the translation need to be check
-	 * @return <String> - translated string
-	 */
-	public static function getJSTranslatedString($language, $key, $module = '') {
-		$moduleStrings = array();
+        $commonStrings = self::getModuleStringsFromFile($language);
+        if (!empty($commonStrings['languageStrings'][$key])) {
+            return $commonStrings['languageStrings'][$key];
+        }
 
-		$module = str_replace(':', '.', $module);
-		$moduleStrings = self::getModuleStringsFromFile($language, $module);
-		if (!empty($moduleStrings['jsLanguageStrings'][$key])) {
-			return $moduleStrings['jsLanguageStrings'][$key];
-		}
-		// Lookup for the translation in base module, in case of sub modules, before ending up with common strings
-		if (strpos($module, '.') > 0) {
-			$baseModule = substr($module, 0, strpos($module, '.'));
-			if ($baseModule == 'Settings') {
-				$baseModule = 'Settings.Vtiger';
-			}
-			$moduleStrings = self::getModuleStringsFromFile($language, $baseModule);
-			if (!empty($moduleStrings['jsLanguageStrings'][$key])) {
-				return $moduleStrings['jsLanguageStrings'][$key];
-			}
-		}
+        return null;
+    }
 
-		$commonStrings = self::getModuleStringsFromFile($language);
-		if (!empty($commonStrings['jsLanguageStrings'][$key]))
-			return $commonStrings['jsLanguageStrings'][$key];
+    /**
+     * Functions that gets translated string for Client side.
+     * @param <String> $key - string which need to be translated
+     * @param <String> $module - module scope in which the translation need to be check
+     * @return <String> - translated string
+     */
+    public static function getJSTranslatedString($language, $key, $module = '')
+    {
+        $moduleStrings = [];
 
-		return $key;
-	}
+        $module = str_replace(':', '.', $module);
+        $moduleStrings = self::getModuleStringsFromFile($language, $module);
+        if (!empty($moduleStrings['jsLanguageStrings'][$key])) {
+            return $moduleStrings['jsLanguageStrings'][$key];
+        }
+        // Lookup for the translation in base module, in case of sub modules, before ending up with common strings
+        if (strpos($module, '.') > 0) {
+            $baseModule = substr($module, 0, strpos($module, '.'));
+            if ($baseModule == 'Settings') {
+                $baseModule = 'Settings.Vtiger';
+            }
+            $moduleStrings = self::getModuleStringsFromFile($language, $baseModule);
+            if (!empty($moduleStrings['jsLanguageStrings'][$key])) {
+                return $moduleStrings['jsLanguageStrings'][$key];
+            }
+        }
 
-	/**
-	 * Function that returns translation strings from file
-	 * @global <array> $languageStrings - language specific string which is used in translations
-	 * @param <String> $module - module Name
-	 * @return <array> - array if module has language strings else returns empty array
-	 */
-	public static function getModuleStringsFromFile($language, $module='Vtiger'){
-		if($module !== null) $module = str_replace(':', '.', $module);
-		if (!empty(self::$languageContainer[$language][$module])) {
-		    return self::$languageContainer[$language][$module];
-		}
-		if(empty(self::$languageContainer[$language][$module])){
-			$qualifiedName = 'languages.'.$language.'.'.$module;
-			$file = Vtiger_Loader::resolveNameToPath($qualifiedName);
-			$languageStrings = $jsLanguageStrings = array();
-			if (!isset(self::$fileExists[$file])) {
-				self::$fileExists[$file] = file_exists($file) ? 'yes' : 'no';
-			}
-			if (self::$fileExists[$file] == 'yes') {
-				checkFileAccessForInclusion($file);
-				require $file;
-				self::$languageContainer[$language][$module]['languageStrings'] = $languageStrings;
-				self::$languageContainer[$language][$module]['jsLanguageStrings'] = $jsLanguageStrings;
-			}
-		}
-		// add custom translation for module from language/custom/$language/$module.php file
-		$qualifiedCustomName = 'languages.custom.'.$language.'.'.$module;
+        $commonStrings = self::getModuleStringsFromFile($language);
+        if (!empty($commonStrings['jsLanguageStrings'][$key])) {
+            return $commonStrings['jsLanguageStrings'][$key];
+        }
+
+        return $key;
+    }
+
+    /**
+     * Function that returns translation strings from file.
+     * @global <array> $languageStrings - language specific string which is used in translations
+     * @param <String> $module - module Name
+     * @return <array> - array if module has language strings else returns empty array
+     */
+    public static function getModuleStringsFromFile($language, $module = 'Vtiger')
+    {
+        if ($module !== null) {
+            $module = str_replace(':', '.', $module);
+        }
+        if (!empty(self::$languageContainer[$language][$module])) {
+            return self::$languageContainer[$language][$module];
+        }
+        if (empty(self::$languageContainer[$language][$module])) {
+            $qualifiedName = 'languages.' . $language . '.' . $module;
+            $file = Vtiger_Loader::resolveNameToPath($qualifiedName);
+            $languageStrings = $jsLanguageStrings = [];
+            if (!isset(self::$fileExists[$file])) {
+                self::$fileExists[$file] = file_exists($file) ? 'yes' : 'no';
+            }
+            if (self::$fileExists[$file] == 'yes') {
+                checkFileAccessForInclusion($file);
+                require $file;
+                self::$languageContainer[$language][$module]['languageStrings'] = $languageStrings;
+                self::$languageContainer[$language][$module]['jsLanguageStrings'] = $jsLanguageStrings;
+            }
+        }
+        // add custom translation for module from language/custom/$language/$module.php file
+        $qualifiedCustomName = 'languages.custom.' . $language . '.' . $module;
         $file = Vtiger_Loader::resolveNameToPath($qualifiedCustomName);
 
-        $languageStrings = $jsLanguageStrings = array();
-		if (!isset(self::$fileExists[$file])) {
-			self::$fileExists[$file] = file_exists($file) ? 'yes' : 'no';
-		}
-		if (self::$fileExists[$file] == 'yes') {            
-			checkFileAccessForInclusion($file);	
-			require $file;
-			self::$languageContainer[$language][$module]['languageStrings'] = array_merge(self::$languageContainer[$language][$module]['languageStrings'],$languageStrings);
-			self::$languageContainer[$language][$module]['jsLanguageStrings'] = array_merge(self::$languageContainer[$language][$module]['jsLanguageStrings'],$jsLanguageStrings);
-		} 
-		$return = array();
-		if(isset(self::$languageContainer[$language][$module])){
-			$return = self::$languageContainer[$language][$module];
-		}
-		return $return;
-	}
+        $languageStrings = $jsLanguageStrings = [];
+        if (!isset(self::$fileExists[$file])) {
+            self::$fileExists[$file] = file_exists($file) ? 'yes' : 'no';
+        }
+        if (self::$fileExists[$file] == 'yes') {
+            checkFileAccessForInclusion($file);
+            require $file;
+            self::$languageContainer[$language][$module]['languageStrings'] = array_merge(self::$languageContainer[$language][$module]['languageStrings'], $languageStrings);
+            self::$languageContainer[$language][$module]['jsLanguageStrings'] = array_merge(self::$languageContainer[$language][$module]['jsLanguageStrings'], $jsLanguageStrings);
+        }
+        $return = [];
+        if (isset(self::$languageContainer[$language][$module])) {
+            $return = self::$languageContainer[$language][$module];
+        }
 
-	/**
-	 * Function that returns current language
-	 * @return <String> -
-	 */
-	public static function getLanguage() {
-		if (self::$userLanguage) {
-			return self::$userLanguage;
-		}
-		$userModel = Users_Record_Model::getCurrentUserModel();
-		$language = '';
-		if (!empty($userModel) && $userModel->has('language')) {
-			$language = $userModel->get('language');
-		}
-		$userLang = empty($language) ? vglobal('default_language') : $language;
-		self::$userLanguage = $userLang;
-		return $userLang;
-	}
+        return $return;
+    }
 
-	/**
-	 * Function that returns current language short name
-	 * @return <String> -
-	 */
-	public static function getShortLanguageName() {
-		$language = self::getLanguage();
-		return substr($language, 0, 2);
-	}
+    /**
+     * Function that returns current language.
+     * @return <String> -
+     */
+    public static function getLanguage()
+    {
+        if (self::$userLanguage) {
+            return self::$userLanguage;
+        }
+        $userModel = Users_Record_Model::getCurrentUserModel();
+        $language = '';
+        if (!empty($userModel) && $userModel->has('language')) {
+            $language = $userModel->get('language');
+        }
+        $userLang = empty($language) ? vglobal('default_language') : $language;
+        self::$userLanguage = $userLang;
 
-	/**
-	 * Function returns module strings
-	 * @param <String> $module - module Name
-	 * @param <String> languageStrings or jsLanguageStrings
-	 * @return <Array>
-	 */
-	public static function export($module, $type = 'languageStrings') {
-		$userSelectedLanguage = self::getLanguage();
-		$defaultLanguage = vglobal('default_language');
-		$languages = array($userSelectedLanguage);
-		//To merge base language and user selected language translations
-		if ($userSelectedLanguage != $defaultLanguage) {
-			array_push($languages, $defaultLanguage);
-		}
+        return $userLang;
+    }
+
+    /**
+     * Function that returns current language short name.
+     * @return <String> -
+     */
+    public static function getShortLanguageName()
+    {
+        $language = self::getLanguage();
+
+        return substr($language, 0, 2);
+    }
+
+    /**
+     * Function returns module strings.
+     * @param <String> $module - module Name
+     * @param <String> languageStrings or jsLanguageStrings
+     * @return <Array>
+     */
+    public static function export($module, $type = 'languageStrings')
+    {
+        $userSelectedLanguage = self::getLanguage();
+        $defaultLanguage = vglobal('default_language');
+        $languages = [$userSelectedLanguage];
+        // To merge base language and user selected language translations
+        if ($userSelectedLanguage != $defaultLanguage) {
+            array_push($languages, $defaultLanguage);
+        }
 
 
-		$resultantLanguageString = array();
-		foreach ($languages as $currentLanguage) {
-			$exportLangString = array();
+        $resultantLanguageString = [];
+        foreach ($languages as $currentLanguage) {
+            $exportLangString = [];
 
-			$moduleStrings = self::getModuleStringsFromFile($currentLanguage, $module);
-			if (!empty($moduleStrings[$type])) {
-				$exportLangString = $moduleStrings[$type];
-			}
+            $moduleStrings = self::getModuleStringsFromFile($currentLanguage, $module);
+            if (!empty($moduleStrings[$type])) {
+                $exportLangString = $moduleStrings[$type];
+            }
 
-			// Lookup for the translation in base module, in case of sub modules, before ending up with common strings
-			if (strpos($module, '.') > 0) {
-				$baseModule = substr($module, 0, strpos($module, '.'));
-				if ($baseModule == 'Settings') {
-					$baseModule = 'Settings.Vtiger';
-				}
-				$moduleStrings = self::getModuleStringsFromFile($currentLanguage, $baseModule);
-				if (!empty($moduleStrings[$type])) {
-					$exportLangString += $commonStrings[$type];
-				}
-			}
+            // Lookup for the translation in base module, in case of sub modules, before ending up with common strings
+            if (strpos($module, '.') > 0) {
+                $baseModule = substr($module, 0, strpos($module, '.'));
+                if ($baseModule == 'Settings') {
+                    $baseModule = 'Settings.Vtiger';
+                }
+                $moduleStrings = self::getModuleStringsFromFile($currentLanguage, $baseModule);
+                if (!empty($moduleStrings[$type])) {
+                    $exportLangString += $commonStrings[$type];
+                }
+            }
 
-			$commonStrings = self::getModuleStringsFromFile($currentLanguage);
-			if (!empty($commonStrings[$type])) {
-				$exportLangString += $commonStrings[$type];
-			}
-			$resultantLanguageString += $exportLangString;
-		}
+            $commonStrings = self::getModuleStringsFromFile($currentLanguage);
+            if (!empty($commonStrings[$type])) {
+                $exportLangString += $commonStrings[$type];
+            }
+            $resultantLanguageString += $exportLangString;
+        }
 
-		return $resultantLanguageString;
-	}
+        return $resultantLanguageString;
+    }
 
-	/**
-	 * Function to returns all language information
-	 * @return <Array>
-	 */
-	public static function getAllLanguages() {
-		return Vtiger_Language::getAll();
-	}
+    /**
+     * Function to returns all language information.
+     * @return <Array>
+     */
+    public static function getAllLanguages()
+    {
+        return Vtiger_Language::getAll();
+    }
 
-	/**
-	 * Function to get the label name of the Langauge package
-	 * @param <String> $name
-	 */
-	public static function getLanguageLabel($name) {
-		$db = PearDatabase::getInstance();
-		$languageResult = $db->pquery('SELECT label FROM vtiger_language WHERE prefix = ?', array($name));
-		if ($db->num_rows($languageResult)) {
-			return $db->query_result($languageResult, 0, 'label');
-		}
-		return false;
-	}
+    /**
+     * Function to get the label name of the Langauge package.
+     * @param <String> $name
+     */
+    public static function getLanguageLabel($name)
+    {
+        $db = PearDatabase::getInstance();
+        $languageResult = $db->pquery('SELECT label FROM vtiger_language WHERE prefix = ?', [$name]);
+        if ($db->num_rows($languageResult)) {
+            return $db->query_result($languageResult, 0, 'label');
+        }
 
+        return false;
+    }
 }
 
 function vtranslate($key, $moduleName = '')
@@ -290,24 +312,25 @@ function vtranslate($key, $moduleName = '')
         array_shift($args);
         array_shift($args);
     }
-    
+
     if (is_array($args) && !empty($args)) {
         // Проверка и очистка строки формата
         try {
             // Удаляем поврежденные символы
             $formattedString = preg_replace('/[^\x20-\x7E\x{00A0}-\x{FFFF}]/u', '', $formattedString);
-            
+
             // Проверяем количество спецификаторов и аргументов
             $specifierCount = preg_match_all('/%(?:\d+\$)?[sdioxXeEfFgGcs]/', $formattedString);
             if ($specifierCount > count($args)) {
                 // Если спецификаторов больше чем аргументов, возвращаем строку как есть
                 return $formattedString;
             }
-            
+
             $formattedString = call_user_func_array('vsprintf', [$formattedString, $args]);
         } catch (ValueError $e) {
             // В случае ошибки возвращаем исходную строку без форматирования
-            error_log("vtranslate formatting error: " . $e->getMessage() . " for string: " . $formattedString);
+            error_log('vtranslate formatting error: ' . $e->getMessage() . ' for string: ' . $formattedString);
+
             return $formattedString;
         }
     }
@@ -315,7 +338,9 @@ function vtranslate($key, $moduleName = '')
     return $formattedString;
 }
 
-function vJSTranslate($key, $moduleName = '') {
-	$args = func_get_args();
-	return call_user_func_array(array('Vtiger_Language_Handler', 'getJSTranslatedString'), $args);
+function vJSTranslate($key, $moduleName = '')
+{
+    $args = func_get_args();
+
+    return call_user_func_array(['Vtiger_Language_Handler', 'getJSTranslatedString'], $args);
 }

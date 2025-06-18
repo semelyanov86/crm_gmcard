@@ -1,4 +1,5 @@
 <?php
+
 /* * *******************************************************************************
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
@@ -9,30 +10,30 @@
 
 class EMAILMaker_DetailView_Model extends Vtiger_DetailView_Model
 {
-
     public static function getInstance($moduleName, $recordId)
     {
         $modelClassName = Vtiger_Loader::getComponentClassName('Model', 'DetailView', $moduleName);
         $instance = new $modelClassName();
         $moduleModel = EMAILMaker_Module_Model::getInstance($moduleName);
         $recordModel = EMAILMaker_Record_Model::getInstanceById($recordId, $moduleName);
+
         return $instance->setModule($moduleModel)->setRecord($recordModel);
     }
 
     public function getDetailViewLinks($linkParams)
     {
-        $linkTypes = array('DETAILVIEWBASIC', 'DETAILVIEW');
+        $linkTypes = ['DETAILVIEWBASIC', 'DETAILVIEW'];
         $moduleModel = $this->getModule();
         $recordModel = $this->getRecord();
         $moduleName = $moduleModel->getName();
         $recordId = $recordModel->getId();
-        $detailViewLink = array();
-        $detailViewLinks[] = array(
+        $detailViewLink = [];
+        $detailViewLinks[] = [
             'linktype' => 'DETAILVIEWBASIC',
             'linklabel' => 'LBL_EDIT',
             'linkurl' => $recordModel->getEditViewUrl(),
-            'linkicon' => ''
-        );
+            'linkicon' => '',
+        ];
 
         foreach ($detailViewLinks as $detailViewLink) {
             $linkModelList['DETAILVIEWBASIC'][] = Vtiger_Link_Model::getInstanceFromValues($detailViewLink);
@@ -42,20 +43,20 @@ class EMAILMaker_DetailView_Model extends Vtiger_DetailView_Model
         $detailViewBasiclinks = $linkModelListDetails['DETAILVIEWBASIC'];
         unset($linkModelListDetails['DETAILVIEWBASIC']);
 
-        $deletelinkModel = array(
+        $deletelinkModel = [
             'linktype' => 'DETAILVIEW',
             'linklabel' => 'LBL_DELETE',
             'linkurl' => 'javascript:Vtiger_Detail_Js.deleteRecord("' . $recordModel->getDeleteUrl() . '")',
-            'linkicon' => ''
-        );
+            'linkicon' => '',
+        ];
         $linkModelList['DETAILVIEW'][] = Vtiger_Link_Model::getInstanceFromValues($deletelinkModel);
 
-        $duplicateLinkModel = array(
+        $duplicateLinkModel = [
             'linktype' => 'DETAILVIEWBASIC',
             'linklabel' => 'LBL_DUPLICATE',
             'linkurl' => $recordModel->getDuplicateRecordUrl(),
-            'linkicon' => ''
-        );
+            'linkicon' => '',
+        ];
         $linkModelList['DETAILVIEW'][] = Vtiger_Link_Model::getInstanceFromValues($duplicateLinkModel);
 
         if (!empty($detailViewBasiclinks)) {
@@ -63,14 +64,15 @@ class EMAILMaker_DetailView_Model extends Vtiger_DetailView_Model
                 $linkModelList['DETAILVIEW'][] = $linkModel;
             }
         }
+
         return $linkModelList;
     }
 
     public function getSideBarLinks($linkParams)
     {
-        $linkTypes = array('SIDEBARLINK', 'SIDEBARWIDGET');
+        $linkTypes = ['SIDEBARLINK', 'SIDEBARWIDGET'];
         $moduleLinks = $this->getModule()->getSideBarLinks($linkTypes);
-        $listLinkTypes = array('DETAILVIEWSIDEBARLINK', 'DETAILVIEWSIDEBARWIDGET');
+        $listLinkTypes = ['DETAILVIEWSIDEBARLINK', 'DETAILVIEWSIDEBARWIDGET'];
         $listLinks = Vtiger_Link_Model::getAllByType($this->getModule()->getId(), $listLinkTypes);
 
         if ($listLinks['DETAILVIEWSIDEBARLINK']) {
@@ -85,6 +87,7 @@ class EMAILMaker_DetailView_Model extends Vtiger_DetailView_Model
                 $moduleLinks['SIDEBARWIDGET'][] = $link;
             }
         }
+
         return $moduleLinks;
     }
 }

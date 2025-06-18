@@ -33,7 +33,7 @@ tasks:
   check:
     desc: "Run checker commands"
     cmds:
-      - vendor/bin/phplint
+      - php phplint.phar
   decode:
     desc: "Decode encoded its4you modules"
     cmd: "php vtlib/tools/decode.php {{.CLI_ARGS}}"

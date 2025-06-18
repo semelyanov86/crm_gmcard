@@ -1,4 +1,5 @@
 <?php
+
 /* ********************************************************************************
 * The content of this file is subject to the VTEPayments("License");
 * You may not use this file except in compliance with the License
@@ -7,7 +8,7 @@
 * All Rights Reserved.
 * ****************************************************************************** */
 
-$languageStrings = Array(
+$languageStrings = [
     'VTEPayments' => 'Payments',
     'SINGLE_VTEPayments' => 'Payments',
     'ModuleName ID' => 'Payments ID',
@@ -72,6 +73,4 @@ $languageStrings = Array(
     /* For License page - End */
 
 
-);
-
-?>
+];

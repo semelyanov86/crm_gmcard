@@ -9,41 +9,45 @@
  * All Rights Reserved.
  * *********************************************************************************** */
 
-class Services_Detail_View extends Products_Detail_View {
+class Services_Detail_View extends Products_Detail_View
+{
+    public function getHeaderScripts(Vtiger_Request $request)
+    {
+        parent::getHeaderScripts($request);
+        $headerScriptInstances = parent::getHeaderScripts($request);
+        $moduleName = $request->getModule();
+        $modulePopUpFile = 'modules.' . $moduleName . '.resources.Edit';
+        $moduleDetailFile = 'modules.' . $moduleName . '.resources.Detail';
+        $moduleRelatedListFile = 'modules.' . $moduleName . '.resources.RelatedList';
+        unset($headerScriptInstances[$modulePopUpFile], $headerScriptInstances[$moduleDetailFile], $headerScriptInstances[$moduleRelatedListFile]);
 
-	public function getHeaderScripts(Vtiger_Request $request) {
-		parent::getHeaderScripts($request);
-		$headerScriptInstances = parent::getHeaderScripts($request);
-		$moduleName = $request->getModule();
-		$modulePopUpFile = 'modules.'.$moduleName.'.resources.Edit';
-		$moduleDetailFile = 'modules.'.$moduleName.'.resources.Detail';
-		$moduleRelatedListFile = 'modules.'.$moduleName.'.resources.RelatedList';
-		unset($headerScriptInstances[$modulePopUpFile]);
-		unset($headerScriptInstances[$moduleDetailFile]);
-		unset($headerScriptInstances[$moduleRelatedListFile]);
 
-		$jsFileNames = array(
-				'modules.Products.resources.Edit',
-				'modules.Products.resources.Detail',
-				'modules.Products.resources.RelatedList',
-		);
-		$jsFileNames[] = $modulePopUpFile;
-		$jsFileNames[] = $moduleDetailFile;
-		$jsFileNames[] = $moduleRelatedListFile;
 
-		$jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
-		$headerScriptInstances = array_merge($headerScriptInstances, $jsScriptInstances);
-		return $headerScriptInstances;
-	}
+        $jsFileNames = [
+            'modules.Products.resources.Edit',
+            'modules.Products.resources.Detail',
+            'modules.Products.resources.RelatedList',
+        ];
+        $jsFileNames[] = $modulePopUpFile;
+        $jsFileNames[] = $moduleDetailFile;
+        $jsFileNames[] = $moduleRelatedListFile;
 
-	public function getOverlayHeaderScripts(Vtiger_Request $request){
-		$moduleName = $request->getModule();
-		$jsFileNames = array(
-			"modules.PriceBooks.resources.Detail",
-			"modules.Products.resources.Detail",
-			"modules.$moduleName.resources.Detail",
-		);
-		$jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
-		return $jsScriptInstances;	
-	}
+        $jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
+        $headerScriptInstances = array_merge($headerScriptInstances, $jsScriptInstances);
+
+        return $headerScriptInstances;
+    }
+
+    public function getOverlayHeaderScripts(Vtiger_Request $request)
+    {
+        $moduleName = $request->getModule();
+        $jsFileNames = [
+            'modules.PriceBooks.resources.Detail',
+            'modules.Products.resources.Detail',
+            "modules.{$moduleName}.resources.Detail",
+        ];
+        $jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
+
+        return $jsScriptInstances;
+    }
 }

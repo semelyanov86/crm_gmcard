@@ -3,49 +3,52 @@
 class VTEEmailDesigner_Record_Model extends Vtiger_Record_Model
 {
     /**
-     * Function to get the id of the record
+     * Function to get the id of the record.
      * @return <Number> - Record Id
      */
     public function getId()
     {
-        return $this->get("templateid");
+        return $this->get('templateid');
     }
+
     /**
-     * Function to set the id of the record
+     * Function to set the id of the record.
      * @param <type> $value - id value
      * @return <Object> - current instance
      */
     public function setId($value)
     {
-        return $this->set("templateid", $value);
+        return $this->set('templateid', $value);
     }
+
     /**
-     * Function to delete the email template
-     * @param type $recordIds
+     * Function to delete the email template.
      */
     public function delete()
     {
         $this->getModule()->deleteRecord($this);
     }
+
     /**
-     * Function to delete all the email templates
-     * @param type $recordIds
+     * Function to delete all the email templates.
      */
     public function deleteAllRecords()
     {
         $this->getModule()->deleteAllRecords();
     }
+
     /**
      * Function to get template fields
-     * To get the fields from module, which has the email field
+     * To get the fields from module, which has the email field.
      * @return <arrray> template fields
      */
     public function getEmailTemplateFields()
     {
         return $this->getModule()->getAllModuleEmailTemplateFields();
     }
+
     /**
-     * Function to get the Email Template Record
+     * Function to get the Email Template Record.
      * @param type $record
      * @return <EmailTemplate_Record_Model>
      */
@@ -53,98 +56,113 @@ class VTEEmailDesigner_Record_Model extends Vtiger_Record_Model
     {
         return $this->getModule()->getTemplateData($record);
     }
+
     /**
-     * Function to get the Detail View url for the record
+     * Function to get the Detail View url for the record.
      * @return <String> - Record Detail View Url
      */
     public function getDetailViewUrl()
     {
         $module = $this->getModule();
-        return "index.php?module=" . $this->getModuleName() . "&view=" . $module->getEditViewName() . "&recordid=" . $this->getId();
+
+        return 'index.php?module=' . $this->getModuleName() . '&view=' . $module->getEditViewName() . '&recordid=' . $this->getId();
     }
+
     /**
-     * Function to get the Edit View url for the record
+     * Function to get the Edit View url for the record.
      * @return <String> - Record Edit View Url
      */
     public function getEditViewUrl()
     {
         $module = $this->getModule();
-        return "index.php?module=" . $this->getModuleName() . "&view=" . $module->getEditViewName() . "&recordid=" . $this->getId();
+
+        return 'index.php?module=' . $this->getModuleName() . '&view=' . $module->getEditViewName() . '&recordid=' . $this->getId();
     }
+
     public function getName()
     {
-        return $this->get("subject");
+        return $this->get('subject');
     }
+
     public function isSystemTemplate()
     {
-        if ($this->get("systemtemplate") == "1") {
+        if ($this->get('systemtemplate') == '1') {
             return true;
         }
+
         return false;
     }
+
     /**
-     * Function to get the instance of Custom View module, given custom view id
+     * Function to get the instance of Custom View module, given custom view id.
      * @param <Integer> $cvId
      * @return CustomView_Record_Model instance, if exists. Null otherwise
      */
-    public static function getInstanceById($templateId, $module = NULL)
+    public static function getInstanceById($templateId, $module = null)
     {
         $db = PearDatabase::getInstance();
-        $sql = "SELECT * FROM vtiger_emailtemplates WHERE templateid = ?";
-        $params = array($templateId);
+        $sql = 'SELECT * FROM vtiger_emailtemplates WHERE templateid = ?';
+        $params = [$templateId];
         $result = $db->pquery($sql, $params);
-        if (0 < $db->num_rows($result)) {
+        if ($db->num_rows($result) > 0) {
             $row = $db->query_result_rowdata($result, 0);
             $recordModel = new self();
-            return $recordModel->setData($row)->setModule("VTEEmailDesigner");
+
+            return $recordModel->setData($row)->setModule('VTEEmailDesigner');
         }
-        throw new Exception(vtranslate("LBL_RECORD_DELETE", "Vtiger"), 1);
+
+        throw new Exception(vtranslate('LBL_RECORD_DELETE', 'Vtiger'), 1);
     }
+
     public static function getAllForEmailTask($moduleName)
     {
         $db = PearDatabase::getInstance();
-        $sql = "SELECT templateid, templatename, body, deleted FROM vtiger_emailtemplates WHERE module = ? ORDER BY templateid DESC";
-        $params = array($moduleName);
+        $sql = 'SELECT templateid, templatename, body, deleted FROM vtiger_emailtemplates WHERE module = ? ORDER BY templateid DESC';
+        $params = [$moduleName];
         $result = $db->pquery($sql, $params);
         $numRows = $db->num_rows($result);
-        $recordModels = array();
-        if (0 < $numRows) {
-            for ($i = 0; $i < $numRows; $i++) {
+        $recordModels = [];
+        if ($numRows > 0) {
+            for ($i = 0; $i < $numRows; ++$i) {
                 $row = $db->query_result_rowdata($result, $i);
                 $recordModel = new self();
-                $recordModels[$row["templateid"]] = $recordModel->setData($row)->setModule("EmailTemplates");
+                $recordModels[$row['templateid']] = $recordModel->setData($row)->setModule('EmailTemplates');
             }
         }
+
         return $recordModels;
     }
+
     public static function getSystemTemplateBySubject($subject)
     {
         $db = PearDatabase::getInstance();
-        $sql = "SELECT * FROM vtiger_emailtemplates WHERE subject = ? AND systemtemplate = ?";
-        $params = array($subject, 1);
+        $sql = 'SELECT * FROM vtiger_emailtemplates WHERE subject = ? AND systemtemplate = ?';
+        $params = [$subject, 1];
         $result = $db->pquery($sql, $params);
         $numRows = $db->num_rows($result);
-        if (0 < $numRows) {
+        if ($numRows > 0) {
             $row = $db->query_result_rowdata($result, 0);
             $recordModel = new self();
-            $recordModel->setData($row)->setModule("EmailTemplates");
+            $recordModel->setData($row)->setModule('EmailTemplates');
+
             return $recordModel;
         }
     }
+
     public function isDeleted()
     {
-        if ($this->get("deleted") == "1") {
+        if ($this->get('deleted') == '1') {
             return true;
         }
+
         return false;
     }
+
     public function updateImageName($imageName)
     {
         $db = PearDatabase::getInstance();
         if (!empty($imageName)) {
-            $db->pquery("UPDATE vtiger_emailtemplates SET templatepath=? WHERE templateid=?", array($imageName . ".png", $this->getId()));
+            $db->pquery('UPDATE vtiger_emailtemplates SET templatepath=? WHERE templateid=?', [$imageName . '.png', $this->getId()]);
         }
     }
 }
-
-?>

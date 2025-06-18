@@ -1,5 +1,6 @@
 <?php
-/*********************************************************************************
+
+/*
  * The content of this file is subject to the EMAIL Maker license.
  * ("License"); You may not use this file except in compliance with the License
  * The Initial Developer of the Original Code is IT-Solutions4You s.r.o.
@@ -9,20 +10,20 @@
 
 class EMAILMaker_Record_Model extends Vtiger_Record_Model
 {
-
     public static function getInstanceById($templateId, $module = null)
     {
         $db = PearDatabase::getInstance();
         $result = $db->pquery('SELECT vtiger_emakertemplates_displayed.*, vtiger_emakertemplates.*  FROM vtiger_emakertemplates 
                                     LEFT JOIN vtiger_emakertemplates_displayed ON vtiger_emakertemplates_displayed.templateid = vtiger_emakertemplates.templateid 
-                                    WHERE vtiger_emakertemplates.templateid = ?', array($templateId));
+                                    WHERE vtiger_emakertemplates.templateid = ?', [$templateId]);
         if ($db->num_rows($result) > 0) {
             $row = $db->query_result_rowdata($result, 0);
             $recordModel = new self();
             $row['label'] = $row['templatename'];
 
-            return $recordModel->setData($row)->setId($templateId)->setModule($row['module'] != "" ? $row['module'] : 'EMAILMaker');
+            return $recordModel->setData($row)->setId($templateId)->setModule($row['module'] != '' ? $row['module'] : 'EMAILMaker');
         }
+
         return null;
     }
 
@@ -52,8 +53,8 @@ class EMAILMaker_Record_Model extends Vtiger_Record_Model
     }
 
     /**
-     *  Functions returns delete url
-     * @return String - delete url
+     *  Functions returns delete url.
+     * @return string - delete url
      */
     public function getDeleteUrl()
     {
@@ -66,7 +67,7 @@ class EMAILMaker_Record_Model extends Vtiger_Record_Model
     }
 
     /**
-     * Function to get the Edit View url for the record
+     * Function to get the Edit View url for the record.
      * @return <String> - Record Edit View Url
      */
     public function getEditViewUrl()
@@ -75,7 +76,7 @@ class EMAILMaker_Record_Model extends Vtiger_Record_Model
     }
 
     /**
-     * Funtion to get Duplicate Record Url
+     * Funtion to get Duplicate Record Url.
      * @return <String>
      */
     public function getDuplicateRecordUrl()
@@ -87,6 +88,7 @@ class EMAILMaker_Record_Model extends Vtiger_Record_Model
     public function getDetailViewUrl()
     {
         $module = $this->getModule();
+
         return 'index.php?module=EMAILMaker&view=' . $module->getDetailViewName() . '&record=' . $this->getId();
     }
 
@@ -99,13 +101,14 @@ class EMAILMaker_Record_Model extends Vtiger_Record_Model
     {
         if ($this->get('deleted') == '1') {
             return true;
-        } else {
-            return false;
         }
+
+        return false;
+
     }
 
     /**
-     * Function returns valuetype of the field filter
+     * Function returns valuetype of the field filter.
      * @return <String>
      */
     public function getFieldFilterValueType($fieldname)
@@ -118,6 +121,7 @@ class EMAILMaker_Record_Model extends Vtiger_Record_Model
                 }
             }
         }
+
         return false;
     }
 
@@ -125,55 +129,57 @@ class EMAILMaker_Record_Model extends Vtiger_Record_Model
     {
         $adb = PearDatabase::getInstance();
         $templateid = $this->getId();
-        $adb->pquery("DELETE FROM vtiger_emakertemplates_displayed WHERE templateid=?", array($templateid));
+        $adb->pquery('DELETE FROM vtiger_emakertemplates_displayed WHERE templateid=?', [$templateid]);
 
         $conditions = $this->transformAdvanceFilterToEMAILMakerFilter($conditions);
 
         $display_conditions = Zend_Json::encode($conditions);
 
 
-        $adb->pquery("INSERT INTO vtiger_emakertemplates_displayed (templateid,displayed,conditions) VALUES (?,?,?)", array($templateid, $displayed_value, $display_conditions));
+        $adb->pquery('INSERT INTO vtiger_emakertemplates_displayed (templateid,displayed,conditions) VALUES (?,?,?)', [$templateid, $displayed_value, $display_conditions]);
+
         return true;
     }
 
     public function transformAdvanceFilterToEMAILMakerFilter($conditions)
     {
-        $wfCondition = array();
+        $wfCondition = [];
 
         if (!empty($conditions)) {
             foreach ($conditions as $index => $condition) {
                 $columns = $condition['columns'];
                 if ($index == '1' && empty($columns)) {
-                    $wfCondition[] = array(
+                    $wfCondition[] = [
                         'fieldname' => '',
                         'operation' => '',
                         'value' => '',
                         'valuetype' => '',
                         'joincondition' => '',
-                        'groupid' => '0'
-                    );
+                        'groupid' => '0',
+                    ];
                 }
                 if (!empty($columns) && is_array($columns)) {
                     foreach ($columns as $column) {
-                        $wfCondition[] = array(
+                        $wfCondition[] = [
                             'fieldname' => $column['columnname'],
                             'operation' => $column['comparator'],
                             'value' => $column['value'],
                             'valuetype' => $column['valuetype'],
                             'joincondition' => $column['column_condition'],
                             'groupjoin' => $condition['condition'],
-                            'groupid' => $column['groupid']
-                        );
+                            'groupid' => $column['groupid'],
+                        ];
                     }
                 }
             }
         }
+
         return $wfCondition;
     }
 
     public function getConditonDisplayValue()
     {
-        $conditionList = array();
+        $conditionList = [];
         $displayed = $this->get('displayed');
         $conditions = $this->get('conditions');
         $moduleName = $this->get('module');
@@ -181,6 +187,7 @@ class EMAILMaker_Record_Model extends Vtiger_Record_Model
             $PDFMaker_Display_Model = new EMAILMaker_Display_Model();
             $conditionList = $PDFMaker_Display_Model->getConditionsForDetail($displayed, $conditions, $moduleName);
         }
+
         return $conditionList;
     }
 
@@ -193,8 +200,9 @@ class EMAILMaker_Record_Model extends Vtiger_Record_Model
     {
         $currentUser = Users_Record_Model::getCurrentUserModel();
         $adb = PearDatabase::getInstance();
-        $result_lfn = $adb->pquery('SELECT fieldname FROM vtiger_emakertemplates_default_from WHERE templateid = ? AND userid = ?',
-            array($templateId, $currentUser->id)
+        $result_lfn = $adb->pquery(
+            'SELECT fieldname FROM vtiger_emakertemplates_default_from WHERE templateid = ? AND userid = ?',
+            [$templateId, $currentUser->id],
         );
 
         return $adb->query_result($result_lfn, 0, 'fieldname');
@@ -207,10 +215,10 @@ class EMAILMaker_Record_Model extends Vtiger_Record_Model
     {
         $adb = PearDatabase::getInstance();
         $ignore_picklist_values = '';
-        $result = $adb->pquery('SELECT value FROM vtiger_emakertemplates_ignorepicklistvalues', array());
+        $result = $adb->pquery('SELECT value FROM vtiger_emakertemplates_ignorepicklistvalues', []);
 
         if ($adb->num_rows($result)) {
-            $values = array();
+            $values = [];
 
             while ($row = $adb->fetchByAssoc($result)) {
                 $values[] = $row['value'];
@@ -229,25 +237,25 @@ class EMAILMaker_Record_Model extends Vtiger_Record_Model
     {
         $current_user = Users_Record_Model::getCurrentUserModel();
         $adb = PearDatabase::getInstance();
-        $result = $adb->pquery('SELECT * FROM vtiger_emakertemplates_settings', array());
+        $result = $adb->pquery('SELECT * FROM vtiger_emakertemplates_settings', []);
 
         if ($adb->num_rows($result)) {
             $settingsResult = $adb->fetchByAssoc($result, 0);
 
-            return array(
+            return [
                 'point' => $settingsResult['decimal_point'],
                 'decimals' => $settingsResult['decimals'],
-                'thousands' => ($settingsResult['thousands_separator'] != 'sp' ? $settingsResult['thousands_separator'] : ' ')
-            );
+                'thousands' => ($settingsResult['thousands_separator'] != 'sp' ? $settingsResult['thousands_separator'] : ' '),
+            ];
         }
 
         $thousands_separator = $current_user->currency_grouping_separator;
 
-        return array(
+        return [
             'point' => $current_user->currency_decimal_separator,
             'decimals' => $current_user->no_of_currency_decimals,
-            'thousands' => ($thousands_separator != 'sp' ? $thousands_separator : ' ')
-        );
+            'thousands' => ($thousands_separator != 'sp' ? $thousands_separator : ' '),
+        ];
     }
 
     /**
@@ -259,25 +267,25 @@ class EMAILMaker_Record_Model extends Vtiger_Record_Model
         global $site_URL;
 
         $adb = PearDatabase::getInstance();
-        $result = $adb->pquery('SELECT * FROM vtiger_organizationdetails', array());
+        $result = $adb->pquery('SELECT * FROM vtiger_organizationdetails', []);
         $row = $adb->query_result_rowdata($result);
         $path = $site_URL . '/test/logo/';
-        $images = array(
+        $images = [
             'logoname' => decode_html($row['logoname']),
             'headername' => decode_html($row['headername']),
             'stamp_signature' => $row['stamp_signature'],
-        );
+        ];
 
         if (isset($images['logoname'])) {
-            $images['logoname_img'] = "<img src=\"" . $path . $images['logoname'] . "\">";
+            $images['logoname_img'] = '<img src="' . $path . $images['logoname'] . '">';
         }
 
         if (isset($images['headername'])) {
-            $images['headername_img'] = "<img src=\"" . $path . $images['headername'] . "\">";
+            $images['headername_img'] = '<img src="' . $path . $images['headername'] . '">';
         }
 
         if (isset($images['stamp_signature'])) {
-            $images['stamp_signature_img'] = "<img src=\"" . $path . $images['stamp_signature'] . "\">";
+            $images['stamp_signature_img'] = '<img src="' . $path . $images['stamp_signature'] . '">';
         }
 
         return $images;

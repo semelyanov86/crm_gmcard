@@ -9,25 +9,28 @@
  * All Rights Reserved.
  * *********************************************************************************** */
 
-class Settings_PBXManager_Gateway_Action extends Settings_Vtiger_IndexAjax_View{
-    
-    function __construct() {
+class Settings_PBXManager_Gateway_Action extends Settings_Vtiger_IndexAjax_View
+{
+    public function __construct()
+    {
         $this->exposeMethod('getSecretKey');
     }
-    
-    public function process(Vtiger_Request $request) {
+
+    public function process(Vtiger_Request $request)
+    {
         $this->getSecretKey($request);
     }
-    
-    public function getSecretKey(Vtiger_Request $request) {
+
+    public function getSecretKey(Vtiger_Request $request)
+    {
         $serverModel = PBXManager_Server_Model::getInstance();
         $response = new Vtiger_Response();
         $vtigersecretkey = $serverModel->get('vtigersecretkey');
-        if($vtigersecretkey) {
+        if ($vtigersecretkey) {
             $connector = $serverModel->getConnector();
             $vtigersecretkey = $connector->getVtigerSecretKey();
             $response->setResult($vtigersecretkey);
-        }else {
+        } else {
             $vtigersecretkey = PBXManager_Server_Model::generateVtigerSecretKey();
             $response->setResult($vtigersecretkey);
         }

@@ -1,5 +1,6 @@
 <?php
-/*********************************************************************************
+
+/*
 * The contents of this file are subject to the SugarCRM Public License Version 1.1.2
 * ("License"); You may not use this file except in compliance with the
 * License. You may obtain a copy of the License at http://www.sugarcrm.com/SPL
@@ -11,46 +12,53 @@
 * Portions created by SugarCRM are Copyright (C) SugarCRM, Inc.;
 * All Rights Reserved.
 * Contributor(s): ______________________________________.
-********************************************************************************/
+*/
 
 /**
  * The configuration file for FHS system
  * is located at /etc/vtigercrm directory.
  */
 
-include('config.inc.php');
+include 'config.inc.php';
 
 $THIS_DIR = dirname(__FILE__);
 
 /* Pre-install overrides */
 if (!isset($dbconfig)) {
-	error_reporting(E_ERROR & ~E_NOTICE & ~E_DEPRECATED);
+    error_reporting(E_ERROR & ~E_NOTICE & ~E_DEPRECATED);
 }
 
-if (file_exists($THIS_DIR.'/config_override.php')) {
-	include_once $THIS_DIR.'/config_override.php';
+if (file_exists($THIS_DIR . '/config_override.php')) {
+    include_once $THIS_DIR . '/config_override.php';
 }
 
-class VtigerConfig {
+class VtigerConfig
+{
+    public static function get($key, $defvalue = '')
+    {
+        if (self::has($key)) {
+            global ${$key};
 
-	static function get($key, $defvalue='') {
-		if (self::has($key)) {
-			global ${$key};
-			return ${$key};
-		}
-		return $defvalue;
-	}
+            return ${$key};
+        }
 
-	static function has($key) {
-		global ${$key};
-		return (isset(${$key}));
-	}
+        return $defvalue;
+    }
 
-	static function getOD($key, $defvalue='') {
-		return '';
-	}
+    public static function has($key)
+    {
+        global ${$key};
 
-	static function hasOD($key) {
-		return false;
-	}
+        return isset(${$key});
+    }
+
+    public static function getOD($key, $defvalue = '')
+    {
+        return '';
+    }
+
+    public static function hasOD($key)
+    {
+        return false;
+    }
 }

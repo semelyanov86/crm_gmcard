@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Zend Framework
+ * Zend Framework.
  *
  * LICENSE
  *
@@ -13,7 +14,6 @@
  * to license@zend.com so we can send you a copy immediately.
  *
  * @category   Zend
- * @package    Zend_Oauth
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id: AuthorizedRequest.php 24593 2012-01-05 20:35:02Z matthew $
@@ -24,7 +24,6 @@ require_once 'Zend/Oauth/Token.php';
 
 /**
  * @category   Zend
- * @package    Zend_Oauth
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
@@ -33,16 +32,12 @@ class Zend_Oauth_Token_AuthorizedRequest extends Zend_Oauth_Token
     /**
      * @var array
      */
-    protected $_data = array();
+    protected $_data = [];
 
     /**
-     * Constructor
-     *
-     * @param  null|array $data
-     * @param  null|Zend_Oauth_Http_Utility $utility
-     * @return void
+     * Constructor.
      */
-    public function __construct(array $data = null, Zend_Oauth_Http_Utility $utility = null)
+    public function __construct(?array $data = null, ?Zend_Oauth_Http_Utility $utility = null)
     {
         if ($data !== null) {
             $this->_data = $data;
@@ -54,12 +49,12 @@ class Zend_Oauth_Token_AuthorizedRequest extends Zend_Oauth_Token
         if ($utility !== null) {
             $this->_httpUtility = $utility;
         } else {
-            $this->_httpUtility = new Zend_Oauth_Http_Utility;
+            $this->_httpUtility = new Zend_Oauth_Http_Utility();
         }
     }
 
     /**
-     * Retrieve token data
+     * Retrieve token data.
      *
      * @return array
      */
@@ -69,7 +64,7 @@ class Zend_Oauth_Token_AuthorizedRequest extends Zend_Oauth_Token
     }
 
     /**
-     * Indicate if token is valid
+     * Indicate if token is valid.
      *
      * @return bool
      */
@@ -80,23 +75,25 @@ class Zend_Oauth_Token_AuthorizedRequest extends Zend_Oauth_Token
         ) {
             return true;
         }
+
         return false;
     }
 
     /**
-     * Parse string data into array
+     * Parse string data into array.
      *
      * @return array
      */
     protected function _parseData()
     {
-        $params = array();
+        $params = [];
         if (empty($this->_data)) {
             return;
         }
         foreach ($this->_data as $key => $value) {
             $params[rawurldecode($key)] = rawurldecode($value);
         }
+
         return $params;
     }
 }

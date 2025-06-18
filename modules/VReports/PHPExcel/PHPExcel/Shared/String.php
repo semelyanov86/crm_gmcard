@@ -1,343 +1,839 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-ojzfgyf5523pDN7Cljg/XBW=
+<?php
+
+/**
+ * PHPExcel_Shared_String.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_Shared_String
+{
+    /**    Constants                */
+    /**    Regular Expressions        */
+    //    Fraction
+    public const STRING_REGEXP_FRACTION    = '(-?)(\d+)\s+(\d+\/\d+)';
+
+    /**
+     * Control characters array.
+     *
+     * @var string[]
+     */
+    private static $controlCharacters = [];
+
+    /**
+     * SYLK Characters array.
+     *
+     * $var array
+     */
+    private static $SYLKCharacters = [];
+
+    /**
+     * Decimal separator.
+     *
+     * @var string
+     */
+    private static $decimalSeparator;
+
+    /**
+     * Thousands separator.
+     *
+     * @var string
+     */
+    private static $thousandsSeparator;
+
+    /**
+     * Currency code.
+     *
+     * @var string
+     */
+    private static $currencyCode;
+
+    /**
+     * Is mbstring extension avalable?
+     *
+     * @var bool
+     */
+    private static $isMbstringEnabled;
+
+    /**
+     * Is iconv extension avalable?
+     *
+     * @var bool
+     */
+    private static $isIconvEnabled;
+
+    /**
+     * Build control characters array.
+     */
+    private static function buildControlCharacters()
+    {
+        for ($i = 0; $i <= 31; ++$i) {
+            if ($i != 9 && $i != 10 && $i != 13) {
+                $find = '_x' . sprintf('%04s', strtoupper(dechex($i))) . '_';
+                $replace = chr($i);
+                self::$controlCharacters[$find] = $replace;
+            }
+        }
+    }
+
+    /**
+     * Build SYLK characters array.
+     */
+    private static function buildSYLKCharacters()
+    {
+        self::$SYLKCharacters = [
+            "\x1B 0"  => chr(0),
+            "\x1B 1"  => chr(1),
+            "\x1B 2"  => chr(2),
+            "\x1B 3"  => chr(3),
+            "\x1B 4"  => chr(4),
+            "\x1B 5"  => chr(5),
+            "\x1B 6"  => chr(6),
+            "\x1B 7"  => chr(7),
+            "\x1B 8"  => chr(8),
+            "\x1B 9"  => chr(9),
+            "\x1B :"  => chr(10),
+            "\x1B ;"  => chr(11),
+            "\x1B <"  => chr(12),
+            "\x1B :"  => chr(13),
+            "\x1B >"  => chr(14),
+            "\x1B ?"  => chr(15),
+            "\x1B!0"  => chr(16),
+            "\x1B!1"  => chr(17),
+            "\x1B!2"  => chr(18),
+            "\x1B!3"  => chr(19),
+            "\x1B!4"  => chr(20),
+            "\x1B!5"  => chr(21),
+            "\x1B!6"  => chr(22),
+            "\x1B!7"  => chr(23),
+            "\x1B!8"  => chr(24),
+            "\x1B!9"  => chr(25),
+            "\x1B!:"  => chr(26),
+            "\x1B!;"  => chr(27),
+            "\x1B!<"  => chr(28),
+            "\x1B!="  => chr(29),
+            "\x1B!>"  => chr(30),
+            "\x1B!?"  => chr(31),
+            "\x1B'?"  => chr(127),
+            "\x1B(0"  => '€', // 128 in CP1252
+            "\x1B(2"  => '‚', // 130 in CP1252
+            "\x1B(3"  => 'ƒ', // 131 in CP1252
+            "\x1B(4"  => '„', // 132 in CP1252
+            "\x1B(5"  => '…', // 133 in CP1252
+            "\x1B(6"  => '†', // 134 in CP1252
+            "\x1B(7"  => '‡', // 135 in CP1252
+            "\x1B(8"  => 'ˆ', // 136 in CP1252
+            "\x1B(9"  => '‰', // 137 in CP1252
+            "\x1B(:"  => 'Š', // 138 in CP1252
+            "\x1B(;"  => '‹', // 139 in CP1252
+            "\x1BNj"  => 'Œ', // 140 in CP1252
+            "\x1B(>"  => 'Ž', // 142 in CP1252
+            "\x1B)1"  => '‘', // 145 in CP1252
+            "\x1B)2"  => '’', // 146 in CP1252
+            "\x1B)3"  => '“', // 147 in CP1252
+            "\x1B)4"  => '”', // 148 in CP1252
+            "\x1B)5"  => '•', // 149 in CP1252
+            "\x1B)6"  => '–', // 150 in CP1252
+            "\x1B)7"  => '—', // 151 in CP1252
+            "\x1B)8"  => '˜', // 152 in CP1252
+            "\x1B)9"  => '™', // 153 in CP1252
+            "\x1B):"  => 'š', // 154 in CP1252
+            "\x1B);"  => '›', // 155 in CP1252
+            "\x1BNz"  => 'œ', // 156 in CP1252
+            "\x1B)>"  => 'ž', // 158 in CP1252
+            "\x1B)?"  => 'Ÿ', // 159 in CP1252
+            "\x1B*0"  => ' ', // 160 in CP1252
+            "\x1BN!"  => '¡', // 161 in CP1252
+            "\x1BN\"" => '¢', // 162 in CP1252
+            "\x1BN#"  => '£', // 163 in CP1252
+            "\x1BN("  => '¤', // 164 in CP1252
+            "\x1BN%"  => '¥', // 165 in CP1252
+            "\x1B*6"  => '¦', // 166 in CP1252
+            "\x1BN'"  => '§', // 167 in CP1252
+            "\x1BNH " => '¨', // 168 in CP1252
+            "\x1BNS"  => '©', // 169 in CP1252
+            "\x1BNc"  => 'ª', // 170 in CP1252
+            "\x1BN+"  => '«', // 171 in CP1252
+            "\x1B*<"  => '¬', // 172 in CP1252
+            "\x1B*="  => '­', // 173 in CP1252
+            "\x1BNR"  => '®', // 174 in CP1252
+            "\x1B*?"  => '¯', // 175 in CP1252
+            "\x1BN0"  => '°', // 176 in CP1252
+            "\x1BN1"  => '±', // 177 in CP1252
+            "\x1BN2"  => '²', // 178 in CP1252
+            "\x1BN3"  => '³', // 179 in CP1252
+            "\x1BNB " => '´', // 180 in CP1252
+            "\x1BN5"  => 'µ', // 181 in CP1252
+            "\x1BN6"  => '¶', // 182 in CP1252
+            "\x1BN7"  => '·', // 183 in CP1252
+            "\x1B+8"  => '¸', // 184 in CP1252
+            "\x1BNQ"  => '¹', // 185 in CP1252
+            "\x1BNk"  => 'º', // 186 in CP1252
+            "\x1BN;"  => '»', // 187 in CP1252
+            "\x1BN<"  => '¼', // 188 in CP1252
+            "\x1BN="  => '½', // 189 in CP1252
+            "\x1BN>"  => '¾', // 190 in CP1252
+            "\x1BN?"  => '¿', // 191 in CP1252
+            "\x1BNAA" => 'À', // 192 in CP1252
+            "\x1BNBA" => 'Á', // 193 in CP1252
+            "\x1BNCA" => 'Â', // 194 in CP1252
+            "\x1BNDA" => 'Ã', // 195 in CP1252
+            "\x1BNHA" => 'Ä', // 196 in CP1252
+            "\x1BNJA" => 'Å', // 197 in CP1252
+            "\x1BNa"  => 'Æ', // 198 in CP1252
+            "\x1BNKC" => 'Ç', // 199 in CP1252
+            "\x1BNAE" => 'È', // 200 in CP1252
+            "\x1BNBE" => 'É', // 201 in CP1252
+            "\x1BNCE" => 'Ê', // 202 in CP1252
+            "\x1BNHE" => 'Ë', // 203 in CP1252
+            "\x1BNAI" => 'Ì', // 204 in CP1252
+            "\x1BNBI" => 'Í', // 205 in CP1252
+            "\x1BNCI" => 'Î', // 206 in CP1252
+            "\x1BNHI" => 'Ï', // 207 in CP1252
+            "\x1BNb"  => 'Ð', // 208 in CP1252
+            "\x1BNDN" => 'Ñ', // 209 in CP1252
+            "\x1BNAO" => 'Ò', // 210 in CP1252
+            "\x1BNBO" => 'Ó', // 211 in CP1252
+            "\x1BNCO" => 'Ô', // 212 in CP1252
+            "\x1BNDO" => 'Õ', // 213 in CP1252
+            "\x1BNHO" => 'Ö', // 214 in CP1252
+            "\x1B-7"  => '×', // 215 in CP1252
+            "\x1BNi"  => 'Ø', // 216 in CP1252
+            "\x1BNAU" => 'Ù', // 217 in CP1252
+            "\x1BNBU" => 'Ú', // 218 in CP1252
+            "\x1BNCU" => 'Û', // 219 in CP1252
+            "\x1BNHU" => 'Ü', // 220 in CP1252
+            "\x1B-="  => 'Ý', // 221 in CP1252
+            "\x1BNl"  => 'Þ', // 222 in CP1252
+            "\x1BN{"  => 'ß', // 223 in CP1252
+            "\x1BNAa" => 'à', // 224 in CP1252
+            "\x1BNBa" => 'á', // 225 in CP1252
+            "\x1BNCa" => 'â', // 226 in CP1252
+            "\x1BNDa" => 'ã', // 227 in CP1252
+            "\x1BNHa" => 'ä', // 228 in CP1252
+            "\x1BNJa" => 'å', // 229 in CP1252
+            "\x1BNq"  => 'æ', // 230 in CP1252
+            "\x1BNKc" => 'ç', // 231 in CP1252
+            "\x1BNAe" => 'è', // 232 in CP1252
+            "\x1BNBe" => 'é', // 233 in CP1252
+            "\x1BNCe" => 'ê', // 234 in CP1252
+            "\x1BNHe" => 'ë', // 235 in CP1252
+            "\x1BNAi" => 'ì', // 236 in CP1252
+            "\x1BNBi" => 'í', // 237 in CP1252
+            "\x1BNCi" => 'î', // 238 in CP1252
+            "\x1BNHi" => 'ï', // 239 in CP1252
+            "\x1BNs"  => 'ð', // 240 in CP1252
+            "\x1BNDn" => 'ñ', // 241 in CP1252
+            "\x1BNAo" => 'ò', // 242 in CP1252
+            "\x1BNBo" => 'ó', // 243 in CP1252
+            "\x1BNCo" => 'ô', // 244 in CP1252
+            "\x1BNDo" => 'õ', // 245 in CP1252
+            "\x1BNHo" => 'ö', // 246 in CP1252
+            "\x1B/7"  => '÷', // 247 in CP1252
+            "\x1BNy"  => 'ø', // 248 in CP1252
+            "\x1BNAu" => 'ù', // 249 in CP1252
+            "\x1BNBu" => 'ú', // 250 in CP1252
+            "\x1BNCu" => 'û', // 251 in CP1252
+            "\x1BNHu" => 'ü', // 252 in CP1252
+            "\x1B/="  => 'ý', // 253 in CP1252
+            "\x1BN|"  => 'þ', // 254 in CP1252
+            "\x1BNHy" => 'ÿ', // 255 in CP1252
+        ];
+    }
+
+    /**
+     * Get whether mbstring extension is available.
+     *
+     * @return bool
+     */
+    public static function getIsMbstringEnabled()
+    {
+        if (isset(self::$isMbstringEnabled)) {
+            return self::$isMbstringEnabled;
+        }
+
+        self::$isMbstringEnabled = function_exists('mb_convert_encoding')
+            ? true : false;
+
+        return self::$isMbstringEnabled;
+    }
+
+    /**
+     * Get whether iconv extension is available.
+     *
+     * @return bool
+     */
+    public static function getIsIconvEnabled()
+    {
+        if (isset(self::$isIconvEnabled)) {
+            return self::$isIconvEnabled;
+        }
+
+        // Fail if iconv doesn't exist
+        if (!function_exists('iconv')) {
+            self::$isIconvEnabled = false;
+
+            return false;
+        }
+
+        // Sometimes iconv is not working, and e.g. iconv('UTF-8', 'UTF-16LE', 'x') just returns false,
+        if (!@iconv('UTF-8', 'UTF-16LE', 'x')) {
+            self::$isIconvEnabled = false;
+
+            return false;
+        }
+
+        // Sometimes iconv_substr('A', 0, 1, 'UTF-8') just returns false in PHP 5.2.0
+        // we cannot use iconv in that case either (http://bugs.php.net/bug.php?id=37773)
+        if (!@iconv_substr('A', 0, 1, 'UTF-8')) {
+            self::$isIconvEnabled = false;
+
+            return false;
+        }
+
+        // CUSTOM: IBM AIX iconv() does not work
+        if (defined('PHP_OS') && @stristr(PHP_OS, 'AIX') && defined('ICONV_IMPL') && (@strcasecmp(ICONV_IMPL, 'unknown') == 0) && defined('ICONV_VERSION') && (@strcasecmp(ICONV_VERSION, 'unknown') == 0)) {
+            self::$isIconvEnabled = false;
+
+            return false;
+        }
+
+        // If we reach here no problems were detected with iconv
+        self::$isIconvEnabled = true;
+
+        return true;
+    }
+
+    public static function buildCharacterSets()
+    {
+        if (empty(self::$controlCharacters)) {
+            self::buildControlCharacters();
+        }
+        if (empty(self::$SYLKCharacters)) {
+            self::buildSYLKCharacters();
+        }
+    }
+
+    /**
+     * Convert from OpenXML escaped control character to PHP control character.
+     *
+     * Excel 2007 team:
+     * ----------------
+     * That's correct, control characters are stored directly in the shared-strings table.
+     * We do encode characters that cannot be represented in XML using the following escape sequence:
+     * _xHHHH_ where H represents a hexadecimal character in the character's value...
+     * So you could end up with something like _x0008_ in a string (either in a cell value (<v>)
+     * element or in the shared string <t> element.
+     *
+     * @param     string    $value    Value to unescape
+     * @return     string
+     */
+    public static function ControlCharacterOOXML2PHP($value = '')
+    {
+        return str_replace(array_keys(self::$controlCharacters), array_values(self::$controlCharacters), $value);
+    }
+
+    /**
+     * Convert from PHP control character to OpenXML escaped control character.
+     *
+     * Excel 2007 team:
+     * ----------------
+     * That's correct, control characters are stored directly in the shared-strings table.
+     * We do encode characters that cannot be represented in XML using the following escape sequence:
+     * _xHHHH_ where H represents a hexadecimal character in the character's value...
+     * So you could end up with something like _x0008_ in a string (either in a cell value (<v>)
+     * element or in the shared string <t> element.
+     *
+     * @param     string    $value    Value to escape
+     * @return     string
+     */
+    public static function ControlCharacterPHP2OOXML($value = '')
+    {
+        return str_replace(array_values(self::$controlCharacters), array_keys(self::$controlCharacters), $value);
+    }
+
+    /**
+     * Try to sanitize UTF8, stripping invalid byte sequences. Not perfect. Does not surrogate characters.
+     *
+     * @param string $value
+     * @return string
+     */
+    public static function SanitizeUTF8($value)
+    {
+        if (self::getIsIconvEnabled()) {
+            $value = @iconv('UTF-8', 'UTF-8', $value);
+
+            return $value;
+        }
+
+        if (self::getIsMbstringEnabled()) {
+            $value = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
+
+            return $value;
+        }
+
+        // else, no conversion
+        return $value;
+    }
+
+    /**
+     * Check if a string contains UTF8 data.
+     *
+     * @param string $value
+     * @return bool
+     */
+    public static function IsUTF8($value = '')
+    {
+        return $value === '' || preg_match('/^./su', $value) === 1;
+    }
+
+    /**
+     * Formats a numeric value as a string for output in various output writers forcing
+     * point as decimal separator in case locale is other than English.
+     *
+     * @return string
+     */
+    public static function FormatNumber($value)
+    {
+        if (is_float($value)) {
+            return str_replace(',', '.', $value);
+        }
+
+        return (string) $value;
+    }
+
+    /**
+     * Converts a UTF-8 string into BIFF8 Unicode string data (8-bit string length)
+     * Writes the string using uncompressed notation, no rich text, no Asian phonetics
+     * If mbstring extension is not available, ASCII is assumed, and compressed notation is used
+     * although this will give wrong results for non-ASCII strings
+     * see OpenOffice.org's Documentation of the Microsoft Excel File Format, sect. 2.5.3.
+     *
+     * @param string  $value    UTF-8 encoded string
+     * @param mixed[] $arrcRuns Details of rich text runs in $value
+     * @return string
+     */
+    public static function UTF8toBIFF8UnicodeShort($value, $arrcRuns = [])
+    {
+        // character count
+        $ln = self::CountCharacters($value, 'UTF-8');
+        // option flags
+        if (empty($arrcRuns)) {
+            $opt = (self::getIsIconvEnabled() || self::getIsMbstringEnabled())
+                ? 0x00_01 : 0x00_00;
+            $data = pack('CC', $ln, $opt);
+            // characters
+            $data .= self::ConvertEncoding($value, 'UTF-16LE', 'UTF-8');
+        } else {
+            $data = pack('vC', $ln, 0x09);
+            $data .= pack('v', count($arrcRuns));
+            // characters
+            $data .= self::ConvertEncoding($value, 'UTF-16LE', 'UTF-8');
+            foreach ($arrcRuns as $cRun) {
+                $data .= pack('v', $cRun['strlen']);
+                $data .= pack('v', $cRun['fontidx']);
+            }
+        }
+
+        return $data;
+    }
+
+    /**
+     * Converts a UTF-8 string into BIFF8 Unicode string data (16-bit string length)
+     * Writes the string using uncompressed notation, no rich text, no Asian phonetics
+     * If mbstring extension is not available, ASCII is assumed, and compressed notation is used
+     * although this will give wrong results for non-ASCII strings
+     * see OpenOffice.org's Documentation of the Microsoft Excel File Format, sect. 2.5.3.
+     *
+     * @param string $value UTF-8 encoded string
+     * @return string
+     */
+    public static function UTF8toBIFF8UnicodeLong($value)
+    {
+        // character count
+        $ln = self::CountCharacters($value, 'UTF-8');
+
+        // option flags
+        $opt = (self::getIsIconvEnabled() || self::getIsMbstringEnabled())
+            ? 0x00_01 : 0x00_00;
+
+        // characters
+        $chars = self::ConvertEncoding($value, 'UTF-16LE', 'UTF-8');
+
+        $data = pack('vC', $ln, $opt) . $chars;
+
+        return $data;
+    }
+
+    /**
+     * Convert string from one encoding to another. First try mbstring, then iconv, finally strlen.
+     *
+     * @param string $value
+     * @param string $to Encoding to convert to, e.g. 'UTF-8'
+     * @param string $from Encoding to convert from, e.g. 'UTF-16LE'
+     * @return string
+     */
+    public static function ConvertEncoding($value, $to, $from)
+    {
+        if (self::getIsIconvEnabled()) {
+            return iconv($from, $to, $value);
+        }
+
+        if (self::getIsMbstringEnabled()) {
+            return mb_convert_encoding($value, $to, $from);
+        }
+
+        if ($from == 'UTF-16LE') {
+            return self::utf16_decode($value, false);
+        }
+        if ($from == 'UTF-16BE') {
+            return self::utf16_decode($value);
+        }
+
+        // else, no conversion
+        return $value;
+    }
+
+    /**
+     * Decode UTF-16 encoded strings.
+     *
+     * Can handle both BOM'ed data and un-BOM'ed data.
+     * Assumes Big-Endian byte order if no BOM is available.
+     * This function was taken from http://php.net/manual/en/function.utf8-decode.php
+     * and $bom_be parameter added.
+     *
+     * @param   string  $str  UTF-16 encoded data to decode
+     * @return  string  UTF-8 / ISO encoded data
+     * @version 0.2 / 2010-05-13
+     * @author  Rasmus Andersson {@link http://rasmusandersson.se/}
+     * @author vadik56
+     */
+    public static function utf16_decode($str, $bom_be = true)
+    {
+        if (strlen($str) < 2) {
+            return $str;
+        }
+        $c0 = ord($str[0]);
+        $c1 = ord($str[1]);
+        if ($c0 == 0xFE && $c1 == 0xFF) {
+            $str = substr($str, 2);
+        } elseif ($c0 == 0xFF && $c1 == 0xFE) {
+            $str = substr($str, 2);
+            $bom_be = false;
+        }
+        $len = strlen($str);
+        $newstr = '';
+        for ($i = 0; $i < $len; $i += 2) {
+            if ($bom_be) {
+                $val = ord($str[$i])   << 4;
+                $val += ord($str[$i + 1]);
+            } else {
+                $val = ord($str[$i + 1]) << 4;
+                $val += ord($str[$i]);
+            }
+            $newstr .= ($val == 0x2_28) ? "\n" : chr($val);
+        }
+
+        return $newstr;
+    }
+
+    /**
+     * Get character count. First try mbstring, then iconv, finally strlen.
+     *
+     * @param string $value
+     * @param string $enc Encoding
+     * @return int Character count
+     */
+    public static function CountCharacters($value, $enc = 'UTF-8')
+    {
+        if (self::getIsMbstringEnabled()) {
+            return mb_strlen($value, $enc);
+        }
+
+        if (self::getIsIconvEnabled()) {
+            return iconv_strlen($value, $enc);
+        }
+
+        // else strlen
+        return strlen($value);
+    }
+
+    /**
+     * Get a substring of a UTF-8 encoded string. First try mbstring, then iconv, finally strlen.
+     *
+     * @param string $pValue UTF-8 encoded string
+     * @param int $pStart Start offset
+     * @param int $pLength Maximum number of characters in substring
+     * @return string
+     */
+    public static function Substring($pValue = '', $pStart = 0, $pLength = 0)
+    {
+        if (self::getIsMbstringEnabled()) {
+            return mb_substr($pValue, $pStart, $pLength, 'UTF-8');
+        }
+
+        if (self::getIsIconvEnabled()) {
+            return iconv_substr($pValue, $pStart, $pLength, 'UTF-8');
+        }
+
+        // else substr
+        return substr($pValue, $pStart, $pLength);
+    }
+
+    /**
+     * Convert a UTF-8 encoded string to upper case.
+     *
+     * @param string $pValue UTF-8 encoded string
+     * @return string
+     */
+    public static function StrToUpper($pValue = '')
+    {
+        if (function_exists('mb_convert_case')) {
+            return mb_convert_case($pValue, MB_CASE_UPPER, 'UTF-8');
+        }
+
+        return strtoupper($pValue);
+    }
+
+    /**
+     * Convert a UTF-8 encoded string to lower case.
+     *
+     * @param string $pValue UTF-8 encoded string
+     * @return string
+     */
+    public static function StrToLower($pValue = '')
+    {
+        if (function_exists('mb_convert_case')) {
+            return mb_convert_case($pValue, MB_CASE_LOWER, 'UTF-8');
+        }
+
+        return strtolower($pValue);
+    }
+
+    /**
+     * Convert a UTF-8 encoded string to title/proper case
+     *    (uppercase every first character in each word, lower case all other characters).
+     *
+     * @param string $pValue UTF-8 encoded string
+     * @return string
+     */
+    public static function StrToTitle($pValue = '')
+    {
+        if (function_exists('mb_convert_case')) {
+            return mb_convert_case($pValue, MB_CASE_TITLE, 'UTF-8');
+        }
+
+        return ucwords($pValue);
+    }
+
+    public static function mb_is_upper($char)
+    {
+        return mb_strtolower($char, 'UTF-8') != $char;
+    }
+
+    public static function mb_str_split($string)
+    {
+        // Split at all position not after the start: ^
+        // and not before the end: $
+        return preg_split('/(?<!^)(?!$)/u', $string);
+    }
+
+    /**
+     * Reverse the case of a string, so that all uppercase characters become lowercase
+     *    and all lowercase characters become uppercase.
+     *
+     * @param string $pValue UTF-8 encoded string
+     * @return string
+     */
+    public static function StrCaseReverse($pValue = '')
+    {
+        if (self::getIsMbstringEnabled()) {
+            $characters = self::mb_str_split($pValue);
+            foreach ($characters as &$character) {
+                if (self::mb_is_upper($character)) {
+                    $character = mb_strtolower($character, 'UTF-8');
+                } else {
+                    $character = mb_strtoupper($character, 'UTF-8');
+                }
+            }
+
+            return implode('', $characters);
+        }
+
+        return strtolower($pValue) ^ strtoupper($pValue) ^ $pValue;
+    }
+
+    /**
+     * Identify whether a string contains a fractional numeric value,
+     *    and convert it to a numeric if it is.
+     *
+     * @param string &$operand string value to test
+     * @return bool
+     */
+    public static function convertToNumberIfFraction(&$operand)
+    {
+        if (preg_match('/^' . self::STRING_REGEXP_FRACTION . '$/i', $operand, $match)) {
+            $sign = ($match[1] == '-') ? '-' : '+';
+            $fractionFormula = '=' . $sign . $match[2] . $sign . $match[3];
+            $operand = PHPExcel_Calculation::getInstance()->_calculateFormulaValue($fractionFormula);
+
+            return true;
+        }
+
+        return false;
+    }    //    function convertToNumberIfFraction()
+
+    /**
+     * Get the decimal separator. If it has not yet been set explicitly, try to obtain number
+     * formatting information from locale.
+     *
+     * @return string
+     */
+    public static function getDecimalSeparator()
+    {
+        if (!isset(self::$decimalSeparator)) {
+            $localeconv = localeconv();
+            self::$decimalSeparator = ($localeconv['decimal_point'] != '')
+                ? $localeconv['decimal_point'] : $localeconv['mon_decimal_point'];
+
+            if (self::$decimalSeparator == '') {
+                // Default to .
+                self::$decimalSeparator = '.';
+            }
+        }
+
+        return self::$decimalSeparator;
+    }
+
+    /**
+     * Set the decimal separator. Only used by PHPExcel_Style_NumberFormat::toFormattedString()
+     * to format output by PHPExcel_Writer_HTML and PHPExcel_Writer_PDF.
+     *
+     * @param string $pValue Character for decimal separator
+     */
+    public static function setDecimalSeparator($pValue = '.')
+    {
+        self::$decimalSeparator = $pValue;
+    }
+
+    /**
+     * Get the thousands separator. If it has not yet been set explicitly, try to obtain number
+     * formatting information from locale.
+     *
+     * @return string
+     */
+    public static function getThousandsSeparator()
+    {
+        if (!isset(self::$thousandsSeparator)) {
+            $localeconv = localeconv();
+            self::$thousandsSeparator = ($localeconv['thousands_sep'] != '')
+                ? $localeconv['thousands_sep'] : $localeconv['mon_thousands_sep'];
+
+            if (self::$thousandsSeparator == '') {
+                // Default to .
+                self::$thousandsSeparator = ',';
+            }
+        }
+
+        return self::$thousandsSeparator;
+    }
+
+    /**
+     * Set the thousands separator. Only used by PHPExcel_Style_NumberFormat::toFormattedString()
+     * to format output by PHPExcel_Writer_HTML and PHPExcel_Writer_PDF.
+     *
+     * @param string $pValue Character for thousands separator
+     */
+    public static function setThousandsSeparator($pValue = ',')
+    {
+        self::$thousandsSeparator = $pValue;
+    }
+
+    /**
+     *    Get the currency code. If it has not yet been set explicitly, try to obtain the
+     *        symbol information from locale.
+     *
+     * @return string
+     */
+    public static function getCurrencyCode()
+    {
+        if (!isset(self::$currencyCode)) {
+            $localeconv = localeconv();
+            self::$currencyCode = ($localeconv['currency_symbol'] != '')
+                ? $localeconv['currency_symbol'] : $localeconv['int_curr_symbol'];
+
+            if (self::$currencyCode == '') {
+                // Default to $
+                self::$currencyCode = '$';
+            }
+        }
+
+        return self::$currencyCode;
+    }
+
+    /**
+     * Set the currency code. Only used by PHPExcel_Style_NumberFormat::toFormattedString()
+     *        to format output by PHPExcel_Writer_HTML and PHPExcel_Writer_PDF.
+     *
+     * @param string $pValue Character for currency code
+     */
+    public static function setCurrencyCode($pValue = '$')
+    {
+        self::$currencyCode = $pValue;
+    }
+
+    /**
+     * Convert SYLK encoded string to UTF-8.
+     *
+     * @param string $pValue
+     * @return string UTF-8 encoded string
+     */
+    public static function SYLKtoUTF8($pValue = '')
+    {
+        // If there is no escape character in the string there is nothing to do
+        if (strpos($pValue, '') === false) {
+            return $pValue;
+        }
+
+        foreach (self::$SYLKCharacters as $k => $v) {
+            $pValue = str_replace($k, $v, $pValue);
+        }
+
+        return $pValue;
+    }
+
+    /**
+     * Retrieve any leading numeric part of a string, or return the full string if no leading numeric
+     *    (handles basic integer or float, but not exponent or non decimal).
+     *
+     * @param    string    $value
+     * @return    mixed    string or only the leading numeric part of the string
+     */
+    public static function testStringAsNumeric($value)
+    {
+        if (is_numeric($value)) {
+            return $value;
+        }
+        $v = floatval($value);
+
+        return (is_numeric(substr($value, 0, strlen($v)))) ? $v : $value;
+    }
+}

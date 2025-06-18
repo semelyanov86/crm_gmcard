@@ -1,121 +1,253 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ *    @author Paul Meagher
+ *    @author Bartosz Matosiuk
+ *    @author Michael Bommarito
+ *    @version 1.1
+ *    @license PHP v3.0
+ */
+class PHPExcel_Shared_JAMA_LUDecomposition
+{
+    public const MATRIX_SINGULAR_EXCEPTION    = 'Can only perform operation on singular matrix.';
+    public const MATRIX_SQUARE_EXCEPTION      = 'Mismatched Row dimension';
+
+    /**
+     *    Decomposition storage.
+     *    @var array
+     */
+    private $LU = [];
+
+    /**
+     *    Row dimension.
+     *    @var int
+     */
+    private $m;
+
+    /**
+     *    Column dimension.
+     *    @var int
+     */
+    private $n;
+
+    /**
+     *    Pivot sign.
+     *    @var int
+     */
+    private $pivsign;
+
+    /**
+     *    Internal storage of pivot vector.
+     *    @var array
+     */
+    private $piv = [];
+
+    /**
+     *    LU Decomposition constructor.
+     *
+     *    @param $A Rectangular matrix
+     *    @return Structure to access L, U and piv
+     */
+    public function __construct($A)
+    {
+        if ($A instanceof PHPExcel_Shared_JAMA_Matrix) {
+            // Use a "left-looking", dot-product, Crout/Doolittle algorithm.
+            $this->LU = $A->getArray();
+            $this->m  = $A->getRowDimension();
+            $this->n  = $A->getColumnDimension();
+            for ($i = 0; $i < $this->m; ++$i) {
+                $this->piv[$i] = $i;
+            }
+            $this->pivsign = 1;
+            $LUrowi = $LUcolj = [];
+
+            // Outer loop.
+            for ($j = 0; $j < $this->n; ++$j) {
+                // Make a copy of the j-th column to localize references.
+                for ($i = 0; $i < $this->m; ++$i) {
+                    $LUcolj[$i] = &$this->LU[$i][$j];
+                }
+                // Apply previous transformations.
+                for ($i = 0; $i < $this->m; ++$i) {
+                    $LUrowi = $this->LU[$i];
+                    // Most of the time is spent in the following dot product.
+                    $kmax = min($i, $j);
+                    $s = 0.0;
+                    for ($k = 0; $k < $kmax; ++$k) {
+                        $s += $LUrowi[$k] * $LUcolj[$k];
+                    }
+                    $LUrowi[$j] = $LUcolj[$i] -= $s;
+                }
+                // Find pivot and exchange if necessary.
+                $p = $j;
+                for ($i = $j + 1; $i < $this->m; ++$i) {
+                    if (abs($LUcolj[$i]) > abs($LUcolj[$p])) {
+                        $p = $i;
+                    }
+                }
+                if ($p != $j) {
+                    for ($k = 0; $k < $this->n; ++$k) {
+                        $t = $this->LU[$p][$k];
+                        $this->LU[$p][$k] = $this->LU[$j][$k];
+                        $this->LU[$j][$k] = $t;
+                    }
+                    $k = $this->piv[$p];
+                    $this->piv[$p] = $this->piv[$j];
+                    $this->piv[$j] = $k;
+                    $this->pivsign = $this->pivsign * -1;
+                }
+                // Compute multipliers.
+                if (($j < $this->m) && ($this->LU[$j][$j] != 0.0)) {
+                    for ($i = $j + 1; $i < $this->m; ++$i) {
+                        $this->LU[$i][$j] /= $this->LU[$j][$j];
+                    }
+                }
+            }
+        } else {
+            throw new PHPExcel_Calculation_Exception(PHPExcel_Shared_JAMA_Matrix::ARGUMENT_TYPE_EXCEPTION);
+        }
+    }    //    function __construct()
+
+    /**
+     *    Get lower triangular factor.
+     *
+     *    @return array Lower triangular factor
+     */
+    public function getL()
+    {
+        for ($i = 0; $i < $this->m; ++$i) {
+            for ($j = 0; $j < $this->n; ++$j) {
+                if ($i > $j) {
+                    $L[$i][$j] = $this->LU[$i][$j];
+                } elseif ($i == $j) {
+                    $L[$i][$j] = 1.0;
+                } else {
+                    $L[$i][$j] = 0.0;
+                }
+            }
+        }
+
+        return new PHPExcel_Shared_JAMA_Matrix($L);
+    }    //    function getL()
+
+    /**
+     *    Get upper triangular factor.
+     *
+     *    @return array Upper triangular factor
+     */
+    public function getU()
+    {
+        for ($i = 0; $i < $this->n; ++$i) {
+            for ($j = 0; $j < $this->n; ++$j) {
+                if ($i <= $j) {
+                    $U[$i][$j] = $this->LU[$i][$j];
+                } else {
+                    $U[$i][$j] = 0.0;
+                }
+            }
+        }
+
+        return new PHPExcel_Shared_JAMA_Matrix($U);
+    }    //    function getU()
+
+    /**
+     *    Return pivot permutation vector.
+     *
+     *    @return array Pivot vector
+     */
+    public function getPivot()
+    {
+        return $this->piv;
+    }    //    function getPivot()
+
+    /**
+     *    Alias for getPivot.
+     *
+     *    @see getPivot
+     */
+    public function getDoublePivot()
+    {
+        return $this->getPivot();
+    }    //    function getDoublePivot()
+
+    /**
+     *    Is the matrix nonsingular?
+     *
+     *    @return true if U, and hence A, is nonsingular
+     */
+    public function isNonsingular()
+    {
+        for ($j = 0; $j < $this->n; ++$j) {
+            if ($this->LU[$j][$j] == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }    //    function isNonsingular()
+
+    /**
+     *    Count determinants.
+     *
+     *    @return array d matrix deterninat
+     */
+    public function det()
+    {
+        if ($this->m == $this->n) {
+            $d = $this->pivsign;
+            for ($j = 0; $j < $this->n; ++$j) {
+                $d *= $this->LU[$j][$j];
+            }
+
+            return $d;
+        }
+
+        throw new PHPExcel_Calculation_Exception(PHPExcel_Shared_JAMA_Matrix::MATRIX_DIMENSION_EXCEPTION);
+
+    }    //    function det()
+
+    /**
+     *    Solve A*X = B.
+     *
+     *    @param  $B  a Matrix with as many rows as A and any number of columns
+     *    @return  X so that L*U*X = B(piv,:)
+     *    @PHPExcel_Calculation_Exception  IllegalArgumentException Matrix row dimensions must agree.
+     *    @PHPExcel_Calculation_Exception  RuntimeException  Matrix is singular.
+     */
+    public function solve($B)
+    {
+        if ($B->getRowDimension() == $this->m) {
+            if ($this->isNonsingular()) {
+                // Copy right hand side with pivoting
+                $nx = $B->getColumnDimension();
+                $X  = $B->getMatrix($this->piv, 0, $nx - 1);
+                // Solve L*Y = B(piv,:)
+                for ($k = 0; $k < $this->n; ++$k) {
+                    for ($i = $k + 1; $i < $this->n; ++$i) {
+                        for ($j = 0; $j < $nx; ++$j) {
+                            $X->A[$i][$j] -= $X->A[$k][$j] * $this->LU[$i][$k];
+                        }
+                    }
+                }
+                // Solve U*X = Y;
+                for ($k = $this->n - 1; $k >= 0; --$k) {
+                    for ($j = 0; $j < $nx; ++$j) {
+                        $X->A[$k][$j] /= $this->LU[$k][$k];
+                    }
+                    for ($i = 0; $i < $k; ++$i) {
+                        for ($j = 0; $j < $nx; ++$j) {
+                            $X->A[$i][$j] -= $X->A[$k][$j] * $this->LU[$i][$k];
+                        }
+                    }
+                }
+
+                return $X;
+            }
+
+            throw new PHPExcel_Calculation_Exception(self::MATRIX_SINGULAR_EXCEPTION);
+
+        } else {
+            throw new PHPExcel_Calculation_Exception(self::MATRIX_SQUARE_EXCEPTION);
+        }
+    }
+}

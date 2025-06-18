@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
 * The contents of this file are subject to the vtiger CRM Public License Version 1.0
 * ("License"); You may not use this file except in compliance with the License
@@ -6,29 +7,29 @@
 * The Initial Developer of the Original Code is vtiger.
 * Portions created by vtiger are Copyright (C) vtiger.
 * All Rights Reserved.
-*************************************************************************************/
-$languageStrings = array(
-	'Map'	=>	"Hartă",
-	'EXTENTIONNAME'	=>	"Google",
-	'LBL_UPDATES_CRM'	=>	"Actualizări în CRM",
-	'LBL_UPDATES_GOOGLE'	=>	"Actualizări în Google",
-	'LBL_UPDATED'	=>	"Actualizat",
-	'LBL_ADDED'	=>	"Adăugat",
-	'LBL_DELETED'	=>	"Eliminat",
-	'LBL_SYNCRONIZED'	=>	"Sincronizate",
-	'LBL_NOT_SYNCRONIZED'	=>	"Nu ați sincronizat încă",
-	'LBL_SYNC_BUTTON'	=>	"Sincroniza acum",
-	'LBL_REMOVE_SYNC'	=>	"Scoateți Sync",
-	'LBL_MORE_VTIGER'	=>	"Există mai multe înregistrări să fie sincronizate în vtiger",
-	'LBL_MORE_GOOGLE'	=>	"Există mai multe înregistrări să fie sincronizate în Google",
-	'Contact Name'	=>	"Nume de contact",
-	'Email'	=>	"E-mail",
-	'Mobile Phone'	=>	"Telefon mobil",
-	'Address'	=>	"Adresa",
-	'Event Title'	=>	"Titlul evenimentului",
-	'Start Date'	=>	"Data începerii",
-	'Until Date'	=>	"Până la data",
-	'Description'	=>	"Descriere",
+*/
+$languageStrings = [
+    'Map'	=>	'Hartă',
+    'EXTENTIONNAME'	=>	'Google',
+    'LBL_UPDATES_CRM'	=>	'Actualizări în CRM',
+    'LBL_UPDATES_GOOGLE'	=>	'Actualizări în Google',
+    'LBL_UPDATED'	=>	'Actualizat',
+    'LBL_ADDED'	=>	'Adăugat',
+    'LBL_DELETED'	=>	'Eliminat',
+    'LBL_SYNCRONIZED'	=>	'Sincronizate',
+    'LBL_NOT_SYNCRONIZED'	=>	'Nu ați sincronizat încă',
+    'LBL_SYNC_BUTTON'	=>	'Sincroniza acum',
+    'LBL_REMOVE_SYNC'	=>	'Scoateți Sync',
+    'LBL_MORE_VTIGER'	=>	'Există mai multe înregistrări să fie sincronizate în vtiger',
+    'LBL_MORE_GOOGLE'	=>	'Există mai multe înregistrări să fie sincronizate în Google',
+    'Contact Name'	=>	'Nume de contact',
+    'Email'	=>	'E-mail',
+    'Mobile Phone'	=>	'Telefon mobil',
+    'Address'	=>	'Adresa',
+    'Event Title'	=>	'Titlul evenimentului',
+    'Start Date'	=>	'Data începerii',
+    'Until Date'	=>	'Până la data',
+    'Description'	=>	'Descriere',
     'Office Phone' => 'Telefon Birou',
     'Work Phone' => 'Telefon de lucru',
     'Home Phone' => 'Telefon Acasa',
@@ -67,21 +68,21 @@ $languageStrings = array(
     'LBL_SAVE_AND_START_SYNC' => 'Salvați și Start Sync',
     'LBL_PRIMARY' => 'Primar',
     'LBL_SYNC_FROM_GOOGLE_TO_VTIGER' => 'Sync de la Google la vtiger',
-	'LBL_SYNC_FROM_VTIGER_TO_GOOGLE' => 'Sync de la vtiger to google',
-	'LBL_GOOGLE_CONNECT_MSG' => 'Conectați-vă la un cont Google pentru a prelua',
-	'LBL_SIGN_IN_WITH_GOOGLE' => 'Conectați-vă cu Google',
-	'LBL_GOOGLE_ACCOUNT_DETAILS' => 'Cont Google Detalii',
-	'LBL_GOOGLE_ACCOUNT_SYNCED_WITH' => 'Cont Google Sincronizat cu',
-	'LBL_CHANGE_USER' => 'Schimbarea de utilizare',
+    'LBL_SYNC_FROM_VTIGER_TO_GOOGLE' => 'Sync de la vtiger to google',
+    'LBL_GOOGLE_CONNECT_MSG' => 'Conectați-vă la un cont Google pentru a prelua',
+    'LBL_SIGN_IN_WITH_GOOGLE' => 'Conectați-vă cu Google',
+    'LBL_GOOGLE_ACCOUNT_DETAILS' => 'Cont Google Detalii',
+    'LBL_GOOGLE_ACCOUNT_SYNCED_WITH' => 'Cont Google Sincronizat cu',
+    'LBL_CHANGE_USER' => 'Schimbarea de utilizare',
 
-  'LBL_SAVE_AND_IMPORT' => 'De a păstra și de import',
-  'LBL_IMPORT_RESULTS_GOOGLE' => 'Google import rezultate',
+    'LBL_SAVE_AND_IMPORT' => 'De a păstra și de import',
+    'LBL_IMPORT_RESULTS_GOOGLE' => 'Google import rezultate',
 
-	'LBL_REDIRECT_URL' => 'Adresă URL de redirecționare',
-	'LBL_REDIRECT_URL_MESSAGE' => 'Copiați următorul URL de redirecționare și inserați în proiectul dvs. autorizare Google după cum arată imagine',
-);
-$jsLanguageStrings = array(
-	'LBL_SYNC_BUTTON'	=>	"Sincroniza acum",
-	'LBL_SYNCRONIZING'	=>	"Sincronizarea ....",
-	'LBL_NOT_SYNCRONIZE'	=>	"Nu ați sincronizat încă",
-);
+    'LBL_REDIRECT_URL' => 'Adresă URL de redirecționare',
+    'LBL_REDIRECT_URL_MESSAGE' => 'Copiați următorul URL de redirecționare și inserați în proiectul dvs. autorizare Google după cum arată imagine',
+];
+$jsLanguageStrings = [
+    'LBL_SYNC_BUTTON'	=>	'Sincroniza acum',
+    'LBL_SYNCRONIZING'	=>	'Sincronizarea ....',
+    'LBL_NOT_SYNCRONIZE'	=>	'Nu ați sincronizat încă',
+];

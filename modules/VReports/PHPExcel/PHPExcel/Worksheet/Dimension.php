@@ -1,63 +1,179 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel_Worksheet_Dimension.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+abstract class PHPExcel_Worksheet_Dimension
+{
+    /**
+     * Visible?
+     *
+     * @var bool
+     */
+    private $visible = true;
+
+    /**
+     * Outline level.
+     *
+     * @var int
+     */
+    private $outlineLevel = 0;
+
+    /**
+     * Collapsed.
+     *
+     * @var bool
+     */
+    private $collapsed = false;
+
+    /**
+     * Index to cellXf. Null value means row has no explicit cellXf format.
+     *
+     * @var int|null
+     */
+    private $xfIndex;
+
+    /**
+     * Create a new PHPExcel_Worksheet_Dimension.
+     */
+    public function __construct($initialValue = null)
+    {
+        // set dimension as unformatted by default
+        $this->xfIndex = $initialValue;
+    }
+
+    /**
+     * Get Visible.
+     *
+     * @return bool
+     */
+    public function getVisible()
+    {
+        return $this->visible;
+    }
+
+    /**
+     * Set Visible.
+     *
+     * @param bool $pValue
+     * @return PHPExcel_Worksheet_Dimension
+     */
+    public function setVisible($pValue = true)
+    {
+        $this->visible = $pValue;
+
+        return $this;
+    }
+
+    /**
+     * Get Outline Level.
+     *
+     * @return int
+     */
+    public function getOutlineLevel()
+    {
+        return $this->outlineLevel;
+    }
+
+    /**
+     * Set Outline Level.
+     *
+     * Value must be between 0 and 7
+     *
+     * @param int $pValue
+     * @return PHPExcel_Worksheet_Dimension
+     * @throws PHPExcel_Exception
+     */
+    public function setOutlineLevel($pValue)
+    {
+        if ($pValue < 0 || $pValue > 7) {
+            throw new PHPExcel_Exception('Outline level must range between 0 and 7.');
+        }
+
+        $this->outlineLevel = $pValue;
+
+        return $this;
+    }
+
+    /**
+     * Get Collapsed.
+     *
+     * @return bool
+     */
+    public function getCollapsed()
+    {
+        return $this->collapsed;
+    }
+
+    /**
+     * Set Collapsed.
+     *
+     * @param bool $pValue
+     * @return PHPExcel_Worksheet_Dimension
+     */
+    public function setCollapsed($pValue = true)
+    {
+        $this->collapsed = $pValue;
+
+        return $this;
+    }
+
+    /**
+     * Get index to cellXf.
+     *
+     * @return int
+     */
+    public function getXfIndex()
+    {
+        return $this->xfIndex;
+    }
+
+    /**
+     * Set index to cellXf.
+     *
+     * @param int $pValue
+     * @return PHPExcel_Worksheet_Dimension
+     */
+    public function setXfIndex($pValue = 0)
+    {
+        $this->xfIndex = $pValue;
+
+        return $this;
+    }
+
+    /**
+     * Implement PHP __clone to create a deep clone, not just a shallow copy.
+     */
+    public function __clone()
+    {
+        $vars = get_object_vars($this);
+        foreach ($vars as $key => $value) {
+            if (is_object($value)) {
+                $this->{$key} = clone $value;
+            } else {
+                $this->{$key} = $value;
+            }
+        }
+    }
+}

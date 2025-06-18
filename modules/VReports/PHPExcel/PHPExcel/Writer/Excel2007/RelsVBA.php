@@ -1,58 +1,61 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-HR+cPuUAn9cWQZtUlJXHkhAf2wk9KgFet0sS3js4g9bo/ohCm7kmZmZea+tG7XKtBy9OLDsDXPEk
-v/oLV5b02RpUT+rsyyuxQXtH9H2NXAD1kCl11p+SgCLpXLmVtr99E4Af9lK+8TrHZNNubRiuFOuf
-cdpxaWbKUtt3ffUu197SNLrkhCY2WnKPHX9DlA2/7ED5fE5Xe/PtmXMjE2TNQ4dffJEbIdzLB4Nw
-vceW3ZvmpZf2q+WaI6MMN81jMSOqbbmSyDd7WNZZSNb68fEv2RMk5Ew5bjLfQW0QmnQTv3hNngl3
-/XgBP3FmCvVnO+fzmisRMmY6fBnxe9Rkn8rfFJJblDGM4icEJjRrsKEhqYb/tyWWrH6PaunCzlM4
-PLdBbrhAvGEQwgbShhfTlc5VoBKDoRGbafOnoTIZVjfZDCmlfWdCKAsLSAglWre6yzFVP61EPp7T
-dJAse/IH9ETFrC+mOMqc6CyWoRq5iSitPumrVNjyJp6nh2KPETbPugQZQgzp2DB9IKwHQ9hhraaX
-FxfP2M2xSM2VioUWBRLzaKf/Z15T5vSlmD71akPIq2MWpm0fl/VyuxRjw+wpBMWjrt4tM9+gzBJO
-Gxpa5rV4RWaob7nCopBMOiN37R/5RJTgnAlBGp5am+WEBJPs/vPfSEIxZgRRw4kmjVAThMq6wT9S
-oDPYo/lOkgvgfjUvWHqDeNMKrQ9mzdA+VePI/Ldi9WAOVswaz4ajNJYhgJF7PGn0wtysqVlZw7qh
-2MwBhwDJaToLLRMei7rre3deX5izgAWoI9C1Rz4VRZsjIDKEKIWtIsCVmFthNhsBHUMaGj8q6gss
-m+RMt8pqj2wH6bVaJo554aJuXxXr/4TDpVkBXWWVCRr6kMbbdHliKeMmBHmuyaHz16H0vluEDowO
-0I9hqWnqZ8mcKRNzJPROzqnF9cMa+p46TeVBg2RYcoJK8Wf07snlyVtABk7Nts0CwXqUSSKGG55N
-7GX2wyXiVLar8pjmr3d0B4nuP+zBWkI3AsunGDd2TeKxw2IjVVwagDeR9HX+DW0Qkpf78AXv+ADb
-oudXnOQPOYZ9fJDu05H+bEl6M64YuMn6ox0291CfjNHikwB0Frv6m8w9ZKxxvA0N6ho5YMU3eNDR
-utzMsqn1bkMVfM/0XG9IRSGN+ll9Nry0s76TIcxZEQUrBmRm9xtsi0rXh99VTzZviXgRZK+rrsYf
-Sod6KghcwdZRTA5jGKryv+t7XQEKuUh1HgxUeD0Q2Ho37RKKDbBwzngURP3Q0KEHszs32cSdo8gM
-DPaSeAXeRrzO9TxfSGhrw7ootP4ZwDtIJYoU4WoFbrhsTtKXUsPxYMXM/WtIIQc44y63/+ePMgdD
-YM4f3gcl2oDV/LZIbEMqrJjJ0F1+LmQJlwMUgOr8AQbzoUn0ouVpH04fWCykBa3Psj/DOD47nF3O
-R3k8HMl2ucPO4kHETMr1ANHcvsAh5OPHeRviHqHAS7D9i6ZhUxdiFeRDeOIqLs4/cgkSV//TDP0I
-gcJzSoVQS1sLeldHyBylW88n6ggAPdAhqtaT4dG7J/wt7RK84HK+py23qqxwTw8Cs06zZpe90Aho
-Kg9E13DIkQ64wd3qShlab0kow21lILsqSFmqDsGoiGWUNqH+MX22NY6CtlEuXjLMvtbS0RNmfnMI
-EPiNRi6Z5jBtgwPIJF/t0YblTpIQbN6aoEKDtPJf7LF7kjbr1n6Y5Dp84Cl0A4L+Vk/i4YXEjt+X
-RxqYALCAyJbhSOm4v+JTwuKNb8ZGaq8Ks3I/GDBdJjX3Z2/XBtsy5DqFiq6xu85HTwzwALijb5yK
-HDJSo7LYmJH3jVsDAl81nNdGN1VzpKFwV7JrV5GYs4SJMiRcQpXLHYUsYL0eoemhvS0BayNZQ/ZM
-PM7o3nrUw/NwTXf5XZ7oZ4UTWjWHYKyGUrAAjR4WJ1qu4FDg2U1jaHNX9EOH1Qs8zCmXAJDc40ti
-qmrIazEiu9c9o9FotYFviKbDB1E0ffqOO3LUkaqWoIkQHKYk1xFepGSa/zYW5+e1T023pOrRmS2z
-tjzhDqQtSJ7GJuKoZNhhwsiLfQqL2NA0ubOgUYZB0nqamBCkERUOED2yqgLh7qx5yJHqc4k1VfPr
-xJbSJ0Nog59l60BgohIwY9zdvvXGlSHvK/7nPVC+xdx1D4HeOIBCgSl99qYEGCI+YQYJSTfY5ft+
-Q9fAwMC8A25I+VkgvEGh3ukdvR8Bjt1L14fGMTpf7tEX6uVnU+YKW39/xorsCP8IdORQ72mC9yZa
-RO5WgytmqiMSNVzSmupEwhFWVbx2yx0OEeKzfVZO8nZ2rMoeQnpqKS/QL/Jf4frmXz4n7vz3hxIa
-ra/Yw2RQjFIzt5iEQ1SZ4OozA59fr9RUKSa+QNBIOql5wLg8FIQF/FcRv9ZUXN0YL+UNQZhRESCz
-4TM3v+JCnhIHch3/7pfRjBMafssgZbuhYvA/2Aw6/DLhRapdf7gMGqeoxAxsLFGddisoauSFZBUu
-mmfCbFHTb9kN2sA8MoBLZsrUNSG8bGmxgTf5qpB8uW4uOIsg9d0eAfTj0uiRRB2jNx3n3ekE2hVb
-rhNMIXSwLSAYVzORNEtZ8MQI9CtO6hykmOliqcrW2Ddzu1BcUZvp1D+Dup9f9lzIqSYD2QGGS6Nq
-PWJ/KHM685shK1F5FfeEyy8mU2LREH/75MDwRRan6unUKxBIhyn7snM4uBqL3Fy9L1aL9/vHgpQx
-daywNooSbwNNvpdn8HECFYM+2qAU7OYBLfB7H+ZTU9GGXzcPFqnHRHBgSIET8CZXZQg++R1vekaZ
-UuRrbaWh/O2G7vqRIeNdVyFFjJGI6qPfXkHi0I8DNSYW2lCqHif2dcpt6AlOp1vMmyPTNYFaZgZW
-EqriS95bg6E++PKhGoYSlClqvI8ECW8qb8rvrGfukcgTVy9xlltLzdCuaWWtzsagRUvsr1/jYCET
-Kvj0MoRW//WimhmgiIiQDUgp0M3+ufuHlfymJouNRHl9ZBJUSI/PuGHqK+hkHJBsfrwZAe3GZHIe
-pQw65WLg+3HvJ+tMmD9a4QfoIEXXm2NI+sPZb6upmIkDhy/3arRY8efPPxnMAt8UQF0VFuQ299M7
-UGPlNmOta+bANNIDv0Fc+HLLjU8ZUaOAxYFIIWCLpWOrl99d7eZKb5Em2jKPmZczxsaETBpaUoHt
-tKbGAGMstXguxgDfRKSK9CIxHHZUhxwWD4gqCd8zQfCIHUQmXJrT4TF9rMyBFmdhnmfY6le8iDdi
-gCFm1fGUuoe5oARED2RlTvcq0sSAIg9+xc9MFOme/yi8af9sY9LAQFs4LVSh/5u2/hJ7ab9TFZVv
-6YATdaDtBK3KiLMY9vAXmYrK77I6OSo7CpdHgOAEewPVICx5Z5lFva8f8id0aWfVstgzboO2/vk6
-jJTUy0QJVuwdWWcvQ4McUGOIPo3eeS9R/Yrn77Gb8XDYCOJwd/zuECV15xTeW+09/6Eppn61sJfi
-Wb82xnLCsAMeKixfiAjXeryot6qqPEIG4+Y56wFdHwRP8zSYGBy1JvVnP9sukf70p3hsyp6ST/cX
-E33F8BCvoywlFKyXACjmLUDlL79viG6Vtfh/bAKIhjuIn/q0lScbn8P499I+fHND+VateD1rxZ94
-kstaUyCaVxXn2U70J7hchCTHWcz1znTCagneU6V0qLl6Q6sJHn3TcK2txND3Fh1ApatZUsIokpEp
-Y8Zj8XZvUkINvh/4flMMjo9ZgEQoXJCYCiCHAP5HUj7g4h3WUXdD81p49tRkJSuR0A/7d4mL3Qml
-Seh2rVbWnqX1gjxCqCDdHGJE3EVo7logWICTiWLEuFX2FluhivzgDYJPDnJ1XkuR3+uR1BGseTqR
-Q+ZhPVEMXUVbBTVSEnnjA+Qqxks9K7eSPuE+Kj9/zkqiNs2aLzapK41FKHvsJpIF5LERVUh9Ll/F
-Dt36WfuQcF/iI6nuYFx66hHp0mBS430xfVvSoS4qyLePyWHgGw3y1w4V01jLziluyI2+iPLaibDs
-rk+UPr376deg9taQHh/LXZAn
+<?php
+
+/**
+ * PHPExcel_Writer_Excel2007_RelsVBA.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version     ##VERSION##, ##DATE##
+ */
+class PHPExcel_Writer_Excel2007_RelsVBA extends PHPExcel_Writer_Excel2007_WriterPart
+{
+    /**
+     * Write relationships for a signed VBA Project.
+     *
+     * @return     string         XML Output
+     * @throws     PHPExcel_Writer_Exception
+     */
+    public function writeVBARelationships(?PHPExcel $pPHPExcel = null)
+    {
+        // Create XML writer
+        $objWriter = null;
+        if ($this->getParentWriter()->getUseDiskCaching()) {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_DISK, $this->getParentWriter()->getDiskCachingDirectory());
+        } else {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_MEMORY);
+        }
+
+        // XML header
+        $objWriter->startDocument('1.0', 'UTF-8', 'yes');
+
+        // Relationships
+        $objWriter->startElement('Relationships');
+        $objWriter->writeAttribute('xmlns', 'http://schemas.openxmlformats.org/package/2006/relationships');
+        $objWriter->startElement('Relationship');
+        $objWriter->writeAttribute('Id', 'rId1');
+        $objWriter->writeAttribute('Type', 'http://schemas.microsoft.com/office/2006/relationships/vbaProjectSignature');
+        $objWriter->writeAttribute('Target', 'vbaProjectSignature.bin');
+        $objWriter->endElement();
+        $objWriter->endElement();
+
+        return $objWriter->getData();
+
+    }
+}

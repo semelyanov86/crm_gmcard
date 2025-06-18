@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Zend Framework
+ * Zend Framework.
  *
  * LICENSE
  *
@@ -13,7 +14,6 @@
  * to license@zend.com so we can send you a copy immediately.
  *
  * @category   Zend
- * @package    Zend_Oauth
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id: Token.php 24593 2012-01-05 20:35:02Z matthew $
@@ -24,49 +24,44 @@ require_once 'Zend/Oauth/Http/Utility.php';
 
 /**
  * @category   Zend
- * @package    Zend_Oauth
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Zend_Oauth_Token
 {
-    /**@+
+    /*@+
      * Token constants
      */
-    const TOKEN_PARAM_KEY                = 'oauth_token';
-    const TOKEN_SECRET_PARAM_KEY         = 'oauth_token_secret';
-    const TOKEN_PARAM_CALLBACK_CONFIRMED = 'oauth_callback_confirmed';
-    /**@-*/
+    public const TOKEN_PARAM_KEY                = 'oauth_token';
+    public const TOKEN_SECRET_PARAM_KEY         = 'oauth_token_secret';
+    public const TOKEN_PARAM_CALLBACK_CONFIRMED = 'oauth_callback_confirmed';
+    /*@-*/
 
     /**
-     * Token parameters
+     * Token parameters.
      *
      * @var array
      */
-    protected $_params = array();
+    protected $_params = [];
 
     /**
-     * OAuth response object
+     * OAuth response object.
      *
      * @var Zend_Http_Response
      */
-    protected $_response = null;
+    protected $_response;
 
     /**
      * @var Zend_Oauth_Http_Utility
      */
-    protected $_httpUtility = null;
+    protected $_httpUtility;
 
     /**
      * Constructor; basic setup for any Token subclass.
-     *
-     * @param  null|Zend_Http_Response $response
-     * @param  null|Zend_Oauth_Http_Utility $utility
-     * @return void
      */
     public function __construct(
-        Zend_Http_Response $response = null,
-        Zend_Oauth_Http_Utility $utility = null
+        ?Zend_Http_Response $response = null,
+        ?Zend_Oauth_Http_Utility $utility = null,
     ) {
         if ($response !== null) {
             $this->_response = $response;
@@ -78,7 +73,7 @@ abstract class Zend_Oauth_Token
         if ($utility !== null) {
             $this->_httpUtility = $utility;
         } else {
-            $this->_httpUtility = new Zend_Oauth_Http_Utility;
+            $this->_httpUtility = new Zend_Oauth_Http_Utility();
         }
     }
 
@@ -96,6 +91,7 @@ abstract class Zend_Oauth_Token
         ) {
             return true;
         }
+
         return false;
     }
 
@@ -119,6 +115,7 @@ abstract class Zend_Oauth_Token
     public function setTokenSecret($secret)
     {
         $this->setParam(self::TOKEN_SECRET_PARAM_KEY, $secret);
+
         return $this;
     }
 
@@ -144,6 +141,7 @@ abstract class Zend_Oauth_Token
     public function setParam($key, $value)
     {
         $this->_params[$key] = trim($value, "\n");
+
         return $this;
     }
 
@@ -151,14 +149,14 @@ abstract class Zend_Oauth_Token
      * Sets the value for some parameters (e.g. token secret or other) and run
      * a simple filter to remove any trailing newlines.
      *
-     * @param  array $params
      * @return Zend_Oauth_Token
      */
     public function setParams(array $params)
     {
-        foreach ($params as $key=>$value) {
+        foreach ($params as $key => $value) {
             $this->setParam($key, $value);
         }
+
         return $this;
     }
 
@@ -166,13 +164,13 @@ abstract class Zend_Oauth_Token
      * Get the value for a parameter (e.g. token secret or other).
      *
      * @param  string $key
-     * @return mixed
      */
     public function getParam($key)
     {
         if (isset($this->_params[$key])) {
             return $this->_params[$key];
         }
+
         return null;
     }
 
@@ -185,6 +183,7 @@ abstract class Zend_Oauth_Token
     public function setToken($token)
     {
         $this->setParam(self::TOKEN_PARAM_KEY, $token);
+
         return $this;
     }
 
@@ -213,7 +212,6 @@ abstract class Zend_Oauth_Token
      *
      * @param  string $key
      * @param  string $value
-     * @return void
      */
     public function __set($key, $value)
     {
@@ -232,7 +230,7 @@ abstract class Zend_Oauth_Token
 
     /**
      * Convert Token to a string, specifically a raw encoded query string.
-     * Aliases to self::toString()
+     * Aliases to self::toString().
      *
      * @return string
      */
@@ -245,12 +243,11 @@ abstract class Zend_Oauth_Token
      * Parse a HTTP response body and collect returned parameters
      * as raw url decoded key-value pairs in an associative array.
      *
-     * @param  Zend_Http_Response $response
      * @return array
      */
     protected function _parseParameters(Zend_Http_Response $response)
     {
-        $params = array();
+        $params = [];
         $body   = $response->getBody();
         if (empty($body)) {
             return;
@@ -262,24 +259,25 @@ abstract class Zend_Oauth_Token
             $pair = explode('=', $kvpair);
             $params[rawurldecode($pair[0])] = rawurldecode($pair[1]);
         }
+
         return $params;
     }
 
     /**
-     * Limit serialisation stored data to the parameters
+     * Limit serialisation stored data to the parameters.
      */
     public function __sleep()
     {
-        return array('_params');
+        return ['_params'];
     }
 
     /**
-     * After serialisation, re-instantiate a HTTP utility class for use
+     * After serialisation, re-instantiate a HTTP utility class for use.
      */
     public function __wakeup()
     {
         if ($this->_httpUtility === null) {
-            $this->_httpUtility = new Zend_Oauth_Http_Utility;
+            $this->_httpUtility = new Zend_Oauth_Http_Utility();
         }
     }
 }

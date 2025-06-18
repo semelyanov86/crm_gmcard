@@ -1,20 +1,21 @@
 <?php
 
-/** This file is part of KCFinder project
-  *
-  *      @desc Base CSS definitions
-  *   @package KCFinder
-  *   @version 2.21
-  *    @author Pavel Tzonkov <pavelc@users.sourceforge.net>
-  * @copyright 2010 KCFinder Project
-  *   @license http://www.opensource.org/licenses/gpl-2.0.php GPLv2
-  *   @license http://www.opensource.org/licenses/lgpl-2.1.php LGPLv2
-  *      @link http://kcfinder.sunhater.com
-  */
+/** This file is part of KCFinder project.
+ *
+ *      @desc Base CSS definitions
+ *   @version 2.21
+ *    @author Pavel Tzonkov <pavelc@users.sourceforge.net>
+ * @copyright 2010 KCFinder Project
+ *   @license http://www.opensource.org/licenses/gpl-2.0.php GPLv2
+ *   @license http://www.opensource.org/licenses/lgpl-2.1.php LGPLv2
+ *      @see http://kcfinder.sunhater.com
+ */
 
-require "core/autoload.php";
+require 'core/autoload.php';
 $mtime = @filemtime(__FILE__);
-if ($mtime) httpCache::checkMTime($mtime);
+if ($mtime) {
+    httpCache::checkMTime($mtime);
+}
 $browser = new browser();
 $config = $browser->config;
 ob_start();
@@ -104,7 +105,7 @@ table {
 
 div.file {
     overflow-x: hidden;
-    width: <?php echo $config['thumbWidth'] ?>px;
+    width: <?php echo $config['thumbWidth']; ?>px;
     float: left;
     text-align: center;
     cursor: default;
@@ -112,8 +113,8 @@ div.file {
 }
 
 div.file .thumb {
-    width: <?php echo $config['thumbWidth'] ?>px;
-    height: <?php echo $config['thumbHeight'] ?>px;
+    width: <?php echo $config['thumbWidth']; ?>px;
+    height: <?php echo $config['thumbHeight']; ?>px;
     background: no-repeat center center;
 }
 
@@ -241,5 +242,5 @@ span.brace.opened, span.brace.closed {
 }
 <?php
 
-header("Content-Type: text/css");
+header('Content-Type: text/css');
 echo text::compressCSS(ob_get_clean());

@@ -6,46 +6,44 @@ class ModuleLinkCreator_RelationshipOneOne_View extends Vtiger_Index_View
     {
         $currentUserModel = Users_Record_Model::getCurrentUserModel();
         if (!$currentUserModel->isAdminUser()) {
-            throw new AppException(vtranslate("LBL_PERMISSION_DENIED", "Vtiger"));
+            throw new AppException(vtranslate('LBL_PERMISSION_DENIED', 'Vtiger'));
         }
     }
-    /**
-     * @param Vtiger_Request $request
-     */
+
     public function process(Vtiger_Request $request)
     {
         parent::preProcess($request, false);
         $viewer = $this->getViewer($request);
         $entityModules = Vtiger_Module_Model::getEntityModules();
-        $restrictedModules = array("Emails", "Calendar", "Faq", "Events", "Webmails", "ModComments", "SMSNotifier", "PBXManager");
-        $modules = array();
+        $restrictedModules = ['Emails', 'Calendar', 'Faq', 'Events', 'Webmails', 'ModComments', 'SMSNotifier', 'PBXManager'];
+        $modules = [];
         foreach ($entityModules as $entityModule) {
             if (!in_array($entityModule->name, $restrictedModules)) {
                 array_push($modules, $entityModule->name);
             }
         }
-        $viewer->assign("ENTITY_MODULES", $modules);
-        $viewer->view("RelationshipOneOne.tpl", $request->getModule());
+        $viewer->assign('ENTITY_MODULES', $modules);
+        $viewer->view('RelationshipOneOne.tpl', $request->getModule());
     }
+
     /**
-     * Retrieves headers scripts that need to loaded in the page
+     * Retrieves headers scripts that need to loaded in the page.
      * @param Vtiger_Request $request - request model
      * @return <array> - array of Vtiger_JsScript_Model
      */
     public function getHeaderScripts(Vtiger_Request $request)
     {
         global $vtiger_current_version;
-        if (version_compare($vtiger_current_version, "7.0.0", "<")) {
-            $template_folder = "layouts/vlayout";
+        if (version_compare($vtiger_current_version, '7.0.0', '<')) {
+            $template_folder = 'layouts/vlayout';
         } else {
-            $template_folder = "layouts/v7";
+            $template_folder = 'layouts/v7';
         }
         $headerScriptInstances = parent::getHeaderScripts($request);
-        $jsFileNames = array("~/" . $template_folder . "/modules/ModuleLinkCreator/resources/RelationshipOneOne.js");
+        $jsFileNames = ['~/' . $template_folder . '/modules/ModuleLinkCreator/resources/RelationshipOneOne.js'];
         $jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
         $headerScriptInstances = array_merge($headerScriptInstances, $jsScriptInstances);
+
         return $headerScriptInstances;
     }
 }
-
-?>

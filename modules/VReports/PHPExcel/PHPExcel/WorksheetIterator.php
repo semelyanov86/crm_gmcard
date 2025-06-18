@@ -1,54 +1,105 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel_WorksheetIterator.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+class PHPExcel_WorksheetIterator implements Iterator
+{
+    /**
+     * Spreadsheet to iterate.
+     *
+     * @var PHPExcel
+     */
+    private $subject;
+
+    /**
+     * Current iterator position.
+     *
+     * @var int
+     */
+    private $position = 0;
+
+    /**
+     * Create a new worksheet iterator.
+     */
+    public function __construct(?PHPExcel $subject = null)
+    {
+        // Set subject
+        $this->subject = $subject;
+    }
+
+    /**
+     * Destructor.
+     */
+    public function __destruct()
+    {
+        unset($this->subject);
+    }
+
+    /**
+     * Rewind iterator.
+     */
+    public function rewind()
+    {
+        $this->position = 0;
+    }
+
+    /**
+     * Current PHPExcel_Worksheet.
+     *
+     * @return PHPExcel_Worksheet
+     */
+    public function current()
+    {
+        return $this->subject->getSheet($this->position);
+    }
+
+    /**
+     * Current key.
+     *
+     * @return int
+     */
+    public function key()
+    {
+        return $this->position;
+    }
+
+    /**
+     * Next value.
+     */
+    public function next()
+    {
+        ++$this->position;
+    }
+
+    /**
+     * More PHPExcel_Worksheet instances available?
+     *
+     * @return bool
+     */
+    public function valid()
+    {
+        return $this->position < $this->subject->getSheetCount();
+    }
+}

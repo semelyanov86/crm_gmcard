@@ -1,1 +1,3 @@
-<?php $secret = "23051f11fe6530ac4173cde511c86651c58da909";
+<?php
+
+$secret = '23051f11fe6530ac4173cde511c86651c58da909';

@@ -1,4 +1,5 @@
 <?php
+
 // +-----------------------------------------------------------------------+
 // | Copyright (c) 2002-2004, Richard Heyes                                |
 // | All rights reserved.                                                  |
@@ -37,92 +38,93 @@
 // Net_URL Class
 
 
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Net_URL
 {
-    var $options = array('encode_query_keys' => false);
-    /**
-    * Full url
-    * @var string
-    */
-    var $url;
+    public $options = ['encode_query_keys' => false];
 
     /**
-    * Protocol
-    * @var string
-    */
-    var $protocol;
+     * Full url.
+     * @var string
+     */
+    public $url;
 
     /**
-    * Username
-    * @var string
-    */
-    var $username;
+     * Protocol.
+     * @var string
+     */
+    public $protocol;
 
     /**
-    * Password
-    * @var string
-    */
-    var $password;
+     * Username.
+     * @var string
+     */
+    public $username;
 
     /**
-    * Host
-    * @var string
-    */
-    var $host;
+     * Password.
+     * @var string
+     */
+    public $password;
 
     /**
-    * Port
-    * @var integer
-    */
-    var $port;
+     * Host.
+     * @var string
+     */
+    public $host;
 
     /**
-    * Path
-    * @var string
-    */
-    var $path;
+     * Port.
+     * @var int
+     */
+    public $port;
 
     /**
-    * Query string
-    * @var array
-    */
-    var $querystring;
+     * Path.
+     * @var string
+     */
+    public $path;
 
     /**
-    * Anchor
-    * @var string
-    */
-    var $anchor;
+     * Query string.
+     * @var array
+     */
+    public $querystring;
 
     /**
-    * Whether to use []
-    * @var bool
-    */
-    var $useBrackets;
+     * Anchor.
+     * @var string
+     */
+    public $anchor;
 
     /**
-    * PHP4 Constructor
-    *
-    * @see __construct()
-    */
-    function Net_URL($url = null, $useBrackets = true)
+     * Whether to use [].
+     * @var bool
+     */
+    public $useBrackets;
+
+    /**
+     * PHP4 Constructor.
+     *
+     * @see __construct()
+     */
+    public function Net_URL($url = null, $useBrackets = true)
     {
         $this->__construct($url, $useBrackets);
     }
 
     /**
-    * PHP5 Constructor
-    *
-    * Parses the given url and stores the various parts
-    * Defaults are used in certain cases
-    *
-    * @param string $url         Optional URL
-    * @param bool   $useBrackets Whether to use square brackets when
-    *                            multiple querystrings with the same name
-    *                            exist
-    */
-    function __construct($url = null, $useBrackets = true)
+     * PHP5 Constructor.
+     *
+     * Parses the given url and stores the various parts
+     * Defaults are used in certain cases
+     *
+     * @param string $url         Optional URL
+     * @param bool   $useBrackets Whether to use square brackets when
+     *                            multiple querystrings with the same name
+     *                            exist
+     */
+    public function __construct($url = null, $useBrackets = true)
     {
         $this->url = $url;
         $this->useBrackets = $useBrackets;
@@ -130,7 +132,7 @@ class Net_URL
         $this->initialize();
     }
 
-    function initialize()
+    public function initialize()
     {
         $HTTP_SERVER_VARS  = !empty($_SERVER) ? $_SERVER : $GLOBALS['HTTP_SERVER_VARS'];
 
@@ -139,7 +141,7 @@ class Net_URL
         $this->host        = '';
         $this->port        = 80;
         $this->path        = '';
-        $this->querystring = array();
+        $this->querystring = [];
         $this->anchor      = '';
 
         // Only use defaults if not an absolute URL given
@@ -147,11 +149,10 @@ class Net_URL
             $this->protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http');
 
             /**
-            * Figure out host/port
-            */
-            if (!empty($HTTP_SERVER_VARS['HTTP_HOST']) && 
-                preg_match('/^(.*)(:([0-9]+))?$/U', $HTTP_SERVER_VARS['HTTP_HOST'], $matches)) 
-            {
+             * Figure out host/port.
+             */
+            if (!empty($HTTP_SERVER_VARS['HTTP_HOST'])
+                && preg_match('/^(.*)(:([0-9]+))?$/U', $HTTP_SERVER_VARS['HTTP_HOST'], $matches)) {
                 $host = $matches[1];
                 if (!empty($matches[3])) {
                     $port = $matches[3];
@@ -162,8 +163,8 @@ class Net_URL
 
             $this->user        = '';
             $this->pass        = '';
-            $this->host        = !empty($host) ? $host : (isset($HTTP_SERVER_VARS['SERVER_NAME']) ? $HTTP_SERVER_VARS['SERVER_NAME'] : 'localhost');
-            $this->port        = !empty($port) ? $port : (isset($HTTP_SERVER_VARS['SERVER_PORT']) ? $HTTP_SERVER_VARS['SERVER_PORT'] : $this->getStandardPort($this->protocol));
+            $this->host        = !empty($host) ? $host : ($HTTP_SERVER_VARS['SERVER_NAME'] ?? 'localhost');
+            $this->port        = !empty($port) ? $port : ($HTTP_SERVER_VARS['SERVER_PORT'] ?? $this->getStandardPort($this->protocol));
             $this->path        = !empty($HTTP_SERVER_VARS['PHP_SELF']) ? $HTTP_SERVER_VARS['PHP_SELF'] : '/';
             $this->querystring = isset($HTTP_SERVER_VARS['QUERY_STRING']) ? $this->_parseRawQuerystring($HTTP_SERVER_VARS['QUERY_STRING']) : null;
             $this->anchor      = '';
@@ -174,7 +175,7 @@ class Net_URL
             $urlinfo = parse_url($this->url);
 
             // Default querystring
-            $this->querystring = array();
+            $this->querystring = [];
 
             foreach ($urlinfo as $key => $value) {
                 switch ($key) {
@@ -187,7 +188,7 @@ class Net_URL
                     case 'pass':
                     case 'host':
                     case 'port':
-                        $this->$key = $value;
+                        $this->{$key} = $value;
                         break;
 
                     case 'path':
@@ -210,13 +211,13 @@ class Net_URL
             }
         }
     }
+
     /**
-    * Returns full url
-    *
-    * @return string Full url
-    * @access public
-    */
-    function getURL()
+     * Returns full url.
+     *
+     * @return string Full url
+     */
+    public function getURL()
     {
         $querystring = $this->getQueryString();
 
@@ -232,18 +233,17 @@ class Net_URL
     }
 
     /**
-    * Adds or updates a querystring item (URL parameter).
-    * Automatically encodes parameters with rawurlencode() if $preencoded
-    *  is false.
-    * You can pass an array to $value, it gets mapped via [] in the URL if
-    * $this->useBrackets is activated.
-    *
-    * @param  string $name       Name of item
-    * @param  string $value      Value of item
-    * @param  bool   $preencoded Whether value is urlencoded or not, default = not
-    * @access public
-    */
-    function addQueryString($name, $value, $preencoded = false)
+     * Adds or updates a querystring item (URL parameter).
+     * Automatically encodes parameters with rawurlencode() if $preencoded
+     *  is false.
+     * You can pass an array to $value, it gets mapped via [] in the URL if
+     * $this->useBrackets is activated.
+     *
+     * @param  string $name       Name of item
+     * @param  string $value      Value of item
+     * @param  bool   $preencoded Whether value is urlencoded or not, default = not
+     */
+    public function addQueryString($name, $value, $preencoded = false)
     {
         if ($this->getOption('encode_query_keys')) {
             $name = rawurlencode($name);
@@ -252,17 +252,16 @@ class Net_URL
         if ($preencoded) {
             $this->querystring[$name] = $value;
         } else {
-            $this->querystring[$name] = is_array($value) ? array_map('rawurlencode', $value): rawurlencode($value);
+            $this->querystring[$name] = is_array($value) ? array_map('rawurlencode', $value) : rawurlencode($value);
         }
     }
 
     /**
-    * Removes a querystring item
-    *
-    * @param  string $name Name of item
-    * @access public
-    */
-    function removeQueryString($name)
+     * Removes a querystring item.
+     *
+     * @param  string $name Name of item
+     */
+    public function removeQueryString($name)
     {
         if ($this->getOption('encode_query_keys')) {
             $name = rawurlencode($name);
@@ -274,23 +273,21 @@ class Net_URL
     }
 
     /**
-    * Sets the querystring to literally what you supply
-    *
-    * @param  string $querystring The querystring data. Should be of the format foo=bar&x=y etc
-    * @access public
-    */
-    function addRawQueryString($querystring)
+     * Sets the querystring to literally what you supply.
+     *
+     * @param  string $querystring The querystring data. Should be of the format foo=bar&x=y etc
+     */
+    public function addRawQueryString($querystring)
     {
         $this->querystring = $this->_parseRawQueryString($querystring);
     }
 
     /**
-    * Returns flat querystring
-    *
-    * @return string Querystring
-    * @access public
-    */
-    function getQueryString()
+     * Returns flat querystring.
+     *
+     * @return string Querystring
+     */
+    public function getQueryString()
     {
         if (!empty($this->querystring)) {
             foreach ($this->querystring as $name => $value) {
@@ -316,16 +313,15 @@ class Net_URL
     }
 
     /**
-    * Parses raw querystring and returns an array of it
-    *
-    * @param  string  $querystring The querystring to parse
-    * @return array                An array of the querystring data
-    * @access private
-    */
-    function _parseRawQuerystring($querystring)
+     * Parses raw querystring and returns an array of it.
+     *
+     * @param  string  $querystring The querystring to parse
+     * @return array                An array of the querystring data
+     */
+    public function _parseRawQuerystring($querystring)
     {
         $parts  = preg_split('/[' . preg_quote(ini_get('arg_separator.input'), '/') . ']/', $querystring, -1, PREG_SPLIT_NO_EMPTY);
-        $return = array();
+        $return = [];
 
         foreach ($parts as $part) {
             if (strpos($part, '=') !== false) {
@@ -346,7 +342,7 @@ class Net_URL
 
                 // Ensure is an array
                 if (empty($return[$key]) || !is_array($return[$key])) {
-                    $return[$key] = array();
+                    $return[$key] = [];
                 }
 
                 // Add data
@@ -355,8 +351,8 @@ class Net_URL
                 } else {
                     $return[$key][$idx] = $value;
                 }
-            } elseif (!$this->useBrackets AND !empty($return[$key])) {
-                $return[$key]   = (array)$return[$key];
+            } elseif (!$this->useBrackets and !empty($return[$key])) {
+                $return[$key]   = (array) $return[$key];
                 $return[$key][] = $value;
             } else {
                 $return[$key] = $value;
@@ -367,38 +363,38 @@ class Net_URL
     }
 
     /**
-    * Resolves //, ../ and ./ from a path and returns
-    * the result. Eg:
-    *
-    * /foo/bar/../boo.php    => /foo/boo.php
-    * /foo/bar/../../boo.php => /boo.php
-    * /foo/bar/.././/boo.php => /foo/boo.php
-    *
-    * This method can also be called statically.
-    *
-    * @param  string $path URL path to resolve
-    * @return string      The result
-    */
-    static function resolvePath($path)
+     * Resolves //, ../ and ./ from a path and returns
+     * the result. Eg:
+     *
+     * /foo/bar/../boo.php    => /foo/boo.php
+     * /foo/bar/../../boo.php => /boo.php
+     * /foo/bar/.././/boo.php => /foo/boo.php
+     *
+     * This method can also be called statically.
+     *
+     * @param  string $path URL path to resolve
+     * @return string      The result
+     */
+    public static function resolvePath($path)
     {
         $path = explode('/', str_replace('//', '/', $path));
 
-        for ($i=0; $i<count($path); $i++) {
+        for ($i = 0; $i < count($path); ++$i) {
             if ($path[$i] == '.') {
                 unset($path[$i]);
                 $path = array_values($path);
-                $i--;
+                --$i;
 
-            } elseif ($path[$i] == '..' AND ($i > 1 OR ($i == 1 AND $path[0] != '') ) ) {
-                unset($path[$i]);
-                unset($path[$i-1]);
+            } elseif ($path[$i] == '..' and ($i > 1 or ($i == 1 and $path[0] != ''))) {
+                unset($path[$i], $path[$i - 1]);
+
                 $path = array_values($path);
                 $i -= 2;
 
-            } elseif ($path[$i] == '..' AND $i == 1 AND $path[0] == '') {
+            } elseif ($path[$i] == '..' and $i == 1 and $path[0] == '') {
                 unset($path[$i]);
                 $path = array_values($path);
-                $i--;
+                --$i;
 
             } else {
                 continue;
@@ -409,14 +405,14 @@ class Net_URL
     }
 
     /**
-    * Returns the standard port number for a protocol
-    *
-    * @param  string  $scheme The protocol to lookup
-    * @return integer         Port number or NULL if no scheme matches
-    *
-    * @author Philippe Jausions <Philippe.Jausions@11abacus.com>
-    */
-    function getStandardPort($scheme)
+     * Returns the standard port number for a protocol.
+     *
+     * @param  string  $scheme The protocol to lookup
+     * @return int         Port number or NULL if no scheme matches
+     *
+     * @author Philippe Jausions <Philippe.Jausions@11abacus.com>
+     */
+    public function getStandardPort($scheme)
     {
         switch (strtolower($scheme)) {
             case 'http':    return 80;
@@ -426,33 +422,33 @@ class Net_URL
             case 'imaps':   return 993;
             case 'pop3':    return 110;
             case 'pop3s':   return 995;
+
             default:        return null;
-       }
+        }
     }
 
     /**
-    * Forces the URL to a particular protocol
-    *
-    * @param string  $protocol Protocol to force the URL to
-    * @param integer $port     Optional port (standard port is used by default)
-    */
-    function setProtocol($protocol, $port = null)
+     * Forces the URL to a particular protocol.
+     *
+     * @param string  $protocol Protocol to force the URL to
+     * @param int $port     Optional port (standard port is used by default)
+     */
+    public function setProtocol($protocol, $port = null)
     {
         $this->protocol = $protocol;
         $this->port     = is_null($port) ? $this->getStandardPort($protocol) : $port;
     }
 
     /**
-     * Set an option
+     * Set an option.
      *
      * This function set an option
      * to be used thorough the script.
      *
-     * @access public
      * @param  string $optionName  The optionname to set
-     * @param  string $value       The value of this option.
+     * @param  string $value       the value of this option
      */
-    function setOption($optionName, $value)
+    public function setOption($optionName, $value)
     {
         if (!array_key_exists($optionName, $this->options)) {
             return false;
@@ -463,17 +459,15 @@ class Net_URL
     }
 
     /**
-     * Get an option
+     * Get an option.
      *
      * This function gets an option
      * from the $this->options array
      * and return it's value.
      *
-     * @access public
-     * @param  string $opionName  The name of the option to retrieve
      * @see    $this->options
      */
-    function getOption($optionName)
+    public function getOption($optionName)
     {
         if (!isset($this->options[$optionName])) {
             return false;
@@ -481,6 +475,4 @@ class Net_URL
 
         return $this->options[$optionName];
     }
-
 }
-?>

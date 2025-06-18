@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,189 +7,201 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
+ */
 
-class Vtiger_TagCloud_Action extends Vtiger_Mass_Action {
+class Vtiger_TagCloud_Action extends Vtiger_Mass_Action
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->exposeMethod('save');
+        $this->exposeMethod('delete');
+        $this->exposeMethod('saveTags');
+        $this->exposeMethod('update');
+        $this->exposeMethod('remove');
+    }
 
-	function __construct() {
-		parent::__construct();
-		$this->exposeMethod('save');
-		$this->exposeMethod('delete');
-		$this->exposeMethod('saveTags');
-		$this->exposeMethod('update');
-		$this->exposeMethod('remove');
-	}
+    public function requiresPermission(Vtiger_Request $request)
+    {
+        return [];
+    }
 
-	public function requiresPermission(\Vtiger_Request $request) {
-		return array();
-	}
+    public function process(Vtiger_Request $request)
+    {
+        $mode = $request->getMode();
+        if (!empty($mode)) {
+            echo $this->invokeExposedMethod($mode, $request);
 
-	public function process(Vtiger_Request $request) {
-		$mode = $request->getMode();
-		if(!empty($mode)) {
-			echo $this->invokeExposedMethod($mode, $request);
-			return;
-		}
-	}
+            return;
+        }
+    }
 
-	/**
-	 * Function saves a tag for a record
-	 * @param Vtiger_Request $request
-	 */
-	public function save(Vtiger_Request $request) {
-		$currentUser = Users_Record_Model::getCurrentUserModel();
+    /**
+     * Function saves a tag for a record.
+     */
+    public function save(Vtiger_Request $request)
+    {
+        $currentUser = Users_Record_Model::getCurrentUserModel();
 
-		$tagModel = new Vtiger_Tag_Model();
-		$tagModel->set('userid', $currentUser->id);
-		$tagModel->set('record', $request->get('record'));
-		$tagModel->set('tagname', decode_html($request->get('tagname')));
-		$tagModel->set('module', $request->getModule());
-		$tagModel->save();
+        $tagModel = new Vtiger_Tag_Model();
+        $tagModel->set('userid', $currentUser->id);
+        $tagModel->set('record', $request->get('record'));
+        $tagModel->set('tagname', decode_html($request->get('tagname')));
+        $tagModel->set('module', $request->getModule());
+        $tagModel->save();
 
-		$taggedInfo = Vtiger_Tag_Model::getAll($currentUser->id, $request->getModule(), $request->get('record'));
-		$response = new Vtiger_Response();
-		$response->setResult($taggedInfo);
-		$response->emit($taggedInfo);
-	}
+        $taggedInfo = Vtiger_Tag_Model::getAll($currentUser->id, $request->getModule(), $request->get('record'));
+        $response = new Vtiger_Response();
+        $response->setResult($taggedInfo);
+        $response->emit($taggedInfo);
+    }
 
-	/**
-	 * Function deleted a tag
-	 * @param Vtiger_Request $request
-	 */
-	public function delete(Vtiger_Request $request) {
-		$tagModel = new Vtiger_Tag_Model();
-		$tagModel->set('record', $request->get('record'));
-		$tagModel->set('tag_id', $request->get('tag_id'));
-		$tagModel->delete();
-	}
+    /**
+     * Function deleted a tag.
+     */
+    public function delete(Vtiger_Request $request)
+    {
+        $tagModel = new Vtiger_Tag_Model();
+        $tagModel->set('record', $request->get('record'));
+        $tagModel->set('tag_id', $request->get('tag_id'));
+        $tagModel->delete();
+    }
 
-	/**
-	 * Function returns list of tage for the record
-	 * @param Vtiger_Request $request
-	 */
-	public function getTags(Vtiger_Request $request) {
-		$currentUser = Users_Record_Model::getCurrentUserModel();
-		$record = $request->get('record');
-		$module = $request->getModule();
-		$tags = Vtiger_Tag_Model::getAll($currentUser->id, $module, $record);
+    /**
+     * Function returns list of tage for the record.
+     */
+    public function getTags(Vtiger_Request $request)
+    {
+        $currentUser = Users_Record_Model::getCurrentUserModel();
+        $record = $request->get('record');
+        $module = $request->getModule();
+        $tags = Vtiger_Tag_Model::getAll($currentUser->id, $module, $record);
 
-		$response = new Vtiger_Response();
-		$response->emit($tags);
-	}
+        $response = new Vtiger_Response();
+        $response->emit($tags);
+    }
 
-	public function saveTags(Vtiger_Request $request) {
-		$module = $request->get('module');
-		$parent = $request->get('addedFrom');
+    public function saveTags(Vtiger_Request $request)
+    {
+        $module = $request->get('module');
+        $parent = $request->get('addedFrom');
 
-		if($request->has('selected_ids')) {
-			$recordIds = $this->getRecordsListFromRequest($request);
-		}else{
-			$recordIds = array($request->get('record'));
-		}
+        if ($request->has('selected_ids')) {
+            $recordIds = $this->getRecordsListFromRequest($request);
+        } else {
+            $recordIds = [$request->get('record')];
+        }
 
-		if($parent && $parent == 'Settings'){
-			$recordIds = array();
-		}
+        if ($parent && $parent == 'Settings') {
+            $recordIds = [];
+        }
 
-		$tagsList = $request->get('tagsList');
-		$newTags = $tagsList['new'];
-		if(empty($newTags)) {
-			$newTags = array();
-		}
-		$existingTags = isset($tagsList['existing']) && $tagsList['existing'] ? $tagsList['existing'] : array();
-		$deletedTags = isset($tagsList['deleted']) && $tagsList['deleted'] ? $tagsList['deleted'] : array();
-		$newTagType = $request->get('newTagType');
-		$currentUser = Users_Record_Model::getCurrentUserModel();
-		$userId = $currentUser->getId();
-		if(!is_array($existingTags)) {
-			$existingTags = array();
-		}
+        $tagsList = $request->get('tagsList');
+        $newTags = $tagsList['new'];
+        if (empty($newTags)) {
+            $newTags = [];
+        }
+        $existingTags = isset($tagsList['existing']) && $tagsList['existing'] ? $tagsList['existing'] : [];
+        $deletedTags = isset($tagsList['deleted']) && $tagsList['deleted'] ? $tagsList['deleted'] : [];
+        $newTagType = $request->get('newTagType');
+        $currentUser = Users_Record_Model::getCurrentUserModel();
+        $userId = $currentUser->getId();
+        if (!is_array($existingTags)) {
+            $existingTags = [];
+        }
 
-		$result = array();
-		foreach($newTags as $tagName) {
-			if(empty($tagName)) continue;
-			$tagModel = new Vtiger_Tag_Model();
-			$tagModel->set('tag', $tagName)->setType($newTagType);
-			$tagId = $tagModel->create();
-			array_push($existingTags, $tagId);
-			$result['new'][$tagId] = array('name'=> decode_html($tagName), 'type' => $newTagType);
-		}
-		$existingTags = array_unique($existingTags);
+        $result = [];
+        foreach ($newTags as $tagName) {
+            if (empty($tagName)) {
+                continue;
+            }
+            $tagModel = new Vtiger_Tag_Model();
+            $tagModel->set('tag', $tagName)->setType($newTagType);
+            $tagId = $tagModel->create();
+            array_push($existingTags, $tagId);
+            $result['new'][$tagId] = ['name' => decode_html($tagName), 'type' => $newTagType];
+        }
+        $existingTags = array_unique($existingTags);
 
-		foreach($recordIds as $recordId) {
-			if(!empty($recordId)){
-				Vtiger_Tag_Model::saveForRecord($recordId, $existingTags, $userId, $module);
-				Vtiger_Tag_Model::deleteForRecord($recordId, $deletedTags, $userId, $module);
-			}
-		}
+        foreach ($recordIds as $recordId) {
+            if (!empty($recordId)) {
+                Vtiger_Tag_Model::saveForRecord($recordId, $existingTags, $userId, $module);
+                Vtiger_Tag_Model::deleteForRecord($recordId, $deletedTags, $userId, $module);
+            }
+        }
 
 
-		$allAccessibleTags =  Vtiger_Tag_Model::getAllAccessible($userId, $module, $recordId);
-		foreach ($allAccessibleTags as $tagModel) {
-			$result['tags'][] = array('name'=> decode_html($tagModel->getName()), 'type'=>$tagModel->getType(),'id' => $tagModel->getId());
-		}
-		$allAccessibleTagCount = php7_count($allAccessibleTags);
-		$result['moreTagCount'] = $allAccessibleTagCount - Vtiger_Tag_Model::NUM_OF_TAGS_DETAIL;
-		$result['deleted'] = $deletedTags;
+        $allAccessibleTags =  Vtiger_Tag_Model::getAllAccessible($userId, $module, $recordId);
+        foreach ($allAccessibleTags as $tagModel) {
+            $result['tags'][] = ['name' => decode_html($tagModel->getName()), 'type' => $tagModel->getType(), 'id' => $tagModel->getId()];
+        }
+        $allAccessibleTagCount = php7_count($allAccessibleTags);
+        $result['moreTagCount'] = $allAccessibleTagCount - Vtiger_Tag_Model::NUM_OF_TAGS_DETAIL;
+        $result['deleted'] = $deletedTags;
 
-		$response = new Vtiger_Response();
-		$response->setResult($result);
-		$response->emit();
-	}
+        $response = new Vtiger_Response();
+        $response->setResult($result);
+        $response->emit();
+    }
 
-	public function update(Vtiger_Request $request) {
-		$module = $request->get('module');
-		$tagId = $request->get('id');
-		$tagName = $request->get('name');
-		$visibility = $request->get('visibility');
-		$currentUser = Users_Record_Model::getCurrentUserModel();
+    public function update(Vtiger_Request $request)
+    {
+        $module = $request->get('module');
+        $tagId = $request->get('id');
+        $tagName = $request->get('name');
+        $visibility = $request->get('visibility');
+        $currentUser = Users_Record_Model::getCurrentUserModel();
 
-		$response = new Vtiger_Response();
-		try{
-			$tagModel = Vtiger_Tag_Model::getInstanceById($tagId);
-			$otherTagModelWithSameName = Vtiger_Tag_Model::getInstanceByName($tagName, $currentUser->getId(), $tagId);
-			if($otherTagModelWithSameName !== false) {
-				throw new Exception(vtranslate('LBL_SAME_TAG_EXISTS', $module, $tagName));
-			}
-			if($tagModel->getType() == Vtiger_Tag_Model::PUBLIC_TYPE && $visibility == Vtiger_Tag_Model::PRIVATE_TYPE) {
-				//TODO : check if there are no other records tagged by other users 
-			   if(Vtiger_Tag_Model::checkIfOtherUsersUsedTag($tagId, $currentUser->getId())) {
-				   throw new Exception(vtranslate('LBL_CANT_MOVE_FROM_PUBLIC_TO_PRIVATE'));
-			   } 
-			}
-			$tagModel->setName($tagName)->setType($visibility);
-			$tagModel->update();
-			$result = array();
-			$result['name'] = $tagName;
-			$result['type'] = $visibility;
+        $response = new Vtiger_Response();
 
-			$response->setResult($result);
-		}catch(Exception $e) {
-			$response->setError($e->getMessage());
-		}
-		$response->emit();
-	}
+        try {
+            $tagModel = Vtiger_Tag_Model::getInstanceById($tagId);
+            $otherTagModelWithSameName = Vtiger_Tag_Model::getInstanceByName($tagName, $currentUser->getId(), $tagId);
+            if ($otherTagModelWithSameName !== false) {
+                throw new Exception(vtranslate('LBL_SAME_TAG_EXISTS', $module, $tagName));
+            }
+            if ($tagModel->getType() == Vtiger_Tag_Model::PUBLIC_TYPE && $visibility == Vtiger_Tag_Model::PRIVATE_TYPE) {
+                // TODO : check if there are no other records tagged by other users
+                if (Vtiger_Tag_Model::checkIfOtherUsersUsedTag($tagId, $currentUser->getId())) {
+                    throw new Exception(vtranslate('LBL_CANT_MOVE_FROM_PUBLIC_TO_PRIVATE'));
+                }
+            }
+            $tagModel->setName($tagName)->setType($visibility);
+            $tagModel->update();
+            $result = [];
+            $result['name'] = $tagName;
+            $result['type'] = $visibility;
 
-	public function remove(Vtiger_Request $request) {
-		$currentUser = Users_Record_Model::getCurrentUserModel();
-		$tagId = $request->get('tag_id');
-		if( Vtiger_Tag_Model::checkIfOtherUsersUsedTag($tagId, $currentUser->getId())) {
-			throw new Exception(vtranslate('LBL_CANNOT_DELETE_TAG'));
-		}
-		$tagModel = new Vtiger_Tag_Model();
-		$tagModel->setId($tagId);
+            $response->setResult($result);
+        } catch (Exception $e) {
+            $response->setError($e->getMessage());
+        }
+        $response->emit();
+    }
 
-		$response = new Vtiger_Response();
-		try{
-			$tagModel->remove();
-			$response->setResult(array('success' => true));
-		}catch(Exception $e) {
-			$response->setError($e->getMessage());
-		}
-		$response->emit();
-	}
+    public function remove(Vtiger_Request $request)
+    {
+        $currentUser = Users_Record_Model::getCurrentUserModel();
+        $tagId = $request->get('tag_id');
+        if (Vtiger_Tag_Model::checkIfOtherUsersUsedTag($tagId, $currentUser->getId())) {
+            throw new Exception(vtranslate('LBL_CANNOT_DELETE_TAG'));
+        }
+        $tagModel = new Vtiger_Tag_Model();
+        $tagModel->setId($tagId);
 
-	public function validateRequest(Vtiger_Request $request) {
-		$request->validateWriteAccess();
-	}
+        $response = new Vtiger_Response();
+
+        try {
+            $tagModel->remove();
+            $response->setResult(['success' => true]);
+        } catch (Exception $e) {
+            $response->setError($e->getMessage());
+        }
+        $response->emit();
+    }
+
+    public function validateRequest(Vtiger_Request $request)
+    {
+        $request->validateWriteAccess();
+    }
 }

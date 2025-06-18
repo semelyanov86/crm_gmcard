@@ -1,4 +1,5 @@
 <?php
+
 /* ********************************************************************************
  * The content of this file is subject to the Conditional Alerts/Popups("License");
  * You may not use this file except in compliance with the License
@@ -7,7 +8,7 @@
  * All Rights Reserved.
  * ****************************************************************************** */
 
-$languageStrings = array(
+$languageStrings = [
     'VTEConditionalAlerts' => 'Conditional Alerts/Popups',
     'LBL_ALERT' => 'Alert',
     'LBL_CREATING_CLF' => 'Conditional Alerts/Popups',
@@ -27,7 +28,7 @@ $languageStrings = array(
     'ADD_TASKS' => 'Add Tasks',
     'Calendar' => 'To Do',
     'LBL_ACTIVE' => 'Active',
-    'LBL_ADD_ALERT' => 'Add Alert/Popup message', //Duplicated key-value pair
+    'LBL_ADD_ALERT' => 'Add Alert/Popup message', // Duplicated key-value pair
     'LBL_ADD_TASKS_FOR_WORKFLOW' => 'Add Task for Conditional Alerts/Popups',
     'LBL_ADD_TIME' => 'Add time',
     'LBL_ANNUAL_REVENUE' => 'annual_revenue',
@@ -78,7 +79,7 @@ $languageStrings = array(
     'LBL_ALERT_WHEN_OPEN' => 'Alert when record is Viewed',
     'LBL_ALERT_ON_SAVE' => 'Alert On Save',
     'LBL_DONOT_ALLOW_TO_SAVE' => 'Do NOT Allow to Save',
-    'LBL_TASK_TYPE' => 'Task type', //Duplicated key-value pair
+    'LBL_TASK_TYPE' => 'Task type', // Duplicated key-value pair
     'LBL_THE_SAME_VALUE_IS_USED_FOR_START_DATE' => 'The same value is used for the start date',
     'LBL_TIME' => 'Time',
     'LBL_TITLE' => 'Title',
@@ -112,9 +113,9 @@ $languageStrings = array(
     'LBL_NEXT_TRIGGER_TIME' => 'Next trigger time on',
     'LBL_MESSAGE' => 'Message',
 
-    //Patch provided by http://trac.vtiger.com/cgi-bin/trac.cgi/ticket/7884
+    // Patch provided by http://trac.vtiger.com/cgi-bin/trac.cgi/ticket/7884
     'Conditional Alerts/Popupss' => 'Conditional Alerts/Popups',
-    //Field names 
+    // Field names
     'Summary' => 'Summary',
     'Module' => 'Module',
     'Execution Condition' => 'Execution Condition',
@@ -162,8 +163,8 @@ $languageStrings = array(
     'LBL_MORE_EXTENSIONS' => 'For more vTiger Extensions, please visit our website',
     /* For License page - End */
 
-);
+];
 
-$jsLanguageStrings = array(
-    'Conditional Alerts/Popupss had saved successfully' => 'Conditional Alerts/Popups had saved successfully'
-);
+$jsLanguageStrings = [
+    'Conditional Alerts/Popupss had saved successfully' => 'Conditional Alerts/Popups had saved successfully',
+];

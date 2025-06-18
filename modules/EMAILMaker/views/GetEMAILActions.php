@@ -2,9 +2,7 @@
 
 class EMAILMaker_GetEMAILActions_View extends Vtiger_BasicAjax_View
 {
-    public function checkPermission(Vtiger_Request $request)
-    {
-    }
+    public function checkPermission(Vtiger_Request $request) {}
 
     protected $isInstalled;
 
@@ -25,8 +23,8 @@ class EMAILMaker_GetEMAILActions_View extends Vtiger_BasicAjax_View
         $viewer = $this->getViewer($request);
         $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
         $SourceModuleModel = Vtiger_Module_Model::getInstance($source_module);
-        if ($EMAILMaker->CheckPermissions("DETAIL") == false || !$SourceModuleModel->isEntityModule()) {
-            die("");
+        if ($EMAILMaker->CheckPermissions('DETAIL') == false || !$SourceModuleModel->isEntityModule()) {
+            exit('');
         }
         $single_record = true;
         $record = $request->get('record');
@@ -36,25 +34,26 @@ class EMAILMaker_GetEMAILActions_View extends Vtiger_BasicAjax_View
         if ($single_record) {
             $viewer->assign('SINGLE_RECORD', 'yes');
         }
-        require('user_privileges/user_privileges_'.$current_user->id.'.php');
-        if ($EMAILMaker->CheckPermissions("DETAIL")) {
-            $viewer->assign("ENABLE_EMAILMAKER", 'true');
+        require 'user_privileges/user_privileges_' . $current_user->id . '.php';
+        if ($EMAILMaker->CheckPermissions('DETAIL')) {
+            $viewer->assign('ENABLE_EMAILMAKER', 'true');
         } else {
-            $viewer->assign("ENABLE_EMAILMAKER", "false");
+            $viewer->assign('ENABLE_EMAILMAKER', 'false');
         }
-        if (!isset($_SESSION["template_languages"]) || $_SESSION["template_languages"] == "") {
-            $temp_res = $adb->pquery("SELECT label, prefix FROM vtiger_language WHERE active = ?", array('1'));
+        if (!isset($_SESSION['template_languages']) || $_SESSION['template_languages'] == '') {
+            $temp_res = $adb->pquery('SELECT label, prefix FROM vtiger_language WHERE active = ?', ['1']);
+
             while ($temp_row = $adb->fetchByAssoc($temp_res)) {
-                $template_languages[$temp_row["prefix"]] = $temp_row["label"];
+                $template_languages[$temp_row['prefix']] = $temp_row['label'];
             }
-            $_SESSION["template_languages"] = $template_languages;
+            $_SESSION['template_languages'] = $template_languages;
         }
         if ($this->isInstalled) {
-            $type = "professional";
+            $type = 'professional';
         } else {
-            die("");
+            exit('');
         }
-        $viewer->assign('TEMPLATE_LANGUAGES', $_SESSION["template_languages"]);
+        $viewer->assign('TEMPLATE_LANGUAGES', $_SESSION['template_languages']);
         $viewer->assign('CURRENT_LANGUAGE', $currentLanguage);
         $viewer->assign('IS_ADMIN', is_admin($current_user));
         $templates = $EMAILMaker->GetAvailableTemplatesArray($relmodule, false, $record, false, true);
@@ -68,9 +67,9 @@ class EMAILMaker_GetEMAILActions_View extends Vtiger_BasicAjax_View
         $viewer->assign('MODE', $mode);
         $def_templateid = $EMAILMaker->GetDefaultTemplateId($relmodule);
         $viewer->assign('DEFAULT_TEMPLATE', $def_templateid);
-        if (is_dir("modules/PDFMaker") && vtlib_isModuleActive('PDFMaker')) {
+        if (is_dir('modules/PDFMaker') && vtlib_isModuleActive('PDFMaker')) {
             $PDFMakerModel = Vtiger_Module_Model::getInstance('PDFMaker');
-            if ($PDFMakerModel->CheckPermissions("DETAIL") && $request->has('record') && !$request->isEmpty('record')) {
+            if ($PDFMakerModel->CheckPermissions('DETAIL') && $request->has('record') && !$request->isEmpty('record')) {
                 $pdftemplates = $PDFMakerModel->GetAvailableTemplates($relmodule, false, $record);
                 if (count($pdftemplates) > 0) {
                     $no_templates_exist = 0;
@@ -81,28 +80,31 @@ class EMAILMaker_GetEMAILActions_View extends Vtiger_BasicAjax_View
                 $viewer->assign('PDF_TEMPLATES_EXIST', $no_templates_exist);
             }
             if (!$no_templates_exist) {
-                $viewer->assign("IS_PDFMAKER", 'yes');
+                $viewer->assign('IS_PDFMAKER', 'yes');
             }
         }
-        $tpl_name = "GetEMAILActions";
+        $tpl_name = 'GetEMAILActions';
         if ($request->has('mode') && !$request->isEmpty('mode')) {
             $mode = $request->get('mode');
-            if ($mode == "getButtons") {
-                $tpl_name = "GetEMAILButtons";
+            if ($mode == 'getButtons') {
+                $tpl_name = 'GetEMAILButtons';
                 if (!$this->isButtonsAllowedModule($source_module)) {
-                    die('');
+                    exit('');
                 }
             }
         }
-        $viewer->view($tpl_name.".tpl", 'EMAILMaker');
+        $viewer->view($tpl_name . '.tpl', 'EMAILMaker');
     }
 
     public function isButtonsAllowedModule($module)
     {
         $adb = PearDatabase::getInstance();
-        $result = $adb->pquery('SELECT count(*) as count FROM vtiger_emakertemplates WHERE (module = ? OR module = "" OR module IS NULL) AND deleted=? ',
-            [$module, '0']);
-        return (0 < $adb->query_result($result, 0, 'count'));
+        $result = $adb->pquery(
+            'SELECT count(*) as count FROM vtiger_emakertemplates WHERE (module = ? OR module = "" OR module IS NULL) AND deleted=? ',
+            [$module, '0'],
+        );
+
+        return $adb->query_result($result, 0, 'count') > 0;
     }
 
     public function getRecordsListFromRequest(Vtiger_Request $request)
@@ -125,7 +127,8 @@ class EMAILMaker_GetEMAILActions_View extends Vtiger_BasicAjax_View
                 $customViewModel->set('search_key', $searchKey);
                 $customViewModel->set('search_value', $searchValue);
             }
+
             return $customViewModel->getRecordIds($excludedIds);
         }
     }
-} ?>
+}

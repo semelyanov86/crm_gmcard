@@ -14,7 +14,7 @@ return [
     /*
      *  The port number used to communicate with the Ray app.
      */
-    'port' => 23517,
+    'port' => 23_517,
 
     /*
      *  Absolute base path for your sites or projects in Homestead, Vagrant, Docker, or another remote development server.

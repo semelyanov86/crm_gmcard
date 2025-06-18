@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,218 +7,233 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
+ */
 
-class Vtiger_RelationAjax_Action extends Vtiger_Action_Controller {
-	function __construct() {
-		parent::__construct();
-		$this->exposeMethod('addRelation');
-		$this->exposeMethod('deleteRelation');
-		$this->exposeMethod('getRelatedListPageCount');
-		$this->exposeMethod('getRelatedRecordInfo');
-	}
+class Vtiger_RelationAjax_Action extends Vtiger_Action_Controller
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->exposeMethod('addRelation');
+        $this->exposeMethod('deleteRelation');
+        $this->exposeMethod('getRelatedListPageCount');
+        $this->exposeMethod('getRelatedRecordInfo');
+    }
 
-	public function requiresPermission(Vtiger_Request $request){
-		$permissions = parent::requiresPermission($request);
-		$mode = $request->getMode();
-		if(!empty($mode)) {
-			switch ($mode) {
-				case 'addRelation':
-				case 'deleteRelation':
-					$permissions[] = array('module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'src_record');
-					$permissions[] = array('module_parameter' => 'related_module', 'action' => 'DetailView');
-					break;
-				case 'getRelatedListPageCount':
-					$permissions[] = array('module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'record');
-					$permissions[] = array('module_parameter' => 'relatedModule', 'action' => 'DetailView');
-				case 'getRelatedRecordInfo':
-					$permissions[] = array('module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'id');
-				default:
-					break;
-			}
-		}
-		return $permissions;
-	}
-	
-	function checkPermission(Vtiger_Request $request) {
- 		return parent::checkPermission($request);
-	}
+    public function requiresPermission(Vtiger_Request $request)
+    {
+        $permissions = parent::requiresPermission($request);
+        $mode = $request->getMode();
+        if (!empty($mode)) {
+            switch ($mode) {
+                case 'addRelation':
+                case 'deleteRelation':
+                    $permissions[] = ['module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'src_record'];
+                    $permissions[] = ['module_parameter' => 'related_module', 'action' => 'DetailView'];
+                    break;
+                case 'getRelatedListPageCount':
+                    $permissions[] = ['module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'record'];
+                    $permissions[] = ['module_parameter' => 'relatedModule', 'action' => 'DetailView'];
+                case 'getRelatedRecordInfo':
+                    $permissions[] = ['module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'id'];
 
-	function preProcess(Vtiger_Request $request) {
-		return true;
-	}
+                default:
+                    break;
+            }
+        }
 
-	function postProcess(Vtiger_Request $request) {
-		return true;
-	}
+        return $permissions;
+    }
 
-	function process(Vtiger_Request $request) {
-		$mode = $request->get('mode');
-		if(!empty($mode)) {
-			$this->invokeExposedMethod($mode, $request);
-			return;
-		}
-	}
+    public function checkPermission(Vtiger_Request $request)
+    {
+        return parent::checkPermission($request);
+    }
 
-	/*
-	 * Function to add relation for specified source record id and related record id list
-	 * @param <array> $request
-	 *		keys					Content
-	 *		src_module				source module name
-	 *		src_record				source record id
-	 *		related_module			related module name
-	 *		related_record_list		json encoded of list of related record ids
-	 */
-	function addRelation($request) {
-		$sourceModule = $request->getModule();
-		$sourceRecordId = $request->get('src_record');
+    public function preProcess(Vtiger_Request $request)
+    {
+        return true;
+    }
 
-		$relatedModule = $request->get('related_module');
-		$relatedRecordIdList = $request->get('related_record_list');
+    public function postProcess(Vtiger_Request $request)
+    {
+        return true;
+    }
 
-		$sourceModuleModel = Vtiger_Module_Model::getInstance($sourceModule);
-		$relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModule);
-		$relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
-		foreach($relatedRecordIdList as $relatedRecordId) {
-			$relationModel->addRelation($sourceRecordId,$relatedRecordId);
-		}
+    public function process(Vtiger_Request $request)
+    {
+        $mode = $request->get('mode');
+        if (!empty($mode)) {
+            $this->invokeExposedMethod($mode, $request);
 
-		$response = new Vtiger_Response();
-		$response->setResult(true);
-		$response->emit();
-	}
+            return;
+        }
+    }
 
-	/**
-	 * Function to delete the relation for specified source record id and related record id list
-	 * @param <array> $request
-	 *		keys					Content
-	 *		src_module				source module name
-	 *		src_record				source record id
-	 *		related_module			related module name
-	 *		related_record_list		json encoded of list of related record ids
-	 */
-	function deleteRelation($request) {
-		$sourceModule = $request->getModule();
-		$sourceRecordId = $request->get('src_record');
+    /*
+     * Function to add relation for specified source record id and related record id list
+     * @param <array> $request
+     *		keys					Content
+     *		src_module				source module name
+     *		src_record				source record id
+     *		related_module			related module name
+     *		related_record_list		json encoded of list of related record ids
+     */
+    public function addRelation($request)
+    {
+        $sourceModule = $request->getModule();
+        $sourceRecordId = $request->get('src_record');
 
-		$relatedModule = $request->get('related_module');
-		$relatedRecordIdList = $request->get('related_record_list');
-		$recurringEditMode = $request->get('recurringEditMode');
-		$relatedRecordList = array();
-		if($relatedModule == 'Calendar' && !empty($recurringEditMode) && $recurringEditMode != 'current') {
-			foreach($relatedRecordIdList as $relatedRecordId) {
-				$recordModel = Vtiger_Record_Model::getCleanInstance($relatedModule);
-				$recordModel->set('id', $relatedRecordId);
-				$recurringRecordsList = $recordModel->getRecurringRecordsList();
-				foreach($recurringRecordsList as $parent => $childs) {
-					$parentRecurringId = $parent;
-					$childRecords = $childs;
-				}
-				if($recurringEditMode == 'future') {
-					$parentKey = array_keys($childRecords, $relatedRecordId);
-					$childRecords = array_slice($childRecords, $parentKey[0]);
-				}
-				foreach($childRecords as $recordId) {
-					$relatedRecordList[] = $recordId;
-				}
-				$relatedRecordIdList = array_slice($relatedRecordIdList, $relatedRecordId);
-			}
-		}
+        $relatedModule = $request->get('related_module');
+        $relatedRecordIdList = $request->get('related_record_list');
 
-		foreach($relatedRecordList as $record) {
-			$relatedRecordIdList[] = $record;
-		}
+        $sourceModuleModel = Vtiger_Module_Model::getInstance($sourceModule);
+        $relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModule);
+        $relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
+        foreach ($relatedRecordIdList as $relatedRecordId) {
+            $relationModel->addRelation($sourceRecordId, $relatedRecordId);
+        }
 
-		//Setting related module as current module to delete the relation
-		vglobal('currentModule', $relatedModule);
+        $response = new Vtiger_Response();
+        $response->setResult(true);
+        $response->emit();
+    }
 
-		$sourceModuleModel = Vtiger_Module_Model::getInstance($sourceModule);
-		$relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModule);
-		$relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
-		foreach($relatedRecordIdList as $relatedRecordId) {
-			$response = $relationModel->deleteRelation($sourceRecordId,$relatedRecordId);
-		}
+    /**
+     * Function to delete the relation for specified source record id and related record id list.
+     * @param <array> $request
+     *		keys					Content
+     *		src_module				source module name
+     *		src_record				source record id
+     *		related_module			related module name
+     *		related_record_list		json encoded of list of related record ids
+     */
+    public function deleteRelation($request)
+    {
+        $sourceModule = $request->getModule();
+        $sourceRecordId = $request->get('src_record');
 
-		$response = new Vtiger_Response();
-		$response->setResult(true);
-		$response->emit();
-	}
+        $relatedModule = $request->get('related_module');
+        $relatedRecordIdList = $request->get('related_record_list');
+        $recurringEditMode = $request->get('recurringEditMode');
+        $relatedRecordList = [];
+        if ($relatedModule == 'Calendar' && !empty($recurringEditMode) && $recurringEditMode != 'current') {
+            foreach ($relatedRecordIdList as $relatedRecordId) {
+                $recordModel = Vtiger_Record_Model::getCleanInstance($relatedModule);
+                $recordModel->set('id', $relatedRecordId);
+                $recurringRecordsList = $recordModel->getRecurringRecordsList();
+                foreach ($recurringRecordsList as $parent => $childs) {
+                    $parentRecurringId = $parent;
+                    $childRecords = $childs;
+                }
+                if ($recurringEditMode == 'future') {
+                    $parentKey = array_keys($childRecords, $relatedRecordId);
+                    $childRecords = array_slice($childRecords, $parentKey[0]);
+                }
+                foreach ($childRecords as $recordId) {
+                    $relatedRecordList[] = $recordId;
+                }
+                $relatedRecordIdList = array_slice($relatedRecordIdList, $relatedRecordId);
+            }
+        }
 
-	/**
-	 * Function to get the page count for reltedlist
-	 * @return total number of pages
-	 */
-	function getRelatedListPageCount(Vtiger_Request $request){
-		$moduleName = $request->getModule();
-		$relatedModuleName = $request->get('relatedModule');
-		$parentId = $request->get('record');
-		$label = $request->get('tab_label');
-		$pagingModel = new Vtiger_Paging_Model();
-		$parentRecordModel = Vtiger_Record_Model::getInstanceById($parentId, $moduleName);
-		$relationListView = Vtiger_RelationListView_Model::getInstance($parentRecordModel, $relatedModuleName, $label);
-		$totalCount = $relationListView->getRelatedEntriesCount();
-		$pageLimit = $pagingModel->getPageLimit();
-		$pageCount = ceil((int) $totalCount / (int) $pageLimit);
+        foreach ($relatedRecordList as $record) {
+            $relatedRecordIdList[] = $record;
+        }
 
-		if($pageCount == 0){
-			$pageCount = 1;
-		}
-		$result = array();
-		$result['numberOfRecords'] = $totalCount;
-		$result['page'] = $pageCount;
-		$response = new Vtiger_Response();
-		$response->setResult($result);
-		$response->emit();
-	}
+        // Setting related module as current module to delete the relation
+        vglobal('currentModule', $relatedModule);
 
-	public function validateRequest(Vtiger_Request $request) {
-		$request->validateWriteAccess();
-	}
+        $sourceModuleModel = Vtiger_Module_Model::getInstance($sourceModule);
+        $relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModule);
+        $relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
+        foreach ($relatedRecordIdList as $relatedRecordId) {
+            $response = $relationModel->deleteRelation($sourceRecordId, $relatedRecordId);
+        }
 
-	function getRelatedRecordInfo($request) {
-		try {
-			return $this->getParentRecordInfo($request);
-		} catch (Exception $e) {
-			$response = new Vtiger_Response();
-			$response->setError($e->getCode(), $e->getMessage());
-			$response->emit();
-		}
-	}
+        $response = new Vtiger_Response();
+        $response->setResult(true);
+        $response->emit();
+    }
 
-	function getParentRecordInfo($request) {
-		$moduleName = $request->get('module');
-		$recordModel = Vtiger_Record_Model::getInstanceById($request->get('id'), $moduleName);
-		$moduleModel = $recordModel->getModule();
-		$autoFillData = $moduleModel->getAutoFillModuleAndField($moduleName);
+    /**
+     * Function to get the page count for reltedlist.
+     * @return total number of pages
+     */
+    public function getRelatedListPageCount(Vtiger_Request $request)
+    {
+        $moduleName = $request->getModule();
+        $relatedModuleName = $request->get('relatedModule');
+        $parentId = $request->get('record');
+        $label = $request->get('tab_label');
+        $pagingModel = new Vtiger_Paging_Model();
+        $parentRecordModel = Vtiger_Record_Model::getInstanceById($parentId, $moduleName);
+        $relationListView = Vtiger_RelationListView_Model::getInstance($parentRecordModel, $relatedModuleName, $label);
+        $totalCount = $relationListView->getRelatedEntriesCount();
+        $pageLimit = $pagingModel->getPageLimit();
+        $pageCount = ceil((int) $totalCount / (int) $pageLimit);
 
-		if($autoFillData) {
-			foreach($autoFillData as $data) {
-				$autoFillModule = $data['module'];
-				$autoFillFieldName = $data['fieldname'];
-				$autofillRecordId = $recordModel->get($autoFillFieldName);
+        if ($pageCount == 0) {
+            $pageCount = 1;
+        }
+        $result = [];
+        $result['numberOfRecords'] = $totalCount;
+        $result['page'] = $pageCount;
+        $response = new Vtiger_Response();
+        $response->setResult($result);
+        $response->emit();
+    }
 
-				$autoFillNameArray = getEntityName($autoFillModule, $autofillRecordId);
-				$autoFillName = $autoFillNameArray[$autofillRecordId];
+    public function validateRequest(Vtiger_Request $request)
+    {
+        $request->validateWriteAccess();
+    }
 
-				$resultData[] = array(	'id'		=> $request->get('id'), 
-										'name'		=> decode_html($recordModel->getName()),
-										'parent_id'	=> array(	'id' => $autofillRecordId,
-																'name' => decode_html($autoFillName),
-																'module' => $autoFillModule));
-			}
+    public function getRelatedRecordInfo($request)
+    {
+        try {
+            return $this->getParentRecordInfo($request);
+        } catch (Exception $e) {
+            $response = new Vtiger_Response();
+            $response->setError($e->getCode(), $e->getMessage());
+            $response->emit();
+        }
+    }
 
-			$result[$request->get('id')] = $resultData;
+    public function getParentRecordInfo($request)
+    {
+        $moduleName = $request->get('module');
+        $recordModel = Vtiger_Record_Model::getInstanceById($request->get('id'), $moduleName);
+        $moduleModel = $recordModel->getModule();
+        $autoFillData = $moduleModel->getAutoFillModuleAndField($moduleName);
 
-		} else {
-			$resultData = array('id'	=> $request->get('id'), 
-								'name'	=> decode_html($recordModel->getName()),
-								'info'	=> $recordModel->getRawData());
-			$result[$request->get('id')] = $resultData;
-		}
+        if ($autoFillData) {
+            foreach ($autoFillData as $data) {
+                $autoFillModule = $data['module'];
+                $autoFillFieldName = $data['fieldname'];
+                $autofillRecordId = $recordModel->get($autoFillFieldName);
 
-		$response = new Vtiger_Response();
-		$response->setResult($result);
-		$response->emit();
-	}
+                $autoFillNameArray = getEntityName($autoFillModule, $autofillRecordId);
+                $autoFillName = $autoFillNameArray[$autofillRecordId];
 
+                $resultData[] = ['id'		=> $request->get('id'),
+                    'name'		=> decode_html($recordModel->getName()),
+                    'parent_id'	=> ['id' => $autofillRecordId,
+                        'name' => decode_html($autoFillName),
+                        'module' => $autoFillModule]];
+            }
+
+            $result[$request->get('id')] = $resultData;
+
+        } else {
+            $resultData = ['id'	=> $request->get('id'),
+                'name'	=> decode_html($recordModel->getName()),
+                'info'	=> $recordModel->getRawData()];
+            $result[$request->get('id')] = $resultData;
+        }
+
+        $response = new Vtiger_Response();
+        $response->setResult($result);
+        $response->emit();
+    }
 }

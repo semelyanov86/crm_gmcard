@@ -8,46 +8,48 @@
  * All Rights Reserved.
  * ****************************************************************************** */
 
-class Settings_EMAILMaker_Module_Model extends Settings_Vtiger_Module_Model {
+class Settings_EMAILMaker_Module_Model extends Settings_Vtiger_Module_Model
+{
+    /**
+     * Function retruns List of email templates.
+     * @return string
+     */
+    public function getListViewUrl()
+    {
+        return 'module=EMAILMaker&parent=Settings&view=List';
+    }
 
-	/**
-	 * Function retruns List of email templates
-	 * @return string
-	 */
-	function getListViewUrl() {
-		return 'module=EMAILMaker&parent=Settings&view=List';
-	}
+    /**
+     * Function returns all the email template Models.
+     * @return <Array of EmailTemplates_Record_Model>
+     */
+    public function getAll($formodule)
+    {
+        global $_REQUEST;
+        $db = PearDatabase::getInstance();
 
-	/**
-	 * Function returns all the email template Models
-	 * @return <Array of EmailTemplates_Record_Model>
-	 */
-	function getAll($formodule) {
-                global $_REQUEST;
-		$db = PearDatabase::getInstance();
-		
-                $emailTemplateModels = array();
-                $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
-                $request = new Vtiger_Request($_REQUEST, $_REQUEST);
-                $return_data = $EMAILMaker->GetListviewData("templateid", "asc", $formodule, true, $request); 
- 
-                foreach ($return_data AS $templates_data) {
-                    if ($templates_data["status"] == "1" && $templates_data["is_listview"] == "0") {
-                        $emailTemplateModel = Settings_EMAILMaker_Record_Model::getInstance();
-                        $templates_data["type"] = "EMAILMaker";
-                        $emailTemplateModel->setData($templates_data);
-                        $emailTemplateModels[] = $emailTemplateModel;
-                    }
-                }
- 
-                $result = $db->pquery('SELECT * FROM vtiger_emailtemplates WHERE deleted = 0', array());
+        $emailTemplateModels = [];
+        $EMAILMaker = new EMAILMaker_EMAILMaker_Model();
+        $request = new Vtiger_Request($_REQUEST, $_REQUEST);
+        $return_data = $EMAILMaker->GetListviewData('templateid', 'asc', $formodule, true, $request);
 
-		for($i=0; $i<$db->num_rows($result); $i++) {
-                    $emailTemplateModel = Settings_EMAILMaker_Record_Model::getInstance();
-                    $emailTemplateModel->setData($db->query_result_rowdata($result, $i));
-                    $emailTemplateModels[] = $emailTemplateModel;
-		}
+        foreach ($return_data as $templates_data) {
+            if ($templates_data['status'] == '1' && $templates_data['is_listview'] == '0') {
+                $emailTemplateModel = Settings_EMAILMaker_Record_Model::getInstance();
+                $templates_data['type'] = 'EMAILMaker';
+                $emailTemplateModel->setData($templates_data);
+                $emailTemplateModels[] = $emailTemplateModel;
+            }
+        }
 
-		return $emailTemplateModels;
-	}
+        $result = $db->pquery('SELECT * FROM vtiger_emailtemplates WHERE deleted = 0', []);
+
+        for ($i = 0; $i < $db->num_rows($result); ++$i) {
+            $emailTemplateModel = Settings_EMAILMaker_Record_Model::getInstance();
+            $emailTemplateModel->setData($db->query_result_rowdata($result, $i));
+            $emailTemplateModels[] = $emailTemplateModel;
+        }
+
+        return $emailTemplateModels;
+    }
 }

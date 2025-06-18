@@ -1,4 +1,5 @@
 <?php
+
 /* * *******************************************************************************
  * The content of this file is subject to the Descriptions 4 You license.
  * ("License"); You may not use this file except in compliance with the License

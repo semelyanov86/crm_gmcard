@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,181 +7,195 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
-include_once('vtlib/Vtiger/Package.php');
+ */
+include_once 'vtlib/Vtiger/Package.php';
 
 /**
  * Provides API to package vtiger CRM layout files.
- * @package vtlib
  */
-class Vtiger_LayoutExport extends Vtiger_Package {
-    const TABLENAME = 'vtiger_layout';
+class Vtiger_LayoutExport extends Vtiger_Package
+{
+    public const TABLENAME = 'vtiger_layout';
 
     /**
-     * Constructor
+     * Constructor.
      */
-    function __construct() {
-            parent::__construct();
+    public function __construct()
+    {
+        parent::__construct();
     }
 
     /**
-     * Generate unique id for insertion
-     * @access private
+     * Generate unique id for insertion.
      */
-    static function __getUniqueId() {
-            global $adb;
-            return $adb->getUniqueID(self::TABLENAME);
+    public static function __getUniqueId()
+    {
+        global $adb;
+
+        return $adb->getUniqueID(self::TABLENAME);
     }
 
     /**
-     * Initialize Export
-     * @access private
+     * Initialize Export.
      */
-    function __initExport($layoutName, $moduleInstance = false) {
-            // Security check to ensure file is withing the web folder.
-            Vtiger_Utils::checkFileAccessForInclusion("layouts/$layoutName/skins/vtiger/style.less");
+    public function __initExport($layoutName, $moduleInstance = false)
+    {
+        // Security check to ensure file is withing the web folder.
+        Vtiger_Utils::checkFileAccessForInclusion("layouts/{$layoutName}/skins/vtiger/style.less");
 
-            $this->_export_modulexml_file = fopen($this->__getManifestFilePath(), 'w');
-            $this->__write("<?xml version='1.0'?>\n");
+        $this->_export_modulexml_file = fopen($this->__getManifestFilePath(), 'w');
+        $this->__write("<?xml version='1.0'?>\n");
     }
 
     /**
      * Export Module as a zip file.
      * @param Layout name to be export
      * @param Path Output directory path
-     * @param String Zipfilename to use
-     * @param Boolean True for sending the output as download
+     * @param string Zipfilename to use
+     * @param bool True for sending the output as download
      */
-    function export($layoutName, $todir='', $zipfilename='', $directDownload=false, $extra=false) {
-            $this->__initExport($layoutName);
+    public function export($layoutName, $todir = '', $zipfilename = '', $directDownload = false, $extra = false)
+    {
+        $this->__initExport($layoutName);
 
-            // Call layout export function
-            $this->export_Layout($layoutName);
+        // Call layout export function
+        $this->export_Layout($layoutName);
 
-            $this->__finishExport();
+        $this->__finishExport();
 
-            // Export as Zip
-            if($zipfilename == '') $zipfilename = "$layoutName-" . date('YmdHis') . ".zip";
-            $zipfilename = "$this->_export_tmpdir/$zipfilename";
+        // Export as Zip
+        if ($zipfilename == '') {
+            $zipfilename = "{$layoutName}-" . date('YmdHis') . '.zip';
+        }
+        $zipfilename = "{$this->_export_tmpdir}/{$zipfilename}";
 
-            $zip = new Vtiger_Zip($zipfilename);
+        $zip = new Vtiger_Zip($zipfilename);
 
-            // Add manifest file
-            $zip->addFile($this->__getManifestFilePath(), "manifest.xml");
+        // Add manifest file
+        $zip->addFile($this->__getManifestFilePath(), 'manifest.xml');
 
-            // Copy module directory
-            $zip->copyDirectoryFromDisk("layouts/$layoutName");
+        // Copy module directory
+        $zip->copyDirectoryFromDisk("layouts/{$layoutName}");
 
-            $zip->save();
+        $zip->save();
 
-            if($todir) {
-                    copy($zipfilename, $todir);
-            }
-            
-            if($directDownload) {
-                    $zip->forceDownload($zipfilename);
-                    unlink($zipfilename);
-            }
-            $this->__cleanupExport();
+        if ($todir) {
+            copy($zipfilename, $todir);
+        }
+
+        if ($directDownload) {
+            $zip->forceDownload($zipfilename);
+            unlink($zipfilename);
+        }
+        $this->__cleanupExport();
     }
 
     /**
-     * Export Layout Handler
-     * @access private
+     * Export Layout Handler.
      */
-    function export_Layout($layoutName) {
-            global $adb;
+    public function export_Layout($layoutName)
+    {
+        global $adb;
 
-            $sqlresult = $adb->pquery("SELECT * FROM vtiger_layout WHERE name = ?", array($layoutName));
-            $layoutresultrow = $adb->fetch_array($sqlresult);
+        $sqlresult = $adb->pquery('SELECT * FROM vtiger_layout WHERE name = ?', [$layoutName]);
+        $layoutresultrow = $adb->fetch_array($sqlresult);
 
-            $layoutname  = decode_html($layoutresultrow['name']);
-            $layoutlabel = decode_html($layoutresultrow['label']);
+        $layoutname  = decode_html($layoutresultrow['name']);
+        $layoutlabel = decode_html($layoutresultrow['label']);
 
-            $this->openNode('module');
-            $this->outputNode(date('Y-m-d H:i:s'),'exporttime');
-            $this->outputNode($layoutname, 'name');
-            $this->outputNode($layoutlabel, 'label');
+        $this->openNode('module');
+        $this->outputNode(date('Y-m-d H:i:s'), 'exporttime');
+        $this->outputNode($layoutname, 'name');
+        $this->outputNode($layoutlabel, 'label');
 
-            $this->outputNode('layout', 'type');
+        $this->outputNode('layout', 'type');
 
-            // Export dependency information
-            $this->export_Dependencies();
+        // Export dependency information
+        $this->export_Dependencies();
 
-            $this->closeNode('module');
+        $this->closeNode('module');
     }
 
     /**
-     * Export vtiger dependencies
-     * @access private
+     * Export vtiger dependencies.
      */
-    function export_Dependencies($moduleInstance = false) {
-            global $vtiger_current_version, $adb;
+    public function export_Dependencies($moduleInstance = false)
+    {
+        global $vtiger_current_version, $adb;
 
-            $vtigerMinVersion = $vtiger_current_version;
-            $vtigerMaxVersion = false;
+        $vtigerMinVersion = $vtiger_current_version;
+        $vtigerMaxVersion = false;
 
-            $this->openNode('dependencies');
-            $this->outputNode($vtigerMinVersion, 'vtiger_version');
-            if($vtigerMaxVersion !== false)	$this->outputNode($vtigerMaxVersion, 'vtiger_max_version');
-            $this->closeNode('dependencies');
+        $this->openNode('dependencies');
+        $this->outputNode($vtigerMinVersion, 'vtiger_version');
+        if ($vtigerMaxVersion !== false) {
+            $this->outputNode($vtigerMaxVersion, 'vtiger_max_version');
+        }
+        $this->closeNode('dependencies');
     }
 
-
     /**
-     * Initialize Layout Schema
-     * @access private
+     * Initialize Layout Schema.
      */
-    static function __initSchema() {
-            $hastable = Vtiger_Utils::CheckTable(self::TABLENAME);
-            if(!$hastable) {
-                    Vtiger_Utils::CreateTable(
-                            self::TABLENAME,
-                            '(id INT NOT NULL PRIMARY KEY,
+    public static function __initSchema()
+    {
+        $hastable = Vtiger_Utils::CheckTable(self::TABLENAME);
+        if (!$hastable) {
+            Vtiger_Utils::CreateTable(
+                self::TABLENAME,
+                '(id INT NOT NULL PRIMARY KEY,
                             name VARCHAR(50), label VARCHAR(30), lastupdated DATETIME, isdefault INT(1), active INT(1))',
-                            true
-                    );
-                   
-            }
+                true,
+            );
+
+        }
     }
-    
+
     /**
      * Register layout pack information.
      */
-    static function register($name, $label='', $isdefault=false, $isactive=true, $overrideCore=false) {
-            self::__initSchema();
+    public static function register($name, $label = '', $isdefault = false, $isactive = true, $overrideCore = false)
+    {
+        self::__initSchema();
 
-            $prefix = trim($prefix);
-            // We will not allow registering core layouts unless forced
-            if(strtolower($name) == 'vlayout' && $overrideCore == false) return;
+        $prefix = trim($prefix);
+        // We will not allow registering core layouts unless forced
+        if (strtolower($name) == 'vlayout' && $overrideCore == false) {
+            return;
+        }
 
-            $useisdefault = ($isdefault)? 1 : 0;
-            $useisactive  = ($isactive)?  1 : 0;
+        $useisdefault = ($isdefault) ? 1 : 0;
+        $useisactive  = ($isactive) ? 1 : 0;
 
-            global $adb;
-            $checkres = $adb->pquery('SELECT * FROM '.self::TABLENAME.' WHERE name=?', Array($name));
-            $datetime = date('Y-m-d H:i:s');
-            if($adb->num_rows($checkres)) {
-                    $id = $adb->query_result($checkres, 0, 'id');
-                    $adb->pquery('UPDATE '.self::TABLENAME.' set label=?, name=?, lastupdated=?, isdefault=?, active=? WHERE id=?',
-                            Array($label, $name, $datetime, $useisdefault, $useisactive, $id));
-            } else {
-                    $uniqueid = self::__getUniqueId();
-                    $adb->pquery('INSERT INTO '.self::TABLENAME.' (id,name,label,lastupdated,isdefault,active) VALUES(?,?,?,?,?,?)',
-                            Array($uniqueid, $name, $label, $datetime, $useisdefault, $useisactive));
-            }
-            self::log("Registering Layout $name ... DONE");		
+        global $adb;
+        $checkres = $adb->pquery('SELECT * FROM ' . self::TABLENAME . ' WHERE name=?', [$name]);
+        $datetime = date('Y-m-d H:i:s');
+        if ($adb->num_rows($checkres)) {
+            $id = $adb->query_result($checkres, 0, 'id');
+            $adb->pquery(
+                'UPDATE ' . self::TABLENAME . ' set label=?, name=?, lastupdated=?, isdefault=?, active=? WHERE id=?',
+                [$label, $name, $datetime, $useisdefault, $useisactive, $id],
+            );
+        } else {
+            $uniqueid = self::__getUniqueId();
+            $adb->pquery(
+                'INSERT INTO ' . self::TABLENAME . ' (id,name,label,lastupdated,isdefault,active) VALUES(?,?,?,?,?,?)',
+                [$uniqueid, $name, $label, $datetime, $useisdefault, $useisactive],
+            );
+        }
+        self::log("Registering Layout {$name} ... DONE");
     }
-    
-    
-        static function deregister($name) {
-	     if(strtolower($name) == 'vlayout') return;
 
-		 self::__initSchema();
+    public static function deregister($name)
+    {
+        if (strtolower($name) == 'vlayout') {
+            return;
+        }
 
-		global $adb;
-	    $adb->pquery('DELETE FROM '.self::TABLENAME.' WHERE name=?', Array($name));
-		self::log("Deregistering Layout $name ... DONE");
-	}
+        self::__initSchema();
 
+        global $adb;
+        $adb->pquery('DELETE FROM ' . self::TABLENAME . ' WHERE name=?', [$name]);
+        self::log("Deregistering Layout {$name} ... DONE");
+    }
 }

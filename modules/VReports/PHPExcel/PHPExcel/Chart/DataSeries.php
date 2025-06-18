@@ -1,111 +1,396 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/**
+ * PHPExcel.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category    PHPExcel
+ * @copyright    Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license        http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    ##VERSION##, ##DATE##
+ */
+
+
+/**
+ * PHPExcel_Chart_DataSeries.
+ *
+ * @category    PHPExcel
+ * @copyright    Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Chart_DataSeries
+{
+    public const TYPE_BARCHART        = 'barChart';
+    public const TYPE_BARCHART_3D     = 'bar3DChart';
+    public const TYPE_LINECHART       = 'lineChart';
+    public const TYPE_LINECHART_3D    = 'line3DChart';
+    public const TYPE_AREACHART       = 'areaChart';
+    public const TYPE_AREACHART_3D    = 'area3DChart';
+    public const TYPE_PIECHART        = 'pieChart';
+    public const TYPE_PIECHART_3D     = 'pie3DChart';
+    public const TYPE_DOUGHTNUTCHART  = 'doughnutChart';
+    public const TYPE_DONUTCHART      = self::TYPE_DOUGHTNUTCHART;    //    Synonym
+    public const TYPE_SCATTERCHART    = 'scatterChart';
+    public const TYPE_SURFACECHART    = 'surfaceChart';
+    public const TYPE_SURFACECHART_3D = 'surface3DChart';
+    public const TYPE_RADARCHART      = 'radarChart';
+    public const TYPE_BUBBLECHART     = 'bubbleChart';
+    public const TYPE_STOCKCHART      = 'stockChart';
+    public const TYPE_CANDLECHART     = self::TYPE_STOCKCHART;       //    Synonym
+    public const GROUPING_CLUSTERED       = 'clustered';
+    public const GROUPING_STACKED         = 'stacked';
+    public const GROUPING_PERCENT_STACKED = 'percentStacked';
+    public const GROUPING_STANDARD        = 'standard';
+    public const DIRECTION_BAR        = 'bar';
+    public const DIRECTION_HORIZONTAL = self::DIRECTION_BAR;
+    public const DIRECTION_COL        = 'col';
+    public const DIRECTION_COLUMN     = self::DIRECTION_COL;
+    public const DIRECTION_VERTICAL   = self::DIRECTION_COL;
+    public const STYLE_LINEMARKER   = 'lineMarker';
+    public const STYLE_SMOOTHMARKER = 'smoothMarker';
+    public const STYLE_MARKER       = 'marker';
+    public const STYLE_FILLED       = 'filled';
+
+    /**
+     * Series Plot Type.
+     *
+     * @var string
+     */
+    private $plotType;
+
+    /**
+     * Plot Grouping Type.
+     *
+     * @var bool
+     */
+    private $plotGrouping;
+
+    /**
+     * Plot Direction.
+     *
+     * @var bool
+     */
+    private $plotDirection;
+
+    /**
+     * Plot Style.
+     *
+     * @var string
+     */
+    private $plotStyle;
+
+    /**
+     * Order of plots in Series.
+     *
+     * @var array of integer
+     */
+    private $plotOrder = [];
+
+    /**
+     * Plot Label.
+     *
+     * @var array of PHPExcel_Chart_DataSeriesValues
+     */
+    private $plotLabel = [];
+
+    /**
+     * Plot Category.
+     *
+     * @var array of PHPExcel_Chart_DataSeriesValues
+     */
+    private $plotCategory = [];
+
+    /**
+     * Smooth Line.
+     *
+     * @var string
+     */
+    private $smoothLine;
+
+    /**
+     * Plot Values.
+     *
+     * @var array of PHPExcel_Chart_DataSeriesValues
+     */
+    private $plotValues = [];
+
+    /**
+     * Create a new PHPExcel_Chart_DataSeries.
+     */
+    public function __construct($plotType = null, $plotGrouping = null, $plotOrder = [], $plotLabel = [], $plotCategory = [], $plotValues = [], $plotDirection = null, $smoothLine = null, $plotStyle = null)
+    {
+        $this->plotType = $plotType;
+        $this->plotGrouping = $plotGrouping;
+        $this->plotOrder = $plotOrder;
+        $keys = array_keys($plotValues);
+        $this->plotValues = $plotValues;
+        if ((count($plotLabel) == 0) || is_null($plotLabel[$keys[0]])) {
+            $plotLabel[$keys[0]] = new PHPExcel_Chart_DataSeriesValues();
+        }
+
+        $this->plotLabel = $plotLabel;
+        if ((count($plotCategory) == 0) || is_null($plotCategory[$keys[0]])) {
+            $plotCategory[$keys[0]] = new PHPExcel_Chart_DataSeriesValues();
+        }
+        $this->plotCategory = $plotCategory;
+        $this->smoothLine = $smoothLine;
+        $this->plotStyle = $plotStyle;
+
+        if (is_null($plotDirection)) {
+            $plotDirection = self::DIRECTION_COL;
+        }
+        $this->plotDirection = $plotDirection;
+    }
+
+    /**
+     * Get Plot Type.
+     *
+     * @return string
+     */
+    public function getPlotType()
+    {
+        return $this->plotType;
+    }
+
+    /**
+     * Set Plot Type.
+     *
+     * @param string $plotType
+     * @return PHPExcel_Chart_DataSeries
+     */
+    public function setPlotType($plotType = '')
+    {
+        $this->plotType = $plotType;
+
+        return $this;
+    }
+
+    /**
+     * Get Plot Grouping Type.
+     *
+     * @return string
+     */
+    public function getPlotGrouping()
+    {
+        return $this->plotGrouping;
+    }
+
+    /**
+     * Set Plot Grouping Type.
+     *
+     * @param string $groupingType
+     * @return PHPExcel_Chart_DataSeries
+     */
+    public function setPlotGrouping($groupingType = null)
+    {
+        $this->plotGrouping = $groupingType;
+
+        return $this;
+    }
+
+    /**
+     * Get Plot Direction.
+     *
+     * @return string
+     */
+    public function getPlotDirection()
+    {
+        return $this->plotDirection;
+    }
+
+    /**
+     * Set Plot Direction.
+     *
+     * @param string $plotDirection
+     * @return PHPExcel_Chart_DataSeries
+     */
+    public function setPlotDirection($plotDirection = null)
+    {
+        $this->plotDirection = $plotDirection;
+
+        return $this;
+    }
+
+    /**
+     * Get Plot Order.
+     *
+     * @return string
+     */
+    public function getPlotOrder()
+    {
+        return $this->plotOrder;
+    }
+
+    /**
+     * Get Plot Labels.
+     *
+     * @return array of PHPExcel_Chart_DataSeriesValues
+     */
+    public function getPlotLabels()
+    {
+        return $this->plotLabel;
+    }
+
+    /**
+     * Get Plot Label by Index.
+     *
+     * @return PHPExcel_Chart_DataSeriesValues
+     */
+    public function getPlotLabelByIndex($index)
+    {
+        $keys = array_keys($this->plotLabel);
+        if (in_array($index, $keys)) {
+            return $this->plotLabel[$index];
+        }
+        if (isset($keys[$index])) {
+            return $this->plotLabel[$keys[$index]];
+        }
+
+        return false;
+    }
+
+    /**
+     * Get Plot Categories.
+     *
+     * @return array of PHPExcel_Chart_DataSeriesValues
+     */
+    public function getPlotCategories()
+    {
+        return $this->plotCategory;
+    }
+
+    /**
+     * Get Plot Category by Index.
+     *
+     * @return PHPExcel_Chart_DataSeriesValues
+     */
+    public function getPlotCategoryByIndex($index)
+    {
+        $keys = array_keys($this->plotCategory);
+        if (in_array($index, $keys)) {
+            return $this->plotCategory[$index];
+        }
+        if (isset($keys[$index])) {
+            return $this->plotCategory[$keys[$index]];
+        }
+
+        return false;
+    }
+
+    /**
+     * Get Plot Style.
+     *
+     * @return string
+     */
+    public function getPlotStyle()
+    {
+        return $this->plotStyle;
+    }
+
+    /**
+     * Set Plot Style.
+     *
+     * @param string $plotStyle
+     * @return PHPExcel_Chart_DataSeries
+     */
+    public function setPlotStyle($plotStyle = null)
+    {
+        $this->plotStyle = $plotStyle;
+
+        return $this;
+    }
+
+    /**
+     * Get Plot Values.
+     *
+     * @return array of PHPExcel_Chart_DataSeriesValues
+     */
+    public function getPlotValues()
+    {
+        return $this->plotValues;
+    }
+
+    /**
+     * Get Plot Values by Index.
+     *
+     * @return PHPExcel_Chart_DataSeriesValues
+     */
+    public function getPlotValuesByIndex($index)
+    {
+        $keys = array_keys($this->plotValues);
+        if (in_array($index, $keys)) {
+            return $this->plotValues[$index];
+        }
+        if (isset($keys[$index])) {
+            return $this->plotValues[$keys[$index]];
+        }
+
+        return false;
+    }
+
+    /**
+     * Get Number of Plot Series.
+     *
+     * @return int
+     */
+    public function getPlotSeriesCount()
+    {
+        return count($this->plotValues);
+    }
+
+    /**
+     * Get Smooth Line.
+     *
+     * @return bool
+     */
+    public function getSmoothLine()
+    {
+        return $this->smoothLine;
+    }
+
+    /**
+     * Set Smooth Line.
+     *
+     * @param bool $smoothLine
+     * @return PHPExcel_Chart_DataSeries
+     */
+    public function setSmoothLine($smoothLine = true)
+    {
+        $this->smoothLine = $smoothLine;
+
+        return $this;
+    }
+
+    public function refresh(PHPExcel_Worksheet $worksheet)
+    {
+        foreach ($this->plotValues as $plotValues) {
+            if ($plotValues !== null) {
+                $plotValues->refresh($worksheet, true);
+            }
+        }
+        foreach ($this->plotLabel as $plotValues) {
+            if ($plotValues !== null) {
+                $plotValues->refresh($worksheet, true);
+            }
+        }
+        foreach ($this->plotCategory as $plotValues) {
+            if ($plotValues !== null) {
+                $plotValues->refresh($worksheet, false);
+            }
+        }
+    }
+}

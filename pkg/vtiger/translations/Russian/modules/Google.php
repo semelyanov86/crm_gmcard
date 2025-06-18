@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
 * The contents of this file are subject to the vtiger CRM Public License Version 1.0
 * ("License"); You may not use this file except in compliance with the License
@@ -6,29 +7,29 @@
 * The Initial Developer of the Original Code is vtiger.
 * Portions created by vtiger are Copyright (C) vtiger.
 * All Rights Reserved.
-*************************************************************************************/
-$languageStrings = array(
-	'Map'	=>	"Карта",
-	'EXTENTIONNAME'	=>	"Google",
-	'LBL_UPDATES_CRM'	=>	"Обновления в CRM",
-	'LBL_UPDATES_GOOGLE'	=>	"Обновления в Google",
-	'LBL_UPDATED'	=>	"Обновленный",
-	'LBL_ADDED'	=>	"Добавленный",
-	'LBL_DELETED'	=>	"Удаленный",
-	'LBL_SYNCRONIZED'	=>	"Синхронизированный",
-	'LBL_NOT_SYNCRONIZED'	=>	"Вы еще не синхронизированы",
-	'LBL_SYNC_BUTTON'	=>	"Синхронизация Теперь",
-	'LBL_REMOVE_SYNC'	=>	"Удалить Синхронизировать",
-	'LBL_MORE_VTIGER'	=>	"Есть несколько записей, которые будут синхронизированы в Vtiger",
-	'LBL_MORE_GOOGLE'	=>	"Есть несколько записей, которые будут синхронизированы в Google",
-	'Contact Name'	=>	"Контактное лицо",
-	'Email'	=>	"E-mail",
-	'Mobile Phone'	=>	"Мобильный телефон",
-	'Address'	=>	"Адрес",
-	'Event Title'	=>	"Название событие",
-	'Start Date'	=>	"Дата начала",
-	'Until Date'	=>	"До Дата",
-	'Description'	=>	"Описание",
+*/
+$languageStrings = [
+    'Map'	=>	'Карта',
+    'EXTENTIONNAME'	=>	'Google',
+    'LBL_UPDATES_CRM'	=>	'Обновления в CRM',
+    'LBL_UPDATES_GOOGLE'	=>	'Обновления в Google',
+    'LBL_UPDATED'	=>	'Обновленный',
+    'LBL_ADDED'	=>	'Добавленный',
+    'LBL_DELETED'	=>	'Удаленный',
+    'LBL_SYNCRONIZED'	=>	'Синхронизированный',
+    'LBL_NOT_SYNCRONIZED'	=>	'Вы еще не синхронизированы',
+    'LBL_SYNC_BUTTON'	=>	'Синхронизация Теперь',
+    'LBL_REMOVE_SYNC'	=>	'Удалить Синхронизировать',
+    'LBL_MORE_VTIGER'	=>	'Есть несколько записей, которые будут синхронизированы в Vtiger',
+    'LBL_MORE_GOOGLE'	=>	'Есть несколько записей, которые будут синхронизированы в Google',
+    'Contact Name'	=>	'Контактное лицо',
+    'Email'	=>	'E-mail',
+    'Mobile Phone'	=>	'Мобильный телефон',
+    'Address'	=>	'Адрес',
+    'Event Title'	=>	'Название событие',
+    'Start Date'	=>	'Дата начала',
+    'Until Date'	=>	'До Дата',
+    'Description'	=>	'Описание',
     'Office Phone' => 'Служебный телефон',
     'Work Phone' => 'Рабочий телефон',
     'Home Phone' => 'Домашний телефон',
@@ -67,21 +68,21 @@ $languageStrings = array(
     'LBL_SAVE_AND_START_SYNC' => 'И начинайте синхронизации',
     'LBL_PRIMARY' => 'Основной',
     'LBL_SYNC_FROM_GOOGLE_TO_VTIGER' => 'Синхронизация с Google, чтобы Vtiger',
-	'LBL_SYNC_FROM_VTIGER_TO_GOOGLE' => 'Синхронизация с Vtiger в Google',
-	'LBL_GOOGLE_CONNECT_MSG' => 'Подключение к учетной записи Google, чтобы принести',
-	'LBL_SIGN_IN_WITH_GOOGLE' => 'Войти на Google',
-	'LBL_GOOGLE_ACCOUNT_DETAILS' => 'Google Реквизиты счёта',
-	'LBL_GOOGLE_ACCOUNT_SYNCED_WITH' => 'Google аккаунт, синхронизированные с',
-	'LBL_CHANGE_USER' => 'Change User',
+    'LBL_SYNC_FROM_VTIGER_TO_GOOGLE' => 'Синхронизация с Vtiger в Google',
+    'LBL_GOOGLE_CONNECT_MSG' => 'Подключение к учетной записи Google, чтобы принести',
+    'LBL_SIGN_IN_WITH_GOOGLE' => 'Войти на Google',
+    'LBL_GOOGLE_ACCOUNT_DETAILS' => 'Google Реквизиты счёта',
+    'LBL_GOOGLE_ACCOUNT_SYNCED_WITH' => 'Google аккаунт, синхронизированные с',
+    'LBL_CHANGE_USER' => 'Change User',
 
-  'LBL_SAVE_AND_IMPORT' => 'Сохранить и импортировать',
-  'LBL_IMPORT_RESULTS_GOOGLE' => 'Гугле импорта результатов',
+    'LBL_SAVE_AND_IMPORT' => 'Сохранить и импортировать',
+    'LBL_IMPORT_RESULTS_GOOGLE' => 'Гугле импорта результатов',
 
-	'LBL_REDIRECT_URL' => 'Перенаправление URL',
-	'LBL_REDIRECT_URL_MESSAGE' => 'Скопируйте следующий URL перенаправления и вставьте в ваш Google Идент проект как изображение показывает',
-);
-$jsLanguageStrings = array(
-	'LBL_SYNC_BUTTON'	=>	"Синхронизация Теперь",
-	'LBL_SYNCRONIZING'	=>	"Синхронизация ....",
-	'LBL_NOT_SYNCRONIZE'	=>	"Вы еще не синхронизированы",
-);
+    'LBL_REDIRECT_URL' => 'Перенаправление URL',
+    'LBL_REDIRECT_URL_MESSAGE' => 'Скопируйте следующий URL перенаправления и вставьте в ваш Google Идент проект как изображение показывает',
+];
+$jsLanguageStrings = [
+    'LBL_SYNC_BUTTON'	=>	'Синхронизация Теперь',
+    'LBL_SYNCRONIZING'	=>	'Синхронизация ....',
+    'LBL_NOT_SYNCRONIZE'	=>	'Вы еще не синхронизированы',
+];

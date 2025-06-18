@@ -1,62 +1,65 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-dFUSp04eu7GIOJDCHQeZBmMc2+K2bG==
+<?php
+
+/**
+ * PHPExcel_Writer_Excel2007_RelsRibbon.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @copyright  Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version     ##VERSION##, ##DATE##
+ */
+class PHPExcel_Writer_Excel2007_RelsRibbon extends PHPExcel_Writer_Excel2007_WriterPart
+{
+    /**
+     * Write relationships for additional objects of custom UI (ribbon).
+     *
+     * @return     string         XML Output
+     * @throws     PHPExcel_Writer_Exception
+     */
+    public function writeRibbonRelationships(?PHPExcel $pPHPExcel = null)
+    {
+        // Create XML writer
+        $objWriter = null;
+        if ($this->getParentWriter()->getUseDiskCaching()) {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_DISK, $this->getParentWriter()->getDiskCachingDirectory());
+        } else {
+            $objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_MEMORY);
+        }
+
+        // XML header
+        $objWriter->startDocument('1.0', 'UTF-8', 'yes');
+
+        // Relationships
+        $objWriter->startElement('Relationships');
+        $objWriter->writeAttribute('xmlns', 'http://schemas.openxmlformats.org/package/2006/relationships');
+        $localRels = $pPHPExcel->getRibbonBinObjects('names');
+        if (is_array($localRels)) {
+            foreach ($localRels as $aId => $aTarget) {
+                $objWriter->startElement('Relationship');
+                $objWriter->writeAttribute('Id', $aId);
+                $objWriter->writeAttribute('Type', 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/image');
+                $objWriter->writeAttribute('Target', $aTarget);
+                $objWriter->endElement();
+            }
+        }
+        $objWriter->endElement();
+
+        return $objWriter->getData();
+    }
+}

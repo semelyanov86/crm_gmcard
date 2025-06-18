@@ -1,5 +1,5 @@
 <?php
- 
+
 
 class ITS4YouDescriptions_GetFieldsForModule_Action extends Vtiger_BasicAjax_Action
 {
@@ -13,11 +13,8 @@ class ITS4YouDescriptions_GetFieldsForModule_Action extends Vtiger_BasicAjax_Act
         $this->isInstalled = (Vtiger_Module_Model::getInstance($class[0])->getLicensePermissions($class[1]) === date('GetFieldsForModule20'));
     }
 
-    public function checkPermission(Vtiger_Request $request)
-    {
-    }
+    public function checkPermission(Vtiger_Request $request) {}
 
-    
     public function process(Vtiger_Request $request)
     {
         $textAreas = false;
@@ -29,7 +26,7 @@ class ITS4YouDescriptions_GetFieldsForModule_Action extends Vtiger_BasicAjax_Act
             if (ITS4YouDescriptions_AllowedModules_Model::isAllowed($moduleName)) {
                 $allowedFields = ITS4YouDescriptions_AllowedFields_Model::getInstance($moduleName);
 
-                if(!empty($recordId)) {
+                if (!empty($recordId)) {
                     $textAreas = $allowedFields->getUniqueFieldsDataById($recordId);
                 } else {
                     $textAreas = $allowedFields->getUniqueFieldsData();
@@ -41,4 +38,4 @@ class ITS4YouDescriptions_GetFieldsForModule_Action extends Vtiger_BasicAjax_Act
         $response->setResult($textAreas);
         $response->emit();
     }
-} ?>
+}

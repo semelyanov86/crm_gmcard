@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,199 +7,206 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
+ */
 
-class Products_RelationAjax_Action extends Vtiger_RelationAjax_Action {
-	
-	function __construct() {
-		parent::__construct();
-		$this->exposeMethod('addListPrice');
-		$this->exposeMethod('updateShowBundles');
-		$this->exposeMethod('updateQuantity');
-		$this->exposeMethod('changeBundleCost');
-	}
-	
-	public function requiresPermission(Vtiger_Request $request){
-		$permissions = parent::requiresPermission($request);
-		$mode = $request->getMode();
-		if(!empty($mode)) {
-			switch ($mode) {
-				case 'addListPrice':
-					$permissions[] = array('module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'src_record');
-					$permissions[] = array('module_parameter' => 'related_module', 'action' => 'DetailView');
-					break;
-				case 'updateShowBundles':
-					$permissions[] = array('module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'record');
-					$permissions[] = array('module_parameter' => 'relatedModule', 'action' => 'DetailView');
-				case 'updateQuantity':
-					$permissions[] = array('module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'src_record');
-					$permissions[] = array('module_parameter' => 'related_module', 'action' => 'DetailView');
-				case 'changeBundleCost':
-					$permissions[] = array('module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'record');
-					$permissions[] = array('module_parameter' => 'relatedModule', 'action' => 'DetailView');
-				default:
-					break;
-			}
-		}
-		return $permissions;
-	}
-	
-	/*
-	 * Function to add relation for specified source record id and related record id list
-	 * @param <array> $request
-	 */
-	function addRelation($request) {
-		$sourceModule = $request->getModule();
-		$sourceRecordId = $request->get('src_record');
+class Products_RelationAjax_Action extends Vtiger_RelationAjax_Action
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->exposeMethod('addListPrice');
+        $this->exposeMethod('updateShowBundles');
+        $this->exposeMethod('updateQuantity');
+        $this->exposeMethod('changeBundleCost');
+    }
 
-		$relatedModule = $request->get('related_module');
-		$relatedRecordIdList = $request->get('related_record_list');
+    public function requiresPermission(Vtiger_Request $request)
+    {
+        $permissions = parent::requiresPermission($request);
+        $mode = $request->getMode();
+        if (!empty($mode)) {
+            switch ($mode) {
+                case 'addListPrice':
+                    $permissions[] = ['module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'src_record'];
+                    $permissions[] = ['module_parameter' => 'related_module', 'action' => 'DetailView'];
+                    break;
+                case 'updateShowBundles':
+                    $permissions[] = ['module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'record'];
+                    $permissions[] = ['module_parameter' => 'relatedModule', 'action' => 'DetailView'];
+                case 'updateQuantity':
+                    $permissions[] = ['module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'src_record'];
+                    $permissions[] = ['module_parameter' => 'related_module', 'action' => 'DetailView'];
+                case 'changeBundleCost':
+                    $permissions[] = ['module_parameter' => 'module', 'action' => 'DetailView', 'record_parameter' => 'record'];
+                    $permissions[] = ['module_parameter' => 'relatedModule', 'action' => 'DetailView'];
 
-		$qtysList = $request->get('quantities');
-		if (!is_array($qtysList)) {
-			$qtysList = array();
-		}
+                default:
+                    break;
+            }
+        }
 
-		$sourceModuleModel = Vtiger_Module_Model::getInstance($sourceModule);
-		$relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModule);
-		$relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
-		foreach($relatedRecordIdList as $relatedRecordId) {
-			$relationModel->addRelation($sourceRecordId, $relatedRecordId, array('quantities' => $qtysList));
-			if($relatedModule == 'PriceBooks'){
-				$recordModel = Vtiger_Record_Model::getInstanceById($relatedRecordId);
-				if ($sourceRecordId && ($sourceModule === 'Products' || $sourceModule === 'Services')) {
-					$parentRecordModel = Vtiger_Record_Model::getInstanceById($sourceRecordId, $sourceModule);
-					$recordModel->updateListPrice($sourceRecordId, $parentRecordModel->get('unit_price'));
-				}
-			}
-		}
+        return $permissions;
+    }
 
-		$response = new Vtiger_Response();
-		$response->setResult(true);
-		$response->emit();
-	}
-	
-	/**
-	 * Function adds Products/Services-PriceBooks Relation
-	 * @param type $request
-	 */
-	function addListPrice($request) {
-		$sourceModule = $request->getModule();
-		$sourceRecordId = $request->get('src_record');
-		$relatedModule =  $request->get('related_module');
-		$relInfos = $request->get('relinfo');
+    /*
+     * Function to add relation for specified source record id and related record id list
+     * @param <array> $request
+     */
+    public function addRelation($request)
+    {
+        $sourceModule = $request->getModule();
+        $sourceRecordId = $request->get('src_record');
 
-		$sourceModuleModel = Vtiger_Module_Model::getInstance($sourceModule);
-		$relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModule);
-		$relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
-		foreach($relInfos as $relInfo) {
-			$price = CurrencyField::convertToDBFormat($relInfo['price'], null, true);
-			$relationModel->addListPrice($sourceRecordId, $relInfo['id'], $price);
-		}
-	}
+        $relatedModule = $request->get('related_module');
+        $relatedRecordIdList = $request->get('related_record_list');
 
-	public function updateShowBundles(Vtiger_Request $request) {
-		$sourceModule = $request->getModule();
-		$recordId = $request->get('record');
-		$relatedModule = $request->get('relatedModule');
-		$value = $request->get('value');
-		$tabLabel = $request->get('tabLabel');
+        $qtysList = $request->get('quantities');
+        if (!is_array($qtysList)) {
+            $qtysList = [];
+        }
 
-		if ($relatedModule === 'Products' && $tabLabel === 'Product Bundles') {
-			$sourceModuleModel = Vtiger_Module_Model::getInstance($sourceModule);
-			$relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModule);
-			$relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
-			$relationModel->updateShowBundlesOption($recordId, $value);
-		}
-	}
+        $sourceModuleModel = Vtiger_Module_Model::getInstance($sourceModule);
+        $relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModule);
+        $relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
+        foreach ($relatedRecordIdList as $relatedRecordId) {
+            $relationModel->addRelation($sourceRecordId, $relatedRecordId, ['quantities' => $qtysList]);
+            if ($relatedModule == 'PriceBooks') {
+                $recordModel = Vtiger_Record_Model::getInstanceById($relatedRecordId);
+                if ($sourceRecordId && ($sourceModule === 'Products' || $sourceModule === 'Services')) {
+                    $parentRecordModel = Vtiger_Record_Model::getInstanceById($sourceRecordId, $sourceModule);
+                    $recordModel->updateListPrice($sourceRecordId, $parentRecordModel->get('unit_price'));
+                }
+            }
+        }
 
-	public function updateQuantity(Vtiger_Request $request) {
-		$sourceModule = $request->getModule();
-		$sourceRecordId = $request->get('src_record');
-		$relatedModule =  $request->get('related_module');
-		$relatedRecordsInfo = $request->get('relatedRecords');
+        $response = new Vtiger_Response();
+        $response->setResult(true);
+        $response->emit();
+    }
 
-		$sourceModuleModel = Vtiger_Module_Model::getInstance($sourceModule);
-		$relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModule);
-		$relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
+    /**
+     * Function adds Products/Services-PriceBooks Relation.
+     * @param type $request
+     */
+    public function addListPrice($request)
+    {
+        $sourceModule = $request->getModule();
+        $sourceRecordId = $request->get('src_record');
+        $relatedModule =  $request->get('related_module');
+        $relInfos = $request->get('relinfo');
 
-		foreach($relatedRecordsInfo as $relatedRecordId => $quantity) {
-			$relationModel->updateQuantity($sourceRecordId, $relatedRecordId, $quantity);
-		}
-	}
+        $sourceModuleModel = Vtiger_Module_Model::getInstance($sourceModule);
+        $relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModule);
+        $relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
+        foreach ($relInfos as $relInfo) {
+            $price = CurrencyField::convertToDBFormat($relInfo['price'], null, true);
+            $relationModel->addListPrice($sourceRecordId, $relInfo['id'], $price);
+        }
+    }
 
-	public function changeBundleCost(Vtiger_Request $request) {
-		$moduleName = $request->getModule();
-		$recordId = $request->get('record');
-		$relatedModule = $request->get('relatedModule');
-		$tabLabel = $request->get('tabLabel');
-		$unitPrice = $request->get('unit_price');
+    public function updateShowBundles(Vtiger_Request $request)
+    {
+        $sourceModule = $request->getModule();
+        $recordId = $request->get('record');
+        $relatedModule = $request->get('relatedModule');
+        $value = $request->get('value');
+        $tabLabel = $request->get('tabLabel');
 
-		if ($moduleName === $relatedModule && $tabLabel === 'Product Bundles' && $unitPrice) {
-			$recordModel = Vtiger_Record_Model::getInstanceById($recordId, $moduleName);
-			$modelData = $recordModel->getData();
-			$recordModel->set('id', $recordId);
-			$recordModel->set('mode', 'edit');
+        if ($relatedModule === 'Products' && $tabLabel === 'Product Bundles') {
+            $sourceModuleModel = Vtiger_Module_Model::getInstance($sourceModule);
+            $relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModule);
+            $relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
+            $relationModel->updateShowBundlesOption($recordId, $value);
+        }
+    }
 
-			$fieldModelList = $recordModel->getModule()->getFields();
-			foreach ($fieldModelList as $fieldName => $fieldModel) {
-				//For not converting created time and modified time to user format
-				$uiType = $fieldModel->get('uitype');
-				if ($uiType != 70) {
-					$fieldValue = $fieldModel->getUITypeModel()->getUserRequestValue($recordModel->get($fieldName));
-				}
-				if ($fieldName === 'unit_price') {
-					$fieldValue = $unitPrice;
-				}
+    public function updateQuantity(Vtiger_Request $request)
+    {
+        $sourceModule = $request->getModule();
+        $sourceRecordId = $request->get('src_record');
+        $relatedModule =  $request->get('related_module');
+        $relatedRecordsInfo = $request->get('relatedRecords');
 
-				$fieldDataType = $fieldModel->getFieldDataType();
-				if ($fieldDataType == 'time') {
-					$fieldValue = Vtiger_Time_UIType::getTimeValueWithSeconds($fieldValue);
-				}
+        $sourceModuleModel = Vtiger_Module_Model::getInstance($sourceModule);
+        $relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModule);
+        $relationModel = Vtiger_Relation_Model::getInstance($sourceModuleModel, $relatedModuleModel);
 
-				if ($fieldValue !== null) {
-					if (!is_array($fieldValue)) {
-						$fieldValue = trim($fieldValue);
-					}
-					$recordModel->set($fieldName, $fieldValue);
-				}
-				$recordModel->set($fieldName, $fieldValue);
-			}
+        foreach ($relatedRecordsInfo as $relatedRecordId => $quantity) {
+            $relationModel->updateQuantity($sourceRecordId, $relatedRecordId, $quantity);
+        }
+    }
 
-			$currentUserModel = Users_Record_Model::getCurrentUserModel();
-			$currencyId = $currentUserModel->get('currency_id');
-			$curNameId = 'curname'.$currencyId;
-			$curCheckName = 'cur_'.$currencyId.'_check';
+    public function changeBundleCost(Vtiger_Request $request)
+    {
+        $moduleName = $request->getModule();
+        $recordId = $request->get('record');
+        $relatedModule = $request->get('relatedModule');
+        $tabLabel = $request->get('tabLabel');
+        $unitPrice = $request->get('unit_price');
 
-			//Getting $_REQUEST Values
-			$currentRequest = array();
-			$currentRequest['action']		= $_REQUEST['action'];
-			$currentRequest[$curNameId]		= $_REQUEST[$curNameId];
-			$currentRequest['unit_price']	= $_REQUEST['unit_price'];
-			$currentRequest[$curCheckName]	= $_REQUEST[$curCheckName];
-			$currentRequest['base_currency']= $_REQUEST['base_currency'];
+        if ($moduleName === $relatedModule && $tabLabel === 'Product Bundles' && $unitPrice) {
+            $recordModel = Vtiger_Record_Model::getInstanceById($recordId, $moduleName);
+            $modelData = $recordModel->getData();
+            $recordModel->set('id', $recordId);
+            $recordModel->set('mode', 'edit');
 
-			//Setting $_REQUEST Values
-			$_REQUEST['action']			= 'CurrencyUpdate';
-			$_REQUEST[$curNameId]		= $unitPrice;
-			$_REQUEST['unit_price']		= $unitPrice;
-			$_REQUEST[$curCheckName]	= 1;
-			$_REQUEST['base_currency']	= $curNameId;
+            $fieldModelList = $recordModel->getModule()->getFields();
+            foreach ($fieldModelList as $fieldName => $fieldModel) {
+                // For not converting created time and modified time to user format
+                $uiType = $fieldModel->get('uitype');
+                if ($uiType != 70) {
+                    $fieldValue = $fieldModel->getUITypeModel()->getUserRequestValue($recordModel->get($fieldName));
+                }
+                if ($fieldName === 'unit_price') {
+                    $fieldValue = $unitPrice;
+                }
 
-			$recordModel->save();
+                $fieldDataType = $fieldModel->getFieldDataType();
+                if ($fieldDataType == 'time') {
+                    $fieldValue = Vtiger_Time_UIType::getTimeValueWithSeconds($fieldValue);
+                }
 
-			//Reverting $_REQUEST Values
-			$_REQUEST['action']			= $currentRequest['action'];
-			$_REQUEST[$curNameId]		= $currentRequest[$curNameId];
-			$_REQUEST['unit_price']		= $currentRequest['unit_price'];
-			$_REQUEST[$curCheckName]	= $currentRequest[ $curCheckName];
-			$_REQUEST['base_currency']	= $currentRequest['base_currency'];
-		}
+                if ($fieldValue !== null) {
+                    if (!is_array($fieldValue)) {
+                        $fieldValue = trim($fieldValue);
+                    }
+                    $recordModel->set($fieldName, $fieldValue);
+                }
+                $recordModel->set($fieldName, $fieldValue);
+            }
 
-		$response = new Vtiger_Response();
-		$response->setResult(true);
-		$response->emit();
-	}
+            $currentUserModel = Users_Record_Model::getCurrentUserModel();
+            $currencyId = $currentUserModel->get('currency_id');
+            $curNameId = 'curname' . $currencyId;
+            $curCheckName = 'cur_' . $currencyId . '_check';
 
+            // Getting $_REQUEST Values
+            $currentRequest = [];
+            $currentRequest['action']		= $_REQUEST['action'];
+            $currentRequest[$curNameId]		= $_REQUEST[$curNameId];
+            $currentRequest['unit_price']	= $_REQUEST['unit_price'];
+            $currentRequest[$curCheckName]	= $_REQUEST[$curCheckName];
+            $currentRequest['base_currency'] = $_REQUEST['base_currency'];
+
+            // Setting $_REQUEST Values
+            $_REQUEST['action']			= 'CurrencyUpdate';
+            $_REQUEST[$curNameId]		= $unitPrice;
+            $_REQUEST['unit_price']		= $unitPrice;
+            $_REQUEST[$curCheckName]	= 1;
+            $_REQUEST['base_currency']	= $curNameId;
+
+            $recordModel->save();
+
+            // Reverting $_REQUEST Values
+            $_REQUEST['action']			= $currentRequest['action'];
+            $_REQUEST[$curNameId]		= $currentRequest[$curNameId];
+            $_REQUEST['unit_price']		= $currentRequest['unit_price'];
+            $_REQUEST[$curCheckName]	= $currentRequest[$curCheckName];
+            $_REQUEST['base_currency']	= $currentRequest['base_currency'];
+        }
+
+        $response = new Vtiger_Response();
+        $response->setResult(true);
+        $response->emit();
+    }
 }
-?>

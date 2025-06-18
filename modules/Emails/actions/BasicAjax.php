@@ -1,4 +1,5 @@
 <?php
+
 /*+***********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,34 +7,36 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- *************************************************************************************/
+ */
 
-class Emails_BasicAjax_Action extends Vtiger_Action_Controller {
+class Emails_BasicAjax_Action extends Vtiger_Action_Controller
+{
+    public function requiresPermission(Vtiger_Request $request)
+    {
+        $permissions = parent::requiresPermission($request);
+        $permissions[] = ['module_parameter' => 'module', 'action' => 'DetailView'];
 
-	public function requiresPermission(\Vtiger_Request $request) {
-		$permissions = parent::requiresPermission($request);
-		$permissions[] = array('module_parameter' => 'module', 'action' => 'DetailView');
-		return $permissions;
-	}
-	
-	public function checkPermission(Vtiger_Request $request) {
-		return parent::checkPermission($request);
-	}
+        return $permissions;
+    }
 
-	public function process(Vtiger_Request $request) {
-		$moduleName = $request->get('module');
-		$moduleModel = Vtiger_Module_Model::getInstance($moduleName);
-		$searchValue = $request->get('searchValue');
+    public function checkPermission(Vtiger_Request $request)
+    {
+        return parent::checkPermission($request);
+    }
 
-		$emailsResult = array();
-		if ($searchValue) {
-			$emailsResult = $moduleModel->searchEmails($request->get('searchValue'));
-		}
+    public function process(Vtiger_Request $request)
+    {
+        $moduleName = $request->get('module');
+        $moduleModel = Vtiger_Module_Model::getInstance($moduleName);
+        $searchValue = $request->get('searchValue');
 
-		$response = new Vtiger_Response();
-		$response->setResult($emailsResult);
-		$response->emit();
-	}
+        $emailsResult = [];
+        if ($searchValue) {
+            $emailsResult = $moduleModel->searchEmails($request->get('searchValue'));
+        }
+
+        $response = new Vtiger_Response();
+        $response->setResult($emailsResult);
+        $response->emit();
+    }
 }
-
-?>

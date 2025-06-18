@@ -1,7 +1,8 @@
 <?php
-/*********************************************************************************
+
+/*
  * The contents of this file are subject to the SugarCRM Public License Version 1.1.2
- * ("License"); You may not use this file except in compliance with the 
+ * ("License"); You may not use this file except in compliance with the
  * License. You may obtain a copy of the License at http://www.sugarcrm.com/SPL
  * Software distributed under the License is distributed on an  "AS IS"  basis,
  * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for
@@ -11,28 +12,28 @@
  * Portions created by SugarCRM are Copyright (C) SugarCRM, Inc.;
  * All Rights Reserved.
  * Contributor(s): ______________________________________.
-********************************************************************************/
+*/
 
 // Adjust error_reporting favourable to deployment.
 version_compare(PHP_VERSION, '5.5.0') <= 0 ? error_reporting(E_WARNING & ~E_NOTICE & ~E_DEPRECATED & E_ERROR) : error_reporting(E_WARNING & ~E_NOTICE & ~E_DEPRECATED  & E_ERROR & ~E_STRICT); // PRODUCTION
-//ini_set('display_errors','on'); version_compare(PHP_VERSION, '5.5.0') <= 0 ? error_reporting(E_WARNING & ~E_NOTICE & ~E_DEPRECATED) : error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);   // DEBUGGING
-//ini_set('display_errors','on'); error_reporting(E_ALL); // STRICT DEVELOPMENT
+// ini_set('display_errors','on'); version_compare(PHP_VERSION, '5.5.0') <= 0 ? error_reporting(E_WARNING & ~E_NOTICE & ~E_DEPRECATED) : error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);   // DEBUGGING
+// ini_set('display_errors','on'); error_reporting(E_ALL); // STRICT DEVELOPMENT
 
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
 $dotenv->load();
 if (getenv('APP_DEBUG') === '1') {
-	ini_set('display_errors', 'on');
-	version_compare(PHP_VERSION, '5.5.0') <= 0 ? error_reporting(E_WARNING & ~E_NOTICE & ~E_DEPRECATED) : error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
+    ini_set('display_errors', 'on');
+    version_compare(PHP_VERSION, '5.5.0') <= 0 ? error_reporting(E_WARNING & ~E_NOTICE & ~E_DEPRECATED) : error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
 }
 
-include('vtigerversion.php');
+include 'vtigerversion.php';
 
 // more than 8MB memory needed for graphics
 // memory limit default value = 64M
-ini_set('memory_limit','512M');
+ini_set('memory_limit', '512M');
 
-// show or hide calendar, world clock, calculator, chat and CKEditor 
-// Do NOT remove the quotes if you set these to false! 
+// show or hide calendar, world clock, calculator, chat and CKEditor
+// Do NOT remove the quotes if you set these to false!
 $CALENDAR_DISPLAY = 'true';
 $USE_RTE = 'true';
 
@@ -60,7 +61,7 @@ $dbconfig['db_status'] = 'true';
 
 // TODO: test if port is empty
 // TODO: set db_hostname dependending on db_type
-$dbconfig['db_hostname'] = $dbconfig['db_server'].$dbconfig['db_port'];
+$dbconfig['db_hostname'] = $dbconfig['db_server'] . $dbconfig['db_port'];
 
 // log_sql default value = false
 $dbconfig['log_sql'] = false;
@@ -88,7 +89,7 @@ $host_name = $dbconfig['db_hostname'];
 $site_URL = getenv('SITE_URL');
 
 // url for customer portal (Example: http://vtiger.com/portal)
-$PORTAL_URL = $site_URL.'/customerportal';
+$PORTAL_URL = $site_URL . '/customerportal';
 // root directory path
 $root_directory = getenv('ROOT_DIRECTORY');
 
@@ -106,18 +107,18 @@ $upload_dir = 'cache/upload/';
 
 // maximum file size for uploaded files in bytes also used when uploading import files
 // upload_maxsize default value = 3000000
-$upload_maxsize = 31457280;//3MB
+$upload_maxsize = 31_457_280; // 3MB
 
 // flag to allow export functionality
-// 'all' to allow anyone to use exports 
-// 'admin' to only allow admins to export 
-// 'none' to block exports completely 
+// 'all' to allow anyone to use exports
+// 'admin' to only allow admins to export
+// 'none' to block exports completely
 // allow_exports default value = all
 $allow_exports = 'all';
 
 // files with one of these extensions will have '.txt' appended to their filename on upload
 // upload_badext default value = php, php3, php4, php5, pl, cgi, py, asp, cfm, js, vbs, html, htm
-$upload_badext = array('php', 'php3', 'php4', 'php5', 'pl', 'cgi', 'py', 'asp', 'cfm', 'js', 'vbs', 'html', 'htm', 'exe', 'bin', 'bat', 'sh', 'dll', 'phps', 'phtml', 'xhtml', 'rb', 'msi', 'jsp', 'shtml', 'sth', 'shtm', 'htaccess');
+$upload_badext = ['php', 'php3', 'php4', 'php5', 'pl', 'cgi', 'py', 'asp', 'cfm', 'js', 'vbs', 'html', 'htm', 'exe', 'bin', 'bat', 'sh', 'dll', 'phps', 'phtml', 'xhtml', 'rb', 'msi', 'jsp', 'shtml', 'sth', 'shtm', 'htaccess'];
 
 // list_max_entries_per_page default value = 20
 $list_max_entries_per_page = '20';
@@ -144,7 +145,7 @@ $default_password = '';
 // create_default_user default value = false
 $create_default_user = false;
 
-//Master currency name
+// Master currency name
 $currency_name = 'Russia, Rubles';
 
 // default charset
@@ -155,10 +156,10 @@ $default_charset = 'UTF-8';
 // default_language default value = en_us
 $default_language = 'en_us';
 
-//Option to hide empty home blocks if no entries.
+// Option to hide empty home blocks if no entries.
 $display_empty_home_blocks = false;
 
-//Disable Stat Tracking of vtiger CRM instance
+// Disable Stat Tracking of vtiger CRM instance
 $disable_stats_tracking = false;
 
 // Generating Unique Application Key
@@ -174,14 +175,14 @@ $php_max_execution_time = 0;
 $default_timezone = 'UTC';
 
 /** If timezone is configured, try to set it */
-if(isset($default_timezone) && function_exists('date_default_timezone_set')) {
-	@date_default_timezone_set($default_timezone);
+if (isset($default_timezone) && function_exists('date_default_timezone_set')) {
+    @date_default_timezone_set($default_timezone);
 }
 
-//Set the default layout 
+// Set the default layout
 $default_layout = 'v7';
 
-//Maximum Listview Fields Selection Size
+// Maximum Listview Fields Selection Size
 $maxListFieldsSelectionSize = 15;
 
 $backend_url = getenv('BACKEND_URL');
@@ -189,4 +190,3 @@ $backend_url = getenv('BACKEND_URL');
 $backend_token = getenv('BACKEND_TOKEN');
 
 include_once 'config.security.php';
-?>

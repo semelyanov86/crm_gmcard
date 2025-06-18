@@ -1,5 +1,5 @@
 <?php
- 
+
 
 class ITS4YouDescriptions_List_View extends Vtiger_List_View
 {
@@ -12,7 +12,6 @@ class ITS4YouDescriptions_List_View extends Vtiger_List_View
         $this->isInstalled = true;
     }
 
-    
     public function preProcess(Vtiger_Request $request, $display = true)
     {
         vtws_addDefaultModuleTypeEntity($request->getModule());
@@ -20,15 +19,13 @@ class ITS4YouDescriptions_List_View extends Vtiger_List_View
         parent::preProcess($request, $display);
     }
 
-    
     public function process(Vtiger_Request $request)
     {
         parent::process($request);
     }
 
-    
     public function preProcessTplName(Vtiger_Request $request)
     {
         return ($this->isInstalled) ? parent::preProcessTplName($request) : 'IndexViewPreProcess.tpl';
     }
-} ?>
+}

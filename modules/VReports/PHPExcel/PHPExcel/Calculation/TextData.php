@@ -1,326 +1,656 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-HR+cPs0eTsiWi4jDFTxYI3Bl91L+Sz7JlGgZ1+9SXkU6lKoXvvkJlkKO3CQow9SZW5MdpBRrouyo
-IRoq6uPozAvxORrGf53GBFG9zuANwFCAqr9aWUWx5KzGqR5knhLSH/3i0lHuQOQbXqe7kmnQsYVb
-NQQ5xWCliU2XMvQAHAyciz05UdlBIMul9BO/e3Y83SttANeNpCrNC6KR1nTFSyUsSeqYmgYSBw+A
-AgG9Y7FgeOCOlQHoN8GkoIjt0q7bx40KXwRca7ZZSNb68fEv2RMk5Ew5bjMGQI1/zjoTyOr3A/+J
-XSzaLFzxWX9DSWHHk2aZhW2W6uHIeEvxNr7JZLMwjMLx5mNEdwC5rQrazfxO3X6OLt7Yu51/hrpD
-Lmt66zy0i0NMmnCFWk7HmO+KaKHJ5G2uEFRxxU0DQCM6fX/YjQMKHMUPS/t5JZ1wuQeRXLlFVfix
-Do9itA5i0VhBCmDX73yL0YFy01KIt5V7hqEZAemQ9k2/lJrEJNfkGGctWBI63m2GUBINOM1wz86S
-DzR8A6igHEZRpHFCaLhLRo+ATqSN1S+jTG+wvZ+F4/AezXyfzLCBDEt6ZmcEq0Bh9oHtdrGIU7mU
-iToedxf0OpVpH7jmybQfACg/OaOlHv/ja41wyYkn8Fmq/s1v3I9TSFx3SLq75vkE8/x41M6nADUQ
-6+Wf1dHAVl0oin6XE9jzGOV3kISnks1pszwPMJe4QS1BPuVuuS6KneFLlGw/h4YBuEy9sEkREzCh
-pr6Vpdj8hJUqYm6ziNwdNXXxtf0tPzR5EINMM7pZ3g/yqh1aPNyk9hfUZmk4BsRSH3QYhoKasaE/
-v23MjwS9gEYmqXzKm/t5ia7M0fE3Qzx5TF+EIPIFQgI9hZGqv6OS9Nmk8SOOrTPSbREL/2OXNbq+
-2GVIqGO4C++5T0sGPI5w0qfyXoSQj3cFfNNlDRpdIAUdwAddDrFHsJTSVJqgEjpvyOciig1a5AkP
-KkCeyN7/zT4KFabxwAQ+EqMeU60uU9NBtYRb2pEUEpZBuyfPHFGfkYrvkXwITUEvYM4lkR8nhp2Z
-kr+t1rkNK5rYiRP69dVR1b61dXd9WMFvFi2Em3dJpALeA5Ewq4YjZys9vpDjnMp9g7shtsZhNHds
-91dnPE7+Dmf9j8+w8QydtaPkBrCFPwiaDCTgygaNKSyALzN2OAi28M0eX4GokLet382SSMXu8yxT
-q1GoHXVpv9xlRo+3aCTElZ6CbKyznUaQPbJwXXC3K5Cpo6rIa9pqBgWS3aFldq8m07yN/cIu8GGt
-aSi11kTQAohK7IpxgRJZRksD5f2zgeXBT2Z2BFXsvk+CGVzvDQpZDmqdTUZIPYkHaFzrGZK4lAos
-utMZ2iv0oTWNU7K+AC203izd6aa0q51Mrd+mRRuwnRmlN7pfZXnpwxC45GDkOgU0vELXOWrgenqK
-DL71M9j2gWdDsZ2mn+ijhRD4RXOedXTR3f4/BzERmUbAh/4sGqvJiWI9nOMt3LbKcWUGy/BS2rU9
-/b5gAGpmBeAUT9gzxEoCuHwBcldhkjZXXVOxEcBPIbcrYmGIlg2lXi0bKeVQPaGNBKQAVm460dC2
-ChL4KQuLFH/tnbb6HBDCM5ATbCyxL/ti9ubsr8LlG7K2Mn+rqapa1xNiEspwsdFU+g20P4eXH1Ii
-M+KU5x5o/ylrSYuqBD+2K8Qi5M6tqA5fXZTtwNCuqgxuTp4+YIUqiG+NKjeHg3EaYWUHFRCqdEQV
-zhZmVwIWs2elQmitamc3tXub8FG4PBwJBZWWIPIXi4iKA2i3ZU08fWh5QtcbbCvkDA9CefkgTEE9
-z5I9WUhrz5zkk1IEFWHinsHH35ADinG/x+OYEqrnMiYhYheD8i/VMnE0/41YIFDGmkM+3ZBnIbRY
-weQzkgGhXh3sWQiSIABfmO6Mi2mIlZM3gkujb+BA07771r+fGTRa+TcluClMR3fOkvtcIBAN2AJi
-WZWWvixh/SQjz3A6DBCFqQ9B0CdX2G9h27IhJc7zFKLIhYZ/H75t3agOMZBSN/H7QHhOZxqHwuHz
-nAa3dTnUNnnwaWEHE3d6795QR/+pD6gLVQBWtGLJylPrj++xkhkrINUqtV6Xj3gWJc+ta2nBpTK1
-zM4sCQu5NGSshs2Wl2kb/KKxKqobH/YsCycJzP6cMtnheW0KAATv/Zr0IGwh6FDGIcoyiP2nVJVL
-0qtqGTPVuW4VIGj+p4f4eyYflaZxWJ15ey7Nn99Arrr3lVpQDwy1HDB6SV8jN7Ha7uor/PLoiEzz
-XNHDNPpQoNnntwmxUd3ZEzB7mHaBcFv7J2YwpwYQsFSZJaxcuhwG1P3Tw9UXa0It6EEM8KN6V+UX
-dG7mVqHpNtCccQUNJ2Tl0cCCZhO6YDPNq/izSOV0Tbdjri9vzOOHMPyv2UPw2votbfcn9YlatKTX
-gk/prDnh9QxspynhFINk74yxCBkRBSwNqbONgZUkdsbx0kyhdBBjEEn9qdAYxfZQES7iZa327P0W
-+yavv1oH4OsQdy0/YySgPvoU+7PzVY4wbeVOICXjfMyb0+0u0EvAp5MNvWnk6uZmpk0EeDUXxHd/
-nuJCkeSpoqFnrs7AfTVIZeRFJ2lNY9b1xu0g5HXVLcKOvQU4Q1mm/ydrEr716NVHGuKUIkDz80RB
-TeTgKeBOsSGQz6aRBchyoWDPSAAD5Qg6bFoWzjraZo5fI6WtbtmcrSWmh2rWuzK/amza6RvFDOLF
-7d3okHpsBIXcHlBbOxntCLqXLy02zjFmijug/ivOIQyTC4sRXxGiQNj6e3HMIeo+R14TRrWbpwId
-M3dDNS54K06zhbIOwDWlsD/vpGZdjyfMTtcmvxF7lODv2VEXmXJNKSW+02Ztuyu1CWenCa3fJXRV
-6W+ZZFYUh2BVYmCQCKZE8reH3y8lk39ZEtoA20tNQDW4INhL2N0hc8eaxInSXIg1rlB/4XlTaPwg
-40RmmhJGzphWi9SdI+jl0fj+djnluzhDNeQYAIa/88SsZ89DXA57Fps3iYetkSdZDDO6rp5zrTQu
-V/ZKvtWc5LgIi2J6s5J/ElWwZ04vPKYVwlIfkNATrCVobZg+iSEdKujP/XiKzsnHVUxIHJHk9LQ+
-Bttp2x8/5MAt7BOZZH3qB3xAEDNJkqLdVXSerat621qNGsw8oBK0JCWkvUlb1qUmWRSRY+J1DNqA
-bPxkUck6RipqZDHY8qK7uiI7AZ83KbhyAGW2xUhxTEe5dB5pYGz0XmVi4npAozG1AxxYeVME4g6F
-EBwwYI5QXKVA4mfuw3iuWWP53tvdJiK+nkGhykqcGAw27rEntbSQmwnFf81JvP0iVbDuuIyjHg94
-pWq+5ZHXBEUvvmq3LaXbQETYeLuixu+LH8iVirfPblyvzJF6eVUTh3d85/z/RjfHw76SDdZsFyuZ
-N1R0dbDjtxstQZ3MkAhwKr16ToL+96OLY4/YtT3+T11/qqYsbRFa5ltbXtrwoEGDiVRIEYQ5DrRI
-qS7FWY3rksPscmjjrbj2VscFrDh97RMn7b0lsVbbWhD7j1MSHwgZZkarpII+EXWceE53409JA/q0
-PTjck1ZGnZqQ74xF1ZJfd133BQDKVaZ+YhigyGZHqN+MxsXtL3V4NrCMlFmpirSGVXgn5BxSKZz7
-Qf8+PPAawiPY+Yz2/n9/LWN+XwNJYHREALCH4ktDTEoQ4kU1aGbaqrMgjA3zexuQoVGDJgEH5UqG
-JU1SKPMKeRxFqlhBni5JeaSo0jFHacYko8B24qTfYSyMCaNTs9/XAQwkXmola41PY00EMSU5r/bE
-6zo4qQOP9kYnwhwDAvXQ/ah+x8fX52olkdARdNbjZi3qzBudDx8gqhPt9BMZ20nfeSNbMDIsbi8p
-yEGQN6u+wr5EUZI1Zc5N/yXR5wqMRtS7OUiNAgKG9GZATK+UavWhJOQQBpeu9NgaAYPkDttPlOQs
-mSzq2Pjn2jDxE1b8Vk+NR63a8DQ3Eg9BirYoR8pc866e6SyacAanGeDG//kG8hUJM4axhOkRecSU
-N3bIDnBwFLD61uAhBcyZOfiHGfc3PuuSZF3Oed1XCeZ8M2RBVva7ejA0o8ZBJ9wteKV/WDzgqWnu
-HED21tl71FDlMhGsbjDN91g4k0vM0qglus46dyTWjIzp2H5/LAjUSOcYYqSznEROHIZCjTAoopD/
-yT0kZIh7PYSFfHHnEDcWmI4xnY6EWQnXPhJ4NLs8ouDi16zn/1f66ACYme5SUteVUWBjwA2xMfOv
-JdFo9jctE8WaxvFPx0TFIvKvqH0E3QlFrL4rKmbYM9ZWdIqlSTmBXYObjOBxVcMU7inabQhZ7zDe
-LrJ+6H2b/S/u5g1wqFCq8DlunQ7AaK5B1ViJa0NQoU/Ao6jevT6CRGiNoPDWY/+64Z+yIvACL38U
-cDIBXGVeVpAnmw/N5r0C9MfobKkWIiWgdSvdiqHgTtUtUoSdiK53bgIMgpw9Hm0Q01rZ+T8VhOC8
-HQ0PGtTYOH0XA3JlpZIZVZgA1wAs2zQ3qgAcSTJi9Xv7/wUfAX4fWK78EQiGJOQEBMFz3NB/svyN
-bkibRhfKrB/EuzjvIbHeqPF65Wuv5E0b+RyhtcMqEza4upRgDVLQtV3SPAgWW9kH7qrWrIxORksV
-ubtBna5gpUOVgQklUv7YvLRvJUvgbVB43HPXWaxCT446pEF/PMLcJIc1A326xIrewC3cAuenCpR3
-pvHrPbOkia6kBwby5X92dyLQfqelXvQAk3N5R3YfzRInCuNwW1RwZMav8RdLHyDxfSfxP+TlJLId
-1yzVsC3X889wig7v7HB2pHkhtVGBOQq+IdCfypQMo/edt9tl3767P1yCR3AefVrqnx0KDjMqCAd2
-uC6foUm+zsu3iIxs5VgtoZVSZneP7dWCSuD/ibHgVaWrep0V+Hvh6QFr1HSxNRGQaxth0PcZ3PBU
-TyYcGZjyAFs5JyT61/w57aohRYThGXcGVsfb9qdBg/sZs/99KADSMmhg+Q6X64zJYTfc6ekhM+wS
-zjA0ncbEmoVHcsmPWwy2rzIbv1MFNM+4iLewswl+jIzY4fgapD8MKldgX/ExpUm9OWR+CrbewzKc
-oQyz7+wfVKgPGZJxumZUFWbn8lCkMnCf6TNtYYrNn5Z/tXI3mNTNfs+V+5vqt8zhIdeAYQ1Zlw0Y
-BjIQyiHaZoWu8ieZw3w3EV76mQLobTW1f8FVugRRWMdg36VSwxUmt8rS5YrV6oMy0tHoVi7q7uJe
-bXrcmKIKqcmGoL7IKr16R5x2iVtk4fTZqM9WNsGSW5S2pdemFmExA3OYarcv4cyd9ft8Jlsm6SL+
-NfZd+wkXZyE8Cv3CGciBtMqBSHXLoDZgGnhvicRXd70zGxx2qD3QjMH1k57GvSMbv9a83EIbhZF0
-VLX2PK2UaaBXtcbe3IOVORvbRX2uDIVBAcUKhLTrR2utDMrJS97cciVJIGVBKjbhH8+XimhLnUa8
-Hq6FGr1t6h+xZEt7Qqg12zBr+xc/y3FVo2+Ozu6TEQMLNOrK/i6CySImNHzcc+hvxYiqYeQIDYlw
-2MOv2XFlKdTZPueQYD0KGJq5HtG3kwuGv8XyuuE634MPjumTu3i5wVa+leEdVctudtgKp0KIRmCe
-FsIoTfE1iazD/ts7jO63ExyF5DpeIqUT1JOp89TiQSrkDChXLlJObMmMehYCtpzelaUgh0dLgbcD
-kt3bZsIGS8F+KgzFSzuk95o1Uu0KFaCN9bgsadSWreDC+MJtNe0lH245fcIIvy4UV9zcMEPmQgKw
-Q25JfZYLDf6p/KHR3fRRmfJBG2tCF+Vay6S9ddXRZf/z/VrvVzPmzX4sJx5l7RCOCQ61J1iWnuQ2
-s8yCAtYxUA+QKw3bjmqeAwejOV3CtTsRJq0Ta5TPx+rB08r6Juzzw9hM4XjTl99ZTvlPyvVmGePp
-+oWUqrTNMXRKQmPu8hkbVTBGfNGLt1rWAfI9J+RfaRkOm3EBZBN+UAN7itMNyGOsOZqPjjKSRg67
-WsXRtmSXxa1n7ijVpNr57ohS6y3KFKni7c000mrJjAqciR1bOe03yW9ANWlBgLAAVclV3Vy2zjSg
-POx12IifjSU0O/8lN+NspOS9asfR2Vuxy4P89fgqoSfSNgyjds+3Nq+78dwVUi5vdi0LE6NSoBUR
-ff1SGGW1pwsXXGCqg3d/Gm9gz5kTSKAgKUAqLbiJp/FeIHAM+vc/gR3tlVfy4Ms1q7kjBEA7pD/U
-l3RPHgTQCurynWcUp8ec+57ia2yMabAwQPiPT9GW8nLP6vWzDpBmqaDUxvyn+XaLE7Y5CJiLpoYd
-MNFelWegKRYoL+JaAG6Hpbxi3ImTNAVVfp17da3lLyqIbhOq0/Et0qkE0VwYa1UHXMpxkNY5Skpk
-tItXvnVzZaWEDaqEMLUH3gBwo7eGii9SyZ69srHQ7jMusY9xeC9otYxLv49Ett+wXqnOkAyI3djj
-vqI+OqEu2pgu3yTuGec7VmBveVU2Neltzo7dMDWzKrEz2BOfGhZJsP/v9BM6ko3j7dFlq5BTEaYv
-Ce4lcA+Y2f9baMod0tj6EWToZYKH7wMxw8Xb6563q6q5x8NWgOtFYOyNCLAgns4LYSVPBsQPKjig
-Wsha3wXqKMYPNIv6a5k/I8FJ4gVK+brGPXKWSiz39cNv1qzj1GmapPdnkfRrBfv8xMATTjvBoBt7
-qeJPC0hDDhRLcr9lqt5XwValOvmisdRBmuY6J4V5bz/CeTJe6n4GftMLP3MOZCQUN/rkou1cXDKw
-ASc6UINw5xQwgpCI9kR/Y1Nfo2PfkfCU4xAPoAGTCpi/GDw7P8f9pEdzcgDt7rU1IQXbLKnf2ptC
-S18VYmh6zzr094xmYkEhwW8XfDGtSXElkED8I+Kh0gJvgzFBcxVUmYFIyalBYIe3NwnCtMf+NrDc
-OsYocNqW28n8Pux/OcFwRBYHCIx6ZyQawDTI4rlVS5mZWbtkcz2XXMq44Cny3HWboNDK4E4QEXkq
-ZRAvG59Oqf/F8yj/uT+q0yOvVvsiX9TrKOosB/56q63RBHFrpjm95iqKTDkdrOLCKor0v3UsmM4q
-kweL01aWfn0V5B+Gsx50yhuFtSFQ4X8s11L2fRaCL2abSp01/wMObBZ4UHQWBNfUA6Xj1s1Avhq/
-UXb7LVinwzTY2/kpJpvNyQmAATitpfs8Yi8uretMiHgG1WAYA/632eTBoskflC14HaCurNx9PXbB
-zJ/sS7RtDBmfJURaGYT57KE87p1PvR5AVAM/EUY/3tjYyBadPn0OqdYMgVyur1Z9CSY1q9eV8PPD
-qMTcKLWbpVWG00Xwl2Y0BcmUrUSkPu7iQpsMxRg7eXWuFdLNghEYggewOIU8ycgwE21UB+iCKYwX
-1IMfBokU3oQvs6dJPyTHZlQZr9nvfe5Ypy7JFMJnhKUbYHAd66mfSgJnt9LjasbPDcH2X1otz5Ec
-gpK6movvgaYEQUcqsT2pIua773yzExKUcxSIdbHFDUbTxMlx4H6QAHkau94wIwQGm4RGOFe7opzO
-G4pDHHUHgxN3Qhc5IRksVdjK39zR3chN3eboH2Vbrgu+pW/ap6zgxT7iZYe+PKtXQNLMvWMhL2wr
-A9H5n3CxivjZCzo4mGaDDwi5JE8HOcBEno5JjecdMpzWOa0jTbZsGSc9q2JT4cy/EVhuwIpJBntl
-Br5wMsz7+YocjRrF37YpdGz0/d4rbD3B8FmHZm61EuxD7rlQ246R6LE98kaORH2khfbF38ts1Eb4
-qFIPRYciPZxDKtawIqkH0HYd83rgY9zaf6NgasM0ac7B/8HCc7MNM1FdRaTfKhxfmcaWmewikRcu
-QOEv1qG7OU8Lx4yHp53Flgs2oaykPTYyw7lsr+LUZZs9ZzLcNYB7AvYEuYm8gKf+p1YZ8PBQITgI
-ApiUYmfdGOuvbqDxY2twjT/fbnQHMmahjmtgivaLBUS1T0yuI/cVUcd2g7it/SGNwnrBzEWDdSco
-7y5/Xy+wHNgUwVY6sLJzy6vZeBUUCMLndrW9m65sMs6YV76DdnK1Kurtkcf4MUtKkzgIp0WzdXap
-5NADYp9alQSWVKBNajFfpWjMRHPoxwIPyb1DJRqHI87Ihp30iJWcDw4k+3Nrx5+PB21dtwXhgxnr
-ai0RHSwcpaaa5ujA4KGhbtL+9r5vWDkvhxqug116C/3KVx6+fOHDXRjA5F3LWtJu314LOxxNFGP+
-+5IOqAHa3dQElyyjDkpfqVTfsxttcK2pIrSbe4moSqjlzdsFrml45oR/AMjmjacOAqovfHNfIxRt
-RF+CJm+2ak6wuIqM5ep+NdAj4Jzpbfg/HOwPvqHFoyzTJMQoJljWJJ0W9x4cLMFKpJaAVdFWyQKh
-wY+D23asaw890VoAHDz9aL72eWlUn4GO7t2qDSjRBn1QGe719Wha5cBsLvNzSaoZi0hZGdqrGh60
-wkg32lPkReJHJb/G/hCTdvNOl0VplBlkGhv6KsCGeVtzvWxCnl6BHL2O+cR+aJ0VPtd7JpsmDp4K
-+ttQxtBS5D3WBXcyOB4AMFQieVIA3hMZTiHHzoZTQDXAI50hrj4IelAufWgVQbruHDd1TJrP26Sr
-g7wskM2cBLqU1auAQmcCAaIBfVDFxAsBV2drTqsyig7KVEja9KrCPMdD3YLv8EEuZZy6HmwcK9QX
-2fZvgoAglRI96b0vr5I7e814nkH5BiEdL3DRFlKc8kxMyRw/XkQBlrlkRjXjW4ssEGjglmIjVD2r
-JVy5X/ntIpuZyx94Fd5KnAxBD6TGrDhkg2+Lru5d2vQBS9hL2wyq3Y3fsxRWLxuzeKbFd3fg2cx+
-vhXyts3w2tWfdfblChNR5Zyil6ZVJ7MhavEwxyjqfIhyoSgYBSMrp3Xgw/8dHcPyqJDFBX4Q5Tat
-RbPv/vG6GmIVjZZv06PSMI3xy4V16VvCZVZGmOt4N6D0S3O6ER1iwWqkI9TI/sYGSilw3lJOvKhQ
-oE6pIc2iDujCCVmYdB4sHH/4C8DCpR4RMVCL4GJG/pU/Xqg+/2s4xLXZOHhMP36KM5AB2XcXZRMc
-Db7RO1ys+SZ4GvXZ4GmI8zwCaK0gJ0OnhFZ9zkdjbGenUrKsJB5JE4Ax/naqrACTGvgj9ic1cCwR
-+WShBbD8+4jbjr+qbrGY8h4iaxL1rodPhkWZ8f8+VWQXA5LDgnX1DDxfmeF97Z9vU1rrunMKrSeG
-Nf81e+ML+pxqtzk7coXK17jqoZaj9+s5aZxzUjgD6X+kyvjNBc1Er2NoVCYSMvDlqZu4eTNjUIGO
-TzJnx/9j+D8/KR5uiz/4bd3/75GPXqrpET/q8JEZ9toL+EQUHXy0w9VUkaK04jq9iwhhSu23V4UJ
-sV9bmN3Ts/ddMCIyO7oogfyJOTyilDgeUfwAR5RHJ5JiI3GIvkvH5hxsx21uY6pcfFOlFofnr8TF
-dT3paHdWWn7YxUjv/eUpI77vjP9NwjuoGDN4IE2rA+ROgg0s4TXI78dCYaZ22+UDa2NeSPgqQXvd
-AKi+Q8aXC+rLTKHm51f37pV89n1r4DqLTRhkFdAgXyhz8XAK1scKmr/Vmo4CNAhgRuhMgEa/cphF
-yIHwfI5D/KHKQeqUQV9eZ7HMOPq0kO/UxzgB7Pc+VEjKKwXfQyTQ7/KUp/v41l/e77hek3aWCYRQ
-gVwnCWFlqZXwb26yYK61qE3HmcYeM1CGD0Zth7HCwLTSI1sh3nEdQfn6rDgaH9DCb/1TRp5vWnpV
-Y3BbURpoxK/iBjQFFjzBHvPrskVd+4duPu8b6welwt+JnkIM5eU7ydE2xofColwAO216dMDoIBLv
-bLSJzo2KJpfFInPWp4517PLzDPubmv+jktHfvIgWb36reQoqZu/mtwqAXbHutlRqZrsQhdZxKx8s
-E/KG7CF2jPP/P5yE5w0+ZeD+3aIqxQUdQvEnGidiiN3Wy6knLdRZStKTmc5ZZss3Ljqr+Urag/UN
-sxuzkRri5P3bxZ0iFc0L+Qat/xcPRFTqC9i8g1mdX6DSEctfxMqPeu6n4AltX0GZgWAA0m2bZm9D
-QUvJvN6+eYElARgiIaPoJEWvZDp63U3+QMDQEdDRrOZZGSxxeY14Q+ehfcrgGgMsFmiX1GHCUPTc
-ETV8XlKjYUDFDNR58qmZCkhNIM2FsXvy2+hzYNLl16AAPvqir7wZoqbssRK0u4YsagvDGOJ12wY/
-lMxUpSh3LmJ+IHkByjQ+84g8iDiomHvPmcIIOGC8e5MeLI3dodQrNOrrkhEhw5zXdfU7y37FqVmm
-Y/6V5wbyLn10lrh5Fp2UkMxD0HwNZqei2hjZG4RgfffiYG3hxW5qyfb1RGesaph/GHYbdN4jdl3l
-6VP5Gks82HqKazxE4zvouxulCcHcHM0PEL98wbqvnwZCwlZPmMVmnvj7RP+em4SOYecBv3zT7EXf
-8i+LMICoD1U07J6Ywlh1rXSHQY32HfIh/d4cYaTha/Q2oarY0bRRtc9VisvmsQGVhW5p4/zYBK9D
-GHW+l9lLrDtYHwSnDEI1VUQj8JUndgMVKmN3uzcggLrS5tu3og+mAnpJdJRwq+RtNbKUGsLJj1sA
-vGPkIcZ/sYTUqpdusIDGjdfwvv17/7wXUQDcJn1NEl0lMX1W1PRE1En+04/m6PZtQHs9UD0kulgt
-/UMLPj/b5ynL8LbmHx1pGkoW8/z62gdKEjgGjptZFs5JkzjzrvjNiqAV0jzjEnuMzzqGp2hY+mzC
-OTQAuwWxbc48R4ilsV60OlQaWm31dcE52jnZooKIhmpGXypPDzRQqPKXms4UxlAdDY9c7gej1OeM
-fD8N6i4wTzKD/N/dKRFjhXkEvcBDQpMbcojvAZYXTmuhnoy3DS8NgnFASBJbxWL0DPxECob2O1xB
-SS3znJfI/tk0krEFDo/HqwNsQq3OYyF3EwIfruavCn0fBy/lieP8oaqaqs5VJm+QhAZ2KaUetbwZ
-LoFDVP7S2dNZl9k+1ccm2p/9bBVpm102V6Ftl+vfX4WP5/jFDJKbrlzaJyfjJxQkZuCXzNF/FqPQ
-91VoTyVn6LFQjFNHSlbt1IDHM07iFmRh0y4VSYeleoVUCkEE1PVAtZCV3ZYrRai+MQ5xGjjQbKiA
-ipDs9PxVwsTjLzq+NeUtkmL+rssgH6h0vBtOKa3fM7k5jiXtUiCcEPq3SYPANjaXkWNajNifzLTf
-YUVuLU6vCQWmyLuNRA0LaI9RgMXjUSL8jfMvWxxb24b88KKLm897QZQT4IP47iQwve9NhIMwBAbv
-I6lJu0T7OVcfHso3rL+RJfd60bQnTHhttmwN7Q9QoL1bNEd2WBHbuX8RGLJX778u7J6wQHLOeNFJ
-c3iQNjoWzDGAHRkNrfs5kPhr84zIW0O00CtUebGRAjDYEqjMRk5JRBvrt39Mzqm6AiBaSphauyKf
-HKTlKJREia70fW3mdiwtXTQX+XapWzXAg6c8cOFi2AX4Zk+/hATP1VQqBMS+XmWExjMM9ywsnbOB
-ldaEn1nH4dGIFZWqyEAWExP8s3yGCdLFbap9qZZl59IvoDGtTEQ+ImUnqCm7KANP5dkYfZ8ePQ+Z
-xq+K3PvqGHbfSRc6+zxOSOgHKYvQLLBW+tujmzZPON3ykVGO/UdncMBRM4vBVcu9ny99+dojWfCC
-Bp6pW2OFCIxruTmu6NhFfsXQ/mj4KdXpK3cesjSX4+AIZpDX2WjPQVQutEl+wMesOCkY7lNtde1J
-/yTN5M6VylIx0XmTDCR7eGio+W9qlqOEDIBV6E89kf11KCu1Riu/8/VwSlzd5TkSQSzzCk5neoGs
-Av7bmIjLdFGhCbuD7oZ4gHnB33IgxY7Z81Jzb1Dj91XZzPm0xxjE6q8Pp/iPhOegPFulnYsEjfwZ
-P+nYVqNnGgBc147DgQvo/Sr69dogmtLgvHG0psZT0AuaPGGR6aB1Epk8W97qq7YZaXoshXuHLyvZ
-8ASox9rtdwa67n1J4Ot2LPuntI8riSJ1ktoUxl09p2mnaWCd/GkPE03EndXPlXoL1XcrIHx39dIz
-44dRu8CFEgXUFiaC8ngjs8u9wBCofpOP2kwrnNh//3rig0z90TXtQlCFa4Xq1wfhpCMs32rGT+Eh
-55E8w4eGhgprHQ3vLE4zdCKCkfWq+7zDx/1KE2Qa4M9cR8XWHcKV48CaKL6BV/nVqDDsPLZ1V07w
-OrCZK5/obtCmFt8AiG5197ZYQD/5L8BL/5LeHnzF0q1X+2OqGNSGS/83oZisCvFNS0Zls7HKQY3H
-KS5kDMdMoT20ulcMwB5rFdbFXPz7kogqbUDc6a8D8ZZmhwjU1ybLkA2CUnaAwmkFC+r0iLdkctgS
-pYx+InLpLYqkKDlh4oFB8W7bXxoIQyKtcCE5CHxvLzDJX+mW0FIxZlupOm8ZRVqz31TqgnmBXRSd
-CUefe6sZq60FCJHc0hkxLCxWr1jkbRiOneDZBhda4Bh61yx52jcV5gaFGFt1Eh67ZyxY3qgtduvQ
-6j9dyU8TVlH3Gpg6oBU8AB8wGS9bbTERtrMc96As0ecap6R7KV2CS4x5u+46rNAr2DftHl0U47yK
-rY/aN/yiI/259yETPAoRO5Wdxuf/Jq6OTP9IY+ASZrCTkRwccEmZE2saOy/x6Y6caHc9HF5UKezL
-s0LJRVsb/eSn5a6kFPuzRtCuX4ikZtzDY4ePoi9fMYFTWtjvPfPyALmNBPgDniULMz0MKuABH0mt
-gWKhNOSvKgoHMICKlYT2S0PxN72pix7y+UEhN6jrLuf4qqVKwDFkRU5D7SdHymO2EH9pu4ZuUKw+
-3ZyTP+nd0uXBqLP9GSCY8E0Wi47N8rDgGvl9kZc5OE23p5hLg6cA1wT61DZha41UViy+aqIV549Z
-LLJT8I+ac8VLYqSo2D61lmiCBpaxGTOj9ou3VPZ8NPercdJRUVm+8K9+zY5x+Au/ih4CYyqTnRKN
-e8Nou+1I9QXWWWolLS1ToO9y1xALmMuzvUk6++bMPJ6SfCnYpkhYHzFCcrgpKW4MKbul06qOv2bh
-qIFcOWk+CBbf1cH86NpGbQM4HJKhmk8DTGVogO0tu6fZjedlVxI7CfKuI2Sb5gzVdVyijYQX892L
-5DBBm12XHoh/AWcysJDJj4mL1ThJgp4CRK4zWIePl88NMacENqnM2c1LM0/trwNWTC6RN/GFBRo6
-b3bnnmA+T7T9FaYfMT8PTx2KRc+0JmKsiSIixTUnl3we+xTR+ACAUYu25KSpZp9Nqq11UflcuHoV
-tA6cGgqDHBTjSbB9tP3mzla3DWxpDM0KjC8jcCUHIkcTuFqlexhm0xVroW+fSi7tKmO5ZRlllims
-PAy83H1R8+CCjogS+Ylf/a6dkG6jd9mE671FfdKfGZaaPed84hlYH4OzcAZ9/7HFb6+0KJ0JgVnA
-2AjLPiHpLvTyGWWaNQLQhFbQ2J8TIa3YdfBAYSwuDqUUp93gBQkzfuKeaLvkEuMIeAXJt8mj2fkB
-qPyJVSyVDlrotITCJlM6FNoNmh5AIj/Ho5zO2/vfIBo6iS1a6pxHZOTqkFglaFEQi8rDzFcZw481
-ZzK/qfhftm6nHze1QkEEdebd6l2HLpLLMrKLiO5c0BlqciNiUkNeP2PoFPos4TQCvVgwdi6TDDRk
-kezbpTqt51HvXXJ4Sld+lHS8mD8uoCl3EZQsGCxOIBLWghUiLlkD3dLJbDpXxf6/K/bWX4joJMFy
-6i3BVt3J5o6IwboX/P8j43PQfw9dnSRwRPXj/tYoDhsa8BbE1pIFZtruIArjdEM2NG51BgGue8I7
-0X+gTZxaxaYDTSeo/scYir+NFHpx5FmUY1fW+oJQHbDnLcO44LT5ujbAEAo/oS3wGQMs9H7d+WUc
-f+SHIfo2WfS5qAG9yjEANsylANJbpNdofAZZhvGiSs3KQYeWCcf6jAjek/8qDHsrIyVSulJU8V77
-Z1SiUqezTE0kKsJW4Tj87zMl5Wp9GzzBQ8wvsLoMyFK6BiZF53litRUJYkkrru/oMw58Rf8QV54p
-aXAw1rY4aFwLz0Yr3539GGYQtSKKvL51wsA/9F4iPXR+Ue3AACwOQwl3ovmdRuJcRpO0He1UpjkX
-iCYHCbjS81Bw02DjKCBq7wsV9fif/8bVm+/o3B4NXWKn9RNRpYN+m3XXBSLwrXIrYauVXa+Shi3O
-8uVZ6o9IZtRnscMP0yB4/Ei544lG8sbhu7LMy0chMAADZ0vBbS1/pFuAgp9i0kdLDs27GHg/xOVQ
-zEpox08vSzPln3VynmwiAoTBluwGD8g7ifZlV9tDcDyEP+5JDW3k/oC69SlhkyLkhTIKEHDsxaUP
-PRO5tn+AAizWXsAfw4jHaHInLvLDSWxlIaQuJaZ1nHWdniRPzy/JEPBLV6BmhPMRqQoPPls9dsjY
-kMnvT0+siNaDJzVB/6oFjMVE/s5Y5eiGjPNsHvkP7p3fkl2lkfpgMC6fBUj4J88/QOKCGFX7atZY
-DstpJ6O8k8v+9FXG8BtSKVyoeJ+aXapbxWwafe4rp10vf5Jlg6wcVc8sVD38MsTHIaertkvS4rhC
-MXdO21oVPblux5JIF+eDoPjtWAFWvfc4K3dtghprMHK75o2sneWtTTOAwUavuTXsfw9J907zfyE4
-g7QBNPswC+8RSuOpsSLjQKpVCvh0ISqoeXAbotxz89sLuoEzf9zvbSRKgw6Cs1/QXJeVoN5sRABD
-q1yv+1jUAU0UmQ020+u+vee9oMBnQKoCwuX8lE5/Mxemu+MuD968rPyZ/ORRC4CENHS2IQwlkHAt
-DD6fYJ3+1PFODiC+AZ2JO3+k83876/nO4fzTULE5+vKHdDDLSwr1DZF5p9q3/+l57yKrcDfQUBpF
-KU4xNpSWMpdZ5ypp3RY5TcCIqs0rG4OPWjmTrZYNVDKB6T/ZEuKkaZMMq+hsp68jhvyQMFmebAzt
-1JPRCgOo3U1kJNUcr4Rdgla9PHjYfe5AuEjAOH4XMyx7GlTvfka08qR9KrxFFixCjQwaNBQybEd2
-7kCvekpZu//unU6D4WTGOqhQGyRQxZMZHvSB38Hu876kQl9MWdJ/rHoftLcDGl35vV5e59lAwlb5
-LrKKdDrzbvSCuBAED5p+2ZWsCLEWFOFaTzuIQjbaB3w5/WWGygPvh2GVbQlF3O7eO2nrZKR33kjl
-EfC/OYCeMbFkrQcr8UzfDKXePcV7Oo6RcZ/fMINMIrYNq4sQ+MbaNLyqyxbXEw0DH+uXP1F//sAe
-CV/lk0V4kFBdw3Uf2NeGYpvqwI41DW49iusi4bLQV/uXLYS4CD38e4A/Cl56mkHBFRacURRSgnM5
-NqGA6Lm/z5Q8FMwMHDA2IeqOxivgr/OE70YYNAy05rth+NfH6JzpxKgHTF54QhzhL/GhO+1yOOkq
-xlAo4Ks5lldf66tH7zQKxxcd0OFfT8qnl5uISx92XtO5tivvx/KNkuY927KjElAYgStpmxg6gmqL
-vcgU4gzg/uzfMNKijXjdx1Gh7jwe6nUzNz0LjDo8BcqGS6RBjNeUUg2pqQHkYHD1CipCweqk2dsM
-NCnw6IBuSWOons647Q9qh4BOlQrHVEnLmy1rJv7rdlhlRrWmy+6LkzMkXh2uIFJ5gpVt9Ir5se+3
-P9yfRbKzCSJYWu6RJzV6Z16e1FiIPmfqXkRkN6nh3+BtW2j5gZ0GMHlWDYCfNjwEUH6QBpMsFzag
-wscq69n/LoWUpxlQT7lfUIUzcDUvkFvebF9QfPBu1nsIm9exwWt0nxO+QQA24mNiSswORKxIErGt
-WJbDv7JHdQUa6R8YJbZY0JVcT8gKdes9z5kIvpGSXC/SCBg4kQGt3mE+aguM5H1oF/48MwlK1IHx
-P9GTEHNVWp/2b6RakrdQpBFylYipFn5Y3dLl/nLKiJHGT/ieoW+hKM1tV29xuUKoeUkdvlpr6l3E
-xa+fFZxBd7v934kB5gEViXLj5/09CebJUE6AjV0u8/mATyCXVWN0wyrZ2e87ELOl41X9y8XiD4Ga
-BNZOAKonX6+MIFF0qlOs5apbe/HCo46QP55DPvkfay3NVo19LV2O2KRh1VKBtj24AdOR4Xkox32T
-ofQAQvg5LIjziMSOAVS9sGMT6+Lui2otPDtw57FI0VawpCNj8jRdXSZfU23Jz7LclPf5Wsgmrn1G
-Lr2YosCLBC9XdDbgIDTgVnig66IPo7M3sY9rYMWBA28cnquSlYCvq+NAMxCTP4xLJLBmQT5QUpt/
-TqOb1QbUc3dmTcf/y9lmzHeGf8gY+I+CQkuc5HcGVZ5qm53Rf6u5+W/7TNQfWWFQjvLefZwQYQpj
-EGPUX0R+/cPW3Rh4A/LCh5YYrbImrcGlW3i/XsVvp6mefib/vfHNDWAcEWp4T0eqA8EWZpTBWn42
-4e8hBVs7MsY4Iwovmo6Jk7MVnL6sDKdDjQO7vLZv7hd7ecHzDtARO4UMo50LouYCMYjVj2XRybX3
-Rop2R2ioJdZD71UTa9Z5I40a/Z0Xcgc/IaiMt7FNIqoPLso6v+2iSvypyb4fIQ1dVHBxw4oZ5QhH
-jYVetnzvSC0n9tJRssfv2qyfdG3Fj9LARz/M2YxiCbsL/HFRlF0ntHSGaGSbHrGM/aTYI+JVW34E
-YGMm+l/lLShqLYTVOWFnCjczYbq/Ma50TItC7t255cgZ4L6QG/nyokA78WQWEFz5ZD7F/l87FGtb
-x/jUHtCSexGTBd8E9glK3PTsDyYEIaRk8iL97jdPpqbALG+5y/lWisqNkjMNONFZns07aWb7zP+q
-UNMe7oNJAjM4rYL0lLBfXtE2q14QjuLwEchePN/5kPrYEdUuz0tS06NC9xmIQzXuLPWuRG/ycl18
-NBKmVZT5Rw57UWZ+lWtL194Hh2HnQMrmr8qz0MC0pTWGzA2fxTUXG1sa3p0w+lANrBpVkNTd+jsr
-+2eMPx4ESgp/yq03X6EOcaB9uupw244zJ+TfG3+ewFpcWjtJ4ZdUgs/8pg2mB5tHayRScx3Kb/iJ
-wMwUdh98gUmtk7xT2E2B2HDyAn9c+a8DqHrKffSQzOk5XJMcIWKELyDQdKKAkqvugF05moYflZH1
-/nPyxHzyZ8xGNaRPUdQNQHJor3v79s7ObzBW+Bq9A6yYJPdphkv5jPI6HnWMbXAfigFD3G/uoikU
-kPl2kX9qW+22mm58p+y8Jjfaw2Xp/ro/dcmIHGlvo8672OiX746r1I/SCVyIWX1f5zXNj87E+vaw
-U/uYRg09fxLQ71vxmcNkMHN+7GC+KFaNRueU0+5aYjSHXUKsMXW5vr0Lo3FJ6epBkaEfAoLiX2OD
-a+16pVk4aFyWEj3QBp1SRlNkgzDefG2mKl6bnke360PVs3izKwG+Jx0z+Xk6zQtL7JCo5HK216hg
-4rv4DfjFzkBNDLI0Z0Xu7keRqQRv/tTKNAsU/fYwZHX18lnTN8JTKnyEW+6YuyWhMtqeqI4BhU66
-xA0NoiL8G1MLmNCd4q+tNWXXKnhWsV32aYZFRWqC/WzKOSVaziEmlCBayrnCCXeEX0SrSKBChYqs
-akH6J1p92qrbYs1AyJ/1csb97w9IY2ndDOurHdHZMQ6klTLOXexYQ83w+4s2Cz88rOLXjB3uzVY6
-E2cpFLniT5IOptWpqtQwDE/0D60/BO19fy31JCR+uFL1QoKPyLGk8/X9ERfuI5656u+BznPtzUr8
-qEd3owMo8ggvybx2GImpG+Xc71ZfdPRmkzxcWKy+ApOiJa7X9grvxpsCm+w+2Z3CyLuhVJAio0gP
-P3wIWQncq9UgfZy2XidY1zmrPvcq8GxgWSERkPAmZrS5vE3h9utTEdxQSWJK4a93ipezrVwryL2+
-SIcAhNIQSX/XV4hNjq5GjFS1id2eUt+73j3MgEh1J3BfXBEvLMDyOh7iKrlYSAirRsNdNkurfIjX
-DKiXn+znVD3y2cZNGpcwMDslNq8T0DN85aC2aIcMUhhke70awtVZWXJBr958I0CBYwsVyIbi/yxD
-UNRhEtvbrxGjz5C026+yuxWmT/dkuM7loWjBHHUmeO6V6VsK2WjjjqQmwD92E6oQCch8gVie5VtF
-C6InPYB4iEJ9yGepSmWUm9g/DTtc8/lahYSoWMQsq1pjKU1ZnE1TQIeKwPos96nX5qXA7FzqzhaN
-f8nX2tASqLhCZpCMVgL3ONlU79sxEBko5ZDr9D5EqDZdVKJMHpzIOexyUSYNCZQdDbPdhN3nWLTF
-c76M7bpz55yqhsRjWr0eVJsp0njJJ3xLuTYWc6YjNWqiqGp20ZZ9i/f9zD852b+ua8hFizI+JaD4
-Ahd9Gzu6VcqCkrasNcdd1Ct61M0Ani+4M41ZKurcAwdvRCJPXYmahEI1C05cQuKr/OKkyXOF1ZEz
-qDQAoMRmVW+KqE82G6eSeI+cCC55KUraQvd0Sj2RtD24I35cw1ypDpJZgFw4aLRCn9b40ncZQXWh
-R0lHGK/mtYreRTYTWECQcvH4epzlFWELd7RlsqiYD1QJQy6h4QJcISPo7L7nzBiDPRy58XHCdiS0
-nJRjWQ83N0P2ptwCnU6wVvKpI0CdzW/jFZdREBS5ZExbcroHGPv6wCwkcI35G31IhNW/PALpn86U
-fO0aRB8CZLsqIawx/JLlp4j/o5ac4Seo5nDD9ALU+2iF1bfxNh65VMt7/COtgubeMLRSTZe7yn57
-UFztf671HNiSn5ms6dfQ+HiOTM9+i/6PSz8bX0wK/pdLUSINgFjqYqEVgO9CFJFAzYjGOIc7ozW9
-tiWUPZDyaB6qD3LKoidAy/nJuQiNPdQlLct4dZfHfAgcKOzOz1nOhKhDnqmskXLcWkr+fizvthbK
-gFsjkwJ+BbrIxB65HxLQuxkOdY7WqdhPPNag4AJGcc+nY5S5WlabzC6jtvDUHIxSI/P6IAr1fTTL
-Im8bKoBx6w/RkRRD2ooU2deoPf76vuGqxhJL7wNKXYyWS/zI1wSiRJEtwjtQartA49hgQbksHsdf
-O/lIFY2HvrWHW2wI6n8JChn8kaPDBnAKVqeAD+KY/wPJIJidwwN5tXLS1ZSAi9JwoMG2SNPBLoA9
-8coyoapSyjZ9UVaj/O1Izsu5ed6ZPJz8cmHs68X6g4uOkhU+HUOQKk8Y6jHOe8rmZhyeMSBgpXR6
-WBvjRpEWQ/mGPSItpf3ihwm1Grhb99zhHsOUTGq3fDyN5nbmJDMx7hYbHyxblGRDzgIWPwU/P55j
-rU28YYDnLNQObM+4RLDWXQu48kTWxvLaM4WSw8p/pESEh7gMAo6C/w6kDs8t1cuSLFxv5nJBooYx
-pxeCM5QDP+/MtVJC0ILk0+WAFoyAWAm+JfHEHgwzPZyCNtsQ/hOQtwKZo3rDZk3OIzG+UKqSINrF
-EYKFG0gDBDzlKzqSOBmlQgTyXNiaCI04H0pMqSP15GxkQHbPLEYVCcHFxcl+cTgg409dWztpwk4d
-/YqJD0W9bIZz8uQX5WY4YaX7R3B+tgSAruLAY52Hv05sQRTx/azVNDU1CvLPBoPiqx+iQgA/i/69
-sr58LiSloI1E8UOXVwkyUL4U5mtDlnSdvIqIQK/PoKA8AqjrXMS1PrSBiXsb9/5Y5iyQEcK9LRBK
-rxdcZ+Q3TBVxhcjSaWnWFwuWfQ7oYknuTOH/bd9/78piyKPSxJ8TrmOWhjCnJPr3dvVYXhFbozJK
-D2DNLL+XgUNpTOFoP5lEsiOEV6KW30qliSb8QWBodmDpDi9m6rv/MyP9gdn7YxRPmEhOv9GBOdHA
-gAC7DessrIuz7RCWsmKEYN3Be4BFQpWdzWzFAI+X+QQHdfV++m9kQCpTjIrywAU4I67w3TRqKVNg
-zK7W4rvuWJtgqk2VmGPKb1uaPFLtU3Nu6K1tr7DI5IbcWN/SnUW6ds4Fh21wKU98MB85nQc/aRp3
-z81QUCwMWfLbWM+EujXcGF+ZvhNO6OtB1Bq7we6lBO+/as1ulx7gSsoi6SWJA4x3c1TbssT9khhU
-p/jZD/FxxlAFBA6RsMeu6y60VqOd0WIu6lrnzlEDTMZz76Pc9EYHEnCmDH3YLl+bD+sUwHTuP9OK
-QE1w/x4kolHNbOAz+NnwMYuETnamE08xeec6zGekupMvncb5jbvf1264ZnzOHTJGRufyDedwRCbT
-MI3GzQR8bGEbq5+4XMP9AQ6ifWXexO8MfCyEIU/IeEe2xw7bJwHkFWXfegIBXTTuYPe410HdlzkT
-X1vycS2clj01u1NhwXAKcudjv0gKvqPkJBV+LJ9tPKNxuqpkcHcTDKfW4z+kAe7M/e/PuqaO59Eh
-lcD7pMmBILPVp+su9MyD+7vN3POgr0zmiTZp5GdfNOXpJaCSsiJMcvPjvMeYtwpE2hdktbt5Bpws
-See6wtAQzHomrS3izOBKQlgzxyFfruJNvK9Bl4WQs5ZDCGb07UXsbKI+YPoOMmLKdE/vNqd4S+iS
-NwzhAO4iEfnApYvtH7+GLFWxj3PF1w4msSFCWpuDb0So3eSPpNZAtYZg1c+GzPY+ICm8PAAwf1Z5
-n/YX6SSCirDavOWPO/15zF/qMEBq48QhqCB2EpfY0ZZez4gH1kjoNbtJv8aaBhOS52tllkpoeckB
-8puSeUYp5Jqi2HlgenScus3LjxsEsGa338LTgOqT86U1dg2LOhlnHvCWd9lLvgdWAQ5gLGnnAOux
-nD+VkG1DpYiqMjCgGMzDp46zCzCz18ccIJDlvtPl4DtC6DxTX9+BIkKOlYRLT8+jw+CiCADYkGjG
-IEHsuATTdKjNeyCs31mQHdXhLxo9IZu67+Xp3x5F81Xln4vq0kLupdLsBb34nueuP4yXI9WGYCQ0
-LKia8v6IAI8KU/lIUDBZS4lfjtIMLleUXyCBe7k97NQnHlM8uQH5YwmRmMfwgwOOUBO0+MdX2UgZ
-LJAjOPcPWk6Ey5zDMZ1QOEegS7QSy8DDJKXm1jwlNyv/sfkq2K9Of7g99A0NW1lTn905BA7Oj0K+
-zEC3hF4jwH2AKakgyyT8x7KrNQAs2Wfc+rLTyMDrs3l7SULj22jljpUDSllk2/c8lIxUKM3fU8NA
-e0l0L+fVMhWDiuOGungjuiG0rTJRvl6W4JfO+9nnefiqB5JQe2wwQBEQCzWgnp4XNyrY1nLB+yZU
-5TnPWWMeVNjll1hji1QvyExJqK/OPV6CJH+TKXLNXilaAuEdxcZZPRD+fMtzZbO0kiev2vvvw+uB
-cr8esz/36FRttp5Ulj1ZH8YgTfchPm75HGxZhwJBGRCibfbN0GaHE7DID3JRTuc9yG1FSu6iI6b2
-2gZ+ttLGWKn2rZUS47/kX6kuuwRebOhNW1tihz5xbVukwpeMo6Mb7ZFf0H6m8mZPJVhDGu2Ofi5e
-BmJ/pA1ZXzis7j/HyD87gM0YdaetnGarTb3pZuuIGhxl2EuuOEUpzT0w6fmDgYL+9hgnRTPtndn7
-1nOI1Mj9jCcn6+Ih76IhMalFyTrW9GfQMfEmellvJRv2Zt+N936IL6ZV1TtL+4F7k9Q8pgVoEZIP
-Ni3IMGzpCF34bgkCsRUW9cLg+IDoSIpa6ix6pvVkUK3pO12LgrhDAFP5ApPFMbWs6RVPeX4TaG6c
-dLIHnR46rnhthwCry6INugowHMds9TxIFiX/h8MOt+mO093WpPAXNVi4DrncTSo7DbadeLzO8WWR
-zdDHFsPBG+6NEI76flCdEgZOvrrXCwW76oWJgKhU+BnaXk4UsYvY9N3EPzLC/jfIUhT9NLdyHfnu
-MlHm121SzSp6b3AF3eD/LImSFkxydavtkXte+4phFrIENNMOZeWNFnzRsgqqpzENVI6xCop+VMOK
-5NaGzYQxp8DKoWgMnbBgkhqATD8G/oCGRJNVNy7vJX0106iZIhsuvYFgTTnlz20euhl9Qep6VE/d
-Txp8DbAnvjvd9n9Huw8enqxItE1DaU1dbOZQmk3g7pqq85Aczy5wZEg0ql3zzMeIGs6+t2ENrGom
-SLGiI7BTXhDRDPQe+T4Y9ZTnaD2boRhBrWGerDw81DWa/xk2Ye/SU3BBIKq6UD2Uw3Ruy6Cz0Tq9
-L5P9jNfkiNrStzEp2owa7HFChgkzDlZRd6zoepcS21fzE//cpC9TNxkQzdHfqL1i2e/Hqo1xw8yv
-cvZnsMvWLFwupL4wtPhZu9dKpDuu8WWSFR1P6h213BZ7p5TB5vvnwKdpwq9HiReM6qV/j1d4Zbm+
-sPRxIEXhw9GDm4mR8BSjbXATvKB1JDn+7OZz19Bxw77uWb8sihZhMwG7g4/LdtLhQlyIZrGTWO9G
-fCsyJMbLV8QzxRjlEzrtokA5iNFYbbv1ikCoHUcEtMgavmzjQBV7LOKdACdFX082+jMZRss01jWK
-McjZ2aQL2JCXZoIkW7gKvIObXDPLq9Zs7ks3z72W4GLehtFOEwBGeREbqynCTSx+UYa4bhvoolBJ
-YJXzf0igctG4Ke89aThAefPN+tZnTYbZkSmjpAz1Z9wXNoQCgWClm3Y632KecgwJ84xkTfrAwMqB
-AWb27QVeVAX/lLFBQXMOfSIu2mMTLgrYElHWw8JRIlcxn1ap8/hmr+7djAAQ9iBnhMfrCNMhE5De
-LM/enumNIfggOplzOlHZRXemtzrggpbKkqmgLLGMWcGe6sO97LaOTA4h+lC6QCRd5wTAEV0uomzM
-1Eti7UWdww0ADj2xI1kQw+vPXRHbosYh2qo+OclgBpFCQPGjeB6CeHQU9HyAlCW4LOGzxWNJiyrg
-I5x/R3gy8KXMTsRcPRJJ8Vvm6fx9L7qNCfP6Qqn70bAWZsB/KcsT7cYwSo3Q50/HT0NXi7T8Jd6c
-MKSq4hvoz752dNkIXYSlA4OnBTU8uoBdks2MV7OtViuUzt2jSfC4z+ii6byj91hdYsm919IWmdCJ
-uufPTdaQlVmTqzyNcOgbRK2DRqWaPrQQqgnAR9Kc5LTkjlwQTZuz/rhlXjsI0icK8dZe8BUa7/Rm
-w/v4rJ+p6uSOyN/xvE5astpqqR/6HkBJKiroy2vpqrc4Y6th4XWtVs2OpmrYRaY4gGwBbg06D5Cd
-O3MSlvDY6k++W6HbJDYYeQ+5oYSpuTRWuxd2PN6mXscrxu9EVwveiudKQ1kiWD2w+V9j/ii+1IKP
-H5PvJG5TwXJVzvVcirtcraFxjX6ehtS85mOjq+aYtwNMof1vpYzozMIp/JltSGJzfzJc5qHpKIhG
-aoy16uRinONMa2ls+EnbqBllxJO3KEM5EX2N1383sogHoNwoZkJH92CXfC3jpUeOKNChsbeITAlV
-R2eapWUFiDuI1s8NX5LWMk1vVulo4VZfqSYpDcH6k57Nepw3xOok/mx/hjyeJkDtBwYEhuhOkxXv
-j/ZShxXsh93ZfLORROODO3eZU8W7bCEz65FVA5YdHozY6bFTwTJy8VIANNO6OuzAA2OIRPDLnWS8
-9l6LUl40fugrA6tLvU62XPUg9LUakk1wqc6y5TxA8R4tZrHXtMHZS3fAHfubsm+ERYM1J6iAE4F+
-K10vX6m5QkpiG29nLZSM8bWfGqDWY5iE7eh65uAXieHCj6FCv6VlE05zsq8E1boOG2FG2P5P8WmB
-xIjnHGJ59TPYbfiQcn8e2lBs13HgyyRk6e/tmvKGYh/blSkNWpOBkNMKYARp01WmZIhvcs1apBG9
-loPm3Jxk6IXc5gSuCnQtCWCTsIajW++d5aqGaaHcZijPovcRftNIoeHgDdlTO8i3qZHcpx3OD/ob
-dHxEGbYB7T8aAiSSHIm6BWoDknCqvTpqMQL11MjkmQXuAXWEsG6qOc6hJPXphaz61qqmO1GYCq1O
-p41UnYeTfnjy7HVCtbCktt8qMebUtXvR/VJF/5vZeGoeT809roYFnvl7DCi9BWCg08cAXK9P3uty
-5I8IOPTkWhmHICB1kfaSO1YFcWdEQ9K8PFv11qo+RnC5HJuBvPvIKUPx/s5ZHFyOZSlYb/ibN9Om
-9GxlIsJXVHZUzVSWXL6sJCaz0KiQmooNBzR6zFH5WbK5TsPexURlsWzs5dJ2D7f8rb2m4S553k/F
-Io+9x8STezq0H55cgssnnureJqau1UEPDOlQNt2udHQAIjaB0WliFrQRld5/himW+LB5mhLiUJdy
-bxhjCz3APTG+j/GF9iFtu653ZTSU0cp+1VbZ5xEqtfs8Rh7oX5zEB219EprV4JILquV2yYwl4Tos
-DOu0tjNEPQg5D9mPw7eNw90pDjf/9nxHZxOSm1z+KsQiOX65yTY+SqGweprTXWrqIdXuOOIv9/Hn
-aFoJ6lY5EnmSy74isYQSRqnLl2MQp6PVJbWPbTlOIav9yuLKY6+fPxImjQgoUDd/4uVkCkl0ylys
-y26BOxdtE/gv3aVUVGzhYVtbAmO4SnY74Gy6hKRVPnymCs/nHy2q666Ohimf7UsMLoC+v6Kkbw+Q
-eHq0xWzBXeM4PGvgU9/wpE7Rc8D1Efsp4oiFWmj5aiFJD9Iyn9UDjpZtCvZa7sZ6I/Q1tyvyyFK2
-g93MzOe=
+<?php
+
+/** PHPExcel root directory */
+if (!defined('PHPEXCEL_ROOT')) {
+    /**
+     * @ignore
+     */
+    define('PHPEXCEL_ROOT', dirname(__FILE__) . '/../../');
+    require PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php';
+}
+
+/**
+ * PHPExcel_Calculation_TextData.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+ *
+ * @category    PHPExcel
+ * @copyright    Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license        http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version        ##VERSION##, ##DATE##
+ */
+class PHPExcel_Calculation_TextData
+{
+    private static $invalidChars;
+
+    private static function unicodeToOrd($c)
+    {
+        if (ord($c[0]) >= 0 && ord($c[0]) <= 127) {
+            return ord($c[0]);
+        }
+        if (ord($c[0]) >= 192 && ord($c[0]) <= 223) {
+            return (ord($c[0]) - 192) * 64 + (ord($c[1]) - 128);
+        }
+        if (ord($c[0]) >= 224 && ord($c[0]) <= 239) {
+            return (ord($c[0]) - 224) * 4_096 + (ord($c[1]) - 128) * 64 + (ord($c[2]) - 128);
+        }
+        if (ord($c[0]) >= 240 && ord($c[0]) <= 247) {
+            return (ord($c[0]) - 240) * 262_144 + (ord($c[1]) - 128) * 4_096 + (ord($c[2]) - 128) * 64 + (ord($c[3]) - 128);
+        }
+        if (ord($c[0]) >= 248 && ord($c[0]) <= 251) {
+            return (ord($c[0]) - 248) * 16_777_216 + (ord($c[1]) - 128) * 262_144 + (ord($c[2]) - 128) * 4_096 + (ord($c[3]) - 128) * 64 + (ord($c[4]) - 128);
+        }
+        if (ord($c[0]) >= 252 && ord($c[0]) <= 253) {
+            return (ord($c[0]) - 252) * 1_073_741_824 + (ord($c[1]) - 128) * 16_777_216 + (ord($c[2]) - 128) * 262_144 + (ord($c[3]) - 128) * 4_096 + (ord($c[4]) - 128) * 64 + (ord($c[5]) - 128);
+        }
+        if (ord($c[0]) >= 254 && ord($c[0]) <= 255) {
+            // error
+            return PHPExcel_Calculation_Functions::VALUE();
+        }
+
+        return 0;
+    }
+
+    /**
+     * CHARACTER.
+     *
+     * @param    string    $character    Value
+     * @return    int
+     */
+    public static function CHARACTER($character)
+    {
+        $character = PHPExcel_Calculation_Functions::flattenSingleValue($character);
+
+        if ((!is_numeric($character)) || ($character < 0)) {
+            return PHPExcel_Calculation_Functions::VALUE();
+        }
+
+        if (function_exists('mb_convert_encoding')) {
+            return mb_convert_encoding('&#' . intval($character) . ';', 'UTF-8', 'HTML-ENTITIES');
+        }
+
+        return chr(intval($character));
+
+    }
+
+    /**
+     * TRIMNONPRINTABLE.
+     *
+     * @param    mixed    $stringValue    Value to check
+     * @return    string
+     */
+    public static function TRIMNONPRINTABLE($stringValue = '')
+    {
+        $stringValue    = PHPExcel_Calculation_Functions::flattenSingleValue($stringValue);
+
+        if (is_bool($stringValue)) {
+            return ($stringValue) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+        }
+
+        if (self::$invalidChars == null) {
+            self::$invalidChars = range(chr(0), chr(31));
+        }
+
+        if (is_string($stringValue) || is_numeric($stringValue)) {
+            return str_replace(self::$invalidChars, '', trim($stringValue, "\x00..\x1F"));
+        }
+
+        return null;
+    }
+
+    /**
+     * TRIMSPACES.
+     *
+     * @param    mixed    $stringValue    Value to check
+     * @return    string
+     */
+    public static function TRIMSPACES($stringValue = '')
+    {
+        $stringValue = PHPExcel_Calculation_Functions::flattenSingleValue($stringValue);
+        if (is_bool($stringValue)) {
+            return ($stringValue) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+        }
+
+        if (is_string($stringValue) || is_numeric($stringValue)) {
+            return trim(preg_replace('/ +/', ' ', trim($stringValue, ' ')), ' ');
+        }
+
+        return null;
+    }
+
+    /**
+     * ASCIICODE.
+     *
+     * @param    string    $characters        Value
+     * @return    int
+     */
+    public static function ASCIICODE($characters)
+    {
+        if (($characters === null) || ($characters === '')) {
+            return PHPExcel_Calculation_Functions::VALUE();
+        }
+        $characters    = PHPExcel_Calculation_Functions::flattenSingleValue($characters);
+        if (is_bool($characters)) {
+            if (PHPExcel_Calculation_Functions::getCompatibilityMode() == PHPExcel_Calculation_Functions::COMPATIBILITY_OPENOFFICE) {
+                $characters = (int) $characters;
+            } else {
+                $characters = ($characters) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+            }
+        }
+
+        $character = $characters;
+        if (function_exists('mb_strlen') && function_exists('mb_substr')) {
+            if (mb_strlen($characters, 'UTF-8') > 1) {
+                $character = mb_substr($characters, 0, 1, 'UTF-8');
+            }
+
+            return self::unicodeToOrd($character);
+        }
+        if (strlen($characters) > 0) {
+            $character = substr($characters, 0, 1);
+        }
+
+        return ord($character);
+
+    }
+
+    /**
+     * CONCATENATE.
+     *
+     * @return    string
+     */
+    public static function CONCATENATE()
+    {
+        $returnValue = '';
+
+        // Loop through arguments
+        $aArgs = PHPExcel_Calculation_Functions::flattenArray(func_get_args());
+        foreach ($aArgs as $arg) {
+            if (is_bool($arg)) {
+                if (PHPExcel_Calculation_Functions::getCompatibilityMode() == PHPExcel_Calculation_Functions::COMPATIBILITY_OPENOFFICE) {
+                    $arg = (int) $arg;
+                } else {
+                    $arg = ($arg) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+                }
+            }
+            $returnValue .= $arg;
+        }
+
+        return $returnValue;
+    }
+
+    /**
+     * DOLLAR.
+     *
+     * This function converts a number to text using currency format, with the decimals rounded to the specified place.
+     * The format used is $#,##0.00_);($#,##0.00)..
+     *
+     * @param    float    $value            The value to format
+     * @param    int        $decimals        The number of digits to display to the right of the decimal point.
+     *                                    If decimals is negative, number is rounded to the left of the decimal point.
+     *                                    If you omit decimals, it is assumed to be 2
+     * @return    string
+     */
+    public static function DOLLAR($value = 0, $decimals = 2)
+    {
+        $value        = PHPExcel_Calculation_Functions::flattenSingleValue($value);
+        $decimals    = is_null($decimals) ? 0 : PHPExcel_Calculation_Functions::flattenSingleValue($decimals);
+
+        // Validate parameters
+        if (!is_numeric($value) || !is_numeric($decimals)) {
+            return PHPExcel_Calculation_Functions::NaN();
+        }
+        $decimals = floor($decimals);
+
+        $mask = '$#,##0';
+        if ($decimals > 0) {
+            $mask .= '.' . str_repeat('0', $decimals);
+        } else {
+            $round = pow(10, abs($decimals));
+            if ($value < 0) {
+                $round = 0 - $round;
+            }
+            $value = PHPExcel_Calculation_MathTrig::MROUND($value, $round);
+        }
+
+        return PHPExcel_Style_NumberFormat::toFormattedString($value, $mask);
+
+    }
+
+    /**
+     * SEARCHSENSITIVE.
+     *
+     * @param    string    $needle        The string to look for
+     * @param    string    $haystack    The string in which to look
+     * @param    int        $offset        Offset within $haystack
+     * @return    string
+     */
+    public static function SEARCHSENSITIVE($needle, $haystack, $offset = 1)
+    {
+        $needle   = PHPExcel_Calculation_Functions::flattenSingleValue($needle);
+        $haystack = PHPExcel_Calculation_Functions::flattenSingleValue($haystack);
+        $offset   = PHPExcel_Calculation_Functions::flattenSingleValue($offset);
+
+        if (!is_bool($needle)) {
+            if (is_bool($haystack)) {
+                $haystack = ($haystack) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+            }
+
+            if (($offset > 0) && (PHPExcel_Shared_String::CountCharacters($haystack) > $offset)) {
+                if (PHPExcel_Shared_String::CountCharacters($needle) == 0) {
+                    return $offset;
+                }
+                if (function_exists('mb_strpos')) {
+                    $pos = mb_strpos($haystack, $needle, --$offset, 'UTF-8');
+                } else {
+                    $pos = strpos($haystack, $needle, --$offset);
+                }
+                if ($pos !== false) {
+                    return ++$pos;
+                }
+            }
+        }
+
+        return PHPExcel_Calculation_Functions::VALUE();
+    }
+
+    /**
+     * SEARCHINSENSITIVE.
+     *
+     * @param    string    $needle        The string to look for
+     * @param    string    $haystack    The string in which to look
+     * @param    int        $offset        Offset within $haystack
+     * @return    string
+     */
+    public static function SEARCHINSENSITIVE($needle, $haystack, $offset = 1)
+    {
+        $needle   = PHPExcel_Calculation_Functions::flattenSingleValue($needle);
+        $haystack = PHPExcel_Calculation_Functions::flattenSingleValue($haystack);
+        $offset   = PHPExcel_Calculation_Functions::flattenSingleValue($offset);
+
+        if (!is_bool($needle)) {
+            if (is_bool($haystack)) {
+                $haystack = ($haystack) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+            }
+
+            if (($offset > 0) && (PHPExcel_Shared_String::CountCharacters($haystack) > $offset)) {
+                if (PHPExcel_Shared_String::CountCharacters($needle) == 0) {
+                    return $offset;
+                }
+                if (function_exists('mb_stripos')) {
+                    $pos = mb_stripos($haystack, $needle, --$offset, 'UTF-8');
+                } else {
+                    $pos = stripos($haystack, $needle, --$offset);
+                }
+                if ($pos !== false) {
+                    return ++$pos;
+                }
+            }
+        }
+
+        return PHPExcel_Calculation_Functions::VALUE();
+    }
+
+    /**
+     * FIXEDFORMAT.
+     *
+     * @param    mixed        $value    Value to check
+     * @param    int        $decimals
+     * @param    bool        $no_commas
+     * @return    bool
+     */
+    public static function FIXEDFORMAT($value, $decimals = 2, $no_commas = false)
+    {
+        $value     = PHPExcel_Calculation_Functions::flattenSingleValue($value);
+        $decimals  = PHPExcel_Calculation_Functions::flattenSingleValue($decimals);
+        $no_commas = PHPExcel_Calculation_Functions::flattenSingleValue($no_commas);
+
+        // Validate parameters
+        if (!is_numeric($value) || !is_numeric($decimals)) {
+            return PHPExcel_Calculation_Functions::NaN();
+        }
+        $decimals = floor($decimals);
+
+        $valueResult = round($value, $decimals);
+        if ($decimals < 0) {
+            $decimals = 0;
+        }
+        if (!$no_commas) {
+            $valueResult = number_format($valueResult, $decimals);
+        }
+
+        return (string) $valueResult;
+    }
+
+    /**
+     * LEFT.
+     *
+     * @param    string    $value    Value
+     * @param    int        $chars    Number of characters
+     * @return    string
+     */
+    public static function LEFT($value = '', $chars = 1)
+    {
+        $value = PHPExcel_Calculation_Functions::flattenSingleValue($value);
+        $chars = PHPExcel_Calculation_Functions::flattenSingleValue($chars);
+
+        if ($chars < 0) {
+            return PHPExcel_Calculation_Functions::VALUE();
+        }
+
+        if (is_bool($value)) {
+            $value = ($value) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+        }
+
+        if (function_exists('mb_substr')) {
+            return mb_substr($value, 0, $chars, 'UTF-8');
+        }
+
+        return substr($value, 0, $chars);
+
+    }
+
+    /**
+     * MID.
+     *
+     * @param    string    $value    Value
+     * @param    int        $start    Start character
+     * @param    int        $chars    Number of characters
+     * @return    string
+     */
+    public static function MID($value = '', $start = 1, $chars = null)
+    {
+        $value = PHPExcel_Calculation_Functions::flattenSingleValue($value);
+        $start = PHPExcel_Calculation_Functions::flattenSingleValue($start);
+        $chars = PHPExcel_Calculation_Functions::flattenSingleValue($chars);
+
+        if (($start < 1) || ($chars < 0)) {
+            return PHPExcel_Calculation_Functions::VALUE();
+        }
+
+        if (is_bool($value)) {
+            $value = ($value) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+        }
+
+        if (function_exists('mb_substr')) {
+            return mb_substr($value, --$start, $chars, 'UTF-8');
+        }
+
+        return substr($value, --$start, $chars);
+
+    }
+
+    /**
+     * RIGHT.
+     *
+     * @param    string    $value    Value
+     * @param    int        $chars    Number of characters
+     * @return    string
+     */
+    public static function RIGHT($value = '', $chars = 1)
+    {
+        $value = PHPExcel_Calculation_Functions::flattenSingleValue($value);
+        $chars = PHPExcel_Calculation_Functions::flattenSingleValue($chars);
+
+        if ($chars < 0) {
+            return PHPExcel_Calculation_Functions::VALUE();
+        }
+
+        if (is_bool($value)) {
+            $value = ($value) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+        }
+
+        if (function_exists('mb_substr') && function_exists('mb_strlen')) {
+            return mb_substr($value, mb_strlen($value, 'UTF-8') - $chars, $chars, 'UTF-8');
+        }
+
+        return substr($value, strlen($value) - $chars);
+
+    }
+
+    /**
+     * STRINGLENGTH.
+     *
+     * @param    string    $value    Value
+     * @return    string
+     */
+    public static function STRINGLENGTH($value = '')
+    {
+        $value = PHPExcel_Calculation_Functions::flattenSingleValue($value);
+
+        if (is_bool($value)) {
+            $value = ($value) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+        }
+
+        if (function_exists('mb_strlen')) {
+            return mb_strlen($value, 'UTF-8');
+        }
+
+        return strlen($value);
+
+    }
+
+    /**
+     * LOWERCASE.
+     *
+     * Converts a string value to upper case.
+     *
+     * @param    string        $mixedCaseString
+     * @return    string
+     */
+    public static function LOWERCASE($mixedCaseString)
+    {
+        $mixedCaseString = PHPExcel_Calculation_Functions::flattenSingleValue($mixedCaseString);
+
+        if (is_bool($mixedCaseString)) {
+            $mixedCaseString = ($mixedCaseString) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+        }
+
+        return PHPExcel_Shared_String::StrToLower($mixedCaseString);
+    }
+
+    /**
+     * UPPERCASE.
+     *
+     * Converts a string value to upper case.
+     *
+     * @param    string        $mixedCaseString
+     * @return    string
+     */
+    public static function UPPERCASE($mixedCaseString)
+    {
+        $mixedCaseString = PHPExcel_Calculation_Functions::flattenSingleValue($mixedCaseString);
+
+        if (is_bool($mixedCaseString)) {
+            $mixedCaseString = ($mixedCaseString) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+        }
+
+        return PHPExcel_Shared_String::StrToUpper($mixedCaseString);
+    }
+
+    /**
+     * PROPERCASE.
+     *
+     * Converts a string value to upper case.
+     *
+     * @param    string        $mixedCaseString
+     * @return    string
+     */
+    public static function PROPERCASE($mixedCaseString)
+    {
+        $mixedCaseString = PHPExcel_Calculation_Functions::flattenSingleValue($mixedCaseString);
+
+        if (is_bool($mixedCaseString)) {
+            $mixedCaseString = ($mixedCaseString) ? PHPExcel_Calculation::getTRUE() : PHPExcel_Calculation::getFALSE();
+        }
+
+        return PHPExcel_Shared_String::StrToTitle($mixedCaseString);
+    }
+
+    /**
+     * REPLACE.
+     *
+     * @param    string    $oldText    String to modify
+     * @param    int        $start        Start character
+     * @param    int        $chars        Number of characters
+     * @param    string    $newText    String to replace in defined position
+     * @return    string
+     */
+    public static function REPLACE($oldText, $start, $chars, $newText)
+    {
+        $oldText = PHPExcel_Calculation_Functions::flattenSingleValue($oldText);
+        $start   = PHPExcel_Calculation_Functions::flattenSingleValue($start);
+        $chars   = PHPExcel_Calculation_Functions::flattenSingleValue($chars);
+        $newText = PHPExcel_Calculation_Functions::flattenSingleValue($newText);
+
+        $left = self::LEFT($oldText, $start - 1);
+        $right = self::RIGHT($oldText, self::STRINGLENGTH($oldText) - ($start + $chars) + 1);
+
+        return $left . $newText . $right;
+    }
+
+    /**
+     * SUBSTITUTE.
+     *
+     * @param    string    $text        Value
+     * @param    string    $fromText    From Value
+     * @param    string    $toText        To Value
+     * @param    int    $instance    Instance Number
+     * @return    string
+     */
+    public static function SUBSTITUTE($text = '', $fromText = '', $toText = '', $instance = 0)
+    {
+        $text     = PHPExcel_Calculation_Functions::flattenSingleValue($text);
+        $fromText = PHPExcel_Calculation_Functions::flattenSingleValue($fromText);
+        $toText   = PHPExcel_Calculation_Functions::flattenSingleValue($toText);
+        $instance = floor(PHPExcel_Calculation_Functions::flattenSingleValue($instance));
+
+        if ($instance == 0) {
+            if (function_exists('mb_str_replace')) {
+                return mb_str_replace($fromText, $toText, $text);
+            }
+
+            return str_replace($fromText, $toText, $text);
+
+        }
+        $pos = -1;
+
+        while ($instance > 0) {
+            if (function_exists('mb_strpos')) {
+                $pos = mb_strpos($text, $fromText, $pos + 1, 'UTF-8');
+            } else {
+                $pos = strpos($text, $fromText, $pos + 1);
+            }
+            if ($pos === false) {
+                break;
+            }
+            --$instance;
+        }
+        if ($pos !== false) {
+            if (function_exists('mb_strlen')) {
+                return self::REPLACE($text, ++$pos, mb_strlen($fromText, 'UTF-8'), $toText);
+            }
+
+            return self::REPLACE($text, ++$pos, strlen($fromText), $toText);
+
+        }
+
+
+        return $text;
+    }
+
+    /**
+     * RETURNSTRING.
+     *
+     * @param    mixed    $testValue    Value to check
+     * @return    bool
+     */
+    public static function RETURNSTRING($testValue = '')
+    {
+        $testValue = PHPExcel_Calculation_Functions::flattenSingleValue($testValue);
+
+        if (is_string($testValue)) {
+            return $testValue;
+        }
+
+        return null;
+    }
+
+    /**
+     * TEXTFORMAT.
+     *
+     * @param    mixed    $value    Value to check
+     * @param    string    $format    Format mask to use
+     * @return    bool
+     */
+    public static function TEXTFORMAT($value, $format)
+    {
+        $value  = PHPExcel_Calculation_Functions::flattenSingleValue($value);
+        $format = PHPExcel_Calculation_Functions::flattenSingleValue($format);
+
+        if (is_string($value) && (!is_numeric($value)) && PHPExcel_Shared_Date::isDateTimeFormatCode($format)) {
+            $value = PHPExcel_Calculation_DateTime::DATEVALUE($value);
+        }
+
+        return (string) PHPExcel_Style_NumberFormat::toFormattedString($value, $format);
+    }
+
+    /**
+     * VALUE.
+     *
+     * @param    mixed    $value    Value to check
+     * @return    bool
+     */
+    public static function VALUE($value = '')
+    {
+        $value = PHPExcel_Calculation_Functions::flattenSingleValue($value);
+
+        if (!is_numeric($value)) {
+            $numberValue = str_replace(
+                PHPExcel_Shared_String::getThousandsSeparator(),
+                '',
+                trim($value, " \t\n\r\0\x0B" . PHPExcel_Shared_String::getCurrencyCode()),
+            );
+            if (is_numeric($numberValue)) {
+                return (float) $numberValue;
+            }
+
+            $dateSetting = PHPExcel_Calculation_Functions::getReturnDateType();
+            PHPExcel_Calculation_Functions::setReturnDateType(PHPExcel_Calculation_Functions::RETURNDATE_EXCEL);
+
+            if (strpos($value, ':') !== false) {
+                $timeValue = PHPExcel_Calculation_DateTime::TIMEVALUE($value);
+                if ($timeValue !== PHPExcel_Calculation_Functions::VALUE()) {
+                    PHPExcel_Calculation_Functions::setReturnDateType($dateSetting);
+
+                    return $timeValue;
+                }
+            }
+            $dateValue = PHPExcel_Calculation_DateTime::DATEVALUE($value);
+            if ($dateValue !== PHPExcel_Calculation_Functions::VALUE()) {
+                PHPExcel_Calculation_Functions::setReturnDateType($dateSetting);
+
+                return $dateValue;
+            }
+            PHPExcel_Calculation_Functions::setReturnDateType($dateSetting);
+
+            return PHPExcel_Calculation_Functions::VALUE();
+        }
+
+        return (float) $value;
+    }
+}

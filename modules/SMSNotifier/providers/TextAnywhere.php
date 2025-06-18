@@ -1,4 +1,5 @@
 <?php
+
 /*+**********************************************************************************
  * The contents of this file are subject to the vtiger CRM Public License Version 1.0
  * ("License"); You may not use this file except in compliance with the License
@@ -6,275 +7,299 @@
  * The Initial Developer of the Original Code is vtiger.
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
- ************************************************************************************/
+ */
 
-class SMSNotifier_TextAnywhere_Provider implements SMSNotifier_ISMSProvider_Model {
+class SMSNotifier_TextAnywhere_Provider implements SMSNotifier_ISMSProvider_Model
+{
+    private $userName;
 
-	private $userName;
-	private $password;
-	private $parameters = array();
+    private $password;
 
-	const SERVICE_URI = 'http://www.textapp.net/webservice/httpservice.aspx';
+    private $parameters = [];
+    public const SERVICE_URI = 'http://www.textapp.net/webservice/httpservice.aspx';
 
-	private static $REQUIRED_PARAMETERS = array(
-		array('name' => 'Originator', 'label' => 'Originator', 'type' => 'text'),
-		array('name' => 'CharacterSet', 'label' => 'CharacterSet', 'type' => 'picklist', 'picklistvalues' => array('1' => 'Unicode', '2' => 'GSM'))
-	);
+    private static $REQUIRED_PARAMETERS = [
+        ['name' => 'Originator', 'label' => 'Originator', 'type' => 'text'],
+        ['name' => 'CharacterSet', 'label' => 'CharacterSet', 'type' => 'picklist', 'picklistvalues' => ['1' => 'Unicode', '2' => 'GSM']],
+    ];
 
-	function __construct() {
-		
-	}
+    public function __construct() {}
 
-	/**
-	 * Function to get provider name
-	 * @return <String> provider name
-	 */
-	public function getName() {
-		return 'TextAnywhere';
-	}
+    /**
+     * Function to get provider name.
+     * @return <String> provider name
+     */
+    public function getName()
+    {
+        return 'TextAnywhere';
+    }
 
-	public function setAuthParameters($username, $password) {
-		$this->userName = $username;
-		$this->password = $password;
-	}
+    public function setAuthParameters($username, $password)
+    {
+        $this->userName = $username;
+        $this->password = $password;
+    }
 
-	public function setParameter($key, $value) {
-		$this->parameters[$key] = $value;
-	}
+    public function setParameter($key, $value)
+    {
+        $this->parameters[$key] = $value;
+    }
 
-	public function getParameter($key, $defvalue = false) {
-		if (isset($this->parameters[$key])) {
-			return $this->parameters[$key];
-		}
-		return $defvalue;
-	}
+    public function getParameter($key, $defvalue = false)
+    {
+        if (isset($this->parameters[$key])) {
+            return $this->parameters[$key];
+        }
 
-	public function getRequiredParams() {
-		return self::$REQUIRED_PARAMETERS;
-	}
+        return $defvalue;
+    }
 
-	public function getServiceURL($type = false) {
-		if ($type) {
-			switch (strtoupper($type)) {
-				case self::SERVICE_AUTH: return self::SERVICE_URI . '';
-				case self::SERVICE_SEND: return self::SERVICE_URI . '?method=SendSMS&';
-				case self::SERVICE_QUERY: return self::SERVICE_URI . '?method=GetSMSStatus&';
-			}
-		}
-		return false;
-	}
+    public function getRequiredParams()
+    {
+        return self::$REQUIRED_PARAMETERS;
+    }
 
-	public function send($message, $tonumbers) {
-		if (!is_array($tonumbers)) {
-			$tonumbers = array($tonumbers);
-		}
+    public function getServiceURL($type = false)
+    {
+        if ($type) {
+            switch (strtoupper($type)) {
+                case self::SERVICE_AUTH: return self::SERVICE_URI . '';
+                case self::SERVICE_SEND: return self::SERVICE_URI . '?method=SendSMS&';
+                case self::SERVICE_QUERY: return self::SERVICE_URI . '?method=GetSMSStatus&';
+            }
+        }
 
-		$tonumbers = $this->cleanNumbers($tonumbers);
-		$clientMessageReference = $this->generateClientMessageReference();
-		$response = $this->sendMessage($clientMessageReference, $message, $tonumbers);
-		return $this->processSendMessageResult($response, $clientMessageReference, $tonumbers);
-	}
+        return false;
+    }
 
-	public function query($messageid) {
-		$messageidSplit = explode('--', $messageid);
-		$clientMessageReference = trim($messageidSplit[0]);
-		$number = trim($messageidSplit[1]);
+    public function send($message, $tonumbers)
+    {
+        if (!is_array($tonumbers)) {
+            $tonumbers = [$tonumbers];
+        }
 
-		$response = $this->queryMessage($clientMessageReference);
-		return $this->processQueryMessageResult($response, $number);
-	}
+        $tonumbers = $this->cleanNumbers($tonumbers);
+        $clientMessageReference = $this->generateClientMessageReference();
+        $response = $this->sendMessage($clientMessageReference, $message, $tonumbers);
 
-	private function cleanNumbers($numbers) {
-		$pattern = '/[^\+\d]/';
-		$replacement = '';
-		return preg_replace($pattern, $replacement, $numbers);
-	}
+        return $this->processSendMessageResult($response, $clientMessageReference, $tonumbers);
+    }
 
-	private function generateClientMessageReference() {
-		return uniqid();
-	}
+    public function query($messageid)
+    {
+        $messageidSplit = explode('--', $messageid);
+        $clientMessageReference = trim($messageidSplit[0]);
+        $number = trim($messageidSplit[1]);
 
-	private function validEmail($email) {
-		$isValid = true;
-		$atIndex = strrpos($email, "@");
-		if (is_bool($atIndex) && !$atIndex) {
-			$isValid = false;
-		} else {
-			$domain = substr($email, $atIndex + 1);
-			$local = substr($email, 0, $atIndex);
-			$localLen = strlen($local);
-			$domainLen = strlen($domain);
-			if ($localLen < 1 || $localLen > 64) {
-				// local part length exceeded
-				$isValid = false;
-			} else if ($domainLen < 1 || $domainLen > 255) {
-				// domain part length exceeded
-				$isValid = false;
-			} else if ($local[0] == '.' || $local[$localLen - 1] == '.') {
-				// local part starts or ends with '.'
-				$isValid = false;
-			} else if (preg_match('/\\.\\./', $local)) {
-				// local part has two consecutive dots
-				$isValid = false;
-			} else if (!preg_match('/^[A-Za-z0-9\\-\\.]+$/', $domain)) {
-				// character not valid in domain part
-				$isValid = false;
-			} else if (preg_match('/\\.\\./', $domain)) {
-				// domain part has two consecutive dots
-				$isValid = false;
-			} else if (!preg_match('/^(\\\\.|[A-Za-z0-9!#%&`_=\\/$\'*+?^{}|~.-])+$/', str_replace("\\\\", "", $local))) {
-				// character not valid in local part unless
-				// local part is quoted
-				if (!preg_match('/^"(\\\\"|[^"])+"$/', str_replace("\\\\", "", $local))) {
-					$isValid = false;
-				}
-			}
-		}
-		return $isValid;
-	}
+        $response = $this->queryMessage($clientMessageReference);
 
-	private function getReplyMethodID($originator) {
-		if (substr($originator, 0, 1) === '+' && is_numeric(substr($originator, 1))) {
-			return 4;
-		} else if ($this->validEmail($originator)) {
-			return 2;
-		} else {
-			return 1;
-		}
-	}
+        return $this->processQueryMessageResult($response, $number);
+    }
 
-	private function sendMessage($clientMessageReference, $message, $tonumbers) {
-		$originator = $this->getParameter('Originator', '');
-		$replyMethodID = $this->getReplyMethodID($originator);
+    private function cleanNumbers($numbers)
+    {
+        $pattern = '/[^\+\d]/';
+        $replacement = '';
 
-		$replyData = '';
-		if ($replyMethodID == 2) {
-			$replyData = $originator;
-			$originator = '';
-		}
+        return preg_replace($pattern, $replacement, $numbers);
+    }
 
-		$characterSetID = $this->getParameter('CharacterSet', '2');
+    private function generateClientMessageReference()
+    {
+        return uniqid();
+    }
 
-		$current_user = new Users();
-		$current_user->retrieveCurrentUserInfoFromFile(Users::getActiveAdminId());
+    private function validEmail($email)
+    {
+        $isValid = true;
+        $atIndex = strrpos($email, '@');
+        if (is_bool($atIndex) && !$atIndex) {
+            $isValid = false;
+        } else {
+            $domain = substr($email, $atIndex + 1);
+            $local = substr($email, 0, $atIndex);
+            $localLen = strlen($local);
+            $domainLen = strlen($domain);
+            if ($localLen < 1 || $localLen > 64) {
+                // local part length exceeded
+                $isValid = false;
+            } elseif ($domainLen < 1 || $domainLen > 255) {
+                // domain part length exceeded
+                $isValid = false;
+            } elseif ($local[0] == '.' || $local[$localLen - 1] == '.') {
+                // local part starts or ends with '.'
+                $isValid = false;
+            } elseif (preg_match('/\.\./', $local)) {
+                // local part has two consecutive dots
+                $isValid = false;
+            } elseif (!preg_match('/^[A-Za-z0-9\-\.]+$/', $domain)) {
+                // character not valid in domain part
+                $isValid = false;
+            } elseif (preg_match('/\.\./', $domain)) {
+                // domain part has two consecutive dots
+                $isValid = false;
+            } elseif (!preg_match('/^(\\\.|[A-Za-z0-9!#%&`_=\/$\'*+?^{}|~.-])+$/', str_replace('\\\\', '', $local))) {
+                // character not valid in local part unless
+                // local part is quoted
+                if (!preg_match('/^"(\\\"|[^"])+"$/', str_replace('\\\\', '', $local))) {
+                    $isValid = false;
+                }
+            }
+        }
 
-		$serviceURL = $this->getServiceURL(self::SERVICE_SEND);
-		$serviceURL = $serviceURL . 'returnCSVString=' . 'true' . '&';
-		$serviceURL = $serviceURL . 'externalLogin=' . urlencode($this->userName) . '&';
-		$serviceURL = $serviceURL . 'password=' . urlencode($this->password) . '&';
-		$serviceURL = $serviceURL . 'clientBillingReference=' . urlencode('vTiger' . '-' . $current_user->user_name) . '&';
-		$serviceURL = $serviceURL . 'clientMessageReference=' . urlencode($clientMessageReference) . '&';
-		$serviceURL = $serviceURL . 'originator=' . urlencode($originator) . '&';
-		$serviceURL = $serviceURL . 'body=' . urlencode(html_entity_decode($message)) . '&';
-		$serviceURL = $serviceURL . 'destinations=' . urlencode(implode(',', $tonumbers)) . '&';
-		$serviceURL = $serviceURL . 'validity=' . urlencode('72') . '&';
-		$serviceURL = $serviceURL . 'characterSetID=' . urlencode($characterSetID) . '&';
-		$serviceURL = $serviceURL . 'replyMethodID=' . urlencode($replyMethodID) . '&';
-		$serviceURL = $serviceURL . 'replyData=' . urlencode($replyData) . '&';
-		$serviceURL = $serviceURL . 'statusNotificationUrl=';
+        return $isValid;
+    }
 
-		$httpClient = new Vtiger_Net_Client($serviceURL);
-		return $httpClient->doPost(array());
-	}
+    private function getReplyMethodID($originator)
+    {
+        if (substr($originator, 0, 1) === '+' && is_numeric(substr($originator, 1))) {
+            return 4;
+        }
+        if ($this->validEmail($originator)) {
+            return 2;
+        }
 
-	private function processSendMessageResult($response, $clientMessageReference, $tonumbers) {
-		$results = array();
+        return 1;
 
-		$responseLines = explode("\n", $response);
+    }
 
-		if (trim($responseLines[0]) === '#1#') {
-			//Successful transaction
-			$numberResults = explode(',', $responseLines[1]);
-			foreach ($numberResults as $numberResult) {
-				$numberResultSplit = explode(':', $numberResult);
-				$number = trim($numberResultSplit[0]);
-				$code = trim($numberResultSplit[1]);
+    private function sendMessage($clientMessageReference, $message, $tonumbers)
+    {
+        $originator = $this->getParameter('Originator', '');
+        $replyMethodID = $this->getReplyMethodID($originator);
 
-				$result = array();
+        $replyData = '';
+        if ($replyMethodID == 2) {
+            $replyData = $originator;
+            $originator = '';
+        }
 
-				if ($code != '1') {
-					$result['error'] = true;
-					$result['statusmessage'] = $code;
-					$result['to'] = $number;
-				} else {
-					$result['error'] = false;
-					$result['id'] = $clientMessageReference . '--' . $number;
-					$result['status'] = self::MSG_STATUS_PROCESSING;
-					$result['statusmessage'] = $code;
-					$result['to'] = $number;
-				}
-				$results[] = $result;
-			}
-		} else {
-			//Transaction failed
-			foreach ($tonumbers as $number) {
-				$result = array('error' => true, 'statusmessage' => $responseLines[0], 'to' => $number);
-				$results[] = $result;
-			}
-		}
+        $characterSetID = $this->getParameter('CharacterSet', '2');
 
-		return $results;
-	}
+        $current_user = new Users();
+        $current_user->retrieveCurrentUserInfoFromFile(Users::getActiveAdminId());
 
-	private function queryMessage($clientMessageReference) {
-		$serviceURL = $this->getServiceURL(self::SERVICE_QUERY);
-		$serviceURL = $serviceURL . 'returnCSVString=' . 'true' . '&';
-		$serviceURL = $serviceURL . 'externalLogin=' . urlencode($this->userName) . '&';
-		$serviceURL = $serviceURL . 'password=' . urlencode($this->password) . '&';
-		$serviceURL = $serviceURL . 'clientMessageReference=' . urlencode($clientMessageReference);
+        $serviceURL = $this->getServiceURL(self::SERVICE_SEND);
+        $serviceURL = $serviceURL . 'returnCSVString=true&';
+        $serviceURL = $serviceURL . 'externalLogin=' . urlencode($this->userName) . '&';
+        $serviceURL = $serviceURL . 'password=' . urlencode($this->password) . '&';
+        $serviceURL = $serviceURL . 'clientBillingReference=' . urlencode('vTiger-' . $current_user->user_name) . '&';
+        $serviceURL = $serviceURL . 'clientMessageReference=' . urlencode($clientMessageReference) . '&';
+        $serviceURL = $serviceURL . 'originator=' . urlencode($originator) . '&';
+        $serviceURL = $serviceURL . 'body=' . urlencode(html_entity_decode($message)) . '&';
+        $serviceURL = $serviceURL . 'destinations=' . urlencode(implode(',', $tonumbers)) . '&';
+        $serviceURL = $serviceURL . 'validity=' . urlencode('72') . '&';
+        $serviceURL = $serviceURL . 'characterSetID=' . urlencode($characterSetID) . '&';
+        $serviceURL = $serviceURL . 'replyMethodID=' . urlencode($replyMethodID) . '&';
+        $serviceURL = $serviceURL . 'replyData=' . urlencode($replyData) . '&';
+        $serviceURL = $serviceURL . 'statusNotificationUrl=';
 
-		$httpClient = new Vtiger_Net_Client($serviceURL);
-		return $httpClient->doPost(array());
-	}
+        $httpClient = new Vtiger_Net_Client($serviceURL);
 
-	private function processQueryMessageResult($response, $number) {
-		$result = array();
+        return $httpClient->doPost([]);
+    }
 
-		$responseLines = explode("\n", $response);
+    private function processSendMessageResult($response, $clientMessageReference, $tonumbers)
+    {
+        $results = [];
 
-		if (trim($responseLines[0]) === '#1#') {
-			//Successful transaction
-			$numberResults = explode(',', $responseLines[1]);
-			foreach ($numberResults as $numberResult) {
-				$numberResultSplit = explode(':', $numberResult);
-				$thisNumber = trim($numberResultSplit[0]);
-				$code = (int) trim($numberResultSplit[1]);
+        $responseLines = explode("\n", $response);
 
-				if ($thisNumber != $number) {
-					continue;
-				}
+        if (trim($responseLines[0]) === '#1#') {
+            // Successful transaction
+            $numberResults = explode(',', $responseLines[1]);
+            foreach ($numberResults as $numberResult) {
+                $numberResultSplit = explode(':', $numberResult);
+                $number = trim($numberResultSplit[0]);
+                $code = trim($numberResultSplit[1]);
 
-				if ($code >= 400 && $code <= 499) {
-					$result['error'] = false;
-					$result['status'] = self::MSG_STATUS_DELIVERED;
-					$result['needlookup'] = 0;
-					$result['statusmessage'] = $code;
-				} else if ($code >= 500 && $code <= 599) {
-					$result['error'] = false;
-					$result['status'] = self::MSG_STATUS_FAILED;
-					$result['needlookup'] = 0;
-					$result['statusmessage'] = $code;
-				} else if ($code >= 600 && $code <= 699) {
-					$result['error'] = false;
-					$result['status'] = self::MSG_STATUS_DISPATCHED;
-					$result['needlookup'] = 1;
-					$result['statusmessage'] = $code;
-				}
-				break;
-			}
-		} else {
-			//Transaction failed
-			$result['error'] = true;
-			$result['needlookup'] = 1;
-			$result['statusmessage'] = $responseLines[0];
-		}
-		return $result;
-	}
+                $result = [];
 
-	public function getProviderEditFieldTemplateName() {
-		return 'TextAnyWhereEditField.tpl';
-	}
+                if ($code != '1') {
+                    $result['error'] = true;
+                    $result['statusmessage'] = $code;
+                    $result['to'] = $number;
+                } else {
+                    $result['error'] = false;
+                    $result['id'] = $clientMessageReference . '--' . $number;
+                    $result['status'] = self::MSG_STATUS_PROCESSING;
+                    $result['statusmessage'] = $code;
+                    $result['to'] = $number;
+                }
+                $results[] = $result;
+            }
+        } else {
+            // Transaction failed
+            foreach ($tonumbers as $number) {
+                $result = ['error' => true, 'statusmessage' => $responseLines[0], 'to' => $number];
+                $results[] = $result;
+            }
+        }
 
+        return $results;
+    }
+
+    private function queryMessage($clientMessageReference)
+    {
+        $serviceURL = $this->getServiceURL(self::SERVICE_QUERY);
+        $serviceURL = $serviceURL . 'returnCSVString=true&';
+        $serviceURL = $serviceURL . 'externalLogin=' . urlencode($this->userName) . '&';
+        $serviceURL = $serviceURL . 'password=' . urlencode($this->password) . '&';
+        $serviceURL = $serviceURL . 'clientMessageReference=' . urlencode($clientMessageReference);
+
+        $httpClient = new Vtiger_Net_Client($serviceURL);
+
+        return $httpClient->doPost([]);
+    }
+
+    private function processQueryMessageResult($response, $number)
+    {
+        $result = [];
+
+        $responseLines = explode("\n", $response);
+
+        if (trim($responseLines[0]) === '#1#') {
+            // Successful transaction
+            $numberResults = explode(',', $responseLines[1]);
+            foreach ($numberResults as $numberResult) {
+                $numberResultSplit = explode(':', $numberResult);
+                $thisNumber = trim($numberResultSplit[0]);
+                $code = (int) trim($numberResultSplit[1]);
+
+                if ($thisNumber != $number) {
+                    continue;
+                }
+
+                if ($code >= 400 && $code <= 499) {
+                    $result['error'] = false;
+                    $result['status'] = self::MSG_STATUS_DELIVERED;
+                    $result['needlookup'] = 0;
+                    $result['statusmessage'] = $code;
+                } elseif ($code >= 500 && $code <= 599) {
+                    $result['error'] = false;
+                    $result['status'] = self::MSG_STATUS_FAILED;
+                    $result['needlookup'] = 0;
+                    $result['statusmessage'] = $code;
+                } elseif ($code >= 600 && $code <= 699) {
+                    $result['error'] = false;
+                    $result['status'] = self::MSG_STATUS_DISPATCHED;
+                    $result['needlookup'] = 1;
+                    $result['statusmessage'] = $code;
+                }
+                break;
+            }
+        } else {
+            // Transaction failed
+            $result['error'] = true;
+            $result['needlookup'] = 1;
+            $result['statusmessage'] = $responseLines[0];
+        }
+
+        return $result;
+    }
+
+    public function getProviderEditFieldTemplateName()
+    {
+        return 'TextAnyWhereEditField.tpl';
+    }
 }
-
-?>

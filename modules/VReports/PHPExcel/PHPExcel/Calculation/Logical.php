@@ -1,120 +1,274 @@
-<?php //002e0
-// RevisionNumber:
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+/** PHPExcel root directory */
+if (!defined('PHPEXCEL_ROOT')) {
+    /**
+     * @ignore
+     */
+    define('PHPEXCEL_ROOT', dirname(__FILE__) . '/../../');
+    require PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php';
+}
+
+/**
+ * PHPExcel_Calculation_Logical.
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+ *
+ * @category    PHPExcel
+ * @copyright    Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license        http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version        ##VERSION##, ##DATE##
+ */
+class PHPExcel_Calculation_Logical
+{
+    /**
+     * TRUE.
+     *
+     * Returns the boolean TRUE.
+     *
+     * Excel Function:
+     *        =TRUE()
+     *
+     * @category Logical Functions
+     * @return    bool        True
+     */
+    public static function true()
+    {
+        return true;
+    }
+
+    /**
+     * FALSE.
+     *
+     * Returns the boolean FALSE.
+     *
+     * Excel Function:
+     *        =FALSE()
+     *
+     * @category Logical Functions
+     * @return    bool        False
+     */
+    public static function false()
+    {
+        return false;
+    }
+
+    /**
+     * LOGICAL_AND.
+     *
+     * Returns boolean TRUE if all its arguments are TRUE; returns FALSE if one or more argument is FALSE.
+     *
+     * Excel Function:
+     *        =AND(logical1[,logical2[, ...]])
+     *
+     *        The arguments must evaluate to logical values such as TRUE or FALSE, or the arguments must be arrays
+     *            or references that contain logical values.
+     *
+     *        Boolean arguments are treated as True or False as appropriate
+     *        Integer or floating point arguments are treated as True, except for 0 or 0.0 which are False
+     *        If any argument value is a string, or a Null, the function returns a #VALUE! error, unless the string holds
+     *            the value TRUE or FALSE, in which case it is evaluated as the corresponding boolean value
+     *
+     * @category Logical Functions
+     * @return    bool        the logical AND of the arguments
+     */
+    public static function LOGICAL_AND()
+    {
+        // Return value
+        $returnValue = true;
+
+        // Loop through the arguments
+        $aArgs = PHPExcel_Calculation_Functions::flattenArray(func_get_args());
+        $argCount = -1;
+        foreach ($aArgs as $argCount => $arg) {
+            // Is it a boolean value?
+            if (is_bool($arg)) {
+                $returnValue = $returnValue && $arg;
+            } elseif (is_numeric($arg) && (!is_string($arg))) {
+                $returnValue = $returnValue && ($arg != 0);
+            } elseif (is_string($arg)) {
+                $arg = strtoupper($arg);
+                if (($arg == 'TRUE') || ($arg == PHPExcel_Calculation::getTRUE())) {
+                    $arg = true;
+                } elseif (($arg == 'FALSE') || ($arg == PHPExcel_Calculation::getFALSE())) {
+                    $arg = false;
+                } else {
+                    return PHPExcel_Calculation_Functions::VALUE();
+                }
+                $returnValue = $returnValue && ($arg != 0);
+            }
+        }
+
+        // Return
+        if ($argCount < 0) {
+            return PHPExcel_Calculation_Functions::VALUE();
+        }
+
+        return $returnValue;
+    }
+
+    /**
+     * LOGICAL_OR.
+     *
+     * Returns boolean TRUE if any argument is TRUE; returns FALSE if all arguments are FALSE.
+     *
+     * Excel Function:
+     *        =OR(logical1[,logical2[, ...]])
+     *
+     *        The arguments must evaluate to logical values such as TRUE or FALSE, or the arguments must be arrays
+     *            or references that contain logical values.
+     *
+     *        Boolean arguments are treated as True or False as appropriate
+     *        Integer or floating point arguments are treated as True, except for 0 or 0.0 which are False
+     *        If any argument value is a string, or a Null, the function returns a #VALUE! error, unless the string holds
+     *            the value TRUE or FALSE, in which case it is evaluated as the corresponding boolean value
+     *
+     * @category Logical Functions
+     * @return    bool        the logical OR of the arguments
+     */
+    public static function LOGICAL_OR()
+    {
+        // Return value
+        $returnValue = false;
+
+        // Loop through the arguments
+        $aArgs = PHPExcel_Calculation_Functions::flattenArray(func_get_args());
+        $argCount = -1;
+        foreach ($aArgs as $argCount => $arg) {
+            // Is it a boolean value?
+            if (is_bool($arg)) {
+                $returnValue = $returnValue || $arg;
+            } elseif (is_numeric($arg) && (!is_string($arg))) {
+                $returnValue = $returnValue || ($arg != 0);
+            } elseif (is_string($arg)) {
+                $arg = strtoupper($arg);
+                if (($arg == 'TRUE') || ($arg == PHPExcel_Calculation::getTRUE())) {
+                    $arg = true;
+                } elseif (($arg == 'FALSE') || ($arg == PHPExcel_Calculation::getFALSE())) {
+                    $arg = false;
+                } else {
+                    return PHPExcel_Calculation_Functions::VALUE();
+                }
+                $returnValue = $returnValue || ($arg != 0);
+            }
+        }
+
+        // Return
+        if ($argCount < 0) {
+            return PHPExcel_Calculation_Functions::VALUE();
+        }
+
+        return $returnValue;
+    }
+
+    /**
+     * NOT.
+     *
+     * Returns the boolean inverse of the argument.
+     *
+     * Excel Function:
+     *        =NOT(logical)
+     *
+     *        The argument must evaluate to a logical value such as TRUE or FALSE
+     *
+     *        Boolean arguments are treated as True or False as appropriate
+     *        Integer or floating point arguments are treated as True, except for 0 or 0.0 which are False
+     *        If any argument value is a string, or a Null, the function returns a #VALUE! error, unless the string holds
+     *            the value TRUE or FALSE, in which case it is evaluated as the corresponding boolean value
+     *
+     * @category Logical Functions
+     * @param    mixed        $logical    A value or expression that can be evaluated to TRUE or FALSE
+     * @return    bool        the boolean inverse of the argument
+     */
+    public static function NOT($logical = false)
+    {
+        $logical = PHPExcel_Calculation_Functions::flattenSingleValue($logical);
+        if (is_string($logical)) {
+            $logical = strtoupper($logical);
+            if (($logical == 'TRUE') || ($logical == PHPExcel_Calculation::getTRUE())) {
+                return false;
+            }
+            if (($logical == 'FALSE') || ($logical == PHPExcel_Calculation::getFALSE())) {
+                return true;
+            }
+
+            return PHPExcel_Calculation_Functions::VALUE();
+
+        }
+
+        return !$logical;
+    }
+
+    /**
+     * STATEMENT_IF.
+     *
+     * Returns one value if a condition you specify evaluates to TRUE and another value if it evaluates to FALSE.
+     *
+     * Excel Function:
+     *        =IF(condition[,returnIfTrue[,returnIfFalse]])
+     *
+     *        Condition is any value or expression that can be evaluated to TRUE or FALSE.
+     *            For example, A10=100 is a logical expression; if the value in cell A10 is equal to 100,
+     *            the expression evaluates to TRUE. Otherwise, the expression evaluates to FALSE.
+     *            This argument can use any comparison calculation operator.
+     *        ReturnIfTrue is the value that is returned if condition evaluates to TRUE.
+     *            For example, if this argument is the text string "Within budget" and the condition argument evaluates to TRUE,
+     *            then the IF function returns the text "Within budget"
+     *            If condition is TRUE and ReturnIfTrue is blank, this argument returns 0 (zero). To display the word TRUE, use
+     *            the logical value TRUE for this argument.
+     *            ReturnIfTrue can be another formula.
+     *        ReturnIfFalse is the value that is returned if condition evaluates to FALSE.
+     *            For example, if this argument is the text string "Over budget" and the condition argument evaluates to FALSE,
+     *            then the IF function returns the text "Over budget".
+     *            If condition is FALSE and ReturnIfFalse is omitted, then the logical value FALSE is returned.
+     *            If condition is FALSE and ReturnIfFalse is blank, then the value 0 (zero) is returned.
+     *            ReturnIfFalse can be another formula.
+     *
+     * @category Logical Functions
+     * @param    mixed    $condition        Condition to evaluate
+     * @param    mixed    $returnIfTrue    Value to return when condition is true
+     * @param    mixed    $returnIfFalse    Optional value to return when condition is false
+     * @return    mixed    The value of returnIfTrue or returnIfFalse determined by condition
+     */
+    public static function STATEMENT_IF($condition = true, $returnIfTrue = 0, $returnIfFalse = false)
+    {
+        $condition     = (is_null($condition)) ? true : (bool) PHPExcel_Calculation_Functions::flattenSingleValue($condition);
+        $returnIfTrue  = (is_null($returnIfTrue)) ? 0 : PHPExcel_Calculation_Functions::flattenSingleValue($returnIfTrue);
+        $returnIfFalse = (is_null($returnIfFalse)) ? false : PHPExcel_Calculation_Functions::flattenSingleValue($returnIfFalse);
+
+        return ($condition) ? $returnIfTrue : $returnIfFalse;
+    }
+
+    /**
+     * IFERROR.
+     *
+     * Excel Function:
+     *        =IFERROR(testValue,errorpart)
+     *
+     * @category Logical Functions
+     * @param    mixed    $testValue    Value to check, is also the value returned when no error
+     * @param    mixed    $errorpart    Value to return when testValue is an error condition
+     * @return    mixed    The value of errorpart or testValue determined by error condition
+     */
+    public static function IFERROR($testValue = '', $errorpart = '')
+    {
+        $testValue = (is_null($testValue)) ? '' : PHPExcel_Calculation_Functions::flattenSingleValue($testValue);
+        $errorpart = (is_null($errorpart)) ? '' : PHPExcel_Calculation_Functions::flattenSingleValue($errorpart);
+
+        return self::STATEMENT_IF(PHPExcel_Calculation_Functions::IS_ERROR($testValue), $errorpart, $testValue);
+    }
+}
