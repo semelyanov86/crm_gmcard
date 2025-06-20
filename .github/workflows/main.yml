@@ -12,7 +12,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - name: Setup go-task  
+        uses: pnorton5432/setup-task@v1
+        with:
+          task-version: 3.29.1
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -35,72 +40,37 @@ jobs:
   deploy:
     needs: [ build ]
     runs-on: ubuntu-latest
+    env:
+      VTIGER_PATH: '/var/www/vtiger/vtigercrm'
+      WWW_USER: 'www-data'
+      WWW_HOME: '/var/www'
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.3'
-
-      - name: Install Dependencies
-        run: composer install -q --no-ansi --no-dev --no-interaction --no-scripts --no-progress --prefer-dist
-
-      - name: Permission setup
-        run: |
-          chmod -R 777 cache test/vtlib
-          chmod a+rw config.inc.php
-          chmod 755 cron/vtiger_backup.sh
-
-      - name: Clear old build
+      - name: Run deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USERNAME }}
+          host: ${{ secrets.SERVER }}
+          username: ${{ secrets.USER }}
           key: ${{ secrets.DEPLOY_KEY }}
-          port: 22
-          script: |
-            rm -rf /var/www/html_previous
-            mv /var/www/html_new /var/www/html_previous
-            rm /var/www/html
-            ln -snf /var/www/html_previous /var/www/html
+          port: ${{ secrets.PORT }}
+          scippt: |
+            sudo cp -r /home/${{ secrets.USER }}/.ssh ${{ env.WWW_HOME }}/
+            sudo chown -R ${{ env.WWW_USER }}: ${{ env.WWW_HOME }}/.ssh
+            cd ${{ env.VTIGER_PATH }}
 
-      - name: Copy files via SCP
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: 22
-          key: ${{ secrets.DEPLOY_KEY }}
-          source: "./"
-          target: "/var/www/html_new"
+            echo -e  "\033[0;32m git pull \033[0m "
+            if ! sudo -u ${WWW_USER} git pull origin main; then
+              sudo -u ${WWW_USER} git fetch origin main
+              sudo -u ${WWW_USER} git reset --hard origin/main
+            else
+              echo "Pull successful, no conflicts"
+            fi            
 
-      - name: Run vtiger commands
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.DEPLOY_KEY }}
-          port: 22
-          script: |
-            cp /var/www/html_previous/.env /var/www/html_new/.env
-            cd /var/www/html_new
-            mv /var/www/html_previous/storage /var/www/html_new/storage
-            mv /var/www/html_previous/logs /var/www/html_new/logs
-            mv /var/www/html_previous/user_privileges /var/www/html_new/user_privileges
-            cp /var/www/html_previous/tabdata.php /var/www/html_new/tabdata.php
-            cp /var/www/html_previous/parent_tabdata.php /var/www/html_new/parent_tabdata.php
-            mkdir /var/www/html_new/test/templates_c
-            mkdir /var/www/html_new/test/templates_c/v7
-            chmod -R 777 /var/www/html_new/test/templates_c
-            chown -R www-data /var/www/html_new
-            chgrp -R www-data /var/www/html_new
-            rm /var/www/html
-            ln -snf /var/www/html_new /var/www/html
-            rm -rf /var/www/html_previous
-            chmod -R 777 /var/www/html_new/user_privileges
-            chmod 777 /var/www/html_new/websocket/main
-            systemctl restart websocket
-            task migrate
+            echo "\033[0;32m run deploy command \033[0m"
+            sudo -u ${WWW_USER} sudo task deploy
+
+            echo "\033[0;32m run migrate command \033[0m"
+            sudo -u ${WWW_USER} task migratea
+
+            echo -e "\033[0;32m remove \033[0m"
+            sudo rm -rf ${{ env.WWW_HOME }}/.ssh
