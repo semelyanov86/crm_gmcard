@@ -60,20 +60,20 @@ jobs:
 
             echo -e  "\033[0;32m git pull \033[0m "
             
-            sudo -u ${env.WWW_USER} git pull origin main
+            sudo -u ${{ env.WWW_USER }} git pull origin main
             if [[ $? != 0 ]]; then
-              sudo -u ${env.WWW_USER} git fetch origin main
-              sudo -u ${env.WWW_USER} git reset --hard origin/main
+              sudo -u ${{ env.WWW_USER }} git fetch origin main
+              sudo -u ${{ env.WWW_USER }} git reset --hard origin/main
             else
               echo "Pull successful, no conflicts"
             fi
 
             echo -e "\033[0;32m run deploy command \033[0m"
-            sudo -u ${env.WWW_USER} task deploy
+            sudo -u ${{ env.WWW_USER }} task deploy
             if [[ $? != 0 ]]; then exit 1; fi
 
             echo -e "\033[0;32m run migrate command \033[0m"
-            sudo -u ${env.WWW_USER} task migrate
+            sudo -u ${{ env.WWW_USER }} task migrate
             if [[ $? != 0 ]]; then exit 1; fi
 
             echo -e "\033[0;32m remove \033[0m"
