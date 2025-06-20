@@ -53,7 +53,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.DEPLOY_KEY }}
           port: ${{ secrets.PORT }}
-          scipt: |
+          script: |
             sudo cp -r /home/${{ secrets.USER }}/.ssh ${{ env.WWW_HOME }}/
             sudo chown -R ${{ env.WWW_USER }}: ${{ env.WWW_HOME }}/.ssh
             cd ${{ env.VTIGER_PATH }}
