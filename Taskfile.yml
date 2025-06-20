@@ -30,10 +30,6 @@ tasks:
   deploy:
     desc: "Deploy vtiger. Don't forget to save dump db in db/dump/vtiger.sql and drop database in mysql"
     cmds:
-      - echo -e "\033[0;32m create dirs \033[0m"
-      - mkdir -p db/dump test/templates_c/v7
-      - echo -e "\033[0;32m change privilleges \033[0m"
-      - chmod -R 777 cache test/vtlib  test/templates_c user_privileges
       - echo -e "\033[0;32m composer install \033[0m"
       - composer install
       - chmod u+x phplint.phar
