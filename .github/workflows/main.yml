@@ -69,25 +69,11 @@ jobs:
             fi
 
             echo -e "\033[0;32m run change privilleges \033[0m"
-            if ! [ -d ./db/dump ]; then
-              sudo -u ${{ env.WWW_USER }} mkdir -p db/dump
-            fi
-
-            if ! [ -d ./test/templates_c/v7 ]; then
-              sudo -u ${{ env.WWW_USER }} mkdir -p test/templates_c/v7
-            fi
-
-            if [ -e ./cron/vtiger_backup.sh ]; then
-              sudo -u ${{ env.WWW_USER }} chmod 755 cron/vtiger_backup.sh
-            fi
-
-            if [ -d ./user_privileges ]; then
-              sudo -u ${{ env.WWW_USER }} chmod -R 777 user_privileges
-            fi
-
-            if [ -d ./test/vtlib ]; then
-              sudo -u ${{ env.WWW_USER }} chmod -R 777 test/vtlib
-            fi
+            sudo -u ${{ env.WWW_USER }} mkdir -p db/dump
+            sudo -u ${{ env.WWW_USER }} mkdir -p test/templates_c/v7
+            sudo -u ${{ env.WWW_USER }} chmod 755 cron/vtiger_backup.sh
+            sudo -u ${{ env.WWW_USER }} chmod -R 777 user_privileges
+            sudo -u ${{ env.WWW_USER }} chmod -R 777 test/vtlib
             sudo -u ${{ env.WWW_USER }} chmod -R 777 test/templates_c
 
             echo -e "\033[0;32m run deploy command \033[0m"
