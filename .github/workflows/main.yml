@@ -59,18 +59,18 @@ jobs:
             cd ${{ env.VTIGER_PATH }}
 
             echo -e  "\033[0;32m git pull \033[0m "
-            if ! sudo -u ${WWW_USER} git pull origin main; then
-              sudo -u ${WWW_USER} git fetch origin main
-              sudo -u ${WWW_USER} git reset --hard origin/main
+            if ! sudo -u ${env.WWW_USER} git pull origin main; then
+              sudo -u ${env.WWW_USER} git fetch origin main
+              sudo -u ${env.WWW_USER} git reset --hard origin/main
             else
               echo "Pull successful, no conflicts"
             fi            
 
             echo "\033[0;32m run deploy command \033[0m"
-            sudo -u ${WWW_USER} sudo task deploy
+            sudo -u ${env.WWW_USER} sudo task deploy
 
             echo "\033[0;32m run migrate command \033[0m"
-            sudo -u ${WWW_USER} task migratea
+            sudo -u ${env.WWW_USER} task migratea
 
             echo -e "\033[0;32m remove \033[0m"
             sudo rm -rf ${{ env.WWW_HOME }}/.ssh
