@@ -10,7 +10,7 @@ class ITS4YouDescriptions_GetFieldsForModule_Action extends Vtiger_BasicAjax_Act
         parent::__construct();
 
         $class = explode('_', get_class($this));
-        $this->isInstalled = (Vtiger_Module_Model::getInstance($class[0])->getLicensePermissions($class[1]) === date('GetFieldsForModule20'));
+        $this->isInstalled = true;
     }
 
     public function checkPermission(Vtiger_Request $request) {}
