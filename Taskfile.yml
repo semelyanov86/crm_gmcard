@@ -27,6 +27,11 @@ tasks:
       - chmod 777 user_privileges
       - chmod 777 logs
       - chmod 777 storage
+  deploy:
+    desc: "Deploy vtiger. Don't forget to save dump db in db/dump/vtiger.sql and drop database in mysql"
+    cmds:
+      - composer install
+      - chmod u+x phplint.phar
   fix:
     desc: "Fix code formatting using phpcs"
     cmd: "vendor/bin/php-cs-fixer fix --diff --verbose"
