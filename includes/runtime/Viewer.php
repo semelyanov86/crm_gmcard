@@ -9,7 +9,7 @@
  * All Rights Reserved.
  */
 
-class Vtiger_Viewer extends Smarty
+class Vtiger_Viewer extends \Smarty\Smarty
 {
     public const DEFAULTLAYOUT = 'v7';
     public const DEFAULTSKIN   = 'skins';
@@ -192,7 +192,7 @@ class Vtiger_Viewer extends Smarty
     }
 
     /** @Override */
-    public function assign($tpl_var, $value = null, $nocache = false)
+    public function assign($tpl_var, $value = null, $nocache = false, $scope = null)
     {
         // Reject unexpected value assignments.
         if ($tpl_var == 'SELECTED_MENU_CATEGORY') {
@@ -201,7 +201,7 @@ class Vtiger_Viewer extends Smarty
             }
         }
 
-        return parent::assign($tpl_var, $value, $nocache);
+        return parent::assign($tpl_var, $value, $nocache, $scope);
     }
 
     /**

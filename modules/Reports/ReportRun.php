@@ -4731,7 +4731,7 @@ class ReportRun extends CRMEntity
         global $currentModule, $current_language;
         $mod_strings = return_module_language($current_language, $currentModule);
 
-        require_once 'libraries/PHPExcel/PHPExcel.php';
+        require_once 'vendor/autoload.php';
 
         $workbook = new PHPExcel();
         $worksheet = $workbook->setActiveSheetIndex(0);

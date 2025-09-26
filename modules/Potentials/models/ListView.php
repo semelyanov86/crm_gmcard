@@ -33,6 +33,7 @@ class Potentials_ListView_Model extends Vtiger_ListView_Model
             $massActionLinks['LISTVIEWMASSACTION'][] = Vtiger_Link_Model::getInstanceFromValues($massActionLink);
         }
 
+        d($massActionLinks);
         return $massActionLinks;
     }
 }

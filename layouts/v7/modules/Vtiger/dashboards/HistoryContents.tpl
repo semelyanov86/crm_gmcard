@@ -9,7 +9,7 @@
 
 <div style='padding:5px;'>
 	{if $HISTORIES neq false}
-		{foreach key=$index item=HISTORY from=$HISTORIES}
+		{foreach key=index item=HISTORY from=$HISTORIES}
 			{assign var=MODELNAME value=get_class($HISTORY)}
 			{if $MODELNAME == 'ModTracker_Record_Model'}
 				{assign var=USER value=$HISTORY->getModifiedBy()}
@@ -114,7 +114,6 @@
 							</div>
 						{/if}
 					</div>
-					{if $TIME}<p class="pull-right muted" style="padding-right:10px;"><small title="{Vtiger_Util_Helper::formatDateTimeIntoDayString("$TIME")}">{Vtiger_Util_Helper::formatDateDiffInStrings("$TIME")}</small></p>{/if}
 				</div>
 			{/if}
 			{else if $MODELNAME == 'ModComments_Record_Model'}

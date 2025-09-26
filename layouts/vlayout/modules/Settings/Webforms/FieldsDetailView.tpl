@@ -58,7 +58,7 @@
 				</td>
 				<td>
 					{if $FIELD_MODEL->getFieldDataType() eq 'reference'}
-						{assign var=EXPLODED_FIELD_VALUE value = 'x'|explode:$FIELD_MODEL->get('defaultvalue')}
+														{assign var=EXPLODED_FIELD_VALUE value=$FIELD_MODEL->get('defaultvalue')|split:'x'}
 						{assign var=FIELD_VALUE value=$EXPLODED_FIELD_VALUE[1]}
 						{if !isRecordExists($FIELD_VALUE)}
 							{assign var=FIELD_VALUE value=0}

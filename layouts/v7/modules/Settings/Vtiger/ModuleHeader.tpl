@@ -27,7 +27,7 @@
 						</span>
 					{/if}
 					{if $MODULE neq 'Vtiger'}
-						{assign var=ALLOWED_MODULES value=","|explode:'Users,Profiles,Groups,Roles,Webforms,Workflows'}
+						{assign var=ALLOWED_MODULES value='Users,Profiles,Groups,Roles,Webforms,Workflows'|split:','}
 						{assign var=URL value=""}
 						{if isset($MODULE_MODEL) and $MODULE|in_array:$ALLOWED_MODULES}
 							{if $MODULE eq 'Webforms'}

@@ -12,3 +12,4 @@ var
 .idea
 !inst/*
 db/dump/vtiger.sql
+config.inc.php

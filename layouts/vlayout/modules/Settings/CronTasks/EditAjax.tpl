@@ -40,7 +40,7 @@
 					{vtranslate('Frequency',$QUALIFIED_MODULE)}
 				</div>
 				<div class="controls row-fluid">
-					{assign var=VALUES value=':'|explode:$RECORD_MODEL->getDisplayValue('frequency')}
+											{assign var=VALUES value=$RECORD_MODEL->getDisplayValue('frequency')|split:':'}
 					{if $VALUES[0] == '00' && $VALUES[1] == '00'}
 						{assign var=MINUTES value="true"}
 						{assign var=FIELD_VALUE value=$VALUES[1]}

@@ -15,7 +15,7 @@
 */
 
 // Adjust error_reporting favourable to deployment.
-version_compare(PHP_VERSION, '5.5.0') <= 0 ? error_reporting(E_WARNING & ~E_NOTICE & ~E_DEPRECATED & E_ERROR) : error_reporting(E_WARNING & ~E_NOTICE & ~E_DEPRECATED  & E_ERROR & ~E_STRICT); // PRODUCTION
+error_reporting(E_WARNING | E_ERROR & ~E_NOTICE & ~E_DEPRECATED);
 // ini_set('display_errors','on'); version_compare(PHP_VERSION, '5.5.0') <= 0 ? error_reporting(E_WARNING & ~E_NOTICE & ~E_DEPRECATED) : error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);   // DEBUGGING
 // ini_set('display_errors','on'); error_reporting(E_ALL); // STRICT DEVELOPMENT
 
@@ -173,6 +173,14 @@ $php_max_execution_time = 0;
 
 // Set the default timezone as per your preference
 $default_timezone = 'UTC';
+
+$rabbitData = [
+    'host' => getenv('RABBITMQ_HOST') ?: '',
+    'port' => getenv('RABBITMQ_PORT') ?: '5672',
+    'user' => getenv('RABBITMQ_USER') ?: '',
+    'password' => getenv('RABBITMQ_PASSWORD') ?: '',
+    'vhost' => getenv('RABBITMQ_VHOST') ?: '',
+];
 
 /** If timezone is configured, try to set it */
 if (isset($default_timezone) && function_exists('date_default_timezone_set')) {
