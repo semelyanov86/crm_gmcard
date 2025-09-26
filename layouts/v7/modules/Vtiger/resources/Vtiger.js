@@ -255,7 +255,7 @@ Vtiger.Class('Vtiger_Index_Js', {
 				'mode' : 'getReminders'
 			}
 		}).then(function(e, res) {
-			if(!res.hasOwnProperty('result')) {
+			if(res && !res.hasOwnProperty('result')) {
 				for(i=0; i< res.length; i++) {
 					var record = res[i];
 					if(typeof record == 'object') {

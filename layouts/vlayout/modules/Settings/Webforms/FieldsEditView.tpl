@@ -99,7 +99,7 @@
 							{assign var=DATATYPEMARGINLEFT value= array("date","currency","percentage","reference")}
 							{assign var=IS_PARENT_EXISTS value=strpos($MODULE,":")}
 							{if $IS_PARENT_EXISTS}
-								{assign var=SPLITTED_MODULE value=":"|explode:$MODULE}
+								{assign var=SPLITTED_MODULE value=$MODULE|split:':'}
 								{assign var=MODULE value="{$SPLITTED_MODULE[1]}"}
 							{/if}
 							<td class="fieldValue textAlignCenter" data-name="{$FIELD_MODEL->getFieldName()}" {if in_array($FIELD_MODEL->getFieldDataType(),$DATATYPEMARGINLEFT)} {/if}>

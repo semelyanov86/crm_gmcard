@@ -31,6 +31,8 @@
 	<input type="hidden" name="alphabetSearchKey" id="alphabetSearchKey" value= "{$MODULE_MODEL->getAlphabetSearchField()}" />
 	<input type="hidden" name="Operator" id="Operator" value="{$OPERATOR}" />
 	<input type="hidden" name="totalCount" id="totalCount" value="{$LISTVIEW_COUNT}" />
+	{assign var=ALPHABETS_LABEL value = vtranslate('LBL_ALPHABETS', 'Vtiger')}
+	{assign var=ALPHABETS value = $ALPHABETS_LABEL|split:','}
 	<input type='hidden' name="pageNumber" value="{$PAGE_NUMBER}" id='pageNumber'>
 	<input type='hidden' name="pageLimit" value="{$PAGING_MODEL->getPageLimit()}" id='pageLimit'>
 	<input type="hidden" name="noOfEntries" value="{(isset($LISTVIEW_ENTRIES_COUNT)) ? $LISTVIEW_ENTRIES_COUNT : ''}" id="noOfEntries">

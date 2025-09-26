@@ -35,7 +35,7 @@
 								<select class="blockList col-sm-9" name="blockid">
 									{foreach key=BLOCK_ID item=BLOCK_MODEL from=$ALL_BLOCK_LABELS}
 										{if $BLOCK_MODEL->isAddCustomFieldEnabled()}
-											{if $BLOCK_MODEL->get('label') == 'LBL_ITEM_DETAILS' && in_array($SELECTED_MODULE_NAME, getInventoryModules())}
+											{if $BLOCK_MODEL->get('label') == 'LBL_ITEM_DETAILS' && ($SELECTED_MODULE_NAME == 'Invoice' || $SELECTED_MODULE_NAME == 'Quotes' || $SELECTED_MODULE_NAME == 'PurchaseOrder' || $SELECTED_MODULE_NAME == 'SalesOrder')}
 												{continue}
 											{/if}
 											<option value="{$BLOCK_ID}" data-label="{$BLOCK_MODEL->get('label')}">{vtranslate($BLOCK_MODEL->get('label'), $SELECTED_MODULE_NAME)}</option>

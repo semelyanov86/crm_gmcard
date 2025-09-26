@@ -9,6 +9,7 @@
  * All Rights Reserved.
  */
 
+require_once 'vendor/autoload.php';
 require_once 'config.php';
 /**
  * URL Verfication - Required to overcome Apache mis-configuration and leading to shared setup mode.
@@ -16,8 +17,6 @@ require_once 'config.php';
 if (file_exists('config_override.php')) {
     include_once 'config_override.php';
 }
-
-require_once 'vendor/autoload.php';
 
 // Overrides GetRelatedList : used to get related query
 // TODO : Eliminate below hacking solution

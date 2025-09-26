@@ -85,7 +85,7 @@
 </select>
 										{elseif $DATA_TYPE eq "reference"}
 											<input type="hidden" name="{$FIELD_MODEL->getFieldName()}" value="{$FIELD_MODEL->get('fieldvalue')}" />
-											{assign var=EXPLODED_FIELD_VALUES value='x'|explode:$FIELD_MODEL->get('fieldvalue')}
+											{assign var=EXPLODED_FIELD_VALUES value=$FIELD_MODEL->get('fieldvalue')|split:'x'}
 											<input type="{$TYPE}" value="{$FIELD_MODEL->getEditViewDisplayValue($EXPLODED_FIELD_VALUES[1])}" readonly= />
 										{elseif $DATA_TYPE eq "image"}
 											<input type="file" name="{$FIELD_MODEL->getFieldName()}" {if $FIELD_MODEL->get('hidden') eq 1}  hidden{/if} {if $FIELD_MODEL->get('required') eq 1} required{/if}/>
