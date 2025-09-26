@@ -3,6 +3,7 @@
 require_once 'modules/Vtiger/helpers/AmpqHelper.php';
 
 use PhpAmqpLib\Connection\AMQPStreamConnection;
+use PhpAmqpLib\Connection\AMQPSSLConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 use PhpAmqpLib\Exception\AMQPRuntimeException;
 
@@ -25,28 +26,55 @@ function SendToRabbit($ws_entity)
     /** @var Contacts_Record_Model $myModuleInstance */
     $myModuleInstance = Vtiger_Record_Model::getInstanceById($crmid);
 
-     try {
-         $connection = new AMQPStreamConnection($rabbitData['host'], $rabbitData['port'], $rabbitData['user'], $rabbitData['password'], $rabbitData['vhost']);
-     } catch (AMQPRuntimeException | RuntimeException | ErrorException $e) {
-         $log->error('Error in connection to AMQP ' . $e->getMessage());
-         die;
-     }
+    try {
+        $host = $rabbitData['host'];
+        $port = (int) $rabbitData['port'];
+        $user = $rabbitData['user'];
+        $pass = $rabbitData['password'];
+        $vhost = $rabbitData['vhost'];
 
-     $channel = $connection->channel();
+        $connectionOptions = [
+            'heartbeat' => 60,
+            'connection_timeout' => 5.0,
+            'read_write_timeout' => 5.0,
+        ];
 
-     Vtiger_AmpqHelper_Helper::initNotifications($channel);
-     Vtiger_AmpqHelper_Helper::registerShutdown($connection, $channel);
+        if ($port === 5671) {
+            $sslOptions = [
+                'verify_peer' => true,
+                'verify_peer_name' => true,
+            ];
+            $connection = new AMQPSSLConnection($host, $port, $user, $pass, $vhost, $sslOptions, $connectionOptions);
+        } else {
+            $connection = new AMQPStreamConnection($host, $port, $user, $pass, $vhost, false, 'AMQPLAIN', null, 'en_US', $connectionOptions['heartbeat'], $connectionOptions['connection_timeout'], null, false, $connectionOptions['read_write_timeout']);
+        }
+    } catch (AMQPRuntimeException | RuntimeException | ErrorException $e) {
+        $log->error('Error in connection to AMQP ' . $e->getMessage());
+        return;
+    }
 
-     $data = array(
-         'uuid' => uniqid('', true),
-         'job' => 'App\Jobs\ReceiveContactsJob',
-         'data' => $myModuleInstance->getData(),
-     );
+    $channel = $connection->channel();
 
-     $message = new AMQPMessage(
-         json_encode($data),
-         ['content_type' => 'text/plain']
-     );
+    Vtiger_AmpqHelper_Helper::initNotifications($channel);
+    Vtiger_AmpqHelper_Helper::registerShutdown($connection, $channel);
 
-     $channel->basic_publish($message,  Vtiger_AmpqHelper_Helper::EXCHANGE_NOTIFICATIONS);
+    $data = array(
+        'uuid' => uniqid('', true),
+        'job' => 'App\Jobs\ReceiveContactsJob',
+        'data' => $myModuleInstance->getData(),
+    );
+
+    $message = new AMQPMessage(
+        json_encode($data),
+        [
+            'content_type' => 'text/plain',
+            'delivery_mode' => 2
+        ]
+    );
+
+    try {
+        $channel->basic_publish($message,  Vtiger_AmpqHelper_Helper::EXCHANGE_NOTIFICATIONS);
+    } catch (Exception $e) {
+        $log->error('AMQP publish failed: ' . $e->getMessage());
+    }
 }

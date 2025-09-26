@@ -19,7 +19,7 @@ class Vtiger_AmpqHelper_Helper
 
     public static function initInternalEvents(AMQPChannel $channel): void
     {
-        $channel->queue_declare(self::INTERNAL_EVENTS, false, false, false,);
+        $channel->queue_declare(self::INTERNAL_EVENTS, false, false, false);
         $channel->exchange_declare(self::INTERNAL_EVENTS, 'fanout', false, false, true);
         $channel->queue_bind(self::INTERNAL_EVENTS, self::INTERNAL_EVENTS);
     }

@@ -12,5 +12,8 @@ require_once 'modules/com_vtiger_workflow/VTEntityMethodManager.inc';
 
 global $adb;
 $emm = new VTEntityMethodManager($adb);
-$emm->addEntityMethod("Contacts", "Send to Rabbit", "modules/Contacts/workflow/SendToRabbit.php", "SendToRabbit");
+$emm->addEntityMethod("Contacts",
+    "Send to Rabbit",
+    "modules/Contacts/workflow/SendToRabbit.php",
+    "SendToRabbit");
 echo 'we are done';
