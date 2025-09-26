@@ -175,11 +175,11 @@ $php_max_execution_time = 0;
 $default_timezone = 'UTC';
 
 $rabbitData = [
-    'host' => 'shrimp-01.rmq.cloudamqp.com',
-    'port' => '5672',
-    'user' => 'wyfuczdu',
-    'password' => 's1OW5dtefly4q7pQQtOODfQeQ2jSwTCm',
-    'vhost' => 'wyfuczdu',
+    'host' => getenv('RABBITMQ_HOST') ?: '',
+    'port' => getenv('RABBITMQ_PORT') ?: '5672',
+    'user' => getenv('RABBITMQ_USER') ?: '',
+    'password' => getenv('RABBITMQ_PASSWORD') ?: '',
+    'vhost' => getenv('RABBITMQ_VHOST') ?: '',
 ];
 
 /** If timezone is configured, try to set it */
