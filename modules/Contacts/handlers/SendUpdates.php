@@ -5,14 +5,12 @@ namespace handlers;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Exception\AMQPRuntimeException;
 use PhpAmqpLib\Message\AMQPMessage;
-use VTEntityData;
-use VTEventHandler;
 
 
 require_once 'include/events/VTEventHandler.inc';
 require_once 'modules/Vtiger/helpers/AmpqHelper.php';
 
-class SendUpdates extends VTEventHandler
+class SendUpdates extends \VTEventHandler
 {
     public function handleEvent($eventName, $entityData)
     {
@@ -22,7 +20,7 @@ class SendUpdates extends VTEventHandler
         }
     }
 
-    protected function triggerUpdatesHandler(VTEntityData $entityData): bool
+    protected function triggerUpdatesHandler(\VTEntityData $entityData): bool
     {
         global $rabbitData;
         global $log;
