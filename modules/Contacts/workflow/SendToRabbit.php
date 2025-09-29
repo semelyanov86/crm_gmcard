@@ -3,7 +3,6 @@
 require_once 'modules/Vtiger/helpers/AmpqHelper.php';
 
 use PhpAmqpLib\Connection\AMQPStreamConnection;
-use PhpAmqpLib\Connection\AMQPSSLConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 use PhpAmqpLib\Exception\AMQPRuntimeException;
 
@@ -27,29 +26,9 @@ function SendToRabbit($ws_entity)
     $myModuleInstance = Vtiger_Record_Model::getInstanceById($crmid);
 
     try {
-        $host = $rabbitData['host'];
-        $port = (int) $rabbitData['port'];
-        $user = $rabbitData['user'];
-        $pass = $rabbitData['password'];
-        $vhost = $rabbitData['vhost'];
-
-        $connectionOptions = [
-            'heartbeat' => 60,
-            'connection_timeout' => 5.0,
-            'read_write_timeout' => 5.0,
-        ];
-
-        if ($port === 5671) {
-            $sslOptions = [
-                'verify_peer' => true,
-                'verify_peer_name' => true,
-            ];
-            $connection = new AMQPSSLConnection($host, $port, $user, $pass, $vhost, $sslOptions, $connectionOptions);
-        } else {
-            $connection = new AMQPStreamConnection($host, $port, $user, $pass, $vhost, false, 'AMQPLAIN', null, 'en_US', $connectionOptions['heartbeat'], $connectionOptions['connection_timeout'], null, false, $connectionOptions['read_write_timeout']);
-        }
-    } catch (AMQPRuntimeException | RuntimeException | ErrorException $e) {
-        $log->error('Error in connection to AMQP ' . $e->getMessage());
+        $connection = new AMQPStreamConnection($rabbitData['host'], $rabbitData['port'], $rabbitData['user'], $rabbitData['password'], $rabbitData['vhost']);
+    } catch (AMQPRuntimeException | \RuntimeException | \ErrorException $e) {
+        $log->error($e->getMessage());
         return;
     }
 
