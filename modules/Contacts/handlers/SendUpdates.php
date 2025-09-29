@@ -9,13 +9,19 @@ use PhpAmqpLib\Message\AMQPMessage;
 
 require_once 'include/events/VTEventHandler.inc';
 require_once 'modules/Vtiger/helpers/AmpqHelper.php';
+require_once 'data/VTEntityDelta.php';
 
 class SendUpdates extends \VTEventHandler
 {
+    /**
+     * @param string $eventName
+     * @param \VTEntityData $entityData
+     * @return void
+     */
     public function handleEvent($eventName, $entityData)
     {
         $moduleName = $entityData->getModuleName();
-        if ($eventName == 'vtiger.entity.beforesave' && $moduleName === 'Contacts') {
+        if ($eventName === 'vtiger.entity.aftersave' && $moduleName === 'Contacts') {
             $this->triggerUpdatesHandler($entityData);
         }
     }
@@ -25,19 +31,25 @@ class SendUpdates extends \VTEventHandler
         global $rabbitData;
         global $log;
         $recordId = $entityData->getId();
+        $moduleName = $entityData->getModuleName();
 
         if (!$recordId) {
             return false;
         }
 
-        $data = $entityData->getData()->getChanged();
-        $contactData = [];
+        $deltaHelper = new \VTEntityDelta();
+        $delta = $deltaHelper->getEntityDelta($moduleName, $recordId, true) ?: [];
 
-        foreach ($data as $field) {
-            $contactData[$field] = $_REQUEST[$field];
+        $contactData = ['id' => $recordId];
+        foreach ($delta as $fieldName => $values) {
+            if (array_key_exists('currentValue', $values)) {
+                $contactData[$fieldName] = $values['currentValue'];
+            }
         }
 
-        $contactData['id'] = $recordId;
+        if (count($contactData) <= 1) {
+            return true;
+        }
 
         try {
             $connection = new AMQPStreamConnection($rabbitData['host'], $rabbitData['port'], $rabbitData['user'], $rabbitData['password'], $rabbitData['vhost']);
@@ -52,7 +64,7 @@ class SendUpdates extends \VTEventHandler
 
         $data = [
             'uuid' => uniqid('', true),
-            'job' => 'App\Jobs\ReceiveContactsJob',
+            'job' => 'App\\Jobs\\ReceiveContactsJob',
             'data' => $contactData,
         ];
 
