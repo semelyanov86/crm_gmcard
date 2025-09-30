@@ -24,7 +24,7 @@
 <input type="hidden" value="{$LISTVIEW_ENTRIES_COUNT}" id="noOfEntries">
 
 {assign var = ALPHABETS_LABEL value = vtranslate('LBL_ALPHABETS', 'Vtiger')}
-{assign var = ALPHABETS value = ','|explode:$ALPHABETS_LABEL}
+{assign var = ALPHABETS value = $ALPHABETS_LABEL|split:','}
 
 <div class="alphabetSorting noprint">
 	<table width="100%" class="table-bordered" style="border: 1px solid #ddd;table-layout: fixed">

@@ -1483,3 +1483,9 @@ function vtws_getAttachmentRecordId($attachmentId)
 
     return $crmid;
 }
+
+function vtws_getCRMEntityId($elementId)
+{
+    list ($tyoeId, $id) = vtws_getIdComponents($elementId);
+    return $id;
+}

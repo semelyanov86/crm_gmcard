@@ -16,7 +16,7 @@
                     {assign var=QUALIFIED_MODULE_NAME value={$MODULE}}
                     {assign var=IS_PARENT_EXISTS value=strpos($MODULE,":")}
                     {if $IS_PARENT_EXISTS}
-                        {assign var=SPLITTED_MODULE value=":"|explode:$MODULE}
+                        			{assign var=SPLITTED_MODULE value=$MODULE|split:':'}
                         <input type="hidden" name="module" value="{$SPLITTED_MODULE[1]}" />
                         <input type="hidden" name="parent" value="{$SPLITTED_MODULE[0]}" />
                     {else}
