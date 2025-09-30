@@ -19,6 +19,8 @@ error_reporting(E_WARNING | E_ERROR & ~E_NOTICE & ~E_DEPRECATED);
 // ini_set('display_errors','on'); version_compare(PHP_VERSION, '5.5.0') <= 0 ? error_reporting(E_WARNING & ~E_NOTICE & ~E_DEPRECATED) : error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);   // DEBUGGING
 // ini_set('display_errors','on'); error_reporting(E_ALL); // STRICT DEVELOPMENT
 
+require_once __DIR__ . '/vendor/autoload.php';
+
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
 $dotenv->load();
 if (getenv('APP_DEBUG') === '1') {
